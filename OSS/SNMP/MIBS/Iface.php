@@ -191,6 +191,7 @@ class Iface extends \OSS\SNMP\MIB
      *      [10129] => 2
      *
      * @see IF_OPER_STATES
+     * @param boolean $translate If true, return the string representation
      * @return array An array of interface states
      */
     public function operationStates( $translate = false )

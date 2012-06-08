@@ -41,7 +41,10 @@ namespace OSS;
  */
 class Timer
 {
+    /** @type double The start time */
     static private $_start = null;
+
+    /** @var double The elapsed time */
     static private $_time  = null;
 
     static public function start()

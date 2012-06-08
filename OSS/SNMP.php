@@ -109,13 +109,16 @@ class SNMP
      * Definition of an SNMP return type 'TruthValue'
      */
     const SNMP_TRUTHVALUE_TRUE  = 1;
+
     /**
      * Definition of an SNMP return type 'TruthValue'
      */
     const SNMP_TRUTHVALUE_FALSE = 2;
 
     /**
-     * PHP equivalents of SNMP return type 'TruthValue'
+     * PHP equivalents of SNMP return type TruthValue
+     *
+     * @var array PHP equivalents of SNMP return type TruthValue
      */
     public static $SNMP_TRUTHVALUES = array(
         self::SNMP_TRUTHVALUE_TRUE  => true,
@@ -125,8 +128,8 @@ class SNMP
     /**
      * The constructor.
      *
-     * @var string $host The target host for SNMP queries.
-     * @var string $community The community to use for SNMP queries.
+     * @param string $host The target host for SNMP queries.
+     * @param string $community The community to use for SNMP queries.
      * @return OSS_SNMP An instance of $this (for fluent interfaces)
      */
     public function __construct( $host = '127.0.0.1', $community = 'public' )
@@ -142,7 +145,7 @@ class SNMP
     /**
      * Proxy to the snmp2_real_walk command
      *
-     * @var string $oid The OID to walk
+     * @param string $oid The OID to walk
      * @return array The results of the walk
      */
     public function realWalk( $oid )
@@ -154,7 +157,7 @@ class SNMP
     /**
      * Get a single SNMP value
      *
-     * @var string $oid The OID to get
+     * @param string $oid The OID to get
      * @return mixed The resultant value
      */
     public function get( $oid )
@@ -189,7 +192,7 @@ class SNMP
      *      2 => GigabitEthernet1/0/2
      *      3 => GigabitEthernet1/0/3
      *
-     * @var string $oid The OID to walk
+     * @param string $oid The OID to walk
      * @return array The resultant values
      */
     public function walk1d( $oid )
@@ -233,8 +236,8 @@ class SNMP
      *      10105 => Hex-STRING: 00 00 00 01
      *      10108 => Hex-STRING: 00 00 00 01
      *
-     * @var string $oid The OID to walk
-     * @var int $position The position of the OID to use as the key
+     * @param string $oid The OID to walk
+     * @param int $position The position of the OID to use as the key
      * @return array The resultant values
      */
     public function subOidWalk( $oid, $position )
@@ -262,7 +265,7 @@ class SNMP
      *
      * For example, [STRING: "blah"] is parsed to a PHP string containing: blah
      *
-     * @var string $c The value to parse
+     * @param string $v The value to parse
      * @return mixed The parsed value
      * @throws Exception
      */
@@ -347,7 +350,7 @@ class SNMP
      *
      * Should be one of the class OID_OUTPUT_* constants
      *
-     * @var int $f The fomat to use
+     * @param int $f The fomat to use
      * @return OSS_SNMP An instance of $this (for fluent interfaces)
      */
     public function setOidOutputFormat( $f )
@@ -360,7 +363,7 @@ class SNMP
     /**
      * Sets the target host for SNMP queries.
      *
-     * @var string $h The target host for SNMP queries.
+     * @param string $h The target host for SNMP queries.
      * @return OSS_SNMP An instance of $this (for fluent interfaces)
      */
     public function setHost( $h )
@@ -388,7 +391,7 @@ class SNMP
     /**
      * Sets the community string to use for SNMP queries.
      *
-     * @var string $c The community to use for SNMP queries.
+     * @param string $c The community to use for SNMP queries.
      * @return OSS_SNMP An instance of $this (for fluent interfaces)
      */
     public function setCommunity( $c )
@@ -410,7 +413,7 @@ class SNMP
     /**
      * Sets the timeout to use for SNMP queries (microseconds).
      *
-     * @var int $t The timeout to use for SNMP queries (microseconds).
+     * @param int $t The timeout to use for SNMP queries (microseconds).
      * @return OSS_SNMP An instance of $this (for fluent interfaces)
      */
     public function setTimeout( $t )
@@ -432,10 +435,10 @@ class SNMP
     /**
      * Sets the SNMP query retry count.
      *
-     * @var int $r The SNMP query retry count
+     * @param int $r The SNMP query retry count
      * @return OSS_SNMP An instance of $this (for fluent interfaces)
      */
-    public function setRetry( $y )
+    public function setRetry( $r )
     {
         $this->_retry = $r;
         return $this;
@@ -509,6 +512,8 @@ class SNMP
     /**
      * Magic method for generic function calls
      *
+     * @param string $method
+     * @param array $args
      * @throws Exception
      */
     public function __call( $method, $args )
@@ -529,6 +534,9 @@ class SNMP
      *
      * See the examples for more information.
      *
+     * @param string $mib The extension class to use
+     * @param array $args
+     * @return \OSS\SNMP\MIBS
      */
     public function useExtension( $mib, $args )
     {

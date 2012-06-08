@@ -31,7 +31,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">37</span></a></li>
+                <span class="label label-info">19</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -126,18 +126,18 @@
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a name="__call" id="__call"></a><div class="element clickable method public __call" data-toggle="collapse" data-target=".__call .collapse">
 <h2>Magic method for generic function calls</h2>
-<pre>__call($method, $args) </pre>
+<pre>__call(string $method, array $args) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$method</h4>
-<code></code>
+<code>string</code>
 </div>
 <div class="subelement argument">
 <h4>$args</h4>
-<code></code>
+<code>array</code>
 </div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
@@ -148,29 +148,17 @@
 </div>
 <a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>The constructor.</h2>
-<pre>__construct($host, $community) : \OSS_SNMP</pre>
+<pre>__construct(string $host, string $community) : \OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
-<table class="table table-bordered">
-<tr>
-<th>var</th>
-<td>&lt;p&gt;The target host for SNMP queries.&lt;/p&gt;</td>
-</tr>
-<tr>
-<th>var</th>
-<td>&lt;p&gt;The community to use for SNMP queries.&lt;/p&gt;</td>
-</tr>
-</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$host</h4>
-<code></code>
-</div>
+<code>string</code><p>The target host for SNMP queries.</p></div>
 <div class="subelement argument">
 <h4>$community</h4>
-<code></code>
-</div>
+<code>string</code><p>The community to use for SNMP queries.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
@@ -211,19 +199,14 @@
 </div>
 <a name="get" id="get"></a><div class="element clickable method public get" data-toggle="collapse" data-target=".get .collapse">
 <h2>Get a single SNMP value</h2>
-<pre>get($oid) : mixed</pre>
+<pre>get(string $oid) : mixed</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>var</th>
-<td>&lt;p&gt;The OID to get&lt;/p&gt;</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$oid</h4>
-<code></code>
-</div>
+<code>string</code><p>The OID to get</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>mixed</code>The resultant value</div>
@@ -297,19 +280,14 @@
 </div>
 <a name="parseSnmpValue" id="parseSnmpValue"></a><div class="element clickable method public parseSnmpValue" data-toggle="collapse" data-target=".parseSnmpValue .collapse">
 <h2>Parse the result of an SNMP query into a PHP type</h2>
-<pre>parseSnmpValue($v) : mixed</pre>
+<pre>parseSnmpValue(string $v) : mixed</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"><p>For example, [STRING: "blah"] is parsed to a PHP string containing: blah</p></p>
-<table class="table table-bordered"><tr>
-<th>var</th>
-<td>&lt;p&gt;The value to parse&lt;/p&gt;</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$v</h4>
-<code></code>
-</div>
+<code>string</code><p>The value to parse</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
 <th><code><a href="http://php.net/manual/en/class.exception.php">\Exception</a></code></th>
@@ -337,19 +315,14 @@
 </div>
 <a name="realWalk" id="realWalk"></a><div class="element clickable method public realWalk" data-toggle="collapse" data-target=".realWalk .collapse">
 <h2>Proxy to the snmp2_real_walk command</h2>
-<pre>realWalk($oid) : array</pre>
+<pre>realWalk(string $oid) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>var</th>
-<td>&lt;p&gt;The OID to walk&lt;/p&gt;</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$oid</h4>
-<code></code>
-</div>
+<code>string</code><p>The OID to walk</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The results of the walk</div>
@@ -357,19 +330,14 @@
 </div>
 <a name="setCommunity" id="setCommunity"></a><div class="element clickable method public setCommunity" data-toggle="collapse" data-target=".setCommunity .collapse">
 <h2>Sets the community string to use for SNMP queries.</h2>
-<pre>setCommunity($c) : \OSS_SNMP</pre>
+<pre>setCommunity(string $c) : \OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>var</th>
-<td>&lt;p&gt;The community to use for SNMP queries.&lt;/p&gt;</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$c</h4>
-<code></code>
-</div>
+<code>string</code><p>The community to use for SNMP queries.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
@@ -377,19 +345,14 @@
 </div>
 <a name="setHost" id="setHost"></a><div class="element clickable method public setHost" data-toggle="collapse" data-target=".setHost .collapse">
 <h2>Sets the target host for SNMP queries.</h2>
-<pre>setHost($h) : \OSS_SNMP</pre>
+<pre>setHost(string $h) : \OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>var</th>
-<td>&lt;p&gt;The target host for SNMP queries.&lt;/p&gt;</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$h</h4>
-<code></code>
-</div>
+<code>string</code><p>The target host for SNMP queries.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
@@ -397,19 +360,14 @@
 </div>
 <a name="setOidOutputFormat" id="setOidOutputFormat"></a><div class="element clickable method public setOidOutputFormat" data-toggle="collapse" data-target=".setOidOutputFormat .collapse">
 <h2>Sets the output format for SNMP queries.</h2>
-<pre>setOidOutputFormat($f) : \OSS_SNMP</pre>
+<pre>setOidOutputFormat(int $f) : \OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"><p>Should be one of the class OID_OUTPUT_* constants</p></p>
-<table class="table table-bordered"><tr>
-<th>var</th>
-<td>&lt;p&gt;The fomat to use&lt;/p&gt;</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$f</h4>
-<code></code>
-</div>
+<code>int</code><p>The fomat to use</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
@@ -417,19 +375,14 @@
 </div>
 <a name="setRetry" id="setRetry"></a><div class="element clickable method public setRetry" data-toggle="collapse" data-target=".setRetry .collapse">
 <h2>Sets the SNMP query retry count.</h2>
-<pre>setRetry($y) : \OSS_SNMP</pre>
+<pre>setRetry(int $r) : \OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>var</th>
-<td>&lt;p&gt;The SNMP query retry count&lt;/p&gt;</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$y</h4>
-<code></code>
-</div>
+<h4>$r</h4>
+<code>int</code><p>The SNMP query retry count</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
@@ -437,19 +390,14 @@
 </div>
 <a name="setTimeout" id="setTimeout"></a><div class="element clickable method public setTimeout" data-toggle="collapse" data-target=".setTimeout .collapse">
 <h2>Sets the timeout to use for SNMP queries (microseconds).</h2>
-<pre>setTimeout($t) : \OSS_SNMP</pre>
+<pre>setTimeout(int $t) : \OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>var</th>
-<td>&lt;p&gt;The timeout to use for SNMP queries (microseconds).&lt;/p&gt;
-</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$t</h4>
-<code></code>
+<code>int</code><p>The timeout to use for SNMP queries (microseconds).</p>
 </div>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -458,7 +406,7 @@
 </div>
 <a name="subOidWalk" id="subOidWalk"></a><div class="element clickable method public subOidWalk" data-toggle="collapse" data-target=".subOidWalk .collapse">
 <h2>Get indexed SNMP values where the array key is the given position of the OID</h2>
-<pre>subOidWalk($oid, $position) : array</pre>
+<pre>subOidWalk(string $oid, int $position) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"><p>I.e. the following query with sample results:</p>
@@ -476,25 +424,13 @@
  10105 =&gt; Hex-STRING: 00 00 00 01
  10108 =&gt; Hex-STRING: 00 00 00 01
 </code></pre></p>
-<table class="table table-bordered">
-<tr>
-<th>var</th>
-<td>&lt;p&gt;The OID to walk&lt;/p&gt;</td>
-</tr>
-<tr>
-<th>var</th>
-<td>&lt;p&gt;The position of the OID to use as the key&lt;/p&gt;</td>
-</tr>
-</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$oid</h4>
-<code></code>
-</div>
+<code>string</code><p>The OID to walk</p></div>
 <div class="subelement argument">
 <h4>$position</h4>
-<code></code>
-</div>
+<code>int</code><p>The position of the OID to use as the key</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The resultant values</div>
@@ -523,7 +459,7 @@ $translator is an associated array.</p>
 </div>
 <a name="useExtension" id="useExtension"></a><div class="element clickable method public useExtension" data-toggle="collapse" data-target=".useExtension .collapse">
 <h2>This is the MIB Extension magic</h2>
-<pre>useExtension($mib, $args) </pre>
+<pre>useExtension(string $mib, array $args) : \OSS\SNMP\MIBS</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"><p>Calling $this->useXXX_YYY_ZZZ()->fn() will instantiate
@@ -534,17 +470,18 @@ instance and then call fn().</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$mib</h4>
-<code></code>
-</div>
+<code>string</code><p>The extension class to use</p></div>
 <div class="subelement argument">
 <h4>$args</h4>
-<code></code>
+<code>array</code>
 </div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\OSS\SNMP\MIBS</code></div>
 </div></div>
 </div>
 <a name="walk1d" id="walk1d"></a><div class="element clickable method public walk1d" data-toggle="collapse" data-target=".walk1d .collapse">
 <h2>Get indexed SNMP values (first degree)</h2>
-<pre>walk1d($oid) : array</pre>
+<pre>walk1d(string $oid) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"><p>Walks the SNMP tree returning an array of key => value pairs.</p>
@@ -567,15 +504,10 @@ instance and then call fn().</p>
  2 =&gt; GigabitEthernet1/0/2
  3 =&gt; GigabitEthernet1/0/3
 </code></pre></p>
-<table class="table table-bordered"><tr>
-<th>var</th>
-<td>&lt;p&gt;The OID to walk&lt;/p&gt;</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$oid</h4>
-<code></code>
-</div>
+<code>string</code><p>The OID to walk</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The resultant values</div>
@@ -664,7 +596,7 @@ instance and then call fn().</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
-            generated on 2012-06-08T14:27:05+01:00.<br></footer></div>
+            generated on 2012-06-08T14:43:32+01:00.<br></footer></div>
 </div>
 </body>
 </html>
