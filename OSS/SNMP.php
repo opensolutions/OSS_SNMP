@@ -51,10 +51,7 @@ spl_autoload_register( function( $class ) {
  */
 class SNMP
 {
-    /**
-     * The SNMP community to use when polling SNMP services. Defaults to 'public'.
-     * @var string The SNMP community to use when polling SNMP services. Defaults to 'public' by the constructor.
-     */
+    /** @type string The SNMP community to use when polling SNMP services. Defaults to 'public' by the constructor. */
     protected $_community;
 
     /**

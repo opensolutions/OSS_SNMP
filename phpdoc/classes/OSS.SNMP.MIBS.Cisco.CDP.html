@@ -1,0 +1,283 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \OSS\SNMP\MIBS\Cisco\CDP</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/OSS.html"><i class="icon-th"></i> OSS</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">37</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#deviceId" title="deviceId :: Get the device's CDP (Cisco Discovery Protocol) ID"><span class="description">Get the device's CDP (Cisco Discovery Protocol) ID</span><pre>deviceId()</pre></a></li>
+<li class="method public "><a href="#interfaceEnabled" title="interfaceEnabled :: Get the device's interfaces CDP enabled status"><span class="description">Get the device's interfaces CDP enabled status</span><pre>interfaceEnabled()</pre></a></li>
+<li class="method public "><a href="#interfaceNames" title="interfaceNames :: Get the device's interface names as seen in CDP"><span class="description">Get the device's interface names as seen in CDP</span><pre>interfaceNames()</pre></a></li>
+<li class="method public "><a href="#neighbourCapability" title="neighbourCapability :: Get the device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID"><span class="description">Get the device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID</span><pre>neighbourCapability()</pre></a></li>
+<li class="method public "><a href="#neighbourId" title="neighbourId :: Get the device's CDP neighbours (by their CDP ID) indexed by the current device's port ID"><span class="description">Get the device's CDP neighbours (by their CDP ID) indexed by the current device's port ID</span><pre>neighbourId()</pre></a></li>
+<li class="method public "><a href="#neighbourInformation" title="neighbourInformation :: CDP utility function to get all CDP neighbours and their connected ports."><span class="description">CDP utility function to get all CDP neighbours and their connected ports.</span><pre>neighbourInformation()</pre></a></li>
+<li class="method public "><a href="#neighbourPort" title="neighbourPort :: Get the device's CDP neighbours connected port *description* indexed by the current device's port ID"><span class="description">Get the device's CDP neighbours connected port *description* indexed by the current device's port ID</span><pre>neighbourPort()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#OID_CDP_DEVICE_ID" title="OID_CDP_DEVICE_ID :: "><span class="description">OID_CDP_DEVICE_ID</span><pre>OID_CDP_DEVICE_ID</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_INTERFACE_ENABLED" title="OID_CDP_INTERFACE_ENABLED :: "><span class="description">OID_CDP_INTERFACE_ENABLED</span><pre>OID_CDP_INTERFACE_ENABLED</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_INTERFACE_NAME" title="OID_CDP_INTERFACE_NAME :: "><span class="description">OID_CDP_INTERFACE_NAME</span><pre>OID_CDP_INTERFACE_NAME</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_NEIGHBOUR_CAPABILITY" title="OID_CDP_NEIGHBOUR_CAPABILITY :: "><span class="description">OID_CDP_NEIGHBOUR_CAPABILITY</span><pre>OID_CDP_NEIGHBOUR_CAPABILITY</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_NEIGHBOUR_ID" title="OID_CDP_NEIGHBOUR_ID :: "><span class="description">OID_CDP_NEIGHBOUR_ID</span><pre>OID_CDP_NEIGHBOUR_ID</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_NEIGHBOUR_PORT" title="OID_CDP_NEIGHBOUR_PORT :: "><span class="description">OID_CDP_NEIGHBOUR_PORT</span><pre>OID_CDP_NEIGHBOUR_PORT</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5COSS%5CSNMP%5CMIBS%5CCisco%5CCDP" id="\OSS\SNMP\MIBS\Cisco\CDP"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/OSS.html">OSS</a></li>
+<span class="divider">\</span><li><a href="../namespaces/OSS.SNMP.html">SNMP</a></li>
+<span class="divider">\</span><li><a href="../namespaces/OSS.SNMP.MIBS.html">MIBS</a></li>
+<span class="divider">\</span><li><a href="../namespaces/OSS.SNMP.MIBS.Cisco.html">Cisco</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/OSS.SNMP.MIBS.Cisco.CDP.html">CDP</a>
+</li>
+</ul>
+<div href="../classes/OSS.SNMP.MIBS.Cisco.CDP.html" class="element class">
+<p class="short_description">A class for performing SNMP V2 queries on Cisco devices</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:barry@opensolutions.ie">Barry O'Donovan</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="deviceId" id="deviceId"></a><div class="element clickable method public deviceId" data-toggle="collapse" data-target=".deviceId .collapse">
+<h2>Get the device's CDP (Cisco Discovery Protocol) ID</h2>
+<pre>deviceId() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The device's CDP (Cisco Discovery Protocol) ID</div>
+</div></div>
+</div>
+<a name="interfaceEnabled" id="interfaceEnabled"></a><div class="element clickable method public interfaceEnabled" data-toggle="collapse" data-target=".interfaceEnabled .collapse">
+<h2>Get the device's interfaces CDP enabled status</h2>
+<pre>interfaceEnabled() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Applies the TruthValue post processor (self::ppTruthValue()) to turn
+SNMP values into true / false.</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's interfaces CDP enabled status' (as boolean true / false)</div>
+</div></div>
+</div>
+<a name="interfaceNames" id="interfaceNames"></a><div class="element clickable method public interfaceNames" data-toggle="collapse" data-target=".interfaceNames .collapse">
+<h2>Get the device's interface names as seen in CDP</h2>
+<pre>interfaceNames() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's interface names as seen in CDP</div>
+</div></div>
+</div>
+<a name="neighbourCapability" id="neighbourCapability"></a><div class="element clickable method public neighbourCapability" data-toggle="collapse" data-target=".neighbourCapability .collapse">
+<h2>Get the device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID</h2>
+<pre>neighbourCapability() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID</div>
+</div></div>
+</div>
+<a name="neighbourId" id="neighbourId"></a><div class="element clickable method public neighbourId" data-toggle="collapse" data-target=".neighbourId .collapse">
+<h2>Get the device's CDP neighbours (by their CDP ID) indexed by the current device's port ID</h2>
+<pre>neighbourId() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's CDP neighbours (by their CDP ID) indexed by the current device's port ID</div>
+</div></div>
+</div>
+<a name="neighbourInformation" id="neighbourInformation"></a><div class="element clickable method public neighbourInformation" data-toggle="collapse" data-target=".neighbourInformation .collapse">
+<h2>CDP utility function to get all CDP neighbours and their connected ports.</h2>
+<pre>neighbourInformation() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Returns an array of neighbours indexed by the neighbour CDP ID. For example:</p>
+
+<p>Array
+(
+    [cr-sw03.ixdub1.opensolutions.ie] => Array
+        (
+           [0] => Array
+               (
+                    [localPortId] => 10101
+                    [localPort] => GigabitEthernet1/0/1
+                    [remotePort] => GigabitEthernet0/1
+                )</p>
+
+<pre><code>        [1] =&gt; Array
+            (
+                [localPortId] =&gt; 10102
+                [localPort] =&gt; GigabitEthernet1/0/2
+                [remotePort] =&gt; FastEthernet0/2
+            )
+
+    )
+[ ... ]
+</code></pre>
+
+<p>)</p></p>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td>\neighbourId()</td>
+</tr>
+<tr>
+<th>see</th>
+<td>\OSS\SNMP\MIBS\Interface::descriptions()</td>
+</tr>
+<tr>
+<th>see</th>
+<td>\neighbourPort()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>CDP neighbours and their connected ports</div>
+</div></div>
+</div>
+<a name="neighbourPort" id="neighbourPort"></a><div class="element clickable method public neighbourPort" data-toggle="collapse" data-target=".neighbourPort .collapse">
+<h2>Get the device's CDP neighbours connected port *description* indexed by the current device's port ID</h2>
+<pre>neighbourPort() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>E.g. a sample call may return:</p>
+
+<p>Array
+(
+    [10101] => GigabitEthernet0/1
+    [10102] => FastEthernet0/2
+    [10103] => GigabitEthernet1/0/24
+    [10105] => GigabitEthernet1/0/2
+)</p>
+
+<p>meaning, for example, that our local port with ID 10101 is connected to port GigabitEthernet0/1 on the neighbour
+connected to that local port. You can discover the neighbour ID via neighbourId().</p></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\neighbourId()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's CDP neighbours connected port *description* indexed by the current device's port ID</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="OID_CDP_DEVICE_ID" id="OID_CDP_DEVICE_ID"> </a><div class="element clickable constant  OID_CDP_DEVICE_ID" data-toggle="collapse" data-target=".OID_CDP_DEVICE_ID .collapse">
+<h2>OID_CDP_DEVICE_ID</h2>
+<pre>OID_CDP_DEVICE_ID </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_INTERFACE_ENABLED" id="OID_CDP_INTERFACE_ENABLED"> </a><div class="element clickable constant  OID_CDP_INTERFACE_ENABLED" data-toggle="collapse" data-target=".OID_CDP_INTERFACE_ENABLED .collapse">
+<h2>OID_CDP_INTERFACE_ENABLED</h2>
+<pre>OID_CDP_INTERFACE_ENABLED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_INTERFACE_NAME" id="OID_CDP_INTERFACE_NAME"> </a><div class="element clickable constant  OID_CDP_INTERFACE_NAME" data-toggle="collapse" data-target=".OID_CDP_INTERFACE_NAME .collapse">
+<h2>OID_CDP_INTERFACE_NAME</h2>
+<pre>OID_CDP_INTERFACE_NAME </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_NEIGHBOUR_CAPABILITY" id="OID_CDP_NEIGHBOUR_CAPABILITY"> </a><div class="element clickable constant  OID_CDP_NEIGHBOUR_CAPABILITY" data-toggle="collapse" data-target=".OID_CDP_NEIGHBOUR_CAPABILITY .collapse">
+<h2>OID_CDP_NEIGHBOUR_CAPABILITY</h2>
+<pre>OID_CDP_NEIGHBOUR_CAPABILITY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_NEIGHBOUR_ID" id="OID_CDP_NEIGHBOUR_ID"> </a><div class="element clickable constant  OID_CDP_NEIGHBOUR_ID" data-toggle="collapse" data-target=".OID_CDP_NEIGHBOUR_ID .collapse">
+<h2>OID_CDP_NEIGHBOUR_ID</h2>
+<pre>OID_CDP_NEIGHBOUR_ID </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_NEIGHBOUR_PORT" id="OID_CDP_NEIGHBOUR_PORT"> </a><div class="element clickable constant  OID_CDP_NEIGHBOUR_PORT" data-toggle="collapse" data-target=".OID_CDP_NEIGHBOUR_PORT .collapse">
+<h2>OID_CDP_NEIGHBOUR_PORT</h2>
+<pre>OID_CDP_NEIGHBOUR_PORT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
+            generated on 2012-06-08T14:27:05+01:00.<br></footer></div>
+</div>
+</body>
+</html>
