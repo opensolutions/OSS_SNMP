@@ -55,7 +55,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      *
      * @return string The device's CDP (Cisco Discovery Protocol) ID
      */
-    public function deviceId()
+    public function id()
     {
         return $this->getSNMP()->get( self::OID_CDP_DEVICE_ID );
     }
@@ -166,7 +166,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      * @see neighbourPort()
      * @return array CDP neighbours and their connected ports
      */
-    public function neighbourInformation()
+    public function neighbours()
     {
         $neighbours = array();
 
@@ -188,5 +188,132 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
         return $neighbours;
     }
 
+    /**
+     * Recursivily crawls all CDP neighbours to build up a flat array of all devices
+     * indexed by the CDP device id.
+     *
+     * Array form is same as that returned by neighbours()
+     *
+     * @see neighbours()
+     * @param array $devices Unless you're doing something funky, just pass an empty array. This is where the result will be found.
+     * @param string $device CDP device ID of next host to crawl. On first pass, set to null - used internally when recursing
+     * @param array $ignore An array of CDP device IDs to *ignore*. I.e. to not include in recursive crawling
+     * @return array The resultant array of all crawled devices (same as that passed in the @param $devices parameter)
+     */
+    public function crawl( &$devices = array(), $device = null, $ignore = array() )
+    {
+        if( !count( $devices ) )
+        {
+            $device = $this->id();
+            $devices[ $device ] = $this->neighbours();
+        }
 
+        foreach( $devices[ $device ] as $feNeighbour => $feConnections )
+        {
+            if( in_array( $feNeighbour, $ignore ) )
+            {
+                if( isset( $devices[ $device ][$feNeighbour] ) )
+                    unset( $devices[ $device ][$feNeighbour] );
+
+                continue;
+            }
+
+            if( !isset( $devices[ $feNeighbour ] ) )
+            {
+                $snmp = new \OSS\SNMP( $feNeighbour, $this->getSNMP()->getCommunity() );
+                $devices[ $feNeighbour ] = $snmp->useCisco_CDP()->neighbours();
+                unset( $snmp );
+                $this->crawl( $devices, $feNeighbour, $ignore );
+            }
+        }
+
+        return $devices;
+    }
+
+
+    /**
+     * Find the layer 2 topology as a flat array with no link mentioned more than once.
+     *
+     * Huh? This function:
+     *
+     * * takes the result of crawl() or calls crawl() to get the CDP topology
+     * * foreach device, builds an array of device to device links
+     * * SO LONG as that link has already not been accounted for in the other direction.
+     *
+     * I.e. if a link is found A -> B, then the same B -> A link will not be included
+     *
+     * The array returned is, for example:
+     *
+     * [cr-sw04.degkcp.example.ie] => Array
+     * (
+     *      [cd-sw02.degkcp.example.ie] => Array
+     *      (
+     *          [GigabitEthernet1/0/3] => FastEthernet0/1
+     *      )
+     *
+     *      [cr-sw03.degkcp.example.ie] => Array
+     *      (
+     *          [GigabitEthernet1/0/23] => GigabitEthernet1/0/23
+     *          [GigabitEthernet1/0/24] => GigabitEthernet1/0/24
+     *      )
+     * )
+     *
+     * This tells us that cr-sw04(GigabitEthernet1/0/3) is connected to cd-sw02(FastEthernet0/1).
+     *
+     * It also tells us that cr-sw04 has two connections to cr-sw03.
+     *
+     * @see crawl()
+     * @param array $devices The result of crawl() (if null, this function performs a crawl())
+     * @return array L2 topology as described above.
+     */
+    public function linkTopology( $devices = null )
+    {
+        if( $devices == null )
+            $devices = $this->crawl();
+
+        $links = array();
+        foreach( $devices as $feDevice => $feNeighbours )
+        {
+            foreach( $feNeighbours as $fe2Device => $fe2Links )
+            {
+                foreach( $fe2Links as $fe2Link )
+                {
+                    // have we already accounted for this link on the other side?
+                    if( isset( $links[ $fe2Device ][ $feDevice ][ $fe2Link['remotePort'] ] ) )
+                        continue;
+
+                    if( !isset( $links[ $feDevice ] ) )
+                        $links[ $feDevice ] = array();
+
+                    if( !isset( $links[ $feDevice ][ $fe2Device ] ) )
+                        $links[ $feDevice ][ $fe2Device ] = array();
+
+                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ] = $fe2Link['remotePort'];
+                }
+            }
+        }
+
+        return $links;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
