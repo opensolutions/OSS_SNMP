@@ -81,12 +81,11 @@ class SNMP
      */
     protected $_lastResult = null;
 
-
     /**
-     * An array to store processed results - a temporary cache
-     * @var array An array to store processed results - a temporary cache
+     * The cache object to use as the cache
+     * @var \OSS\Cache The cache object to use
      */
-    protected $_resultCache;
+    protected $_cache = null;
 
     /**
      * Set to true to disable local cache lookup and force SNMP queries
@@ -136,8 +135,6 @@ class SNMP
      */
     public function __construct( $host = '127.0.0.1', $community = 'public' )
     {
-        $this->_resultCache = array();
-
         return $this->setHost( $host )
                     ->setCommunity( $community )
                     ->setOidOutputFormat( self::OID_OUTPUT_NUMERIC );
@@ -164,12 +161,12 @@ class SNMP
      */
     public function get( $oid )
     {
-        if( $this->cache() && isset( $this->_resultCache[$oid] ) )
-            return $this->_resultCache[$oid];
+        if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
+            return $rtn;
 
         $this->_lastResult = snmp2_get( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
 
-        return $this->_resultCache[$oid] = $this->parseSnmpValue( $this->_lastResult );
+        return $this->getCache()->save( $oid, $this->parseSnmpValue( $this->_lastResult ) );
     }
 
     /**
@@ -199,8 +196,8 @@ class SNMP
      */
     public function walk1d( $oid )
     {
-        if( $this->cache() && isset( $this->_resultCache[$oid] ) )
-            return $this->_resultCache[$oid];
+        if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
+            return $rtn;
 
         $this->_lastResult = snmp2_real_walk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
 
@@ -217,7 +214,7 @@ class SNMP
             $result[ substr( $_oid, strrpos( $_oid, '.' ) + 1 ) ] = $this->parseSnmpValue( $value );
         }
 
-        return $this->_resultCache[$oid] = $result;
+        return $this->getCache()->save( $oid, $result );
     }
 
     /**
@@ -244,8 +241,8 @@ class SNMP
      */
     public function subOidWalk( $oid, $position )
     {
-        if( $this->cache() && isset( $this->_resultCache[$oid] ) )
-            return $this->_resultCache[$oid];
+        if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
+            return $rtn;
 
         $this->_lastResult = snmp2_real_walk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
 
@@ -258,7 +255,7 @@ class SNMP
             $result[ $oids[ $position] ] = $this->parseSnmpValue( $value );
         }
 
-        return $this->_resultCache[$oid] = $result;
+        return $this->getCache()->save( $oid, $result );
     }
 
 
@@ -508,6 +505,36 @@ class SNMP
     public function cache()
     {
         return !$this->_disableCache;
+    }
+
+    /**
+     * Set the cache to use
+     *
+     * @param \OSS\Cache $c The cache to use
+     * @return \OSS\SNMP For fluent interfaces
+     */
+    public function setCache( $c )
+    {
+        $this->_cache = $c;
+        return $this;
+    }
+
+    /**
+     * Get the cache in use (or create a Cache\Basic instance
+     *
+     * We kind of mandate the use of a cache as the code is written with a cache in mind.
+     * You are free to disable it via disableCache() but your machines may be hammered!
+     *
+     * We would suggest disableCache() / enableCache() used in pairs only when really needed.
+     *
+     * @return \OSS\Cache The cache object
+     */
+    public function getCache()
+    {
+        if( $this->_cache === null )
+            $this->_cache = new \OSS\Cache\Basic();
+
+        return $this->_cache;
     }
 
 
