@@ -7,7 +7,9 @@
     Contact: Barry O'Donovan - barry (at) opensolutions (dot) ie
              http://www.opensolutions.ie/
 
-    Redistribution and use in source and binary forms, with or without
+    This file is part of the OSS_SNMP package.
+
+        Redistribution and use in source and binary forms, with or without
     modification, are permitted provided that the following conditions are met:
 
         * Redistributions of source code must retain the above copyright
@@ -180,9 +182,11 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
             else
                 $count = count( $neighbours[ $neighbourCdpId ] );
 
-            $neighbours[ $neighbourCdpId ][$count]['localPortId'] = $localPortId;
-            $neighbours[ $neighbourCdpId ][$count]['localPort']   = $this->getSNMP()->useIface()->descriptions()[$localPortId];
-            $neighbours[ $neighbourCdpId ][$count]['remotePort']  = $this->neighbourPort()[$localPortId];
+            $neighbours[ $neighbourCdpId ][$count]['localPortId']   = $localPortId;
+            $neighbours[ $neighbourCdpId ][$count]['localPortName'] = $this->getSNMP()->useIface()->names()[$localPortId];
+            $neighbours[ $neighbourCdpId ][$count]['localPort']     = $this->getSNMP()->useIface()->descriptions()[$localPortId];
+            $neighbours[ $neighbourCdpId ][$count]['isLAG']         = $this->getSNMP()->useLAG()->isAggregatePorts()[$localPortId];
+            $neighbours[ $neighbourCdpId ][$count]['remotePort']    = $this->neighbourPort()[$localPortId];
         }
 
         return $neighbours;
@@ -232,11 +236,11 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
 
 
     /**
-     * Find the layer 2 topology as a flat array with no link mentioned more than once.
+     * Find the layer 2 topology as an array with no link mentioned more than once.
      *
      * Huh? This function:
      *
-     * * takes the result of crawl() or calls crawl() to get the CDP topology
+     * * takes the result of crawl() (or calls crawl()) to get the CDP topology
      * * foreach device, builds an array of device to device links
      * * SO LONG as that link has already not been accounted for in the other direction.
      *
@@ -248,19 +252,32 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      * (
      *      [cd-sw02.degkcp.example.ie] => Array
      *      (
-     *          [GigabitEthernet1/0/3] => FastEthernet0/1
+     *          [GigabitEthernet1/0/3] => Array
+     *          (
+     *              [remotePort] => FastEthernet0/1
+     *              [isLAG]      => false
      *      )
      *
      *      [cr-sw03.degkcp.example.ie] => Array
      *      (
-     *          [GigabitEthernet1/0/23] => GigabitEthernet1/0/23
-     *          [GigabitEthernet1/0/24] => GigabitEthernet1/0/24
+     *          [GigabitEthernet1/0/23] => Array
+     *          (
+     *              [remotePort] => GigabitEthernet1/0/23
+     *              [isLAG]      => false
+     *          )
+     *          [GigabitEthernet1/0/24] => Array
+     *          (
+     *              [remotePort] => GigabitEthernet1/0/24
+     *              [isLAG]      => false
+     *          )
      *      )
      * )
      *
      * This tells us that cr-sw04(GigabitEthernet1/0/3) is connected to cd-sw02(FastEthernet0/1).
      *
      * It also tells us that cr-sw04 has two connections to cr-sw03.
+     *
+     * You'll notice it also tells us if it's a LAG or not. More information can be added as needed.
      *
      * @see crawl()
      * @param array $devices The result of crawl() (if null, this function performs a crawl())
@@ -288,7 +305,9 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
                     if( !isset( $links[ $feDevice ][ $fe2Device ] ) )
                         $links[ $feDevice ][ $fe2Device ] = array();
 
-                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ] = $fe2Link['remotePort'];
+                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ] = array();
+                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'remotePort' ] = $fe2Link['remotePort'];
+                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'isLAG' ]      = $fe2Link['isLAG'];
                 }
             }
         }
