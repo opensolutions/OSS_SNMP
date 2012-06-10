@@ -36,31 +36,42 @@
 namespace OSS\Cache;
 
 /**
- * basic (array) cache implementation
+ * APC cache implementation
  *
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class Basic extends \OSS\Cache
+class APC extends \OSS\Cache
 {
+    /**
+     * Default time to live for cache variables in seconds
+     * @var int Default time to live for cache variables in seconds  (defaults to 300s - 5 mins)
+     */
+    protected $_ttl = 300;
 
     /**
-     * An array to store results - a temporary cache
-     * @var array An array to store results - a temporary cache
+     * Prefix to use for caching items
+     * @var string Prefix to use for caching items
      */
-    protected $_cache;
-
+    protected $_prefix = 'OSS_SNMP_';
 
     /**
      * Cache constructor.
      *
      * For basic cache, takes no parameters.
      *
+     * @param int $ttl Set the default ttl
+     * @param string $prefix Set the default prefix for caching variable names
      * @return \OSS\Cache\Basic An instance of the cache ($this) for  fluent interfaces
      */
-    public function __construct()
+    public function __construct( $ttl = 300, $prefix = 'OSS_SNMP_' )
     {
-        $_cache = array();
+        // do we have APC?
+        if( !ini_get( 'apc.enabled' ) )
+            throw new \OSS\Exception( 'APC is not installed or not enabled' );
+
+        $this->_ttl    = $ttl;
+        $this->_prefix = $prefix;
 
         return $this;
     }
@@ -75,11 +86,15 @@ class Basic extends \OSS\Cache
      */
     public function load( $var )
     {
-        if( isset( $this->_cache[ $var ] ) )
-            return $this->_cache[ $var ];
+        $success = true;
+        $val = apc_fetch( $this->_prefix . $var, $success );
 
-        return null;
+        if( $success === false )
+            return null;
+
+        return $val;
     }
+
 
 
     /**
@@ -89,9 +104,28 @@ class Basic extends \OSS\Cache
      * @param mixed  $val The value to save
      * @return mixed The value (as passed)
      */
-    public function save( $var, $val )
+    public function save( $var, $val  )
     {
-        return $this->_cache[ $var ] = $val;
+        return $this->save( $var, $val, null )
+    }
+
+    /**
+     * Save a named value to the cache
+     *
+     * @param string $var The name of the value to save
+     * @param mixed  $val The value to save
+     * @param int $ttl The time to live of the variable if you want to override the default
+     * @return mixed The value (as passed)
+     */
+    public function save( $var, $val, $ttl = null )
+    {
+        if( $ttl === null )
+            $ttl = $this->_ttl;
+
+        if( apc_store( $this->_prefix . $var, $val, $ttl ) )
+            return $val;
+
+        return null;
     }
 
     /**
@@ -101,8 +135,7 @@ class Basic extends \OSS\Cache
      */
     public function clear( $var )
     {
-        if( isset( $this->_cache[ $var ] ) )
-            unset( $this->_cache[ $var ] );
+        apc_delete( $this->_prefix . $var );
     }
 
 
@@ -112,7 +145,8 @@ class Basic extends \OSS\Cache
      */
     public function clearAll()
     {
-        $this->_cache = array();
+        foreach ( new APCIterator( 'user', '/^' . $this->_prefix . '/') as $var )
+            apc_delete( $var );
     }
 
 }
