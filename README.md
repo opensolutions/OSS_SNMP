@@ -99,7 +99,7 @@ Documentation can be generated from the root directory by executing:
     ./bin/phpdoc.sh --force
 
 and it will be found under the `doc/` directory. There is 
-[an online version available here]().
+[an online version available here](http://opensolutions.github.com/OSS_SNMP/).
 
 Coming Soon
 -----------
