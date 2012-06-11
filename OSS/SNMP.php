@@ -156,6 +156,7 @@ class SNMP
     /**
      * Get a single SNMP value
      *
+     * @throws \OSS\Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
      * @param string $oid The OID to get
      * @return mixed The resultant value
      */
@@ -164,8 +165,11 @@ class SNMP
         if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
             return $rtn;
 
-        $this->_lastResult = snmp2_get( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
+        $this->_lastResult = @snmp2_get( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
 
+        if( $this->_lastResult === false )
+            throw new Exception( 'Cound not perform walk for OID ' . $oid );
+        
         return $this->getCache()->save( $oid, $this->parseSnmpValue( $this->_lastResult ) );
     }
 
@@ -193,14 +197,18 @@ class SNMP
      *
      * @param string $oid The OID to walk
      * @return array The resultant values
+     * @throws \OSS\Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
      */
     public function walk1d( $oid )
     {
         if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
             return $rtn;
 
-        $this->_lastResult = snmp2_real_walk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
+        $this->_lastResult = @snmp2_real_walk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
 
+        if( $this->_lastResult === false )
+            throw new Exception( 'Cound not perform walk for OID ' . $oid );
+        
         $result = array();
 
         $oidPrefix = null;
@@ -235,6 +243,7 @@ class SNMP
      *      10105 => Hex-STRING: 00 00 00 01
      *      10108 => Hex-STRING: 00 00 00 01
      *
+     * @throws \OSS\Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
      * @param string $oid The OID to walk
      * @param int $position The position of the OID to use as the key
      * @return array The resultant values
@@ -244,8 +253,11 @@ class SNMP
         if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
             return $rtn;
 
-        $this->_lastResult = snmp2_real_walk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
+        $this->_lastResult = @snmp2_real_walk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
 
+        if( $this->_lastResult === false )
+            throw new Exception( 'Cound not perform walk for OID ' . $oid );
+        
         $result = array();
 
         foreach( $this->_lastResult as $_oid => $value )
