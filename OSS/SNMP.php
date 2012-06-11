@@ -270,6 +270,10 @@ class SNMP
      */
     public function parseSnmpValue( $v )
     {
+        // first, rule out an empty string
+        if( $v == '""' || $v == '' )
+            return "";
+        
         $type = substr( $v, 0, strpos( $v, ':' ) );
         $value = trim( substr( $v, strpos( $v, ':' ) + 1 ) );
 
@@ -289,12 +293,20 @@ class SNMP
                     $rtn = (int)$value;
                 break;
 
+            case 'Counter32':
+                $rtn = (int)$value;
+                break;
+
             case 'Gauge32':
                 $rtn = (int)$value;
                 break;
 
             case 'Hex-STRING':
                 $rtn = (string)implode( '', explode( ' ', $value ) );
+                break;
+                
+            case 'Timeticks':
+                $rtn = substr( $value, 1, strrpos( $value, ')' ) - 1 );
                 break;
 
             default:
