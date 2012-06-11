@@ -106,7 +106,7 @@ class APC extends \OSS\Cache
      */
     public function save( $var, $val  )
     {
-        return $this->save( $var, $val, null )
+        return $this->save( $var, $val, null );
     }
 
     /**

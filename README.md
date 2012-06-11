@@ -21,6 +21,11 @@ that the wider network engineering community will find it useful and also
 contribute back *MIBs*.
 
 
+Documentation
+-------------
+
+Please see [the wiki](https://github.com/opensolutions/OSS_SNMP/wiki).
+
 Example Usage
 -------------
 
@@ -88,7 +93,8 @@ rather than the old way:
 
 And as most of the defined MIBs *walk* a given tree, almost all defined functions return an array.
 
-Oh, and right now it's SNMP v2. This can be easily updated for multiple version support.
+Right now it's SNMP v2. This can be easily updated for multiple version support. Also, it's read only
+as, at time of writing, I have no requirement to set SNMP values. 
 
 
 Code / phpDoc Documentation
@@ -100,16 +106,4 @@ Documentation can be generated from the root directory by executing:
 
 and it will be found under the `doc/` directory. There is 
 [an online version available here](http://opensolutions.github.com/OSS_SNMP/doc/).
-
-Coming Soon
------------
-
-I've **just** puth this live. Over the coming hours and days, I'll be adding:
-
-* documentation on the main SNMP class itself;
-* instructions for writing a new MIB (with real world example);
-* details on caching;
-* link to online PHPdocs for the project.
-
-
 
