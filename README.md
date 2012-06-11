@@ -88,6 +88,7 @@ rather than the old way:
 
 And as most of the defined MIBs *walk* a given tree, almost all defined functions return an array.
 
+Oh, and right now it's SNMP v2. This can be easily updated for multiple version support.
 
 Coming Soon
 -----------
