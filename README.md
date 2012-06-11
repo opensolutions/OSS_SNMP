@@ -90,6 +90,17 @@ And as most of the defined MIBs *walk* a given tree, almost all defined function
 
 Oh, and right now it's SNMP v2. This can be easily updated for multiple version support.
 
+
+Code / phpDoc Documentation
+---------------------------
+
+Documentation can be generated from the root directory by executing:
+
+    ./bin/phpdoc.sh --force
+
+and it will be found under the `doc/` directory. There is 
+[an online version available here]().
+
 Coming Soon
 -----------
 
