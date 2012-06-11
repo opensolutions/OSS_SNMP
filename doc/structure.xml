@@ -1,0 +1,1687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a5" title="OSS_SNMP">
+  <file path="Cache/APC.php" hash="69915e1eb81ef5329c693caa17c23622" package="Default"/>
+  <file path="Cache/Basic.php" hash="65b7d814fb14e7641a88cd08cc1c6984" package="Default">
+    <class final="false" abstract="false" namespace="OSS\Cache" line="44" package="Default">
+      <name>Basic</name>
+      <full_name>\OSS\Cache\Basic</full_name>
+      <extends>OSS\Cache</extends>
+      <docblock line="44">
+        <description><![CDATA[basic (array) cache implementation]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="51" namespace="OSS\Cache" package="Default">
+        <name>$_cache</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\Cache" line="61" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="61">
+          <description><![CDATA[Cache constructor.]]></description>
+          <long-description><![CDATA[<p>For basic cache, takes no parameters.</p>]]></long-description>
+          <tag line="61" name="return" description="An instance of the cache ($this) for fluent interfaces" type="\OSS\Cache\Basic">
+            <type by_reference="false">\OSS\Cache\Basic</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\Cache" line="76" package="Default">
+        <name>load</name>
+        <full_name>load</full_name>
+        <docblock line="76">
+          <description><![CDATA[Load a named value from the cache (or null if not present)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="76" name="param" description="The name of the value to load" type="string" variable="$var">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="76" name="return" description="The value from the cache or null" type="mixed|null">
+            <type by_reference="false">mixed</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="76">
+          <name>$var</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\Cache" line="92" package="Default">
+        <name>save</name>
+        <full_name>save</full_name>
+        <docblock line="92">
+          <description><![CDATA[Save a named value to the cache]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="92" name="param" description="The name of the value to save" type="string" variable="$var">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="92" name="param" description="The value to save" type="mixed" variable="$val">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="92" name="return" description="The value (as passed)" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="92">
+          <name>$var</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="92">
+          <name>$val</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\Cache" line="102" package="Default">
+        <name>clear</name>
+        <full_name>clear</full_name>
+        <docblock line="102">
+          <description><![CDATA[Clear a named value from the cache]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="102" name="param" description="The name of the value to clear" type="string" variable="$var">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="102">
+          <name>$var</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\Cache" line="113" package="Default">
+        <name>clearAll</name>
+        <full_name>clearAll</full_name>
+        <docblock line="113">
+          <description><![CDATA[Clear all values from the cache]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="51" code="50018">No DocBlock was found for property $_cache</error>
+    </parse_markers>
+  </file>
+  <file path="Cache.php" hash="db4d953c4d8186409471c6599650c1aa" package="Default">
+    <class final="false" abstract="false" namespace="OSS" line="48" package="Default">
+      <name>Cache</name>
+      <full_name>\OSS\Cache</full_name>
+      <extends/>
+      <docblock line="48">
+        <description><![CDATA[An abstract cache for storing results of SNMP queries .]]></description>
+        <long-description><![CDATA[<p>See the implementation in \OSS\Cache\Basic for proper examples and documentation.</p>]]></long-description>
+        <tag line="48" name="see" description="\OSS\Cache\Basic" refers="\OSS\Cache\Basic"/>
+        <tag line="48" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="48" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <method final="false" abstract="true" static="false" visibility="protected" namespace="OSS" line="51" package="Default">
+        <name>save</name>
+        <full_name>save</full_name>
+        <argument line="51">
+          <name>$varName</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="51">
+          <name>$varValue</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="protected" namespace="OSS" line="52" package="Default">
+        <name>load</name>
+        <full_name>load</full_name>
+        <argument line="52">
+          <name>$varName</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="protected" namespace="OSS" line="53" package="Default">
+        <name>clear</name>
+        <full_name>clear</full_name>
+        <argument line="53">
+          <name>$varName</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="protected" namespace="OSS" line="54" package="Default">
+        <name>clearAll</name>
+        <full_name>clearAll</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="51" code="50010">No DocBlock was found for method save()</error>
+      <error line="52" code="50010">No DocBlock was found for method load()</error>
+      <error line="53" code="50010">No DocBlock was found for method clear()</error>
+      <error line="54" code="50010">No DocBlock was found for method clearAll()</error>
+    </parse_markers>
+  </file>
+  <file path="Timer.php" hash="8ce598f8f4609c44fef7f7f327dedad6" package="Default">
+    <class final="false" abstract="false" namespace="OSS" line="44" package="Default">
+      <name>Timer</name>
+      <full_name>\OSS\Timer</full_name>
+      <extends/>
+      <docblock line="44">
+        <description><![CDATA[A class for timing PHP scripts]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <property final="false" static="true" visibility="private" line="47" namespace="OSS" package="Default">
+        <name>$_start</name>
+        <default><![CDATA[NULL]]></default>
+      </property>
+      <property final="false" static="true" visibility="private" line="50" namespace="OSS" package="Default">
+        <name>$_time</name>
+        <default><![CDATA[NULL]]></default>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="OSS" line="52" package="Default">
+        <name>start</name>
+        <full_name>start</full_name>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="OSS" line="57" package="Default">
+        <name>end</name>
+        <full_name>end</full_name>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="OSS" line="62" package="Default">
+        <name>time</name>
+        <full_name>time</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="47" code="50018">No DocBlock was found for property $_start</error>
+      <error line="50" code="50018">No DocBlock was found for property $_time</error>
+      <error line="52" code="50010">No DocBlock was found for method start()</error>
+      <error line="57" code="50010">No DocBlock was found for method end()</error>
+      <error line="62" code="50010">No DocBlock was found for method time()</error>
+    </parse_markers>
+  </file>
+  <file path="SNMP.php" hash="6a30d2edec8299f001e0450c6b5393e6" package="Default">
+    <include line="43" type="Require" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="OSS" line="54" package="Default">
+      <name>SNMP</name>
+      <full_name>\OSS\SNMP</full_name>
+      <extends/>
+      <docblock line="54">
+        <description><![CDATA[A class for performing SNMP V2 queries and processing the results.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="54" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="54" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <constant namespace="OSS" line="105" package="Default">
+        <name>OID_OUTPUT_FULL</name>
+        <full_name>OID_OUTPUT_FULL</full_name>
+        <value><![CDATA[NULL]]></value>
+      </constant>
+      <constant namespace="OSS" line="106" package="Default">
+        <name>OID_OUTPUT_NUMERIC</name>
+        <full_name>OID_OUTPUT_NUMERIC</full_name>
+        <value><![CDATA[NULL]]></value>
+      </constant>
+      <constant namespace="OSS" line="112" package="Default">
+        <name>SNMP_TRUTHVALUE_TRUE</name>
+        <full_name>SNMP_TRUTHVALUE_TRUE</full_name>
+        <value><![CDATA[1]]></value>
+      </constant>
+      <constant namespace="OSS" line="117" package="Default">
+        <name>SNMP_TRUTHVALUE_FALSE</name>
+        <full_name>SNMP_TRUTHVALUE_FALSE</full_name>
+        <value><![CDATA[2]]></value>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="57" namespace="OSS" package="Default">
+        <name>$_community</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="63" namespace="OSS" package="Default">
+        <name>$_host</name>
+        <default><![CDATA[]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="69" namespace="OSS" package="Default">
+        <name>$_timeout</name>
+        <default><![CDATA[1000000]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="75" namespace="OSS" package="Default">
+        <name>$_retry</name>
+        <default><![CDATA[5]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="82" namespace="OSS" package="Default">
+        <name>$_lastResult</name>
+        <default><![CDATA[NULL]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="88" namespace="OSS" package="Default">
+        <name>$_cache</name>
+        <default><![CDATA[NULL]]></default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="101" namespace="OSS" package="Default">
+        <name>$_disableCache</name>
+        <default><![CDATA[NULL]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="124" namespace="OSS" package="Default">
+        <name>$SNMP_TRUTHVALUES</name>
+        <default><![CDATA[array(NULL => NULL, NULL => NULL)]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="136" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="136">
+          <description><![CDATA[The constructor.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="136" name="param" description="The target host for SNMP queries." type="string" variable="$host">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="136" name="param" description="The community to use for SNMP queries." type="string" variable="$community">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="136" name="return" description="An instance of $this (for fluent interfaces)" type="\OSS_SNMP">
+            <type by_reference="false">\OSS_SNMP</type>
+          </tag>
+        </docblock>
+        <argument line="136">
+          <name>$host</name>
+          <default><![CDATA['127.0.0.1']]></default>
+          <type/>
+        </argument>
+        <argument line="136">
+          <name>$community</name>
+          <default><![CDATA['public']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="150" package="Default">
+        <name>realWalk</name>
+        <full_name>realWalk</full_name>
+        <docblock line="150">
+          <description><![CDATA[Proxy to the snmp2_real_walk command]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="150" name="param" description="The OID to walk" type="string" variable="$oid">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="150" name="return" description="The results of the walk" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="150">
+          <name>$oid</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="162" package="Default">
+        <name>get</name>
+        <full_name>get</full_name>
+        <docblock line="162">
+          <description><![CDATA[Get a single SNMP value]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="162" name="param" description="The OID to get" type="string" variable="$oid">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="162" name="return" description="The resultant value" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="162">
+          <name>$oid</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="197" package="Default">
+        <name>walk1d</name>
+        <full_name>walk1d</full_name>
+        <docblock line="197">
+          <description><![CDATA[Get indexed SNMP values (first degree)]]></description>
+          <long-description><![CDATA[<p>Walks the SNMP tree returning an array of key => value pairs.</p>
+
+<p>This is a first degree walk and it will throw an exception if there is more that one degree of values.</p>
+
+<p>I.e. the following query with sample results:</p>
+
+<p>walk1d( '.1.0.8802.1.1.2.1.3.7.1.4' )</p>
+
+<pre><code>  .1.0.8802.1.1.2.1.3.7.1.4.1 = STRING: "GigabitEthernet1/0/1"
+  .1.0.8802.1.1.2.1.3.7.1.4.2 = STRING: "GigabitEthernet1/0/2"
+  .1.0.8802.1.1.2.1.3.7.1.4.3 = STRING: "GigabitEthernet1/0/3"
+  .....
+</code></pre>
+
+<p>would yield an array:</p>
+
+<pre><code> 1 =&gt; GigabitEthernet1/0/1
+ 2 =&gt; GigabitEthernet1/0/2
+ 3 =&gt; GigabitEthernet1/0/3
+</code></pre>]]></long-description>
+          <tag line="197" name="param" description="The OID to walk" type="string" variable="$oid">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="197" name="return" description="The resultant values" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="197">
+          <name>$oid</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="242" package="Default">
+        <name>subOidWalk</name>
+        <full_name>subOidWalk</full_name>
+        <docblock line="242">
+          <description><![CDATA[Get indexed SNMP values where the array key is the given position of the OID]]></description>
+          <long-description><![CDATA[<p>I.e. the following query with sample results:</p>
+
+<p>subOidWalk( '.1.3.6.1.4.1.9.9.23.1.2.1.1.9', 15 )</p>
+
+<pre><code>  .1.3.6.1.4.1.9.9.23.1.2.1.1.9.10101.5 = Hex-STRING: 00 00 00 01
+  .1.3.6.1.4.1.9.9.23.1.2.1.1.9.10105.2 = Hex-STRING: 00 00 00 01
+  .1.3.6.1.4.1.9.9.23.1.2.1.1.9.10108.4 = Hex-STRING: 00 00 00 01
+</code></pre>
+
+<p>would yield an array:</p>
+
+<pre><code> 10101 =&gt; Hex-STRING: 00 00 00 01
+ 10105 =&gt; Hex-STRING: 00 00 00 01
+ 10108 =&gt; Hex-STRING: 00 00 00 01
+</code></pre>]]></long-description>
+          <tag line="242" name="param" description="The OID to walk" type="string" variable="$oid">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="242" name="param" description="The position of the OID to use as the key" type="int" variable="$position">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="242" name="return" description="The resultant values" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="242">
+          <name>$oid</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="242">
+          <name>$position</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="271" package="Default">
+        <name>parseSnmpValue</name>
+        <full_name>parseSnmpValue</full_name>
+        <docblock line="271">
+          <description><![CDATA[Parse the result of an SNMP query into a PHP type]]></description>
+          <long-description><![CDATA[<p>For example, [STRING: "blah"] is parsed to a PHP string containing: blah</p>]]></long-description>
+          <tag line="271" name="param" description="The value to parse" type="string" variable="$v">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="271" name="return" description="The parsed value" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="271" name="throws" description="" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="271">
+          <name>$v</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="OSS" line="313" package="Default">
+        <name>ppTruthValue</name>
+        <full_name>ppTruthValue</full_name>
+        <docblock line="313">
+          <description><![CDATA[Utility function to convert TruthValue SNMP responses to true / false]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="313" name="param" description="The TruthValue ( 1 =&gt; true, 2 =&gt; false) to convert" type="integer" variable="$value">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="313" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="313">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="OSS" line="336" package="Default">
+        <name>translate</name>
+        <full_name>translate</full_name>
+        <docblock line="336">
+          <description><![CDATA[Utility function to translate one value(s) to another via an associated array]]></description>
+          <long-description><![CDATA[<p>I.e. all elements '$value' will be replaced with $translator( $value ) where
+$translator is an associated array.</p>
+
+<p>Huh? Just read the code below!</p>]]></long-description>
+          <tag line="336" name="param" description="A scalar or array or values to translate" type="mixed" variable="$values">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="336" name="param" description="An associated array to use to translate the values" type="array" variable="$translator">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="336" name="return" description="The translated scalar or array" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="336">
+          <name>$values</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="336">
+          <name>$translator</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="355" package="Default">
+        <name>setOidOutputFormat</name>
+        <full_name>setOidOutputFormat</full_name>
+        <docblock line="355">
+          <description><![CDATA[Sets the output format for SNMP queries.]]></description>
+          <long-description><![CDATA[<p>Should be one of the class OID_OUTPUT_* constants</p>]]></long-description>
+          <tag line="355" name="param" description="The fomat to use" type="int" variable="$f">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="355" name="return" description="An instance of $this (for fluent interfaces)" type="\OSS_SNMP">
+            <type by_reference="false">\OSS_SNMP</type>
+          </tag>
+        </docblock>
+        <argument line="355">
+          <name>$f</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="368" package="Default">
+        <name>setHost</name>
+        <full_name>setHost</full_name>
+        <docblock line="368">
+          <description><![CDATA[Sets the target host for SNMP queries.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="368" name="param" description="The target host for SNMP queries." type="string" variable="$h">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="368" name="return" description="An instance of $this (for fluent interfaces)" type="\OSS_SNMP">
+            <type by_reference="false">\OSS_SNMP</type>
+          </tag>
+        </docblock>
+        <argument line="368">
+          <name>$h</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="385" package="Default">
+        <name>getHost</name>
+        <full_name>getHost</full_name>
+        <docblock line="385">
+          <description><![CDATA[Returns the target host as currently configured for SNMP queries]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="385" name="return" description="The target host as currently configured for SNMP queries" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="396" package="Default">
+        <name>setCommunity</name>
+        <full_name>setCommunity</full_name>
+        <docblock line="396">
+          <description><![CDATA[Sets the community string to use for SNMP queries.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="396" name="param" description="The community to use for SNMP queries." type="string" variable="$c">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="396" name="return" description="An instance of $this (for fluent interfaces)" type="\OSS_SNMP">
+            <type by_reference="false">\OSS_SNMP</type>
+          </tag>
+        </docblock>
+        <argument line="396">
+          <name>$c</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="407" package="Default">
+        <name>getCommunity</name>
+        <full_name>getCommunity</full_name>
+        <docblock line="407">
+          <description><![CDATA[Returns the community string currently in use.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="407" name="return" description="The community string currently in use." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="418" package="Default">
+        <name>setTimeout</name>
+        <full_name>setTimeout</full_name>
+        <docblock line="418">
+          <description><![CDATA[Sets the timeout to use for SNMP queries (microseconds).]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="418" name="param" description="The timeout to use for SNMP queries (microseconds)." type="int" variable="$t">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="418" name="return" description="An instance of $this (for fluent interfaces)" type="\OSS_SNMP">
+            <type by_reference="false">\OSS_SNMP</type>
+          </tag>
+        </docblock>
+        <argument line="418">
+          <name>$t</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="429" package="Default">
+        <name>getTimeout</name>
+        <full_name>getTimeout</full_name>
+        <docblock line="429">
+          <description><![CDATA[Returns the SNMP query timeout (microseconds).]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="429" name="return" description="The the SNMP query timeout (microseconds)" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="440" package="Default">
+        <name>setRetry</name>
+        <full_name>setRetry</full_name>
+        <docblock line="440">
+          <description><![CDATA[Sets the SNMP query retry count.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="440" name="param" description="The SNMP query retry count" type="int" variable="$r">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="440" name="return" description="An instance of $this (for fluent interfaces)" type="\OSS_SNMP">
+            <type by_reference="false">\OSS_SNMP</type>
+          </tag>
+        </docblock>
+        <argument line="440">
+          <name>$r</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="451" package="Default">
+        <name>getRetry</name>
+        <full_name>getRetry</full_name>
+        <docblock line="451">
+          <description><![CDATA[Returns the SNMP query retry count]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="451" name="return" description="The SNMP query retry count" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="461" package="Default">
+        <name>getLastResult</name>
+        <full_name>getLastResult</full_name>
+        <docblock line="461">
+          <description><![CDATA[Returns the unaltered original last SNMP result]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="461" name="return" description="The unaltered original last SNMP result" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="471" package="Default">
+        <name>getResultCache</name>
+        <full_name>getResultCache</full_name>
+        <docblock line="471">
+          <description><![CDATA[Returns the internal result cache]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="471" name="return" description="The internal result cache" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="482" package="Default">
+        <name>disableCache</name>
+        <full_name>disableCache</full_name>
+        <docblock line="482">
+          <description><![CDATA[Disable lookups of the local cache]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="482" name="return" description="An instance of this for fluent interfaces" type="\SNMP">
+            <type by_reference="false">\SNMP</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="494" package="Default">
+        <name>enableCache</name>
+        <full_name>enableCache</full_name>
+        <docblock line="494">
+          <description><![CDATA[Enable lookups of the local cache]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="494" name="return" description="An instance of this for fluent interfaces" type="\SNMP">
+            <type by_reference="false">\SNMP</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="505" package="Default">
+        <name>cache</name>
+        <full_name>cache</full_name>
+        <docblock line="505">
+          <description><![CDATA[Query whether we are using the cache or not]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="505" name="return" description="True of the local lookup cache is enabled. Otherwise false." type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="516" package="Default">
+        <name>setCache</name>
+        <full_name>setCache</full_name>
+        <docblock line="516">
+          <description><![CDATA[Set the cache to use]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="516" name="param" description="The cache to use" type="\OSS\Cache" variable="$c">
+            <type by_reference="false">\OSS\Cache</type>
+          </tag>
+          <tag line="516" name="return" description="For fluent interfaces" type="\OSS\SNMP">
+            <type by_reference="false">\OSS\SNMP</type>
+          </tag>
+        </docblock>
+        <argument line="516">
+          <name>$c</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="532" package="Default">
+        <name>getCache</name>
+        <full_name>getCache</full_name>
+        <docblock line="532">
+          <description><![CDATA[Get the cache in use (or create a Cache\Basic instance]]></description>
+          <long-description><![CDATA[<p>We kind of mandate the use of a cache as the code is written with a cache in mind.
+You are free to disable it via disableCache() but your machines may be hammered!</p>
+
+<p>We would suggest disableCache() / enableCache() used in pairs only when really needed.</p>]]></long-description>
+          <tag line="532" name="return" description="The cache object" type="\OSS\Cache">
+            <type by_reference="false">\OSS\Cache</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="548" package="Default">
+        <name>__call</name>
+        <full_name>__call</full_name>
+        <docblock line="548">
+          <description><![CDATA[Magic method for generic function calls]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="548" name="param" description="" type="string" variable="$method">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="548" name="param" description="" type="array" variable="$args">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="548" name="throws" description="" type="\Exception">
+            <type by_reference="false">\Exception</type>
+          </tag>
+        </docblock>
+        <argument line="548">
+          <name>$method</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="548">
+          <name>$args</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS" line="570" package="Default">
+        <name>useExtension</name>
+        <full_name>useExtension</full_name>
+        <docblock line="570">
+          <description><![CDATA[This is the MIB Extension magic]]></description>
+          <long-description><![CDATA[<p>Calling $this->useXXX_YYY_ZZZ()->fn() will instantiate
+an extension MIB class is the given name and this $this SNMP
+instance and then call fn().</p>
+
+<p>See the examples for more information.</p>]]></long-description>
+          <tag line="570" name="param" description="The extension class to use" type="string" variable="$mib">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="570" name="param" description="" type="array" variable="$args">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="570" name="return" description="" type="\OSS\SNMP\MIBS">
+            <type by_reference="false">\OSS\SNMP\MIBS</type>
+          </tag>
+        </docblock>
+        <argument line="570">
+          <name>$mib</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="570">
+          <name>$args</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="57" code="50018">No DocBlock was found for property $_community</error>
+      <error line="63" code="50018">No DocBlock was found for property $_host</error>
+      <error line="69" code="50018">No DocBlock was found for property $_timeout</error>
+      <error line="75" code="50018">No DocBlock was found for property $_retry</error>
+      <error line="82" code="50018">No DocBlock was found for property $_lastResult</error>
+      <error line="88" code="50018">No DocBlock was found for property $_cache</error>
+      <error line="101" code="50018">No DocBlock was found for property $_disableCache</error>
+      <error line="124" code="50018">No DocBlock was found for property $SNMP_TRUTHVALUES</error>
+    </parse_markers>
+  </file>
+  <file path="SNMP/MIBS/Iface.php" hash="f95066abb7daf3cd1cb090ba7d5b61d0" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
+      <name>Iface</name>
+      <full_name>\OSS\SNMP\MIBS\Iface</full_name>
+      <extends>OSS\SNMP\MIB</extends>
+      <docblock line="44">
+        <description><![CDATA[A class for performing SNMP V2 queries on generic devices]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <constant namespace="OSS\SNMP\MIBS" line="46" package="Default">
+        <name>OID_IF_DESCRIPTION</name>
+        <full_name>OID_IF_DESCRIPTION</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.2.2.1.2']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS" line="47" package="Default">
+        <name>OID_IF_SPEED</name>
+        <full_name>OID_IF_SPEED</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.2.2.1.5']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS" line="48" package="Default">
+        <name>OID_IF_OPER_STATUS</name>
+        <full_name>OID_IF_OPER_STATUS</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.2.2.1.8']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS" line="49" package="Default">
+        <name>OID_IF_NAME</name>
+        <full_name>OID_IF_NAME</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.31.1.1.1.1']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS" line="50" package="Default">
+        <name>OID_IF_ALIAS</name>
+        <full_name>OID_IF_ALIAS</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.31.1.1.1.18']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS" line="135" package="Default">
+        <name>IF_OPER_STATUS_UP</name>
+        <full_name>IF_OPER_STATUS_UP</full_name>
+        <value><![CDATA[1]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS" line="140" package="Default">
+        <name>IF_OPER_STATUS_DOWN</name>
+        <full_name>IF_OPER_STATUS_DOWN</full_name>
+        <value><![CDATA[2]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS" line="145" package="Default">
+        <name>IF_OPER_STATUS_TESTING</name>
+        <full_name>IF_OPER_STATUS_TESTING</full_name>
+        <value><![CDATA[3]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS" line="150" package="Default">
+        <name>IF_OPER_STATUS_UNKNOWN</name>
+        <full_name>IF_OPER_STATUS_UNKNOWN</full_name>
+        <value><![CDATA[4]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS" line="155" package="Default">
+        <name>IF_OPER_STATUS_DORMANT</name>
+        <full_name>IF_OPER_STATUS_DORMANT</full_name>
+        <value><![CDATA[5]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS" line="160" package="Default">
+        <name>IF_OPER_STATUS_NOT_PRESENT</name>
+        <full_name>IF_OPER_STATUS_NOT_PRESENT</full_name>
+        <value><![CDATA[6]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS" line="165" package="Default">
+        <name>IF_OPER_STATUS_LOWER_LAYER_DOWN</name>
+        <full_name>IF_OPER_STATUS_LOWER_LAYER_DOWN</full_name>
+        <value><![CDATA[7]]></value>
+      </constant>
+      <property final="false" static="true" visibility="public" line="173" namespace="OSS\SNMP\MIBS" package="Default">
+        <name>$IF_OPER_STATES</name>
+        <default><![CDATA[array(NULL => 'up', NULL => 'down', NULL => 'testing', NULL => 'unknown', NULL => 'dormant', NULL => 'notPresent', NULL => 'lowerLayerDown')]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="66" package="Default">
+        <name>names</name>
+        <full_name>names</full_name>
+        <docblock line="66">
+          <description><![CDATA[Get an array of device interface names]]></description>
+          <long-description><![CDATA[<p>E.g. the following SNMP output yields the shown array:</p>
+
+<p>.1.3.6.1.2.1.31.1.1.1.1.10128 = STRING: Gi1/0/28
+.1.3.6.1.2.1.31.1.1.1.1.10129 = STRING: Gi1/0/29
+...</p>
+
+<pre><code> [10128] =&gt; "Gi1/0/28"
+ [10129] =&gt; "Gi1/0/29"
+</code></pre>]]></long-description>
+          <tag line="66" name="return" description="An array of interface names" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="85" package="Default">
+        <name>aliases</name>
+        <full_name>aliases</full_name>
+        <docblock line="85">
+          <description><![CDATA[Get an array of device interface aliases (e.g. as set by the interface description / port-name parameter)]]></description>
+          <long-description><![CDATA[<p>E.g. the followig SNMP output yields the shown array:</p>
+
+<p>.1.3.6.1.2.1.2.2.1.2.18.10128 = STRING: Connection to switch2
+.1.3.6.1.2.1.2.2.1.2.18.10129 = STRING: Connection to switch3
+...</p>
+
+<pre><code> [10128] =&gt; "Connection to switch2"
+ [10129] =&gt; "Connection to switch3"
+</code></pre>]]></long-description>
+          <tag line="85" name="return" description="An array of interface aliases" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="104" package="Default">
+        <name>descriptions</name>
+        <full_name>descriptions</full_name>
+        <docblock line="104">
+          <description><![CDATA[Get an array of device interface descriptions]]></description>
+          <long-description><![CDATA[<p>E.g. the following SNMP output yields the shown array:</p>
+
+<p>.1.3.6.1.2.1.31.1.1.1.1.10128 = STRING: GigabitEthernet1/0/28
+.1.3.6.1.2.1.31.1.1.1.1.10129 = STRING: GigabitEthernet1/0/29
+...</p>
+
+<pre><code> [10128] =&gt; "GigabitEthernet1/0/28"
+ [10129] =&gt; "GigabitEthernet1/0/29"
+</code></pre>]]></long-description>
+          <tag line="104" name="return" description="An array of interface descriptions" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="125" package="Default">
+        <name>speeds</name>
+        <full_name>speeds</full_name>
+        <docblock line="125">
+          <description><![CDATA[Get an array of device interface (operating) speeds]]></description>
+          <long-description><![CDATA[<p>E.g. the following SNMP output yields the shown array:</p>
+
+<p>.1.3.6.1.2.1.2.2.1.5.10128 = Gauge32: 1000000000
+.1.3.6.1.2.1.2.2.1.5.10129 = Gauge32: 100000000
+...</p>
+
+<pre><code> [10128] =&gt; 1000000000
+ [10129] =&gt; 100000000
+</code></pre>
+
+<p>NB: operating speed as opposed to maximum speed</p>]]></long-description>
+          <tag line="125" name="return" description="An array of interface operating speeds" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="199" package="Default">
+        <name>operationStates</name>
+        <full_name>operationStates</full_name>
+        <docblock line="199">
+          <description><![CDATA[Get an array of device interface operating status (up / down)]]></description>
+          <long-description><![CDATA[<p>E.g. the follow SNMP output yields the shown array:</p>
+
+<p>.1.3.6.1.2.1.2.2.1.8.10128 = INTEGER: up(1)
+.1.3.6.1.2.1.2.2.1.8.10129 = INTEGER: down(2)
+...</p>
+
+<pre><code> [10128] =&gt; 1
+ [10129] =&gt; 2
+</code></pre>]]></long-description>
+          <tag line="199" name="see" description="\IF_OPER_STATES" refers="\IF_OPER_STATES"/>
+          <tag line="199" name="param" description="If true, return the string representation" type="boolean" variable="$translate">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="199" name="return" description="An array of interface states" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="199">
+          <name>$translate</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="218" package="Default">
+        <name>bridgeBasePortIfIndexes</name>
+        <full_name>bridgeBasePortIfIndexes</full_name>
+        <docblock line="218">
+          <description><![CDATA[Returns an associate array of STP port IDs (key) to interface IDs (value)]]></description>
+          <long-description><![CDATA[<p>e.g.  [22] => 10122</p>]]></long-description>
+          <tag line="218" name="return" description="Associate array of STP port IDs (key) to interface IDs (value)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="173" code="50018">No DocBlock was found for property $IF_OPER_STATES</error>
+    </parse_markers>
+  </file>
+  <file path="SNMP/MIBS/Bridge.php" hash="a6b88f8f0b391c57b2d74880d4f0db93" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
+      <name>Bridge</name>
+      <full_name>\OSS\SNMP\MIBS\Bridge</full_name>
+      <extends>OSS\SNMP\MIB</extends>
+      <docblock line="44">
+        <description><![CDATA[A class for performing SNMP V2 queries on generic devices]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <constant namespace="OSS\SNMP\MIBS" line="46" package="Default">
+        <name>OID_BRIDGE_BASE_PORT_IF_INDEX</name>
+        <full_name>OID_BRIDGE_BASE_PORT_IF_INDEX</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.17.1.4.1.2']]></value>
+      </constant>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="56" package="Default">
+        <name>basePortIfIndexes</name>
+        <full_name>basePortIfIndexes</full_name>
+        <docblock line="56">
+          <description><![CDATA[Returns an associate array of STP port IDs (key) to interface IDs (value)]]></description>
+          <long-description><![CDATA[<p>e.g.  [22] => 10122</p>]]></long-description>
+          <tag line="56" name="return" description="Associate array of STP port IDs (key) to interface IDs (value)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="SNMP/MIBS/LAG.php" hash="81c6297c2fe283cf2e6b2051c5d455c3" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
+      <name>LAG</name>
+      <full_name>\OSS\SNMP\MIBS\LAG</full_name>
+      <extends>OSS\SNMP\MIB</extends>
+      <docblock line="44">
+        <description><![CDATA[A class for performing SNMP V2 queries on generic devices]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <constant namespace="OSS\SNMP\MIBS" line="50" package="Default">
+        <name>OID_LAG_PORT_ATTACHED_ID</name>
+        <full_name>OID_LAG_PORT_ATTACHED_ID</full_name>
+        <value><![CDATA['.1.2.840.10006.300.43.1.2.1.1.13']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS" line="55" package="Default">
+        <name>OID_LAG_AGGREGATE_OR_INDIVIDUAL</name>
+        <full_name>OID_LAG_AGGREGATE_OR_INDIVIDUAL</full_name>
+        <value><![CDATA['.1.2.840.10006.300.43.1.2.1.1.24']]></value>
+      </constant>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="63" package="Default">
+        <name>isAggregatePorts</name>
+        <full_name>isAggregatePorts</full_name>
+        <docblock line="63">
+          <description><![CDATA[Returns an associate array of port IDs with a boolean value to indicate if it's an aggregate port (true)
+or an individual port (false).]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="63" name="return" description="Associate array of port IDs with a boolean value to indicate if it's an aggregate port (true) or not" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="75" package="Default">
+        <name>portAttachedIds</name>
+        <full_name>portAttachedIds</full_name>
+        <docblock line="75">
+          <description><![CDATA[Returns an associate array of port IDs with the ID of the aggregate port that
+they are a member of (else 0 if not a LAG port)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="75" name="return" description="Associate array of port IDs with the ID of the aggregate port that they are a member of" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="92" package="Default">
+        <name>getLAGPorts</name>
+        <full_name>getLAGPorts</full_name>
+        <docblock line="92">
+          <description><![CDATA[Gets an associate array of LAG ports with the [id] => name of it's constituent ports]]></description>
+          <long-description><![CDATA[<p>E.g.:
+   [5048] => Array
+       (
+           [10111] => GigabitEthernet1/0/11
+           [10112] => GigabitEthernet1/0/12
+       )</p>]]></long-description>
+          <tag line="92" name="return" description="Associate array of LAG ports with the [id] =&gt; name of it's constituent ports" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="109" package="Default">
+        <name>findFailedLAGPorts</name>
+        <full_name>findFailedLAGPorts</full_name>
+        <docblock line="109">
+          <description><![CDATA[Utility function to identify configured but unattached LAG ports]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="109" name="return" description="Array of indexed port ids (array index, not value) of configured but unattached LAG ports" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="SNMP/MIBS/Cisco.php" hash="e2a7c81034dd847d220c1038cc415575" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
+      <name>Cisco</name>
+      <full_name>\OSS\SNMP\MIBS\Cisco</full_name>
+      <extends>OSS\SNMP\MIB</extends>
+      <docblock line="44">
+        <description><![CDATA[A class for performing SNMP V2 queries on Cisco devices]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="SNMP/MIBS/Host.php" hash="96d43764cbd57f16befbe5778303f7ab" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
+      <name>Host</name>
+      <full_name>\OSS\SNMP\MIBS\Host</full_name>
+      <extends>OSS\SNMP\MIB</extends>
+      <docblock line="44">
+        <description><![CDATA[A class for performing SNMP V2 queries on generic devices]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="SNMP/MIBS/Cisco/CDP.php" hash="9c27485c0fcfbe534f380804ae2a3f15" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS\Cisco" line="44" package="Default">
+      <name>CDP</name>
+      <full_name>\OSS\SNMP\MIBS\Cisco\CDP</full_name>
+      <extends>OSS\SNMP\MIBS\Cisco</extends>
+      <docblock line="44">
+        <description><![CDATA[A class for performing SNMP V2 queries on Cisco devices]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="47" package="Default">
+        <name>OID_CDP_INTERFACE_ENABLED</name>
+        <full_name>OID_CDP_INTERFACE_ENABLED</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.23.1.1.1.1.2']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="48" package="Default">
+        <name>OID_CDP_INTERFACE_NAME</name>
+        <full_name>OID_CDP_INTERFACE_NAME</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.23.1.1.1.1.6']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="49" package="Default">
+        <name>OID_CDP_NEIGHBOUR_ID</name>
+        <full_name>OID_CDP_NEIGHBOUR_ID</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.23.1.2.1.1.6']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="50" package="Default">
+        <name>OID_CDP_NEIGHBOUR_PORT</name>
+        <full_name>OID_CDP_NEIGHBOUR_PORT</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.23.1.2.1.1.7']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="51" package="Default">
+        <name>OID_CDP_NEIGHBOUR_CAPABILITY</name>
+        <full_name>OID_CDP_NEIGHBOUR_CAPABILITY</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.23.1.2.1.1.9']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="52" package="Default">
+        <name>OID_CDP_DEVICE_ID</name>
+        <full_name>OID_CDP_DEVICE_ID</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.23.1.3.4.0']]></value>
+      </constant>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="60" package="Default">
+        <name>id</name>
+        <full_name>id</full_name>
+        <docblock line="60">
+          <description><![CDATA[Get the device's CDP (Cisco Discovery Protocol) ID]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="60" name="return" description="The device's CDP (Cisco Discovery Protocol) ID" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="74" package="Default">
+        <name>interfaceEnabled</name>
+        <full_name>interfaceEnabled</full_name>
+        <docblock line="74">
+          <description><![CDATA[Get the device's interfaces CDP enabled status]]></description>
+          <long-description><![CDATA[<p>Applies the TruthValue post processor (self::ppTruthValue()) to turn
+SNMP values into true / false.</p>]]></long-description>
+          <tag line="74" name="return" description="The device's interfaces CDP enabled status' (as boolean true / false)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="84" package="Default">
+        <name>interfaceNames</name>
+        <full_name>interfaceNames</full_name>
+        <docblock line="84">
+          <description><![CDATA[Get the device's interface names as seen in CDP]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="84" name="return" description="The device's interface names as seen in CDP" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="94" package="Default">
+        <name>neighbourId</name>
+        <full_name>neighbourId</full_name>
+        <docblock line="94">
+          <description><![CDATA[Get the device's CDP neighbours (by their CDP ID) indexed by the current device's port ID]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="94" name="return" description="The device's CDP neighbours (by their CDP ID) indexed by the current device's port ID" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="118" package="Default">
+        <name>neighbourPort</name>
+        <full_name>neighbourPort</full_name>
+        <docblock line="118">
+          <description><![CDATA[Get the device's CDP neighbours connected port *description* indexed by the current device's port ID]]></description>
+          <long-description><![CDATA[<p>E.g. a sample call may return:</p>
+
+<p>Array
+(
+    [10101] => GigabitEthernet0/1
+    [10102] => FastEthernet0/2
+    [10103] => GigabitEthernet1/0/24
+    [10105] => GigabitEthernet1/0/2
+)</p>
+
+<p>meaning, for example, that our local port with ID 10101 is connected to port GigabitEthernet0/1 on the neighbour
+connected to that local port. You can discover the neighbour ID via neighbourId().</p>]]></long-description>
+          <tag line="118" name="see" description="\neighbourId()" refers="\neighbourId()"/>
+          <tag line="118" name="return" description="The device's CDP neighbours connected port *description* indexed by the current device's port ID" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="128" package="Default">
+        <name>neighbourCapability</name>
+        <full_name>neighbourCapability</full_name>
+        <docblock line="128">
+          <description><![CDATA[Get the device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="128" name="return" description="The device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="171" package="Default">
+        <name>neighbours</name>
+        <full_name>neighbours</full_name>
+        <docblock line="171">
+          <description><![CDATA[CDP utility function to get all CDP neighbours and their connected ports.]]></description>
+          <long-description><![CDATA[<p>Returns an array of neighbours indexed by the neighbour CDP ID. For example:</p>
+
+<p>Array
+(
+    [cr-sw03.ixdub1.opensolutions.ie] => Array
+        (
+           [0] => Array
+               (
+                    [localPortId] => 10101
+                    [localPort] => GigabitEthernet1/0/1
+                    [remotePort] => GigabitEthernet0/1
+                )</p>
+
+<pre><code>        [1] =&gt; Array
+            (
+                [localPortId] =&gt; 10102
+                [localPort] =&gt; GigabitEthernet1/0/2
+                [remotePort] =&gt; FastEthernet0/2
+            )
+
+    )
+[ ... ]
+</code></pre>
+
+<p>)</p>]]></long-description>
+          <tag line="171" name="see" description="\neighbourId()" refers="\neighbourId()"/>
+          <tag line="171" name="see" description="\OSS\SNMP\MIBS\Interface::descriptions()" refers="\OSS\SNMP\MIBS\Interface::descriptions()"/>
+          <tag line="171" name="see" description="\neighbourPort()" refers="\neighbourPort()"/>
+          <tag line="171" name="return" description="CDP neighbours and their connected ports" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="207" package="Default">
+        <name>crawl</name>
+        <full_name>crawl</full_name>
+        <docblock line="207">
+          <description><![CDATA[Recursivily crawls all CDP neighbours to build up a flat array of all devices
+indexed by the CDP device id.]]></description>
+          <long-description><![CDATA[<p>Array form is same as that returned by neighbours()</p>]]></long-description>
+          <tag line="207" name="see" description="\neighbours()" refers="\neighbours()"/>
+          <tag line="207" name="param" description="Unless you're doing something funky, just pass an empty array. This is where the result will be found." type="array" variable="$devices">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="207" name="param" description="CDP device ID of next host to crawl. On first pass, set to null - used internally when recursing" type="string" variable="$device">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="207" name="param" description="An array of CDP device IDs to *ignore*. I.e. to not include in recursive crawling" type="array" variable="$ignore">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="207" name="return" description="The resultant array of all crawled devices (same as that passed in the @param $devices parameter)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="207">
+          <name>$devices</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+        <argument line="207">
+          <name>$device</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+        <argument line="207">
+          <name>$ignore</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="286" package="Default">
+        <name>linkTopology</name>
+        <full_name>linkTopology</full_name>
+        <docblock line="286">
+          <description><![CDATA[Find the layer 2 topology as an array with no link mentioned more than once.]]></description>
+          <long-description><![CDATA[<p>Huh? This function:</p>
+
+<ul>
+<li>takes the result of crawl() (or calls crawl()) to get the CDP topology</li>
+<li>foreach device, builds an array of device to device links</li>
+<li>SO LONG as that link has already not been accounted for in the other direction.</li>
+</ul>
+
+<p>I.e. if a link is found A -> B, then the same B -> A link will not be included</p>
+
+<p>The array returned is, for example:</p>
+
+<p>[cr-sw04.degkcp.example.ie] => Array
+(
+     [cd-sw02.degkcp.example.ie] => Array
+     (
+         [GigabitEthernet1/0/3] => Array
+         (
+             [remotePort] => FastEthernet0/1
+             [isLAG]      => false
+     )</p>
+
+<pre><code> [cr-sw03.degkcp.example.ie] =&gt; Array
+ (
+     [GigabitEthernet1/0/23] =&gt; Array
+     (
+         [remotePort] =&gt; GigabitEthernet1/0/23
+         [isLAG]      =&gt; false
+     )
+     [GigabitEthernet1/0/24] =&gt; Array
+     (
+         [remotePort] =&gt; GigabitEthernet1/0/24
+         [isLAG]      =&gt; false
+     )
+ )
+</code></pre>
+
+<p>)</p>
+
+<p>This tells us that cr-sw04(GigabitEthernet1/0/3) is connected to cd-sw02(FastEthernet0/1).</p>
+
+<p>It also tells us that cr-sw04 has two connections to cr-sw03.</p>
+
+<p>You'll notice it also tells us if it's a LAG or not. More information can be added as needed.</p>]]></long-description>
+          <tag line="286" name="see" description="\crawl()" refers="\crawl()"/>
+          <tag line="286" name="param" description="The result of crawl() (if null, this function performs a crawl())" type="array" variable="$devices">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="286" name="return" description="L2 topology as described above." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="286">
+          <name>$devices</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="SNMP/MIBS/Cisco/VTP.php" hash="6ce332986c79ebe7e457c8c8c3f627cd" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS\Cisco" line="44" package="Default">
+      <name>VTP</name>
+      <full_name>\OSS\SNMP\MIBS\Cisco\VTP</full_name>
+      <extends>OSS\SNMP\MIBS\Cisco</extends>
+      <docblock line="44">
+        <description><![CDATA[A class for performing SNMP V2 queries on Cisco devices]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="48" package="Default">
+        <name>OID_VTP_VLAN_STATUS</name>
+        <full_name>OID_VTP_VLAN_STATUS</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.46.1.3.1.1.2.1']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="49" package="Default">
+        <name>OID_VTP_VLAN_TYPE</name>
+        <full_name>OID_VTP_VLAN_TYPE</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.46.1.3.1.1.3.1']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="50" package="Default">
+        <name>OID_VTP_VLAN_NAME</name>
+        <full_name>OID_VTP_VLAN_NAME</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.46.1.3.1.1.4.1']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="53" package="Default">
+        <name>OID_STP_X_RSTP_PORT_ROLE</name>
+        <full_name>OID_STP_X_RSTP_PORT_ROLE</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.82.1.12.2.1.3']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="60" package="Default">
+        <name>VTP_VLAN_STATE_OPERATIONAL</name>
+        <full_name>VTP_VLAN_STATE_OPERATIONAL</full_name>
+        <value><![CDATA[1]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="66" package="Default">
+        <name>VTP_VLAN_STATE_SUSPENDED</name>
+        <full_name>VTP_VLAN_STATE_SUSPENDED</full_name>
+        <value><![CDATA[2]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="72" package="Default">
+        <name>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE</name>
+        <full_name>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE</full_name>
+        <value><![CDATA[3]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="78" package="Default">
+        <name>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK</name>
+        <full_name>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK</full_name>
+        <value><![CDATA[4]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="119" package="Default">
+        <name>VTP_VLAN_TYPE_ETHERNET</name>
+        <full_name>VTP_VLAN_TYPE_ETHERNET</full_name>
+        <value><![CDATA[1]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="125" package="Default">
+        <name>VTP_VLAN_TYPE_FDDI</name>
+        <full_name>VTP_VLAN_TYPE_FDDI</full_name>
+        <value><![CDATA[2]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="131" package="Default">
+        <name>VTP_VLAN_TYPE_TOKEN_RING</name>
+        <full_name>VTP_VLAN_TYPE_TOKEN_RING</full_name>
+        <value><![CDATA[3]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="137" package="Default">
+        <name>VTP_VLAN_TYPE_FDDI_NET</name>
+        <full_name>VTP_VLAN_TYPE_FDDI_NET</full_name>
+        <value><![CDATA[4]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="143" package="Default">
+        <name>VTP_VLAN_TYPE_TR_NET</name>
+        <full_name>VTP_VLAN_TYPE_TR_NET</full_name>
+        <value><![CDATA[5]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="149" package="Default">
+        <name>VTP_VLAN_TYPE_DEPRECATED</name>
+        <full_name>VTP_VLAN_TYPE_DEPRECATED</full_name>
+        <value><![CDATA[6]]></value>
+      </constant>
+      <property final="false" static="true" visibility="public" line="86" namespace="OSS\SNMP\MIBS\Cisco" package="Default">
+        <name>$VTP_VLAN_STATES</name>
+        <default><![CDATA[array(NULL => 'operational', NULL => 'suspended', NULL => 'mtuTooBigForDevice', NULL => 'mtuTooBigForTrunk')]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="157" namespace="OSS\SNMP\MIBS\Cisco" package="Default">
+        <name>$VTP_VLAN_TYPES</name>
+        <default><![CDATA[array(NULL => 'ethernet', NULL => 'fddi', NULL => 'tokenRing', NULL => 'fddiNet', NULL => 'trNet', NULL => 'deprecated')]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="102" package="Default">
+        <name>vlanStates</name>
+        <full_name>vlanStates</full_name>
+        <docblock line="102">
+          <description><![CDATA[Get the device's VTP VLAN States (indexed by VLAN ID)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="102" name="see" description="\$VTP_VLAN_STATES" refers="\$VTP_VLAN_STATES"/>
+          <tag line="102" name="see" description="\VTP_VLAN_STATE_OPERATIONAL" refers="\VTP_VLAN_STATE_OPERATIONAL"/>
+          <tag line="102" name="param" description="If true, return the string representation via self::$VTP_VLAN_TYPES" type="boolean" variable="$translate">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="102" name="return" description="The device's VTP VLAN States (indexed by VLAN ID)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="102">
+          <name>$translate</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="175" package="Default">
+        <name>vlanTypes</name>
+        <full_name>vlanTypes</full_name>
+        <docblock line="175">
+          <description><![CDATA[Get the device's VTP VLAN Types (indexed by VLAN ID)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="175" name="see" description="\$VTP_VLAN_TYPES" refers="\$VTP_VLAN_TYPES"/>
+          <tag line="175" name="see" description="\VTP_VLAN_TYPE_ETHERNET" refers="\VTP_VLAN_TYPE_ETHERNET"/>
+          <tag line="175" name="param" description="If true, return the string representation via self::$VTP_VLAN_TYPES" type="boolean" variable="$translate">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="175" name="return" description="The device's VTP VLAN types (indexed by VLAN ID)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="175">
+          <name>$translate</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="190" package="Default">
+        <name>vlanNames</name>
+        <full_name>vlanNames</full_name>
+        <docblock line="190">
+          <description><![CDATA[Get the device's VTP VLAN names (indexed by VLAN ID)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="190" name="return" description="The device's VTP VLAN names (indexed by VLAN ID)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="86" code="50018">No DocBlock was found for property $VTP_VLAN_STATES</error>
+      <error line="157" code="50018">No DocBlock was found for property $VTP_VLAN_TYPES</error>
+    </parse_markers>
+  </file>
+  <file path="SNMP/MIBS/Cisco/RSTP.php" hash="509835abf621adbf47d09ce6c64aba88" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS\Cisco" line="44" package="Default">
+      <name>RSTP</name>
+      <full_name>\OSS\SNMP\MIBS\Cisco\RSTP</full_name>
+      <extends>OSS\SNMP\MIBS\Cisco</extends>
+      <docblock line="44">
+        <description><![CDATA[A class for performing SNMP V2 queries on Cisco devices]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="48" package="Default">
+        <name>OID_STP_X_RSTP_PORT_ROLE</name>
+        <full_name>OID_STP_X_RSTP_PORT_ROLE</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.82.1.12.2.1.3']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="55" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_DISABLED</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_DISABLED</full_name>
+        <value><![CDATA[1]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="61" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_ROOT</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_ROOT</full_name>
+        <value><![CDATA[2]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="67" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_DESIGNATED</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_DESIGNATED</full_name>
+        <value><![CDATA[3]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="73" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_ALTERNATE</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_ALTERNATE</full_name>
+        <value><![CDATA[4]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="79" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_BACKUP</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_BACKUP</full_name>
+        <value><![CDATA[5]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="85" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_BOUNDARY</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_BOUNDARY</full_name>
+        <value><![CDATA[6]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="91" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_MASTER</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_MASTER</full_name>
+        <value><![CDATA[6]]></value>
+      </constant>
+      <property final="false" static="true" visibility="public" line="99" namespace="OSS\SNMP\MIBS\Cisco" package="Default">
+        <name>$STP_X_RSTP_PORT_ROLES</name>
+        <default><![CDATA[array(NULL => 'disabled', NULL => 'root', NULL => 'designated', NULL => 'alternate', NULL => 'backUp', NULL => 'boundary', NULL => 'master')]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="134" package="Default">
+        <name>rstpPortRole</name>
+        <full_name>rstpPortRole</full_name>
+        <docblock line="134">
+          <description><![CDATA[Get the device's RSTP port roles (by given vlan id)]]></description>
+          <long-description><![CDATA[<p>Only ports participating in RSTP for the given VLAN id are returned.</p>
+
+<p>This function will also convert STP port IDs to the device proper port IDs.
+E.g. sample output:</p>
+
+<p>Array
+(
+   [10101] => 3
+   [10103] => 3
+   [10105] => 3
+   [5048] => 2
+)</p>]]></long-description>
+          <tag line="134" name="see" description="\$STP_X_RSTP_PORT_ROLES" refers="\$STP_X_RSTP_PORT_ROLES"/>
+          <tag line="134" name="see" description="\STP_X_RSTP_PORT_ROLE_ROOT" refers="\STP_X_RSTP_PORT_ROLE_ROOT"/>
+          <tag line="134" name="param" description="The RSTP VLAN ID to query port roles for" type="int" variable="$vid">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="134" name="param" description="If true, return the string representation via self::$STP_X_RSTP_PORT_ROLES" type="boolean" variable="$translate">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="134" name="return" description="The device's RSTP port roles (by given vlan id)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="134">
+          <name>$vid</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="134">
+          <name>$translate</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="99" code="50018">No DocBlock was found for property $STP_X_RSTP_PORT_ROLES</error>
+    </parse_markers>
+  </file>
+  <file path="SNMP/MIB.php" hash="d486a1cbf07304177640f7566973ef6d" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP" line="44" package="Default">
+      <name>MIB</name>
+      <full_name>\OSS\SNMP\MIB</full_name>
+      <extends/>
+      <docblock line="44">
+        <description><![CDATA[Parent class for all "MIB" extensions.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="49" namespace="OSS\SNMP" package="Default">
+        <name>$_snmp</name>
+        <default><![CDATA[NULL]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP" line="58" package="Default">
+        <name>setSNMP</name>
+        <full_name>setSNMP</full_name>
+        <docblock line="58">
+          <description><![CDATA[Set the SNMP instance]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="58" name="param" description="the SNMP instance" type="\OSS\SNMP" variable="$snmp">
+            <type by_reference="false">\OSS\SNMP</type>
+          </tag>
+          <tag line="58" name="return" description="An instance of this class for fluent interfaces" type="\OSS\SNMP\MIB">
+            <type by_reference="false">\OSS\SNMP\MIB</type>
+          </tag>
+        </docblock>
+        <argument line="58">
+          <name>$snmp</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP" line="68" package="Default">
+        <name>getSNMP</name>
+        <full_name>getSNMP</full_name>
+        <docblock line="68">
+          <description><![CDATA[Get the SNMP instance]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="68" name="return" description="Instance of the SNMP object" type="\OSS\SNMP">
+            <type by_reference="false">\OSS\SNMP</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="49" code="50018">No DocBlock was found for property $_snmp</error>
+    </parse_markers>
+  </file>
+  <file path="Exception.php" hash="5350a5ad92eb6358f4665261f10b14ca" package="Default">
+    <class final="false" abstract="false" namespace="OSS" line="43" package="Default">
+      <name>Exception</name>
+      <full_name>\OSS\Exception</full_name>
+      <extends>Exception</extends>
+      <docblock line="43">
+        <description><![CDATA[OSS\SNMP\Exception class]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+    </class>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <namespace name="OSS" full_name="OSS">
+    <namespace name="Cache" full_name="OSS\Cache"/>
+    <namespace name="SNMP" full_name="OSS\SNMP">
+      <namespace name="MIBS" full_name="OSS\SNMP\MIBS">
+        <namespace name="Cisco" full_name="OSS\SNMP\MIBS\Cisco"/>
+      </namespace>
+    </namespace>
+  </namespace>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

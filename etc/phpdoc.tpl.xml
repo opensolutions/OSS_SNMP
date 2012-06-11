@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdocumentor>
+  <parser>
+    <default-package-name>OSS_SNMP</default-package-name>
+    <markers>
+      <item>TODO</item>
+      <item>FIXME</item>
+    </markers>
+    <extensions>
+      <extension>php</extension>
+      <extension>php3</extension>
+      <extension>phtml</extension>
+    </extensions>
+    <visibility></visibility>
+  </parser>
+  <files>
+    <ignore-hidden>on</ignore-hidden>
+    <ignore-symlinks>on</ignore-symlinks>
+    <directory>OSS</directory>
+  </files>
+  <transformer>
+    <target>output</target>
+  </transformer>
+  <logging>
+    <level>warn</level>
+    <paths>
+      <default>{APP_ROOT}/data/log/{DATE}.log</default>
+      <errors>{APP_ROOT}/data/log/{DATE}.errors.log</errors>
+    </paths>
+  </logging>
+  <transformations>
+    <template name="responsive" />
+  </transformations>
+  <title><![CDATA[OSS_SNMP]]></title>
+  
+</phpdocumentor>
