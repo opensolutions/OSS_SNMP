@@ -67,7 +67,11 @@ There's only a handful of MIBs currently defined - essentially what I've needed 
 
 But it's **really easy** to add your own. And **please** send me a pull request for those.
 
-For the MIBs I've written, only `Iface` (`MIBS/Iface.php`) is fully complete and I just completed it as an exercise to help future contributors.
+For the MIBs I've written, only `Iface` (`MIBS/Iface.php`) is fully complete and I
+just completed it as an exercise to help future contributors. But there's some *really* useful
+functionality in the others. For example the Cisco/CDP MIB can discover your entire L2 network
+topology recursively. Another project I'll release soon will give concreate examples of this
+with GraphViz.
 
 PHP 5.4 is a requirement. Yeah, I know. Not even the current Ubuntu ships this. But
 look, 5.4 is released, it's stable, it's available on FreeBSD and
@@ -75,12 +79,12 @@ look, 5.4 is released, it's stable, it's available on FreeBSD and
 
 The reason for 5.4, among other things, is that we can now dereference an array directly from a function call:
 
-    $ciscosw->useCisco_VTP()->vlanNames()[ $vlanid ]
+    $name = $ciscosw->useCisco_VTP()->vlanNames()[ $vlanid ];
 
 rather than the old way:
 
     $vlanNames = $ciscosw->useCisco_VTP()->vlanNames();
-    $vlanNames[ $vlanid ]
+    $name = $vlanNames[ $vlanid ];
 
 And as most of the defined MIBs *walk* a given tree, almost all defined functions return an array.
 
