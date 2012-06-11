@@ -31,7 +31,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">23</span></a></li>
+                <span class="label label-info">25</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -55,17 +55,42 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#adminStates" title="adminStates :: Get an array of device interface admin status (up / down)"><span class="description">Get an array of device interface admin status (up / down)</span><pre>adminStates()</pre></a></li>
 <li class="method public "><a href="#aliases" title="aliases :: Get an array of device interface aliases (e.g. as set by the interface description / port-name parameter)"><span class="description">Get an array of device interface aliases (e.g. as set by the interface description / port-name parameter)</span><pre>aliases()</pre></a></li>
 <li class="method public "><a href="#bridgeBasePortIfIndexes" title="bridgeBasePortIfIndexes :: Returns an associate array of STP port IDs (key) to interface IDs (value)"><span class="description">Returns an associate array of STP port IDs (key) to interface IDs (value)</span><pre>bridgeBasePortIfIndexes()</pre></a></li>
 <li class="method public "><a href="#descriptions" title="descriptions :: Get an array of device interface descriptions"><span class="description">Get an array of device interface descriptions</span><pre>descriptions()</pre></a></li>
+<li class="method public "><a href="#inDiscards" title="inDiscards :: Get an array of device interface inbound discarded packets"><span class="description">Get an array of device interface inbound discarded packets</span><pre>inDiscards()</pre></a></li>
+<li class="method public "><a href="#inErrors" title="inErrors :: Get an array of device interface inbound error packets"><span class="description">Get an array of device interface inbound error packets</span><pre>inErrors()</pre></a></li>
+<li class="method public "><a href="#inNonUnicastPackets" title="inNonUnicastPackets :: Get an array of device interface non-unicast packets in"><span class="description">Get an array of device interface non-unicast packets in</span><pre>inNonUnicastPackets()</pre></a></li>
+<li class="method public "><a href="#inOctets" title="inOctets :: Get an array of device interface in octets"><span class="description">Get an array of device interface in octets</span><pre>inOctets()</pre></a></li>
+<li class="method public "><a href="#inUnicastPackets" title="inUnicastPackets :: Get an array of device interface unicast packets in"><span class="description">Get an array of device interface unicast packets in</span><pre>inUnicastPackets()</pre></a></li>
+<li class="method public "><a href="#inUnknownProtocols" title="inUnknownProtocols :: Get an array of packets received on an interface of unknown protocol"><span class="description">Get an array of packets received on an interface of unknown protocol</span><pre>inUnknownProtocols()</pre></a></li>
+<li class="method public "><a href="#lastChanges" title="lastChanges :: Get an array of device interface last change times"><span class="description">Get an array of device interface last change times</span><pre>lastChanges()</pre></a></li>
+<li class="method public "><a href="#mtus" title="mtus :: Get an array of device MTUs"><span class="description">Get an array of device MTUs</span><pre>mtus()</pre></a></li>
 <li class="method public "><a href="#names" title="names :: Get an array of device interface names"><span class="description">Get an array of device interface names</span><pre>names()</pre></a></li>
+<li class="method public "><a href="#numberOfInterfaces" title="numberOfInterfaces :: Get the number of network interfaces (regardless of
+their current state) present on this system."><span class="description">Get the number of network interfaces (regardless of
+their current state) present on this system.</span><pre>numberOfInterfaces()</pre></a></li>
 <li class="method public "><a href="#operationStates" title="operationStates :: Get an array of device interface operating status (up / down)"><span class="description">Get an array of device interface operating status (up / down)</span><pre>operationStates()</pre></a></li>
+<li class="method public "><a href="#outDiscards" title="outDiscards :: Get an array of device interface outbound discarded packets"><span class="description">Get an array of device interface outbound discarded packets</span><pre>outDiscards()</pre></a></li>
+<li class="method public "><a href="#outErrors" title="outErrors :: Get an array of device interface outbound error packets"><span class="description">Get an array of device interface outbound error packets</span><pre>outErrors()</pre></a></li>
+<li class="method public "><a href="#outNonUnicastPackets" title="outNonUnicastPackets :: Get an array of device interface non-unicast packets out"><span class="description">Get an array of device interface non-unicast packets out</span><pre>outNonUnicastPackets()</pre></a></li>
+<li class="method public "><a href="#outOctets" title="outOctets :: Get an array of device interface out octets"><span class="description">Get an array of device interface out octets</span><pre>outOctets()</pre></a></li>
+<li class="method public "><a href="#outQueueLength" title="outQueueLength :: Get an array of interface outbound queue lengths"><span class="description">Get an array of interface outbound queue lengths</span><pre>outQueueLength()</pre></a></li>
+<li class="method public "><a href="#outUnicastPackets" title="outUnicastPackets :: Get an array of device interface unicast packets out"><span class="description">Get an array of device interface unicast packets out</span><pre>outUnicastPackets()</pre></a></li>
+<li class="method public "><a href="#physAddresses" title="physAddresses :: Get an array of the interfaces' physical addresses"><span class="description">Get an array of the interfaces' physical addresses</span><pre>physAddresses()</pre></a></li>
 <li class="method public "><a href="#speeds" title="speeds :: Get an array of device interface (operating) speeds"><span class="description">Get an array of device interface (operating) speeds</span><pre>speeds()</pre></a></li>
+<li class="method public "><a href="#types" title="types :: Get an array of device interface types"><span class="description">Get an array of device interface types</span><pre>types()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24IF_ADMIN_STATES" title="$IF_ADMIN_STATES :: "><span class="description">$IF_ADMIN_STATES</span><pre>$IF_ADMIN_STATES</pre></a></li>
 <li class="property public "><a href="#%24IF_OPER_STATES" title="$IF_OPER_STATES :: "><span class="description">$IF_OPER_STATES</span><pre>$IF_OPER_STATES</pre></a></li>
+<li class="property public "><a href="#%24IF_TYPES" title="$IF_TYPES :: "><span class="description">$IF_TYPES</span><pre>$IF_TYPES</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#IF_ADMIN_STATUS_DOWN" title="IF_ADMIN_STATUS_DOWN :: "><span class="description">IF_ADMIN_STATUS_DOWN</span><pre>IF_ADMIN_STATUS_DOWN</pre></a></li>
+<li class="constant  "><a href="#IF_ADMIN_STATUS_TESTING" title="IF_ADMIN_STATUS_TESTING :: "><span class="description">IF_ADMIN_STATUS_TESTING</span><pre>IF_ADMIN_STATUS_TESTING</pre></a></li>
+<li class="constant  "><a href="#IF_ADMIN_STATUS_UP" title="IF_ADMIN_STATUS_UP :: "><span class="description">IF_ADMIN_STATUS_UP</span><pre>IF_ADMIN_STATUS_UP</pre></a></li>
 <li class="constant  "><a href="#IF_OPER_STATUS_DORMANT" title="IF_OPER_STATUS_DORMANT :: "><span class="description">IF_OPER_STATUS_DORMANT</span><pre>IF_OPER_STATUS_DORMANT</pre></a></li>
 <li class="constant  "><a href="#IF_OPER_STATUS_DOWN" title="IF_OPER_STATUS_DOWN :: "><span class="description">IF_OPER_STATUS_DOWN</span><pre>IF_OPER_STATUS_DOWN</pre></a></li>
 <li class="constant  "><a href="#IF_OPER_STATUS_LOWER_LAYER_DOWN" title="IF_OPER_STATUS_LOWER_LAYER_DOWN :: "><span class="description">IF_OPER_STATUS_LOWER_LAYER_DOWN</span><pre>IF_OPER_STATUS_LOWER_LAYER_DOWN</pre></a></li>
@@ -73,11 +98,61 @@
 <li class="constant  "><a href="#IF_OPER_STATUS_TESTING" title="IF_OPER_STATUS_TESTING :: "><span class="description">IF_OPER_STATUS_TESTING</span><pre>IF_OPER_STATUS_TESTING</pre></a></li>
 <li class="constant  "><a href="#IF_OPER_STATUS_UNKNOWN" title="IF_OPER_STATUS_UNKNOWN :: "><span class="description">IF_OPER_STATUS_UNKNOWN</span><pre>IF_OPER_STATUS_UNKNOWN</pre></a></li>
 <li class="constant  "><a href="#IF_OPER_STATUS_UP" title="IF_OPER_STATUS_UP :: "><span class="description">IF_OPER_STATUS_UP</span><pre>IF_OPER_STATUS_UP</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_BASIC_ISDN" title="IF_TYPE_BASIC_ISDN :: "><span class="description">IF_TYPE_BASIC_ISDN</span><pre>IF_TYPE_BASIC_ISDN</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_DDN_X25" title="IF_TYPE_DDN_X25 :: "><span class="description">IF_TYPE_DDN_X25</span><pre>IF_TYPE_DDN_X25</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_DS3" title="IF_TYPE_DS3 :: "><span class="description">IF_TYPE_DS3</span><pre>IF_TYPE_DS3</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_DSL" title="IF_TYPE_DSL :: "><span class="description">IF_TYPE_DSL</span><pre>IF_TYPE_DSL</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_E1" title="IF_TYPE_E1 :: "><span class="description">IF_TYPE_E1</span><pre>IF_TYPE_E1</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_EON" title="IF_TYPE_EON :: "><span class="description">IF_TYPE_EON</span><pre>IF_TYPE_EON</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_ETHERNET_3MBIT" title="IF_TYPE_ETHERNET_3MBIT :: "><span class="description">IF_TYPE_ETHERNET_3MBIT</span><pre>IF_TYPE_ETHERNET_3MBIT</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_ETHERNET_CSMACD" title="IF_TYPE_ETHERNET_CSMACD :: "><span class="description">IF_TYPE_ETHERNET_CSMACD</span><pre>IF_TYPE_ETHERNET_CSMACD</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_FDDI" title="IF_TYPE_FDDI :: "><span class="description">IF_TYPE_FDDI</span><pre>IF_TYPE_FDDI</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_FRAME_RELAY" title="IF_TYPE_FRAME_RELAY :: "><span class="description">IF_TYPE_FRAME_RELAY</span><pre>IF_TYPE_FRAME_RELAY</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_HDH_1822" title="IF_TYPE_HDH_1822 :: "><span class="description">IF_TYPE_HDH_1822</span><pre>IF_TYPE_HDH_1822</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_HYPERCHANNEL" title="IF_TYPE_HYPERCHANNEL :: "><span class="description">IF_TYPE_HYPERCHANNEL</span><pre>IF_TYPE_HYPERCHANNEL</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_ISO88023_CSMACD" title="IF_TYPE_ISO88023_CSMACD :: "><span class="description">IF_TYPE_ISO88023_CSMACD</span><pre>IF_TYPE_ISO88023_CSMACD</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_ISO88024_TOKEN_BUS" title="IF_TYPE_ISO88024_TOKEN_BUS :: "><span class="description">IF_TYPE_ISO88024_TOKEN_BUS</span><pre>IF_TYPE_ISO88024_TOKEN_BUS</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_ISO88025_TOKEN_RING" title="IF_TYPE_ISO88025_TOKEN_RING :: "><span class="description">IF_TYPE_ISO88025_TOKEN_RING</span><pre>IF_TYPE_ISO88025_TOKEN_RING</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_ISO88026_MAN" title="IF_TYPE_ISO88026_MAN :: "><span class="description">IF_TYPE_ISO88026_MAN</span><pre>IF_TYPE_ISO88026_MAN</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_LAPB" title="IF_TYPE_LAPB :: "><span class="description">IF_TYPE_LAPB</span><pre>IF_TYPE_LAPB</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_NSIP" title="IF_TYPE_NSIP :: "><span class="description">IF_TYPE_NSIP</span><pre>IF_TYPE_NSIP</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_OTHER" title="IF_TYPE_OTHER :: "><span class="description">IF_TYPE_OTHER</span><pre>IF_TYPE_OTHER</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_PPP" title="IF_TYPE_PPP :: "><span class="description">IF_TYPE_PPP</span><pre>IF_TYPE_PPP</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_PRIMARY_ISDN" title="IF_TYPE_PRIMARY_ISDN :: "><span class="description">IF_TYPE_PRIMARY_ISDN</span><pre>IF_TYPE_PRIMARY_ISDN</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_PROP_POINT_TO_POINT_SERIAL" title="IF_TYPE_PROP_POINT_TO_POINT_SERIAL :: "><span class="description">IF_TYPE_PROP_POINT_TO_POINT_SERIAL</span><pre>IF_TYPE_PROP_POINT_TO_POINT_SERIAL</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_PROTEON_10MBIT" title="IF_TYPE_PROTEON_10MBIT :: "><span class="description">IF_TYPE_PROTEON_10MBIT</span><pre>IF_TYPE_PROTEON_10MBIT</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_PROTEON_80MBIT" title="IF_TYPE_PROTEON_80MBIT :: "><span class="description">IF_TYPE_PROTEON_80MBIT</span><pre>IF_TYPE_PROTEON_80MBIT</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_REGULAR_1822" title="IF_TYPE_REGULAR_1822 :: "><span class="description">IF_TYPE_REGULAR_1822</span><pre>IF_TYPE_REGULAR_1822</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_RFC877_X25" title="IF_TYPE_RFC877_X25 :: "><span class="description">IF_TYPE_RFC877_X25</span><pre>IF_TYPE_RFC877_X25</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_SDLC" title="IF_TYPE_SDLC :: "><span class="description">IF_TYPE_SDLC</span><pre>IF_TYPE_SDLC</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_SIP" title="IF_TYPE_SIP :: "><span class="description">IF_TYPE_SIP</span><pre>IF_TYPE_SIP</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_SLIP" title="IF_TYPE_SLIP :: "><span class="description">IF_TYPE_SLIP</span><pre>IF_TYPE_SLIP</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_SOFTWARE_LOOPBACK" title="IF_TYPE_SOFTWARE_LOOPBACK :: "><span class="description">IF_TYPE_SOFTWARE_LOOPBACK</span><pre>IF_TYPE_SOFTWARE_LOOPBACK</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_STAR_LAN" title="IF_TYPE_STAR_LAN :: "><span class="description">IF_TYPE_STAR_LAN</span><pre>IF_TYPE_STAR_LAN</pre></a></li>
+<li class="constant  "><a href="#IF_TYPE_ULTRA" title="IF_TYPE_ULTRA :: "><span class="description">IF_TYPE_ULTRA</span><pre>IF_TYPE_ULTRA</pre></a></li>
+<li class="constant  "><a href="#OID_IF_ADMIN_STATUS" title="OID_IF_ADMIN_STATUS :: "><span class="description">OID_IF_ADMIN_STATUS</span><pre>OID_IF_ADMIN_STATUS</pre></a></li>
 <li class="constant  "><a href="#OID_IF_ALIAS" title="OID_IF_ALIAS :: "><span class="description">OID_IF_ALIAS</span><pre>OID_IF_ALIAS</pre></a></li>
 <li class="constant  "><a href="#OID_IF_DESCRIPTION" title="OID_IF_DESCRIPTION :: "><span class="description">OID_IF_DESCRIPTION</span><pre>OID_IF_DESCRIPTION</pre></a></li>
+<li class="constant  "><a href="#OID_IF_IN_DISCARDS" title="OID_IF_IN_DISCARDS :: "><span class="description">OID_IF_IN_DISCARDS</span><pre>OID_IF_IN_DISCARDS</pre></a></li>
+<li class="constant  "><a href="#OID_IF_IN_ERRORS" title="OID_IF_IN_ERRORS :: "><span class="description">OID_IF_IN_ERRORS</span><pre>OID_IF_IN_ERRORS</pre></a></li>
+<li class="constant  "><a href="#OID_IF_IN_NON_UNICAST_PACKETS" title="OID_IF_IN_NON_UNICAST_PACKETS :: "><span class="description">OID_IF_IN_NON_UNICAST_PACKETS</span><pre>OID_IF_IN_NON_UNICAST_PACKETS</pre></a></li>
+<li class="constant  "><a href="#OID_IF_IN_OCTETS" title="OID_IF_IN_OCTETS :: "><span class="description">OID_IF_IN_OCTETS</span><pre>OID_IF_IN_OCTETS</pre></a></li>
+<li class="constant  "><a href="#OID_IF_IN_UNICAST_PACKETS" title="OID_IF_IN_UNICAST_PACKETS :: "><span class="description">OID_IF_IN_UNICAST_PACKETS</span><pre>OID_IF_IN_UNICAST_PACKETS</pre></a></li>
+<li class="constant  "><a href="#OID_IF_IN_UNKNOWN_PROTOCOLS" title="OID_IF_IN_UNKNOWN_PROTOCOLS :: "><span class="description">OID_IF_IN_UNKNOWN_PROTOCOLS</span><pre>OID_IF_IN_UNKNOWN_PROTOCOLS</pre></a></li>
+<li class="constant  "><a href="#OID_IF_LAST_CHANGE" title="OID_IF_LAST_CHANGE :: "><span class="description">OID_IF_LAST_CHANGE</span><pre>OID_IF_LAST_CHANGE</pre></a></li>
+<li class="constant  "><a href="#OID_IF_MTU" title="OID_IF_MTU :: "><span class="description">OID_IF_MTU</span><pre>OID_IF_MTU</pre></a></li>
 <li class="constant  "><a href="#OID_IF_NAME" title="OID_IF_NAME :: "><span class="description">OID_IF_NAME</span><pre>OID_IF_NAME</pre></a></li>
+<li class="constant  "><a href="#OID_IF_NUMBER" title="OID_IF_NUMBER :: "><span class="description">OID_IF_NUMBER</span><pre>OID_IF_NUMBER</pre></a></li>
 <li class="constant  "><a href="#OID_IF_OPER_STATUS" title="OID_IF_OPER_STATUS :: "><span class="description">OID_IF_OPER_STATUS</span><pre>OID_IF_OPER_STATUS</pre></a></li>
+<li class="constant  "><a href="#OID_IF_OUT_DISCARDS" title="OID_IF_OUT_DISCARDS :: "><span class="description">OID_IF_OUT_DISCARDS</span><pre>OID_IF_OUT_DISCARDS</pre></a></li>
+<li class="constant  "><a href="#OID_IF_OUT_ERRORS" title="OID_IF_OUT_ERRORS :: "><span class="description">OID_IF_OUT_ERRORS</span><pre>OID_IF_OUT_ERRORS</pre></a></li>
+<li class="constant  "><a href="#OID_IF_OUT_NON_UNICAST_PACKETS" title="OID_IF_OUT_NON_UNICAST_PACKETS :: "><span class="description">OID_IF_OUT_NON_UNICAST_PACKETS</span><pre>OID_IF_OUT_NON_UNICAST_PACKETS</pre></a></li>
+<li class="constant  "><a href="#OID_IF_OUT_OCTETS" title="OID_IF_OUT_OCTETS :: "><span class="description">OID_IF_OUT_OCTETS</span><pre>OID_IF_OUT_OCTETS</pre></a></li>
+<li class="constant  "><a href="#OID_IF_OUT_QUEUE_LENGTH" title="OID_IF_OUT_QUEUE_LENGTH :: "><span class="description">OID_IF_OUT_QUEUE_LENGTH</span><pre>OID_IF_OUT_QUEUE_LENGTH</pre></a></li>
+<li class="constant  "><a href="#OID_IF_OUT_UNICAST_PACKETS" title="OID_IF_OUT_UNICAST_PACKETS :: "><span class="description">OID_IF_OUT_UNICAST_PACKETS</span><pre>OID_IF_OUT_UNICAST_PACKETS</pre></a></li>
+<li class="constant  "><a href="#OID_IF_PHYS_ADDRESS" title="OID_IF_PHYS_ADDRESS :: "><span class="description">OID_IF_PHYS_ADDRESS</span><pre>OID_IF_PHYS_ADDRESS</pre></a></li>
 <li class="constant  "><a href="#OID_IF_SPEED" title="OID_IF_SPEED :: "><span class="description">OID_IF_SPEED</span><pre>OID_IF_SPEED</pre></a></li>
+<li class="constant  "><a href="#OID_IF_TYPE" title="OID_IF_TYPE :: "><span class="description">OID_IF_TYPE</span><pre>OID_IF_TYPE</pre></a></li>
 </ul>
 </div>
 <div class="span8">
@@ -108,6 +183,33 @@
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
+<a name="adminStates" id="adminStates"></a><div class="element clickable method public adminStates" data-toggle="collapse" data-target=".adminStates .collapse">
+<h2>Get an array of device interface admin status (up / down)</h2>
+<pre>adminStates(boolean $translate) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>E.g. the follow SNMP output yields the shown array:</p>
+
+<p>.1.3.6.1.2.1.2.2.1.7.10128 = INTEGER: up(1)
+.1.3.6.1.2.1.2.2.1.7.10129 = INTEGER: down(2)
+...</p>
+
+<pre><code> [10128] =&gt; 1
+ [10129] =&gt; 2
+</code></pre></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\IF_ADMIN_STATES</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>boolean</code><p>If true, return the string representation</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of interface admin states</div>
+</div></div>
+</div>
 <a name="aliases" id="aliases"></a><div class="element clickable method public aliases" data-toggle="collapse" data-target=".aliases .collapse">
 <h2>Get an array of device interface aliases (e.g. as set by the interface description / port-name parameter)</h2>
 <pre>aliases() : array</pre>
@@ -157,6 +259,118 @@
 <code>array</code>An array of interface descriptions</div>
 </div></div>
 </div>
+<a name="inDiscards" id="inDiscards"></a><div class="element clickable method public inDiscards" data-toggle="collapse" data-target=".inDiscards .collapse">
+<h2>Get an array of device interface inbound discarded packets</h2>
+<pre>inDiscards() : \arrary</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The number of inbound packets which were chosen
+to be discarded even though no errors had been
+detected to prevent their being deliverable to a
+higher-layer protocol.  One possible reason for
+discarding such a packet could be to free up
+buffer space."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\arrary</code>The total number of discarded inbound packets received on interfaces</div>
+</div></div>
+</div>
+<a name="inErrors" id="inErrors"></a><div class="element clickable method public inErrors" data-toggle="collapse" data-target=".inErrors .collapse">
+<h2>Get an array of device interface inbound error packets</h2>
+<pre>inErrors() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The number of inbound packets that contained
+errors preventing them from being deliverable to a
+higher-layer protocol."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The total number of error inbound packets received on interfaces</div>
+</div></div>
+</div>
+<a name="inNonUnicastPackets" id="inNonUnicastPackets"></a><div class="element clickable method public inNonUnicastPackets" data-toggle="collapse" data-target=".inNonUnicastPackets .collapse">
+<h2>Get an array of device interface non-unicast packets in</h2>
+<pre>inNonUnicastPackets() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The number of non-unicast (i.e., subnetwork-
+broadcast or subnetwork-multicast) packets
+delivered to a higher-layer protocol."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The total number of non-unicast packets received on interfaces</div>
+</div></div>
+</div>
+<a name="inOctets" id="inOctets"></a><div class="element clickable method public inOctets" data-toggle="collapse" data-target=".inOctets .collapse">
+<h2>Get an array of device interface in octets</h2>
+<pre>inOctets() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The total number of octets received on the
+interface, including framing characters."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The total number of octets received on interfaces</div>
+</div></div>
+</div>
+<a name="inUnicastPackets" id="inUnicastPackets"></a><div class="element clickable method public inUnicastPackets" data-toggle="collapse" data-target=".inUnicastPackets .collapse">
+<h2>Get an array of device interface unicast packets in</h2>
+<pre>inUnicastPackets() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The number of subnetwork-unicast packets
+delivered to a higher-layer protocol."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The total number of unicast packets received on interfaces</div>
+</div></div>
+</div>
+<a name="inUnknownProtocols" id="inUnknownProtocols"></a><div class="element clickable method public inUnknownProtocols" data-toggle="collapse" data-target=".inUnknownProtocols .collapse">
+<h2>Get an array of packets received on an interface of unknown protocol</h2>
+<pre>inUnknownProtocols() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The number of packets received via the interface
+which were discarded because of an unknown or
+unsupported protocol."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The number of packets received on an interface of unknown protocol</div>
+</div></div>
+</div>
+<a name="lastChanges" id="lastChanges"></a><div class="element clickable method public lastChanges" data-toggle="collapse" data-target=".lastChanges .collapse">
+<h2>Get an array of device interface last change times</h2>
+<pre>lastChanges() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Value returned is timeticks (one hundreds of a second)</p>
+
+<p>"The value of sysUpTime at the time the interface
+entered its current operational state.  If the
+current state was entered prior to the last re-
+initialization of the local network management
+subsystem, then this object contains a zero
+value."</p></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\OSS\SNMP\MIBS\System::uptime()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Timeticks (or zero) since last change of the interfaces</div>
+</div></div>
+</div>
+<a name="mtus" id="mtus"></a><div class="element clickable method public mtus" data-toggle="collapse" data-target=".mtus .collapse">
+<h2>Get an array of device MTUs</h2>
+<pre>mtus() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of device MTUs</div>
+</div></div>
+</div>
 <a name="names" id="names"></a><div class="element clickable method public names" data-toggle="collapse" data-target=".names .collapse">
 <h2>Get an array of device interface names</h2>
 <pre>names() : array</pre>
@@ -174,6 +388,18 @@
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>An array of interface names</div>
+</div></div>
+</div>
+<a name="numberOfInterfaces" id="numberOfInterfaces"></a><div class="element clickable method public numberOfInterfaces" data-toggle="collapse" data-target=".numberOfInterfaces .collapse">
+<h2>Get the number of network interfaces (regardless of
+their current state) present on this system.</h2>
+<pre>numberOfInterfaces() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The number of network interfaces on the system</div>
 </div></div>
 </div>
 <a name="operationStates" id="operationStates"></a><div class="element clickable method public operationStates" data-toggle="collapse" data-target=".operationStates .collapse">
@@ -203,6 +429,100 @@
 <code>array</code>An array of interface states</div>
 </div></div>
 </div>
+<a name="outDiscards" id="outDiscards"></a><div class="element clickable method public outDiscards" data-toggle="collapse" data-target=".outDiscards .collapse">
+<h2>Get an array of device interface outbound discarded packets</h2>
+<pre>outDiscards() : \arrary</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The number of outbound packets which were chosen
+to be discarded even though no errors had been
+detected to prevent their being transmitted.  One
+possible reason for discarding such a packet could
+be to free up buffer space."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\arrary</code>The total number of discarded outbound packets</div>
+</div></div>
+</div>
+<a name="outErrors" id="outErrors"></a><div class="element clickable method public outErrors" data-toggle="collapse" data-target=".outErrors .collapse">
+<h2>Get an array of device interface outbound error packets</h2>
+<pre>outErrors() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The number of outbound packets that could not be
+transmitted because of errors."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The total number of error outbound packets received on interfaces</div>
+</div></div>
+</div>
+<a name="outNonUnicastPackets" id="outNonUnicastPackets"></a><div class="element clickable method public outNonUnicastPackets" data-toggle="collapse" data-target=".outNonUnicastPackets .collapse">
+<h2>Get an array of device interface non-unicast packets out</h2>
+<pre>outNonUnicastPackets() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The total number of packets that higher-level
+protocols requested be transmitted to a non-
+unicast (i.e., a subnetwork-broadcast or
+subnetwork-multicast) address, including those
+that were discarded or not sent."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The total number of non-unicast packets requested sent interfaces</div>
+</div></div>
+</div>
+<a name="outOctets" id="outOctets"></a><div class="element clickable method public outOctets" data-toggle="collapse" data-target=".outOctets .collapse">
+<h2>Get an array of device interface out octets</h2>
+<pre>outOctets() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The total number of octets transmitted out of the
+interface, including framing characters."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The total number of octets transmitted on interfaces</div>
+</div></div>
+</div>
+<a name="outQueueLength" id="outQueueLength"></a><div class="element clickable method public outQueueLength" data-toggle="collapse" data-target=".outQueueLength .collapse">
+<h2>Get an array of interface outbound queue lengths</h2>
+<pre>outQueueLength() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The length of the output packet queue (in packets)"</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The total number of packets in the outbound queues</div>
+</div></div>
+</div>
+<a name="outUnicastPackets" id="outUnicastPackets"></a><div class="element clickable method public outUnicastPackets" data-toggle="collapse" data-target=".outUnicastPackets .collapse">
+<h2>Get an array of device interface unicast packets out</h2>
+<pre>outUnicastPackets() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The total number of packets that higher-level
+protocols requested be transmitted to a
+subnetwork-unicast address, including those that
+were discarded or not sent."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The total number of unicast packets transmitted on interfaces</div>
+</div></div>
+</div>
+<a name="physAddresses" id="physAddresses"></a><div class="element clickable method public physAddresses" data-toggle="collapse" data-target=".physAddresses .collapse">
+<h2>Get an array of the interfaces' physical addresses</h2>
+<pre>physAddresses() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The interface's address at the protocol layer
+immediately `below' the network layer in the
+protocol stack.  For interfaces which do not have
+such an address (e.g., a serial line), this object
+should contain an octet string of zero length."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of device physical addresses</div>
+</div></div>
+</div>
 <a name="speeds" id="speeds"></a><div class="element clickable method public speeds" data-toggle="collapse" data-target=".speeds .collapse">
 <h2>Get an array of device interface (operating) speeds</h2>
 <pre>speeds() : array</pre>
@@ -224,16 +544,65 @@
 <code>array</code>An array of interface operating speeds</div>
 </div></div>
 </div>
+<a name="types" id="types"></a><div class="element clickable method public types" data-toggle="collapse" data-target=".types .collapse">
+<h2>Get an array of device interface types</h2>
+<pre>types(boolean $translate) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\$IF_TYPES</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>boolean</code><p>If true, return the string representation</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of interface types</div>
+</div></div>
+</div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24IF_ADMIN_STATES" id="$IF_ADMIN_STATES"> </a><div class="element clickable property public $IF_ADMIN_STATES" data-toggle="collapse" data-target=".$IF_ADMIN_STATES .collapse">
+<h2>$IF_ADMIN_STATES</h2>
+<pre>$IF_ADMIN_STATES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <a name="%24IF_OPER_STATES" id="$IF_OPER_STATES"> </a><div class="element clickable property public $IF_OPER_STATES" data-toggle="collapse" data-target=".$IF_OPER_STATES .collapse">
 <h2>$IF_OPER_STATES</h2>
 <pre>$IF_OPER_STATES </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
+<a name="%24IF_TYPES" id="$IF_TYPES"> </a><div class="element clickable property public $IF_TYPES" data-toggle="collapse" data-target=".$IF_TYPES .collapse">
+<h2>$IF_TYPES</h2>
+<pre>$IF_TYPES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="IF_ADMIN_STATUS_DOWN" id="IF_ADMIN_STATUS_DOWN"> </a><div class="element clickable constant  IF_ADMIN_STATUS_DOWN" data-toggle="collapse" data-target=".IF_ADMIN_STATUS_DOWN .collapse">
+<h2>IF_ADMIN_STATUS_DOWN</h2>
+<pre>IF_ADMIN_STATUS_DOWN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_ADMIN_STATUS_TESTING" id="IF_ADMIN_STATUS_TESTING"> </a><div class="element clickable constant  IF_ADMIN_STATUS_TESTING" data-toggle="collapse" data-target=".IF_ADMIN_STATUS_TESTING .collapse">
+<h2>IF_ADMIN_STATUS_TESTING</h2>
+<pre>IF_ADMIN_STATUS_TESTING </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_ADMIN_STATUS_UP" id="IF_ADMIN_STATUS_UP"> </a><div class="element clickable constant  IF_ADMIN_STATUS_UP" data-toggle="collapse" data-target=".IF_ADMIN_STATUS_UP .collapse">
+<h2>IF_ADMIN_STATUS_UP</h2>
+<pre>IF_ADMIN_STATUS_UP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <a name="IF_OPER_STATUS_DORMANT" id="IF_OPER_STATUS_DORMANT"> </a><div class="element clickable constant  IF_OPER_STATUS_DORMANT" data-toggle="collapse" data-target=".IF_OPER_STATUS_DORMANT .collapse">
 <h2>IF_OPER_STATUS_DORMANT</h2>
 <pre>IF_OPER_STATUS_DORMANT </pre>
@@ -276,6 +645,204 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
+<a name="IF_TYPE_BASIC_ISDN" id="IF_TYPE_BASIC_ISDN"> </a><div class="element clickable constant  IF_TYPE_BASIC_ISDN" data-toggle="collapse" data-target=".IF_TYPE_BASIC_ISDN .collapse">
+<h2>IF_TYPE_BASIC_ISDN</h2>
+<pre>IF_TYPE_BASIC_ISDN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_DDN_X25" id="IF_TYPE_DDN_X25"> </a><div class="element clickable constant  IF_TYPE_DDN_X25" data-toggle="collapse" data-target=".IF_TYPE_DDN_X25 .collapse">
+<h2>IF_TYPE_DDN_X25</h2>
+<pre>IF_TYPE_DDN_X25 </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_DS3" id="IF_TYPE_DS3"> </a><div class="element clickable constant  IF_TYPE_DS3" data-toggle="collapse" data-target=".IF_TYPE_DS3 .collapse">
+<h2>IF_TYPE_DS3</h2>
+<pre>IF_TYPE_DS3 </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_DSL" id="IF_TYPE_DSL"> </a><div class="element clickable constant  IF_TYPE_DSL" data-toggle="collapse" data-target=".IF_TYPE_DSL .collapse">
+<h2>IF_TYPE_DSL</h2>
+<pre>IF_TYPE_DSL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_E1" id="IF_TYPE_E1"> </a><div class="element clickable constant  IF_TYPE_E1" data-toggle="collapse" data-target=".IF_TYPE_E1 .collapse">
+<h2>IF_TYPE_E1</h2>
+<pre>IF_TYPE_E1 </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_EON" id="IF_TYPE_EON"> </a><div class="element clickable constant  IF_TYPE_EON" data-toggle="collapse" data-target=".IF_TYPE_EON .collapse">
+<h2>IF_TYPE_EON</h2>
+<pre>IF_TYPE_EON </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_ETHERNET_3MBIT" id="IF_TYPE_ETHERNET_3MBIT"> </a><div class="element clickable constant  IF_TYPE_ETHERNET_3MBIT" data-toggle="collapse" data-target=".IF_TYPE_ETHERNET_3MBIT .collapse">
+<h2>IF_TYPE_ETHERNET_3MBIT</h2>
+<pre>IF_TYPE_ETHERNET_3MBIT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_ETHERNET_CSMACD" id="IF_TYPE_ETHERNET_CSMACD"> </a><div class="element clickable constant  IF_TYPE_ETHERNET_CSMACD" data-toggle="collapse" data-target=".IF_TYPE_ETHERNET_CSMACD .collapse">
+<h2>IF_TYPE_ETHERNET_CSMACD</h2>
+<pre>IF_TYPE_ETHERNET_CSMACD </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_FDDI" id="IF_TYPE_FDDI"> </a><div class="element clickable constant  IF_TYPE_FDDI" data-toggle="collapse" data-target=".IF_TYPE_FDDI .collapse">
+<h2>IF_TYPE_FDDI</h2>
+<pre>IF_TYPE_FDDI </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_FRAME_RELAY" id="IF_TYPE_FRAME_RELAY"> </a><div class="element clickable constant  IF_TYPE_FRAME_RELAY" data-toggle="collapse" data-target=".IF_TYPE_FRAME_RELAY .collapse">
+<h2>IF_TYPE_FRAME_RELAY</h2>
+<pre>IF_TYPE_FRAME_RELAY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_HDH_1822" id="IF_TYPE_HDH_1822"> </a><div class="element clickable constant  IF_TYPE_HDH_1822" data-toggle="collapse" data-target=".IF_TYPE_HDH_1822 .collapse">
+<h2>IF_TYPE_HDH_1822</h2>
+<pre>IF_TYPE_HDH_1822 </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_HYPERCHANNEL" id="IF_TYPE_HYPERCHANNEL"> </a><div class="element clickable constant  IF_TYPE_HYPERCHANNEL" data-toggle="collapse" data-target=".IF_TYPE_HYPERCHANNEL .collapse">
+<h2>IF_TYPE_HYPERCHANNEL</h2>
+<pre>IF_TYPE_HYPERCHANNEL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_ISO88023_CSMACD" id="IF_TYPE_ISO88023_CSMACD"> </a><div class="element clickable constant  IF_TYPE_ISO88023_CSMACD" data-toggle="collapse" data-target=".IF_TYPE_ISO88023_CSMACD .collapse">
+<h2>IF_TYPE_ISO88023_CSMACD</h2>
+<pre>IF_TYPE_ISO88023_CSMACD </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_ISO88024_TOKEN_BUS" id="IF_TYPE_ISO88024_TOKEN_BUS"> </a><div class="element clickable constant  IF_TYPE_ISO88024_TOKEN_BUS" data-toggle="collapse" data-target=".IF_TYPE_ISO88024_TOKEN_BUS .collapse">
+<h2>IF_TYPE_ISO88024_TOKEN_BUS</h2>
+<pre>IF_TYPE_ISO88024_TOKEN_BUS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_ISO88025_TOKEN_RING" id="IF_TYPE_ISO88025_TOKEN_RING"> </a><div class="element clickable constant  IF_TYPE_ISO88025_TOKEN_RING" data-toggle="collapse" data-target=".IF_TYPE_ISO88025_TOKEN_RING .collapse">
+<h2>IF_TYPE_ISO88025_TOKEN_RING</h2>
+<pre>IF_TYPE_ISO88025_TOKEN_RING </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_ISO88026_MAN" id="IF_TYPE_ISO88026_MAN"> </a><div class="element clickable constant  IF_TYPE_ISO88026_MAN" data-toggle="collapse" data-target=".IF_TYPE_ISO88026_MAN .collapse">
+<h2>IF_TYPE_ISO88026_MAN</h2>
+<pre>IF_TYPE_ISO88026_MAN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_LAPB" id="IF_TYPE_LAPB"> </a><div class="element clickable constant  IF_TYPE_LAPB" data-toggle="collapse" data-target=".IF_TYPE_LAPB .collapse">
+<h2>IF_TYPE_LAPB</h2>
+<pre>IF_TYPE_LAPB </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_NSIP" id="IF_TYPE_NSIP"> </a><div class="element clickable constant  IF_TYPE_NSIP" data-toggle="collapse" data-target=".IF_TYPE_NSIP .collapse">
+<h2>IF_TYPE_NSIP</h2>
+<pre>IF_TYPE_NSIP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_OTHER" id="IF_TYPE_OTHER"> </a><div class="element clickable constant  IF_TYPE_OTHER" data-toggle="collapse" data-target=".IF_TYPE_OTHER .collapse">
+<h2>IF_TYPE_OTHER</h2>
+<pre>IF_TYPE_OTHER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_PPP" id="IF_TYPE_PPP"> </a><div class="element clickable constant  IF_TYPE_PPP" data-toggle="collapse" data-target=".IF_TYPE_PPP .collapse">
+<h2>IF_TYPE_PPP</h2>
+<pre>IF_TYPE_PPP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_PRIMARY_ISDN" id="IF_TYPE_PRIMARY_ISDN"> </a><div class="element clickable constant  IF_TYPE_PRIMARY_ISDN" data-toggle="collapse" data-target=".IF_TYPE_PRIMARY_ISDN .collapse">
+<h2>IF_TYPE_PRIMARY_ISDN</h2>
+<pre>IF_TYPE_PRIMARY_ISDN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_PROP_POINT_TO_POINT_SERIAL" id="IF_TYPE_PROP_POINT_TO_POINT_SERIAL"> </a><div class="element clickable constant  IF_TYPE_PROP_POINT_TO_POINT_SERIAL" data-toggle="collapse" data-target=".IF_TYPE_PROP_POINT_TO_POINT_SERIAL .collapse">
+<h2>IF_TYPE_PROP_POINT_TO_POINT_SERIAL</h2>
+<pre>IF_TYPE_PROP_POINT_TO_POINT_SERIAL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_PROTEON_10MBIT" id="IF_TYPE_PROTEON_10MBIT"> </a><div class="element clickable constant  IF_TYPE_PROTEON_10MBIT" data-toggle="collapse" data-target=".IF_TYPE_PROTEON_10MBIT .collapse">
+<h2>IF_TYPE_PROTEON_10MBIT</h2>
+<pre>IF_TYPE_PROTEON_10MBIT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_PROTEON_80MBIT" id="IF_TYPE_PROTEON_80MBIT"> </a><div class="element clickable constant  IF_TYPE_PROTEON_80MBIT" data-toggle="collapse" data-target=".IF_TYPE_PROTEON_80MBIT .collapse">
+<h2>IF_TYPE_PROTEON_80MBIT</h2>
+<pre>IF_TYPE_PROTEON_80MBIT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_REGULAR_1822" id="IF_TYPE_REGULAR_1822"> </a><div class="element clickable constant  IF_TYPE_REGULAR_1822" data-toggle="collapse" data-target=".IF_TYPE_REGULAR_1822 .collapse">
+<h2>IF_TYPE_REGULAR_1822</h2>
+<pre>IF_TYPE_REGULAR_1822 </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_RFC877_X25" id="IF_TYPE_RFC877_X25"> </a><div class="element clickable constant  IF_TYPE_RFC877_X25" data-toggle="collapse" data-target=".IF_TYPE_RFC877_X25 .collapse">
+<h2>IF_TYPE_RFC877_X25</h2>
+<pre>IF_TYPE_RFC877_X25 </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_SDLC" id="IF_TYPE_SDLC"> </a><div class="element clickable constant  IF_TYPE_SDLC" data-toggle="collapse" data-target=".IF_TYPE_SDLC .collapse">
+<h2>IF_TYPE_SDLC</h2>
+<pre>IF_TYPE_SDLC </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_SIP" id="IF_TYPE_SIP"> </a><div class="element clickable constant  IF_TYPE_SIP" data-toggle="collapse" data-target=".IF_TYPE_SIP .collapse">
+<h2>IF_TYPE_SIP</h2>
+<pre>IF_TYPE_SIP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_SLIP" id="IF_TYPE_SLIP"> </a><div class="element clickable constant  IF_TYPE_SLIP" data-toggle="collapse" data-target=".IF_TYPE_SLIP .collapse">
+<h2>IF_TYPE_SLIP</h2>
+<pre>IF_TYPE_SLIP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_SOFTWARE_LOOPBACK" id="IF_TYPE_SOFTWARE_LOOPBACK"> </a><div class="element clickable constant  IF_TYPE_SOFTWARE_LOOPBACK" data-toggle="collapse" data-target=".IF_TYPE_SOFTWARE_LOOPBACK .collapse">
+<h2>IF_TYPE_SOFTWARE_LOOPBACK</h2>
+<pre>IF_TYPE_SOFTWARE_LOOPBACK </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_STAR_LAN" id="IF_TYPE_STAR_LAN"> </a><div class="element clickable constant  IF_TYPE_STAR_LAN" data-toggle="collapse" data-target=".IF_TYPE_STAR_LAN .collapse">
+<h2>IF_TYPE_STAR_LAN</h2>
+<pre>IF_TYPE_STAR_LAN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="IF_TYPE_ULTRA" id="IF_TYPE_ULTRA"> </a><div class="element clickable constant  IF_TYPE_ULTRA" data-toggle="collapse" data-target=".IF_TYPE_ULTRA .collapse">
+<h2>IF_TYPE_ULTRA</h2>
+<pre>IF_TYPE_ULTRA </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_ADMIN_STATUS" id="OID_IF_ADMIN_STATUS"> </a><div class="element clickable constant  OID_IF_ADMIN_STATUS" data-toggle="collapse" data-target=".OID_IF_ADMIN_STATUS .collapse">
+<h2>OID_IF_ADMIN_STATUS</h2>
+<pre>OID_IF_ADMIN_STATUS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <a name="OID_IF_ALIAS" id="OID_IF_ALIAS"> </a><div class="element clickable constant  OID_IF_ALIAS" data-toggle="collapse" data-target=".OID_IF_ALIAS .collapse">
 <h2>OID_IF_ALIAS</h2>
 <pre>OID_IF_ALIAS </pre>
@@ -288,9 +855,63 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
+<a name="OID_IF_IN_DISCARDS" id="OID_IF_IN_DISCARDS"> </a><div class="element clickable constant  OID_IF_IN_DISCARDS" data-toggle="collapse" data-target=".OID_IF_IN_DISCARDS .collapse">
+<h2>OID_IF_IN_DISCARDS</h2>
+<pre>OID_IF_IN_DISCARDS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_IN_ERRORS" id="OID_IF_IN_ERRORS"> </a><div class="element clickable constant  OID_IF_IN_ERRORS" data-toggle="collapse" data-target=".OID_IF_IN_ERRORS .collapse">
+<h2>OID_IF_IN_ERRORS</h2>
+<pre>OID_IF_IN_ERRORS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_IN_NON_UNICAST_PACKETS" id="OID_IF_IN_NON_UNICAST_PACKETS"> </a><div class="element clickable constant  OID_IF_IN_NON_UNICAST_PACKETS" data-toggle="collapse" data-target=".OID_IF_IN_NON_UNICAST_PACKETS .collapse">
+<h2>OID_IF_IN_NON_UNICAST_PACKETS</h2>
+<pre>OID_IF_IN_NON_UNICAST_PACKETS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_IN_OCTETS" id="OID_IF_IN_OCTETS"> </a><div class="element clickable constant  OID_IF_IN_OCTETS" data-toggle="collapse" data-target=".OID_IF_IN_OCTETS .collapse">
+<h2>OID_IF_IN_OCTETS</h2>
+<pre>OID_IF_IN_OCTETS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_IN_UNICAST_PACKETS" id="OID_IF_IN_UNICAST_PACKETS"> </a><div class="element clickable constant  OID_IF_IN_UNICAST_PACKETS" data-toggle="collapse" data-target=".OID_IF_IN_UNICAST_PACKETS .collapse">
+<h2>OID_IF_IN_UNICAST_PACKETS</h2>
+<pre>OID_IF_IN_UNICAST_PACKETS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_IN_UNKNOWN_PROTOCOLS" id="OID_IF_IN_UNKNOWN_PROTOCOLS"> </a><div class="element clickable constant  OID_IF_IN_UNKNOWN_PROTOCOLS" data-toggle="collapse" data-target=".OID_IF_IN_UNKNOWN_PROTOCOLS .collapse">
+<h2>OID_IF_IN_UNKNOWN_PROTOCOLS</h2>
+<pre>OID_IF_IN_UNKNOWN_PROTOCOLS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_LAST_CHANGE" id="OID_IF_LAST_CHANGE"> </a><div class="element clickable constant  OID_IF_LAST_CHANGE" data-toggle="collapse" data-target=".OID_IF_LAST_CHANGE .collapse">
+<h2>OID_IF_LAST_CHANGE</h2>
+<pre>OID_IF_LAST_CHANGE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_MTU" id="OID_IF_MTU"> </a><div class="element clickable constant  OID_IF_MTU" data-toggle="collapse" data-target=".OID_IF_MTU .collapse">
+<h2>OID_IF_MTU</h2>
+<pre>OID_IF_MTU </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <a name="OID_IF_NAME" id="OID_IF_NAME"> </a><div class="element clickable constant  OID_IF_NAME" data-toggle="collapse" data-target=".OID_IF_NAME .collapse">
 <h2>OID_IF_NAME</h2>
 <pre>OID_IF_NAME </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_NUMBER" id="OID_IF_NUMBER"> </a><div class="element clickable constant  OID_IF_NUMBER" data-toggle="collapse" data-target=".OID_IF_NUMBER .collapse">
+<h2>OID_IF_NUMBER</h2>
+<pre>OID_IF_NUMBER </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
@@ -300,9 +921,57 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
+<a name="OID_IF_OUT_DISCARDS" id="OID_IF_OUT_DISCARDS"> </a><div class="element clickable constant  OID_IF_OUT_DISCARDS" data-toggle="collapse" data-target=".OID_IF_OUT_DISCARDS .collapse">
+<h2>OID_IF_OUT_DISCARDS</h2>
+<pre>OID_IF_OUT_DISCARDS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_OUT_ERRORS" id="OID_IF_OUT_ERRORS"> </a><div class="element clickable constant  OID_IF_OUT_ERRORS" data-toggle="collapse" data-target=".OID_IF_OUT_ERRORS .collapse">
+<h2>OID_IF_OUT_ERRORS</h2>
+<pre>OID_IF_OUT_ERRORS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_OUT_NON_UNICAST_PACKETS" id="OID_IF_OUT_NON_UNICAST_PACKETS"> </a><div class="element clickable constant  OID_IF_OUT_NON_UNICAST_PACKETS" data-toggle="collapse" data-target=".OID_IF_OUT_NON_UNICAST_PACKETS .collapse">
+<h2>OID_IF_OUT_NON_UNICAST_PACKETS</h2>
+<pre>OID_IF_OUT_NON_UNICAST_PACKETS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_OUT_OCTETS" id="OID_IF_OUT_OCTETS"> </a><div class="element clickable constant  OID_IF_OUT_OCTETS" data-toggle="collapse" data-target=".OID_IF_OUT_OCTETS .collapse">
+<h2>OID_IF_OUT_OCTETS</h2>
+<pre>OID_IF_OUT_OCTETS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_OUT_QUEUE_LENGTH" id="OID_IF_OUT_QUEUE_LENGTH"> </a><div class="element clickable constant  OID_IF_OUT_QUEUE_LENGTH" data-toggle="collapse" data-target=".OID_IF_OUT_QUEUE_LENGTH .collapse">
+<h2>OID_IF_OUT_QUEUE_LENGTH</h2>
+<pre>OID_IF_OUT_QUEUE_LENGTH </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_OUT_UNICAST_PACKETS" id="OID_IF_OUT_UNICAST_PACKETS"> </a><div class="element clickable constant  OID_IF_OUT_UNICAST_PACKETS" data-toggle="collapse" data-target=".OID_IF_OUT_UNICAST_PACKETS .collapse">
+<h2>OID_IF_OUT_UNICAST_PACKETS</h2>
+<pre>OID_IF_OUT_UNICAST_PACKETS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_PHYS_ADDRESS" id="OID_IF_PHYS_ADDRESS"> </a><div class="element clickable constant  OID_IF_PHYS_ADDRESS" data-toggle="collapse" data-target=".OID_IF_PHYS_ADDRESS .collapse">
+<h2>OID_IF_PHYS_ADDRESS</h2>
+<pre>OID_IF_PHYS_ADDRESS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 <a name="OID_IF_SPEED" id="OID_IF_SPEED"> </a><div class="element clickable constant  OID_IF_SPEED" data-toggle="collapse" data-target=".OID_IF_SPEED .collapse">
 <h2>OID_IF_SPEED</h2>
 <pre>OID_IF_SPEED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_IF_TYPE" id="OID_IF_TYPE"> </a><div class="element clickable constant  OID_IF_TYPE" data-toggle="collapse" data-target=".OID_IF_TYPE .collapse">
+<h2>OID_IF_TYPE</h2>
+<pre>OID_IF_TYPE </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
@@ -313,7 +982,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
-            generated on 2012-06-11T08:01:31+01:00.<br></footer></div>
+            generated on 2012-06-11T10:19:20+01:00.<br></footer></div>
 </div>
 </body>
 </html>
