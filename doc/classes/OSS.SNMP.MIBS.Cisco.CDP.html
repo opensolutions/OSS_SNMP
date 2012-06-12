@@ -31,7 +31,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">25</span></a></li>
+                <span class="label label-info">30</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -58,22 +58,64 @@
 <li class="method public "><a href="#crawl" title="crawl :: Recursivily crawls all CDP neighbours to build up a flat array of all devices
 indexed by the CDP device id."><span class="description">Recursivily crawls all CDP neighbours to build up a flat array of all devices
 indexed by the CDP device id.</span><pre>crawl()</pre></a></li>
+<li class="method public "><a href="#globalHoldTime" title="globalHoldTime :: Get the time for the receiving device holds CDP message"><span class="description">Get the time for the receiving device holds CDP message</span><pre>globalHoldTime()</pre></a></li>
+<li class="method public "><a href="#globalLastChange" title="globalLastChange :: The time when the cache table was last changed"><span class="description">The time when the cache table was last changed</span><pre>globalLastChange()</pre></a></li>
+<li class="method public "><a href="#globalMessageInterval" title="globalMessageInterval :: Get the interval at which CDP messages are to be generated"><span class="description">Get the interval at which CDP messages are to be generated</span><pre>globalMessageInterval()</pre></a></li>
+<li class="method public "><a href="#globalRun" title="globalRun :: Get the device's global CDP (Cisco Discovery Protocol) run status"><span class="description">Get the device's global CDP (Cisco Discovery Protocol) run status</span><pre>globalRun()</pre></a></li>
 <li class="method public "><a href="#id" title="id :: Get the device's CDP (Cisco Discovery Protocol) ID"><span class="description">Get the device's CDP (Cisco Discovery Protocol) ID</span><pre>id()</pre></a></li>
 <li class="method public "><a href="#interfaceEnabled" title="interfaceEnabled :: Get the device's interfaces CDP enabled status"><span class="description">Get the device's interfaces CDP enabled status</span><pre>interfaceEnabled()</pre></a></li>
 <li class="method public "><a href="#interfaceNames" title="interfaceNames :: Get the device's interface names as seen in CDP"><span class="description">Get the device's interface names as seen in CDP</span><pre>interfaceNames()</pre></a></li>
 <li class="method public "><a href="#linkTopology" title="linkTopology :: Find the layer 2 topology as an array with no link mentioned more than once."><span class="description">Find the layer 2 topology as an array with no link mentioned more than once.</span><pre>linkTopology()</pre></a></li>
+<li class="method public "><a href="#neighbourAddressTypes" title="neighbourAddressTypes :: Get the CDP neighbours' address type indexed by the current device's port ID"><span class="description">Get the CDP neighbours' address type indexed by the current device's port ID</span><pre>neighbourAddressTypes()</pre></a></li>
+<li class="method public "><a href="#neighbourAddresses" title="neighbourAddresses :: Get the device's CDP neighbour addresses indexed by the current device's port ID"><span class="description">Get the device's CDP neighbour addresses indexed by the current device's port ID</span><pre>neighbourAddresses()</pre></a></li>
+<li class="method public "><a href="#neighbourCapabilities" title="neighbourCapabilities :: Get an array of individual capabilities of a given neighbour (by connected port ID)"><span class="description">Get an array of individual capabilities of a given neighbour (by connected port ID)</span><pre>neighbourCapabilities()</pre></a></li>
 <li class="method public "><a href="#neighbourCapability" title="neighbourCapability :: Get the device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID"><span class="description">Get the device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID</span><pre>neighbourCapability()</pre></a></li>
+<li class="method public "><a href="#neighbourDuplexMode" title="neighbourDuplexMode :: Get the remote device's interface's duplex mode (indexed by local portId)"><span class="description">Get the remote device's interface's duplex mode (indexed by local portId)</span><pre>neighbourDuplexMode()</pre></a></li>
+<li class="method public "><a href="#neighbourHasCapability" title="neighbourHasCapability :: Query if a given neighbour (by connected port ID) has the given capability"><span class="description">Query if a given neighbour (by connected port ID) has the given capability</span><pre>neighbourHasCapability()</pre></a></li>
 <li class="method public "><a href="#neighbourId" title="neighbourId :: Get the device's CDP neighbours (by their CDP ID) indexed by the current device's port ID"><span class="description">Get the device's CDP neighbours (by their CDP ID) indexed by the current device's port ID</span><pre>neighbourId()</pre></a></li>
+<li class="method public "><a href="#neighbourLastChange" title="neighbourLastChange :: Get the remote device's last change time (indexed by local portId)"><span class="description">Get the remote device's last change time (indexed by local portId)</span><pre>neighbourLastChange()</pre></a></li>
+<li class="method public "><a href="#neighbourNativeVLAN" title="neighbourNativeVLAN :: Get the remote device's interface's native VLAN (indexed by local portId)"><span class="description">Get the remote device's interface's native VLAN (indexed by local portId)</span><pre>neighbourNativeVLAN()</pre></a></li>
+<li class="method public "><a href="#neighbourPlatforms" title="neighbourPlatforms :: Get the device's CDP neighbour platforms indexed by the current device's port ID"><span class="description">Get the device's CDP neighbour platforms indexed by the current device's port ID</span><pre>neighbourPlatforms()</pre></a></li>
 <li class="method public "><a href="#neighbourPort" title="neighbourPort :: Get the device's CDP neighbours connected port *description* indexed by the current device's port ID"><span class="description">Get the device's CDP neighbours connected port *description* indexed by the current device's port ID</span><pre>neighbourPort()</pre></a></li>
+<li class="method public "><a href="#neighbourVTPMgmtDomain" title="neighbourVTPMgmtDomain :: Get the device's CDP neighbours' VTP management domain indexed by the current device's port ID"><span class="description">Get the device's CDP neighbours' VTP management domain indexed by the current device's port ID</span><pre>neighbourVTPMgmtDomain()</pre></a></li>
+<li class="method public "><a href="#neighbourVersions" title="neighbourVersions :: Get the device's CDP neighbour version indexed by the current device's port ID"><span class="description">Get the device's CDP neighbour version indexed by the current device's port ID</span><pre>neighbourVersions()</pre></a></li>
 <li class="method public "><a href="#neighbours" title="neighbours :: CDP utility function to get all CDP neighbours and their connected ports."><span class="description">CDP utility function to get all CDP neighbours and their connected ports.</span><pre>neighbours()</pre></a></li>
 <li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES" title="$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES :: "><span class="description">$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES</span><pre>$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES</pre></a></li>
+<li class="property public "><a href="#%24CDP_CACHE_NEIGHBOUR_CAPABILITIES" title="$CDP_CACHE_NEIGHBOUR_CAPABILITIES :: "><span class="description">$CDP_CACHE_NEIGHBOUR_CAPABILITIES</span><pre>$CDP_CACHE_NEIGHBOUR_CAPABILITIES</pre></a></li>
+<li class="property public "><a href="#%24CDP_CACHE_NEIGHBOUR_DUPLEXES" title="$CDP_CACHE_NEIGHBOUR_DUPLEXES :: "><span class="description">$CDP_CACHE_NEIGHBOUR_DUPLEXES</span><pre>$CDP_CACHE_NEIGHBOUR_DUPLEXES</pre></a></li>
+<li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants</li>
-<li class="constant  "><a href="#OID_CDP_DEVICE_ID" title="OID_CDP_DEVICE_ID :: "><span class="description">OID_CDP_DEVICE_ID</span><pre>OID_CDP_DEVICE_ID</pre></a></li>
+<li class="constant  "><a href="#CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP" title="CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP :: "><span class="description">CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP</span><pre>CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP</pre></a></li>
+<li class="constant  "><a href="#CDP_CACHE_NEIGHBOUR_CAPABILITY_HOST" title="CDP_CACHE_NEIGHBOUR_CAPABILITY_HOST :: "><span class="description">CDP_CACHE_NEIGHBOUR_CAPABILITY_HOST</span><pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_HOST</pre></a></li>
+<li class="constant  "><a href="#CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE" title="CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE :: "><span class="description">CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE</span><pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE</pre></a></li>
+<li class="constant  "><a href="#CDP_CACHE_NEIGHBOUR_CAPABILITY_REPEATER" title="CDP_CACHE_NEIGHBOUR_CAPABILITY_REPEATER :: "><span class="description">CDP_CACHE_NEIGHBOUR_CAPABILITY_REPEATER</span><pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_REPEATER</pre></a></li>
+<li class="constant  "><a href="#CDP_CACHE_NEIGHBOUR_CAPABILITY_ROUTER" title="CDP_CACHE_NEIGHBOUR_CAPABILITY_ROUTER :: "><span class="description">CDP_CACHE_NEIGHBOUR_CAPABILITY_ROUTER</span><pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_ROUTER</pre></a></li>
+<li class="constant  "><a href="#CDP_CACHE_NEIGHBOUR_CAPABILITY_SOURCE_ROUTE_BRIDGE" title="CDP_CACHE_NEIGHBOUR_CAPABILITY_SOURCE_ROUTE_BRIDGE :: "><span class="description">CDP_CACHE_NEIGHBOUR_CAPABILITY_SOURCE_ROUTE_BRIDGE</span><pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_SOURCE_ROUTE_BRIDGE</pre></a></li>
+<li class="constant  "><a href="#CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH" title="CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH :: "><span class="description">CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH</span><pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH</pre></a></li>
+<li class="constant  "><a href="#CDP_CACHE_NEIGHBOUR_CAPABILITY_TRANSPARENT_BRIDGE" title="CDP_CACHE_NEIGHBOUR_CAPABILITY_TRANSPARENT_BRIDGE :: "><span class="description">CDP_CACHE_NEIGHBOUR_CAPABILITY_TRANSPARENT_BRIDGE</span><pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_TRANSPARENT_BRIDGE</pre></a></li>
+<li class="constant  "><a href="#CDP_CACHE_NEIGHBOUR_DUPLEX_FULL" title="CDP_CACHE_NEIGHBOUR_DUPLEX_FULL :: "><span class="description">CDP_CACHE_NEIGHBOUR_DUPLEX_FULL</span><pre>CDP_CACHE_NEIGHBOUR_DUPLEX_FULL</pre></a></li>
+<li class="constant  "><a href="#CDP_CACHE_NEIGHBOUR_DUPLEX_HALF" title="CDP_CACHE_NEIGHBOUR_DUPLEX_HALF :: "><span class="description">CDP_CACHE_NEIGHBOUR_DUPLEX_HALF</span><pre>CDP_CACHE_NEIGHBOUR_DUPLEX_HALF</pre></a></li>
+<li class="constant  "><a href="#CDP_CACHE_NEIGHBOUR_DUPLEX_UNKNOWN" title="CDP_CACHE_NEIGHBOUR_DUPLEX_UNKNOWN :: "><span class="description">CDP_CACHE_NEIGHBOUR_DUPLEX_UNKNOWN</span><pre>CDP_CACHE_NEIGHBOUR_DUPLEX_UNKNOWN</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_CACHE_NEIGHBOUR_ADDRESS" title="OID_CDP_CACHE_NEIGHBOUR_ADDRESS :: "><span class="description">OID_CDP_CACHE_NEIGHBOUR_ADDRESS</span><pre>OID_CDP_CACHE_NEIGHBOUR_ADDRESS</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE" title="OID_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE :: "><span class="description">OID_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE</span><pre>OID_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_CACHE_NEIGHBOUR_CAPABILITY" title="OID_CDP_CACHE_NEIGHBOUR_CAPABILITY :: "><span class="description">OID_CDP_CACHE_NEIGHBOUR_CAPABILITY</span><pre>OID_CDP_CACHE_NEIGHBOUR_CAPABILITY</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_CACHE_NEIGHBOUR_DUPLEX" title="OID_CDP_CACHE_NEIGHBOUR_DUPLEX :: "><span class="description">OID_CDP_CACHE_NEIGHBOUR_DUPLEX</span><pre>OID_CDP_CACHE_NEIGHBOUR_DUPLEX</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_CACHE_NEIGHBOUR_ID" title="OID_CDP_CACHE_NEIGHBOUR_ID :: "><span class="description">OID_CDP_CACHE_NEIGHBOUR_ID</span><pre>OID_CDP_CACHE_NEIGHBOUR_ID</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_CACHE_NEIGHBOUR_LAST_CHANGE" title="OID_CDP_CACHE_NEIGHBOUR_LAST_CHANGE :: "><span class="description">OID_CDP_CACHE_NEIGHBOUR_LAST_CHANGE</span><pre>OID_CDP_CACHE_NEIGHBOUR_LAST_CHANGE</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_CACHE_NEIGHBOUR_NATIVE_VLAN" title="OID_CDP_CACHE_NEIGHBOUR_NATIVE_VLAN :: "><span class="description">OID_CDP_CACHE_NEIGHBOUR_NATIVE_VLAN</span><pre>OID_CDP_CACHE_NEIGHBOUR_NATIVE_VLAN</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_CACHE_NEIGHBOUR_PLATFORM" title="OID_CDP_CACHE_NEIGHBOUR_PLATFORM :: "><span class="description">OID_CDP_CACHE_NEIGHBOUR_PLATFORM</span><pre>OID_CDP_CACHE_NEIGHBOUR_PLATFORM</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_CACHE_NEIGHBOUR_PORT" title="OID_CDP_CACHE_NEIGHBOUR_PORT :: "><span class="description">OID_CDP_CACHE_NEIGHBOUR_PORT</span><pre>OID_CDP_CACHE_NEIGHBOUR_PORT</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_CACHE_NEIGHBOUR_VERSION" title="OID_CDP_CACHE_NEIGHBOUR_VERSION :: "><span class="description">OID_CDP_CACHE_NEIGHBOUR_VERSION</span><pre>OID_CDP_CACHE_NEIGHBOUR_VERSION</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_CACHE_NEIGHBOUR_VTP_MGMT_DOMAIN" title="OID_CDP_CACHE_NEIGHBOUR_VTP_MGMT_DOMAIN :: "><span class="description">OID_CDP_CACHE_NEIGHBOUR_VTP_MGMT_DOMAIN</span><pre>OID_CDP_CACHE_NEIGHBOUR_VTP_MGMT_DOMAIN</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_GLOBAL_DEVICE_ID" title="OID_CDP_GLOBAL_DEVICE_ID :: "><span class="description">OID_CDP_GLOBAL_DEVICE_ID</span><pre>OID_CDP_GLOBAL_DEVICE_ID</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_GLOBAL_HOLDTIME" title="OID_CDP_GLOBAL_HOLDTIME :: "><span class="description">OID_CDP_GLOBAL_HOLDTIME</span><pre>OID_CDP_GLOBAL_HOLDTIME</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_GLOBAL_LAST_CHANGE" title="OID_CDP_GLOBAL_LAST_CHANGE :: "><span class="description">OID_CDP_GLOBAL_LAST_CHANGE</span><pre>OID_CDP_GLOBAL_LAST_CHANGE</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_GLOBAL_MESSAGE_INTERVAL" title="OID_CDP_GLOBAL_MESSAGE_INTERVAL :: "><span class="description">OID_CDP_GLOBAL_MESSAGE_INTERVAL</span><pre>OID_CDP_GLOBAL_MESSAGE_INTERVAL</pre></a></li>
+<li class="constant  "><a href="#OID_CDP_GLOBAL_RUN" title="OID_CDP_GLOBAL_RUN :: "><span class="description">OID_CDP_GLOBAL_RUN</span><pre>OID_CDP_GLOBAL_RUN</pre></a></li>
 <li class="constant  "><a href="#OID_CDP_INTERFACE_ENABLED" title="OID_CDP_INTERFACE_ENABLED :: "><span class="description">OID_CDP_INTERFACE_ENABLED</span><pre>OID_CDP_INTERFACE_ENABLED</pre></a></li>
 <li class="constant  "><a href="#OID_CDP_INTERFACE_NAME" title="OID_CDP_INTERFACE_NAME :: "><span class="description">OID_CDP_INTERFACE_NAME</span><pre>OID_CDP_INTERFACE_NAME</pre></a></li>
-<li class="constant  "><a href="#OID_CDP_NEIGHBOUR_CAPABILITY" title="OID_CDP_NEIGHBOUR_CAPABILITY :: "><span class="description">OID_CDP_NEIGHBOUR_CAPABILITY</span><pre>OID_CDP_NEIGHBOUR_CAPABILITY</pre></a></li>
-<li class="constant  "><a href="#OID_CDP_NEIGHBOUR_ID" title="OID_CDP_NEIGHBOUR_ID :: "><span class="description">OID_CDP_NEIGHBOUR_ID</span><pre>OID_CDP_NEIGHBOUR_ID</pre></a></li>
-<li class="constant  "><a href="#OID_CDP_NEIGHBOUR_PORT" title="OID_CDP_NEIGHBOUR_PORT :: "><span class="description">OID_CDP_NEIGHBOUR_PORT</span><pre>OID_CDP_NEIGHBOUR_PORT</pre></a></li>
 </ul>
 </div>
 <div class="span8">
@@ -134,6 +176,53 @@ indexed by the CDP device id.</h2>
 <code>array</code>The resultant array of all crawled devices (same as that passed in the @param $devices parameter)</div>
 </div></div>
 </div>
+<a name="globalHoldTime" id="globalHoldTime"></a><div class="element clickable method public globalHoldTime" data-toggle="collapse" data-target=".globalHoldTime .collapse">
+<h2>Get the time for the receiving device holds CDP message</h2>
+<pre>globalHoldTime() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The time for the receiving device holds CDP message. The default value is 180 seconds."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The time for the receiving device holds CDP message</div>
+</div></div>
+</div>
+<a name="globalLastChange" id="globalLastChange"></a><div class="element clickable method public globalLastChange" data-toggle="collapse" data-target=".globalLastChange .collapse">
+<h2>The time when the cache table was last changed</h2>
+<pre>globalLastChange() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"Indicates the time when the cache table was last changed. It
+ is the most recent time at which any row was last created,
+ modified or deleted."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The time (timeticks) when the cache table was last changed</div>
+</div></div>
+</div>
+<a name="globalMessageInterval" id="globalMessageInterval"></a><div class="element clickable method public globalMessageInterval" data-toggle="collapse" data-target=".globalMessageInterval .collapse">
+<h2>Get the interval at which CDP messages are to be generated</h2>
+<pre>globalMessageInterval() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The interval at which CDP messages are to be generated. The default value is 60 seconds."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The interval at which CDP messages are to be generated</div>
+</div></div>
+</div>
+<a name="globalRun" id="globalRun"></a><div class="element clickable method public globalRun" data-toggle="collapse" data-target=".globalRun .collapse">
+<h2>Get the device's global CDP (Cisco Discovery Protocol) run status</h2>
+<pre>globalRun() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"An indication of whether the Cisco Discovery Protocol is currently running.  Entries in cdpCacheTable are
+deleted when CDP is disabled."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if enabled globally, else false</div>
+</div></div>
+</div>
 <a name="id" id="id"></a><div class="element clickable method public id" data-toggle="collapse" data-target=".id .collapse">
 <h2>Get the device's CDP (Cisco Discovery Protocol) ID</h2>
 <pre>id() : string</pre>
@@ -162,7 +251,7 @@ SNMP values into true / false.</p></p>
 <pre>interfaceNames() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<p class="long_description"><p>"The name of the local interface as advertised by CDP in the Port-ID TLV"</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The device's interface names as seen in CDP</div>
@@ -231,15 +320,136 @@ SNMP values into true / false.</p></p>
 <code>array</code>L2 topology as described above.</div>
 </div></div>
 </div>
+<a name="neighbourAddressTypes" id="neighbourAddressTypes"></a><div class="element clickable method public neighbourAddressTypes" data-toggle="collapse" data-target=".neighbourAddressTypes .collapse">
+<h2>Get the CDP neighbours' address type indexed by the current device's port ID</h2>
+<pre>neighbourAddressTypes(boolean $translate) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"An indication of the type of address contained in the corresponding instance of cdpCacheAddress"</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>boolean</code><p>If true, return the string representation via self::$VTP_VLAN_TYPES</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The CDP neighbours' address type indexed by the current device's port ID</div>
+</div></div>
+</div>
+<a name="neighbourAddresses" id="neighbourAddresses"></a><div class="element clickable method public neighbourAddresses" data-toggle="collapse" data-target=".neighbourAddresses .collapse">
+<h2>Get the device's CDP neighbour addresses indexed by the current device's port ID</h2>
+<pre>neighbourAddresses() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The (first) network-layer address of the device
+as reported in the Address TLV of the most recently received
+CDP message.  For example, if the corresponding instance of
+cacheAddressType had the value 'ip(1)', then this object
+would be an IPv4-address.  If the neighbor device is
+SNMP-manageable, it is supposed to generate its CDP messages
+such that this address is one at which it will receive SNMP
+messages. Use cdpCtAddressTable to extract the remaining
+addresses from the Address TLV received most recently."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's CDP neighbour addresses indexed by the current device's port ID</div>
+</div></div>
+</div>
+<a name="neighbourCapabilities" id="neighbourCapabilities"></a><div class="element clickable method public neighbourCapabilities" data-toggle="collapse" data-target=".neighbourCapabilities .collapse">
+<h2>Get an array of individual capabilities of a given neighbour (by connected port ID)</h2>
+<pre>neighbourCapabilities(int $portId, int $translate) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Example:</p>
+
+<pre><code>print_r( $host-&gt;useCisco_CDP()-&gt;neighbourCapabilities( 10111 ) )
+
+    [0] =&gt; 8         // self::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH
+    [1] =&gt; 32        // self::CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE
+
+print_r( $host-&gt;useCisco_CDP()-&gt;neighbourCapabilities( 10111, true ) )
+
+    [0] =&gt; "Switch"              // self::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH
+    [1] =&gt; "IGMP Capable"        // self::CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE
+</code></pre></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$portId</h4>
+<code>int</code><p>The CDP neighbour by connected local port ID</p></div>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>int</code><p>Set to true to return descriptions rather than integers</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Individual capabilities of a given neighbour</div>
+</div></div>
+</div>
 <a name="neighbourCapability" id="neighbourCapability"></a><div class="element clickable method public neighbourCapability" data-toggle="collapse" data-target=".neighbourCapability .collapse">
 <h2>Get the device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID</h2>
 <pre>neighbourCapability() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<p class="long_description"><p>"The Device's Functional Capabilities as reported in the most recent CDP message.  For latest set of specific
+values, see the latest version of the CDP specification. The zero-length string indicates no Capabilities field
+(TLV) was reported in the most recent CDP message."</p></p>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td>\REFERENCE</td>
+</tr>
+<tr>
+<th>see</th>
+<td>\http://www.cisco.com/univercd/cc/td/doc/product/lan/trsrb/frames.htm#xtocid12</td>
+</tr>
+<tr>
+<th>see</th>
+<td>\http://wiki.wireshark.org/CDP</td>
+</tr>
+</table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID</div>
+</div></div>
+</div>
+<a name="neighbourDuplexMode" id="neighbourDuplexMode"></a><div class="element clickable method public neighbourDuplexMode" data-toggle="collapse" data-target=".neighbourDuplexMode .collapse">
+<h2>Get the remote device's interface's duplex mode (indexed by local portId)</h2>
+<pre>neighbourDuplexMode(boolean $translate) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The remote device's interface's duplex mode, as reported in the
+ most recent CDP message.  The value unknown(1) indicates
+ no duplex mode field (TLV) was reported in the most
+ recent CDP message."</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>boolean</code><p>If true, return the string representation via self::$VTP_VLAN_TYPES</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The remote device's interface's duplex mode (indexed by local portId)</div>
+</div></div>
+</div>
+<a name="neighbourHasCapability" id="neighbourHasCapability"></a><div class="element clickable method public neighbourHasCapability" data-toggle="collapse" data-target=".neighbourHasCapability .collapse">
+<h2>Query if a given neighbour (by connected port ID) has the given capability</h2>
+<pre>neighbourHasCapability(int $portId, int $capability) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Example:</p>
+
+<p>if( $host->useCisco_CDP()->neighbourHasCapability( $portId, \OSS\SNMP\MIBS\Cisco\CDP::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH )
+        echo "Host is a switch!!";</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$portId</h4>
+<code>int</code><p>The CDP neighbour by connected local port ID</p></div>
+<div class="subelement argument">
+<h4>$capability</h4>
+<code>int</code><p>The capability to query for (defined by self::CDP_CACHE_NEIGHBOUR_CAPABILITY_XXX constants)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if the neighbour has the given capability</div>
 </div></div>
 </div>
 <a name="neighbourId" id="neighbourId"></a><div class="element clickable method public neighbourId" data-toggle="collapse" data-target=".neighbourId .collapse">
@@ -247,10 +457,53 @@ SNMP values into true / false.</p></p>
 <pre>neighbourId() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<p class="long_description"><p>"The Device-ID string as reported in the most recent CDP
+message.  The zero-length string indicates no Device-ID
+field (TLV) was reported in the most recent CDP message."</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The device's CDP neighbours (by their CDP ID) indexed by the current device's port ID</div>
+</div></div>
+</div>
+<a name="neighbourLastChange" id="neighbourLastChange"></a><div class="element clickable method public neighbourLastChange" data-toggle="collapse" data-target=".neighbourLastChange .collapse">
+<h2>Get the remote device's last change time (indexed by local portId)</h2>
+<pre>neighbourLastChange() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"Indicates the time when this cache entry was last changed.
+ This object is initialised to the current time when the entry
+ gets created and updated to the current time whenever the value
+ of any (other) object instance in the corresponding row is
+ modified."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The remote device's last change time(indexed by local portId)</div>
+</div></div>
+</div>
+<a name="neighbourNativeVLAN" id="neighbourNativeVLAN"></a><div class="element clickable method public neighbourNativeVLAN" data-toggle="collapse" data-target=".neighbourNativeVLAN .collapse">
+<h2>Get the remote device's interface's native VLAN (indexed by local portId)</h2>
+<pre>neighbourNativeVLAN() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The remote device's interface's native VLAN, as reported in the
+ most recent CDP message.  The value 0 indicates
+ no native VLAN field (TLV) was reported in the most
+ recent CDP message."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The remote device's interface's native VLAN (indexed by local portId)</div>
+</div></div>
+</div>
+<a name="neighbourPlatforms" id="neighbourPlatforms"></a><div class="element clickable method public neighbourPlatforms" data-toggle="collapse" data-target=".neighbourPlatforms .collapse">
+<h2>Get the device's CDP neighbour platforms indexed by the current device's port ID</h2>
+<pre>neighbourPlatforms() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The Device's Hardware Platform as reported in the most recent CDP message.  The zero-length string indicates
+that no Platform field (TLV) was reported in the most recent CDP message."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's CDP neighbour platforms indexed by the current device's port ID</div>
 </div></div>
 </div>
 <a name="neighbourPort" id="neighbourPort"></a><div class="element clickable method public neighbourPort" data-toggle="collapse" data-target=".neighbourPort .collapse">
@@ -269,7 +522,13 @@ SNMP values into true / false.</p></p>
 )</p>
 
 <p>meaning, for example, that our local port with ID 10101 is connected to port GigabitEthernet0/1 on the neighbour
-connected to that local port. You can discover the neighbour ID via neighbourId().</p></p>
+connected to that local port. You can discover the neighbour ID via neighbourId().</p>
+
+<p>"The Port-ID string as reported in the most recent CDP
+message.  This will typically be the value of the ifName
+object (e.g., 'Ethernet0').  The zero-length string
+indicates no Port-ID field (TLV) was reported in the
+most recent CDP message."</p></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
 <td>\neighbourId()</td>
@@ -277,6 +536,35 @@ connected to that local port. You can discover the neighbour ID via neighbourId(
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The device's CDP neighbours connected port *description* indexed by the current device's port ID</div>
+</div></div>
+</div>
+<a name="neighbourVTPMgmtDomain" id="neighbourVTPMgmtDomain"></a><div class="element clickable method public neighbourVTPMgmtDomain" data-toggle="collapse" data-target=".neighbourVTPMgmtDomain .collapse">
+<h2>Get the device's CDP neighbours' VTP management domain indexed by the current device's port ID</h2>
+<pre>neighbourVTPMgmtDomain() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The VTP Management Domain for the remote device's interface, as reported in the most recently received CDP message.
+This object is not instantiated if no VTP Management Domain field (TLV) was reported in the most recently received CDP message."</p></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\REFERENCE</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's CDP neighbours' VTP management domain indexed by the current device's port ID</div>
+</div></div>
+</div>
+<a name="neighbourVersions" id="neighbourVersions"></a><div class="element clickable method public neighbourVersions" data-toggle="collapse" data-target=".neighbourVersions .collapse">
+<h2>Get the device's CDP neighbour version indexed by the current device's port ID</h2>
+<pre>neighbourVersions() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>"The Version string as reported in the most recent CDP
+message.  The zero-length string indicates no Version
+field (TLV) was reported in the most recent CDP message."</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's CDP neighbour version indexed by the current device's port ID</div>
 </div></div>
 </div>
 <a name="neighbours" id="neighbours"></a><div class="element clickable method public neighbours" data-toggle="collapse" data-target=".neighbours .collapse">
@@ -329,10 +617,186 @@ connected to that local port. You can discover the neighbour ID via neighbourId(
 </div></div>
 </div>
 <h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES" id="$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES"> </a><div class="element clickable property public $CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES" data-toggle="collapse" data-target=".$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES .collapse">
+<h2>$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES</h2>
+<pre>$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24CDP_CACHE_NEIGHBOUR_CAPABILITIES" id="$CDP_CACHE_NEIGHBOUR_CAPABILITIES"> </a><div class="element clickable property public $CDP_CACHE_NEIGHBOUR_CAPABILITIES" data-toggle="collapse" data-target=".$CDP_CACHE_NEIGHBOUR_CAPABILITIES .collapse">
+<h2>$CDP_CACHE_NEIGHBOUR_CAPABILITIES</h2>
+<pre>$CDP_CACHE_NEIGHBOUR_CAPABILITIES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24CDP_CACHE_NEIGHBOUR_DUPLEXES" id="$CDP_CACHE_NEIGHBOUR_DUPLEXES"> </a><div class="element clickable property public $CDP_CACHE_NEIGHBOUR_DUPLEXES" data-toggle="collapse" data-target=".$CDP_CACHE_NEIGHBOUR_DUPLEXES .collapse">
+<h2>$CDP_CACHE_NEIGHBOUR_DUPLEXES</h2>
+<pre>$CDP_CACHE_NEIGHBOUR_DUPLEXES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
-<a name="OID_CDP_DEVICE_ID" id="OID_CDP_DEVICE_ID"> </a><div class="element clickable constant  OID_CDP_DEVICE_ID" data-toggle="collapse" data-target=".OID_CDP_DEVICE_ID .collapse">
-<h2>OID_CDP_DEVICE_ID</h2>
-<pre>OID_CDP_DEVICE_ID </pre>
+<a name="CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP" id="CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP"> </a><div class="element clickable constant  CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP" data-toggle="collapse" data-target=".CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP .collapse">
+<h2>CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP</h2>
+<pre>CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="CDP_CACHE_NEIGHBOUR_CAPABILITY_HOST" id="CDP_CACHE_NEIGHBOUR_CAPABILITY_HOST"> </a><div class="element clickable constant  CDP_CACHE_NEIGHBOUR_CAPABILITY_HOST" data-toggle="collapse" data-target=".CDP_CACHE_NEIGHBOUR_CAPABILITY_HOST .collapse">
+<h2>CDP_CACHE_NEIGHBOUR_CAPABILITY_HOST</h2>
+<pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_HOST </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE" id="CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE"> </a><div class="element clickable constant  CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE" data-toggle="collapse" data-target=".CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE .collapse">
+<h2>CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE</h2>
+<pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="CDP_CACHE_NEIGHBOUR_CAPABILITY_REPEATER" id="CDP_CACHE_NEIGHBOUR_CAPABILITY_REPEATER"> </a><div class="element clickable constant  CDP_CACHE_NEIGHBOUR_CAPABILITY_REPEATER" data-toggle="collapse" data-target=".CDP_CACHE_NEIGHBOUR_CAPABILITY_REPEATER .collapse">
+<h2>CDP_CACHE_NEIGHBOUR_CAPABILITY_REPEATER</h2>
+<pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_REPEATER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="CDP_CACHE_NEIGHBOUR_CAPABILITY_ROUTER" id="CDP_CACHE_NEIGHBOUR_CAPABILITY_ROUTER"> </a><div class="element clickable constant  CDP_CACHE_NEIGHBOUR_CAPABILITY_ROUTER" data-toggle="collapse" data-target=".CDP_CACHE_NEIGHBOUR_CAPABILITY_ROUTER .collapse">
+<h2>CDP_CACHE_NEIGHBOUR_CAPABILITY_ROUTER</h2>
+<pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_ROUTER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="CDP_CACHE_NEIGHBOUR_CAPABILITY_SOURCE_ROUTE_BRIDGE" id="CDP_CACHE_NEIGHBOUR_CAPABILITY_SOURCE_ROUTE_BRIDGE"> </a><div class="element clickable constant  CDP_CACHE_NEIGHBOUR_CAPABILITY_SOURCE_ROUTE_BRIDGE" data-toggle="collapse" data-target=".CDP_CACHE_NEIGHBOUR_CAPABILITY_SOURCE_ROUTE_BRIDGE .collapse">
+<h2>CDP_CACHE_NEIGHBOUR_CAPABILITY_SOURCE_ROUTE_BRIDGE</h2>
+<pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_SOURCE_ROUTE_BRIDGE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH" id="CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH"> </a><div class="element clickable constant  CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH" data-toggle="collapse" data-target=".CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH .collapse">
+<h2>CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH</h2>
+<pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="CDP_CACHE_NEIGHBOUR_CAPABILITY_TRANSPARENT_BRIDGE" id="CDP_CACHE_NEIGHBOUR_CAPABILITY_TRANSPARENT_BRIDGE"> </a><div class="element clickable constant  CDP_CACHE_NEIGHBOUR_CAPABILITY_TRANSPARENT_BRIDGE" data-toggle="collapse" data-target=".CDP_CACHE_NEIGHBOUR_CAPABILITY_TRANSPARENT_BRIDGE .collapse">
+<h2>CDP_CACHE_NEIGHBOUR_CAPABILITY_TRANSPARENT_BRIDGE</h2>
+<pre>CDP_CACHE_NEIGHBOUR_CAPABILITY_TRANSPARENT_BRIDGE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="CDP_CACHE_NEIGHBOUR_DUPLEX_FULL" id="CDP_CACHE_NEIGHBOUR_DUPLEX_FULL"> </a><div class="element clickable constant  CDP_CACHE_NEIGHBOUR_DUPLEX_FULL" data-toggle="collapse" data-target=".CDP_CACHE_NEIGHBOUR_DUPLEX_FULL .collapse">
+<h2>CDP_CACHE_NEIGHBOUR_DUPLEX_FULL</h2>
+<pre>CDP_CACHE_NEIGHBOUR_DUPLEX_FULL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="CDP_CACHE_NEIGHBOUR_DUPLEX_HALF" id="CDP_CACHE_NEIGHBOUR_DUPLEX_HALF"> </a><div class="element clickable constant  CDP_CACHE_NEIGHBOUR_DUPLEX_HALF" data-toggle="collapse" data-target=".CDP_CACHE_NEIGHBOUR_DUPLEX_HALF .collapse">
+<h2>CDP_CACHE_NEIGHBOUR_DUPLEX_HALF</h2>
+<pre>CDP_CACHE_NEIGHBOUR_DUPLEX_HALF </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="CDP_CACHE_NEIGHBOUR_DUPLEX_UNKNOWN" id="CDP_CACHE_NEIGHBOUR_DUPLEX_UNKNOWN"> </a><div class="element clickable constant  CDP_CACHE_NEIGHBOUR_DUPLEX_UNKNOWN" data-toggle="collapse" data-target=".CDP_CACHE_NEIGHBOUR_DUPLEX_UNKNOWN .collapse">
+<h2>CDP_CACHE_NEIGHBOUR_DUPLEX_UNKNOWN</h2>
+<pre>CDP_CACHE_NEIGHBOUR_DUPLEX_UNKNOWN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_CACHE_NEIGHBOUR_ADDRESS" id="OID_CDP_CACHE_NEIGHBOUR_ADDRESS"> </a><div class="element clickable constant  OID_CDP_CACHE_NEIGHBOUR_ADDRESS" data-toggle="collapse" data-target=".OID_CDP_CACHE_NEIGHBOUR_ADDRESS .collapse">
+<h2>OID_CDP_CACHE_NEIGHBOUR_ADDRESS</h2>
+<pre>OID_CDP_CACHE_NEIGHBOUR_ADDRESS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE" id="OID_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE"> </a><div class="element clickable constant  OID_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE" data-toggle="collapse" data-target=".OID_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE .collapse">
+<h2>OID_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE</h2>
+<pre>OID_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_CACHE_NEIGHBOUR_CAPABILITY" id="OID_CDP_CACHE_NEIGHBOUR_CAPABILITY"> </a><div class="element clickable constant  OID_CDP_CACHE_NEIGHBOUR_CAPABILITY" data-toggle="collapse" data-target=".OID_CDP_CACHE_NEIGHBOUR_CAPABILITY .collapse">
+<h2>OID_CDP_CACHE_NEIGHBOUR_CAPABILITY</h2>
+<pre>OID_CDP_CACHE_NEIGHBOUR_CAPABILITY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_CACHE_NEIGHBOUR_DUPLEX" id="OID_CDP_CACHE_NEIGHBOUR_DUPLEX"> </a><div class="element clickable constant  OID_CDP_CACHE_NEIGHBOUR_DUPLEX" data-toggle="collapse" data-target=".OID_CDP_CACHE_NEIGHBOUR_DUPLEX .collapse">
+<h2>OID_CDP_CACHE_NEIGHBOUR_DUPLEX</h2>
+<pre>OID_CDP_CACHE_NEIGHBOUR_DUPLEX </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_CACHE_NEIGHBOUR_ID" id="OID_CDP_CACHE_NEIGHBOUR_ID"> </a><div class="element clickable constant  OID_CDP_CACHE_NEIGHBOUR_ID" data-toggle="collapse" data-target=".OID_CDP_CACHE_NEIGHBOUR_ID .collapse">
+<h2>OID_CDP_CACHE_NEIGHBOUR_ID</h2>
+<pre>OID_CDP_CACHE_NEIGHBOUR_ID </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_CACHE_NEIGHBOUR_LAST_CHANGE" id="OID_CDP_CACHE_NEIGHBOUR_LAST_CHANGE"> </a><div class="element clickable constant  OID_CDP_CACHE_NEIGHBOUR_LAST_CHANGE" data-toggle="collapse" data-target=".OID_CDP_CACHE_NEIGHBOUR_LAST_CHANGE .collapse">
+<h2>OID_CDP_CACHE_NEIGHBOUR_LAST_CHANGE</h2>
+<pre>OID_CDP_CACHE_NEIGHBOUR_LAST_CHANGE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_CACHE_NEIGHBOUR_NATIVE_VLAN" id="OID_CDP_CACHE_NEIGHBOUR_NATIVE_VLAN"> </a><div class="element clickable constant  OID_CDP_CACHE_NEIGHBOUR_NATIVE_VLAN" data-toggle="collapse" data-target=".OID_CDP_CACHE_NEIGHBOUR_NATIVE_VLAN .collapse">
+<h2>OID_CDP_CACHE_NEIGHBOUR_NATIVE_VLAN</h2>
+<pre>OID_CDP_CACHE_NEIGHBOUR_NATIVE_VLAN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_CACHE_NEIGHBOUR_PLATFORM" id="OID_CDP_CACHE_NEIGHBOUR_PLATFORM"> </a><div class="element clickable constant  OID_CDP_CACHE_NEIGHBOUR_PLATFORM" data-toggle="collapse" data-target=".OID_CDP_CACHE_NEIGHBOUR_PLATFORM .collapse">
+<h2>OID_CDP_CACHE_NEIGHBOUR_PLATFORM</h2>
+<pre>OID_CDP_CACHE_NEIGHBOUR_PLATFORM </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_CACHE_NEIGHBOUR_PORT" id="OID_CDP_CACHE_NEIGHBOUR_PORT"> </a><div class="element clickable constant  OID_CDP_CACHE_NEIGHBOUR_PORT" data-toggle="collapse" data-target=".OID_CDP_CACHE_NEIGHBOUR_PORT .collapse">
+<h2>OID_CDP_CACHE_NEIGHBOUR_PORT</h2>
+<pre>OID_CDP_CACHE_NEIGHBOUR_PORT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_CACHE_NEIGHBOUR_VERSION" id="OID_CDP_CACHE_NEIGHBOUR_VERSION"> </a><div class="element clickable constant  OID_CDP_CACHE_NEIGHBOUR_VERSION" data-toggle="collapse" data-target=".OID_CDP_CACHE_NEIGHBOUR_VERSION .collapse">
+<h2>OID_CDP_CACHE_NEIGHBOUR_VERSION</h2>
+<pre>OID_CDP_CACHE_NEIGHBOUR_VERSION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_CACHE_NEIGHBOUR_VTP_MGMT_DOMAIN" id="OID_CDP_CACHE_NEIGHBOUR_VTP_MGMT_DOMAIN"> </a><div class="element clickable constant  OID_CDP_CACHE_NEIGHBOUR_VTP_MGMT_DOMAIN" data-toggle="collapse" data-target=".OID_CDP_CACHE_NEIGHBOUR_VTP_MGMT_DOMAIN .collapse">
+<h2>OID_CDP_CACHE_NEIGHBOUR_VTP_MGMT_DOMAIN</h2>
+<pre>OID_CDP_CACHE_NEIGHBOUR_VTP_MGMT_DOMAIN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_GLOBAL_DEVICE_ID" id="OID_CDP_GLOBAL_DEVICE_ID"> </a><div class="element clickable constant  OID_CDP_GLOBAL_DEVICE_ID" data-toggle="collapse" data-target=".OID_CDP_GLOBAL_DEVICE_ID .collapse">
+<h2>OID_CDP_GLOBAL_DEVICE_ID</h2>
+<pre>OID_CDP_GLOBAL_DEVICE_ID </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_GLOBAL_HOLDTIME" id="OID_CDP_GLOBAL_HOLDTIME"> </a><div class="element clickable constant  OID_CDP_GLOBAL_HOLDTIME" data-toggle="collapse" data-target=".OID_CDP_GLOBAL_HOLDTIME .collapse">
+<h2>OID_CDP_GLOBAL_HOLDTIME</h2>
+<pre>OID_CDP_GLOBAL_HOLDTIME </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_GLOBAL_LAST_CHANGE" id="OID_CDP_GLOBAL_LAST_CHANGE"> </a><div class="element clickable constant  OID_CDP_GLOBAL_LAST_CHANGE" data-toggle="collapse" data-target=".OID_CDP_GLOBAL_LAST_CHANGE .collapse">
+<h2>OID_CDP_GLOBAL_LAST_CHANGE</h2>
+<pre>OID_CDP_GLOBAL_LAST_CHANGE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_GLOBAL_MESSAGE_INTERVAL" id="OID_CDP_GLOBAL_MESSAGE_INTERVAL"> </a><div class="element clickable constant  OID_CDP_GLOBAL_MESSAGE_INTERVAL" data-toggle="collapse" data-target=".OID_CDP_GLOBAL_MESSAGE_INTERVAL .collapse">
+<h2>OID_CDP_GLOBAL_MESSAGE_INTERVAL</h2>
+<pre>OID_CDP_GLOBAL_MESSAGE_INTERVAL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CDP_GLOBAL_RUN" id="OID_CDP_GLOBAL_RUN"> </a><div class="element clickable constant  OID_CDP_GLOBAL_RUN" data-toggle="collapse" data-target=".OID_CDP_GLOBAL_RUN .collapse">
+<h2>OID_CDP_GLOBAL_RUN</h2>
+<pre>OID_CDP_GLOBAL_RUN </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
@@ -348,24 +812,6 @@ connected to that local port. You can discover the neighbour ID via neighbourId(
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a name="OID_CDP_NEIGHBOUR_CAPABILITY" id="OID_CDP_NEIGHBOUR_CAPABILITY"> </a><div class="element clickable constant  OID_CDP_NEIGHBOUR_CAPABILITY" data-toggle="collapse" data-target=".OID_CDP_NEIGHBOUR_CAPABILITY .collapse">
-<h2>OID_CDP_NEIGHBOUR_CAPABILITY</h2>
-<pre>OID_CDP_NEIGHBOUR_CAPABILITY </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
-</div>
-<a name="OID_CDP_NEIGHBOUR_ID" id="OID_CDP_NEIGHBOUR_ID"> </a><div class="element clickable constant  OID_CDP_NEIGHBOUR_ID" data-toggle="collapse" data-target=".OID_CDP_NEIGHBOUR_ID .collapse">
-<h2>OID_CDP_NEIGHBOUR_ID</h2>
-<pre>OID_CDP_NEIGHBOUR_ID </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
-</div>
-<a name="OID_CDP_NEIGHBOUR_PORT" id="OID_CDP_NEIGHBOUR_PORT"> </a><div class="element clickable constant  OID_CDP_NEIGHBOUR_PORT" data-toggle="collapse" data-target=".OID_CDP_NEIGHBOUR_PORT .collapse">
-<h2>OID_CDP_NEIGHBOUR_PORT</h2>
-<pre>OID_CDP_NEIGHBOUR_PORT </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
-</div>
 </div>
 </div>
 </div>
@@ -373,7 +819,7 @@ connected to that local port. You can discover the neighbour ID via neighbourId(
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
-            generated on 2012-06-11T11:07:43+01:00.<br></footer></div>
+            generated on 2012-06-12T10:21:12+01:00.<br></footer></div>
 </div>
 </body>
 </html>
