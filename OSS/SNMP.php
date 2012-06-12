@@ -169,7 +169,7 @@ class SNMP
 
         if( $this->_lastResult === false )
             throw new Exception( 'Cound not perform walk for OID ' . $oid );
-        
+
         return $this->getCache()->save( $oid, $this->parseSnmpValue( $this->_lastResult ) );
     }
 
@@ -208,7 +208,7 @@ class SNMP
 
         if( $this->_lastResult === false )
             throw new Exception( 'Cound not perform walk for OID ' . $oid );
-        
+
         $result = array();
 
         $oidPrefix = null;
@@ -257,7 +257,7 @@ class SNMP
 
         if( $this->_lastResult === false )
             throw new Exception( 'Cound not perform walk for OID ' . $oid );
-        
+
         $result = array();
 
         foreach( $this->_lastResult as $_oid => $value )
@@ -285,7 +285,7 @@ class SNMP
         // first, rule out an empty string
         if( $v == '""' || $v == '' )
             return "";
-        
+
         $type = substr( $v, 0, strpos( $v, ':' ) );
         $value = trim( substr( $v, strpos( $v, ':' ) + 1 ) );
 
@@ -293,7 +293,7 @@ class SNMP
         {
             case 'STRING':
                 if( substr( $value, 0, 1 ) == '"' )
-                    $rtn = (string)substr( substr( $value, 1 ), 0, -1 );
+                    $rtn = (string)trim( substr( substr( $value, 1 ), 0, -1 ) );
                 else
                     $rtn = (string)$value;
                 break;
@@ -316,9 +316,9 @@ class SNMP
             case 'Hex-STRING':
                 $rtn = (string)implode( '', explode( ' ', $value ) );
                 break;
-                
+
             case 'Timeticks':
-                $rtn = substr( $value, 1, strrpos( $value, ')' ) - 1 );
+                $rtn = (int)substr( $value, 1, strrpos( $value, ')' ) - 1 );
                 break;
 
             default:
@@ -360,10 +360,20 @@ class SNMP
     public static function translate( $values, $translator )
     {
         if( !is_array( $values ) )
-            return $translator[ $values ];
+        {
+            if( isset( $translator[ $values ] ) )
+                return $translator[ $values ];
+            else
+                return "*** UNKNOWN ***";
+        }
 
         foreach( $values as $k => $v )
-            $values[$k] = $translator[ $v ];
+        {
+            if( isset( $translator[ $v ] ) )
+                $values[$k] = $translator[ $v ];
+            else
+                $values[$k] = "*** UNKNOWN ***";
+        }
 
         return $values;
     }

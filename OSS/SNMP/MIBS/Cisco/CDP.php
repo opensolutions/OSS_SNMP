@@ -44,13 +44,78 @@ namespace OSS\SNMP\MIBS\Cisco;
 class CDP extends \OSS\SNMP\MIBS\Cisco
 {
 
-    const OID_CDP_INTERFACE_ENABLED    = '.1.3.6.1.4.1.9.9.23.1.1.1.1.2';
-    const OID_CDP_INTERFACE_NAME       = '.1.3.6.1.4.1.9.9.23.1.1.1.1.6';
-    const OID_CDP_NEIGHBOUR_ID         = '.1.3.6.1.4.1.9.9.23.1.2.1.1.6';
-    const OID_CDP_NEIGHBOUR_PORT       = '.1.3.6.1.4.1.9.9.23.1.2.1.1.7';
-    const OID_CDP_NEIGHBOUR_CAPABILITY = '.1.3.6.1.4.1.9.9.23.1.2.1.1.9';
-    const OID_CDP_DEVICE_ID            = '.1.3.6.1.4.1.9.9.23.1.3.4.0';
+    const OID_CDP_INTERFACE_ENABLED               = '.1.3.6.1.4.1.9.9.23.1.1.1.1.2';
+    const OID_CDP_INTERFACE_NAME                  = '.1.3.6.1.4.1.9.9.23.1.1.1.1.6';
 
+    const OID_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE    = '.1.3.6.1.4.1.9.9.23.1.2.1.1.3';
+    const OID_CDP_CACHE_NEIGHBOUR_ADDRESS         = '.1.3.6.1.4.1.9.9.23.1.2.1.1.4';
+    const OID_CDP_CACHE_NEIGHBOUR_VERSION         = '.1.3.6.1.4.1.9.9.23.1.2.1.1.5';
+    const OID_CDP_CACHE_NEIGHBOUR_ID              = '.1.3.6.1.4.1.9.9.23.1.2.1.1.6';
+    const OID_CDP_CACHE_NEIGHBOUR_PORT            = '.1.3.6.1.4.1.9.9.23.1.2.1.1.7';
+    const OID_CDP_CACHE_NEIGHBOUR_PLATFORM        = '.1.3.6.1.4.1.9.9.23.1.2.1.1.8';
+    const OID_CDP_CACHE_NEIGHBOUR_CAPABILITY      = '.1.3.6.1.4.1.9.9.23.1.2.1.1.9';
+    const OID_CDP_CACHE_NEIGHBOUR_VTP_MGMT_DOMAIN = '.1.3.6.1.4.1.9.9.23.1.2.1.1.10';
+    const OID_CDP_CACHE_NEIGHBOUR_NATIVE_VLAN     = '.1.3.6.1.4.1.9.9.23.1.2.1.1.11';
+    const OID_CDP_CACHE_NEIGHBOUR_DUPLEX          = '.1.3.6.1.4.1.9.9.23.1.2.1.1.12';
+    const OID_CDP_CACHE_NEIGHBOUR_LAST_CHANGE     = '.1.3.6.1.4.1.9.9.23.1.2.1.1.24';
+
+    const OID_CDP_GLOBAL_RUN                      = '.1.3.6.1.4.1.9.9.23.1.3.1.0';
+    const OID_CDP_GLOBAL_MESSAGE_INTERVAL         = '.1.3.6.1.4.1.9.9.23.1.3.2.0';
+    const OID_CDP_GLOBAL_HOLDTIME                 = '.1.3.6.1.4.1.9.9.23.1.3.3.0';
+    const OID_CDP_GLOBAL_DEVICE_ID                = '.1.3.6.1.4.1.9.9.23.1.3.4.0';
+    const OID_CDP_GLOBAL_LAST_CHANGE              = '.1.3.6.1.4.1.9.9.23.1.3.5.0';
+
+
+    /**
+     * Get the device's global CDP (Cisco Discovery Protocol) run status
+     *
+     * "An indication of whether the Cisco Discovery Protocol is currently running.  Entries in cdpCacheTable are
+     * deleted when CDP is disabled."
+     *
+     * @return boolean True if enabled globally, else false
+     */
+    public function globalRun()
+    {
+        return $this->getSNMP()->ppTruthValue( $this->getSNMP()->get( self::OID_CDP_GLOBAL_RUN ) );
+    }
+
+    /**
+     * Get the interval at which CDP messages are to be generated
+     *
+     * "The interval at which CDP messages are to be generated. The default value is 60 seconds."
+     *
+     * @return int The interval at which CDP messages are to be generated
+     */
+    public function globalMessageInterval()
+    {
+        return $this->getSNMP()->get( self::OID_CDP_GLOBAL_MESSAGE_INTERVAL );
+    }
+
+    /**
+     * Get the time for the receiving device holds CDP message
+     *
+     * "The time for the receiving device holds CDP message. The default value is 180 seconds."
+     *
+     * @return int The time for the receiving device holds CDP message
+     */
+    public function globalHoldTime()
+    {
+        return $this->getSNMP()->get( self::OID_CDP_GLOBAL_HOLDTIME );
+    }
+
+    /**
+     * The time when the cache table was last changed
+     *
+     * "Indicates the time when the cache table was last changed. It
+     *  is the most recent time at which any row was last created,
+     *  modified or deleted."
+     *
+     * @return int The time (timeticks) when the cache table was last changed
+     */
+    public function globalLastChange()
+    {
+        return $this->getSNMP()->get( self::OID_CDP_GLOBAL_LAST_CHANGE );
+    }
 
     /**
      * Get the device's CDP (Cisco Discovery Protocol) ID
@@ -59,7 +124,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      */
     public function id()
     {
-        return $this->getSNMP()->get( self::OID_CDP_DEVICE_ID );
+        return $this->getSNMP()->get( self::OID_CDP_GLOBAL_DEVICE_ID );
     }
 
 
@@ -79,6 +144,8 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the device's interface names as seen in CDP
      *
+     * "The name of the local interface as advertised by CDP in the Port-ID TLV"
+     *
      * @return array The device's interface names as seen in CDP
      */
     public function interfaceNames()
@@ -86,14 +153,98 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
         return $this->getSNMP()->walk1d( self::OID_CDP_INTERFACE_NAME );
     }
 
+
+
+    /**
+     * Constant for possible value of CDP neighbour address type
+     * @see neighbourAddressTypes()
+     */
+    const CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP = 1;
+
+    /**
+     * Text representation of CDP neighbour address type
+     *
+     * @see neighbourAddressTypes()
+     * @var array Text representation of CDP neighbour address type
+     */
+    public static $CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES = array(
+        self::CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP => 'ip'
+    );
+
+    /**
+     * Get the CDP neighbours' address type indexed by the current device's port ID
+     *
+     * "An indication of the type of address contained in the corresponding instance of cdpCacheAddress"
+     *
+     * @param boolean $translate If true, return the string representation via self::$VTP_VLAN_TYPES
+     * @return array The CDP neighbours' address type indexed by the current device's port ID
+     */
+    public function neighbourAddressTypes( $translate = false )
+    {
+        $types = $this->getSNMP()->subOidWalk( self::OID_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE, 15 );
+
+        if( !$translate )
+            return $types;
+
+        return $this->getSNMP()->translate( $types, self::$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES );
+    }
+
+
+    /**
+     * Get the device's CDP neighbour addresses indexed by the current device's port ID
+     *
+     * "The (first) network-layer address of the device
+     * as reported in the Address TLV of the most recently received
+     * CDP message.  For example, if the corresponding instance of
+     * cacheAddressType had the value 'ip(1)', then this object
+     * would be an IPv4-address.  If the neighbor device is
+     * SNMP-manageable, it is supposed to generate its CDP messages
+     * such that this address is one at which it will receive SNMP
+     * messages. Use cdpCtAddressTable to extract the remaining
+     * addresses from the Address TLV received most recently."
+     *
+     * @return array The device's CDP neighbour addresses indexed by the current device's port ID
+     */
+    public function neighbourAddresses()
+    {
+        $addresses = $this->getSNMP()->subOidWalk( self::OID_CDP_CACHE_NEIGHBOUR_ADDRESS, 15 );
+
+        foreach( $addresses as $portId => $address )
+        {
+            if( strlen( $address ) == 8 && $this->neighbourAddressTypes()[ $portId ] == self::CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP )
+                $addresses[ $portId ] = long2ip( hexdec( $address ) );
+        }
+
+        return $addresses;
+    }
+
+    /**
+     * Get the device's CDP neighbour version indexed by the current device's port ID
+     *
+     * "The Version string as reported in the most recent CDP
+     * message.  The zero-length string indicates no Version
+     * field (TLV) was reported in the most recent CDP message."
+     *
+     * @return array The device's CDP neighbour version indexed by the current device's port ID
+     */
+    public function neighbourVersions()
+    {
+        return $this->getSNMP()->subOidWalk( self::OID_CDP_CACHE_NEIGHBOUR_VERSION, 15 );
+    }
+
+
     /**
      * Get the device's CDP neighbours (by their CDP ID) indexed by the current device's port ID
+     *
+     * "The Device-ID string as reported in the most recent CDP
+     * message.  The zero-length string indicates no Device-ID
+     * field (TLV) was reported in the most recent CDP message."
      *
      * @return array The device's CDP neighbours (by their CDP ID) indexed by the current device's port ID
      */
     public function neighbourId()
     {
-        return $this->getSNMP()->subOidWalk( self::OID_CDP_NEIGHBOUR_ID, 15 );
+        return $this->getSNMP()->subOidWalk( self::OID_CDP_CACHE_NEIGHBOUR_ID, 15 );
     }
 
     /**
@@ -112,28 +263,280 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      * meaning, for example, that our local port with ID 10101 is connected to port GigabitEthernet0/1 on the neighbour
      * connected to that local port. You can discover the neighbour ID via neighbourId().
      *
+     * "The Port-ID string as reported in the most recent CDP
+     * message.  This will typically be the value of the ifName
+     * object (e.g., 'Ethernet0').  The zero-length string
+     * indicates no Port-ID field (TLV) was reported in the
+     * most recent CDP message."
+     *
      * @see neighbourId()
      * @return array The device's CDP neighbours connected port *description* indexed by the current device's port ID
      */
     public function neighbourPort()
     {
-        return $this->getSNMP()->subOidWalk( self::OID_CDP_NEIGHBOUR_PORT, 15 );
+        return $this->getSNMP()->subOidWalk( self::OID_CDP_CACHE_NEIGHBOUR_PORT, 15 );
     }
 
     /**
+     * Get the device's CDP neighbour platforms indexed by the current device's port ID
+     *
+     * "The Device's Hardware Platform as reported in the most recent CDP message.  The zero-length string indicates
+     * that no Platform field (TLV) was reported in the most recent CDP message."
+     *
+     * @return array The device's CDP neighbour platforms indexed by the current device's port ID
+     */
+    public function neighbourPlatforms()
+    {
+        return $this->getSNMP()->subOidWalk( self::OID_CDP_CACHE_NEIGHBOUR_PLATFORM, 15 );
+    }
+
+
+
+    /**
+     * Constant for possible value of CDP neighbour capability
+     * @see neighbourCapability()
+     */
+    const CDP_CACHE_NEIGHBOUR_CAPABILITY_ROUTER = 0b1;
+
+    /**
+     * Constant for possible value of CDP neighbour capability
+     * @see neighbourCapability()
+     */
+    const CDP_CACHE_NEIGHBOUR_CAPABILITY_TRANSPARENT_BRIDGE = 0b10;
+
+    /**
+     * Constant for possible value of CDP neighbour capability
+     * @see neighbourCapability()
+     */
+    const CDP_CACHE_NEIGHBOUR_CAPABILITY_SOURCE_ROUTE_BRIDGE = 0b100;
+
+    /**
+     * Constant for possible value of CDP neighbour capability
+     * @see neighbourCapability()
+     */
+    const CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH = 0b1000;
+
+    /**
+     * Constant for possible value of CDP neighbour capability
+     * @see neighbourCapability()
+     */
+    const CDP_CACHE_NEIGHBOUR_CAPABILITY_HOST = 0b10000;
+
+    /**
+     * Constant for possible value of CDP neighbour capability
+     * @see neighbourCapability()
+     */
+    const CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE = 0b100000;
+
+    /**
+     * Constant for possible value of CDP neighbour capability
+     * @see neighbourCapability()
+     */
+    const CDP_CACHE_NEIGHBOUR_CAPABILITY_REPEATER = 0b1000000;
+
+    /**
+     * Text representation of CDP capabilities
+     *
+     * @see neighbourCapability()
+     * @var array Text representation of CDP neighbour capabilities
+     */
+    public static $CDP_CACHE_NEIGHBOUR_CAPABILITIES = array(
+        self::CDP_CACHE_NEIGHBOUR_CAPABILITY_ROUTER              => 'Router',
+        self::CDP_CACHE_NEIGHBOUR_CAPABILITY_TRANSPARENT_BRIDGE  => 'Transparent Bridge',
+        self::CDP_CACHE_NEIGHBOUR_CAPABILITY_SOURCE_ROUTE_BRIDGE => 'Source Route Bridge',
+        self::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH              => 'Switch',
+        self::CDP_CACHE_NEIGHBOUR_CAPABILITY_HOST                => 'Host',
+        self::CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE        => 'IGMP Capable',
+        self::CDP_CACHE_NEIGHBOUR_CAPABILITY_REPEATER            => 'Repeater'
+    );
+
+    /**
      * Get the device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID
+     *
+     * "The Device's Functional Capabilities as reported in the most recent CDP message.  For latest set of specific
+     * values, see the latest version of the CDP specification. The zero-length string indicates no Capabilities field
+     * (TLV) was reported in the most recent CDP message."
+     *
+     * @see REFERENCE "Cisco Discovery Protocol Specification, 10/19/94."
+     * @see http://www.cisco.com/univercd/cc/td/doc/product/lan/trsrb/frames.htm#xtocid12
+     * @see http://wiki.wireshark.org/CDP
      *
      * @return array The device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID
      */
     public function neighbourCapability()
     {
-        $rtn = $this->getSNMP()->subOidWalk( self::OID_CDP_NEIGHBOUR_CAPABILITY, 15 );
+        $rtn = $this->getSNMP()->subOidWalk( self::OID_CDP_CACHE_NEIGHBOUR_CAPABILITY, 15 );
 
         foreach( $rtn as $k => $v )
             $rtn[$k] = (int)hexdec( $v );
 
         return $rtn;
     }
+
+    /**
+     * Query if a given neighbour (by connected port ID) has the given capability
+     *
+     * Example:
+     *
+     *    if( $host->useCisco_CDP()->neighbourHasCapability( $portId, \OSS\SNMP\MIBS\Cisco\CDP::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH )
+     *         echo "Host is a switch!!";
+     *
+     * @param int $portId The CDP neighbour by connected local port ID
+     * @param int $capability The capability to query for (defined by self::CDP_CACHE_NEIGHBOUR_CAPABILITY_XXX constants)
+     * @return boolean True if the neighbour has the given capability
+     */
+    public function neighbourHasCapability( $portId, $capability )
+    {
+        if( $this->neighbourCapability()[ $portId ] & $capability )
+            return true;
+
+        return false;
+    }
+
+    /**
+     * Get an array of individual capabilities of a given neighbour (by connected port ID)
+     *
+     * Example:
+     *
+     *     print_r( $host->useCisco_CDP()->neighbourCapabilities( 10111 ) )
+     *
+     *         [0] => 8         // self::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH
+     *         [1] => 32        // self::CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE
+     *
+     *     print_r( $host->useCisco_CDP()->neighbourCapabilities( 10111, true ) )
+     *
+     *         [0] => "Switch"              // self::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH
+     *         [1] => "IGMP Capable"        // self::CDP_CACHE_NEIGHBOUR_CAPABILITY_IGMP_CAPABLE
+     *
+     *
+     *
+     * @param int $portId The CDP neighbour by connected local port ID
+     * @param int $translate Set to true to return descriptions rather than integers
+     * @return array Individual capabilities of a given neighbour
+     */
+    public function neighbourCapabilities( $portId, $translate = false )
+    {
+        $capabilities = array();
+
+        foreach( self::$CDP_CACHE_NEIGHBOUR_CAPABILITIES as $mask => $description )
+        {
+            if( $this->neighbourCapability()[ $portId ] & $mask )
+                $capabilities[] = $mask;
+        }
+
+        if( $translate )
+            return $this->getSNMP()->translate( $capabilities, self::$CDP_CACHE_NEIGHBOUR_CAPABILITIES );
+
+        return $capabilities;
+    }
+
+
+
+
+    /**
+     * Get the device's CDP neighbours' VTP management domain indexed by the current device's port ID
+     *
+     * "The VTP Management Domain for the remote device's interface, as reported in the most recently received CDP message.
+     * This object is not instantiated if no VTP Management Domain field (TLV) was reported in the most recently received CDP message."
+     *
+     * @see REFERENCE "managementDomainName in CISCO-VTP-MIB"
+     *
+     * @return array The device's CDP neighbours' VTP management domain indexed by the current device's port ID
+     */
+    public function neighbourVTPMgmtDomain()
+    {
+        return $this->getSNMP()->subOidWalk( self::OID_CDP_CACHE_NEIGHBOUR_VTP_MGMT_DOMAIN, 15 );
+    }
+
+
+    /**
+     * Get the remote device's interface's native VLAN (indexed by local portId)
+     *
+     * "The remote device's interface's native VLAN, as reported in the
+     *  most recent CDP message.  The value 0 indicates
+     *  no native VLAN field (TLV) was reported in the most
+     *  recent CDP message."
+     *
+     * @return array The remote device's interface's native VLAN (indexed by local portId)
+     */
+    public function neighbourNativeVLAN()
+    {
+        return $this->getSNMP()->subOidWalk( self::OID_CDP_CACHE_NEIGHBOUR_NATIVE_VLAN, 15 );
+    }
+
+
+
+
+    /**
+     * Constant for possible value of CDP neighbour duplex
+     * @see neighbourDuplexMode()
+     */
+    const CDP_CACHE_NEIGHBOUR_DUPLEX_UNKNOWN = 1;
+
+    /**
+     * Constant for possible value of CDP neighbour duplex
+     * @see neighbourDuplexMode()
+     */
+    const CDP_CACHE_NEIGHBOUR_DUPLEX_HALF = 2;
+
+    /**
+     * Constant for possible value of CDP neighbour duplex
+     * @see neighbourDuplexMode()
+     */
+    const CDP_CACHE_NEIGHBOUR_DUPLEX_FULL = 3;
+
+    /**
+     * Text representation of CDP capabilities
+     *
+     * @see neighbourDuplexMode()
+     * @var array Text representation of CDP neighbour duplex modes
+     */
+    public static $CDP_CACHE_NEIGHBOUR_DUPLEXES = array(
+        self::CDP_CACHE_NEIGHBOUR_DUPLEX_UNKNOWN => 'unknown',
+        self::CDP_CACHE_NEIGHBOUR_DUPLEX_HALF    => 'half-duplex',
+        self::CDP_CACHE_NEIGHBOUR_DUPLEX_FULL    => 'full-duplex'
+    );
+
+
+    /**
+     * Get the remote device's interface's duplex mode (indexed by local portId)
+     *
+     * "The remote device's interface's duplex mode, as reported in the
+     *  most recent CDP message.  The value unknown(1) indicates
+     *  no duplex mode field (TLV) was reported in the most
+     *  recent CDP message."
+     *
+     * @param boolean $translate If true, return the string representation via self::$VTP_VLAN_TYPES
+     * @return array The remote device's interface's duplex mode (indexed by local portId)
+     */
+    public function neighbourDuplexMode( $translate = false )
+    {
+        $modes = $this->getSNMP()->subOidWalk( self::OID_CDP_CACHE_NEIGHBOUR_DUPLEX, 15 );
+
+        if( !$translate )
+            return $modes;
+
+        return $this->getSNMP()->translate( $modes, self::$CDP_CACHE_NEIGHBOUR_DUPLEXES );
+    }
+
+
+    /**
+     * Get the remote device's last change time (indexed by local portId)
+     *
+     * "Indicates the time when this cache entry was last changed.
+     *  This object is initialised to the current time when the entry
+     *  gets created and updated to the current time whenever the value
+     *  of any (other) object instance in the corresponding row is
+     *  modified."
+     *
+     * @return array The remote device's last change time(indexed by local portId)
+     */
+    public function neighbourLastChange()
+    {
+        return $this->getSNMP()->subOidWalk( self::OID_CDP_CACHE_NEIGHBOUR_LAST_CHANGE, 15 );
+    }
+
+
 
     /**
      * CDP utility function to get all CDP neighbours and their connected ports.
@@ -185,7 +588,15 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
             $neighbours[ $neighbourCdpId ][$count]['localPortId']   = $localPortId;
             $neighbours[ $neighbourCdpId ][$count]['localPortName'] = $this->getSNMP()->useIface()->names()[$localPortId];
             $neighbours[ $neighbourCdpId ][$count]['localPort']     = $this->getSNMP()->useIface()->descriptions()[$localPortId];
-            $neighbours[ $neighbourCdpId ][$count]['isLAG']         = $this->getSNMP()->useLAG()->isAggregatePorts()[$localPortId];
+            try
+            {
+                $neighbours[ $neighbourCdpId ][$count]['isLAG']     = $this->getSNMP()->useLAG()->isAggregatePorts()[$localPortId];
+            }
+            catch( \OSS\Exception $e )
+            {
+                $neighbours[ $neighbourCdpId ][$count]['isLAG']     = false;
+            }
+
             $neighbours[ $neighbourCdpId ][$count]['remotePort']    = $this->neighbourPort()[$localPortId];
         }
 
