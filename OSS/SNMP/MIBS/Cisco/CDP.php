@@ -636,9 +636,18 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
             if( !isset( $devices[ $feNeighbour ] ) )
             {
                 $snmp = new \OSS\SNMP( $feNeighbour, $this->getSNMP()->getCommunity() );
-                $devices[ $feNeighbour ] = $snmp->useCisco_CDP()->neighbours();
-                unset( $snmp );
-                $this->crawl( $devices, $feNeighbour, $ignore );
+
+                try
+                {
+                    $devices[ $feNeighbour ] = $snmp->useCisco_CDP()->neighbours();
+                    unset( $snmp );
+                    $this->crawl( $devices, $feNeighbour, $ignore );
+                }
+                catch( \OSS\Exception $e )
+                {
+                    // this device did not respond / have CDP enabled / CDP available - skip
+                    unset( $devices[$feNeighbour] );
+                }
             }
         }
 
