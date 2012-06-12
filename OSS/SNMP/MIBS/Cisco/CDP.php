@@ -588,7 +588,15 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
             $neighbours[ $neighbourCdpId ][$count]['localPortId']   = $localPortId;
             $neighbours[ $neighbourCdpId ][$count]['localPortName'] = $this->getSNMP()->useIface()->names()[$localPortId];
             $neighbours[ $neighbourCdpId ][$count]['localPort']     = $this->getSNMP()->useIface()->descriptions()[$localPortId];
-            $neighbours[ $neighbourCdpId ][$count]['isLAG']         = $this->getSNMP()->useLAG()->isAggregatePorts()[$localPortId];
+            try
+            {
+                $neighbours[ $neighbourCdpId ][$count]['isLAG']     = $this->getSNMP()->useLAG()->isAggregatePorts()[$localPortId];
+            }
+            catch( \OSS\Exception $e )
+            {
+                $neighbours[ $neighbourCdpId ][$count]['isLAG']     = false;
+            }
+
             $neighbours[ $neighbourCdpId ][$count]['remotePort']    = $this->neighbourPort()[$localPortId];
         }
 
