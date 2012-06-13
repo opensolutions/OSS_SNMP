@@ -590,7 +590,16 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
             $neighbours[ $neighbourCdpId ][$count]['localPort']     = $this->getSNMP()->useIface()->descriptions()[$localPortId];
             try
             {
-                $neighbours[ $neighbourCdpId ][$count]['isLAG']     = $this->getSNMP()->useLAG()->isAggregatePorts()[$localPortId];
+                if( $this->getSNMP()->useLAG()->isAggregatePorts()[$localPortId] )
+                {
+                    $neighbours[ $neighbourCdpId ][$count]['isLAG']       = true;
+                    $neighbours[ $neighbourCdpId ][$count]['lagPortId']   = $this->getSNMP()->useLAG()->portAttachedIds()[$localPortId];
+                    $neighbours[ $neighbourCdpId ][$count]['lagPortName'] = $this->getSNMP()->useIface()->names()[ $neighbours[ $neighbourCdpId ][$count]['lagPortId'] ];
+                }
+                else
+                {
+                    $neighbours[ $neighbourCdpId ][$count]['isLAG']     = false;
+                }
             }
             catch( \OSS\Exception $e )
             {
@@ -635,6 +644,8 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
 
             if( !isset( $devices[ $feNeighbour ] ) )
             {
+                #echo "Crawling $feNeighbour<br>\n";
+                #flush();ob_end_flush();
                 $snmp = new \OSS\SNMP( $feNeighbour, $this->getSNMP()->getCommunity() );
 
                 try
@@ -647,6 +658,52 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
                 {
                     // this device did not respond / have CDP enabled / CDP available - skip
                     unset( $devices[$feNeighbour] );
+                }
+            }
+        }
+
+        // find LAGs and more
+        foreach( $devices as $parent => $neighbours )
+        {
+            foreach( $neighbours as $neighbour => $links )
+            {
+                foreach( $links as $idx => $link )
+                {
+                    if( $link['isLAG'] and !isset( $link['remoteLagPortId'] ) )
+                    {
+                        if( isset( $devices[ $neighbour ][ $parent ] ) )
+                        {
+                            foreach( $devices[ $neighbour ][ $parent ] as $_idx => $_link )
+                            {
+                                if( $_link['localPort'] == $link['remotePort'] )
+                                {
+                                    $devices[ $parent ][ $neighbour ][ $idx ][ 'remoteLagPortId' ]   = $_link['lagPortId'];
+                                    $devices[ $parent ][ $neighbour ][ $idx ][ 'remoteLagPortName' ] = $_link['lagPortName'];
+
+                                    $devices[ $neighbour ][ $parent ][ $_idx ][ 'remoteLagPortId' ]   = $link['lagPortId'];
+                                    $devices[ $neighbour ][ $parent ][ $_idx ][ 'remoteLagPortName' ] = $link['lagPortName'];
+
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if( !isset( $link['remotePortId'] ) )
+                    {
+                        if( isset( $devices[ $neighbour ][ $parent ] ) )
+                        {
+                            foreach( $devices[ $neighbour ][ $parent ] as $_idx => $_link )
+                            {
+                                if( $_link['localPort'] == $link['remotePort'] )
+                                {
+                                    $devices[ $parent ][ $neighbour ][ $idx ][ 'remotePortId' ]   = $_link['localPortId'];
+                                    $devices[ $parent ][ $neighbour ][ $idx ][ 'remotePortName' ] = $_link['localPortName'];
+
+                                    break;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -726,8 +783,19 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
                         $links[ $feDevice ][ $fe2Device ] = array();
 
                     $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ] = array();
-                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'remotePort' ] = $fe2Link['remotePort'];
-                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'isLAG' ]      = $fe2Link['isLAG'];
+                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'remotePort' ]   = $fe2Link['remotePort'];
+                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'isLAG' ]        = $fe2Link['isLAG'];
+                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'localPortId' ]  = $fe2Link['localPortId'];
+                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'remotePortId' ] = $fe2Link['remotePortId'];
+
+                    if( $fe2Link['isLAG'] )
+                    {
+                        $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'localLagPortId' ]    = $fe2Link['lagPortId'];
+                        $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'localLagPortName' ]  = $fe2Link['lagPortName'];
+                        $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'remoteLagPortId' ]   = $fe2Link['remoteLagPortId'];
+                        $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'remoteLagPortName' ] = $fe2Link['remoteLagPortName'];
+                        $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'remotePortId' ]      = $fe2Link['remoteLagPortId'];
+                    }
                 }
             }
         }
