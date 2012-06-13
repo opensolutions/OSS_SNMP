@@ -138,7 +138,13 @@ class RSTP extends \OSS\SNMP\MIBS\Cisco
         // convert STP port IDs to switch port IDs
         $croles = array();
         foreach( $roles as $k => $v )
-            $croles[ $this->getSNMP()->useBridge()->basePortIfIndexes()[$k] ] = $v;
+        {
+            $base = $this->getSNMP()->useBridge()->basePortIfIndexes()[$k];
+            if( $base )
+                $croles[ $base ] = $v;
+            else
+                $croles[ $k + 10100 ] = $v;       // FIXME Hack... basePortIfIndexes() does not have all ports...
+        }
 
         if( !$translate )
             return $croles;
