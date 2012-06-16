@@ -541,39 +541,64 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * CDP utility function to get all CDP neighbours and their connected ports.
      *
-     * Returns an array of neighbours indexed by the neighbour CDP ID. For example:
+     * Returns an array of neighbours indexed by the neighbour CDP ID with a lot of details.
+     *
+     * For example, here's a sample return for a switch with two neighbours where one neighbour
+     * is connected with a LAG / PortChannel and $inverse was set to true.
      *
      *
-     * Array
-     * (
-     *     [cr-sw03.ixdub1.opensolutions.ie] => Array
-     *         (
-     *            [0] => Array
-     *                (
-     *                     [localPortId] => 10101
-     *                     [localPort] => GigabitEthernet1/0/1
-     *                     [remotePort] => GigabitEthernet0/1
-     *                 )
-     *
-     *             [1] => Array
-     *                 (
-     *                     [localPortId] => 10102
-     *                     [localPort] => GigabitEthernet1/0/2
-     *                     [remotePort] => FastEthernet0/2
-     *                 )
-     *
-     *         )
-     *     [ ... ]
-     * )
+     * array(2) {
+     *     ["cr-sw07.example.ie"] => array(1) {
+     *         [0] => array(7) {
+     *             ["localPortId"] => int(10103)
+     *             ["localPortName"] => string(7) "Gi1/0/3"
+     *             ["localPort"] => string(20) "GigabitEthernet1/0/3"
+     *             ["isLAG"] => bool(false)
+     *             ["remotePort"] => string(21) "GigabitEthernet1/0/24"
+     *             ["remotePortId"] => int(10124)
+     *             ["remotePortName"] => string(8) "Gi1/0/24"
+     *         }
+     *     }
+     *     ["cr-sw01.example.ie"] => array(2) {
+     *         [0] => array(11) {
+     *             ["localPortId"] => int(10111)
+     *             ["localPortName"] => string(8) "Gi1/0/11"
+     *             ["localPort"] => string(21) "GigabitEthernet1/0/11"
+     *             ["isLAG"] => bool(true)
+     *             ["lagPortId"] => int(5048)
+     *             ["lagPortName"] => string(4) "Po48"
+     *             ["remotePort"] => string(21) "GigabitEthernet1/0/11"
+     *             ["remotePortId"] => int(10111)
+     *             ["remotePortName"] => string(8) "Gi1/0/11"
+     *             ["remoteLagPortId"] => int(5048)
+     *             ["remoteLagPortName"] => string(4) "Po48"
+     *         }
+     *         [1] => array(11) {
+     *             ["localPortId"] => int(10112)
+     *             ["localPortName"] => string(8) "Gi1/0/12"
+     *             ["localPort"] => string(21) "GigabitEthernet1/0/12"
+     *             ["isLAG"] => bool(true)
+     *             ["lagPortId"] => int(5048)
+     *             ["lagPortName"] => string(4) "Po48"
+     *             ["remotePort"] => string(21) "GigabitEthernet1/0/12"
+     *             ["remotePortId"] => int(10112)
+     *             ["remotePortName"] => string(8) "Gi1/0/12"
+     *             ["remoteLagPortId"] => int(5048)
+     *             ["remoteLagPortName"] => string(4) "Po48"
+     *         }
+     *     }
      *
      * @see neighbourId()
      * @see \OSS\SNMP\MIBS\Interface::descriptions()
      * @see neighbourPort()
+     * @param boolean $inverse If true, all remoteXXX params will be discovered (only remotePort is returned otherwise)
+     * @param array $skipHostIds If using $inverse, pass an array of CDP IDs of neighbours that should not be 'inverse' discovered.
      * @return array CDP neighbours and their connected ports
      */
-    public function neighbours()
+    public function neighbours( $inverse = false, $skipHostIds = null )
     {
         $neighbours = array();
+        $remotes = array();
 
         foreach( $this->neighbourId() as $localPortId => $neighbourCdpId )
         {
@@ -588,6 +613,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
             $neighbours[ $neighbourCdpId ][$count]['localPortId']   = $localPortId;
             $neighbours[ $neighbourCdpId ][$count]['localPortName'] = $this->getSNMP()->useIface()->names()[$localPortId];
             $neighbours[ $neighbourCdpId ][$count]['localPort']     = $this->getSNMP()->useIface()->descriptions()[$localPortId];
+
             try
             {
                 if( $this->getSNMP()->useLAG()->isAggregatePorts()[$localPortId] )
@@ -607,6 +633,46 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
             }
 
             $neighbours[ $neighbourCdpId ][$count]['remotePort']    = $this->neighbourPort()[$localPortId];
+
+            if( $inverse )
+            {
+                if( !is_array( $skipHostIds ) || !in_array( $neighbourCdpId, $skipHostIds ) )
+                {
+                    try
+                    {
+                        if( !isset( $remotes[ $neighbourCdpId ] ) )
+                            $remotes[ $neighbourCdpId ] = new \OSS\SNMP( $neighbourCdpId, $this->getSNMP()->getCommunity() );
+
+                        $remote = $remotes[ $neighbourCdpId ];
+                        $rneighbours = $remote->useCisco_CDP()->neighbours( false );
+
+                        foreach( $rneighbours as $rNeighbourCdpId => $rLinks )
+                        {
+                            foreach( $rLinks as $rIndex => $rPortDetails )
+                            {
+                                $rLocalPortId = $rPortDetails[ 'localPortId' ];
+                                if( $rNeighbourCdpId == $this->id()
+                                        && $remote->useIface()->descriptions()[ $rLocalPortId ] == $neighbours[ $neighbourCdpId ][$count]['remotePort'] )
+                                {
+                                    $neighbours[ $neighbourCdpId ][$count]['remotePortId']   = $rLocalPortId;
+                                    $neighbours[ $neighbourCdpId ][$count]['remotePortName'] = $remote->useIface()->names()[ $rLocalPortId ];
+
+                                    if( $neighbours[ $neighbourCdpId ][$count]['isLAG'] )
+                                    {
+                                        $neighbours[ $neighbourCdpId ][$count]['remoteLagPortId']   = $remote->useLAG()->portAttachedIds()[$rLocalPortId];
+                                        $neighbours[ $neighbourCdpId ][$count]['remoteLagPortName'] = $remote->useIface()->names()[ $neighbours[ $neighbourCdpId ][$count]['remoteLagPortId'] ];
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    catch( \OSS\Exception $e )
+                    {
+                    }
+                }
+            }
+
         }
 
         return $neighbours;
@@ -629,7 +695,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
         if( !count( $devices ) )
         {
             $device = $this->id();
-            $devices[ $device ] = $this->neighbours();
+            $devices[ $device ] = $this->neighbours( true, $ignore );
         }
 
         foreach( $devices[ $device ] as $feNeighbour => $feConnections )
@@ -644,13 +710,11 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
 
             if( !isset( $devices[ $feNeighbour ] ) )
             {
-                #echo "Crawling $feNeighbour<br>\n";
-                #flush();ob_end_flush();
                 $snmp = new \OSS\SNMP( $feNeighbour, $this->getSNMP()->getCommunity() );
 
                 try
                 {
-                    $devices[ $feNeighbour ] = $snmp->useCisco_CDP()->neighbours();
+                    $devices[ $feNeighbour ] = $snmp->useCisco_CDP()->neighbours( true, $ignore );
                     unset( $snmp );
                     $this->crawl( $devices, $feNeighbour, $ignore );
                 }
@@ -658,52 +722,6 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
                 {
                     // this device did not respond / have CDP enabled / CDP available - skip
                     unset( $devices[$feNeighbour] );
-                }
-            }
-        }
-
-        // find LAGs and more
-        foreach( $devices as $parent => $neighbours )
-        {
-            foreach( $neighbours as $neighbour => $links )
-            {
-                foreach( $links as $idx => $link )
-                {
-                    if( $link['isLAG'] and !isset( $link['remoteLagPortId'] ) )
-                    {
-                        if( isset( $devices[ $neighbour ][ $parent ] ) )
-                        {
-                            foreach( $devices[ $neighbour ][ $parent ] as $_idx => $_link )
-                            {
-                                if( $_link['localPort'] == $link['remotePort'] )
-                                {
-                                    $devices[ $parent ][ $neighbour ][ $idx ][ 'remoteLagPortId' ]   = $_link['lagPortId'];
-                                    $devices[ $parent ][ $neighbour ][ $idx ][ 'remoteLagPortName' ] = $_link['lagPortName'];
-
-                                    $devices[ $neighbour ][ $parent ][ $_idx ][ 'remoteLagPortId' ]   = $link['lagPortId'];
-                                    $devices[ $neighbour ][ $parent ][ $_idx ][ 'remoteLagPortName' ] = $link['lagPortName'];
-
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                    if( !isset( $link['remotePortId'] ) )
-                    {
-                        if( isset( $devices[ $neighbour ][ $parent ] ) )
-                        {
-                            foreach( $devices[ $neighbour ][ $parent ] as $_idx => $_link )
-                            {
-                                if( $_link['localPort'] == $link['remotePort'] )
-                                {
-                                    $devices[ $parent ][ $neighbour ][ $idx ][ 'remotePortId' ]   = $_link['localPortId'];
-                                    $devices[ $parent ][ $neighbour ][ $idx ][ 'remotePortName' ] = $_link['localPortName'];
-
-                                    break;
-                                }
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -717,13 +735,16 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      *
      * Huh? This function:
      *
-     * * takes the result of crawl() (or calls crawl()) to get the CDP topology
-     * * foreach device, builds an array of device to device links
+     * * takes the result of crawl() (or calls crawl()) to get the CDP topology;
+     * * foreach device, builds an array of device to device links;
      * * SO LONG as that link has already not been accounted for in the other direction.
      *
-     * I.e. if a link is found A -> B, then the same B -> A link will not be included
+     * I.e. if a link is found A -> B, then the same B -> A link will not be included.
      *
-     * The array returned is, for example:
+     * The primary differences to the return value of this and crawl() are:
+     *
+     * * links only appear once (unidirectional) rather than twice (bidirectional)
+     * * the links are indexed by the localPortName rather than an integer index:
      *
      * [cr-sw04.degkcp.example.ie] => Array
      * (
@@ -733,28 +754,11 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      *          (
      *              [remotePort] => FastEthernet0/1
      *              [isLAG]      => false
+     *              ........
      *      )
      *
-     *      [cr-sw03.degkcp.example.ie] => Array
-     *      (
-     *          [GigabitEthernet1/0/23] => Array
-     *          (
-     *              [remotePort] => GigabitEthernet1/0/23
-     *              [isLAG]      => false
-     *          )
-     *          [GigabitEthernet1/0/24] => Array
-     *          (
-     *              [remotePort] => GigabitEthernet1/0/24
-     *              [isLAG]      => false
-     *          )
-     *      )
-     * )
      *
-     * This tells us that cr-sw04(GigabitEthernet1/0/3) is connected to cd-sw02(FastEthernet0/1).
-     *
-     * It also tells us that cr-sw04 has two connections to cr-sw03.
-     *
-     * You'll notice it also tells us if it's a LAG or not. More information can be added as needed.
+     * All port information is copied over from the supplied / called crawl() array
      *
      * @see crawl()
      * @param array $devices The result of crawl() (if null, this function performs a crawl())
@@ -783,25 +787,128 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
                         $links[ $feDevice ][ $fe2Device ] = array();
 
                     $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ] = array();
-                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'remotePort' ]   = $fe2Link['remotePort'];
-                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'isLAG' ]        = $fe2Link['isLAG'];
-                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'localPortId' ]  = $fe2Link['localPortId'];
-                    $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'remotePortId' ] = $fe2Link['remotePortId'];
 
-                    if( $fe2Link['isLAG'] )
-                    {
-                        $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'localLagPortId' ]    = $fe2Link['lagPortId'];
-                        $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'localLagPortName' ]  = $fe2Link['lagPortName'];
-                        $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'remoteLagPortId' ]   = $fe2Link['remoteLagPortId'];
-                        $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'remoteLagPortName' ] = $fe2Link['remoteLagPortName'];
-                        $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ 'remotePortId' ]      = $fe2Link['remoteLagPortId'];
-                    }
+                    foreach( $fe2Link as $k => $v )
+                        $links[ $feDevice ][ $fe2Device ][ $fe2Link['localPort'] ][ $k ]   = $v;
                 }
             }
         }
 
         return $links;
     }
+
+
+    /**
+     * Utility function to process the output from neighbours() and remove individual trunk ports leaving only
+     * single LAG links.
+     *
+     * For example, here's a sample return for a switch with a neighbour
+     * connected with a LAG / PortChannel:
+     *
+     * array(2) {
+     *     ["cr-sw01.example.ie"] => array(2) {
+     *         [0] => array(11) {
+     *             ["localPortId"] => int(10111)
+     *             ["localPortName"] => string(8) "Gi1/0/11"
+     *             ["localPort"] => string(21) "GigabitEthernet1/0/11"
+     *             ["isLAG"] => bool(true)
+     *             ["lagPortId"] => int(5048)
+     *             ["lagPortName"] => string(4) "Po48"
+     *             ["remotePort"] => string(21) "GigabitEthernet1/0/11"
+     *             ["remotePortId"] => int(10111)
+     *             ["remotePortName"] => string(8) "Gi1/0/11"
+     *             ["remoteLagPortId"] => int(5048)
+     *             ["remoteLagPortName"] => string(4) "Po48"
+     *         }
+     *         [1] => array(11) {
+     *             ["localPortId"] => int(10112)
+     *             ["localPortName"] => string(8) "Gi1/0/12"
+     *             ["localPort"] => string(21) "GigabitEthernet1/0/12"
+     *             ["isLAG"] => bool(true)
+     *             ["lagPortId"] => int(5048)
+     *             ["lagPortName"] => string(4) "Po48"
+     *             ["remotePort"] => string(21) "GigabitEthernet1/0/12"
+     *             ["remotePortId"] => int(10112)
+     *             ["remotePortName"] => string(8) "Gi1/0/12"
+     *             ["remoteLagPortId"] => int(5048)
+     *             ["remoteLagPortName"] => string(4) "Po48"
+     *         }
+     *     }
+     *     ...
+     * }
+     *
+     * The result of this function would be:
+     *
+     * array(2) {
+     *     ["cr-sw01.example.ie"] => array(1) {
+     *         [0] => array(11) {
+     *             ["localPortId"] => int(5048)
+     *             ["localPortName"] => string(8) "Po48"
+     *             ["localPort"] => string(21) "Po48"
+     *             ["isLAG"] => bool(true)
+     *             ["lagPortId"] => int(5048)
+     *             ["lagPortName"] => string(4) "Po48"
+     *             ["remotePort"] => string(21) "Po48"
+     *             ["remotePortId"] => int(5048)
+     *             ["remotePortName"] => string(8) "Po48"
+     *             ["remoteLagPortId"] => int(5048)
+     *             ["remoteLagPortName"] => string(4) "Po48"
+     *         }
+     *     }
+     *     ...
+     * }
+     *
+     * @see neighbours()
+     * @param array $neighbours The result of a call to neighbours()
+     * @return array Processed CDP neighbours with LAG ports collapsed
+     */
+    public function collapseLAGs( $neighbours )
+    {
+        foreach( $neighbours as $neighbour => $links )
+        {
+            $removed = array();
+            foreach( $links as $idx => $linkDetails )
+            {
+                if( $linkDetails['isLAG'] )
+                {
+                    if( isset( $removed[ $linkDetails['localLagPortId'] ] ) )
+                        unset( $neighbours[ $neighbour ][ $idx ] );
+                    else
+                    {
+                        $removed[ $linkDetails['localLagPortId'] ] = true;
+                        $neighbours[ $neighbour ][ $idx ]['localPortId']    = $neighbours[ $neighbour ][ $idx ]['lagPortId'];
+                        $neighbours[ $neighbour ][ $idx ]['localPortName']  = $neighbours[ $neighbour ][ $idx ]['lagPortName'];
+                        $neighbours[ $neighbour ][ $idx ]['localPort']      = $neighbours[ $neighbour ][ $idx ]['lagPortName'];
+                        $neighbours[ $neighbour ][ $idx ]['remotePortId']   = $neighbours[ $neighbour ][ $idx ]['remoteLagPortId'];
+                        $neighbours[ $neighbour ][ $idx ]['remotePortName'] = $neighbours[ $neighbour ][ $idx ]['remoteLagPortName'];
+                        $neighbours[ $neighbour ][ $idx ]['remotePort']     = $neighbours[ $neighbour ][ $idx ]['remoteLagPortName'];
+                    }
+                }
+            }
+        }
+
+        return $neighbours;
+    }
+
+    /**
+     * An extension of collapseLAGs() to work with crawl() and linkTopology().
+     *
+     * Rather than taking the input from neighbours(), it takes input from crawl() or linkTopology()
+     * and processes all neighbours.
+     *
+     * @see collapseLAGs()
+     * @param array $devices The result of a call to crawl() or linkTopology()
+     * @return array Processed CDP neighbours with LAG ports collapsed
+     */
+    public function collapseDevicesLAGs( $devices )
+    {
+        foreach( $devices as $parent => $neighbours )
+            $devices[ $parent ] = $this->collapseLAGs( $neighbours );
+
+        return $devices;
+    }
+
+
 }
 
 
