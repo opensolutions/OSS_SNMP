@@ -106,6 +106,14 @@ class RSTP extends \OSS\SNMP\MIBS\Cisco
         self::STP_X_RSTP_PORT_ROLE_MASTER      => 'master'
     );
 
+    /**
+     * Array of port states that indicate traffic is/can pass
+     * @var Array of port states that indicate traffic is/can pass
+     */
+    public static $STP_X_RSTP_PASSING_PORT_ROLES = array(
+        self::STP_X_RSTP_PORT_ROLE_ROOT        => 'root',
+        self::STP_X_RSTP_PORT_ROLE_DESIGNATED  => 'designated'
+    );
 
     /**
      * Get the device's RSTP port roles (by given vlan id)
