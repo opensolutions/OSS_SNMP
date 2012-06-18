@@ -59,14 +59,14 @@ class Iface extends \OSS\SNMP\MIB
     const OID_IF_IN_DISCARDS             = '.1.3.6.1.2.1.2.2.1.13';
     const OID_IF_IN_ERRORS               = '.1.3.6.1.2.1.2.2.1.14';
     const OID_IF_IN_UNKNOWN_PROTOCOLS    = '.1.3.6.1.2.1.2.2.1.15';
-    
+
     const OID_IF_OUT_OCTETS              = '.1.3.6.1.2.1.2.2.1.16';
     const OID_IF_OUT_UNICAST_PACKETS     = '.1.3.6.1.2.1.2.2.1.17';
     const OID_IF_OUT_NON_UNICAST_PACKETS = '.1.3.6.1.2.1.2.2.1.18';
     const OID_IF_OUT_DISCARDS            = '.1.3.6.1.2.1.2.2.1.19';
     const OID_IF_OUT_ERRORS              = '.1.3.6.1.2.1.2.2.1.20';
     const OID_IF_OUT_QUEUE_LENGTH        = '.1.3.6.1.2.1.2.2.1.21';
-    
+
     const OID_IF_NAME                    = '.1.3.6.1.2.1.31.1.1.1.1';
     const OID_IF_ALIAS                   = '.1.3.6.1.2.1.31.1.1.1.18';
 
@@ -91,7 +91,7 @@ class Iface extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_IF_MTU );
     }
-    
+
     /**
      * Get an array of the interfaces' physical addresses
      *
@@ -107,9 +107,9 @@ class Iface extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_IF_PHYS_ADDRESS );
     }
-    
-    
-    
+
+
+
     /**
      * Constant for possible value of interface admin status.
      * @see adminStates()
@@ -139,7 +139,7 @@ class Iface extends \OSS\SNMP\MIB
         self::IF_ADMIN_STATUS_DOWN    => 'down',
         self::IF_ADMIN_STATUS_TESTING => 'testing'
     );
-    
+
     /**
      * Get an array of device interface admin status (up / down)
      *
@@ -165,7 +165,7 @@ class Iface extends \OSS\SNMP\MIB
 
         return $this->getSNMP()->translate( $states, self::$IF_ADMIN_STATES );
     }
-        
+
     /**
      * Get an array of device interface last change times
      *
@@ -257,12 +257,12 @@ class Iface extends \OSS\SNMP\MIB
         return $this->getSNMP()->walk1d( self::OID_IF_IN_ERRORS );
     }
 
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     /**
      * Get an array of device interface out octets
      *
@@ -275,7 +275,7 @@ class Iface extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_IF_OUT_OCTETS );
     }
-    
+
     /**
      * Get an array of device interface unicast packets out
      *
@@ -290,7 +290,7 @@ class Iface extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_IF_OUT_UNICAST_PACKETS );
     }
-    
+
     /**
      * Get an array of device interface non-unicast packets out
      *
@@ -306,7 +306,7 @@ class Iface extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_IF_OUT_NON_UNICAST_PACKETS );
     }
-    
+
     /**
      * Get an array of device interface outbound discarded packets
      *
@@ -322,7 +322,7 @@ class Iface extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_IF_OUT_DISCARDS );
     }
-    
+
     /**
      * Get an array of device interface outbound error packets
      *
@@ -335,7 +335,7 @@ class Iface extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_IF_OUT_ERRORS );
     }
-    
+
     /**
      * Get an array of interface outbound queue lengths
      *
@@ -347,11 +347,11 @@ class Iface extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_IF_OUT_QUEUE_LENGTH );
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     /**
      * Get an array of packets received on an interface of unknown protocol
      *
@@ -475,7 +475,7 @@ class Iface extends \OSS\SNMP\MIB
      * @see operationStates()
      */
     const IF_OPER_STATUS_NOT_PRESENT      = 6;
-    
+
     /**
      * Constant for possible value of interface operation status.
      * @see operationStates()
@@ -524,7 +524,7 @@ class Iface extends \OSS\SNMP\MIB
         return $this->getSNMP()->translate( $states, self::$IF_OPER_STATES );
     }
 
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
@@ -535,190 +535,1400 @@ class Iface extends \OSS\SNMP\MIB
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_REGULAR_1822 = 2;
+    const IF_TYPE_REGULAR1822 = 2;
 
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_HDH_1822 = 3;
+    const IF_TYPE_HDH1822 = 3;
 
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_DDN_X25 = 4;
+    const IF_TYPE_DDNX25 = 4;
 
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_RFC877_X25 = 5;
-    
+    const IF_TYPE_RFC877X25 = 5;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_ETHERNET_CSMACD = 6;
-    
+    const IF_TYPE_ETHERNETCSMACD = 6;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_ISO88023_CSMACD = 7;
-    
+    const IF_TYPE_ISO88023CSMACD = 7;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_ISO88024_TOKEN_BUS = 8;
-    
+    const IF_TYPE_ISO88024TOKENBUS = 8;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_ISO88025_TOKEN_RING = 9;
-    
+    const IF_TYPE_ISO88025TOKENRING = 9;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_ISO88026_MAN = 10;
-    
+    const IF_TYPE_ISO88026MAN = 10;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_STAR_LAN = 11;
-    
+    const IF_TYPE_STARLAN = 11;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_PROTEON_10MBIT = 12;
-    
+    const IF_TYPE_PROTEON10MBIT = 12;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_PROTEON_80MBIT = 13;
-    
+    const IF_TYPE_PROTEON80MBIT = 13;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
     const IF_TYPE_HYPERCHANNEL = 14;
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
     const IF_TYPE_FDDI = 15;
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
     const IF_TYPE_LAPB = 16;
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
     const IF_TYPE_SDLC = 17;
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_DSL = 18;
-    
+    const IF_TYPE_DS1 = 18;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
     const IF_TYPE_E1 = 19;
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_BASIC_ISDN = 20;
-    
+    const IF_TYPE_BASICISDN = 20;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_PRIMARY_ISDN = 21;
-    
+    const IF_TYPE_PRIMARYISDN = 21;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_PROP_POINT_TO_POINT_SERIAL = 22;
-    
+    const IF_TYPE_PROPPOINTTOPOINTSERIAL = 22;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
     const IF_TYPE_PPP = 23;
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_SOFTWARE_LOOPBACK = 24;
-    
+    const IF_TYPE_SOFTWARELOOPBACK = 24;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
     const IF_TYPE_EON = 25;
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_ETHERNET_3MBIT = 26;
-    
+    const IF_TYPE_ETHERNET3MBIT = 26;
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
     const IF_TYPE_NSIP = 27;
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
     const IF_TYPE_SLIP = 28;
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
     const IF_TYPE_ULTRA = 29;
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
     const IF_TYPE_DS3 = 30;
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
     const IF_TYPE_SIP = 31;
-    
+
     /**
      * Constant for possible type of an interface
      * @see types()
      */
-    const IF_TYPE_FRAME_RELAY = 32;
-    
-    
-    
+    const IF_TYPE_FRAMERELAY = 32;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_RS232 = 33;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PARA = 34;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ARCNET = 35;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ARCNETPLUS = 36;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ATM = 37;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MIOX25 = 38;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SONET = 39;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_X25PLE = 40;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ISO88022LLC = 41;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_LOCALTALK = 42;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SMDSDXI = 43;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_FRAMERELAYSERVICE = 44;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_V35 = 45;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_HSSI = 46;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_HIPPI = 47;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MODEM = 48;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_AAL5 = 49;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SONETPATH = 50;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SONETVT = 51;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SMDSICIP = 52;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PROPVIRTUAL = 53;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PROPMULTIPLEXOR = 54;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IEEE80212 = 55;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_FIBRECHANNEL = 56;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_HIPPIINTERFACE = 57;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_FRAMERELAYINTERCONNECT = 58;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_AFLANE8023 = 59;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_AFLANE8025 = 60;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_CCTEMUL = 61;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_FASTETHER = 62;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ISDN = 63;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_V11 = 64;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_V36 = 65;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_G703AT64K = 66;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_G703AT2MB = 67;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_QLLC = 68;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_FASTETHERFX = 69;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_CHANNEL = 70;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IEEE80211 = 71;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IBM370PARCHAN = 72;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ESCON = 73;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DLSW = 74;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ISDNS = 75;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ISDNU = 76;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_LAPD = 77;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IPSWITCH = 78;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_RSRB = 79;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ATMLOGICAL = 80;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DS0 = 81;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DS0BUNDLE = 82;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_BSC = 83;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ASYNC = 84;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_CNR = 85;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ISO88025DTR = 86;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_EPLRS = 87;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ARAP = 88;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PROPCNLS = 89;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_HOSTPAD = 90;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_TERMPAD = 91;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_FRAMERELAYMPI = 92;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_X213 = 93;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ADSL = 94;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_RADSL = 95;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SDSL = 96;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VDSL = 97;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ISO88025CRFPINT = 98;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MYRINET = 99;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VOICEEM = 100;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VOICEFXO = 101;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VOICEFXS = 102;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VOICEENCAP = 103;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VOICEOVERIP = 104;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ATMDXI = 105;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ATMFUNI = 106;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ATMIMA = 107;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PPPMULTILINKBUNDLE = 108;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IPOVERCDLC = 109;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IPOVERCLAW = 110;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_STACKTOSTACK = 111;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VIRTUALIPADDRESS = 112;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MPC = 113;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IPOVERATM = 114;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ISO88025FIBER = 115;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_TDLC = 116;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_GIGABITETHERNET = 117;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_HDLC = 118;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_LAPF = 119;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_V37 = 120;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_X25MLP = 121;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_X25HUNTGROUP = 122;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_TRASNPHDLC = 123;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_INTERLEAVE = 124;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_FAST = 125;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IP = 126;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DOCSCABLEMACLAYER = 127;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DOCSCABLEDOWNSTREAM = 128;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DOCSCABLEUPSTREAM = 129;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_A12MPPSWITCH = 130;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_TUNNEL = 131;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_COFFEE = 132;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_CES = 133;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ATMSUBINTERFACE = 134;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_L2VLAN = 135;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_L3IPVLAN = 136;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_L3IPXVLAN = 137;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DIGITALPOWERLINE = 138;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MEDIAMAILOVERIP = 139;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DTM = 140;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DCN = 141;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IPFORWARD = 142;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MSDSL = 143;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IEEE1394 = 144;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IF_GSN = 145;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DVBRCCMACLAYER = 146;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DVBRCCDOWNSTREAM = 147;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DVBRCCUPSTREAM = 148;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ATMVIRTUAL = 149;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MPLSTUNNEL = 150;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SRP = 151;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VOICEOVERATM = 152;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VOICEOVERFRAMERELAY = 153;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IDSL = 154;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_COMPOSITELINK = 155;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SS7SIGLINK = 156;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PROPWIRELESSP2P = 157;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_FRFORWARD = 158;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_RFC1483 = 159;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_USB = 160;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IEEE8023ADLAG = 161;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_BGPPOLICYACCOUNTING = 162;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_FRF16MFRBUNDLE = 163;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_H323GATEKEEPER = 164;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_H323PROXY = 165;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MPLS = 166;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MFSIGLINK = 167;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_HDSL2 = 168;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SHDSL = 169;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DS1FDL = 170;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_POS = 171;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DVBASIIN = 172;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DVBASIOUT = 173;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PLC = 174;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_NFAS = 175;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_TR008 = 176;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_GR303RDT = 177;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_GR303IDT = 178;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ISUP = 179;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PROPDOCSWIRELESSMACLAYER = 180;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PROPDOCSWIRELESSDOWNSTREAM = 181;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PROPDOCSWIRELESSUPSTREAM = 182;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_HIPERLAN2 = 183;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PROPBWAP2MP = 184;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SONETOVERHEADCHANNEL = 185;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DIGITALWRAPPEROVERHEADCHANNEL = 186;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_AAL2 = 187;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_RADIOMAC = 188;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ATMRADIO = 189;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_IMT = 190;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MVL = 191;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_REACHDSL = 192;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_FRDLCIENDPT = 193;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ATMVCIENDPT = 194;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_OPTICALCHANNEL = 195;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_OPTICALTRANSPORT = 196;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PROPATM = 197;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VOICEOVERCABLE = 198;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_INFINIBAND = 199;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_TELINK = 200;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_Q2931 = 201;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VIRTUALTG = 202;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SIPTG = 203;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SIPSIG = 204;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DOCSCABLEUPSTREAMCHANNEL = 205;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ECONET = 206;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PON155 = 207;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PON622 = 208;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_BRIDGE = 209;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_LINEGROUP = 210;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VOICEEMFGD = 211;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VOICEFGDEANA = 212;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_VOICEDID = 213;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MPEGTRANSPORT = 214;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_SIXTOFOUR = 215;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_GTP = 216;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PDNETHERLOOP1 = 217;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_PDNETHERLOOP2 = 218;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_OPTICALCHANNELGROUP = 219;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_HOMEPNA = 220;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_GFP = 221;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_CISCOISLVLAN = 222;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ACTELISMETALOOP = 223;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_FCIPLINK = 224;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_RPR = 225;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_QAM = 226;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_LMP = 227;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_CBLVECTASTAR = 228;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_DOCSCABLEMCMTSDOWNSTREAM = 229;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ADSL2 = 230;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MACSECCONTROLLEDIF = 231;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_MACSECUNCONTROLLEDIF = 232;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_AVICIOPTICALETHER = 233;
+
+    /**
+     * Constant for possible type of an interface
+     * @see types()
+     */
+    const IF_TYPE_ATMBOND = 234;
+
     /**
      * Text representation of interface types.
      *
@@ -727,39 +1937,241 @@ class Iface extends \OSS\SNMP\MIB
      */
     public static $IF_TYPES = array(
         self::IF_TYPE_OTHER                      => 'other',
-        self::IF_TYPE_REGULAR_1822               => 'regular1822',
-        self::IF_TYPE_HDH_1822                   => 'hdh1822',
-        self::IF_TYPE_DDN_X25                    => 'ddn-x25',
-        self::IF_TYPE_RFC877_X25                 => 'rfc877-x25',
-        self::IF_TYPE_ETHERNET_CSMACD            => 'ethernet-csmacd',
-        self::IF_TYPE_ISO88023_CSMACD            => 'iso88023-csmacd',
-        self::IF_TYPE_ISO88024_TOKEN_BUS         => 'iso88024-tokenBus',
-        self::IF_TYPE_ISO88025_TOKEN_RING        => 'iso88025-tokenRing',
-        self::IF_TYPE_ISO88026_MAN               => 'iso88026-man',
-        self::IF_TYPE_STAR_LAN                   => 'starLan',
-        self::IF_TYPE_PROTEON_10MBIT             => 'proteon-10Mbit',
-        self::IF_TYPE_PROTEON_80MBIT             => 'proteon-80Mbit',
-        self::IF_TYPE_HYPERCHANNEL               => 'hyperchannel',
-        self::IF_TYPE_FDDI                       => 'fddi',
-        self::IF_TYPE_LAPB                       => 'lapb',
-        self::IF_TYPE_SDLC                       => 'sdlc',
-        self::IF_TYPE_DSL                        => 'ds1',
-        self::IF_TYPE_E1                         => 'e1',
-        self::IF_TYPE_BASIC_ISDN                 => 'basicISDN',
-        self::IF_TYPE_PRIMARY_ISDN               => 'primaryISDN',
-        self::IF_TYPE_PROP_POINT_TO_POINT_SERIAL => 'propPointToPointSerial',
-        self::IF_TYPE_PPP                        => 'ppp',
-        self::IF_TYPE_SOFTWARE_LOOPBACK          => 'softwareLoopback',
-        self::IF_TYPE_EON                        => 'eon',
-        self::IF_TYPE_ETHERNET_3MBIT             => 'ethernet-3Mbit',
-        self::IF_TYPE_NSIP                       => 'nsip',
-        self::IF_TYPE_SLIP                       => 'slip',
+        self::IF_TYPE_REGULAR1822                      => 'regular1822',
+        self::IF_TYPE_HDH1822                      => 'hdh1822',
+        self::IF_TYPE_DDNX25                      => 'ddnX25',
+        self::IF_TYPE_RFC877X25                      => 'rfc877x25',
+        self::IF_TYPE_ETHERNETCSMACD                      => 'ethernetCsmacd',
+        self::IF_TYPE_ISO88023CSMACD                      => 'iso88023Csmacd',
+        self::IF_TYPE_ISO88024TOKENBUS                      => 'iso88024TokenBus',
+        self::IF_TYPE_ISO88025TOKENRING                      => 'iso88025TokenRing',
+        self::IF_TYPE_ISO88026MAN                      => 'iso88026Man',
+        self::IF_TYPE_STARLAN                      => 'starLan',
+        self::IF_TYPE_PROTEON10MBIT                      => 'proteon10Mbit',
+        self::IF_TYPE_PROTEON80MBIT                      => 'proteon80Mbit',
+        self::IF_TYPE_HYPERCHANNEL                      => 'hyperchannel',
+        self::IF_TYPE_FDDI                      => 'fddi',
+        self::IF_TYPE_LAPB                      => 'lapb',
+        self::IF_TYPE_SDLC                      => 'sdlc',
+        self::IF_TYPE_DS1                      => 'ds1',
+        self::IF_TYPE_E1                      => 'e1',
+        self::IF_TYPE_BASICISDN                      => 'basicISDN',
+        self::IF_TYPE_PRIMARYISDN                      => 'primaryISDN',
+        self::IF_TYPE_PROPPOINTTOPOINTSERIAL                      => 'propPointToPointSerial',
+        self::IF_TYPE_PPP                      => 'ppp',
+        self::IF_TYPE_SOFTWARELOOPBACK                      => 'softwareLoopback',
+        self::IF_TYPE_EON                      => 'eon',
+        self::IF_TYPE_ETHERNET3MBIT                      => 'ethernet3Mbit',
+        self::IF_TYPE_NSIP                      => 'nsip',
+        self::IF_TYPE_SLIP                      => 'slip',
         self::IF_TYPE_ULTRA                      => 'ultra',
-        self::IF_TYPE_DS3                        => 'ds3',
-        self::IF_TYPE_SIP                        => 'sip',
-        self::IF_TYPE_FRAME_RELAY                => 'frame-relay'
+        self::IF_TYPE_DS3                      => 'ds3',
+        self::IF_TYPE_SIP                      => 'sip',
+        self::IF_TYPE_FRAMERELAY                      => 'frameRelay',
+        self::IF_TYPE_RS232                      => 'rs232',
+        self::IF_TYPE_PARA                      => 'para',
+        self::IF_TYPE_ARCNET                      => 'arcnet',
+        self::IF_TYPE_ARCNETPLUS                      => 'arcnetPlus',
+        self::IF_TYPE_ATM                      => 'atm',
+        self::IF_TYPE_MIOX25                      => 'miox25',
+        self::IF_TYPE_SONET                      => 'sonet',
+        self::IF_TYPE_X25PLE                      => 'x25ple',
+        self::IF_TYPE_ISO88022LLC                      => 'iso88022llc',
+        self::IF_TYPE_LOCALTALK                      => 'localTalk',
+        self::IF_TYPE_SMDSDXI                      => 'smdsDxi',
+        self::IF_TYPE_FRAMERELAYSERVICE                      => 'frameRelayService',
+        self::IF_TYPE_V35                      => 'v35',
+        self::IF_TYPE_HSSI                      => 'hssi',
+        self::IF_TYPE_HIPPI                      => 'hippi',
+        self::IF_TYPE_MODEM                      => 'modem',
+        self::IF_TYPE_AAL5                      => 'aal5',
+        self::IF_TYPE_SONETPATH                      => 'sonetPath',
+        self::IF_TYPE_SONETVT                      => 'sonetVT',
+        self::IF_TYPE_SMDSICIP                      => 'smdsIcip',
+        self::IF_TYPE_PROPVIRTUAL                      => 'propVirtual',
+        self::IF_TYPE_PROPMULTIPLEXOR                      => 'propMultiplexor',
+        self::IF_TYPE_IEEE80212                      => 'ieee80212',
+        self::IF_TYPE_FIBRECHANNEL                      => 'fibreChannel',
+        self::IF_TYPE_HIPPIINTERFACE                      => 'hippiInterface',
+        self::IF_TYPE_FRAMERELAYINTERCONNECT                      => 'frameRelayInterconnect',
+        self::IF_TYPE_AFLANE8023                      => 'aflane8023',
+        self::IF_TYPE_AFLANE8025                      => 'aflane8025',
+        self::IF_TYPE_CCTEMUL                      => 'cctEmul',
+        self::IF_TYPE_FASTETHER                      => 'fastEther',
+        self::IF_TYPE_ISDN                      => 'isdn',
+        self::IF_TYPE_V11                      => 'v11',
+        self::IF_TYPE_V36                      => 'v36',
+        self::IF_TYPE_G703AT64K                      => 'g703at64k',
+        self::IF_TYPE_G703AT2MB                      => 'g703at2mb',
+        self::IF_TYPE_QLLC                      => 'qllc',
+        self::IF_TYPE_FASTETHERFX                      => 'fastEtherFX',
+        self::IF_TYPE_CHANNEL                      => 'channel',
+        self::IF_TYPE_IEEE80211                      => 'ieee80211',
+        self::IF_TYPE_IBM370PARCHAN                      => 'ibm370parChan',
+        self::IF_TYPE_ESCON                      => 'escon',
+        self::IF_TYPE_DLSW                      => 'dlsw',
+        self::IF_TYPE_ISDNS                      => 'isdns',
+        self::IF_TYPE_ISDNU                      => 'isdnu',
+        self::IF_TYPE_LAPD                      => 'lapd',
+        self::IF_TYPE_IPSWITCH                      => 'ipSwitch',
+        self::IF_TYPE_RSRB                      => 'rsrb',
+        self::IF_TYPE_ATMLOGICAL                      => 'atmLogical',
+        self::IF_TYPE_DS0                      => 'ds0',
+        self::IF_TYPE_DS0BUNDLE                      => 'ds0Bundle',
+        self::IF_TYPE_BSC                      => 'bsc',
+        self::IF_TYPE_ASYNC                      => 'async',
+        self::IF_TYPE_CNR                      => 'cnr',
+        self::IF_TYPE_ISO88025DTR                      => 'iso88025Dtr',
+        self::IF_TYPE_EPLRS                      => 'eplrs',
+        self::IF_TYPE_ARAP                      => 'arap',
+        self::IF_TYPE_PROPCNLS                      => 'propCnls',
+        self::IF_TYPE_HOSTPAD                      => 'hostPad',
+        self::IF_TYPE_TERMPAD                      => 'termPad',
+        self::IF_TYPE_FRAMERELAYMPI                      => 'frameRelayMPI',
+        self::IF_TYPE_X213                      => 'x213',
+        self::IF_TYPE_ADSL                      => 'adsl',
+        self::IF_TYPE_RADSL                      => 'radsl',
+        self::IF_TYPE_SDSL                      => 'sdsl',
+        self::IF_TYPE_VDSL                      => 'vdsl',
+        self::IF_TYPE_ISO88025CRFPINT                      => 'iso88025CRFPInt',
+        self::IF_TYPE_MYRINET                      => 'myrinet',
+        self::IF_TYPE_VOICEEM                      => 'voiceEM',
+        self::IF_TYPE_VOICEFXO                      => 'voiceFXO',
+        self::IF_TYPE_VOICEFXS                      => 'voiceFXS',
+        self::IF_TYPE_VOICEENCAP                      => 'voiceEncap',
+        self::IF_TYPE_VOICEOVERIP                      => 'voiceOverIp',
+        self::IF_TYPE_ATMDXI                      => 'atmDxi',
+        self::IF_TYPE_ATMFUNI                      => 'atmFuni',
+        self::IF_TYPE_ATMIMA                      => 'atmIma',
+        self::IF_TYPE_PPPMULTILINKBUNDLE                      => 'pppMultilinkBundle',
+        self::IF_TYPE_IPOVERCDLC                      => 'ipOverCdlc',
+        self::IF_TYPE_IPOVERCLAW                      => 'ipOverClaw',
+        self::IF_TYPE_STACKTOSTACK                      => 'stackToStack',
+        self::IF_TYPE_VIRTUALIPADDRESS                      => 'virtualIpAddress',
+        self::IF_TYPE_MPC                      => 'mpc',
+        self::IF_TYPE_IPOVERATM                      => 'ipOverAtm',
+        self::IF_TYPE_ISO88025FIBER                      => 'iso88025Fiber',
+        self::IF_TYPE_TDLC                      => 'tdlc',
+        self::IF_TYPE_GIGABITETHERNET                      => 'gigabitEthernet',
+        self::IF_TYPE_HDLC                      => 'hdlc',
+        self::IF_TYPE_LAPF                      => 'lapf',
+        self::IF_TYPE_V37                      => 'v37',
+        self::IF_TYPE_X25MLP                      => 'x25mlp',
+        self::IF_TYPE_X25HUNTGROUP                      => 'x25huntGroup',
+        self::IF_TYPE_TRASNPHDLC                      => 'trasnpHdlc',
+        self::IF_TYPE_INTERLEAVE                      => 'interleave',
+        self::IF_TYPE_FAST                      => 'fast',
+        self::IF_TYPE_IP                      => 'ip',
+        self::IF_TYPE_DOCSCABLEMACLAYER                      => 'docsCableMaclayer',
+        self::IF_TYPE_DOCSCABLEDOWNSTREAM                      => 'docsCableDownstream',
+        self::IF_TYPE_DOCSCABLEUPSTREAM                      => 'docsCableUpstream',
+        self::IF_TYPE_A12MPPSWITCH                      => 'a12MppSwitch',
+        self::IF_TYPE_TUNNEL                      => 'tunnel',
+        self::IF_TYPE_COFFEE                      => 'coffee',
+        self::IF_TYPE_CES                      => 'ces',
+        self::IF_TYPE_ATMSUBINTERFACE                      => 'atmSubInterface',
+        self::IF_TYPE_L2VLAN                      => 'l2vlan',
+        self::IF_TYPE_L3IPVLAN                      => 'l3ipvlan',
+        self::IF_TYPE_L3IPXVLAN                      => 'l3ipxvlan',
+        self::IF_TYPE_DIGITALPOWERLINE                      => 'digitalPowerline',
+        self::IF_TYPE_MEDIAMAILOVERIP                      => 'mediaMailOverIp',
+        self::IF_TYPE_DTM                      => 'dtm',
+        self::IF_TYPE_DCN                      => 'dcn',
+        self::IF_TYPE_IPFORWARD                      => 'ipForward',
+        self::IF_TYPE_MSDSL                      => 'msdsl',
+        self::IF_TYPE_IEEE1394                      => 'ieee1394',
+        self::IF_TYPE_IF_GSN                      => 'if-gsn',
+        self::IF_TYPE_DVBRCCMACLAYER                      => 'dvbRccMacLayer',
+        self::IF_TYPE_DVBRCCDOWNSTREAM                      => 'dvbRccDownstream',
+        self::IF_TYPE_DVBRCCUPSTREAM                      => 'dvbRccUpstream',
+        self::IF_TYPE_ATMVIRTUAL                      => 'atmVirtual',
+        self::IF_TYPE_MPLSTUNNEL                      => 'mplsTunnel',
+        self::IF_TYPE_SRP                      => 'srp',
+        self::IF_TYPE_VOICEOVERATM                      => 'voiceOverAtm',
+        self::IF_TYPE_VOICEOVERFRAMERELAY                      => 'voiceOverFrameRelay',
+        self::IF_TYPE_IDSL                      => 'idsl',
+        self::IF_TYPE_COMPOSITELINK                      => 'compositeLink',
+        self::IF_TYPE_SS7SIGLINK                      => 'ss7SigLink',
+        self::IF_TYPE_PROPWIRELESSP2P                      => 'propWirelessP2P',
+        self::IF_TYPE_FRFORWARD                      => 'frForward',
+        self::IF_TYPE_RFC1483                      => 'rfc1483',
+        self::IF_TYPE_USB                      => 'usb',
+        self::IF_TYPE_IEEE8023ADLAG                      => 'ieee8023adLag',
+        self::IF_TYPE_BGPPOLICYACCOUNTING                      => 'bgppolicyaccounting',
+        self::IF_TYPE_FRF16MFRBUNDLE                      => 'frf16MfrBundle',
+        self::IF_TYPE_H323GATEKEEPER                      => 'h323Gatekeeper',
+        self::IF_TYPE_H323PROXY                      => 'h323Proxy',
+        self::IF_TYPE_MPLS                      => 'mpls',
+        self::IF_TYPE_MFSIGLINK                      => 'mfSigLink',
+        self::IF_TYPE_HDSL2                      => 'hdsl2',
+        self::IF_TYPE_SHDSL                      => 'shdsl',
+        self::IF_TYPE_DS1FDL                      => 'ds1FDL',
+        self::IF_TYPE_POS                      => 'pos',
+        self::IF_TYPE_DVBASIIN                      => 'dvbAsiIn',
+        self::IF_TYPE_DVBASIOUT                      => 'dvbAsiOut',
+        self::IF_TYPE_PLC                      => 'plc',
+        self::IF_TYPE_NFAS                      => 'nfas',
+        self::IF_TYPE_TR008                      => 'tr008',
+        self::IF_TYPE_GR303RDT                      => 'gr303RDT',
+        self::IF_TYPE_GR303IDT                      => 'gr303IDT',
+        self::IF_TYPE_ISUP                      => 'isup',
+        self::IF_TYPE_PROPDOCSWIRELESSMACLAYER                      => 'propDocsWirelessMaclayer',
+        self::IF_TYPE_PROPDOCSWIRELESSDOWNSTREAM                      => 'propDocsWirelessDownstream',
+        self::IF_TYPE_PROPDOCSWIRELESSUPSTREAM                      => 'propDocsWirelessUpstream',
+        self::IF_TYPE_HIPERLAN2                      => 'hiperlan2',
+        self::IF_TYPE_PROPBWAP2MP                      => 'propBWAp2Mp',
+        self::IF_TYPE_SONETOVERHEADCHANNEL                      => 'sonetOverheadChannel',
+        self::IF_TYPE_DIGITALWRAPPEROVERHEADCHANNEL                      => 'digitalWrapperOverheadChannel',
+        self::IF_TYPE_AAL2                      => 'aal2',
+        self::IF_TYPE_RADIOMAC                      => 'radioMAC',
+        self::IF_TYPE_ATMRADIO                      => 'atmRadio',
+        self::IF_TYPE_IMT                      => 'imt',
+        self::IF_TYPE_MVL                      => 'mvl',
+        self::IF_TYPE_REACHDSL                      => 'reachDSL',
+        self::IF_TYPE_FRDLCIENDPT                      => 'frDlciEndPt',
+        self::IF_TYPE_ATMVCIENDPT                      => 'atmVciEndPt',
+        self::IF_TYPE_OPTICALCHANNEL                      => 'opticalChannel',
+        self::IF_TYPE_OPTICALTRANSPORT                      => 'opticalTransport',
+        self::IF_TYPE_PROPATM                      => 'propAtm',
+        self::IF_TYPE_VOICEOVERCABLE                      => 'voiceOverCable',
+        self::IF_TYPE_INFINIBAND                      => 'infiniband',
+        self::IF_TYPE_TELINK                      => 'teLink',
+        self::IF_TYPE_Q2931                      => 'q2931',
+        self::IF_TYPE_VIRTUALTG                      => 'virtualTg',
+        self::IF_TYPE_SIPTG                      => 'sipTg',
+        self::IF_TYPE_SIPSIG                      => 'sipSig',
+        self::IF_TYPE_DOCSCABLEUPSTREAMCHANNEL                      => 'docsCableUpstreamChannel',
+        self::IF_TYPE_ECONET                      => 'econet',
+        self::IF_TYPE_PON155                      => 'pon155',
+        self::IF_TYPE_PON622                      => 'pon622',
+        self::IF_TYPE_BRIDGE                      => 'bridge',
+        self::IF_TYPE_LINEGROUP                      => 'linegroup',
+        self::IF_TYPE_VOICEEMFGD                      => 'voiceEMFGD',
+        self::IF_TYPE_VOICEFGDEANA                      => 'voiceFGDEANA',
+        self::IF_TYPE_VOICEDID                      => 'voiceDID',
+        self::IF_TYPE_MPEGTRANSPORT                      => 'mpegTransport',
+        self::IF_TYPE_SIXTOFOUR                      => 'sixToFour',
+        self::IF_TYPE_GTP                      => 'gtp',
+        self::IF_TYPE_PDNETHERLOOP1                      => 'pdnEtherLoop1',
+        self::IF_TYPE_PDNETHERLOOP2                      => 'pdnEtherLoop2',
+        self::IF_TYPE_OPTICALCHANNELGROUP                      => 'opticalChannelGroup',
+        self::IF_TYPE_HOMEPNA                      => 'homepna',
+        self::IF_TYPE_GFP                      => 'gfp',
+        self::IF_TYPE_CISCOISLVLAN                      => 'ciscoISLvlan',
+        self::IF_TYPE_ACTELISMETALOOP                      => 'actelisMetaLOOP',
+        self::IF_TYPE_FCIPLINK                      => 'fcipLink',
+        self::IF_TYPE_RPR                      => 'rpr',
+        self::IF_TYPE_QAM                      => 'qam',
+        self::IF_TYPE_LMP                      => 'lmp',
+        self::IF_TYPE_CBLVECTASTAR                      => 'cblVectaStar',
+        self::IF_TYPE_DOCSCABLEMCMTSDOWNSTREAM                      => 'docsCableMCmtsDownstream',
+        self::IF_TYPE_ADSL2                      => 'adsl2',
+        self::IF_TYPE_MACSECCONTROLLEDIF                      => 'macSecControlledIF',
+        self::IF_TYPE_MACSECUNCONTROLLEDIF                      => 'macSecUncontrolledIF',
+        self::IF_TYPE_AVICIOPTICALETHER                      => 'aviciOpticalEther',
+        self::IF_TYPE_ATMBOND                      => 'atmbond'
     );
-    
+
     /**
      * Get an array of device interface types
      *
@@ -770,13 +2182,13 @@ class Iface extends \OSS\SNMP\MIB
     public function types( $translate = false )
     {
         $types = $this->getSNMP()->walk1d( self::OID_IF_TYPE );
-    
+
         if( !$translate )
             return $types;
-    
+
         return $this->getSNMP()->translate( $types, self::$IF_TYPES );
     }
-    
+
     /**
      * Returns an associate array of STP port IDs (key) to interface IDs (value)
      *
