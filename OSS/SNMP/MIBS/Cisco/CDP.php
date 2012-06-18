@@ -69,8 +69,9 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the device's global CDP (Cisco Discovery Protocol) run status
      *
-     * "An indication of whether the Cisco Discovery Protocol is currently running.  Entries in cdpCacheTable are
-     * deleted when CDP is disabled."
+     *
+     * > An indication of whether the Cisco Discovery Protocol is currently
+     * > running.  Entries in cdpCacheTable are deleted when CDP is disabled.
      *
      * @return boolean True if enabled globally, else false
      */
@@ -82,7 +83,8 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the interval at which CDP messages are to be generated
      *
-     * "The interval at which CDP messages are to be generated. The default value is 60 seconds."
+     * > The interval at which CDP messages are to be generated.
+     * > The default value is 60 seconds.
      *
      * @return int The interval at which CDP messages are to be generated
      */
@@ -94,7 +96,8 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the time for the receiving device holds CDP message
      *
-     * "The time for the receiving device holds CDP message. The default value is 180 seconds."
+     * > The time for the receiving device holds CDP message.
+     * > The default value is 180 seconds."
      *
      * @return int The time for the receiving device holds CDP message
      */
@@ -106,9 +109,9 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * The time when the cache table was last changed
      *
-     * "Indicates the time when the cache table was last changed. It
-     *  is the most recent time at which any row was last created,
-     *  modified or deleted."
+     * > Indicates the time when the cache table was last changed. It
+     * > is the most recent time at which any row was last created,
+     * > modified or deleted.
      *
      * @return int The time (timeticks) when the cache table was last changed
      */
@@ -131,8 +134,10 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the device's interfaces CDP enabled status
      *
-     * Applies the TruthValue post processor (self::ppTruthValue()) to turn
+     * Applies the TruthValue post processor to turn
      * SNMP values into true / false.
+     *
+     * @see OSS\SNMP::ppTruthValue()
      *
      * @return array The device's interfaces CDP enabled status' (as boolean true / false)
      */
@@ -144,7 +149,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the device's interface names as seen in CDP
      *
-     * "The name of the local interface as advertised by CDP in the Port-ID TLV"
+     * > The name of the local interface as advertised by CDP in the Port-ID TLV
      *
      * @return array The device's interface names as seen in CDP
      */
@@ -157,14 +162,14 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
 
     /**
      * Constant for possible value of CDP neighbour address type
-     * @see neighbourAddressTypes()
+     * @see OSS\SNMP\MIBS\Cisco\CDP::neighbourAddressTypes()
      */
     const CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP = 1;
 
     /**
      * Text representation of CDP neighbour address type
      *
-     * @see neighbourAddressTypes()
+     * @see OSS\SNMP\MIBS\Cisco\CDP::neighbourAddressTypes()
      * @var array Text representation of CDP neighbour address type
      */
     public static $CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES = array(
@@ -174,7 +179,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the CDP neighbours' address type indexed by the current device's port ID
      *
-     * "An indication of the type of address contained in the corresponding instance of cdpCacheAddress"
+     * > An indication of the type of address contained in the corresponding instance of cdpCacheAddress
      *
      * @param boolean $translate If true, return the string representation via self::$VTP_VLAN_TYPES
      * @return array The CDP neighbours' address type indexed by the current device's port ID
@@ -193,15 +198,15 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the device's CDP neighbour addresses indexed by the current device's port ID
      *
-     * "The (first) network-layer address of the device
-     * as reported in the Address TLV of the most recently received
-     * CDP message.  For example, if the corresponding instance of
-     * cacheAddressType had the value 'ip(1)', then this object
-     * would be an IPv4-address.  If the neighbor device is
-     * SNMP-manageable, it is supposed to generate its CDP messages
-     * such that this address is one at which it will receive SNMP
-     * messages. Use cdpCtAddressTable to extract the remaining
-     * addresses from the Address TLV received most recently."
+     * > The (first) network-layer address of the device
+     * > as reported in the Address TLV of the most recently received
+     * > CDP message.  For example, if the corresponding instance of
+     * > cacheAddressType had the value 'ip(1)', then this object
+     * > would be an IPv4-address.  If the neighbor device is
+     * > SNMP-manageable, it is supposed to generate its CDP messages
+     * > such that this address is one at which it will receive SNMP
+     * > messages. Use cdpCtAddressTable to extract the remaining
+     * > addresses from the Address TLV received most recently."
      *
      * @return array The device's CDP neighbour addresses indexed by the current device's port ID
      */
@@ -221,9 +226,9 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the device's CDP neighbour version indexed by the current device's port ID
      *
-     * "The Version string as reported in the most recent CDP
-     * message.  The zero-length string indicates no Version
-     * field (TLV) was reported in the most recent CDP message."
+     * > The Version string as reported in the most recent CDP
+     * > message.  The zero-length string indicates no Version
+     * > field (TLV) was reported in the most recent CDP message."
      *
      * @return array The device's CDP neighbour version indexed by the current device's port ID
      */
@@ -236,9 +241,9 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the device's CDP neighbours (by their CDP ID) indexed by the current device's port ID
      *
-     * "The Device-ID string as reported in the most recent CDP
-     * message.  The zero-length string indicates no Device-ID
-     * field (TLV) was reported in the most recent CDP message."
+     * > The Device-ID string as reported in the most recent CDP
+     * > message.  The zero-length string indicates no Device-ID
+     * > field (TLV) was reported in the most recent CDP message."
      *
      * @return array The device's CDP neighbours (by their CDP ID) indexed by the current device's port ID
      */
@@ -248,28 +253,28 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     }
 
     /**
-     * Get the device's CDP neighbours connected port *description* indexed by the current device's port ID
+     * Get the device's CDP neighbours connected port description indexed by the current device's port ID
      *
      * E.g. a sample call may return:
      *
-     * Array
-     * (
-     *     [10101] => GigabitEthernet0/1
-     *     [10102] => FastEthernet0/2
-     *     [10103] => GigabitEthernet1/0/24
-     *     [10105] => GigabitEthernet1/0/2
-     * )
+     *     Array
+     *     (
+     *         [10101] => GigabitEthernet0/1
+     *         [10102] => FastEthernet0/2
+     *         [10103] => GigabitEthernet1/0/24
+     *         [10105] => GigabitEthernet1/0/2
+     *     )
      *
-     * meaning, for example, that our local port with ID 10101 is connected to port GigabitEthernet0/1 on the neighbour
-     * connected to that local port. You can discover the neighbour ID via neighbourId().
+     * meaning, for example, that our local port with ID `10101` is connected to port `GigabitEthernet0/1` on the neighbour
+     * connected to that local port. You can discover the neighbour ID via `neighbourId()`.
      *
-     * "The Port-ID string as reported in the most recent CDP
-     * message.  This will typically be the value of the ifName
-     * object (e.g., 'Ethernet0').  The zero-length string
-     * indicates no Port-ID field (TLV) was reported in the
-     * most recent CDP message."
+     * > The Port-ID string as reported in the most recent CDP
+     * > message.  This will typically be the value of the ifName
+     * > object (e.g., 'Ethernet0').  The zero-length string
+     * > indicates no Port-ID field (TLV) was reported in the
+     * > most recent CDP message.
      *
-     * @see neighbourId()
+     * @see \OSS\SNMP\MIBS\Cisco\CDP::neighbourId()
      * @return array The device's CDP neighbours connected port *description* indexed by the current device's port ID
      */
     public function neighbourPort()
@@ -280,8 +285,9 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the device's CDP neighbour platforms indexed by the current device's port ID
      *
-     * "The Device's Hardware Platform as reported in the most recent CDP message.  The zero-length string indicates
-     * that no Platform field (TLV) was reported in the most recent CDP message."
+     * > The Device's Hardware Platform as reported in the most recent CDP
+     * > message. The zero-length string indicates that no Platform field
+     * > (TLV) was reported in the most recent CDP message.
      *
      * @return array The device's CDP neighbour platforms indexed by the current device's port ID
      */
@@ -353,9 +359,11 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the device's CDP neighbour capabilities (as a decimal integer) indexed by the current device's port ID
      *
-     * "The Device's Functional Capabilities as reported in the most recent CDP message.  For latest set of specific
-     * values, see the latest version of the CDP specification. The zero-length string indicates no Capabilities field
-     * (TLV) was reported in the most recent CDP message."
+     * > The Device's Functional Capabilities as reported in the most
+     * > recent CDP message.  For latest set of specific values, see
+     * > the latest version of the CDP specification. The zero-length
+     * > string indicates no Capabilities field (TLV) was reported in
+     * > the most recent CDP message."
      *
      * @see REFERENCE "Cisco Discovery Protocol Specification, 10/19/94."
      * @see http://www.cisco.com/univercd/cc/td/doc/product/lan/trsrb/frames.htm#xtocid12
@@ -378,8 +386,8 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      *
      * Example:
      *
-     *    if( $host->useCisco_CDP()->neighbourHasCapability( $portId, \OSS\SNMP\MIBS\Cisco\CDP::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH )
-     *         echo "Host is a switch!!";
+     *     if( $host->useCisco_CDP()->neighbourHasCapability( $portId, \OSS\SNMP\MIBS\Cisco\CDP::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH )
+     *          echo "Host is a switch!!";
      *
      * @param int $portId The CDP neighbour by connected local port ID
      * @param int $capability The capability to query for (defined by self::CDP_CACHE_NEIGHBOUR_CAPABILITY_XXX constants)
@@ -436,8 +444,10 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the device's CDP neighbours' VTP management domain indexed by the current device's port ID
      *
-     * "The VTP Management Domain for the remote device's interface, as reported in the most recently received CDP message.
-     * This object is not instantiated if no VTP Management Domain field (TLV) was reported in the most recently received CDP message."
+     * > The VTP Management Domain for the remote device's interface,
+     * > as reported in the most recently received CDP message. This
+     * > object is not instantiated if no VTP Management Domain field
+     * > (TLV) was reported in the most recently received CDP message.
      *
      * @see REFERENCE "managementDomainName in CISCO-VTP-MIB"
      *
@@ -452,10 +462,10 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the remote device's interface's native VLAN (indexed by local portId)
      *
-     * "The remote device's interface's native VLAN, as reported in the
-     *  most recent CDP message.  The value 0 indicates
-     *  no native VLAN field (TLV) was reported in the most
-     *  recent CDP message."
+     * > The remote device's interface's native VLAN, as reported in the
+     * > most recent CDP message.  The value 0 indicates
+     * > no native VLAN field (TLV) was reported in the most
+     * > recent CDP message.
      *
      * @return array The remote device's interface's native VLAN (indexed by local portId)
      */
@@ -501,10 +511,10 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the remote device's interface's duplex mode (indexed by local portId)
      *
-     * "The remote device's interface's duplex mode, as reported in the
-     *  most recent CDP message.  The value unknown(1) indicates
-     *  no duplex mode field (TLV) was reported in the most
-     *  recent CDP message."
+     * > he remote device's interface's duplex mode, as reported in the
+     * > most recent CDP message.  The value unknown(1) indicates
+     * > no duplex mode field (TLV) was reported in the most
+     * > recent CDP message."
      *
      * @param boolean $translate If true, return the string representation via self::$VTP_VLAN_TYPES
      * @return array The remote device's interface's duplex mode (indexed by local portId)
@@ -523,11 +533,11 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     /**
      * Get the remote device's last change time (indexed by local portId)
      *
-     * "Indicates the time when this cache entry was last changed.
-     *  This object is initialised to the current time when the entry
-     *  gets created and updated to the current time whenever the value
-     *  of any (other) object instance in the corresponding row is
-     *  modified."
+     * > Indicates the time when this cache entry was last changed.
+     * > This object is initialised to the current time when the entry
+     * > gets created and updated to the current time whenever the value
+     * > of any (other) object instance in the corresponding row is
+     * > modified."
      *
      * @return array The remote device's last change time(indexed by local portId)
      */
@@ -544,49 +554,49 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      * Returns an array of neighbours indexed by the neighbour CDP ID with a lot of details.
      *
      * For example, here's a sample return for a switch with two neighbours where one neighbour
-     * is connected with a LAG / PortChannel and $inverse was set to true.
+     * is connected with a LAG / PortChannel and `$inverse` was set to true.
      *
      *
-     * array(2) {
-     *     ["cr-sw07.example.ie"] => array(1) {
-     *         [0] => array(7) {
-     *             ["localPortId"] => int(10103)
-     *             ["localPortName"] => string(7) "Gi1/0/3"
-     *             ["localPort"] => string(20) "GigabitEthernet1/0/3"
-     *             ["isLAG"] => bool(false)
-     *             ["remotePort"] => string(21) "GigabitEthernet1/0/24"
-     *             ["remotePortId"] => int(10124)
-     *             ["remotePortName"] => string(8) "Gi1/0/24"
+     *     array(2) {
+     *         ["cr-sw07.example.ie"] => array(1) {
+     *             [0] => array(7) {
+     *                 ["localPortId"] => int(10103)
+     *                 ["localPortName"] => string(7) "Gi1/0/3"
+     *                 ["localPort"] => string(20) "GigabitEthernet1/0/3"
+     *                 ["isLAG"] => bool(false)
+     *                 ["remotePort"] => string(21) "GigabitEthernet1/0/24"
+     *                 ["remotePortId"] => int(10124)
+     *                 ["remotePortName"] => string(8) "Gi1/0/24"
+     *             }
      *         }
-     *     }
-     *     ["cr-sw01.example.ie"] => array(2) {
-     *         [0] => array(11) {
-     *             ["localPortId"] => int(10111)
-     *             ["localPortName"] => string(8) "Gi1/0/11"
-     *             ["localPort"] => string(21) "GigabitEthernet1/0/11"
-     *             ["isLAG"] => bool(true)
-     *             ["lagPortId"] => int(5048)
-     *             ["lagPortName"] => string(4) "Po48"
-     *             ["remotePort"] => string(21) "GigabitEthernet1/0/11"
-     *             ["remotePortId"] => int(10111)
-     *             ["remotePortName"] => string(8) "Gi1/0/11"
-     *             ["remoteLagPortId"] => int(5048)
-     *             ["remoteLagPortName"] => string(4) "Po48"
+     *         ["cr-sw01.example.ie"] => array(2) {
+     *             [0] => array(11) {
+     *                 ["localPortId"] => int(10111)
+     *                 ["localPortName"] => string(8) "Gi1/0/11"
+     *                     ["localPort"] => string(21) "GigabitEthernet1/0/11"
+     *                 ["isLAG"] => bool(true)
+     *                 ["lagPortId"] => int(5048)
+     *                 ["lagPortName"] => string(4) "Po48"
+     *                 ["remotePort"] => string(21) "GigabitEthernet1/0/11"
+     *                 ["remotePortId"] => int(10111)
+     *                 ["remotePortName"] => string(8) "Gi1/0/11"
+     *                 ["remoteLagPortId"] => int(5048)
+     *                 ["remoteLagPortName"] => string(4) "Po48"
+     *             }
+     *             [1] => array(11) {
+     *                 ["localPortId"] => int(10112)
+     *                 ["localPortName"] => string(8) "Gi1/0/12"
+     *                 ["localPort"] => string(21) "GigabitEthernet1/0/12"
+     *                 ["isLAG"] => bool(true)
+     *                 ["lagPortId"] => int(5048)
+     *                 ["lagPortName"] => string(4) "Po48"
+     *                 ["remotePort"] => string(21) "GigabitEthernet1/0/12"
+     *                 ["remotePortId"] => int(10112)
+     *                 ["remotePortName"] => string(8) "Gi1/0/12"
+     *                 ["remoteLagPortId"] => int(5048)
+     *                 ["remoteLagPortName"] => string(4) "Po48"
+     *             }
      *         }
-     *         [1] => array(11) {
-     *             ["localPortId"] => int(10112)
-     *             ["localPortName"] => string(8) "Gi1/0/12"
-     *             ["localPort"] => string(21) "GigabitEthernet1/0/12"
-     *             ["isLAG"] => bool(true)
-     *             ["lagPortId"] => int(5048)
-     *             ["lagPortName"] => string(4) "Po48"
-     *             ["remotePort"] => string(21) "GigabitEthernet1/0/12"
-     *             ["remotePortId"] => int(10112)
-     *             ["remotePortName"] => string(8) "Gi1/0/12"
-     *             ["remoteLagPortId"] => int(5048)
-     *             ["remoteLagPortName"] => string(4) "Po48"
-     *         }
-     *     }
      *
      * @see neighbourId()
      * @see \OSS\SNMP\MIBS\Interface::descriptions()
@@ -746,19 +756,20 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      * * links only appear once (unidirectional) rather than twice (bidirectional)
      * * the links are indexed by the localPortName rather than an integer index:
      *
-     * [cr-sw04.degkcp.example.ie] => Array
-     * (
-     *      [cd-sw02.degkcp.example.ie] => Array
-     *      (
-     *          [GigabitEthernet1/0/3] => Array
+     *     [cr-sw04.degkcp.example.ie] => Array
+     *     (
+     *          [cd-sw02.degkcp.example.ie] => Array
      *          (
-     *              [remotePort] => FastEthernet0/1
-     *              [isLAG]      => false
-     *              ........
-     *      )
+     *              [GigabitEthernet1/0/3] => Array
+     *              (
+     *                  [remotePort] => FastEthernet0/1
+     *                  [isLAG]      => false
+     *                  ........
+     *          )
+     *     )
      *
      *
-     * All port information is copied over from the supplied / called crawl() array
+     * All port information is copied over from the supplied / called `crawl()` array
      *
      * @see crawl()
      * @param array $devices The result of crawl() (if null, this function performs a crawl())
@@ -805,7 +816,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      * For example, here's a sample return for a switch with a neighbour
      * connected with a LAG / PortChannel:
      *
-     * array(2) {
+     *     array(2) {
      *     ["cr-sw01.example.ie"] => array(2) {
      *         [0] => array(11) {
      *             ["localPortId"] => int(10111)
@@ -835,11 +846,11 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      *         }
      *     }
      *     ...
-     * }
+     *     }
      *
      * The result of this function would be:
      *
-     * array(2) {
+     *     array(2) {
      *     ["cr-sw01.example.ie"] => array(1) {
      *         [0] => array(11) {
      *             ["localPortId"] => int(5048)
@@ -856,7 +867,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      *         }
      *     }
      *     ...
-     * }
+     *     }
      *
      * @see neighbours()
      * @param array $neighbours The result of a call to neighbours()
@@ -891,9 +902,9 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
     }
 
     /**
-     * An extension of collapseLAGs() to work with crawl() and linkTopology().
+     * An extension of `collapseLAGs()` to work with `crawl()` and `linkTopology()`.
      *
-     * Rather than taking the input from neighbours(), it takes input from crawl() or linkTopology()
+     * Rather than taking the input from `neighbours()`, it takes input from `crawl()` or `linkTopology()`
      * and processes all neighbours.
      *
      * @see collapseLAGs()
@@ -910,23 +921,6 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
