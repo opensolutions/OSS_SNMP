@@ -31,9 +31,9 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">31</span></a></li>
+                <span class="label label-info">32</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul><li>fixme 
+                <ul><li>todo 
                 <span class="label label-info">1</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -57,7 +57,7 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#collapseDevicesLAGs" title="collapseDevicesLAGs :: An extension of collapseLAGs() to work with crawl() and linkTopology()."><span class="description">An extension of collapseLAGs() to work with crawl() and linkTopology().</span><pre>collapseDevicesLAGs()</pre></a></li>
+<li class="method public "><a href="#collapseDevicesLAGs" title="collapseDevicesLAGs :: An extension of `collapseLAGs()` to work with `crawl()` and `linkTopology()`."><span class="description">An extension of `collapseLAGs()` to work with `crawl()` and `linkTopology()`.</span><pre>collapseDevicesLAGs()</pre></a></li>
 <li class="method public "><a href="#collapseLAGs" title="collapseLAGs :: Utility function to process the output from neighbours() and remove individual trunk ports leaving only
 single LAG links."><span class="description">Utility function to process the output from neighbours() and remove individual trunk ports leaving only
 single LAG links.</span><pre>collapseLAGs()</pre></a></li>
@@ -82,7 +82,7 @@ indexed by the CDP device id.</span><pre>crawl()</pre></a></li>
 <li class="method public "><a href="#neighbourLastChange" title="neighbourLastChange :: Get the remote device's last change time (indexed by local portId)"><span class="description">Get the remote device's last change time (indexed by local portId)</span><pre>neighbourLastChange()</pre></a></li>
 <li class="method public "><a href="#neighbourNativeVLAN" title="neighbourNativeVLAN :: Get the remote device's interface's native VLAN (indexed by local portId)"><span class="description">Get the remote device's interface's native VLAN (indexed by local portId)</span><pre>neighbourNativeVLAN()</pre></a></li>
 <li class="method public "><a href="#neighbourPlatforms" title="neighbourPlatforms :: Get the device's CDP neighbour platforms indexed by the current device's port ID"><span class="description">Get the device's CDP neighbour platforms indexed by the current device's port ID</span><pre>neighbourPlatforms()</pre></a></li>
-<li class="method public "><a href="#neighbourPort" title="neighbourPort :: Get the device's CDP neighbours connected port *description* indexed by the current device's port ID"><span class="description">Get the device's CDP neighbours connected port *description* indexed by the current device's port ID</span><pre>neighbourPort()</pre></a></li>
+<li class="method public "><a href="#neighbourPort" title="neighbourPort :: Get the device's CDP neighbours connected port description indexed by the current device's port ID"><span class="description">Get the device's CDP neighbours connected port description indexed by the current device's port ID</span><pre>neighbourPort()</pre></a></li>
 <li class="method public "><a href="#neighbourVTPMgmtDomain" title="neighbourVTPMgmtDomain :: Get the device's CDP neighbours' VTP management domain indexed by the current device's port ID"><span class="description">Get the device's CDP neighbours' VTP management domain indexed by the current device's port ID</span><pre>neighbourVTPMgmtDomain()</pre></a></li>
 <li class="method public "><a href="#neighbourVersions" title="neighbourVersions :: Get the device's CDP neighbour version indexed by the current device's port ID"><span class="description">Get the device's CDP neighbour version indexed by the current device's port ID</span><pre>neighbourVersions()</pre></a></li>
 <li class="method public "><a href="#neighbours" title="neighbours :: CDP utility function to get all CDP neighbours and their connected ports."><span class="description">CDP utility function to get all CDP neighbours and their connected ports.</span><pre>neighbours()</pre></a></li>
@@ -154,11 +154,11 @@ indexed by the CDP device id.</span><pre>crawl()</pre></a></li>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a name="collapseDevicesLAGs" id="collapseDevicesLAGs"></a><div class="element clickable method public collapseDevicesLAGs" data-toggle="collapse" data-target=".collapseDevicesLAGs .collapse">
-<h2>An extension of collapseLAGs() to work with crawl() and linkTopology().</h2>
+<h2>An extension of `collapseLAGs()` to work with `crawl()` and `linkTopology()`.</h2>
 <pre>collapseDevicesLAGs(array $devices) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>Rather than taking the input from neighbours(), it takes input from crawl() or linkTopology()
+<p class="long_description"><p>Rather than taking the input from <code>neighbours()</code>, it takes input from <code>crawl()</code> or <code>linkTopology()</code>
 and processes all neighbours.</p></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -183,58 +183,60 @@ single LAG links.</h2>
 <p class="long_description"><p>For example, here's a sample return for a switch with a neighbour
 connected with a LAG / PortChannel:</p>
 
-<p>array(2) {
-    ["cr-sw01.example.ie"] => array(2) {
-        [0] => array(11) {
-            ["localPortId"] => int(10111)
-            ["localPortName"] => string(8) "Gi1/0/11"
-            ["localPort"] => string(21) "GigabitEthernet1/0/11"
-            ["isLAG"] => bool(true)
-            ["lagPortId"] => int(5048)
-            ["lagPortName"] => string(4) "Po48"
-            ["remotePort"] => string(21) "GigabitEthernet1/0/11"
-            ["remotePortId"] => int(10111)
-            ["remotePortName"] => string(8) "Gi1/0/11"
-            ["remoteLagPortId"] => int(5048)
-            ["remoteLagPortName"] => string(4) "Po48"
-        }
-        [1] => array(11) {
-            ["localPortId"] => int(10112)
-            ["localPortName"] => string(8) "Gi1/0/12"
-            ["localPort"] => string(21) "GigabitEthernet1/0/12"
-            ["isLAG"] => bool(true)
-            ["lagPortId"] => int(5048)
-            ["lagPortName"] => string(4) "Po48"
-            ["remotePort"] => string(21) "GigabitEthernet1/0/12"
-            ["remotePortId"] => int(10112)
-            ["remotePortName"] => string(8) "Gi1/0/12"
-            ["remoteLagPortId"] => int(5048)
-            ["remoteLagPortName"] => string(4) "Po48"
-        }
+<pre><code>array(2) {
+["cr-sw01.example.ie"] =&gt; array(2) {
+    [0] =&gt; array(11) {
+        ["localPortId"] =&gt; int(10111)
+        ["localPortName"] =&gt; string(8) "Gi1/0/11"
+        ["localPort"] =&gt; string(21) "GigabitEthernet1/0/11"
+        ["isLAG"] =&gt; bool(true)
+        ["lagPortId"] =&gt; int(5048)
+        ["lagPortName"] =&gt; string(4) "Po48"
+        ["remotePort"] =&gt; string(21) "GigabitEthernet1/0/11"
+        ["remotePortId"] =&gt; int(10111)
+        ["remotePortName"] =&gt; string(8) "Gi1/0/11"
+        ["remoteLagPortId"] =&gt; int(5048)
+        ["remoteLagPortName"] =&gt; string(4) "Po48"
     }
-    ...
-}</p>
+    [1] =&gt; array(11) {
+        ["localPortId"] =&gt; int(10112)
+        ["localPortName"] =&gt; string(8) "Gi1/0/12"
+        ["localPort"] =&gt; string(21) "GigabitEthernet1/0/12"
+        ["isLAG"] =&gt; bool(true)
+        ["lagPortId"] =&gt; int(5048)
+        ["lagPortName"] =&gt; string(4) "Po48"
+        ["remotePort"] =&gt; string(21) "GigabitEthernet1/0/12"
+        ["remotePortId"] =&gt; int(10112)
+        ["remotePortName"] =&gt; string(8) "Gi1/0/12"
+        ["remoteLagPortId"] =&gt; int(5048)
+        ["remoteLagPortName"] =&gt; string(4) "Po48"
+    }
+}
+...
+}
+</code></pre>
 
 <p>The result of this function would be:</p>
 
-<p>array(2) {
-    ["cr-sw01.example.ie"] => array(1) {
-        [0] => array(11) {
-            ["localPortId"] => int(5048)
-            ["localPortName"] => string(8) "Po48"
-            ["localPort"] => string(21) "Po48"
-            ["isLAG"] => bool(true)
-            ["lagPortId"] => int(5048)
-            ["lagPortName"] => string(4) "Po48"
-            ["remotePort"] => string(21) "Po48"
-            ["remotePortId"] => int(5048)
-            ["remotePortName"] => string(8) "Po48"
-            ["remoteLagPortId"] => int(5048)
-            ["remoteLagPortName"] => string(4) "Po48"
-        }
+<pre><code>array(2) {
+["cr-sw01.example.ie"] =&gt; array(1) {
+    [0] =&gt; array(11) {
+        ["localPortId"] =&gt; int(5048)
+        ["localPortName"] =&gt; string(8) "Po48"
+        ["localPort"] =&gt; string(21) "Po48"
+        ["isLAG"] =&gt; bool(true)
+        ["lagPortId"] =&gt; int(5048)
+        ["lagPortName"] =&gt; string(4) "Po48"
+        ["remotePort"] =&gt; string(21) "Po48"
+        ["remotePortId"] =&gt; int(5048)
+        ["remotePortName"] =&gt; string(8) "Po48"
+        ["remoteLagPortId"] =&gt; int(5048)
+        ["remoteLagPortName"] =&gt; string(4) "Po48"
     }
-    ...
-}</p></p>
+}
+...
+}
+</code></pre></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
 <td>\neighbours()</td>
@@ -283,7 +285,10 @@ indexed by the CDP device id.</h2>
 <pre>globalHoldTime() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"The time for the receiving device holds CDP message. The default value is 180 seconds."</p></p>
+<p class="long_description"><blockquote>
+  <p>The time for the receiving device holds CDP message.
+  The default value is 180 seconds."</p>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>int</code>The time for the receiving device holds CDP message</div>
@@ -294,9 +299,11 @@ indexed by the CDP device id.</h2>
 <pre>globalLastChange() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"Indicates the time when the cache table was last changed. It
- is the most recent time at which any row was last created,
- modified or deleted."</p></p>
+<p class="long_description"><blockquote>
+  <p>Indicates the time when the cache table was last changed. It
+  is the most recent time at which any row was last created,
+  modified or deleted.</p>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>int</code>The time (timeticks) when the cache table was last changed</div>
@@ -307,7 +314,10 @@ indexed by the CDP device id.</h2>
 <pre>globalMessageInterval() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"The interval at which CDP messages are to be generated. The default value is 60 seconds."</p></p>
+<p class="long_description"><blockquote>
+  <p>The interval at which CDP messages are to be generated.
+  The default value is 60 seconds.</p>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>int</code>The interval at which CDP messages are to be generated</div>
@@ -318,8 +328,10 @@ indexed by the CDP device id.</h2>
 <pre>globalRun() : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"An indication of whether the Cisco Discovery Protocol is currently running.  Entries in cdpCacheTable are
-deleted when CDP is disabled."</p></p>
+<p class="long_description"><blockquote>
+  <p>An indication of whether the Cisco Discovery Protocol is currently
+  running.  Entries in cdpCacheTable are deleted when CDP is disabled.</p>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>True if enabled globally, else false</div>
@@ -341,8 +353,12 @@ deleted when CDP is disabled."</p></p>
 <pre>interfaceEnabled() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>Applies the TruthValue post processor (self::ppTruthValue()) to turn
+<p class="long_description"><p>Applies the TruthValue post processor to turn
 SNMP values into true / false.</p></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\OSS\SNMP::ppTruthValue()</td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The device's interfaces CDP enabled status' (as boolean true / false)</div>
@@ -353,7 +369,9 @@ SNMP values into true / false.</p></p>
 <pre>interfaceNames() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"The name of the local interface as advertised by CDP in the Port-ID TLV"</p></p>
+<p class="long_description"><blockquote>
+  <p>The name of the local interface as advertised by CDP in the Port-ID TLV</p>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The device's interface names as seen in CDP</div>
@@ -378,8 +396,7 @@ SNMP values into true / false.</p></p>
 
 <ul>
 <li>links only appear once (unidirectional) rather than twice (bidirectional)</li>
-<li>the links are indexed by the localPortName rather than an integer index:</li>
-</ul>
+<li><p>the links are indexed by the localPortName rather than an integer index:</p>
 
 <p>[cr-sw04.degkcp.example.ie] => Array
 (
@@ -390,9 +407,11 @@ SNMP values into true / false.</p></p>
              [remotePort] => FastEthernet0/1
              [isLAG]      => false
              ........
-     )</p>
+     )
+)</p></li>
+</ul>
 
-<p>All port information is copied over from the supplied / called crawl() array</p></p>
+<p>All port information is copied over from the supplied / called <code>crawl()</code> array</p></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
 <td>\crawl()</td>
@@ -412,7 +431,9 @@ SNMP values into true / false.</p></p>
 <pre>neighbourAddressTypes(boolean $translate) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"An indication of the type of address contained in the corresponding instance of cdpCacheAddress"</p></p>
+<p class="long_description"><blockquote>
+  <p>An indication of the type of address contained in the corresponding instance of cdpCacheAddress</p>
+</blockquote></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$translate</h4>
@@ -428,15 +449,17 @@ SNMP values into true / false.</p></p>
 <pre>neighbourAddresses() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"The (first) network-layer address of the device
-as reported in the Address TLV of the most recently received
-CDP message.  For example, if the corresponding instance of
-cacheAddressType had the value 'ip(1)', then this object
-would be an IPv4-address.  If the neighbor device is
-SNMP-manageable, it is supposed to generate its CDP messages
-such that this address is one at which it will receive SNMP
-messages. Use cdpCtAddressTable to extract the remaining
-addresses from the Address TLV received most recently."</p></p>
+<p class="long_description"><blockquote>
+  <p>The (first) network-layer address of the device
+  as reported in the Address TLV of the most recently received
+  CDP message.  For example, if the corresponding instance of
+  cacheAddressType had the value 'ip(1)', then this object
+  would be an IPv4-address.  If the neighbor device is
+  SNMP-manageable, it is supposed to generate its CDP messages
+  such that this address is one at which it will receive SNMP
+  messages. Use cdpCtAddressTable to extract the remaining
+  addresses from the Address TLV received most recently."</p>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The device's CDP neighbour addresses indexed by the current device's port ID</div>
@@ -476,9 +499,13 @@ print_r( $host-&gt;useCisco_CDP()-&gt;neighbourCapabilities( 10111, true ) )
 <pre>neighbourCapability() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"The Device's Functional Capabilities as reported in the most recent CDP message.  For latest set of specific
-values, see the latest version of the CDP specification. The zero-length string indicates no Capabilities field
-(TLV) was reported in the most recent CDP message."</p></p>
+<p class="long_description"><blockquote>
+  <p>The Device's Functional Capabilities as reported in the most
+  recent CDP message.  For latest set of specific values, see
+  the latest version of the CDP specification. The zero-length
+  string indicates no Capabilities field (TLV) was reported in
+  the most recent CDP message."</p>
+</blockquote></p>
 <table class="table table-bordered">
 <tr>
 <th>see</th>
@@ -503,10 +530,12 @@ values, see the latest version of the CDP specification. The zero-length string 
 <pre>neighbourDuplexMode(boolean $translate) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"The remote device's interface's duplex mode, as reported in the
- most recent CDP message.  The value unknown(1) indicates
- no duplex mode field (TLV) was reported in the most
- recent CDP message."</p></p>
+<p class="long_description"><blockquote>
+  <p>he remote device's interface's duplex mode, as reported in the
+  most recent CDP message.  The value unknown(1) indicates
+  no duplex mode field (TLV) was reported in the most
+  recent CDP message."</p>
+</blockquote></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$translate</h4>
@@ -524,8 +553,9 @@ values, see the latest version of the CDP specification. The zero-length string 
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"><p>Example:</p>
 
-<p>if( $host->useCisco_CDP()->neighbourHasCapability( $portId, \OSS\SNMP\MIBS\Cisco\CDP::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH )
-        echo "Host is a switch!!";</p></p>
+<pre><code>if( $host-&gt;useCisco_CDP()-&gt;neighbourHasCapability( $portId, \OSS\SNMP\MIBS\Cisco\CDP::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH )
+     echo "Host is a switch!!";
+</code></pre></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$portId</h4>
@@ -544,9 +574,11 @@ values, see the latest version of the CDP specification. The zero-length string 
 <pre>neighbourId() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"The Device-ID string as reported in the most recent CDP
-message.  The zero-length string indicates no Device-ID
-field (TLV) was reported in the most recent CDP message."</p></p>
+<p class="long_description"><blockquote>
+  <p>The Device-ID string as reported in the most recent CDP
+  message.  The zero-length string indicates no Device-ID
+  field (TLV) was reported in the most recent CDP message."</p>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The device's CDP neighbours (by their CDP ID) indexed by the current device's port ID</div>
@@ -557,11 +589,13 @@ field (TLV) was reported in the most recent CDP message."</p></p>
 <pre>neighbourLastChange() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"Indicates the time when this cache entry was last changed.
- This object is initialised to the current time when the entry
- gets created and updated to the current time whenever the value
- of any (other) object instance in the corresponding row is
- modified."</p></p>
+<p class="long_description"><blockquote>
+  <p>Indicates the time when this cache entry was last changed.
+  This object is initialised to the current time when the entry
+  gets created and updated to the current time whenever the value
+  of any (other) object instance in the corresponding row is
+  modified."</p>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The remote device's last change time(indexed by local portId)</div>
@@ -572,10 +606,12 @@ field (TLV) was reported in the most recent CDP message."</p></p>
 <pre>neighbourNativeVLAN() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"The remote device's interface's native VLAN, as reported in the
- most recent CDP message.  The value 0 indicates
- no native VLAN field (TLV) was reported in the most
- recent CDP message."</p></p>
+<p class="long_description"><blockquote>
+  <p>The remote device's interface's native VLAN, as reported in the
+  most recent CDP message.  The value 0 indicates
+  no native VLAN field (TLV) was reported in the most
+  recent CDP message.</p>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The remote device's interface's native VLAN (indexed by local portId)</div>
@@ -586,39 +622,45 @@ field (TLV) was reported in the most recent CDP message."</p></p>
 <pre>neighbourPlatforms() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"The Device's Hardware Platform as reported in the most recent CDP message.  The zero-length string indicates
-that no Platform field (TLV) was reported in the most recent CDP message."</p></p>
+<p class="long_description"><blockquote>
+  <p>The Device's Hardware Platform as reported in the most recent CDP
+  message. The zero-length string indicates that no Platform field
+  (TLV) was reported in the most recent CDP message.</p>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The device's CDP neighbour platforms indexed by the current device's port ID</div>
 </div></div>
 </div>
 <a name="neighbourPort" id="neighbourPort"></a><div class="element clickable method public neighbourPort" data-toggle="collapse" data-target=".neighbourPort .collapse">
-<h2>Get the device's CDP neighbours connected port *description* indexed by the current device's port ID</h2>
+<h2>Get the device's CDP neighbours connected port description indexed by the current device's port ID</h2>
 <pre>neighbourPort() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"><p>E.g. a sample call may return:</p>
 
-<p>Array
+<pre><code>Array
 (
-    [10101] => GigabitEthernet0/1
-    [10102] => FastEthernet0/2
-    [10103] => GigabitEthernet1/0/24
-    [10105] => GigabitEthernet1/0/2
-)</p>
+    [10101] =&gt; GigabitEthernet0/1
+    [10102] =&gt; FastEthernet0/2
+    [10103] =&gt; GigabitEthernet1/0/24
+    [10105] =&gt; GigabitEthernet1/0/2
+)
+</code></pre>
 
-<p>meaning, for example, that our local port with ID 10101 is connected to port GigabitEthernet0/1 on the neighbour
-connected to that local port. You can discover the neighbour ID via neighbourId().</p>
+<p>meaning, for example, that our local port with ID <code>10101</code> is connected to port <code>GigabitEthernet0/1</code> on the neighbour
+connected to that local port. You can discover the neighbour ID via <code>neighbourId()</code>.</p>
 
-<p>"The Port-ID string as reported in the most recent CDP
-message.  This will typically be the value of the ifName
-object (e.g., 'Ethernet0').  The zero-length string
-indicates no Port-ID field (TLV) was reported in the
-most recent CDP message."</p></p>
+<blockquote>
+  <p>The Port-ID string as reported in the most recent CDP
+  message.  This will typically be the value of the ifName
+  object (e.g., 'Ethernet0').  The zero-length string
+  indicates no Port-ID field (TLV) was reported in the
+  most recent CDP message.</p>
+</blockquote></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
-<td>\neighbourId()</td>
+<td>\OSS\SNMP\MIBS\Cisco\CDP::neighbourId()</td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -630,8 +672,12 @@ most recent CDP message."</p></p>
 <pre>neighbourVTPMgmtDomain() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"The VTP Management Domain for the remote device's interface, as reported in the most recently received CDP message.
-This object is not instantiated if no VTP Management Domain field (TLV) was reported in the most recently received CDP message."</p></p>
+<p class="long_description"><blockquote>
+  <p>The VTP Management Domain for the remote device's interface,
+  as reported in the most recently received CDP message. This
+  object is not instantiated if no VTP Management Domain field
+  (TLV) was reported in the most recently received CDP message.</p>
+</blockquote></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
 <td>\REFERENCE</td>
@@ -646,9 +692,11 @@ This object is not instantiated if no VTP Management Domain field (TLV) was repo
 <pre>neighbourVersions() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>"The Version string as reported in the most recent CDP
-message.  The zero-length string indicates no Version
-field (TLV) was reported in the most recent CDP message."</p></p>
+<p class="long_description"><blockquote>
+  <p>The Version string as reported in the most recent CDP
+  message.  The zero-length string indicates no Version
+  field (TLV) was reported in the most recent CDP message."</p>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The device's CDP neighbour version indexed by the current device's port ID</div>
@@ -662,48 +710,49 @@ field (TLV) was reported in the most recent CDP message."</p></p>
 <p class="long_description"><p>Returns an array of neighbours indexed by the neighbour CDP ID with a lot of details.</p>
 
 <p>For example, here's a sample return for a switch with two neighbours where one neighbour
-is connected with a LAG / PortChannel and $inverse was set to true.</p>
+is connected with a LAG / PortChannel and <code>$inverse</code> was set to true.</p>
 
-<p>array(2) {
-    ["cr-sw07.example.ie"] => array(1) {
-        [0] => array(7) {
-            ["localPortId"] => int(10103)
-            ["localPortName"] => string(7) "Gi1/0/3"
-            ["localPort"] => string(20) "GigabitEthernet1/0/3"
-            ["isLAG"] => bool(false)
-            ["remotePort"] => string(21) "GigabitEthernet1/0/24"
-            ["remotePortId"] => int(10124)
-            ["remotePortName"] => string(8) "Gi1/0/24"
+<pre><code>array(2) {
+    ["cr-sw07.example.ie"] =&gt; array(1) {
+        [0] =&gt; array(7) {
+            ["localPortId"] =&gt; int(10103)
+            ["localPortName"] =&gt; string(7) "Gi1/0/3"
+            ["localPort"] =&gt; string(20) "GigabitEthernet1/0/3"
+            ["isLAG"] =&gt; bool(false)
+            ["remotePort"] =&gt; string(21) "GigabitEthernet1/0/24"
+            ["remotePortId"] =&gt; int(10124)
+            ["remotePortName"] =&gt; string(8) "Gi1/0/24"
         }
     }
-    ["cr-sw01.example.ie"] => array(2) {
-        [0] => array(11) {
-            ["localPortId"] => int(10111)
-            ["localPortName"] => string(8) "Gi1/0/11"
-            ["localPort"] => string(21) "GigabitEthernet1/0/11"
-            ["isLAG"] => bool(true)
-            ["lagPortId"] => int(5048)
-            ["lagPortName"] => string(4) "Po48"
-            ["remotePort"] => string(21) "GigabitEthernet1/0/11"
-            ["remotePortId"] => int(10111)
-            ["remotePortName"] => string(8) "Gi1/0/11"
-            ["remoteLagPortId"] => int(5048)
-            ["remoteLagPortName"] => string(4) "Po48"
+    ["cr-sw01.example.ie"] =&gt; array(2) {
+        [0] =&gt; array(11) {
+            ["localPortId"] =&gt; int(10111)
+            ["localPortName"] =&gt; string(8) "Gi1/0/11"
+                ["localPort"] =&gt; string(21) "GigabitEthernet1/0/11"
+            ["isLAG"] =&gt; bool(true)
+            ["lagPortId"] =&gt; int(5048)
+            ["lagPortName"] =&gt; string(4) "Po48"
+            ["remotePort"] =&gt; string(21) "GigabitEthernet1/0/11"
+            ["remotePortId"] =&gt; int(10111)
+            ["remotePortName"] =&gt; string(8) "Gi1/0/11"
+            ["remoteLagPortId"] =&gt; int(5048)
+            ["remoteLagPortName"] =&gt; string(4) "Po48"
         }
-        [1] => array(11) {
-            ["localPortId"] => int(10112)
-            ["localPortName"] => string(8) "Gi1/0/12"
-            ["localPort"] => string(21) "GigabitEthernet1/0/12"
-            ["isLAG"] => bool(true)
-            ["lagPortId"] => int(5048)
-            ["lagPortName"] => string(4) "Po48"
-            ["remotePort"] => string(21) "GigabitEthernet1/0/12"
-            ["remotePortId"] => int(10112)
-            ["remotePortName"] => string(8) "Gi1/0/12"
-            ["remoteLagPortId"] => int(5048)
-            ["remoteLagPortName"] => string(4) "Po48"
+        [1] =&gt; array(11) {
+            ["localPortId"] =&gt; int(10112)
+            ["localPortName"] =&gt; string(8) "Gi1/0/12"
+            ["localPort"] =&gt; string(21) "GigabitEthernet1/0/12"
+            ["isLAG"] =&gt; bool(true)
+            ["lagPortId"] =&gt; int(5048)
+            ["lagPortName"] =&gt; string(4) "Po48"
+            ["remotePort"] =&gt; string(21) "GigabitEthernet1/0/12"
+            ["remotePortId"] =&gt; int(10112)
+            ["remotePortName"] =&gt; string(8) "Gi1/0/12"
+            ["remoteLagPortId"] =&gt; int(5048)
+            ["remoteLagPortName"] =&gt; string(4) "Po48"
         }
-    }</p></p>
+    }
+</code></pre></p>
 <table class="table table-bordered">
 <tr>
 <th>see</th>
@@ -935,7 +984,7 @@ is connected with a LAG / PortChannel and $inverse was set to true.</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
-            generated on 2012-06-16T14:42:01+01:00.<br></footer></div>
+            generated on 2012-06-18T14:50:57+01:00.<br></footer></div>
 </div>
 </body>
 </html>

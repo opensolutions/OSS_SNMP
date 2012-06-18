@@ -4,15 +4,15 @@
 /*
     Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
     All rights reserved.
-    
+
     Contact: Barry O'Donovan - barry (at) opensolutions (dot) ie
     http://www.opensolutions.ie/
-    
+
     This file is part of the OSS_SNMP package.
-    
+
     Redistribution and use in source and binary forms, with or without
     modification, are permitted provided that the following conditions are met:
-    
+
     * Redistributions of source code must retain the above copyright
     notice, this list of conditions and the following disclaimer.
     * Redistributions in binary form must reproduce the above copyright
@@ -21,7 +21,7 @@
     * Neither the name of Open Source Solutions Limited nor the
     names of its contributors may be used to endorse or promote products
     derived from this software without specific prior written permission.
-    
+
     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
     ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
     WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -53,7 +53,7 @@ This is an example script to show how to use OSS_SNMP. It requires two or three 
  - the IP address of hostname of a SNMP capable host
  - the SNMP v2 community string for that host
  - the index of the interface to show details for
- 
+
 If the third argument is missing, it will print interface indexes and names.
 
 For example:
@@ -75,20 +75,20 @@ if( count( $argv ) == 3 )
     echo "\nNumber of interfaces on {$argv[1]}: " . $host->useIface()->numberofInterfaces() . "\n\n";
 
     echo "ID:  Name  - Descrition - Type - Admin/Operational State\n\n";
-    
+
     foreach( $host->useIface()->names() as $id => $name )
     {
         echo "{$id}: {$name} - {$host->useIface()->descriptions()[$id]} - {$host->useIface()->types(1)[$id]}"
             . " - {$host->useIface()->adminStates(1)[$id]}/{$host->useIface()->operationStates(1)[$id]}\n";
     }
-    
+
     echo "\n";
     exit( 0 );
 }
 
 $names = $host->useIface()->names();
 $id = $argv[3];
- 
+
 if( !isset( $names[ $id ] ) )
 {
     echo "Unknown interface index!\n";
@@ -110,6 +110,11 @@ Speeds:                    {$host->useIface()->speeds()[$id]}
 Physical Address:          {$host->useIface()->physAddresses()[$id]}
 Last Change:               {$host->useIface()->lastChanges()[$id]}
 
+INTINFO;
+
+try
+{
+    echo <<<INTINFO
 In/Out Octets:             {$host->useIface()->inOctets()[$id]} / {$host->useIface()->outOctets()[$id]}
 In/Out Unicast:            {$host->useIface()->inUnicastPackets()[$id]} / {$host->useIface()->outUnicastPackets()[$id]}
 In/Out Non Unicats:        {$host->useIface()->inNonUnicastPackets()[$id]} / {$host->useIface()->outNonUnicastPackets()[$id]}
@@ -119,7 +124,11 @@ In/Out Errors:             {$host->useIface()->inErrors()[$id]} / {$host->useIfa
 In Unknown Protocols:      {$host->useIface()->inUnknownProtocols()[$id]}
 Out Queue Length:          {$host->useIface()->outQueueLength()[$id]}
 
-
 INTINFO;
+}
+catch( \OSS\Exception $e )
+{
+    echo "\nCould not poll interface statistics for this interface.\n";
+}
 
 exit( 0 );

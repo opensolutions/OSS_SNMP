@@ -151,7 +151,11 @@ class RSTP extends \OSS\SNMP\MIBS\Cisco
             if( $base )
                 $croles[ $base ] = $v;
             else
-                $croles[ $k + 10100 ] = $v;       // FIXME Hack... basePortIfIndexes() does not have all ports...
+            {
+                // and and get port ID from MIBS\Entity
+                // TODO Find a better way to translate these?
+                $croles[ $this->getSNMP()->useEntity()->relPosToAlias()[$k] ] = $v;
+            }
         }
 
         if( !$translate )
