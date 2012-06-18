@@ -31,9 +31,11 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">30</span></a></li>
+                <span class="label label-info">31</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul></ul></a></li>
+                <ul><li>fixme 
+                <span class="label label-info">1</span>
+</li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
 </ul>
@@ -55,6 +57,10 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#collapseDevicesLAGs" title="collapseDevicesLAGs :: An extension of collapseLAGs() to work with crawl() and linkTopology()."><span class="description">An extension of collapseLAGs() to work with crawl() and linkTopology().</span><pre>collapseDevicesLAGs()</pre></a></li>
+<li class="method public "><a href="#collapseLAGs" title="collapseLAGs :: Utility function to process the output from neighbours() and remove individual trunk ports leaving only
+single LAG links."><span class="description">Utility function to process the output from neighbours() and remove individual trunk ports leaving only
+single LAG links.</span><pre>collapseLAGs()</pre></a></li>
 <li class="method public "><a href="#crawl" title="crawl :: Recursivily crawls all CDP neighbours to build up a flat array of all devices
 indexed by the CDP device id."><span class="description">Recursivily crawls all CDP neighbours to build up a flat array of all devices
 indexed by the CDP device id.</span><pre>crawl()</pre></a></li>
@@ -147,6 +153,102 @@ indexed by the CDP device id.</span><pre>crawl()</pre></a></li>
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
+<a name="collapseDevicesLAGs" id="collapseDevicesLAGs"></a><div class="element clickable method public collapseDevicesLAGs" data-toggle="collapse" data-target=".collapseDevicesLAGs .collapse">
+<h2>An extension of collapseLAGs() to work with crawl() and linkTopology().</h2>
+<pre>collapseDevicesLAGs(array $devices) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Rather than taking the input from neighbours(), it takes input from crawl() or linkTopology()
+and processes all neighbours.</p></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\collapseLAGs()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$devices</h4>
+<code>array</code><p>The result of a call to crawl() or linkTopology()</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Processed CDP neighbours with LAG ports collapsed</div>
+</div></div>
+</div>
+<a name="collapseLAGs" id="collapseLAGs"></a><div class="element clickable method public collapseLAGs" data-toggle="collapse" data-target=".collapseLAGs .collapse">
+<h2>Utility function to process the output from neighbours() and remove individual trunk ports leaving only
+single LAG links.</h2>
+<pre>collapseLAGs(array $neighbours) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>For example, here's a sample return for a switch with a neighbour
+connected with a LAG / PortChannel:</p>
+
+<p>array(2) {
+    ["cr-sw01.example.ie"] => array(2) {
+        [0] => array(11) {
+            ["localPortId"] => int(10111)
+            ["localPortName"] => string(8) "Gi1/0/11"
+            ["localPort"] => string(21) "GigabitEthernet1/0/11"
+            ["isLAG"] => bool(true)
+            ["lagPortId"] => int(5048)
+            ["lagPortName"] => string(4) "Po48"
+            ["remotePort"] => string(21) "GigabitEthernet1/0/11"
+            ["remotePortId"] => int(10111)
+            ["remotePortName"] => string(8) "Gi1/0/11"
+            ["remoteLagPortId"] => int(5048)
+            ["remoteLagPortName"] => string(4) "Po48"
+        }
+        [1] => array(11) {
+            ["localPortId"] => int(10112)
+            ["localPortName"] => string(8) "Gi1/0/12"
+            ["localPort"] => string(21) "GigabitEthernet1/0/12"
+            ["isLAG"] => bool(true)
+            ["lagPortId"] => int(5048)
+            ["lagPortName"] => string(4) "Po48"
+            ["remotePort"] => string(21) "GigabitEthernet1/0/12"
+            ["remotePortId"] => int(10112)
+            ["remotePortName"] => string(8) "Gi1/0/12"
+            ["remoteLagPortId"] => int(5048)
+            ["remoteLagPortName"] => string(4) "Po48"
+        }
+    }
+    ...
+}</p>
+
+<p>The result of this function would be:</p>
+
+<p>array(2) {
+    ["cr-sw01.example.ie"] => array(1) {
+        [0] => array(11) {
+            ["localPortId"] => int(5048)
+            ["localPortName"] => string(8) "Po48"
+            ["localPort"] => string(21) "Po48"
+            ["isLAG"] => bool(true)
+            ["lagPortId"] => int(5048)
+            ["lagPortName"] => string(4) "Po48"
+            ["remotePort"] => string(21) "Po48"
+            ["remotePortId"] => int(5048)
+            ["remotePortName"] => string(8) "Po48"
+            ["remoteLagPortId"] => int(5048)
+            ["remoteLagPortName"] => string(4) "Po48"
+        }
+    }
+    ...
+}</p></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\neighbours()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$neighbours</h4>
+<code>array</code><p>The result of a call to neighbours()</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Processed CDP neighbours with LAG ports collapsed</div>
+</div></div>
+</div>
 <a name="crawl" id="crawl"></a><div class="element clickable method public crawl" data-toggle="collapse" data-target=".crawl .collapse">
 <h2>Recursivily crawls all CDP neighbours to build up a flat array of all devices
 indexed by the CDP device id.</h2>
@@ -265,14 +367,19 @@ SNMP values into true / false.</p></p>
 <p class="long_description"><p>Huh? This function:</p>
 
 <ul>
-<li>takes the result of crawl() (or calls crawl()) to get the CDP topology</li>
-<li>foreach device, builds an array of device to device links</li>
+<li>takes the result of crawl() (or calls crawl()) to get the CDP topology;</li>
+<li>foreach device, builds an array of device to device links;</li>
 <li>SO LONG as that link has already not been accounted for in the other direction.</li>
 </ul>
 
-<p>I.e. if a link is found A -> B, then the same B -> A link will not be included</p>
+<p>I.e. if a link is found A -> B, then the same B -> A link will not be included.</p>
 
-<p>The array returned is, for example:</p>
+<p>The primary differences to the return value of this and crawl() are:</p>
+
+<ul>
+<li>links only appear once (unidirectional) rather than twice (bidirectional)</li>
+<li>the links are indexed by the localPortName rather than an integer index:</li>
+</ul>
 
 <p>[cr-sw04.degkcp.example.ie] => Array
 (
@@ -282,30 +389,10 @@ SNMP values into true / false.</p></p>
          (
              [remotePort] => FastEthernet0/1
              [isLAG]      => false
+             ........
      )</p>
 
-<pre><code> [cr-sw03.degkcp.example.ie] =&gt; Array
- (
-     [GigabitEthernet1/0/23] =&gt; Array
-     (
-         [remotePort] =&gt; GigabitEthernet1/0/23
-         [isLAG]      =&gt; false
-     )
-     [GigabitEthernet1/0/24] =&gt; Array
-     (
-         [remotePort] =&gt; GigabitEthernet1/0/24
-         [isLAG]      =&gt; false
-     )
- )
-</code></pre>
-
-<p>)</p>
-
-<p>This tells us that cr-sw04(GigabitEthernet1/0/3) is connected to cd-sw02(FastEthernet0/1).</p>
-
-<p>It also tells us that cr-sw04 has two connections to cr-sw03.</p>
-
-<p>You'll notice it also tells us if it's a LAG or not. More information can be added as needed.</p></p>
+<p>All port information is copied over from the supplied / called crawl() array</p></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
 <td>\crawl()</td>
@@ -569,34 +656,54 @@ field (TLV) was reported in the most recent CDP message."</p></p>
 </div>
 <a name="neighbours" id="neighbours"></a><div class="element clickable method public neighbours" data-toggle="collapse" data-target=".neighbours .collapse">
 <h2>CDP utility function to get all CDP neighbours and their connected ports.</h2>
-<pre>neighbours() : array</pre>
+<pre>neighbours(boolean $inverse, array $skipHostIds) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>Returns an array of neighbours indexed by the neighbour CDP ID. For example:</p>
+<p class="long_description"><p>Returns an array of neighbours indexed by the neighbour CDP ID with a lot of details.</p>
 
-<p>Array
-(
-    [cr-sw03.ixdub1.opensolutions.ie] => Array
-        (
-           [0] => Array
-               (
-                    [localPortId] => 10101
-                    [localPort] => GigabitEthernet1/0/1
-                    [remotePort] => GigabitEthernet0/1
-                )</p>
+<p>For example, here's a sample return for a switch with two neighbours where one neighbour
+is connected with a LAG / PortChannel and $inverse was set to true.</p>
 
-<pre><code>        [1] =&gt; Array
-            (
-                [localPortId] =&gt; 10102
-                [localPort] =&gt; GigabitEthernet1/0/2
-                [remotePort] =&gt; FastEthernet0/2
-            )
-
-    )
-[ ... ]
-</code></pre>
-
-<p>)</p></p>
+<p>array(2) {
+    ["cr-sw07.example.ie"] => array(1) {
+        [0] => array(7) {
+            ["localPortId"] => int(10103)
+            ["localPortName"] => string(7) "Gi1/0/3"
+            ["localPort"] => string(20) "GigabitEthernet1/0/3"
+            ["isLAG"] => bool(false)
+            ["remotePort"] => string(21) "GigabitEthernet1/0/24"
+            ["remotePortId"] => int(10124)
+            ["remotePortName"] => string(8) "Gi1/0/24"
+        }
+    }
+    ["cr-sw01.example.ie"] => array(2) {
+        [0] => array(11) {
+            ["localPortId"] => int(10111)
+            ["localPortName"] => string(8) "Gi1/0/11"
+            ["localPort"] => string(21) "GigabitEthernet1/0/11"
+            ["isLAG"] => bool(true)
+            ["lagPortId"] => int(5048)
+            ["lagPortName"] => string(4) "Po48"
+            ["remotePort"] => string(21) "GigabitEthernet1/0/11"
+            ["remotePortId"] => int(10111)
+            ["remotePortName"] => string(8) "Gi1/0/11"
+            ["remoteLagPortId"] => int(5048)
+            ["remoteLagPortName"] => string(4) "Po48"
+        }
+        [1] => array(11) {
+            ["localPortId"] => int(10112)
+            ["localPortName"] => string(8) "Gi1/0/12"
+            ["localPort"] => string(21) "GigabitEthernet1/0/12"
+            ["isLAG"] => bool(true)
+            ["lagPortId"] => int(5048)
+            ["lagPortName"] => string(4) "Po48"
+            ["remotePort"] => string(21) "GigabitEthernet1/0/12"
+            ["remotePortId"] => int(10112)
+            ["remotePortName"] => string(8) "Gi1/0/12"
+            ["remoteLagPortId"] => int(5048)
+            ["remoteLagPortName"] => string(4) "Po48"
+        }
+    }</p></p>
 <table class="table table-bordered">
 <tr>
 <th>see</th>
@@ -611,6 +718,15 @@ field (TLV) was reported in the most recent CDP message."</p></p>
 <td>\neighbourPort()</td>
 </tr>
 </table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$inverse</h4>
+<code>boolean</code><p>If true, all remoteXXX params will be discovered (only remotePort is returned otherwise)</p>
+</div>
+<div class="subelement argument">
+<h4>$skipHostIds</h4>
+<code>array</code><p>If using $inverse, pass an array of CDP IDs of neighbours that should not be 'inverse' discovered.</p>
+</div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>CDP neighbours and their connected ports</div>
@@ -819,7 +935,7 @@ field (TLV) was reported in the most recent CDP message."</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
-            generated on 2012-06-12T10:21:12+01:00.<br></footer></div>
+            generated on 2012-06-16T14:42:01+01:00.<br></footer></div>
 </div>
 </body>
 </html>

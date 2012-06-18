@@ -289,16 +289,45 @@
       <error line="54" code="50010">No DocBlock was found for method clearAll()</error>
     </parse_markers>
   </file>
-  <file path="Exception.php" hash="5350a5ad92eb6358f4665261f10b14ca" package="Default">
-    <class final="false" abstract="false" namespace="OSS" line="43" package="Default">
-      <name>Exception</name>
-      <full_name>\OSS\Exception</full_name>
-      <extends>Exception</extends>
-      <docblock line="43">
-        <description><![CDATA[OSS\SNMP\Exception class]]></description>
+  <file path="Timer.php" hash="8ce598f8f4609c44fef7f7f327dedad6" package="Default">
+    <class final="false" abstract="false" namespace="OSS" line="44" package="Default">
+      <name>Timer</name>
+      <full_name>\OSS\Timer</full_name>
+      <extends/>
+      <docblock line="44">
+        <description><![CDATA[A class for timing PHP scripts]]></description>
         <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
       </docblock>
+      <property final="false" static="true" visibility="private" line="47" namespace="OSS" package="Default">
+        <name>$_start</name>
+        <default><![CDATA[NULL]]></default>
+      </property>
+      <property final="false" static="true" visibility="private" line="50" namespace="OSS" package="Default">
+        <name>$_time</name>
+        <default><![CDATA[NULL]]></default>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="OSS" line="52" package="Default">
+        <name>start</name>
+        <full_name>start</full_name>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="OSS" line="57" package="Default">
+        <name>end</name>
+        <full_name>end</full_name>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="OSS" line="62" package="Default">
+        <name>time</name>
+        <full_name>time</full_name>
+      </method>
     </class>
+    <parse_markers>
+      <error line="47" code="50018">No DocBlock was found for property $_start</error>
+      <error line="50" code="50018">No DocBlock was found for property $_time</error>
+      <error line="52" code="50010">No DocBlock was found for method start()</error>
+      <error line="57" code="50010">No DocBlock was found for method end()</error>
+      <error line="62" code="50010">No DocBlock was found for method time()</error>
+    </parse_markers>
   </file>
   <file path="SNMP.php" hash="2b308bbd3269b480f511aeff335128ba" package="Default">
     <include line="43" type="Require" package="Default">
@@ -886,235 +915,6 @@ instance and then call fn().</p>
       <error line="101" code="50018">No DocBlock was found for property $_disableCache</error>
       <error line="124" code="50018">No DocBlock was found for property $SNMP_TRUTHVALUES</error>
     </parse_markers>
-  </file>
-  <file path="Timer.php" hash="8ce598f8f4609c44fef7f7f327dedad6" package="Default">
-    <class final="false" abstract="false" namespace="OSS" line="44" package="Default">
-      <name>Timer</name>
-      <full_name>\OSS\Timer</full_name>
-      <extends/>
-      <docblock line="44">
-        <description><![CDATA[A class for timing PHP scripts]]></description>
-        <long-description><![CDATA[]]></long-description>
-        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
-        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
-      </docblock>
-      <property final="false" static="true" visibility="private" line="47" namespace="OSS" package="Default">
-        <name>$_start</name>
-        <default><![CDATA[NULL]]></default>
-      </property>
-      <property final="false" static="true" visibility="private" line="50" namespace="OSS" package="Default">
-        <name>$_time</name>
-        <default><![CDATA[NULL]]></default>
-      </property>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="OSS" line="52" package="Default">
-        <name>start</name>
-        <full_name>start</full_name>
-      </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="OSS" line="57" package="Default">
-        <name>end</name>
-        <full_name>end</full_name>
-      </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="OSS" line="62" package="Default">
-        <name>time</name>
-        <full_name>time</full_name>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="47" code="50018">No DocBlock was found for property $_start</error>
-      <error line="50" code="50018">No DocBlock was found for property $_time</error>
-      <error line="52" code="50010">No DocBlock was found for method start()</error>
-      <error line="57" code="50010">No DocBlock was found for method end()</error>
-      <error line="62" code="50010">No DocBlock was found for method time()</error>
-    </parse_markers>
-  </file>
-  <file path="SNMP/MIBS/Host.php" hash="96d43764cbd57f16befbe5778303f7ab" package="Default">
-    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
-      <name>Host</name>
-      <full_name>\OSS\SNMP\MIBS\Host</full_name>
-      <extends>OSS\SNMP\MIB</extends>
-      <docblock line="44">
-        <description><![CDATA[A class for performing SNMP V2 queries on generic devices]]></description>
-        <long-description><![CDATA[]]></long-description>
-        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
-        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
-      </docblock>
-    </class>
-  </file>
-  <file path="SNMP/MIBS/System.php" hash="66d08d9d2c3d4f373990226ac106298c" package="Default">
-    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
-      <name>System</name>
-      <full_name>\OSS\SNMP\MIBS\System</full_name>
-      <extends>OSS\SNMP\MIB</extends>
-      <docblock line="44">
-        <description><![CDATA[A class for performing SNMP V2 queries on generic devices]]></description>
-        <long-description><![CDATA[]]></long-description>
-        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
-        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
-      </docblock>
-      <constant namespace="OSS\SNMP\MIBS" line="46" package="Default">
-        <name>OID_SYSTEM_DESCRIPTION</name>
-        <full_name>OID_SYSTEM_DESCRIPTION</full_name>
-        <value><![CDATA['.1.3.6.1.2.1.1.1.0']]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS" line="47" package="Default">
-        <name>OID_SYSTEM_UPTIME</name>
-        <full_name>OID_SYSTEM_UPTIME</full_name>
-        <value><![CDATA['.1.3.6.1.2.1.1.3.0']]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS" line="48" package="Default">
-        <name>OID_SYSTEM_CONTACT</name>
-        <full_name>OID_SYSTEM_CONTACT</full_name>
-        <value><![CDATA['.1.3.6.1.2.1.1.4.0']]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS" line="49" package="Default">
-        <name>OID_SYSTEM_NAME</name>
-        <full_name>OID_SYSTEM_NAME</full_name>
-        <value><![CDATA['.1.3.6.1.2.1.1.5.0']]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS" line="50" package="Default">
-        <name>OID_SYSTEM_LOCATION</name>
-        <full_name>OID_SYSTEM_LOCATION</full_name>
-        <value><![CDATA['.1.3.6.1.2.1.1.6.0']]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS" line="51" package="Default">
-        <name>OID_SYSTEM_SERVICES</name>
-        <full_name>OID_SYSTEM_SERVICES</full_name>
-        <value><![CDATA['.1.3.6.1.2.1.1.7.0']]></value>
-      </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="58" package="Default">
-        <name>description</name>
-        <full_name>description</full_name>
-        <docblock line="58">
-          <description><![CDATA[Returns the system description of the device]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="58" name="return" description="The system description of the device" type="string">
-            <type by_reference="false">string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="72" package="Default">
-        <name>uptime</name>
-        <full_name>uptime</full_name>
-        <docblock line="72">
-          <description><![CDATA[Returns the system uptime of the device]]></description>
-          <long-description><![CDATA[<p>"The time (in hundredths of a second) since the
-network management portion of the system was last
-re-initialized."</p>]]></long-description>
-          <tag line="72" name="return" description="The system uptime of the device (in timeticks)" type="int">
-            <type by_reference="false">int</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="82" package="Default">
-        <name>contact</name>
-        <full_name>contact</full_name>
-        <docblock line="82">
-          <description><![CDATA[Returns the system contact of the device]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="82" name="return" description="The system contact of the device" type="string">
-            <type by_reference="false">string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="92" package="Default">
-        <name>name</name>
-        <full_name>name</full_name>
-        <docblock line="92">
-          <description><![CDATA[Returns the system name of the device]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="92" name="return" description="The system name of the device" type="string">
-            <type by_reference="false">string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="102" package="Default">
-        <name>location</name>
-        <full_name>location</full_name>
-        <docblock line="102">
-          <description><![CDATA[Returns the system location of the device]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="102" name="return" description="The system location of the device" type="string">
-            <type by_reference="false">string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="137" package="Default">
-        <name>services</name>
-        <full_name>services</full_name>
-        <docblock line="137">
-          <description><![CDATA[Returns the system services of the device]]></description>
-          <long-description><![CDATA[<p>"A value which indicates the set of services that
-this entity primarily offers.</p>
-
-<p>The value is a sum.  This sum initially takes the
-value zero, Then, for each layer, L, in the range
-1 through 7, that this node performs transactions
-for, 2 raised to (L - 1) is added to the sum.  For
-example, a node which performs primarily routing
-functions would have a value of 4 (2^(3-1)).  In
-contrast, a node which is a host offering
-application services would have a value of 72
-(2^(4-1) + 2^(7-1)).  Note that in the context of
-the Internet suite of protocols, values should be
-calculated accordingly:</p>
-
-<pre><code>layer  functionality
-    1  physical (e.g., repeaters)
-    2  datalink/subnetwork (e.g., bridges)
-    3  internet (e.g., IP gateways)
-    4  end-to-end  (e.g., IP hosts)
-    7  applications (e.g., mail relays)
-</code></pre>
-
-<p>For systems including OSI protocols, layers 5 and
-6 may also be counted."</p>]]></long-description>
-          <tag line="137" name="return" description="The system services of the device" type="string">
-            <type by_reference="false">string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="151" package="Default">
-        <name>getAll</name>
-        <full_name>getAll</full_name>
-        <docblock line="151">
-          <description><![CDATA[Gets all system values as an associate array]]></description>
-          <long-description><![CDATA[<p>The keys of the array are contact, description, location,
-    name, services, uptime</p>]]></long-description>
-          <tag line="151" name="return" description="All system values as an associate array" type="array">
-            <type by_reference="false">array</type>
-          </tag>
-        </docblock>
-      </method>
-    </class>
-  </file>
-  <file path="SNMP/MIBS/Bridge.php" hash="a6b88f8f0b391c57b2d74880d4f0db93" package="Default">
-    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
-      <name>Bridge</name>
-      <full_name>\OSS\SNMP\MIBS\Bridge</full_name>
-      <extends>OSS\SNMP\MIB</extends>
-      <docblock line="44">
-        <description><![CDATA[A class for performing SNMP V2 queries on generic devices]]></description>
-        <long-description><![CDATA[]]></long-description>
-        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
-        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
-      </docblock>
-      <constant namespace="OSS\SNMP\MIBS" line="46" package="Default">
-        <name>OID_BRIDGE_BASE_PORT_IF_INDEX</name>
-        <full_name>OID_BRIDGE_BASE_PORT_IF_INDEX</full_name>
-        <value><![CDATA['.1.3.6.1.2.1.17.1.4.1.2']]></value>
-      </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="56" package="Default">
-        <name>basePortIfIndexes</name>
-        <full_name>basePortIfIndexes</full_name>
-        <docblock line="56">
-          <description><![CDATA[Returns an associate array of STP port IDs (key) to interface IDs (value)]]></description>
-          <long-description><![CDATA[<p>e.g.  [22] => 10122</p>]]></long-description>
-          <tag line="56" name="return" description="Associate array of STP port IDs (key) to interface IDs (value)" type="array">
-            <type by_reference="false">array</type>
-          </tag>
-        </docblock>
-      </method>
-    </class>
   </file>
   <file path="SNMP/MIBS/Iface.php" hash="9b85e3ab607f3638eb4d558ba4ab98f6" package="Default">
     <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
@@ -1851,6 +1651,35 @@ unsupported protocol."</p>]]></long-description>
       <error line="728" code="50018">No DocBlock was found for property $IF_TYPES</error>
     </parse_markers>
   </file>
+  <file path="SNMP/MIBS/Bridge.php" hash="a6b88f8f0b391c57b2d74880d4f0db93" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
+      <name>Bridge</name>
+      <full_name>\OSS\SNMP\MIBS\Bridge</full_name>
+      <extends>OSS\SNMP\MIB</extends>
+      <docblock line="44">
+        <description><![CDATA[A class for performing SNMP V2 queries on generic devices]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <constant namespace="OSS\SNMP\MIBS" line="46" package="Default">
+        <name>OID_BRIDGE_BASE_PORT_IF_INDEX</name>
+        <full_name>OID_BRIDGE_BASE_PORT_IF_INDEX</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.17.1.4.1.2']]></value>
+      </constant>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="56" package="Default">
+        <name>basePortIfIndexes</name>
+        <full_name>basePortIfIndexes</full_name>
+        <docblock line="56">
+          <description><![CDATA[Returns an associate array of STP port IDs (key) to interface IDs (value)]]></description>
+          <long-description><![CDATA[<p>e.g.  [22] => 10122</p>]]></long-description>
+          <tag line="56" name="return" description="Associate array of STP port IDs (key) to interface IDs (value)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
   <file path="SNMP/MIBS/LAG.php" hash="81c6297c2fe283cf2e6b2051c5d455c3" package="Default">
     <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
       <name>LAG</name>
@@ -1938,255 +1767,167 @@ they are a member of (else 0 if not a LAG port)]]></description>
       </docblock>
     </class>
   </file>
-  <file path="SNMP/MIBS/Cisco/RSTP.php" hash="509835abf621adbf47d09ce6c64aba88" package="Default">
-    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS\Cisco" line="44" package="Default">
-      <name>RSTP</name>
-      <full_name>\OSS\SNMP\MIBS\Cisco\RSTP</full_name>
-      <extends>OSS\SNMP\MIBS\Cisco</extends>
+  <file path="SNMP/MIBS/System.php" hash="66d08d9d2c3d4f373990226ac106298c" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
+      <name>System</name>
+      <full_name>\OSS\SNMP\MIBS\System</full_name>
+      <extends>OSS\SNMP\MIB</extends>
       <docblock line="44">
-        <description><![CDATA[A class for performing SNMP V2 queries on Cisco devices]]></description>
+        <description><![CDATA[A class for performing SNMP V2 queries on generic devices]]></description>
         <long-description><![CDATA[]]></long-description>
         <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
         <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
       </docblock>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="48" package="Default">
-        <name>OID_STP_X_RSTP_PORT_ROLE</name>
-        <full_name>OID_STP_X_RSTP_PORT_ROLE</full_name>
-        <value><![CDATA['.1.3.6.1.4.1.9.9.82.1.12.2.1.3']]></value>
+      <constant namespace="OSS\SNMP\MIBS" line="46" package="Default">
+        <name>OID_SYSTEM_DESCRIPTION</name>
+        <full_name>OID_SYSTEM_DESCRIPTION</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.1.1.0']]></value>
       </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="55" package="Default">
-        <name>STP_X_RSTP_PORT_ROLE_DISABLED</name>
-        <full_name>STP_X_RSTP_PORT_ROLE_DISABLED</full_name>
-        <value><![CDATA[1]]></value>
+      <constant namespace="OSS\SNMP\MIBS" line="47" package="Default">
+        <name>OID_SYSTEM_UPTIME</name>
+        <full_name>OID_SYSTEM_UPTIME</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.1.3.0']]></value>
       </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="61" package="Default">
-        <name>STP_X_RSTP_PORT_ROLE_ROOT</name>
-        <full_name>STP_X_RSTP_PORT_ROLE_ROOT</full_name>
-        <value><![CDATA[2]]></value>
+      <constant namespace="OSS\SNMP\MIBS" line="48" package="Default">
+        <name>OID_SYSTEM_CONTACT</name>
+        <full_name>OID_SYSTEM_CONTACT</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.1.4.0']]></value>
       </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="67" package="Default">
-        <name>STP_X_RSTP_PORT_ROLE_DESIGNATED</name>
-        <full_name>STP_X_RSTP_PORT_ROLE_DESIGNATED</full_name>
-        <value><![CDATA[3]]></value>
+      <constant namespace="OSS\SNMP\MIBS" line="49" package="Default">
+        <name>OID_SYSTEM_NAME</name>
+        <full_name>OID_SYSTEM_NAME</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.1.5.0']]></value>
       </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="73" package="Default">
-        <name>STP_X_RSTP_PORT_ROLE_ALTERNATE</name>
-        <full_name>STP_X_RSTP_PORT_ROLE_ALTERNATE</full_name>
-        <value><![CDATA[4]]></value>
+      <constant namespace="OSS\SNMP\MIBS" line="50" package="Default">
+        <name>OID_SYSTEM_LOCATION</name>
+        <full_name>OID_SYSTEM_LOCATION</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.1.6.0']]></value>
       </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="79" package="Default">
-        <name>STP_X_RSTP_PORT_ROLE_BACKUP</name>
-        <full_name>STP_X_RSTP_PORT_ROLE_BACKUP</full_name>
-        <value><![CDATA[5]]></value>
+      <constant namespace="OSS\SNMP\MIBS" line="51" package="Default">
+        <name>OID_SYSTEM_SERVICES</name>
+        <full_name>OID_SYSTEM_SERVICES</full_name>
+        <value><![CDATA['.1.3.6.1.2.1.1.7.0']]></value>
       </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="85" package="Default">
-        <name>STP_X_RSTP_PORT_ROLE_BOUNDARY</name>
-        <full_name>STP_X_RSTP_PORT_ROLE_BOUNDARY</full_name>
-        <value><![CDATA[6]]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="91" package="Default">
-        <name>STP_X_RSTP_PORT_ROLE_MASTER</name>
-        <full_name>STP_X_RSTP_PORT_ROLE_MASTER</full_name>
-        <value><![CDATA[6]]></value>
-      </constant>
-      <property final="false" static="true" visibility="public" line="99" namespace="OSS\SNMP\MIBS\Cisco" package="Default">
-        <name>$STP_X_RSTP_PORT_ROLES</name>
-        <default><![CDATA[array(NULL => 'disabled', NULL => 'root', NULL => 'designated', NULL => 'alternate', NULL => 'backUp', NULL => 'boundary', NULL => 'master')]]></default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="134" package="Default">
-        <name>rstpPortRole</name>
-        <full_name>rstpPortRole</full_name>
-        <docblock line="134">
-          <description><![CDATA[Get the device's RSTP port roles (by given vlan id)]]></description>
-          <long-description><![CDATA[<p>Only ports participating in RSTP for the given VLAN id are returned.</p>
-
-<p>This function will also convert STP port IDs to the device proper port IDs.
-E.g. sample output:</p>
-
-<p>Array
-(
-   [10101] => 3
-   [10103] => 3
-   [10105] => 3
-   [5048] => 2
-)</p>]]></long-description>
-          <tag line="134" name="see" description="\$STP_X_RSTP_PORT_ROLES" refers="\$STP_X_RSTP_PORT_ROLES"/>
-          <tag line="134" name="see" description="\STP_X_RSTP_PORT_ROLE_ROOT" refers="\STP_X_RSTP_PORT_ROLE_ROOT"/>
-          <tag line="134" name="param" description="The RSTP VLAN ID to query port roles for" type="int" variable="$vid">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="58" package="Default">
+        <name>description</name>
+        <full_name>description</full_name>
+        <docblock line="58">
+          <description><![CDATA[Returns the system description of the device]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="58" name="return" description="The system description of the device" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="72" package="Default">
+        <name>uptime</name>
+        <full_name>uptime</full_name>
+        <docblock line="72">
+          <description><![CDATA[Returns the system uptime of the device]]></description>
+          <long-description><![CDATA[<p>"The time (in hundredths of a second) since the
+network management portion of the system was last
+re-initialized."</p>]]></long-description>
+          <tag line="72" name="return" description="The system uptime of the device (in timeticks)" type="int">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="134" name="param" description="If true, return the string representation via self::$STP_X_RSTP_PORT_ROLES" type="boolean" variable="$translate">
-            <type by_reference="false">boolean</type>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="82" package="Default">
+        <name>contact</name>
+        <full_name>contact</full_name>
+        <docblock line="82">
+          <description><![CDATA[Returns the system contact of the device]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="82" name="return" description="The system contact of the device" type="string">
+            <type by_reference="false">string</type>
           </tag>
-          <tag line="134" name="return" description="The device's RSTP port roles (by given vlan id)" type="array">
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="92" package="Default">
+        <name>name</name>
+        <full_name>name</full_name>
+        <docblock line="92">
+          <description><![CDATA[Returns the system name of the device]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="92" name="return" description="The system name of the device" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="102" package="Default">
+        <name>location</name>
+        <full_name>location</full_name>
+        <docblock line="102">
+          <description><![CDATA[Returns the system location of the device]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="102" name="return" description="The system location of the device" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="137" package="Default">
+        <name>services</name>
+        <full_name>services</full_name>
+        <docblock line="137">
+          <description><![CDATA[Returns the system services of the device]]></description>
+          <long-description><![CDATA[<p>"A value which indicates the set of services that
+this entity primarily offers.</p>
+
+<p>The value is a sum.  This sum initially takes the
+value zero, Then, for each layer, L, in the range
+1 through 7, that this node performs transactions
+for, 2 raised to (L - 1) is added to the sum.  For
+example, a node which performs primarily routing
+functions would have a value of 4 (2^(3-1)).  In
+contrast, a node which is a host offering
+application services would have a value of 72
+(2^(4-1) + 2^(7-1)).  Note that in the context of
+the Internet suite of protocols, values should be
+calculated accordingly:</p>
+
+<pre><code>layer  functionality
+    1  physical (e.g., repeaters)
+    2  datalink/subnetwork (e.g., bridges)
+    3  internet (e.g., IP gateways)
+    4  end-to-end  (e.g., IP hosts)
+    7  applications (e.g., mail relays)
+</code></pre>
+
+<p>For systems including OSI protocols, layers 5 and
+6 may also be counted."</p>]]></long-description>
+          <tag line="137" name="return" description="The system services of the device" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS" line="151" package="Default">
+        <name>getAll</name>
+        <full_name>getAll</full_name>
+        <docblock line="151">
+          <description><![CDATA[Gets all system values as an associate array]]></description>
+          <long-description><![CDATA[<p>The keys of the array are contact, description, location,
+    name, services, uptime</p>]]></long-description>
+          <tag line="151" name="return" description="All system values as an associate array" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="134">
-          <name>$vid</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-        <argument line="134">
-          <name>$translate</name>
-          <default><![CDATA[NULL]]></default>
-          <type/>
-        </argument>
       </method>
     </class>
-    <parse_markers>
-      <error line="99" code="50018">No DocBlock was found for property $STP_X_RSTP_PORT_ROLES</error>
-    </parse_markers>
   </file>
-  <file path="SNMP/MIBS/Cisco/VTP.php" hash="6ce332986c79ebe7e457c8c8c3f627cd" package="Default">
-    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS\Cisco" line="44" package="Default">
-      <name>VTP</name>
-      <full_name>\OSS\SNMP\MIBS\Cisco\VTP</full_name>
-      <extends>OSS\SNMP\MIBS\Cisco</extends>
+  <file path="SNMP/MIBS/Host.php" hash="96d43764cbd57f16befbe5778303f7ab" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS" line="44" package="Default">
+      <name>Host</name>
+      <full_name>\OSS\SNMP\MIBS\Host</full_name>
+      <extends>OSS\SNMP\MIB</extends>
       <docblock line="44">
-        <description><![CDATA[A class for performing SNMP V2 queries on Cisco devices]]></description>
+        <description><![CDATA[A class for performing SNMP V2 queries on generic devices]]></description>
         <long-description><![CDATA[]]></long-description>
         <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
         <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
       </docblock>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="48" package="Default">
-        <name>OID_VTP_VLAN_STATUS</name>
-        <full_name>OID_VTP_VLAN_STATUS</full_name>
-        <value><![CDATA['.1.3.6.1.4.1.9.9.46.1.3.1.1.2.1']]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="49" package="Default">
-        <name>OID_VTP_VLAN_TYPE</name>
-        <full_name>OID_VTP_VLAN_TYPE</full_name>
-        <value><![CDATA['.1.3.6.1.4.1.9.9.46.1.3.1.1.3.1']]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="50" package="Default">
-        <name>OID_VTP_VLAN_NAME</name>
-        <full_name>OID_VTP_VLAN_NAME</full_name>
-        <value><![CDATA['.1.3.6.1.4.1.9.9.46.1.3.1.1.4.1']]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="53" package="Default">
-        <name>OID_STP_X_RSTP_PORT_ROLE</name>
-        <full_name>OID_STP_X_RSTP_PORT_ROLE</full_name>
-        <value><![CDATA['.1.3.6.1.4.1.9.9.82.1.12.2.1.3']]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="60" package="Default">
-        <name>VTP_VLAN_STATE_OPERATIONAL</name>
-        <full_name>VTP_VLAN_STATE_OPERATIONAL</full_name>
-        <value><![CDATA[1]]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="66" package="Default">
-        <name>VTP_VLAN_STATE_SUSPENDED</name>
-        <full_name>VTP_VLAN_STATE_SUSPENDED</full_name>
-        <value><![CDATA[2]]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="72" package="Default">
-        <name>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE</name>
-        <full_name>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE</full_name>
-        <value><![CDATA[3]]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="78" package="Default">
-        <name>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK</name>
-        <full_name>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK</full_name>
-        <value><![CDATA[4]]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="119" package="Default">
-        <name>VTP_VLAN_TYPE_ETHERNET</name>
-        <full_name>VTP_VLAN_TYPE_ETHERNET</full_name>
-        <value><![CDATA[1]]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="125" package="Default">
-        <name>VTP_VLAN_TYPE_FDDI</name>
-        <full_name>VTP_VLAN_TYPE_FDDI</full_name>
-        <value><![CDATA[2]]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="131" package="Default">
-        <name>VTP_VLAN_TYPE_TOKEN_RING</name>
-        <full_name>VTP_VLAN_TYPE_TOKEN_RING</full_name>
-        <value><![CDATA[3]]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="137" package="Default">
-        <name>VTP_VLAN_TYPE_FDDI_NET</name>
-        <full_name>VTP_VLAN_TYPE_FDDI_NET</full_name>
-        <value><![CDATA[4]]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="143" package="Default">
-        <name>VTP_VLAN_TYPE_TR_NET</name>
-        <full_name>VTP_VLAN_TYPE_TR_NET</full_name>
-        <value><![CDATA[5]]></value>
-      </constant>
-      <constant namespace="OSS\SNMP\MIBS\Cisco" line="149" package="Default">
-        <name>VTP_VLAN_TYPE_DEPRECATED</name>
-        <full_name>VTP_VLAN_TYPE_DEPRECATED</full_name>
-        <value><![CDATA[6]]></value>
-      </constant>
-      <property final="false" static="true" visibility="public" line="86" namespace="OSS\SNMP\MIBS\Cisco" package="Default">
-        <name>$VTP_VLAN_STATES</name>
-        <default><![CDATA[array(NULL => 'operational', NULL => 'suspended', NULL => 'mtuTooBigForDevice', NULL => 'mtuTooBigForTrunk')]]></default>
-      </property>
-      <property final="false" static="true" visibility="public" line="157" namespace="OSS\SNMP\MIBS\Cisco" package="Default">
-        <name>$VTP_VLAN_TYPES</name>
-        <default><![CDATA[array(NULL => 'ethernet', NULL => 'fddi', NULL => 'tokenRing', NULL => 'fddiNet', NULL => 'trNet', NULL => 'deprecated')]]></default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="102" package="Default">
-        <name>vlanStates</name>
-        <full_name>vlanStates</full_name>
-        <docblock line="102">
-          <description><![CDATA[Get the device's VTP VLAN States (indexed by VLAN ID)]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="102" name="see" description="\$VTP_VLAN_STATES" refers="\$VTP_VLAN_STATES"/>
-          <tag line="102" name="see" description="\VTP_VLAN_STATE_OPERATIONAL" refers="\VTP_VLAN_STATE_OPERATIONAL"/>
-          <tag line="102" name="param" description="If true, return the string representation via self::$VTP_VLAN_TYPES" type="boolean" variable="$translate">
-            <type by_reference="false">boolean</type>
-          </tag>
-          <tag line="102" name="return" description="The device's VTP VLAN States (indexed by VLAN ID)" type="array">
-            <type by_reference="false">array</type>
-          </tag>
-        </docblock>
-        <argument line="102">
-          <name>$translate</name>
-          <default><![CDATA[NULL]]></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="175" package="Default">
-        <name>vlanTypes</name>
-        <full_name>vlanTypes</full_name>
-        <docblock line="175">
-          <description><![CDATA[Get the device's VTP VLAN Types (indexed by VLAN ID)]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="175" name="see" description="\$VTP_VLAN_TYPES" refers="\$VTP_VLAN_TYPES"/>
-          <tag line="175" name="see" description="\VTP_VLAN_TYPE_ETHERNET" refers="\VTP_VLAN_TYPE_ETHERNET"/>
-          <tag line="175" name="param" description="If true, return the string representation via self::$VTP_VLAN_TYPES" type="boolean" variable="$translate">
-            <type by_reference="false">boolean</type>
-          </tag>
-          <tag line="175" name="return" description="The device's VTP VLAN types (indexed by VLAN ID)" type="array">
-            <type by_reference="false">array</type>
-          </tag>
-        </docblock>
-        <argument line="175">
-          <name>$translate</name>
-          <default><![CDATA[NULL]]></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="190" package="Default">
-        <name>vlanNames</name>
-        <full_name>vlanNames</full_name>
-        <docblock line="190">
-          <description><![CDATA[Get the device's VTP VLAN names (indexed by VLAN ID)]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="190" name="return" description="The device's VTP VLAN names (indexed by VLAN ID)" type="array">
-            <type by_reference="false">array</type>
-          </tag>
-        </docblock>
-      </method>
     </class>
-    <parse_markers>
-      <error line="86" code="50018">No DocBlock was found for property $VTP_VLAN_STATES</error>
-      <error line="157" code="50018">No DocBlock was found for property $VTP_VLAN_TYPES</error>
-    </parse_markers>
   </file>
-  <file path="SNMP/MIBS/Cisco/CDP.php" hash="9e865993fded893e19c9db4989a6d9e0" package="Default">
+  <file path="SNMP/MIBS/Cisco/CDP.php" hash="0b29faf355c27b4a0f777c06d8187838" package="Default">
     <class final="false" abstract="false" namespace="OSS\SNMP\MIBS\Cisco" line="44" package="Default">
       <name>CDP</name>
       <full_name>\OSS\SNMP\MIBS\Cisco\CDP</full_name>
@@ -2688,97 +2429,138 @@ This object is not instantiated if no VTP Management Domain field (TLV) was repo
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="574" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="598" package="Default">
         <name>neighbours</name>
         <full_name>neighbours</full_name>
-        <docblock line="574">
+        <docblock line="598">
           <description><![CDATA[CDP utility function to get all CDP neighbours and their connected ports.]]></description>
-          <long-description><![CDATA[<p>Returns an array of neighbours indexed by the neighbour CDP ID. For example:</p>
+          <long-description><![CDATA[<p>Returns an array of neighbours indexed by the neighbour CDP ID with a lot of details.</p>
 
-<p>Array
-(
-    [cr-sw03.ixdub1.opensolutions.ie] => Array
-        (
-           [0] => Array
-               (
-                    [localPortId] => 10101
-                    [localPort] => GigabitEthernet1/0/1
-                    [remotePort] => GigabitEthernet0/1
-                )</p>
+<p>For example, here's a sample return for a switch with two neighbours where one neighbour
+is connected with a LAG / PortChannel and $inverse was set to true.</p>
 
-<pre><code>        [1] =&gt; Array
-            (
-                [localPortId] =&gt; 10102
-                [localPort] =&gt; GigabitEthernet1/0/2
-                [remotePort] =&gt; FastEthernet0/2
-            )
-
-    )
-[ ... ]
-</code></pre>
-
-<p>)</p>]]></long-description>
-          <tag line="574" name="see" description="\neighbourId()" refers="\neighbourId()"/>
-          <tag line="574" name="see" description="\OSS\SNMP\MIBS\Interface::descriptions()" refers="\OSS\SNMP\MIBS\Interface::descriptions()"/>
-          <tag line="574" name="see" description="\neighbourPort()" refers="\neighbourPort()"/>
-          <tag line="574" name="return" description="CDP neighbours and their connected ports" type="array">
+<p>array(2) {
+    ["cr-sw07.example.ie"] => array(1) {
+        [0] => array(7) {
+            ["localPortId"] => int(10103)
+            ["localPortName"] => string(7) "Gi1/0/3"
+            ["localPort"] => string(20) "GigabitEthernet1/0/3"
+            ["isLAG"] => bool(false)
+            ["remotePort"] => string(21) "GigabitEthernet1/0/24"
+            ["remotePortId"] => int(10124)
+            ["remotePortName"] => string(8) "Gi1/0/24"
+        }
+    }
+    ["cr-sw01.example.ie"] => array(2) {
+        [0] => array(11) {
+            ["localPortId"] => int(10111)
+            ["localPortName"] => string(8) "Gi1/0/11"
+            ["localPort"] => string(21) "GigabitEthernet1/0/11"
+            ["isLAG"] => bool(true)
+            ["lagPortId"] => int(5048)
+            ["lagPortName"] => string(4) "Po48"
+            ["remotePort"] => string(21) "GigabitEthernet1/0/11"
+            ["remotePortId"] => int(10111)
+            ["remotePortName"] => string(8) "Gi1/0/11"
+            ["remoteLagPortId"] => int(5048)
+            ["remoteLagPortName"] => string(4) "Po48"
+        }
+        [1] => array(11) {
+            ["localPortId"] => int(10112)
+            ["localPortName"] => string(8) "Gi1/0/12"
+            ["localPort"] => string(21) "GigabitEthernet1/0/12"
+            ["isLAG"] => bool(true)
+            ["lagPortId"] => int(5048)
+            ["lagPortName"] => string(4) "Po48"
+            ["remotePort"] => string(21) "GigabitEthernet1/0/12"
+            ["remotePortId"] => int(10112)
+            ["remotePortName"] => string(8) "Gi1/0/12"
+            ["remoteLagPortId"] => int(5048)
+            ["remoteLagPortName"] => string(4) "Po48"
+        }
+    }</p>]]></long-description>
+          <tag line="598" name="see" description="\neighbourId()" refers="\neighbourId()"/>
+          <tag line="598" name="see" description="\OSS\SNMP\MIBS\Interface::descriptions()" refers="\OSS\SNMP\MIBS\Interface::descriptions()"/>
+          <tag line="598" name="see" description="\neighbourPort()" refers="\neighbourPort()"/>
+          <tag line="598" name="param" description="If true, all remoteXXX params will be discovered (only remotePort is returned otherwise)" type="boolean" variable="$inverse">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="598" name="param" description="If using $inverse, pass an array of CDP IDs of neighbours that should not be 'inverse' discovered." type="array" variable="$skipHostIds">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="598" name="return" description="CDP neighbours and their connected ports" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
+        <argument line="598">
+          <name>$inverse</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+        <argument line="598">
+          <name>$skipHostIds</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="610" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="693" package="Default">
         <name>crawl</name>
         <full_name>crawl</full_name>
-        <docblock line="610">
+        <docblock line="693">
           <description><![CDATA[Recursivily crawls all CDP neighbours to build up a flat array of all devices
 indexed by the CDP device id.]]></description>
           <long-description><![CDATA[<p>Array form is same as that returned by neighbours()</p>]]></long-description>
-          <tag line="610" name="see" description="\neighbours()" refers="\neighbours()"/>
-          <tag line="610" name="param" description="Unless you're doing something funky, just pass an empty array. This is where the result will be found." type="array" variable="$devices">
+          <tag line="693" name="see" description="\neighbours()" refers="\neighbours()"/>
+          <tag line="693" name="param" description="Unless you're doing something funky, just pass an empty array. This is where the result will be found." type="array" variable="$devices">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="610" name="param" description="CDP device ID of next host to crawl. On first pass, set to null - used internally when recursing" type="string" variable="$device">
+          <tag line="693" name="param" description="CDP device ID of next host to crawl. On first pass, set to null - used internally when recursing" type="string" variable="$device">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="610" name="param" description="An array of CDP device IDs to *ignore*. I.e. to not include in recursive crawling" type="array" variable="$ignore">
+          <tag line="693" name="param" description="An array of CDP device IDs to *ignore*. I.e. to not include in recursive crawling" type="array" variable="$ignore">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="610" name="return" description="The resultant array of all crawled devices (same as that passed in the @param $devices parameter)" type="array">
+          <tag line="693" name="return" description="The resultant array of all crawled devices (same as that passed in the @param $devices parameter)" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="610">
+        <argument line="693">
           <name>$devices</name>
           <default><![CDATA[array()]]></default>
           <type/>
         </argument>
-        <argument line="610">
+        <argument line="693">
           <name>$device</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
-        <argument line="610">
+        <argument line="693">
           <name>$ignore</name>
           <default><![CDATA[array()]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="689" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="767" package="Default">
         <name>linkTopology</name>
         <full_name>linkTopology</full_name>
-        <docblock line="689">
+        <docblock line="767">
           <description><![CDATA[Find the layer 2 topology as an array with no link mentioned more than once.]]></description>
           <long-description><![CDATA[<p>Huh? This function:</p>
 
 <ul>
-<li>takes the result of crawl() (or calls crawl()) to get the CDP topology</li>
-<li>foreach device, builds an array of device to device links</li>
+<li>takes the result of crawl() (or calls crawl()) to get the CDP topology;</li>
+<li>foreach device, builds an array of device to device links;</li>
 <li>SO LONG as that link has already not been accounted for in the other direction.</li>
 </ul>
 
-<p>I.e. if a link is found A -> B, then the same B -> A link will not be included</p>
+<p>I.e. if a link is found A -> B, then the same B -> A link will not be included.</p>
 
-<p>The array returned is, for example:</p>
+<p>The primary differences to the return value of this and crawl() are:</p>
+
+<ul>
+<li>links only appear once (unidirectional) rather than twice (bidirectional)</li>
+<li>the links are indexed by the localPortName rather than an integer index:</li>
+</ul>
 
 <p>[cr-sw04.degkcp.example.ie] => Array
 (
@@ -2788,41 +2570,117 @@ indexed by the CDP device id.]]></description>
          (
              [remotePort] => FastEthernet0/1
              [isLAG]      => false
+             ........
      )</p>
 
-<pre><code> [cr-sw03.degkcp.example.ie] =&gt; Array
- (
-     [GigabitEthernet1/0/23] =&gt; Array
-     (
-         [remotePort] =&gt; GigabitEthernet1/0/23
-         [isLAG]      =&gt; false
-     )
-     [GigabitEthernet1/0/24] =&gt; Array
-     (
-         [remotePort] =&gt; GigabitEthernet1/0/24
-         [isLAG]      =&gt; false
-     )
- )
-</code></pre>
-
-<p>)</p>
-
-<p>This tells us that cr-sw04(GigabitEthernet1/0/3) is connected to cd-sw02(FastEthernet0/1).</p>
-
-<p>It also tells us that cr-sw04 has two connections to cr-sw03.</p>
-
-<p>You'll notice it also tells us if it's a LAG or not. More information can be added as needed.</p>]]></long-description>
-          <tag line="689" name="see" description="\crawl()" refers="\crawl()"/>
-          <tag line="689" name="param" description="The result of crawl() (if null, this function performs a crawl())" type="array" variable="$devices">
+<p>All port information is copied over from the supplied / called crawl() array</p>]]></long-description>
+          <tag line="767" name="see" description="\crawl()" refers="\crawl()"/>
+          <tag line="767" name="param" description="The result of crawl() (if null, this function performs a crawl())" type="array" variable="$devices">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="689" name="return" description="L2 topology as described above." type="array">
+          <tag line="767" name="return" description="L2 topology as described above." type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="689">
+        <argument line="767">
           <name>$devices</name>
           <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="865" package="Default">
+        <name>collapseLAGs</name>
+        <full_name>collapseLAGs</full_name>
+        <docblock line="865">
+          <description><![CDATA[Utility function to process the output from neighbours() and remove individual trunk ports leaving only
+single LAG links.]]></description>
+          <long-description><![CDATA[<p>For example, here's a sample return for a switch with a neighbour
+connected with a LAG / PortChannel:</p>
+
+<p>array(2) {
+    ["cr-sw01.example.ie"] => array(2) {
+        [0] => array(11) {
+            ["localPortId"] => int(10111)
+            ["localPortName"] => string(8) "Gi1/0/11"
+            ["localPort"] => string(21) "GigabitEthernet1/0/11"
+            ["isLAG"] => bool(true)
+            ["lagPortId"] => int(5048)
+            ["lagPortName"] => string(4) "Po48"
+            ["remotePort"] => string(21) "GigabitEthernet1/0/11"
+            ["remotePortId"] => int(10111)
+            ["remotePortName"] => string(8) "Gi1/0/11"
+            ["remoteLagPortId"] => int(5048)
+            ["remoteLagPortName"] => string(4) "Po48"
+        }
+        [1] => array(11) {
+            ["localPortId"] => int(10112)
+            ["localPortName"] => string(8) "Gi1/0/12"
+            ["localPort"] => string(21) "GigabitEthernet1/0/12"
+            ["isLAG"] => bool(true)
+            ["lagPortId"] => int(5048)
+            ["lagPortName"] => string(4) "Po48"
+            ["remotePort"] => string(21) "GigabitEthernet1/0/12"
+            ["remotePortId"] => int(10112)
+            ["remotePortName"] => string(8) "Gi1/0/12"
+            ["remoteLagPortId"] => int(5048)
+            ["remoteLagPortName"] => string(4) "Po48"
+        }
+    }
+    ...
+}</p>
+
+<p>The result of this function would be:</p>
+
+<p>array(2) {
+    ["cr-sw01.example.ie"] => array(1) {
+        [0] => array(11) {
+            ["localPortId"] => int(5048)
+            ["localPortName"] => string(8) "Po48"
+            ["localPort"] => string(21) "Po48"
+            ["isLAG"] => bool(true)
+            ["lagPortId"] => int(5048)
+            ["lagPortName"] => string(4) "Po48"
+            ["remotePort"] => string(21) "Po48"
+            ["remotePortId"] => int(5048)
+            ["remotePortName"] => string(8) "Po48"
+            ["remoteLagPortId"] => int(5048)
+            ["remoteLagPortName"] => string(4) "Po48"
+        }
+    }
+    ...
+}</p>]]></long-description>
+          <tag line="865" name="see" description="\neighbours()" refers="\neighbours()"/>
+          <tag line="865" name="param" description="The result of a call to neighbours()" type="array" variable="$neighbours">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="865" name="return" description="Processed CDP neighbours with LAG ports collapsed" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="865">
+          <name>$neighbours</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="903" package="Default">
+        <name>collapseDevicesLAGs</name>
+        <full_name>collapseDevicesLAGs</full_name>
+        <docblock line="903">
+          <description><![CDATA[An extension of collapseLAGs() to work with crawl() and linkTopology().]]></description>
+          <long-description><![CDATA[<p>Rather than taking the input from neighbours(), it takes input from crawl() or linkTopology()
+and processes all neighbours.</p>]]></long-description>
+          <tag line="903" name="see" description="\collapseLAGs()" refers="\collapseLAGs()"/>
+          <tag line="903" name="param" description="The result of a call to crawl() or linkTopology()" type="array" variable="$devices">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="903" name="return" description="Processed CDP neighbours with LAG ports collapsed" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="903">
+          <name>$devices</name>
+          <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
@@ -2831,6 +2689,262 @@ indexed by the CDP device id.]]></description>
       <error line="170" code="50018">No DocBlock was found for property $CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES</error>
       <error line="343" code="50018">No DocBlock was found for property $CDP_CACHE_NEIGHBOUR_CAPABILITIES</error>
       <error line="494" code="50018">No DocBlock was found for property $CDP_CACHE_NEIGHBOUR_DUPLEXES</error>
+    </parse_markers>
+  </file>
+  <file path="SNMP/MIBS/Cisco/VTP.php" hash="6ce332986c79ebe7e457c8c8c3f627cd" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS\Cisco" line="44" package="Default">
+      <name>VTP</name>
+      <full_name>\OSS\SNMP\MIBS\Cisco\VTP</full_name>
+      <extends>OSS\SNMP\MIBS\Cisco</extends>
+      <docblock line="44">
+        <description><![CDATA[A class for performing SNMP V2 queries on Cisco devices]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="48" package="Default">
+        <name>OID_VTP_VLAN_STATUS</name>
+        <full_name>OID_VTP_VLAN_STATUS</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.46.1.3.1.1.2.1']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="49" package="Default">
+        <name>OID_VTP_VLAN_TYPE</name>
+        <full_name>OID_VTP_VLAN_TYPE</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.46.1.3.1.1.3.1']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="50" package="Default">
+        <name>OID_VTP_VLAN_NAME</name>
+        <full_name>OID_VTP_VLAN_NAME</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.46.1.3.1.1.4.1']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="53" package="Default">
+        <name>OID_STP_X_RSTP_PORT_ROLE</name>
+        <full_name>OID_STP_X_RSTP_PORT_ROLE</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.82.1.12.2.1.3']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="60" package="Default">
+        <name>VTP_VLAN_STATE_OPERATIONAL</name>
+        <full_name>VTP_VLAN_STATE_OPERATIONAL</full_name>
+        <value><![CDATA[1]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="66" package="Default">
+        <name>VTP_VLAN_STATE_SUSPENDED</name>
+        <full_name>VTP_VLAN_STATE_SUSPENDED</full_name>
+        <value><![CDATA[2]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="72" package="Default">
+        <name>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE</name>
+        <full_name>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE</full_name>
+        <value><![CDATA[3]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="78" package="Default">
+        <name>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK</name>
+        <full_name>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK</full_name>
+        <value><![CDATA[4]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="119" package="Default">
+        <name>VTP_VLAN_TYPE_ETHERNET</name>
+        <full_name>VTP_VLAN_TYPE_ETHERNET</full_name>
+        <value><![CDATA[1]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="125" package="Default">
+        <name>VTP_VLAN_TYPE_FDDI</name>
+        <full_name>VTP_VLAN_TYPE_FDDI</full_name>
+        <value><![CDATA[2]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="131" package="Default">
+        <name>VTP_VLAN_TYPE_TOKEN_RING</name>
+        <full_name>VTP_VLAN_TYPE_TOKEN_RING</full_name>
+        <value><![CDATA[3]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="137" package="Default">
+        <name>VTP_VLAN_TYPE_FDDI_NET</name>
+        <full_name>VTP_VLAN_TYPE_FDDI_NET</full_name>
+        <value><![CDATA[4]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="143" package="Default">
+        <name>VTP_VLAN_TYPE_TR_NET</name>
+        <full_name>VTP_VLAN_TYPE_TR_NET</full_name>
+        <value><![CDATA[5]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="149" package="Default">
+        <name>VTP_VLAN_TYPE_DEPRECATED</name>
+        <full_name>VTP_VLAN_TYPE_DEPRECATED</full_name>
+        <value><![CDATA[6]]></value>
+      </constant>
+      <property final="false" static="true" visibility="public" line="86" namespace="OSS\SNMP\MIBS\Cisco" package="Default">
+        <name>$VTP_VLAN_STATES</name>
+        <default><![CDATA[array(NULL => 'operational', NULL => 'suspended', NULL => 'mtuTooBigForDevice', NULL => 'mtuTooBigForTrunk')]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="157" namespace="OSS\SNMP\MIBS\Cisco" package="Default">
+        <name>$VTP_VLAN_TYPES</name>
+        <default><![CDATA[array(NULL => 'ethernet', NULL => 'fddi', NULL => 'tokenRing', NULL => 'fddiNet', NULL => 'trNet', NULL => 'deprecated')]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="102" package="Default">
+        <name>vlanStates</name>
+        <full_name>vlanStates</full_name>
+        <docblock line="102">
+          <description><![CDATA[Get the device's VTP VLAN States (indexed by VLAN ID)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="102" name="see" description="\$VTP_VLAN_STATES" refers="\$VTP_VLAN_STATES"/>
+          <tag line="102" name="see" description="\VTP_VLAN_STATE_OPERATIONAL" refers="\VTP_VLAN_STATE_OPERATIONAL"/>
+          <tag line="102" name="param" description="If true, return the string representation via self::$VTP_VLAN_TYPES" type="boolean" variable="$translate">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="102" name="return" description="The device's VTP VLAN States (indexed by VLAN ID)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="102">
+          <name>$translate</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="175" package="Default">
+        <name>vlanTypes</name>
+        <full_name>vlanTypes</full_name>
+        <docblock line="175">
+          <description><![CDATA[Get the device's VTP VLAN Types (indexed by VLAN ID)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="175" name="see" description="\$VTP_VLAN_TYPES" refers="\$VTP_VLAN_TYPES"/>
+          <tag line="175" name="see" description="\VTP_VLAN_TYPE_ETHERNET" refers="\VTP_VLAN_TYPE_ETHERNET"/>
+          <tag line="175" name="param" description="If true, return the string representation via self::$VTP_VLAN_TYPES" type="boolean" variable="$translate">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="175" name="return" description="The device's VTP VLAN types (indexed by VLAN ID)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="175">
+          <name>$translate</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="190" package="Default">
+        <name>vlanNames</name>
+        <full_name>vlanNames</full_name>
+        <docblock line="190">
+          <description><![CDATA[Get the device's VTP VLAN names (indexed by VLAN ID)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="190" name="return" description="The device's VTP VLAN names (indexed by VLAN ID)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="86" code="50018">No DocBlock was found for property $VTP_VLAN_STATES</error>
+      <error line="157" code="50018">No DocBlock was found for property $VTP_VLAN_TYPES</error>
+    </parse_markers>
+  </file>
+  <file path="SNMP/MIBS/Cisco/RSTP.php" hash="581218cb34ff08e0f54f59d6dfe9581d" package="Default">
+    <class final="false" abstract="false" namespace="OSS\SNMP\MIBS\Cisco" line="44" package="Default">
+      <name>RSTP</name>
+      <full_name>\OSS\SNMP\MIBS\Cisco\RSTP</full_name>
+      <extends>OSS\SNMP\MIBS\Cisco</extends>
+      <docblock line="44">
+        <description><![CDATA[A class for performing SNMP V2 queries on Cisco devices]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="44" name="copyright" description="Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="44" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="48" package="Default">
+        <name>OID_STP_X_RSTP_PORT_ROLE</name>
+        <full_name>OID_STP_X_RSTP_PORT_ROLE</full_name>
+        <value><![CDATA['.1.3.6.1.4.1.9.9.82.1.12.2.1.3']]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="55" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_DISABLED</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_DISABLED</full_name>
+        <value><![CDATA[1]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="61" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_ROOT</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_ROOT</full_name>
+        <value><![CDATA[2]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="67" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_DESIGNATED</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_DESIGNATED</full_name>
+        <value><![CDATA[3]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="73" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_ALTERNATE</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_ALTERNATE</full_name>
+        <value><![CDATA[4]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="79" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_BACKUP</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_BACKUP</full_name>
+        <value><![CDATA[5]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="85" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_BOUNDARY</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_BOUNDARY</full_name>
+        <value><![CDATA[6]]></value>
+      </constant>
+      <constant namespace="OSS\SNMP\MIBS\Cisco" line="91" package="Default">
+        <name>STP_X_RSTP_PORT_ROLE_MASTER</name>
+        <full_name>STP_X_RSTP_PORT_ROLE_MASTER</full_name>
+        <value><![CDATA[6]]></value>
+      </constant>
+      <property final="false" static="true" visibility="public" line="99" namespace="OSS\SNMP\MIBS\Cisco" package="Default">
+        <name>$STP_X_RSTP_PORT_ROLES</name>
+        <default><![CDATA[array(NULL => 'disabled', NULL => 'root', NULL => 'designated', NULL => 'alternate', NULL => 'backUp', NULL => 'boundary', NULL => 'master')]]></default>
+      </property>
+      <property final="false" static="true" visibility="public" line="113" namespace="OSS\SNMP\MIBS\Cisco" package="Default">
+        <name>$STP_X_RSTP_PASSING_PORT_ROLES</name>
+        <default><![CDATA[array(NULL => 'root', NULL => 'designated')]]></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS\SNMP\MIBS\Cisco" line="142" package="Default">
+        <name>rstpPortRole</name>
+        <full_name>rstpPortRole</full_name>
+        <docblock line="142">
+          <description><![CDATA[Get the device's RSTP port roles (by given vlan id)]]></description>
+          <long-description><![CDATA[<p>Only ports participating in RSTP for the given VLAN id are returned.</p>
+
+<p>This function will also convert STP port IDs to the device proper port IDs.
+E.g. sample output:</p>
+
+<p>Array
+(
+   [10101] => 3
+   [10103] => 3
+   [10105] => 3
+   [5048] => 2
+)</p>]]></long-description>
+          <tag line="142" name="see" description="\$STP_X_RSTP_PORT_ROLES" refers="\$STP_X_RSTP_PORT_ROLES"/>
+          <tag line="142" name="see" description="\STP_X_RSTP_PORT_ROLE_ROOT" refers="\STP_X_RSTP_PORT_ROLE_ROOT"/>
+          <tag line="142" name="param" description="The RSTP VLAN ID to query port roles for" type="int" variable="$vid">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="142" name="param" description="If true, return the string representation via self::$STP_X_RSTP_PORT_ROLES" type="boolean" variable="$translate">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="142" name="return" description="The device's RSTP port roles (by given vlan id)" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="142">
+          <name>$vid</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="142">
+          <name>$translate</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <markers>
+      <fixme line="154">Hack... basePortIfIndexes() does not have all ports...</fixme>
+    </markers>
+    <parse_markers>
+      <error line="99" code="50018">No DocBlock was found for property $STP_X_RSTP_PORT_ROLES</error>
+      <error line="113" code="50018">No DocBlock was found for property $STP_X_RSTP_PASSING_PORT_ROLES</error>
     </parse_markers>
   </file>
   <file path="SNMP/MIB.php" hash="d486a1cbf07304177640f7566973ef6d" package="Default">
@@ -2883,6 +2997,17 @@ indexed by the CDP device id.]]></description>
       <error line="49" code="50018">No DocBlock was found for property $_snmp</error>
     </parse_markers>
   </file>
+  <file path="Exception.php" hash="5350a5ad92eb6358f4665261f10b14ca" package="Default">
+    <class final="false" abstract="false" namespace="OSS" line="43" package="Default">
+      <name>Exception</name>
+      <full_name>\OSS\Exception</full_name>
+      <extends>Exception</extends>
+      <docblock line="43">
+        <description><![CDATA[OSS\SNMP\Exception class]]></description>
+        <long-description><![CDATA[]]></long-description>
+      </docblock>
+    </class>
+  </file>
   <package name="Default" full_name="Default"/>
   <namespace name="OSS" full_name="OSS">
     <namespace name="Cache" full_name="OSS\Cache"/>
@@ -2893,6 +3018,6 @@ indexed by the CDP device id.]]></description>
     </namespace>
   </namespace>
   <marker count="0">todo</marker>
-  <marker count="0">fixme</marker>
+  <marker count="1">fixme</marker>
   <deprecated count="0"/>
 </project>
