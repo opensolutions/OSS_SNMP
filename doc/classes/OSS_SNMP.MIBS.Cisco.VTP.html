@@ -1,0 +1,287 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>OSS_SNMP » \OSS_SNMP\MIBS\Cisco\VTP</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">OSS_SNMP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/OSS.html"><i class="icon-th"></i> OSS</a></li>
+<li><a href="../namespaces/OSS_SNMP.html"><i class="icon-th"></i> OSS_SNMP</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">32</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">1</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#vlanNames" title="vlanNames :: Get the device's VTP VLAN names (indexed by VLAN ID)"><span class="description">Get the device's VTP VLAN names (indexed by VLAN ID)</span><pre>vlanNames()</pre></a></li>
+<li class="method public "><a href="#vlanStates" title="vlanStates :: Get the device's VTP VLAN States (indexed by VLAN ID)"><span class="description">Get the device's VTP VLAN States (indexed by VLAN ID)</span><pre>vlanStates()</pre></a></li>
+<li class="method public "><a href="#vlanTypes" title="vlanTypes :: Get the device's VTP VLAN Types (indexed by VLAN ID)"><span class="description">Get the device's VTP VLAN Types (indexed by VLAN ID)</span><pre>vlanTypes()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24VTP_VLAN_STATES" title="$VTP_VLAN_STATES :: "><span class="description">$VTP_VLAN_STATES</span><pre>$VTP_VLAN_STATES</pre></a></li>
+<li class="property public "><a href="#%24VTP_VLAN_TYPES" title="$VTP_VLAN_TYPES :: "><span class="description">$VTP_VLAN_TYPES</span><pre>$VTP_VLAN_TYPES</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#OID_STP_X_RSTP_PORT_ROLE" title="OID_STP_X_RSTP_PORT_ROLE :: "><span class="description">OID_STP_X_RSTP_PORT_ROLE</span><pre>OID_STP_X_RSTP_PORT_ROLE</pre></a></li>
+<li class="constant  "><a href="#OID_VTP_VLAN_NAME" title="OID_VTP_VLAN_NAME :: "><span class="description">OID_VTP_VLAN_NAME</span><pre>OID_VTP_VLAN_NAME</pre></a></li>
+<li class="constant  "><a href="#OID_VTP_VLAN_STATUS" title="OID_VTP_VLAN_STATUS :: "><span class="description">OID_VTP_VLAN_STATUS</span><pre>OID_VTP_VLAN_STATUS</pre></a></li>
+<li class="constant  "><a href="#OID_VTP_VLAN_TYPE" title="OID_VTP_VLAN_TYPE :: "><span class="description">OID_VTP_VLAN_TYPE</span><pre>OID_VTP_VLAN_TYPE</pre></a></li>
+<li class="constant  "><a href="#VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE" title="VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE :: "><span class="description">VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE</span><pre>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE</pre></a></li>
+<li class="constant  "><a href="#VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK" title="VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK :: "><span class="description">VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK</span><pre>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK</pre></a></li>
+<li class="constant  "><a href="#VTP_VLAN_STATE_OPERATIONAL" title="VTP_VLAN_STATE_OPERATIONAL :: "><span class="description">VTP_VLAN_STATE_OPERATIONAL</span><pre>VTP_VLAN_STATE_OPERATIONAL</pre></a></li>
+<li class="constant  "><a href="#VTP_VLAN_STATE_SUSPENDED" title="VTP_VLAN_STATE_SUSPENDED :: "><span class="description">VTP_VLAN_STATE_SUSPENDED</span><pre>VTP_VLAN_STATE_SUSPENDED</pre></a></li>
+<li class="constant  "><a href="#VTP_VLAN_TYPE_DEPRECATED" title="VTP_VLAN_TYPE_DEPRECATED :: "><span class="description">VTP_VLAN_TYPE_DEPRECATED</span><pre>VTP_VLAN_TYPE_DEPRECATED</pre></a></li>
+<li class="constant  "><a href="#VTP_VLAN_TYPE_ETHERNET" title="VTP_VLAN_TYPE_ETHERNET :: "><span class="description">VTP_VLAN_TYPE_ETHERNET</span><pre>VTP_VLAN_TYPE_ETHERNET</pre></a></li>
+<li class="constant  "><a href="#VTP_VLAN_TYPE_FDDI" title="VTP_VLAN_TYPE_FDDI :: "><span class="description">VTP_VLAN_TYPE_FDDI</span><pre>VTP_VLAN_TYPE_FDDI</pre></a></li>
+<li class="constant  "><a href="#VTP_VLAN_TYPE_FDDI_NET" title="VTP_VLAN_TYPE_FDDI_NET :: "><span class="description">VTP_VLAN_TYPE_FDDI_NET</span><pre>VTP_VLAN_TYPE_FDDI_NET</pre></a></li>
+<li class="constant  "><a href="#VTP_VLAN_TYPE_TOKEN_RING" title="VTP_VLAN_TYPE_TOKEN_RING :: "><span class="description">VTP_VLAN_TYPE_TOKEN_RING</span><pre>VTP_VLAN_TYPE_TOKEN_RING</pre></a></li>
+<li class="constant  "><a href="#VTP_VLAN_TYPE_TR_NET" title="VTP_VLAN_TYPE_TR_NET :: "><span class="description">VTP_VLAN_TYPE_TR_NET</span><pre>VTP_VLAN_TYPE_TR_NET</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5COSS_SNMP%5CMIBS%5CCisco%5CVTP" id="\OSS_SNMP\MIBS\Cisco\VTP"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/OSS_SNMP.html">OSS_SNMP</a></li>
+<span class="divider">\</span><li><a href="../namespaces/OSS_SNMP.MIBS.html">MIBS</a></li>
+<span class="divider">\</span><li><a href="../namespaces/OSS_SNMP.MIBS.Cisco.html">Cisco</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/OSS_SNMP.MIBS.Cisco.VTP.html">VTP</a>
+</li>
+</ul>
+<div href="../classes/OSS_SNMP.MIBS.Cisco.VTP.html" class="element class">
+<p class="short_description">A class for performing SNMP V2 queries on Cisco devices</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:barry@opensolutions.ie">Barry O'Donovan</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="vlanNames" id="vlanNames"></a><div class="element clickable method public vlanNames" data-toggle="collapse" data-target=".vlanNames .collapse">
+<h2>Get the device's VTP VLAN names (indexed by VLAN ID)</h2>
+<pre>vlanNames() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's VTP VLAN names (indexed by VLAN ID)</div>
+</div></div>
+</div>
+<a name="vlanStates" id="vlanStates"></a><div class="element clickable method public vlanStates" data-toggle="collapse" data-target=".vlanStates .collapse">
+<h2>Get the device's VTP VLAN States (indexed by VLAN ID)</h2>
+<pre>vlanStates(boolean $translate) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td>\$VTP_VLAN_STATES</td>
+</tr>
+<tr>
+<th>see</th>
+<td>\VTP_VLAN_STATE_OPERATIONAL</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>boolean</code><p>If true, return the string representation via self::$VTP_VLAN_TYPES</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's VTP VLAN States (indexed by VLAN ID)</div>
+</div></div>
+</div>
+<a name="vlanTypes" id="vlanTypes"></a><div class="element clickable method public vlanTypes" data-toggle="collapse" data-target=".vlanTypes .collapse">
+<h2>Get the device's VTP VLAN Types (indexed by VLAN ID)</h2>
+<pre>vlanTypes(boolean $translate) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td>\$VTP_VLAN_TYPES</td>
+</tr>
+<tr>
+<th>see</th>
+<td>\VTP_VLAN_TYPE_ETHERNET</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>boolean</code><p>If true, return the string representation via self::$VTP_VLAN_TYPES</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's VTP VLAN types (indexed by VLAN ID)</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24VTP_VLAN_STATES" id="$VTP_VLAN_STATES"> </a><div class="element clickable property public $VTP_VLAN_STATES" data-toggle="collapse" data-target=".$VTP_VLAN_STATES .collapse">
+<h2>$VTP_VLAN_STATES</h2>
+<pre>$VTP_VLAN_STATES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24VTP_VLAN_TYPES" id="$VTP_VLAN_TYPES"> </a><div class="element clickable property public $VTP_VLAN_TYPES" data-toggle="collapse" data-target=".$VTP_VLAN_TYPES .collapse">
+<h2>$VTP_VLAN_TYPES</h2>
+<pre>$VTP_VLAN_TYPES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="OID_STP_X_RSTP_PORT_ROLE" id="OID_STP_X_RSTP_PORT_ROLE"> </a><div class="element clickable constant  OID_STP_X_RSTP_PORT_ROLE" data-toggle="collapse" data-target=".OID_STP_X_RSTP_PORT_ROLE .collapse">
+<h2>OID_STP_X_RSTP_PORT_ROLE</h2>
+<pre>OID_STP_X_RSTP_PORT_ROLE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_VTP_VLAN_NAME" id="OID_VTP_VLAN_NAME"> </a><div class="element clickable constant  OID_VTP_VLAN_NAME" data-toggle="collapse" data-target=".OID_VTP_VLAN_NAME .collapse">
+<h2>OID_VTP_VLAN_NAME</h2>
+<pre>OID_VTP_VLAN_NAME </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_VTP_VLAN_STATUS" id="OID_VTP_VLAN_STATUS"> </a><div class="element clickable constant  OID_VTP_VLAN_STATUS" data-toggle="collapse" data-target=".OID_VTP_VLAN_STATUS .collapse">
+<h2>OID_VTP_VLAN_STATUS</h2>
+<pre>OID_VTP_VLAN_STATUS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_VTP_VLAN_TYPE" id="OID_VTP_VLAN_TYPE"> </a><div class="element clickable constant  OID_VTP_VLAN_TYPE" data-toggle="collapse" data-target=".OID_VTP_VLAN_TYPE .collapse">
+<h2>OID_VTP_VLAN_TYPE</h2>
+<pre>OID_VTP_VLAN_TYPE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE" id="VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE"> </a><div class="element clickable constant  VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE" data-toggle="collapse" data-target=".VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE .collapse">
+<h2>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE</h2>
+<pre>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_DEVICE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK" id="VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK"> </a><div class="element clickable constant  VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK" data-toggle="collapse" data-target=".VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK .collapse">
+<h2>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK</h2>
+<pre>VTP_VLAN_STATE_MTU_TOO_BIG_FOR_TRUNK </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="VTP_VLAN_STATE_OPERATIONAL" id="VTP_VLAN_STATE_OPERATIONAL"> </a><div class="element clickable constant  VTP_VLAN_STATE_OPERATIONAL" data-toggle="collapse" data-target=".VTP_VLAN_STATE_OPERATIONAL .collapse">
+<h2>VTP_VLAN_STATE_OPERATIONAL</h2>
+<pre>VTP_VLAN_STATE_OPERATIONAL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="VTP_VLAN_STATE_SUSPENDED" id="VTP_VLAN_STATE_SUSPENDED"> </a><div class="element clickable constant  VTP_VLAN_STATE_SUSPENDED" data-toggle="collapse" data-target=".VTP_VLAN_STATE_SUSPENDED .collapse">
+<h2>VTP_VLAN_STATE_SUSPENDED</h2>
+<pre>VTP_VLAN_STATE_SUSPENDED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="VTP_VLAN_TYPE_DEPRECATED" id="VTP_VLAN_TYPE_DEPRECATED"> </a><div class="element clickable constant  VTP_VLAN_TYPE_DEPRECATED" data-toggle="collapse" data-target=".VTP_VLAN_TYPE_DEPRECATED .collapse">
+<h2>VTP_VLAN_TYPE_DEPRECATED</h2>
+<pre>VTP_VLAN_TYPE_DEPRECATED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="VTP_VLAN_TYPE_ETHERNET" id="VTP_VLAN_TYPE_ETHERNET"> </a><div class="element clickable constant  VTP_VLAN_TYPE_ETHERNET" data-toggle="collapse" data-target=".VTP_VLAN_TYPE_ETHERNET .collapse">
+<h2>VTP_VLAN_TYPE_ETHERNET</h2>
+<pre>VTP_VLAN_TYPE_ETHERNET </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="VTP_VLAN_TYPE_FDDI" id="VTP_VLAN_TYPE_FDDI"> </a><div class="element clickable constant  VTP_VLAN_TYPE_FDDI" data-toggle="collapse" data-target=".VTP_VLAN_TYPE_FDDI .collapse">
+<h2>VTP_VLAN_TYPE_FDDI</h2>
+<pre>VTP_VLAN_TYPE_FDDI </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="VTP_VLAN_TYPE_FDDI_NET" id="VTP_VLAN_TYPE_FDDI_NET"> </a><div class="element clickable constant  VTP_VLAN_TYPE_FDDI_NET" data-toggle="collapse" data-target=".VTP_VLAN_TYPE_FDDI_NET .collapse">
+<h2>VTP_VLAN_TYPE_FDDI_NET</h2>
+<pre>VTP_VLAN_TYPE_FDDI_NET </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="VTP_VLAN_TYPE_TOKEN_RING" id="VTP_VLAN_TYPE_TOKEN_RING"> </a><div class="element clickable constant  VTP_VLAN_TYPE_TOKEN_RING" data-toggle="collapse" data-target=".VTP_VLAN_TYPE_TOKEN_RING .collapse">
+<h2>VTP_VLAN_TYPE_TOKEN_RING</h2>
+<pre>VTP_VLAN_TYPE_TOKEN_RING </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="VTP_VLAN_TYPE_TR_NET" id="VTP_VLAN_TYPE_TR_NET"> </a><div class="element clickable constant  VTP_VLAN_TYPE_TR_NET" data-toggle="collapse" data-target=".VTP_VLAN_TYPE_TR_NET .collapse">
+<h2>VTP_VLAN_TYPE_TR_NET</h2>
+<pre>VTP_VLAN_TYPE_TR_NET </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
+            generated on 2012-06-20T19:41:09+01:00.<br></footer></div>
+</div>
+</body>
+</html>

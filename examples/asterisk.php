@@ -4,15 +4,15 @@
 /*
     Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
     All rights reserved.
-    
+
     Contact: Barry O'Donovan - barry (at) opensolutions (dot) ie
     http://www.opensolutions.ie/
-    
+
     This file is part of the OSS_SNMP package.
-    
+
     Redistribution and use in source and binary forms, with or without
     modification, are permitted provided that the following conditions are met:
-    
+
     * Redistributions of source code must retain the above copyright
     notice, this list of conditions and the following disclaimer.
     * Redistributions in binary form must reproduce the above copyright
@@ -21,7 +21,7 @@
     * Neither the name of Open Source Solutions Limited nor the
     names of its contributors may be used to endorse or promote products
     derived from this software without specific prior written permission.
-    
+
     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
     ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
     WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -52,7 +52,7 @@ This is an example script to show how to use OSS_SNMP. It requires two arguments
 
  - the IP address of hostname of a SNMP capable host (with Asterisk SNMP enabled)
  - the SNMP v2 community string for that host
- 
+
 For example:
 
     {$argv[0]} 192.168.10.20 public
@@ -63,9 +63,9 @@ HELPTEXT;
     exit( 1 );
 }
 
-require_once( dirname( __FILE__ ) . '/../OSS/SNMP.php' );
+require_once( dirname( __FILE__ ) . '/../OSS_SNMP/SNMP.php' );
 
-$host = new \OSS\SNMP( $argv[1], $argv[2] );
+$host = new \OSS_SNMP\SNMP( $argv[1], $argv[2] );
 
 echo "\n\n";
 

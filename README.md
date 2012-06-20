@@ -4,7 +4,7 @@ OSS_SNMP
 A PHP SNMP Library for People Who HATE SNMP, MIBs and OIDs!
 ------------------------------------------------------------
 
-I ([Barry O'Donovan](http://www,barryodonovan.com/)) hate SNMP! But I have
+I ([Barry O'Donovan](http://www.barryodonovan.com/)) hate SNMP! But I have
 to use it on a daily basis with my company, [Open
 Solutions](http://www.opensolutions.ie/).
 
@@ -32,7 +32,7 @@ Example Usage
 First, we need to instantiate an SNMP object with a hostname / IP address and
 a community string:
 
-    $ciscosw = new \OSS\SNMP( $ip, $community );
+    $ciscosw = new \OSS_SNMP\SNMP( $ip, $community );
 
 Assuming the above is a standard Cisco switch, let's say I want to get an
 associate array of VLAN names indexed by the VLAN ids:
@@ -66,7 +66,7 @@ for the full text.
 The Bad News... with some Good News
 ------------------------------------
 
-The, what I'm calling, *MIBs* are defined in `OSS/SNMP/MIBS` and these define the functionality as per the examples above.
+The, what I'm calling, *MIBs* are defined in `OSS_SNMP/MIBS` and these define the functionality as per the examples above.
 
 There's only a handful of MIBs currently defined - essentially what I've needed so far for other projects.
 
@@ -94,7 +94,7 @@ rather than the old way:
 And as most of the defined MIBs *walk* a given tree, almost all defined functions return an array.
 
 Right now it's SNMP v2. This can be easily updated for multiple version support. Also, it's read only
-as, at time of writing, I have no requirement to set SNMP values. 
+as, at time of writing, I have no requirement to set SNMP values.
 
 
 Code / phpDoc Documentation
@@ -104,6 +104,6 @@ Documentation can be generated from the root directory by executing:
 
     ./bin/phpdoc.sh --force
 
-and it will be found under the `doc/` directory. There is 
+and it will be found under the `doc/` directory. There is
 [an online version available here](http://opensolutions.github.com/OSS_SNMP/doc/).
 
