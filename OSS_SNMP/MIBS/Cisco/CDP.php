@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS\SNMP\MIBS\Cisco;
+namespace OSS_SNMP\MIBS\Cisco;
 
 /**
  * A class for performing SNMP V2 queries on Cisco devices
@@ -41,7 +41,7 @@ namespace OSS\SNMP\MIBS\Cisco;
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class CDP extends \OSS\SNMP\MIBS\Cisco
+class CDP extends \OSS_SNMP\MIBS\Cisco
 {
 
     const OID_CDP_INTERFACE_ENABLED               = '.1.3.6.1.4.1.9.9.23.1.1.1.1.2';
@@ -137,7 +137,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      * Applies the TruthValue post processor to turn
      * SNMP values into true / false.
      *
-     * @see OSS\SNMP::ppTruthValue()
+     * @see OSS_SNMP\SNMP::ppTruthValue()
      *
      * @return array The device's interfaces CDP enabled status' (as boolean true / false)
      */
@@ -162,14 +162,14 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
 
     /**
      * Constant for possible value of CDP neighbour address type
-     * @see OSS\SNMP\MIBS\Cisco\CDP::neighbourAddressTypes()
+     * @see OSS_SNMP\MIBS\Cisco\CDP::neighbourAddressTypes()
      */
     const CDP_CACHE_NEIGHBOUR_ADDRESS_TYPE_IP = 1;
 
     /**
      * Text representation of CDP neighbour address type
      *
-     * @see OSS\SNMP\MIBS\Cisco\CDP::neighbourAddressTypes()
+     * @see OSS_SNMP\SNMP\MIBS\Cisco\CDP::neighbourAddressTypes()
      * @var array Text representation of CDP neighbour address type
      */
     public static $CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES = array(
@@ -274,7 +274,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      * > indicates no Port-ID field (TLV) was reported in the
      * > most recent CDP message.
      *
-     * @see \OSS\SNMP\MIBS\Cisco\CDP::neighbourId()
+     * @see \OSS_SNMP\SNMP\MIBS\Cisco\CDP::neighbourId()
      * @return array The device's CDP neighbours connected port *description* indexed by the current device's port ID
      */
     public function neighbourPort()
@@ -386,7 +386,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      *
      * Example:
      *
-     *     if( $host->useCisco_CDP()->neighbourHasCapability( $portId, \OSS\SNMP\MIBS\Cisco\CDP::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH )
+     *     if( $host->useCisco_CDP()->neighbourHasCapability( $portId, \OSS_SNMP\SNMP\MIBS\Cisco\CDP::CDP_CACHE_NEIGHBOUR_CAPABILITY_SWITCH )
      *          echo "Host is a switch!!";
      *
      * @param int $portId The CDP neighbour by connected local port ID
@@ -599,7 +599,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
      *         }
      *
      * @see neighbourId()
-     * @see \OSS\SNMP\MIBS\Interface::descriptions()
+     * @see \OSS_SNMP\SNMP\MIBS\Interface::descriptions()
      * @see neighbourPort()
      * @param boolean $inverse If true, all remoteXXX params will be discovered (only remotePort is returned otherwise)
      * @param array $skipHostIds If using $inverse, pass an array of CDP IDs of neighbours that should not be 'inverse' discovered.
@@ -637,7 +637,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
                     $neighbours[ $neighbourCdpId ][$count]['isLAG']     = false;
                 }
             }
-            catch( \OSS\Exception $e )
+            catch( \OSS_SNMP\Exception $e )
             {
                 $neighbours[ $neighbourCdpId ][$count]['isLAG']     = false;
             }
@@ -651,7 +651,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
                     try
                     {
                         if( !isset( $remotes[ $neighbourCdpId ] ) )
-                            $remotes[ $neighbourCdpId ] = new \OSS\SNMP( $neighbourCdpId, $this->getSNMP()->getCommunity() );
+                            $remotes[ $neighbourCdpId ] = new \OSS_SNMP\SNMP( $neighbourCdpId, $this->getSNMP()->getCommunity() );
 
                         $remote = $remotes[ $neighbourCdpId ];
                         $rneighbours = $remote->useCisco_CDP()->neighbours( false );
@@ -677,7 +677,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
                             }
                         }
                     }
-                    catch( \OSS\Exception $e )
+                    catch( \OSS_SNMP\Exception $e )
                     {
                     }
                 }
@@ -720,7 +720,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
 
             if( !isset( $devices[ $feNeighbour ] ) )
             {
-                $snmp = new \OSS\SNMP( $feNeighbour, $this->getSNMP()->getCommunity() );
+                $snmp = new \OSS_SNMP\SNMP( $feNeighbour, $this->getSNMP()->getCommunity() );
 
                 try
                 {
@@ -728,7 +728,7 @@ class CDP extends \OSS\SNMP\MIBS\Cisco
                     unset( $snmp );
                     $this->crawl( $devices, $feNeighbour, $ignore );
                 }
-                catch( \OSS\Exception $e )
+                catch( \OSS_SNMP\Exception $e )
                 {
                     // this device did not respond / have CDP enabled / CDP available - skip
                     unset( $devices[$feNeighbour] );

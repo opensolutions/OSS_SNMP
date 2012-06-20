@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS\SNMP\MIBS;
+namespace OSS_SNMP\MIBS;
 
 /**
  * A class for performing SNMP V2 queries on Cisco devices
@@ -41,7 +41,7 @@ namespace OSS\SNMP\MIBS;
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class Cisco extends \OSS\SNMP\MIB
+class Cisco extends \OSS_SNMP\MIB
 {
 
 

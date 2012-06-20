@@ -39,9 +39,9 @@ namespace OSS_SNMP;
 /**
  * An abstract cache for storing results of SNMP queries .
  *
- * See the implementation in \OSS\Cache\Basic for proper examples and documentation.
+ * See the implementation in \OSS_SNMP\Cache\Basic for proper examples and documentation.
  *
- * @see \OSS\Cache\Basic
+ * @see \OSS_SNMP\Cache\Basic
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */

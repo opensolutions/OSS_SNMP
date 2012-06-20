@@ -52,8 +52,8 @@ class MIB
     /**
      * Set the SNMP instance
      *
-     * @param \OSS\SNMP $snmp the SNMP instance
-     * @return \OSS\SNMP\MIB An instance of this class for fluent interfaces
+     * @param \OSS_SNMP\SNMP $snmp the SNMP instance
+     * @return \OSS_SNMP\MIB An instance of this class for fluent interfaces
      */
     public function setSNMP( $snmp )
     {
@@ -63,7 +63,7 @@ class MIB
     /**
      * Get the SNMP instance
      *
-     * @return \OSS\SNMP Instance of the SNMP object
+     * @return \OSS_SNMP\SNMP Instance of the SNMP object
      */
     public function getSNMP()
     {
