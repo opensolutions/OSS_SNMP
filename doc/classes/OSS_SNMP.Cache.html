@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>OSS_SNMP » \OSS\SNMP\MIBS\Host</title>
+<title>OSS_SNMP » \OSS_SNMP\Cache</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -21,6 +21,7 @@
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a>Namespaces</a></li>
 <li><a href="../namespaces/OSS.html"><i class="icon-th"></i> OSS</a></li>
+<li><a href="../namespaces/OSS_SNMP.html"><i class="icon-th"></i> OSS_SNMP</a></li>
 </ul>
 </li>
 <li class="dropdown" id="charts-menu">
@@ -54,25 +55,39 @@
 <span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
 <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
 </div>
-<ul class="side-nav nav nav-list"></ul>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected "><a href="#clear" title="clear :: "><span class="description">clear()
+        </span><pre>clear()</pre></a></li>
+<li class="method protected "><a href="#clearAll" title="clearAll :: "><span class="description">clearAll()
+        </span><pre>clearAll()</pre></a></li>
+<li class="method protected "><a href="#load" title="load :: "><span class="description">load()
+        </span><pre>load()</pre></a></li>
+<li class="method protected "><a href="#save" title="save :: "><span class="description">save()
+        </span><pre>save()</pre></a></li>
+</ul>
 </div>
 <div class="span8">
-<a name="%5COSS%5CSNMP%5CMIBS%5CHost" id="\OSS\SNMP\MIBS\Host"></a><ul class="breadcrumb">
+<a name="%5COSS_SNMP%5CCache" id="\OSS_SNMP\Cache"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
-<li><a href="../namespaces/OSS.html">OSS</a></li>
-<span class="divider">\</span><li><a href="../namespaces/OSS.SNMP.html">SNMP</a></li>
-<span class="divider">\</span><li><a href="../namespaces/OSS.SNMP.MIBS.html">MIBS</a></li>
+<li><a href="../namespaces/OSS_SNMP.html">OSS_SNMP</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/OSS.SNMP.MIBS.Host.html">Host</a>
+<span class="divider">\</span><a href="../classes/OSS_SNMP.Cache.html">Cache</a>
 </li>
 </ul>
-<div href="../classes/OSS.SNMP.MIBS.Host.html" class="element class">
-<p class="short_description">A class for performing SNMP V2 queries on generic devices</p>
+<div href="../classes/OSS_SNMP.Cache.html" class="element class">
+<p class="short_description">An abstract cache for storing results of SNMP queries .</p>
 <div class="details">
-<p class="long_description"></p>
+<p class="long_description"><p>See the implementation in \OSS\Cache\Basic for proper examples and documentation.</p></p>
 <table class="table table-bordered">
+<tr>
+<th>see</th>
+<td>\OSS\Cache\Basic</td>
+</tr>
 <tr>
 <th>copyright</th>
 <td>Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland</td>
@@ -82,6 +97,61 @@
 <td><a href="mailto:barry@opensolutions.ie">Barry O'Donovan</a></td>
 </tr>
 </table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="clear" id="clear"></a><div class="element clickable method protected clear" data-toggle="collapse" data-target=".clear .collapse">
+<h2>clear()
+        </h2>
+<pre>clear($varName) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$varName</h4>
+<code></code>
+</div>
+</div></div>
+</div>
+<a name="clearAll" id="clearAll"></a><div class="element clickable method protected clearAll" data-toggle="collapse" data-target=".clearAll .collapse">
+<h2>clearAll()
+        </h2>
+<pre>clearAll() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="load" id="load"></a><div class="element clickable method protected load" data-toggle="collapse" data-target=".load .collapse">
+<h2>load()
+        </h2>
+<pre>load($varName) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$varName</h4>
+<code></code>
+</div>
+</div></div>
+</div>
+<a name="save" id="save"></a><div class="element clickable method protected save" data-toggle="collapse" data-target=".save .collapse">
+<h2>save()
+        </h2>
+<pre>save($varName, $varValue) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$varName</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>$varValue</h4>
+<code></code>
+</div>
+</div></div>
+</div>
 </div>
 </div>
 </div>
@@ -89,7 +159,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
-            generated on 2012-06-18T14:50:57+01:00.<br></footer></div>
+            generated on 2012-06-20T19:41:09+01:00.<br></footer></div>
 </div>
 </body>
 </html>

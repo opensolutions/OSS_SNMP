@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>OSS_SNMP » \OSS\Cache</title>
+<title>OSS_SNMP » \OSS_SNMP\Timer</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -21,6 +21,7 @@
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a>Namespaces</a></li>
 <li><a href="../namespaces/OSS.html"><i class="icon-th"></i> OSS</a></li>
+<li><a href="../namespaces/OSS_SNMP.html"><i class="icon-th"></i> OSS_SNMP</a></li>
 </ul>
 </li>
 <li class="dropdown" id="charts-menu">
@@ -57,36 +58,34 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
-<li class="nav-header protected">» Protected</li>
-<li class="method protected "><a href="#clear" title="clear :: "><span class="description">clear()
-        </span><pre>clear()</pre></a></li>
-<li class="method protected "><a href="#clearAll" title="clearAll :: "><span class="description">clearAll()
-        </span><pre>clearAll()</pre></a></li>
-<li class="method protected "><a href="#load" title="load :: "><span class="description">load()
-        </span><pre>load()</pre></a></li>
-<li class="method protected "><a href="#save" title="save :: "><span class="description">save()
-        </span><pre>save()</pre></a></li>
+<li class="method public "><a href="#end" title="end :: "><span class="description">end()
+        </span><pre>end()</pre></a></li>
+<li class="method public "><a href="#start" title="start :: "><span class="description">start()
+        </span><pre>start()</pre></a></li>
+<li class="method public "><a href="#time" title="time :: "><span class="description">time()
+        </span><pre>time()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24_start" title="$_start :: "><span class="description">$_start</span><pre>$_start</pre></a></li>
+<li class="property private "><a href="#%24_time" title="$_time :: "><span class="description">$_time</span><pre>$_time</pre></a></li>
 </ul>
 </div>
 <div class="span8">
-<a name="%5COSS%5CCache" id="\OSS\Cache"></a><ul class="breadcrumb">
+<a name="%5COSS_SNMP%5CTimer" id="\OSS_SNMP\Timer"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
-<li><a href="../namespaces/OSS.html">OSS</a></li>
+<li><a href="../namespaces/OSS_SNMP.html">OSS_SNMP</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/OSS.Cache.html">Cache</a>
+<span class="divider">\</span><a href="../classes/OSS_SNMP.Timer.html">Timer</a>
 </li>
 </ul>
-<div href="../classes/OSS.Cache.html" class="element class">
-<p class="short_description">An abstract cache for storing results of SNMP queries .</p>
+<div href="../classes/OSS_SNMP.Timer.html" class="element class">
+<p class="short_description">A class for timing PHP scripts</p>
 <div class="details">
-<p class="long_description"><p>See the implementation in \OSS\Cache\Basic for proper examples and documentation.</p></p>
+<p class="long_description"></p>
 <table class="table table-bordered">
-<tr>
-<th>see</th>
-<td>\OSS\Cache\Basic</td>
-</tr>
 <tr>
 <th>copyright</th>
 <td>Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland</td>
@@ -98,58 +97,40 @@
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a name="clear" id="clear"></a><div class="element clickable method protected clear" data-toggle="collapse" data-target=".clear .collapse">
-<h2>clear()
+<a name="end" id="end"></a><div class="element clickable method public end" data-toggle="collapse" data-target=".end .collapse">
+<h2>end()
         </h2>
-<pre>clear($varName) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$varName</h4>
-<code></code>
-</div>
-</div></div>
-</div>
-<a name="clearAll" id="clearAll"></a><div class="element clickable method protected clearAll" data-toggle="collapse" data-target=".clearAll .collapse">
-<h2>clearAll()
-        </h2>
-<pre>clearAll() </pre>
+<pre>end() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a name="load" id="load"></a><div class="element clickable method protected load" data-toggle="collapse" data-target=".load .collapse">
-<h2>load()
+<a name="start" id="start"></a><div class="element clickable method public start" data-toggle="collapse" data-target=".start .collapse">
+<h2>start()
         </h2>
-<pre>load($varName) </pre>
+<pre>start() </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$varName</h4>
-<code></code>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-</div></div>
-</div>
-<a name="save" id="save"></a><div class="element clickable method protected save" data-toggle="collapse" data-target=".save .collapse">
-<h2>save()
+<a name="time" id="time"></a><div class="element clickable method public time" data-toggle="collapse" data-target=".time .collapse">
+<h2>time()
         </h2>
-<pre>save($varName, $varValue) </pre>
+<pre>time() </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$varName</h4>
-<code></code>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<div class="subelement argument">
-<h4>$varValue</h4>
-<code></code>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24_start" id="$_start"> </a><div class="element clickable property private $_start" data-toggle="collapse" data-target=".$_start .collapse">
+<h2>$_start</h2>
+<pre>$_start </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-</div></div>
+<a name="%24_time" id="$_time"> </a><div class="element clickable property private $_time" data-toggle="collapse" data-target=".$_time .collapse">
+<h2>$_time</h2>
+<pre>$_time </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -158,7 +139,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
-            generated on 2012-06-18T14:50:57+01:00.<br></footer></div>
+            generated on 2012-06-20T19:41:09+01:00.<br></footer></div>
 </div>
 </body>
 </html>

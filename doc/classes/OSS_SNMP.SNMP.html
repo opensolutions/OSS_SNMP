@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>OSS_SNMP » \OSS\SNMP</title>
+<title>OSS_SNMP » \OSS_SNMP\SNMP</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -21,6 +21,7 @@
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a>Namespaces</a></li>
 <li><a href="../namespaces/OSS.html"><i class="icon-th"></i> OSS</a></li>
+<li><a href="../namespaces/OSS_SNMP.html"><i class="icon-th"></i> OSS_SNMP</a></li>
 </ul>
 </li>
 <li class="dropdown" id="charts-menu">
@@ -103,16 +104,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5COSS%5CSNMP" id="\OSS\SNMP"></a><ul class="breadcrumb">
+<a name="%5COSS_SNMP%5CSNMP" id="\OSS_SNMP\SNMP"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
-<li><a href="../namespaces/OSS.html">OSS</a></li>
+<li><a href="../namespaces/OSS_SNMP.html">OSS_SNMP</a></li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/OSS.SNMP.html">SNMP</a>
+<span class="divider">\</span><a href="../classes/OSS_SNMP.SNMP.html">SNMP</a>
 </li>
 </ul>
-<div href="../classes/OSS.SNMP.html" class="element class">
+<div href="../classes/OSS_SNMP.SNMP.html" class="element class">
 <p class="short_description">A class for performing SNMP V2 queries and processing the results.</p>
 <div class="details">
 <p class="long_description"></p>
@@ -213,7 +214,7 @@
 <code>string</code><p>The OID to get</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/OSS.Exception.html">\OSS\Exception</a></code></th>
+<th><code><a href="../classes/OSS_SNMP.Exception.html">\OSS_SNMP\Exception</a></code></th>
 <td>On *any* SNMP error, warnings are supressed and a generic exception is thrown</td>
 </tr></table>
 <h3>Returns</h3>
@@ -223,7 +224,7 @@
 </div>
 <a name="getCache" id="getCache"></a><div class="element clickable method public getCache" data-toggle="collapse" data-target=".getCache .collapse">
 <h2>Get the cache in use (or create a Cache\Basic instance</h2>
-<pre>getCache() : <a href="../classes/OSS.Cache.html">\OSS\Cache</a></pre>
+<pre>getCache() : <a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"><p>We kind of mandate the use of a cache as the code is written with a cache in mind.
@@ -232,7 +233,7 @@ You are free to disable it via disableCache() but your machines may be hammered!
 <p>We would suggest disableCache() / enableCache() used in pairs only when really needed.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/OSS.Cache.html">\OSS\Cache</a></code>The cache object</div>
+<code><a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a></code>The cache object</div>
 </div></div>
 </div>
 <a name="getCommunity" id="getCommunity"></a><div class="element clickable method public getCommunity" data-toggle="collapse" data-target=".getCommunity .collapse">
@@ -353,17 +354,17 @@ You are free to disable it via disableCache() but your machines may be hammered!
 </div>
 <a name="setCache" id="setCache"></a><div class="element clickable method public setCache" data-toggle="collapse" data-target=".setCache .collapse">
 <h2>Set the cache to use</h2>
-<pre>setCache(<a href="../classes/OSS.Cache.html">\OSS\Cache</a> $c) : <a href="../classes/OSS.SNMP.html">\OSS\SNMP</a></pre>
+<pre>setCache(<a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a> $c) : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$c</h4>
-<code><a href="../classes/OSS.Cache.html">\OSS\Cache</a></code><p>The cache to use</p></div>
+<code><a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a></code><p>The cache to use</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/OSS.SNMP.html">\OSS\SNMP</a></code>For fluent interfaces</div>
+<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>For fluent interfaces</div>
 </div></div>
 </div>
 <a name="setCommunity" id="setCommunity"></a><div class="element clickable method public setCommunity" data-toggle="collapse" data-target=".setCommunity .collapse">
@@ -383,7 +384,7 @@ You are free to disable it via disableCache() but your machines may be hammered!
 </div>
 <a name="setHost" id="setHost"></a><div class="element clickable method public setHost" data-toggle="collapse" data-target=".setHost .collapse">
 <h2>Sets the target host for SNMP queries.</h2>
-<pre>setHost(string $h) : \OSS_SNMP</pre>
+<pre>setHost(string $h) : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
@@ -393,12 +394,12 @@ You are free to disable it via disableCache() but your machines may be hammered!
 <code>string</code><p>The target host for SNMP queries.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
+<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
 <a name="setOidOutputFormat" id="setOidOutputFormat"></a><div class="element clickable method public setOidOutputFormat" data-toggle="collapse" data-target=".setOidOutputFormat .collapse">
 <h2>Sets the output format for SNMP queries.</h2>
-<pre>setOidOutputFormat(int $f) : \OSS_SNMP</pre>
+<pre>setOidOutputFormat(int $f) : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"><p>Should be one of the class OID_OUTPUT_* constants</p></p>
@@ -408,7 +409,7 @@ You are free to disable it via disableCache() but your machines may be hammered!
 <code>int</code><p>The fomat to use</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
+<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
 <a name="setRetry" id="setRetry"></a><div class="element clickable method public setRetry" data-toggle="collapse" data-target=".setRetry .collapse">
@@ -471,7 +472,7 @@ You are free to disable it via disableCache() but your machines may be hammered!
 <code>int</code><p>The position of the OID to use as the key</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/OSS.Exception.html">\OSS\Exception</a></code></th>
+<th><code><a href="../classes/OSS_SNMP.Exception.html">\OSS_SNMP\Exception</a></code></th>
 <td>On *any* SNMP error, warnings are supressed and a generic exception is thrown</td>
 </tr></table>
 <h3>Returns</h3>
@@ -502,7 +503,7 @@ $translator is an associated array.</p>
 </div>
 <a name="useExtension" id="useExtension"></a><div class="element clickable method public useExtension" data-toggle="collapse" data-target=".useExtension .collapse">
 <h2>This is the MIB Extension magic</h2>
-<pre>useExtension(string $mib, array $args) : \OSS\SNMP\MIBS</pre>
+<pre>useExtension(string $mib, array $args) : \OSS_SNMP\MIBS</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <p class="long_description"><p>Calling $this->useXXX_YYY_ZZZ()->fn() will instantiate
@@ -519,7 +520,7 @@ instance and then call fn().</p>
 <code>array</code>
 </div>
 <h3>Returns</h3>
-<div class="subelement response"><code>\OSS\SNMP\MIBS</code></div>
+<div class="subelement response"><code>\OSS_SNMP\MIBS</code></div>
 </div></div>
 </div>
 <a name="walk1d" id="walk1d"></a><div class="element clickable method public walk1d" data-toggle="collapse" data-target=".walk1d .collapse">
@@ -553,7 +554,7 @@ instance and then call fn().</p>
 <code>string</code><p>The OID to walk</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/OSS.Exception.html">\OSS\Exception</a></code></th>
+<th><code>\OSS_SNMPException</code></th>
 <td>On *any* SNMP error, warnings are supressed and a generic exception is thrown</td>
 </tr></table>
 <h3>Returns</h3>
@@ -644,7 +645,7 @@ instance and then call fn().</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
-            generated on 2012-06-18T14:50:57+01:00.<br></footer></div>
+            generated on 2012-06-20T19:41:09+01:00.<br></footer></div>
 </div>
 </body>
 </html>
