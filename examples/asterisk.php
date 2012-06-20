@@ -71,6 +71,8 @@ echo "\n\n";
 
 echo "Asterisk version running on {$argv[1]}: " . $host->useAsterisk()->version() . "\n";
 echo "Asterisk SVN tag running on {$argv[1]}: " . $host->useAsterisk()->tag() . "\n";
+
+/*
 echo "Asterisk on {$argv[1]} up for: " . ( $host->useAsterisk()->uptime() / 100 / 60 / 60 ) . " hours\n";
 echo "Asterisk on {$argv[1]} reloaded: " . ( $host->useAsterisk()->reloadTime() / 100 / 60 / 60 ) . " hours ago\n";
 echo "Asterisk PID: " . $host->useAsterisk()->pid() . "\n";
@@ -119,7 +121,7 @@ echo "\n\n";
 echo "Active calls on supported channel types:\n\n";
 print_r(  $host->useAsterisk_Channels()->activeCalls() );
 echo "\n\n";
-*/
+
 
 echo "Supported channel details:\n\n";
 print_r(  $host->useAsterisk_Channels()->details() );
@@ -127,6 +129,7 @@ echo "\n\n";
 
 echo "Channels bridged: " . $host->useAsterisk_Channels()->bridged() . "\n";
 
+*/
 
 echo "\n\n";
 

@@ -56,6 +56,47 @@ class Channels extends \OSS\SNMP\MIB
     const OID_ASTERISK_CHANNEL_TYPE_TRANSFER    = '.1.3.6.1.4.1.22736.1.5.4.1.6';
     const OID_ASTERISK_CHANNEL_TYPE_CHANNELS    = '.1.3.6.1.4.1.22736.1.5.4.1.7';
     
+    const OID_ASTERISK_CHANNEL_NAME             = '.1.3.6.1.4.1.22736.1.5.2.1.2';
+    const OID_ASTERISK_CHANNEL_LANGUAGE         = '.1.3.6.1.4.1.22736.1.5.2.1.3';
+    const OID_ASTERISK_CHANNEL_TYPE             = '.1.3.6.1.4.1.22736.1.5.2.1.4';
+    const OID_ASTERISK_CHANNEL_MUSIC_CLASS      = '.1.3.6.1.4.1.22736.1.5.2.1.5';
+    const OID_ASTERISK_CHANNEL_BRIDGE           = '.1.3.6.1.4.1.22736.1.5.2.1.6';
+    const OID_ASTERISK_CHANNEL_MASQ             = '.1.3.6.1.4.1.22736.1.5.2.1.7';
+    const OID_ASTERISK_CHANNEL_MASQR            = '.1.3.6.1.4.1.22736.1.5.2.1.8';
+    const OID_ASTERISK_CHANNEL_WHEN_HANGUP      = '.1.3.6.1.4.1.22736.1.5.2.1.9';
+    const OID_ASTERISK_CHANNEL_APP              = '.1.3.6.1.4.1.22736.1.5.2.1.10';
+    const OID_ASTERISK_CHANNEL_DATA             = '.1.3.6.1.4.1.22736.1.5.2.1.11';
+    const OID_ASTERISK_CHANNEL_CONTEXT          = '.1.3.6.1.4.1.22736.1.5.2.1.12';
+    const OID_ASTERISK_CHANNEL_MACRO_CONTEXT    = '.1.3.6.1.4.1.22736.1.5.2.1.13';
+    const OID_ASTERISK_CHANNEL_MACRO_EXTEN      = '.1.3.6.1.4.1.22736.1.5.2.1.14';
+    const OID_ASTERISK_CHANNEL_MACRO_PRI        = '.1.3.6.1.4.1.22736.1.5.2.1.15';
+    const OID_ASTERISK_CHANNEL_EXTEN            = '.1.3.6.1.4.1.22736.1.5.2.1.16';
+    const OID_ASTERISK_CHANNEL_PRI              = '.1.3.6.1.4.1.22736.1.5.2.1.17';
+    const OID_ASTERISK_CHANNEL_ACCOUNT_CODE     = '.1.3.6.1.4.1.22736.1.5.2.1.18';
+    const OID_ASTERISK_CHANNEL_FORWARD_TO       = '.1.3.6.1.4.1.22736.1.5.2.1.19';
+    const OID_ASTERISK_CHANNEL_UNQIUEID         = '.1.3.6.1.4.1.22736.1.5.2.1.20';
+    const OID_ASTERISK_CHANNEL_CALL_GROUP       = '.1.3.6.1.4.1.22736.1.5.2.1.21';
+    const OID_ASTERISK_CHANNEL_PICKUP_GROUP     = '.1.3.6.1.4.1.22736.1.5.2.1.22';
+    const OID_ASTERISK_CHANNEL_STATE            = '.1.3.6.1.4.1.22736.1.5.2.1.23';
+    const OID_ASTERISK_CHANNEL_MUTED            = '.1.3.6.1.4.1.22736.1.5.2.1.24';
+    const OID_ASTERISK_CHANNEL_RINGS            = '.1.3.6.1.4.1.22736.1.5.2.1.25';
+    const OID_ASTERISK_CHANNEL_CID_DNID         = '.1.3.6.1.4.1.22736.1.5.2.1.26';
+    const OID_ASTERISK_CHANNEL_CID_NUM          = '.1.3.6.1.4.1.22736.1.5.2.1.27';
+    const OID_ASTERISK_CHANNEL_CID_NAME         = '.1.3.6.1.4.1.22736.1.5.2.1.28';
+    const OID_ASTERISK_CHANNEL_CID_ANI          = '.1.3.6.1.4.1.22736.1.5.2.1.29';
+    const OID_ASTERISK_CHANNEL_CID_RDNIS        = '.1.3.6.1.4.1.22736.1.5.2.1.30';
+    const OID_ASTERISK_CHANNEL_CID_PRESENTATION = '.1.3.6.1.4.1.22736.1.5.2.1.31';
+    const OID_ASTERISK_CHANNEL_CID_ANI2         = '.1.3.6.1.4.1.22736.1.5.2.1.32';
+    const OID_ASTERISK_CHANNEL_CID_TON          = '.1.3.6.1.4.1.22736.1.5.2.1.33';
+    const OID_ASTERISK_CHANNEL_CID_TNS          = '.1.3.6.1.4.1.22736.1.5.2.1.34';
+    const OID_ASTERISK_CHANNEL_AMA_FLAGS        = '.1.3.6.1.4.1.22736.1.5.2.1.35';
+    const OID_ASTERISK_CHANNEL_ADSI             = '.1.3.6.1.4.1.22736.1.5.2.1.36';
+    const OID_ASTERISK_CHANNEL_TIME_ZONE        = '.1.3.6.1.4.1.22736.1.5.2.1.37';
+    const OID_ASTERISK_CHANNEL_HANGUP_CAUSE     = '.1.3.6.1.4.1.22736.1.5.2.1.38';
+    const OID_ASTERISK_CHANNEL_VARIABLES        = '.1.3.6.1.4.1.22736.1.5.2.1.39';
+    const OID_ASTERISK_CHANNEL_FLAGS            = '.1.3.6.1.4.1.22736.1.5.2.1.40';
+    const OID_ASTERISK_CHANNEL_TRANSFER_CAP     = '.1.3.6.1.4.1.22736.1.5.2.1.41';
+    
     const OID_ASTERISK_CHANNELS_BRIDGED     = '.1.3.6.1.4.1.22736.1.5.5.1.0';
     
     /**
