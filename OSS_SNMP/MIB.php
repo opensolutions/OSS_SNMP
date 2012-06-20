@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS\SNMP;
+namespace OSS_SNMP;
 
 /**
  * Parent class for all "MIB" extensions.

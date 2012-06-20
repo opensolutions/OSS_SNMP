@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS\SNMP\MIBS\Asterisk;
+namespace OSS_SNMP\MIBS\Asterisk;
 
 /**
  * A class for performing SNMP V2 queries on Asterisk
@@ -42,16 +42,16 @@ namespace OSS\SNMP\MIBS\Asterisk;
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class Indications extends \OSS\SNMP\MIB
+class Indications extends \OSS_SNMP\MIB
 {
 
     const OID_ASTERISK_INDICATIONS_COUNT   = '.1.3.6.1.4.1.22736.1.4.1.0';
-    
+
     const OID_ASTERISK_DEFAULT_INDICATION  = '.1.3.6.1.4.1.22736.1.4.2.0';
-    
+
     const OID_ASTERISK_INDICATIONS_COUNTRY     = '.1.3.6.1.4.1.22736.1.4.3.1.2';
     const OID_ASTERISK_INDICATIONS_DESCRIPTION = '.1.3.6.1.4.1.22736.1.4.3.1.4';
-    
+
     /**
      * Returns the number of indications defined in Asterisk
      *
@@ -63,8 +63,8 @@ class Indications extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_INDICATIONS_COUNT );
     }
-    
-    
+
+
     /**
      * Returns the default indication zone to use.
      *
@@ -76,7 +76,7 @@ class Indications extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_DEFAULT_INDICATION );
     }
-    
+
     /**
      * Returns an array of ISO country codes for the defined indications zones (indexed by SNMP table entry)
      *
@@ -89,7 +89,7 @@ class Indications extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_ASTERISK_INDICATIONS_COUNTRY );
     }
-    
+
     /**
      * Returns an array of indications zone descriptions (indexed by SNMP table entry)
      *
@@ -102,8 +102,8 @@ class Indications extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_ASTERISK_INDICATIONS_DESCRIPTION );
     }
-    
-    
-    
-    
+
+
+
+
 }

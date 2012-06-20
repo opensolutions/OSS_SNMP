@@ -66,9 +66,9 @@ HELPTEXT;
     exit( 1 );
 }
 
-require_once( dirname( __FILE__ ) . '/../OSS/SNMP.php' );
+require_once( dirname( __FILE__ ) . '/../OSS_SNMP/SNMP.php' );
 
-$host = new \OSS\SNMP( $argv[1], $argv[2] );
+$host = new \OSS_SNMP\SNMP( $argv[1], $argv[2] );
 
 if( count( $argv ) == 3 )
 {
@@ -126,7 +126,7 @@ Out Queue Length:          {$host->useIface()->outQueueLength()[$id]}
 
 INTINFO;
 }
-catch( \OSS\Exception $e )
+catch( \OSS_SNMP\Exception $e )
 {
     echo "\nCould not poll interface statistics for this interface.\n";
 }

@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS\Cache;
+namespace OSS_SNMP\Cache;
 
 /**
  * APC cache implementation
@@ -41,7 +41,7 @@ namespace OSS\Cache;
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class APC extends \OSS\Cache
+class APC extends \OSS_SNMP\Cache
 {
     /**
      * Default time to live for cache variables in seconds
@@ -62,13 +62,13 @@ class APC extends \OSS\Cache
      *
      * @param int $ttl Set the default ttl
      * @param string $prefix Set the default prefix for caching variable names
-     * @return \OSS\Cache\Basic An instance of the cache ($this) for  fluent interfaces
+     * @return \OSS_SNMP\Cache\Basic An instance of the cache ($this) for  fluent interfaces
      */
     public function __construct( $ttl = 300, $prefix = 'OSS_SNMP_' )
     {
         // do we have APC?
         if( !ini_get( 'apc.enabled' ) )
-            throw new \OSS\Exception( 'APC is not installed or not enabled' );
+            throw new \OSS_SNMP\Exception( 'APC is not installed or not enabled' );
 
         $this->_ttl    = $ttl;
         $this->_prefix = $prefix;

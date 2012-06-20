@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS\SNMP\MIBS\Asterisk;
+namespace OSS_SNMP\MIBS\Asterisk;
 
 /**
  * A class for performing SNMP V2 queries on Asterisk
@@ -42,11 +42,11 @@ namespace OSS\SNMP\MIBS\Asterisk;
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class Channels extends \OSS\SNMP\MIB
+class Channels extends \OSS_SNMP\MIB
 {
 
     const OID_ASTERISK_CHANNELS_ACTIVE      = '.1.3.6.1.4.1.22736.1.5.1.0';
-    
+
     const OID_ASTERISK_CHANNELS_SUPPORTED   = '.1.3.6.1.4.1.22736.1.5.3.0';
 
     const OID_ASTERISK_CHANNEL_TYPE_NAME        = '.1.3.6.1.4.1.22736.1.5.4.1.2';
@@ -55,9 +55,9 @@ class Channels extends \OSS\SNMP\MIB
     const OID_ASTERISK_CHANNEL_TYPE_INDICATION  = '.1.3.6.1.4.1.22736.1.5.4.1.5';
     const OID_ASTERISK_CHANNEL_TYPE_TRANSFER    = '.1.3.6.1.4.1.22736.1.5.4.1.6';
     const OID_ASTERISK_CHANNEL_TYPE_CHANNELS    = '.1.3.6.1.4.1.22736.1.5.4.1.7';
-    
+
     const OID_ASTERISK_CHANNELS_BRIDGED     = '.1.3.6.1.4.1.22736.1.5.5.1.0';
-    
+
     /**
      * Returns the current number of active channels.
      *
@@ -69,8 +69,8 @@ class Channels extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_CHANNELS_ACTIVE );
     }
-    
-    
+
+
     /**
      * Returns the number of channel types (technologies) supported.
      *
@@ -82,8 +82,8 @@ class Channels extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_CHANNELS_SUPPORTED );
     }
-    
-    
+
+
     /**
      * Array of supported channel type names
      *
@@ -95,7 +95,7 @@ class Channels extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_TYPE_NAME );
     }
-    
+
     /**
      * Array of supported channel type descriptions
      *
@@ -107,7 +107,7 @@ class Channels extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION );
     }
-    
+
     /**
      * Array of supported channel type device state capability
      *
@@ -119,7 +119,7 @@ class Channels extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->ppTruthValue( $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_TYPE_STATE ) );
     }
-    
+
     /**
      * Array of supported channel type progress indication capability
      *
@@ -131,7 +131,7 @@ class Channels extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->ppTruthValue( $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_TYPE_INDICATION ) );
     }
-    
+
     /**
      * Array of supported channel type transfer capability
      *
@@ -144,7 +144,7 @@ class Channels extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->ppTruthValue( $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_TYPE_TRANSFER ) );
     }
-    
+
     /**
      * Array of active calls on supported channels
      *
@@ -156,7 +156,7 @@ class Channels extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_TYPE_CHANNELS );
     }
-    
+
     /**
      * Number of channels currently in a bridged state.
      *
@@ -168,7 +168,7 @@ class Channels extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_CHANNELS_BRIDGED );
     }
-    
+
     /**
      * Utility function to gather channel details together in an associative array.
      *
@@ -198,14 +198,14 @@ class Channels extends \OSS\SNMP\MIB
     public function details( $useIndex = false )
     {
         $details = [];
-        
+
         foreach( $this->names() as $index => $name )
         {
             if( $useIndex )
                 $idx = $index;
             else
                 $idx = $name;
-            
+
             $details[ $idx ]['name']                   = $name;
             $details[ $idx ]['index']                  = $index;
             $details[ $idx ]['description']            = $this->descriptions()[$index];
@@ -214,10 +214,10 @@ class Channels extends \OSS\SNMP\MIB
             $details[ $idx ]['canTransfer']            = $this->transfers()[$index];
             $details[ $idx ]['activeCalls']            = $this->activeCalls()[$index];
         }
-        
+
         return $details;
     }
-    
-    
-    
+
+
+
 }

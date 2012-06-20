@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS\SNMP\MIBS;
+namespace OSS_SNMP\MIBS;
 
 /**
  * A class for performing SNMP V2 queries on generic devices
@@ -41,7 +41,7 @@ namespace OSS\SNMP\MIBS;
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class Iface extends \OSS\SNMP\MIB
+class Iface extends \OSS_SNMP\MIB
 {
     const OID_IF_NUMBER                  = '.1.3.6.1.2.1.2.1.0';
     const OID_IF_DESCRIPTION             = '.1.3.6.1.2.1.2.2.1.2';
@@ -178,7 +178,7 @@ class Iface extends \OSS\SNMP\MIB
      * subsystem, then this object contains a zero
      * value."
      *
-     * @see \OSS\SNMP\MIBS\System::uptime()
+     * @see \OSS_SNMP\MIBS\System::uptime()
      * @return array Timeticks (or zero) since last change of the interfaces
      */
     public function lastChanges()

@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS\SNMP\MIBS;
+namespace OSS_SNMP\MIBS;
 
 /**
  * A class for performing SNMP V2 queries on generic devices
@@ -41,7 +41,7 @@ namespace OSS\SNMP\MIBS;
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class Entity extends \OSS\SNMP\MIB
+class Entity extends \OSS_SNMP\MIB
 {
     const OID_ENTITY_PHYSICAL_CLASS          = '.1.3.6.1.2.1.47.1.1.1.1.5';
     const OID_ENTITY_PHYSICAL_PARENT_REL_POS = '.1.3.6.1.2.1.47.1.1.1.1.6';

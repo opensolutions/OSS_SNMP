@@ -32,7 +32,7 @@ Example Usage
 First, we need to instantiate an SNMP object with a hostname / IP address and
 a community string:
 
-    $ciscosw = new \OSS_SNMP( $ip, $community );
+    $ciscosw = new \OSS_SNMP\SNMP( $ip, $community );
 
 Assuming the above is a standard Cisco switch, let's say I want to get an
 associate array of VLAN names indexed by the VLAN ids:

@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS\SNMP\MIBS\Cisco;
+namespace OSS_SNMP\MIBS\Cisco;
 
 /**
  * A class for performing SNMP V2 queries on Cisco devices
@@ -41,7 +41,7 @@ namespace OSS\SNMP\MIBS\Cisco;
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class RSTP extends \OSS\SNMP\MIBS\Cisco
+class RSTP extends \OSS_SNMP\MIBS\Cisco
 {
 
 

@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS\Cache;
+namespace OSS_SNMP\Cache;
 
 /**
  * basic (array) cache implementation
@@ -41,7 +41,7 @@ namespace OSS\Cache;
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class Basic extends \OSS\Cache
+class Basic extends \OSS_SNMP\Cache
 {
 
     /**
@@ -56,7 +56,7 @@ class Basic extends \OSS\Cache
      *
      * For basic cache, takes no parameters.
      *
-     * @return \OSS\Cache\Basic An instance of the cache ($this) for  fluent interfaces
+     * @return \OSS_SNMP\Cache\Basic An instance of the cache ($this) for  fluent interfaces
      */
     public function __construct()
     {

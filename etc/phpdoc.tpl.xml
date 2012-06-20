@@ -16,7 +16,7 @@
   <files>
     <ignore-hidden>on</ignore-hidden>
     <ignore-symlinks>on</ignore-symlinks>
-    <directory>OSS</directory>
+    <directory>OSS_SNMP</directory>
   </files>
   <transformer>
     <target>output</target>
@@ -32,5 +32,5 @@
     <template name="responsive" />
   </transformations>
   <title><![CDATA[OSS_SNMP]]></title>
-  
+
 </phpdocumentor>

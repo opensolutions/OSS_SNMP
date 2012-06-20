@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS\SNMP\MIBS;
+namespace OSS_SNMP\MIBS;
 
 /**
  * A class for performing SNMP V2 queries on generic devices
@@ -41,7 +41,7 @@ namespace OSS\SNMP\MIBS;
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class System extends \OSS\SNMP\MIB
+class System extends \OSS_SNMP\MIB
 {
     const OID_SYSTEM_DESCRIPTION = '.1.3.6.1.2.1.1.1.0';
     const OID_SYSTEM_UPTIME      = '.1.3.6.1.2.1.1.3.0';
@@ -49,7 +49,7 @@ class System extends \OSS\SNMP\MIB
     const OID_SYSTEM_NAME        = '.1.3.6.1.2.1.1.5.0';
     const OID_SYSTEM_LOCATION    = '.1.3.6.1.2.1.1.6.0';
     const OID_SYSTEM_SERVICES    = '.1.3.6.1.2.1.1.7.0';
-    
+
     /**
      * Returns the system description of the device
      *
@@ -151,14 +151,14 @@ class System extends \OSS\SNMP\MIB
     public function getAll()
     {
         $system = array();
-        
+
         $system[ 'contact' ]     = $this->contact();
         $system[ 'description' ] = $this->description();
         $system[ 'location' ]    = $this->location();
         $system[ 'name' ]        = $this->name();
         $system[ 'services' ]    = $this->services();
         $system[ 'uptime' ]      = $this->uptime();
-        
+
         return $system;
     }
 }

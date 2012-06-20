@@ -33,11 +33,11 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS;
+namespace OSS_SNMP;
 
 
 spl_autoload_register( function( $class ) {
-    if( substr( $class, 0, 4 ) == 'OSS\\' )
+    if( substr( $class, 0, 9 ) == 'OSS_SNMP\\' )
     {
         $class = str_replace( '\\', '/', $class );
         require( dirname( __FILE__ ) . '/../' . $class . '.php' );
@@ -83,7 +83,7 @@ class SNMP
 
     /**
      * The cache object to use as the cache
-     * @var \OSS\Cache The cache object to use
+     * @var \OSS_SNMP\Cache The cache object to use
      */
     protected $_cache = null;
 
@@ -92,7 +92,7 @@ class SNMP
      *
      * Results are still stored. If you need to force a SNMP query, you can:
      *
-     * $snmp = new OSS\SNMP( ... )'
+     * $snmp = new OSS_SNMP( ... )'
      * ...
      * $snmp->disableCache();
      * $snmp->get( ... );
@@ -156,7 +156,7 @@ class SNMP
     /**
      * Get a single SNMP value
      *
-     * @throws \OSS\Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
+     * @throws \OSS_SNMP\Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
      * @param string $oid The OID to get
      * @return mixed The resultant value
      */
@@ -197,7 +197,7 @@ class SNMP
      *
      * @param string $oid The OID to walk
      * @return array The resultant values
-     * @throws \OSS\Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
+     * @throws \OSS_SNMPException On *any* SNMP error, warnings are supressed and a generic exception is thrown
      */
     public function walk1d( $oid )
     {
@@ -243,7 +243,7 @@ class SNMP
      *      10105 => Hex-STRING: 00 00 00 01
      *      10108 => Hex-STRING: 00 00 00 01
      *
-     * @throws \OSS\Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
+     * @throws \OSS_SNMP\Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
      * @param string $oid The OID to walk
      * @param int $position The position of the OID to use as the key
      * @return array The resultant values
@@ -384,7 +384,7 @@ class SNMP
      * Should be one of the class OID_OUTPUT_* constants
      *
      * @param int $f The fomat to use
-     * @return OSS_SNMP An instance of $this (for fluent interfaces)
+     * @return OSS_SNMP\SNMP An instance of $this (for fluent interfaces)
      */
     public function setOidOutputFormat( $f )
     {
@@ -397,7 +397,7 @@ class SNMP
      * Sets the target host for SNMP queries.
      *
      * @param string $h The target host for SNMP queries.
-     * @return OSS_SNMP An instance of $this (for fluent interfaces)
+     * @return \OSS_SNMP\SNMP An instance of $this (for fluent interfaces)
      */
     public function setHost( $h )
     {
@@ -544,8 +544,8 @@ class SNMP
     /**
      * Set the cache to use
      *
-     * @param \OSS\Cache $c The cache to use
-     * @return \OSS\SNMP For fluent interfaces
+     * @param \OSS_SNMP\Cache $c The cache to use
+     * @return \OSS_SNMP\SNMP For fluent interfaces
      */
     public function setCache( $c )
     {
@@ -561,12 +561,12 @@ class SNMP
      *
      * We would suggest disableCache() / enableCache() used in pairs only when really needed.
      *
-     * @return \OSS\Cache The cache object
+     * @return \OSS_SNMP\Cache The cache object
      */
     public function getCache()
     {
         if( $this->_cache === null )
-            $this->_cache = new \OSS\Cache\Basic();
+            $this->_cache = new \OSS_SNMP\Cache\Basic();
 
         return $this->_cache;
     }
@@ -599,11 +599,11 @@ class SNMP
      *
      * @param string $mib The extension class to use
      * @param array $args
-     * @return \OSS\SNMP\MIBS
+     * @return \OSS_SNMP\MIBS
      */
     public function useExtension( $mib, $args )
     {
-        $mib = '\\OSS\\SNMP\\MIBS\\' . str_replace( '_', '\\', $mib );
+        $mib = '\\OSS_SNMP\\MIBS\\' . str_replace( '_', '\\', $mib );
         $m = new $mib();
         $m->setSNMP( $this );
         return $m;

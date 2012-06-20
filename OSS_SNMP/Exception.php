@@ -34,11 +34,11 @@
 */
 
 
-namespace OSS;
+namespace OSS_SNMP;
 
 
 /**
- * OSS\SNMP\Exception class
+ * OSS_SNMP\Exception class
  */
 class Exception extends \Exception
 {}

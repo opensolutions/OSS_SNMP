@@ -33,7 +33,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-namespace OSS\SNMP\MIBS;
+namespace OSS_SNMP\MIBS;
 
 /**
  * A class for performing SNMP V2 queries on Asterisk
@@ -42,12 +42,12 @@ namespace OSS\SNMP\MIBS;
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class Asterisk extends \OSS\SNMP\MIB
+class Asterisk extends \OSS_SNMP\MIB
 {
 
     const OID_ASTERISK_VERSION_STRING = '.1.3.6.1.4.1.22736.1.1.1.0';
     const OID_ASTERISK_VERSION_TAG    = '.1.3.6.1.4.1.22736.1.1.2.0';
-    
+
     const OID_ASTERISK_UP_TIME         = '.1.3.6.1.4.1.22736.1.2.1.0';
     const OID_ASTERISK_RELOAD_TIME     = '.1.3.6.1.4.1.22736.1.2.2.0';
     const OID_ASTERISK_PID             = '.1.3.6.1.4.1.22736.1.2.3.0';
@@ -56,7 +56,7 @@ class Asterisk extends \OSS\SNMP\MIB
     const OID_ASTERISK_CALLS_PROCESSED = '.1.3.6.1.4.1.22736.1.2.6.0';
 
     const OID_ASTERISK_MODULES         = '.1.3.6.1.4.1.22736.1.3.1.0';
-    
+
     /**
      * Returns the version of Asterisk
      *
@@ -69,7 +69,7 @@ class Asterisk extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_VERSION_STRING );
     }
-    
+
     /**
      * Returns the Subversion (SVN) revision of Asterisk
      *
@@ -83,7 +83,7 @@ class Asterisk extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_VERSION_TAG );
     }
-    
+
     /**
      * Returns the time ticks (100th sec) since Asterisk was started
      *
@@ -95,7 +95,7 @@ class Asterisk extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_UP_TIME );
     }
-    
+
     /**
      * Returns the time ticks (100th sec) since the Asterisk config was reload
      *
@@ -107,7 +107,7 @@ class Asterisk extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_RELOAD_TIME );
     }
-    
+
     /**
      * Returns the process ID of the Asterisk instance
      *
@@ -119,7 +119,7 @@ class Asterisk extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_PID );
     }
-    
+
     /**
      * Returns the path for the control socket for giving Asterisk commands
      *
@@ -131,7 +131,7 @@ class Asterisk extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_CONTROL_SOCKET );
     }
-    
+
     /**
      * Returns the number of calls currently active on the Asterisk PBX.
      *
@@ -143,7 +143,7 @@ class Asterisk extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_CALLS_ACTIVE );
     }
-    
+
     /**
      * Returns the total number of calls processed through the Asterisk PBX since last restart.
      *
@@ -155,7 +155,7 @@ class Asterisk extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_CALLS_PROCESSED );
     }
-    
+
     /**
      * Returns the number of modules currently loaded into Asterisk.
      *
@@ -167,7 +167,7 @@ class Asterisk extends \OSS\SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_ASTERISK_MODULES );
     }
-    
-    
-    
+
+
+
 }
