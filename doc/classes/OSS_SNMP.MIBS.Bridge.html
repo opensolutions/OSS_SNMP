@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>OSS_SNMP » OSS\SNMP\MIBS\Cisco</title>
+<title>OSS_SNMP » \OSS_SNMP\MIBS\Bridge</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -52,36 +52,64 @@
                         </div></noscript>
 <div class="row">
 <div class="span4">
-<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
 <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
 </div>
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
-<i class="icon-map-marker"></i> Namespaces</li>
-<li>
-<a href="../namespaces/OSS.SNMP.MIBS.Cisco.html" title="Cisco"><i class="icon-th"></i>Cisco</a><ul class="nav nav-list nav-namespaces"></ul>
-</li>
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#basePortIfIndexes" title="basePortIfIndexes :: Returns an associate array of STP port IDs (key) to interface IDs (value)"><span class="description">Returns an associate array of STP port IDs (key) to interface IDs (value)</span><pre>basePortIfIndexes()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#OID_BRIDGE_BASE_PORT_IF_INDEX" title="OID_BRIDGE_BASE_PORT_IF_INDEX :: "><span class="description">OID_BRIDGE_BASE_PORT_IF_INDEX</span><pre>OID_BRIDGE_BASE_PORT_IF_INDEX</pre></a></li>
 </ul>
 </div>
-<div class="span8 namespace-contents">
-<ul class="breadcrumb">
+<div class="span8">
+<a name="%5COSS_SNMP%5CMIBS%5CBridge" id="\OSS_SNMP\MIBS\Bridge"></a><ul class="breadcrumb">
 <li>
-<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
-<li><a href="../namespaces/OSS.html">OSS</a></li>
-<span class="divider">\</span><li><a href="../namespaces/OSS.SNMP.html">SNMP</a></li>
-<span class="divider">\</span><li><a href="../namespaces/OSS.SNMP.MIBS.html">MIBS</a></li>
-<span class="divider">\</span><li class="active"><a href="../namespaces/OSS.SNMP.MIBS.Cisco.html">Cisco</a></li>
+<li><a href="../namespaces/OSS_SNMP.html">OSS_SNMP</a></li>
+<span class="divider">\</span><li><a href="../namespaces/OSS_SNMP.MIBS.html">MIBS</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/OSS_SNMP.MIBS.Bridge.html">Bridge</a>
+</li>
 </ul>
-<div class="namespace-indent">
+<div href="../classes/OSS_SNMP.MIBS.Bridge.html" class="element class">
+<p class="short_description">A class for performing SNMP V2 queries on generic devices</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:barry@opensolutions.ie">Barry O'Donovan</a></td>
+</tr>
+</table>
 <h3>
-<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
-<a name="CDP" id="CDP"></a><div class="element ajax clickable class" href="../classes/OSS.SNMP.MIBS.Cisco.CDP.html">
-<h1>CDP<a href="../classes/OSS.SNMP.MIBS.Cisco.CDP.html">¶</a>
-</h1>
-<p class="short_description">A class for performing SNMP V2 queries on Cisco devices</p>
-<div class="details collapse"></div>
-<a href="../classes/OSS.SNMP.MIBS.Cisco.CDP.html" class="more">« More »</a>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="basePortIfIndexes" id="basePortIfIndexes"></a><div class="element clickable method public basePortIfIndexes" data-toggle="collapse" data-target=".basePortIfIndexes .collapse">
+<h2>Returns an associate array of STP port IDs (key) to interface IDs (value)</h2>
+<pre>basePortIfIndexes() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>e.g.  [22] => 10122</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Associate array of STP port IDs (key) to interface IDs (value)</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="OID_BRIDGE_BASE_PORT_IF_INDEX" id="OID_BRIDGE_BASE_PORT_IF_INDEX"> </a><div class="element clickable constant  OID_BRIDGE_BASE_PORT_IF_INDEX" data-toggle="collapse" data-target=".OID_BRIDGE_BASE_PORT_IF_INDEX .collapse">
+<h2>OID_BRIDGE_BASE_PORT_IF_INDEX</h2>
+<pre>OID_BRIDGE_BASE_PORT_IF_INDEX </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
 </div>
 </div>
 </div>

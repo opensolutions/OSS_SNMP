@@ -34,7 +34,7 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-// This is an example script for OSS_SNMP
+// This is an example script for OSS_SNMP Asterisk MIBs
 //
 // It needs to be called with a hostname / IP address and a community string
 
@@ -50,7 +50,7 @@ See: https://github.com/opensolutions/OSS_SNMP/
 
 This is an example script to show how to use OSS_SNMP. It requires two arguments:
 
- - the IP address of hostname of a SNMP capable host
+ - the IP address of hostname of a SNMP capable host (with Asterisk SNMP enabled)
  - the SNMP v2 community string for that host
 
 For example:
@@ -67,10 +67,68 @@ require_once( dirname( __FILE__ ) . '/../OSS_SNMP/SNMP.php' );
 
 $host = new \OSS_SNMP\SNMP( $argv[1], $argv[2] );
 
-echo "\nSystem information for {$argv[1]}:\n\n";
+echo "\n\n";
 
-print_r( $host->useSystem()->getAll() );
+echo "Asterisk version running on {$argv[1]}: " . $host->useAsterisk()->version() . "\n";
+echo "Asterisk SVN tag running on {$argv[1]}: " . $host->useAsterisk()->tag() . "\n";
+echo "Asterisk on {$argv[1]} up for: " . ( $host->useAsterisk()->uptime() / 100 / 60 / 60 ) . " hours\n";
+echo "Asterisk on {$argv[1]} reloaded: " . ( $host->useAsterisk()->reloadTime() / 100 / 60 / 60 ) . " hours ago\n";
+echo "Asterisk PID: " . $host->useAsterisk()->pid() . "\n";
+echo "Asterisk control socket: " . $host->useAsterisk()->controlSocket() . "\n";
+echo "Calls active: " . $host->useAsterisk()->callsActive() . "\n";
+echo "Calls processed: " . $host->useAsterisk()->callsProcessed() . "\n";
+echo "Modules compiled in: " . $host->useAsterisk()->modules() . "\n";
+
+echo "\n\n";
+
+echo "Indications defined: " . $host->useAsterisk_Indications()->number() . "\n";
+echo "Default indications zone: " . $host->useAsterisk_Indications()->defaultZone() . "\n";
+
+echo "Indication country codes:\n\n";
+print_r(  $host->useAsterisk_Indications()->countryCodes() );
+echo "\n\n";
+
+echo "Indication descriptions:\n\n";
+print_r(  $host->useAsterisk_Indications()->descriptions() );
+echo "\n\n";
+
+echo "Channels active: " . $host->useAsterisk_Channels()->active() . "\n";
+echo "Channels supported: " . $host->useAsterisk_Channels()->supported() . "\n";
+
+/*
+echo "Channel type names:\n\n";
+print_r(  $host->useAsterisk_Channels()->names() );
+echo "\n\n";
+
+echo "Channel type descriptions:\n\n";
+print_r(  $host->useAsterisk_Channels()->descriptions() );
+echo "\n\n";
+
+echo "Channel type device state capability:\n\n";
+print_r(  $host->useAsterisk_Channels()->deviceStates() );
+echo "\n\n";
+
+echo "Channel type progress indication capability:\n\n";
+print_r(  $host->useAsterisk_Channels()->progressIndications() );
+echo "\n\n";
+
+echo "Channel type transfer capability:\n\n";
+print_r(  $host->useAsterisk_Channels()->transfers() );
+echo "\n\n";
+
+echo "Active calls on supported channel types:\n\n";
+print_r(  $host->useAsterisk_Channels()->activeCalls() );
+echo "\n\n";
+*/
+
+echo "Supported channel details:\n\n";
+print_r(  $host->useAsterisk_Channels()->details() );
+echo "\n\n";
+
+echo "Channels bridged: " . $host->useAsterisk_Channels()->bridged() . "\n";
+
 
 echo "\n\n";
 
 exit( 0 );
+
