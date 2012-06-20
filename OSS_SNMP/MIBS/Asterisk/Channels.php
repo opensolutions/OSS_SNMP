@@ -91,7 +91,7 @@ class Channels extends \OSS_SNMP\MIB
     const OID_ASTERISK_CHANNEL_CID_TNS          = '.1.3.6.1.4.1.22736.1.5.2.1.34';
     const OID_ASTERISK_CHANNEL_AMA_FLAGS        = '.1.3.6.1.4.1.22736.1.5.2.1.35';
     const OID_ASTERISK_CHANNEL_ADSI             = '.1.3.6.1.4.1.22736.1.5.2.1.36';
-    const OID_ASTERISK_CHANNEL_TIME_ZONE        = '.1.3.6.1.4.1.22736.1.5.2.1.37';
+    const OID_ASTERISK_CHANNEL_TONE_ZONE        = '.1.3.6.1.4.1.22736.1.5.2.1.37';
     const OID_ASTERISK_CHANNEL_HANGUP_CAUSE     = '.1.3.6.1.4.1.22736.1.5.2.1.38';
     const OID_ASTERISK_CHANNEL_VARIABLES        = '.1.3.6.1.4.1.22736.1.5.2.1.39';
     const OID_ASTERISK_CHANNEL_FLAGS            = '.1.3.6.1.4.1.22736.1.5.2.1.40';
@@ -259,6 +259,1058 @@ class Channels extends \OSS_SNMP\MIB
         return $details;
     }
 
+    
+    
+    
 
+    
+    
+    
+    
+    
+    
+    
+    
+    /**
+     * Active Channel Information: Name of the current channel.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Name of the current channel.
+     *
+     * @return array Name of the current channel.
+     */
+    public function chanName()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_NAME );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Which language the current channel is configured to use -- used mainly for prompts.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Which language the current channel is configured to use -- used mainly for prompts.
+     *
+     * @return array Which language the current channel is configured to use -- used mainly for prompts.
+     */
+    public function chanLanguage()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_LANGUAGE );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Underlying technology for the current channel.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Underlying technology for the current channel.
+     *
+     * @return array Underlying technology for the current channel.
+     */
+    public function chanType()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_TYPE );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Music class to be used for Music on Hold for this channel.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Music class to be used for Music on Hold for this channel.
+     *
+     * @return array Music class to be used for Music on Hold for this channel.
+     */
+    public function chanMusicClass()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_MUSIC_CLASS );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Which channel this channel is currently bridged (in a conversation) with.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Which channel this channel is currently bridged (in a conversation) with.
+     *
+     * @return array Which channel this channel is currently bridged (in a conversation) with.
+     */
+    public function chanBridge()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_BRIDGE );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Channel masquerading for us.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Channel masquerading for us.
+     *
+     * @return array Channel masquerading for us.
+     */
+    public function chanMasq()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_MASQ );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Channel we are masquerading for.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Channel we are masquerading for.
+     *
+     * @return array Channel we are masquerading for.
+     */
+    public function chanMasqr()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_MASQR );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: How long until this channel will be hung up.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > How long until this channel will be hung up.
+     *
+     * @return array How long until this channel will be hung up.
+     */
+    public function chanWhenHangup()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_WHEN_HANGUP );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Current application for the channel.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Current application for the channel.
+     *
+     * @return array Current application for the channel.
+     */
+    public function chanApp()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_APP );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Arguments passed to the current application.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Arguments passed to the current application.
+     *
+     * @return array Arguments passed to the current application.
+     */
+    public function chanData()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_DATA );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Current extension context.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Current extension context.
+     *
+     * @return array Current extension context.
+     */
+    public function chanContext()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_CONTEXT );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Current macro context.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Current macro context.
+     *
+     * @return array Current macro context.
+     */
+    public function chanMacroContext()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_MACRO_CONTEXT );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Current macro extension.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Current macro extension.
+     *
+     * @return array Current macro extension.
+     */
+    public function chanMacroExten()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_MACRO_EXTEN );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Current macro priority.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Current macro priority.
+     *
+     * @return array Current macro priority.
+     */
+    public function chanMacroPri()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_MACRO_PRI );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Current extension.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Current extension.
+     *
+     * @return array Current extension.
+     */
+    public function chanExten()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_EXTEN );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Current priority.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Current priority.
+     *
+     * @return array Current priority.
+     */
+    public function chanPri()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_PRI );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Account Code for billing.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Account Code for billing.
+     *
+     * @return array Account Code for billing.
+     */
+    public function chanAccountCode()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_ACCOUNT_CODE );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Where to forward to if asked to dial on this interface.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Where to forward to if asked to dial on this interface.
+     *
+     * @return array Where to forward to if asked to dial on this interface.
+     */
+    public function chanForwardTo()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_FORWARD_TO );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Unique Channel Identifier.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Unique Channel Identifier.
+     *
+     * @return array Unique Channel Identifier.
+     */
+    public function chanUniqueId()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_UNQIUEID );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Call Group.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Call Group.
+     *
+     * @return array Call Group.
+     */
+    public function chanCallGroup()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_CALL_GROUP );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Pickup Group.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Pickup Group.
+     *
+     * @return array Pickup Group.
+     */
+    public function chanPickupGroup()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_PICKUP_GROUP );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    
+    /**
+     * Possible state of an Asterisk channel as returned by `chanState()`
+     * @var int Possible state of an Asterisk channel as returned by `chanState()`
+     */
+    const CHANNEL_STATE_DOWN = 0;
+    
+    /**
+     * Possible state of an Asterisk channel as returned by `chanState()`
+     * @var int Possible state of an Asterisk channel as returned by `chanState()`
+     */
+    const CHANNEL_STATE_RESERVED = 1;
+    
+        /**
+     * Possible state of an Asterisk channel as returned by `chanState()`
+     * @var int Possible state of an Asterisk channel as returned by `chanState()`
+     */
+    const CHANNEL_STATE_OFF_HOOK = 2;
+    
+    /**
+     * Possible state of an Asterisk channel as returned by `chanState()`
+     * @var int Possible state of an Asterisk channel as returned by `chanState()`
+     */
+    const CHANNEL_STATE_DIALING = 3;
+    
+    /**
+     * Possible state of an Asterisk channel as returned by `chanState()`
+     * @var int Possible state of an Asterisk channel as returned by `chanState()`
+     */
+    const CHANNEL_STATE_RING = 4;
+    
+    /**
+     * Possible state of an Asterisk channel as returned by `chanState()`
+     * @var int Possible state of an Asterisk channel as returned by `chanState()`
+     */
+    const CHANNEL_STATE_RINGING = 5;
+    
+    /**
+     * Possible state of an Asterisk channel as returned by `chanState()`
+     * @var int Possible state of an Asterisk channel as returned by `chanState()`
+     */
+    const CHANNEL_STATE_UP = 6;
+    
+    /**
+     * Possible state of an Asterisk channel as returned by `chanState()`
+     * @var int Possible state of an Asterisk channel as returned by `chanState()`
+     */
+    const CHANNEL_STATE_BUSY = 7;
+    
+    /**
+     * Possible state of an Asterisk channel as returned by `chanState()`
+     * @var int Possible state of an Asterisk channel as returned by `chanState()`
+     */
+    const CHANNEL_STATE_DIALING_OFF_HOOK = 8;
+    
+    /**
+     * Possible state of an Asterisk channel as returned by `chanState()`
+     * @var int Possible state of an Asterisk channel as returned by `chanState()`
+     */
+    const CHANNEL_STATE_PRE_RING = 9;
+    
+    
+    public static $CHANNEL_STATES = [
+        self::CHANNEL_STATE_DOWN             => 'down',
+        self::CHANNEL_STATE_RESERVED         => 'reserved',
+        self::CHANNEL_STATE_OFF_HOOK         => 'offHook',
+        self::CHANNEL_STATE_DIALING          => 'dialing',
+        self::CHANNEL_STATE_RING             => 'ring',
+        self::CHANNEL_STATE_RINGING          => 'ringing',
+        self::CHANNEL_STATE_UP               => 'up',
+        self::CHANNEL_STATE_BUSY             => 'busy',
+        self::CHANNEL_STATE_DIALING_OFF_HOOK => 'dialingOffHook',
+        self::CHANNEL_STATE_PRE_RING         => 'preRing'
+    ];
+    
+    /**
+     * Active Channel Information: Channel state (see channel state constants).
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Channel state (see channel state constants).
+     *
+     * @param bool $translate If true, use the `$CHANNEL_STATES` array to return textual representation
+     * @return array Channel state (see channel state constants).
+     */
+    public function chanState( $translate = false )
+    {
+        try
+        {
+            $s = $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_STATE );
+            
+            if( !$translate )
+                return $s;
+            
+            return $this->getSNMP()->translate( $s, self::$CHANNEL_STATES );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Transmission of voice data has been muted.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Transmission of voice data has been muted.
+     *
+     * @return array Transmission of voice data has been muted.
+     */
+    public function chanMuted()
+    {
+        try
+        {
+            return $this->getSNMP()->ppTruthValue( $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_MUTED ) );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Number of rings so far.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Number of rings so far.
+     *
+     * @return array Number of rings so far.
+     */
+    public function chanRings()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_RINGS );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Dialled Number ID.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Dialled Number ID.
+     *
+     * @return array Dialled Number ID.
+     */
+    public function chanCidDNID()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_CID_DNID );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Caller Number.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Caller Number.
+     *
+     * @return array Caller Number.
+     */
+    public function chanCidNum()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_CID_NUM );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Caller Name.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Caller Name.
+     *
+     * @return array Caller Name.
+     */
+    public function chanCidName()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_CID_NAME );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: ANI
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > ANI
+     *
+     * @return array ANI
+     */
+    public function chanCidANI()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_CID_ANI );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Redirected Dialled Number Service.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Redirected Dialled Number Service.
+     *
+     * @return array Redirected Dialled Number Service.
+     */
+    public function chanCidRDNIS()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_CID_RDNIS );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Number Presentation/Screening.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Number Presentation/Screening.
+     *
+     * @return array Number Presentation/Screening.
+     */
+    public function chanCidPresentation()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_CID_PRESENTATION );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: ANI 2 (info digit).
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > ANI 2 (info digit).
+     *
+     * @return array ANI 2 (info digit).
+     */
+    public function chanCidANI2()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_CID_ANI2 );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Type of Number.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Type of Number.
+     *
+     * @return array Type of Number.
+     */
+    public function chanCidTON()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_CID_TON );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Transit Network Select.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Transit Network Select.
+     *
+     * @return array Transit Network Select.
+     */
+    public function chanCidTNS()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_CID_TNS );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
 
+    
+    
+    /**
+     * Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`
+     * @var int Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`
+     */
+    const CHANNEL_AMA_FLAG_DEFAULT = 0;
+    
+    /**
+     * Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`
+     * @var int Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`
+     */
+    const CHANNEL_AMA_FLAG_OMIT = 1;
+    
+    /**
+     * Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`
+     * @var int Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`
+     */
+    const CHANNEL_AMA_FLAG_BILLING = 2;
+    
+    /**
+     * Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`
+     * @var int Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`
+     */
+    const CHANNEL_AMA_FLAG_DOCUMENTATION = 3;
+    
+    
+    public static $CHANNEL_AMA_FLAGS = [
+        self::CHANNEL_AMA_FLAG_DEFAULT       => 'default',
+        self::CHANNEL_AMA_FLAG_OMIT          => 'omit',
+        self::CHANNEL_AMA_FLAG_BILLING       => 'billing',
+        self::CHANNEL_AMA_FLAG_DOCUMENTATION => 'documentation'
+    ];
+    
+    /**
+     * Active Channel Information: AMA Flags. (See constants)
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > AMA Flags. (See constants)
+     *
+     * @param bool $translate If true, use the `$CHANNEL_AMA_FLAGS` array to return textual representation
+     * @return array AMA Flags. (See constants)
+     */
+    public function chanAMAFlags( $translate = false )
+    {
+        try
+        {
+            $s = $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_AMA_FLAGS );
+            
+            if( !$translate )
+                return $s;
+    
+            return $this->getSNMP()->translate( $s, self::$CHANNEL_AMA_FLAGS );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+
+    
+    /**
+     * Possible ADSI of an Asterisk channel as returned by `chanADSI()`
+     * @var int Possible ADSI of an Asterisk channel as returned by `chanADSI()`
+     */
+    const CHANNEL_ADSI_UNKNOWN = 0;
+    
+    /**
+     * Possible ADSI of an Asterisk channel as returned by `chanADSI()`
+     * @var int Possible ADSI of an Asterisk channel as returned by `chanADSI()`
+     */
+    const CHANNEL_ADSI_AVAILABLE = 1;
+    
+    /**
+     * Possible ADSI of an Asterisk channel as returned by `chanADSI()`
+     * @var int Possible ADSI of an Asterisk channel as returned by `chanADSI()`
+     */
+    const CHANNEL_ADSI_UNAVAILABLE = 2;
+    
+    /**
+     * Possible ADSI of an Asterisk channel as returned by `chanADSI()`
+     * @var int Possible ADSI of an Asterisk channel as returned by `chanADSI()`
+     */
+    const CHANNEL_ADSI_OFF_HOOK_ONLY = 3;
+    
+    
+    public static $CHANNEL_ADSIs = [
+        self::CHANNEL_ADSI_UNKNOWN       => 'unknown',
+        self::CHANNEL_ADSI_AVAILABLE     => 'available',
+        self::CHANNEL_ADSI_UNAVAILABLE   => 'unavailable',
+        self::CHANNEL_ADSI_OFF_HOOK_ONLY => 'offHookOnly'
+    ];
+    
+    
+    
+    /**
+     * Active Channel Information: Whether or not ADSI is detected on CPE. (see constants)
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Whether or not ADSI is detected on CPE. (see constants)
+     *
+     * @param bool $translate If true, use the `$CHANNEL_ADSIs` array to return textual representation
+     * @return array Whether or not ADSI is detected on CPE. (see constants)
+     */
+    public function chanADSI()
+    {
+        try
+        {
+            $s = $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_ADSI );
+            
+            if( !$translate )
+                return $s;
+    
+            return $this->getSNMP()->translate( $s, self::$CHANNEL_ADSIs );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Indication zone to use for channel.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Indication zone to use for channel.
+     *
+     * @return array Indication zone to use for channel.
+     */
+    public function chanToneZone()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_TONE_ZONE );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Why is the channel hung up. (see constants)
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Why is the channel hung up. (see constants)
+     *
+     * @return array Why is the channel hung up. (see constants)
+     */
+    public function chanHangupCause()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_HANGUP_CAUSE );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Channel Variables defined for this channel.
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Channel Variables defined for this channel.
+     *
+     * @return array Channel Variables defined for this channel.
+     */
+    public function chanVariables()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_VARIABLES );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Flags set on this channel. (see constants)
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Flags set on this channel. (see constants)
+     *
+     * @return array Flags set on this channel. (see constants)
+     */
+    public function chanFlags()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_FLAGS );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
+    
+    /**
+     * Active Channel Information: Transfer Capabilities for this channel. (see constants)
+     *
+     * NB: SNMP exceptions are caught and in such cases null is returned
+     * as not all channels have all properties.
+     *
+     * > Transfer Capabilities for this channel. (see constants)
+     *
+     * @return array Transfer Capabilities for this channel. (see constants)
+     */
+    public function chanTransferCap()
+    {
+        try
+        {
+            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_TRANSFER_CAP );
+        }
+        catch( \OSS_SNMP\Exception $e )
+        {
+            return null;
+        }
+    }
 }
