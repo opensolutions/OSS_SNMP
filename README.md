@@ -75,8 +75,8 @@ But it's **really easy** to add your own. And **please** send me a pull request 
 For the MIBs I've written, only `Iface` (`MIBS/Iface.php`) is fully complete and I
 just completed it as an exercise to help future contributors. But there's some *really* useful
 functionality in the others. For example the Cisco/CDP MIB can discover your entire L2 network
-topology recursively. Another project I'll release soon will give concreate examples of this
-with GraphViz.
+topology recursively. Another project we've released, [NOCtools](https://github.com/opensolutions/NOCtools/wiki), 
+give concreate examples of this with GraphViz.
 
 PHP 5.4 is a requirement. Yeah, I know. Not even the current Ubuntu ships this. But
 look, 5.4 is released, it's stable, it's available on FreeBSD and
