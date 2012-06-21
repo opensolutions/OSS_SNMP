@@ -2182,7 +2182,7 @@ they are a member of (else 0 if not a LAG port)]]></description>
       </method>
     </class>
   </file>
-  <file path="MIBS/Asterisk/Channels.php" hash="6b8c0555a5bfd071516b59faf8d3f80d" package="Default">
+  <file path="MIBS/Asterisk/Channels.php" hash="c16c9aed9f46958b019afad6b7c237f0" package="Default">
     <class final="false" abstract="false" namespace="OSS_SNMP\MIBS\Asterisk" line="45" package="Default">
       <name>Channels</name>
       <full_name>\OSS_SNMP\MIBS\Asterisk\Channels</full_name>
@@ -3491,6 +3491,61 @@ as not all channels have all properties.</p>
         </docblock>
         <argument line="1464">
           <name>$translate</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS_SNMP\MIBS\Asterisk" line="1517" package="Default">
+        <name>channelDetails</name>
+        <full_name>channelDetails</full_name>
+        <docblock line="1517">
+          <description><![CDATA[Utility function to gather together all the details of individual channels into an array.]]></description>
+          <long-description><![CDATA[<p>Essentially, this function calls all <code>chanXXX()</code> functions to return the details for
+individual channels gathered together. E.g.</p>
+
+<pre><code>Array
+(
+    ....
+    [SIP/foobar-654-00000372] =&gt; Array
+    (
+        [chanName] =&gt; SIP/foobar-654-00000372
+        [chanLanguage] =&gt; en
+        [chanType] =&gt; SIP
+        [chanMusicClass] =&gt; (null)
+        ...
+        [chanVariables] =&gt; Array
+        (
+            [DIALEDPEERNUMBER] =&gt; foobar-654
+            [SIPCALLID] =&gt; 1be189fa6281ffc1108db32935f05016@192.168.7.7:5060
+        )
+        [chanFlags] =&gt; 1020
+        [chanTransferCap] =&gt; speech
+    )
+    ....
+)
+</code></pre>
+
+<p>The function returns an array of all channels. Unknown parameters within the channel are
+set to null.</p>
+
+<p>An empty array is returned if there are no active channels.</p>]]></long-description>
+          <tag line="1517" name="param" description="Translate parameters when possible" type="bool" variable="$translate">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="1517" name="param" description="Rather than indexing the outer array with the unique channel name, index with the SNMP table position" type="bool" variable="$useIndexes">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="1517" name="return" description="All the details of individual channels into an array." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="1517">
+          <name>$translate</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+        <argument line="1517">
+          <name>$useIndexes</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>

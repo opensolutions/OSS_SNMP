@@ -100,6 +100,7 @@
 <li class="method public "><a href="#chanUniqueId" title="chanUniqueId :: Active Channel Information: Unique Channel Identifier."><span class="description">Active Channel Information: Unique Channel Identifier.</span><pre>chanUniqueId()</pre></a></li>
 <li class="method public "><a href="#chanVariables" title="chanVariables :: Active Channel Information: Channel Variables defined for this channel."><span class="description">Active Channel Information: Channel Variables defined for this channel.</span><pre>chanVariables()</pre></a></li>
 <li class="method public "><a href="#chanWhenHangup" title="chanWhenHangup :: Active Channel Information: How long until this channel will be hung up."><span class="description">Active Channel Information: How long until this channel will be hung up.</span><pre>chanWhenHangup()</pre></a></li>
+<li class="method public "><a href="#channelDetails" title="channelDetails :: Utility function to gather together all the details of individual channels into an array."><span class="description">Utility function to gather together all the details of individual channels into an array.</span><pre>channelDetails()</pre></a></li>
 <li class="method public "><a href="#descriptions" title="descriptions :: Array of supported channel type descriptions"><span class="description">Array of supported channel type descriptions</span><pre>descriptions()</pre></a></li>
 <li class="method public "><a href="#details" title="details :: Utility function to gather channel details together in an associative array."><span class="description">Utility function to gather channel details together in an associative array.</span><pre>details()</pre></a></li>
 <li class="method public "><a href="#deviceStates" title="deviceStates :: Array of supported channel type device state capability"><span class="description">Array of supported channel type device state capability</span><pre>deviceStates()</pre></a></li>
@@ -959,6 +960,52 @@ as not all channels have all properties.</p>
 <code>array</code>How long until this channel will be hung up.</div>
 </div></div>
 </div>
+<a name="channelDetails" id="channelDetails"></a><div class="element clickable method public channelDetails" data-toggle="collapse" data-target=".channelDetails .collapse">
+<h2>Utility function to gather together all the details of individual channels into an array.</h2>
+<pre>channelDetails(bool $translate, bool $useIndexes) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>Essentially, this function calls all <code>chanXXX()</code> functions to return the details for
+individual channels gathered together. E.g.</p>
+
+<pre><code>Array
+(
+    ....
+    [SIP/foobar-654-00000372] =&gt; Array
+    (
+        [chanName] =&gt; SIP/foobar-654-00000372
+        [chanLanguage] =&gt; en
+        [chanType] =&gt; SIP
+        [chanMusicClass] =&gt; (null)
+        ...
+        [chanVariables] =&gt; Array
+        (
+            [DIALEDPEERNUMBER] =&gt; foobar-654
+            [SIPCALLID] =&gt; 1be189fa6281ffc1108db32935f05016@192.168.7.7:5060
+        )
+        [chanFlags] =&gt; 1020
+        [chanTransferCap] =&gt; speech
+    )
+    ....
+)
+</code></pre>
+
+<p>The function returns an array of all channels. Unknown parameters within the channel are
+set to null.</p>
+
+<p>An empty array is returned if there are no active channels.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>bool</code><p>Translate parameters when possible</p></div>
+<div class="subelement argument">
+<h4>$useIndexes</h4>
+<code>bool</code><p>Rather than indexing the outer array with the unique channel name, index with the SNMP table position</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>All the details of individual channels into an array.</div>
+</div></div>
+</div>
 <a name="descriptions" id="descriptions"></a><div class="element clickable method public descriptions" data-toggle="collapse" data-target=".descriptions .collapse">
 <h2>Array of supported channel type descriptions</h2>
 <pre>descriptions() : array</pre>
@@ -1616,7 +1663,7 @@ OID_ASTERISK_CHANNEL_VARIABLES into an array of key / value pairs</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
-            generated on 2012-06-21T08:26:28+01:00.<br></footer></div>
+            generated on 2012-06-21T08:52:29+01:00.<br></footer></div>
 </div>
 </body>
 </html>
