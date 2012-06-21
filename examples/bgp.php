@@ -73,24 +73,14 @@ echo "BGP version running on {$argv[1]}: " . $host->useBGP()->version() . "\n";
 
 echo "BGP - local ASN: " . $host->useBGP()->localASN() . "\n";
 
-echo "BGP - peer identifiers: \n\n";
+echo "BGP - identifier: " . $host->useBGP()->identifier() . "\n";
 
-print_r( $host->useBGP()->peerIdentifiers() );
+#echo "BGP - peers: \n\n";
 
-echo "\n\n";
-
-echo "BGP - peer states: \n\n";
-
-print_r( $host->useBGP()->peerConnectionStates(1) );
+#print_r( $host->useBGP()->peerDetails(1) );
 
 echo "\n\n";
 
-
-echo "BGP - peer states: \n\n";
-
-print_r( $host->useBGP()->peerAdminStates(1) );
-
-echo "\n\n";
 
 
 exit( 0 );

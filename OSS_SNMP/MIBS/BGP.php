@@ -71,8 +71,26 @@ class BGP extends \OSS_SNMP\MIB
     const OID_BGP_PEER_HOLD_TIME_CONFIGURED             = '.1.3.6.1.2.1.15.3.1.20';
     const OID_BGP_PEER_KEEP_ALIVE_CONFIGURED            = '.1.3.6.1.2.1.15.3.1.21';
     const OID_BGP_PEER_MIN_AS_ORIGINATION_INTERVAL      = '.1.3.6.1.2.1.15.3.1.22';
-    const OID_BGP_PEER_MIN_ROUTE_ADVERTISEMENT_INTERVAL = '.1.3.6.1.2.1.15.3.1.24';
+    const OID_BGP_PEER_MIN_ROUTE_ADVERTISEMENT_INTERVAL = '.1.3.6.1.2.1.15.3.1.23';
     const OID_BGP_PEER_IN_UPDATE_ELAPSED_TIME           = '.1.3.6.1.2.1.15.3.1.24';
+
+    const OID_BGP_IDENTIFIER           = '.1.3.6.1.2.1.15.4.0';
+
+    const OID_BGP_PATH_ATTR_PEER                         = '.1.3.6.1.2.1.15.6.1.1';
+    const OID_BGP_PATH_ATTR_ADDR_PREFIX_LENGTH           = '.1.3.6.1.2.1.15.6.1.2';
+    const OID_BGP_PATH_ATTR_ADDR_PREFIX                  = '.1.3.6.1.2.1.15.6.1.3';
+    const OID_BGP_PATH_ATTR_ORIGIN                       = '.1.3.6.1.2.1.15.6.1.4';
+    const OID_BGP_PATH_ATTR_AS_PATH_SEGMENT              = '.1.3.6.1.2.1.15.6.1.5';
+    const OID_BGP_PATH_ATTR_NEXT_HOP                     = '.1.3.6.1.2.1.15.6.1.6';
+    const OID_BGP_PATH_ATTR_MED                          = '.1.3.6.1.2.1.15.6.1.7';
+    const OID_BGP_PATH_ATTR_LOCAL_PREF                   = '.1.3.6.1.2.1.15.6.1.8';
+    const OID_BGP_PATH_ATTR_ATOMIC_AGGREGATE             = '.1.3.6.1.2.1.15.6.1.9';
+    const OID_BGP_PATH_ATTR_AGGREGATOR_AS                = '.1.3.6.1.2.1.15.6.1.10';
+    const OID_BGP_PATH_ATTR_AGGREGATOR_ADDR              = '.1.3.6.1.2.1.15.6.1.11';
+    const OID_BGP_PATH_ATTR_CALC_LOCAL_PREF              = '.1.3.6.1.2.1.15.6.1.12';
+    const OID_BGP_PATH_ATTR_BEST                         = '.1.3.6.1.2.1.15.6.1.13';
+    const OID_BGP_PATH_ATTR_UNKNOWN                      = '.1.3.6.1.2.1.15.6.1.14';
+
 
     /**
      * Returns the BGP version
@@ -402,6 +420,19 @@ class BGP extends \OSS_SNMP\MIB
     }
 
     /**
+     * Returns Time interval in seconds for the ConnectRetry timer.
+     *
+     * > "Time interval in seconds for the ConnectRetry timer. The suggested value
+     * > for this timer is 120 seconds."
+     *
+     * @return array Time interval in seconds for the ConnectRetry timer.
+     */
+    public function peerConnectRetryIntervals()
+    {
+        return $this->getSNMP()->walkIPv4( self::OID_BGP_PEER_CONNECT_RETRY_INTERVAL );
+    }
+
+    /**
      * Returns Time interval in seconds for the Hold Timer established with the peer.
      *
      * > "Time interval in seconds for the Hold Timer established with the peer. The
@@ -512,4 +543,107 @@ class BGP extends \OSS_SNMP\MIB
         return $this->getSNMP()->walkIPv4( self::OID_BGP_PEER_IN_UPDATE_ELAPSED_TIME );
     }
 
+
+    /**
+     * Utility function to gather all peer information into a single array.
+     *
+     * For example, this would return something like:
+     *
+     *     Array
+     *     (
+     *         ....
+     *         [192.0.2.126] => Array
+     *         (
+     *             [identity] => 192.0.2.45
+     *             [connectionState] => established
+     *             [adminState] => start
+     *             [negotiatedVersion] => 4
+     *             [localAddress] => 193.242.111.74
+     *             [localPort] => 26789
+     *             [remoteAddress] => 192.0.2.126
+     *             [remotePort] => 179
+     *             [remoteASN] => 65505
+     *             [inUpdates] => 4
+     *             [outUpdates] => 2
+     *             [inTotalMessages] => 180988
+     *             [outTotalMessages] => 181012
+     *             [lastError] => 0000
+     *             [establishedTransitions] => 1
+     *             [establishedTime] => 9867469
+     *             [connectRetryInterval] => 60
+     *             [holdTime] => 180
+     *             [keepAlive] => 60
+     *             [holdTimeConfigured] => 180
+     *             [keepAliveConfigured] => 60
+     *             [minASOriginationInterval] => 30
+     *             [minRouteAdvertisementInterval] => 30
+     *             [inUpdateElapsedTime] => 0
+     *         )
+     *         ....
+     *     )
+     *
+     * @param bool $translate Where a called function supports translation, if true then translate
+     * @return array Array of peer details - see example above.
+     */
+    public function peerDetails( $translate = false )
+    {
+        $fetchList = [
+            'peerIdentifiers' => 'identity',
+            'peerConnectionStates' => 'connectionState',
+            'peerAdminStates' => 'adminState',
+            'peerNegotiatedVersions' => 'negotiatedVersion',
+            'peerLocalAddresses' => 'localAddress',
+            'peerLocalPorts' => 'localPort',
+            'peerRemoteAddresses' => 'remoteAddress',
+            'peerRemotePorts' => 'remotePort',
+            'peerRemoteASNs' => 'remoteASN',
+            'peerInUpdates' => 'inUpdates',
+            'peerOutUpdates' => 'outUpdates',
+            'peerInTotalMessages' => 'inTotalMessages',
+            'peerOutTotalMessages' => 'outTotalMessages',
+            'peerLastErrors' => 'lastError',
+            'peerEstabledTransitions' => 'establishedTransitions',
+            'peerEstablishedTimes' => 'establishedTime',
+            'peerConnectRetryIntervals' => 'connectRetryInterval',
+            'peerHoldTimes' => 'holdTime',
+            'peerKeepAlives' => 'keepAlive',
+            'peerHoleTimesConfigured' => 'holdTimeConfigured',
+            'peerKeepAlivesConfigured' => 'keepAliveConfigured',
+            'peerMinASOriginationIntervals' => 'minASOriginationInterval',
+            'peerMinRouteAdvertisementIntervals' => 'minRouteAdvertisementInterval',
+            'peerInUpdateElapsedTimes' => 'inUpdateElapsedTime'
+        ];
+
+        $canTranslate = [ 'peerConnectionStates', 'peerAdminStates' ];
+
+        $details = [];
+
+        foreach( $fetchList as $fn => $idx )
+        {
+            if( in_array( $fn, $canTranslate ) )
+                $values = $this->$fn( $translate );
+            else
+                $values = $this->$fn();
+
+            foreach( $values as $ip => $value )
+                $details[ $ip ][ $idx ] = $value;
+        }
+
+        return $details;
+    }
+
+
+
+
+    /**
+     * Returns the local BGP identifier
+     *
+     * > "The BGP Identifier of local system."
+     *
+     * @return string The BGP Identifier of local system.
+     */
+    public function identifier()
+    {
+        return $this->getSNMP()->get( self::OID_BGP_IDENTIFIER );
+    }
 }
