@@ -35,7 +35,7 @@
 
 namespace OSS_SNMP;
 
-
+// Add a trivial auto-loader
 spl_autoload_register( function( $class ) {
     if( substr( $class, 0, 9 ) == 'OSS_SNMP\\' )
     {
@@ -53,7 +53,11 @@ spl_autoload_register( function( $class ) {
  */
 class SNMP
 {
-    /** @type string The SNMP community to use when polling SNMP services. Defaults to 'public' by the constructor. */
+    /**
+     * The SNMP community to use when polling SNMP services. Defaults to 'public' by the constructor.
+     *
+     * @var string The SNMP community to use when polling SNMP services. Defaults to 'public' by the constructor.
+     */
     protected $_community;
 
     /**
@@ -99,26 +103,34 @@ class SNMP
      * $snmp->enableCache();
      */
     protected $_disableCache = false;
-    /*
+    
+    /**
      * SNMP output constants to mirror those of PHP
+     * @var SNMP output constants to mirror those of PHP
      */
     const OID_OUTPUT_FULL    = SNMP_OID_OUTPUT_FULL;
+    
+    /**
+     * SNMP output constants to mirror those of PHP
+     * @var SNMP output constants to mirror those of PHP
+     */
     const OID_OUTPUT_NUMERIC = SNMP_OID_OUTPUT_NUMERIC;
 
 
     /**
      * Definition of an SNMP return type 'TruthValue'
+     * @var Definition of an SNMP return type 'TruthValue'
      */
     const SNMP_TRUTHVALUE_TRUE  = 1;
 
     /**
      * Definition of an SNMP return type 'TruthValue'
+     * @var Definition of an SNMP return type 'TruthValue'
      */
     const SNMP_TRUTHVALUE_FALSE = 2;
 
     /**
      * PHP equivalents of SNMP return type TruthValue
-     *
      * @var array PHP equivalents of SNMP return type TruthValue
      */
     public static $SNMP_TRUTHVALUES = array(
