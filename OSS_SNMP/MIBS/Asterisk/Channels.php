@@ -1187,7 +1187,7 @@ class Channels extends \OSS_SNMP\MIB
      * @param bool $translate If true, use the `$CHANNEL_ADSIs` array to return textual representation
      * @return array Whether or not ADSI is detected on CPE. (see constants)
      */
-    public function chanADSI()
+    public function chanADSI( $translate = false )
     {
         try
         {
@@ -1226,6 +1226,69 @@ class Channels extends \OSS_SNMP\MIB
         }
     }
     
+    
+    
+    /**
+     * Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     * @var int Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     */
+    const CHANNEL_HANGUP_CAUSE_NOT_DEFINED = 0;
+    
+    /**
+     * Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     * @var int Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     */
+    const CHANNEL_HANGUP_CAUSE_UNREGISTERED = 3;
+    
+    /**
+     * Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     * @var int Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     */
+    const CHANNEL_HANGUP_CAUSE_NORMAL = 16;
+    
+    /**
+     * Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     * @var int Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     */
+    const CHANNEL_HANGUP_CAUSE_BUSY = 17;
+    
+    /**
+     * Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     * @var int Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     */
+    const CHANNEL_HANGUP_CAUSE_NO_ANSWER = 19;
+    
+    /**
+     * Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     * @var int Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     */
+    const CHANNEL_HANGUP_CAUSE_CONGESTION = 34;
+    
+    /**
+     * Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     * @var int Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     */
+    const CHANNEL_HANGUP_CAUSE_FAILURE = 38;
+    
+    /**
+     * Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     * @var int Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`
+     */
+    const CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER = 66;
+    
+    
+    public static $CHANNEL_HANGUP_CAUSES = [
+        self::CHANNEL_HANGUP_CAUSE_NOT_DEFINED    => 'notDefined',
+        self::CHANNEL_HANGUP_CAUSE_UNREGISTERED   => 'unregistered',
+        self::CHANNEL_HANGUP_CAUSE_NORMAL         => 'normal',
+        self::CHANNEL_HANGUP_CAUSE_BUSY           => 'busy',
+        self::CHANNEL_HANGUP_CAUSE_NO_ANSWER      => 'noAnswer',
+        self::CHANNEL_HANGUP_CAUSE_CONGESTION     => 'congestion',
+        self::CHANNEL_HANGUP_CAUSE_FAILURE        => 'failure',
+        self::CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER => 'noSuchDriver'
+    ];
+    
+    
     /**
      * Active Channel Information: Why is the channel hung up. (see constants)
      *
@@ -1234,13 +1297,19 @@ class Channels extends \OSS_SNMP\MIB
      *
      * > Why is the channel hung up. (see constants)
      *
+     * @param bool $translate If true, use the `$CHANNEL_HANGUP_CAUSES` array to return textual representation
      * @return array Why is the channel hung up. (see constants)
      */
-    public function chanHangupCause()
+    public function chanHangupCause( $translate = false )
     {
         try
         {
-            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_HANGUP_CAUSE );
+            $s = $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_HANGUP_CAUSE );
+            
+            if( !$translate )
+                return $s;
+    
+            return $this->getSNMP()->translate( $s, self::$CHANNEL_HANGUP_CAUSES );
         }
         catch( \OSS_SNMP\Exception $e )
         {
@@ -1250,6 +1319,9 @@ class Channels extends \OSS_SNMP\MIB
     
     /**
      * Active Channel Information: Channel Variables defined for this channel.
+     *
+     * Returns an array of arrays where the inner array is key/value pairs
+     * of channel variables for that channel: `[varName] => [varValue]`
      *
      * NB: SNMP exceptions are caught and in such cases null is returned
      * as not all channels have all properties.
@@ -1262,16 +1334,53 @@ class Channels extends \OSS_SNMP\MIB
     {
         try
         {
-            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_VARIABLES );
+            $vars = $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_VARIABLES );
         }
         catch( \OSS_SNMP\Exception $e )
         {
             return null;
         }
+        
+        foreach( $vars as $idx => $var )
+            $vars[ $idx ] = $this->_chanVarsToArray( $var );
+        
+        return $vars;
     }
     
     /**
-     * Active Channel Information: Flags set on this channel. (see constants)
+     * Utility function for `chanVariables()` to break the string returned by
+     * OID_ASTERISK_CHANNEL_VARIABLES into an array of key / value pairs
+     *
+     * @param string $str String containing channel variables (from `chanVariables()`
+     * @return Array An array of `[varName] => [varValue]` pairs for the channel
+     */
+    protected function _chanVarsToArray( $str )
+    {
+        $arr = [];
+        foreach( explode( "\n", $str ) as $s )
+        {
+            $arr[ substr( $s, 0, strpos( $s, '=' ) ) ] = substr( $s, strpos( $s, '=' ) + 1 );
+        }
+        return $arr;
+    }
+    
+    /**
+     * Active Channel Information: Flags set on this channel.
+     *
+     * Returns a HEX number - but I could not map it to the following from Asterisk docs:
+     *
+     * > BITS {
+     * >    wantsJitter(0),
+     * >    deferDTMF(1),
+     * >    writeInterrupt(2),
+     * >    blocking(3),
+     * >    zombie(4),
+     * >    exception(5),
+     * >    musicOnHold(6),
+     * >    spying(7),
+     * >    nativeBridge(8),
+     * >    autoIncrementingLoop(9)
+     * > }
      *
      * NB: SNMP exceptions are caught and in such cases null is returned
      * as not all channels have all properties.
@@ -1291,6 +1400,55 @@ class Channels extends \OSS_SNMP\MIB
             return null;
         }
     }
+
+    
+    
+    
+    /**
+     * Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`
+     * @var int Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`
+     */
+    const CHANNEL_TRANSFER_CAPABILITY_SPEECH = 0;
+    
+    /**
+     * Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`
+     * @var int Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`
+     */
+    const CHANNEL_TRANSFER_CAPABILITY_DIGITAL = 8;
+    
+    /**
+     * Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`
+     * @var int Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`
+     */
+    const CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL = 9;
+    
+    /**
+     * Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`
+     * @var int Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`
+     */
+    const CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K = 16;
+    
+    /**
+     * Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`
+     * @var int Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`
+     */
+    const CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES = 17;
+    
+    /**
+     * Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`
+     * @var int Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`
+     */
+    const CHANNEL_TRANSFER_CAPABILITY_VIDEO = 24;
+    
+    
+    public static $CHANNEL_TRANSFER_CAPABILITIES = [
+        self::CHANNEL_TRANSFER_CAPABILITY_SPEECH                => 'speech',
+        self::CHANNEL_TRANSFER_CAPABILITY_DIGITAL               => 'digital',
+        self::CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL    => 'restrictedDigital',
+        self::CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K              => 'audio3k',
+        self::CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES    => 'digitalWithTones',
+        self::CHANNEL_TRANSFER_CAPABILITY_VIDEO                 => 'video'
+    ];
     
     /**
      * Active Channel Information: Transfer Capabilities for this channel. (see constants)
@@ -1300,13 +1458,19 @@ class Channels extends \OSS_SNMP\MIB
      *
      * > Transfer Capabilities for this channel. (see constants)
      *
+     * @param bool $translate If true, use the `$CHANNEL_TRANSFER_CAPABILITIES` array to return textual representation
      * @return array Transfer Capabilities for this channel. (see constants)
      */
-    public function chanTransferCap()
+    public function chanTransferCap( $translate = false )
     {
         try
         {
-            return $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_TRANSFER_CAP );
+            $s = $this->getSNMP()->walk1d( self::OID_ASTERISK_CHANNEL_TRANSFER_CAP );
+            
+            if( !$translate )
+                return $s;
+    
+            return $this->getSNMP()->translate( $s, self::$CHANNEL_TRANSFER_CAPABILITIES );
         }
         catch( \OSS_SNMP\Exception $e )
         {

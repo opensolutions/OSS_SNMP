@@ -199,19 +199,19 @@ print_r( $host->useAsterisk_Channels()->chanCidTON() );
 echo "\n\n\nchanCidTNS\n";
 print_r( $host->useAsterisk_Channels()->chanCidTNS() );
 echo "\n\n\nchanAMAFlags\n";
-print_r( $host->useAsterisk_Channels()->chanAMAFlags() );
+print_r( $host->useAsterisk_Channels()->chanAMAFlags(1) );
 echo "\n\n\nchanADSI\n";
-print_r( $host->useAsterisk_Channels()->chanADSI() );
+print_r( $host->useAsterisk_Channels()->chanADSI(1) );
 echo "\n\n\nchanToneZone\n";
 print_r( $host->useAsterisk_Channels()->chanToneZone() );
 echo "\n\n\nchanHangupCause\n";
-print_r( $host->useAsterisk_Channels()->chanHangupCause() );
+print_r( $host->useAsterisk_Channels()->chanHangupCause(1) );
 echo "\n\n\nchanVariables\n";
 print_r( $host->useAsterisk_Channels()->chanVariables() );
 echo "\n\n\nchanFlags\n";
 print_r( $host->useAsterisk_Channels()->chanFlags() );
 echo "\n\n\nchanTransferCap\n";
-print_r( $host->useAsterisk_Channels()->chanTransferCap() );
+print_r( $host->useAsterisk_Channels()->chanTransferCap(1) );
 
 echo "\n\n";
 
