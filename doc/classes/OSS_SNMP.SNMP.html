@@ -31,7 +31,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">37</span></a></li>
+                <span class="label label-info">39</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -83,6 +83,7 @@
 <li class="method public "><a href="#translate" title="translate :: Utility function to translate one value(s) to another via an associated array"><span class="description">Utility function to translate one value(s) to another via an associated array</span><pre>translate()</pre></a></li>
 <li class="method public "><a href="#useExtension" title="useExtension :: This is the MIB Extension magic"><span class="description">This is the MIB Extension magic</span><pre>useExtension()</pre></a></li>
 <li class="method public "><a href="#walk1d" title="walk1d :: Get indexed SNMP values (first degree)"><span class="description">Get indexed SNMP values (first degree)</span><pre>walk1d()</pre></a></li>
+<li class="method public "><a href="#walkIPv4" title="walkIPv4 :: Get indexed SNMP values where they are indexed by IPv4 addresses"><span class="description">Get indexed SNMP values where they are indexed by IPv4 addresses</span><pre>walkIPv4()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
 <li class="property public "><a href="#%24SNMP_TRUTHVALUES" title="$SNMP_TRUTHVALUES :: "><span class="description">$SNMP_TRUTHVALUES</span><pre>$SNMP_TRUTHVALUES</pre></a></li>
@@ -561,6 +562,38 @@ instance and then call fn().</p>
 <code>array</code>The resultant values</div>
 </div></div>
 </div>
+<a name="walkIPv4" id="walkIPv4"></a><div class="element clickable method public walkIPv4" data-toggle="collapse" data-target=".walkIPv4 .collapse">
+<h2>Get indexed SNMP values where they are indexed by IPv4 addresses</h2>
+<pre>walkIPv4(string $oid) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>I.e. the following query with sample results:</p>
+
+<p>subOidWalk( '.1.3.6.1.2.1.15.3.1.1. )</p>
+
+<pre><code>  .1.3.6.1.2.1.15.3.1.1.10.20.30.4 = IpAddress: 192.168.10.10
+  ...
+</code></pre>
+
+<p>would yield an array:</p>
+
+<pre><code> [10.20.30.4] =&gt; "192.168.10.10"
+ ....
+</code></pre></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$oid</h4>
+<code>string</code><p>The OID to walk</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/OSS_SNMP.Exception.html">\OSS_SNMP\Exception</a></code></th>
+<td>On *any* SNMP error, warnings are supressed and a generic exception is thrown</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The resultant values</div>
+</div></div>
+</div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a name="%24SNMP_TRUTHVALUES" id="$SNMP_TRUTHVALUES"> </a><div class="element clickable property public $SNMP_TRUTHVALUES" data-toggle="collapse" data-target=".$SNMP_TRUTHVALUES .collapse">
@@ -644,7 +677,7 @@ instance and then call fn().</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
-            generated on 2012-06-21T08:52:29+01:00.<br></footer></div>
+            generated on 2012-06-21T20:05:18+01:00.<br></footer></div>
 </div>
 </body>
 </html>

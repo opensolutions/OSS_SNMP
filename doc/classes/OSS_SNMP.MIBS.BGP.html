@@ -1,0 +1,955 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>OSS_SNMP » \OSS_SNMP\MIBS\BGP</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">OSS_SNMP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/OSS_SNMP.html"><i class="icon-th"></i> OSS_SNMP</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">39</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">1</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#identifier" title="identifier :: Returns the local BGP identifier"><span class="description">Returns the local BGP identifier</span><pre>identifier()</pre></a></li>
+<li class="method public "><a href="#localASN" title="localASN :: Returns the local BGP AS number"><span class="description">Returns the local BGP AS number</span><pre>localASN()</pre></a></li>
+<li class="method public "><a href="#peerAdminStates" title="peerAdminStates :: Returns the BGP peer admin states (see `self::$BGP_PEER_ADMIN_STATES`)"><span class="description">Returns the BGP peer admin states (see `self::$BGP_PEER_ADMIN_STATES`)</span><pre>peerAdminStates()</pre></a></li>
+<li class="method public "><a href="#peerConnectRetryIntervals" title="peerConnectRetryIntervals :: Returns Time interval in seconds for the ConnectRetry timer."><span class="description">Returns Time interval in seconds for the ConnectRetry timer.</span><pre>peerConnectRetryIntervals()</pre></a></li>
+<li class="method public "><a href="#peerConnectionStates" title="peerConnectionStates :: Returns the BGP peer connection state (see `self::$BGP_PEER_CONNECTION_STATES`)"><span class="description">Returns the BGP peer connection state (see `self::$BGP_PEER_CONNECTION_STATES`)</span><pre>peerConnectionStates()</pre></a></li>
+<li class="method public "><a href="#peerDetails" title="peerDetails :: Utility function to gather all peer information into a single array."><span class="description">Utility function to gather all peer information into a single array.</span><pre>peerDetails()</pre></a></li>
+<li class="method public "><a href="#peerEstabledTransitions" title="peerEstabledTransitions :: Returns The total number of times the BGP FSM transitioned into the established state."><span class="description">Returns The total number of times the BGP FSM transitioned into the established state.</span><pre>peerEstabledTransitions()</pre></a></li>
+<li class="method public "><a href="#peerEstablishedTimes" title="peerEstablishedTimes :: Returns how long (in seconds) this peer has been in the Established state or
+how long since this peer was last in the Established state"><span class="description">Returns how long (in seconds) this peer has been in the Established state or
+how long since this peer was last in the Established state</span><pre>peerEstablishedTimes()</pre></a></li>
+<li class="method public "><a href="#peerHoldTimes" title="peerHoldTimes :: Returns Time interval in seconds for the Hold Timer established with the peer."><span class="description">Returns Time interval in seconds for the Hold Timer established with the peer.</span><pre>peerHoldTimes()</pre></a></li>
+<li class="method public "><a href="#peerHoleTimesConfigured" title="peerHoleTimesConfigured :: Returns Time interval in seconds for the Hold Time configured for this BGP speaker with this peer."><span class="description">Returns Time interval in seconds for the Hold Time configured for this BGP speaker with this peer.</span><pre>peerHoleTimesConfigured()</pre></a></li>
+<li class="method public "><a href="#peerIdentifiers" title="peerIdentifiers :: Returns the BGP identifier of all peers indexed by neighbour IPv4 address"><span class="description">Returns the BGP identifier of all peers indexed by neighbour IPv4 address</span><pre>peerIdentifiers()</pre></a></li>
+<li class="method public "><a href="#peerInTotalMessages" title="peerInTotalMessages :: Returns The total number of messages received from the remote peer on this connection."><span class="description">Returns The total number of messages received from the remote peer on this connection.</span><pre>peerInTotalMessages()</pre></a></li>
+<li class="method public "><a href="#peerInUpdateElapsedTimes" title="peerInUpdateElapsedTimes :: Returns Elapsed time in seconds since the last BGP UPDATE message was received from the peer."><span class="description">Returns Elapsed time in seconds since the last BGP UPDATE message was received from the peer.</span><pre>peerInUpdateElapsedTimes()</pre></a></li>
+<li class="method public "><a href="#peerInUpdates" title="peerInUpdates :: Returns The number of BGP UPDATE messages received on this connection."><span class="description">Returns The number of BGP UPDATE messages received on this connection.</span><pre>peerInUpdates()</pre></a></li>
+<li class="method public "><a href="#peerKeepAlives" title="peerKeepAlives :: Returns Time interval in seconds for the KeepAlive timer established with the peer."><span class="description">Returns Time interval in seconds for the KeepAlive timer established with the peer.</span><pre>peerKeepAlives()</pre></a></li>
+<li class="method public "><a href="#peerKeepAlivesConfigured" title="peerKeepAlivesConfigured :: Returns Time interval in seconds for the KeepAlive timer configured for this BGP speaker with this peer."><span class="description">Returns Time interval in seconds for the KeepAlive timer configured for this BGP speaker with this peer.</span><pre>peerKeepAlivesConfigured()</pre></a></li>
+<li class="method public "><a href="#peerLastErrors" title="peerLastErrors :: Returns The last error code and subcode seen by this peer on this connection."><span class="description">Returns The last error code and subcode seen by this peer on this connection.</span><pre>peerLastErrors()</pre></a></li>
+<li class="method public "><a href="#peerLocalAddresses" title="peerLocalAddresses :: Returns the local IP address of this entry's BGP connection."><span class="description">Returns the local IP address of this entry's BGP connection.</span><pre>peerLocalAddresses()</pre></a></li>
+<li class="method public "><a href="#peerLocalPorts" title="peerLocalPorts :: Returns the local ports for the TCP connections between the BGP peers."><span class="description">Returns the local ports for the TCP connections between the BGP peers.</span><pre>peerLocalPorts()</pre></a></li>
+<li class="method public "><a href="#peerMinASOriginationIntervals" title="peerMinASOriginationIntervals :: Returns Time interval in seconds for the MinASOriginationInterval timer."><span class="description">Returns Time interval in seconds for the MinASOriginationInterval timer.</span><pre>peerMinASOriginationIntervals()</pre></a></li>
+<li class="method public "><a href="#peerMinRouteAdvertisementIntervals" title="peerMinRouteAdvertisementIntervals :: Returns Time interval in seconds for the MinRouteAdvertisementInterval timer."><span class="description">Returns Time interval in seconds for the MinRouteAdvertisementInterval timer.</span><pre>peerMinRouteAdvertisementIntervals()</pre></a></li>
+<li class="method public "><a href="#peerNegotiatedVersions" title="peerNegotiatedVersions :: Returns the negotiated version of BGP running between the two peers"><span class="description">Returns the negotiated version of BGP running between the two peers</span><pre>peerNegotiatedVersions()</pre></a></li>
+<li class="method public "><a href="#peerOutTotalMessages" title="peerOutTotalMessages :: Returns The total number of messages transmitted to the remote peer on this connection."><span class="description">Returns The total number of messages transmitted to the remote peer on this connection.</span><pre>peerOutTotalMessages()</pre></a></li>
+<li class="method public "><a href="#peerOutUpdates" title="peerOutUpdates :: Returns The number of BGP UPDATE messages transmitted on this connection."><span class="description">Returns The number of BGP UPDATE messages transmitted on this connection.</span><pre>peerOutUpdates()</pre></a></li>
+<li class="method public "><a href="#peerRemoteASNs" title="peerRemoteASNs :: Returns The remote autonomous system number."><span class="description">Returns The remote autonomous system number.</span><pre>peerRemoteASNs()</pre></a></li>
+<li class="method public "><a href="#peerRemoteAddresses" title="peerRemoteAddresses :: Returns the local IP address of this entry's BGP peer."><span class="description">Returns the local IP address of this entry's BGP peer.</span><pre>peerRemoteAddresses()</pre></a></li>
+<li class="method public "><a href="#peerRemotePorts" title="peerRemotePorts :: Returns the remote ports for the TCP connections between the BGP peers."><span class="description">Returns the remote ports for the TCP connections between the BGP peers.</span><pre>peerRemotePorts()</pre></a></li>
+<li class="method public "><a href="#version" title="version :: Returns the BGP version"><span class="description">Returns the BGP version</span><pre>version()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24BGP_PEER_ADMIN_STATES" title="$BGP_PEER_ADMIN_STATES :: "><span class="description">$BGP_PEER_ADMIN_STATES</span><pre>$BGP_PEER_ADMIN_STATES</pre></a></li>
+<li class="property public "><a href="#%24BGP_PEER_CONNECTION_STATES" title="$BGP_PEER_CONNECTION_STATES :: "><span class="description">$BGP_PEER_CONNECTION_STATES</span><pre>$BGP_PEER_CONNECTION_STATES</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#BGP_PEER_ADMIN_STATE_START" title="BGP_PEER_ADMIN_STATE_START :: "><span class="description">BGP_PEER_ADMIN_STATE_START</span><pre>BGP_PEER_ADMIN_STATE_START</pre></a></li>
+<li class="constant  "><a href="#BGP_PEER_ADMIN_STATE_STOP" title="BGP_PEER_ADMIN_STATE_STOP :: "><span class="description">BGP_PEER_ADMIN_STATE_STOP</span><pre>BGP_PEER_ADMIN_STATE_STOP</pre></a></li>
+<li class="constant  "><a href="#BGP_PEER_CONNECTION_STATE_ACTIVE" title="BGP_PEER_CONNECTION_STATE_ACTIVE :: "><span class="description">BGP_PEER_CONNECTION_STATE_ACTIVE</span><pre>BGP_PEER_CONNECTION_STATE_ACTIVE</pre></a></li>
+<li class="constant  "><a href="#BGP_PEER_CONNECTION_STATE_CONNECT" title="BGP_PEER_CONNECTION_STATE_CONNECT :: "><span class="description">BGP_PEER_CONNECTION_STATE_CONNECT</span><pre>BGP_PEER_CONNECTION_STATE_CONNECT</pre></a></li>
+<li class="constant  "><a href="#BGP_PEER_CONNECTION_STATE_ESTABLISHED" title="BGP_PEER_CONNECTION_STATE_ESTABLISHED :: "><span class="description">BGP_PEER_CONNECTION_STATE_ESTABLISHED</span><pre>BGP_PEER_CONNECTION_STATE_ESTABLISHED</pre></a></li>
+<li class="constant  "><a href="#BGP_PEER_CONNECTION_STATE_IDLE" title="BGP_PEER_CONNECTION_STATE_IDLE :: "><span class="description">BGP_PEER_CONNECTION_STATE_IDLE</span><pre>BGP_PEER_CONNECTION_STATE_IDLE</pre></a></li>
+<li class="constant  "><a href="#BGP_PEER_CONNECTION_STATE_OPENCONFIRM" title="BGP_PEER_CONNECTION_STATE_OPENCONFIRM :: "><span class="description">BGP_PEER_CONNECTION_STATE_OPENCONFIRM</span><pre>BGP_PEER_CONNECTION_STATE_OPENCONFIRM</pre></a></li>
+<li class="constant  "><a href="#BGP_PEER_CONNECTION_STATE_OPENSENT" title="BGP_PEER_CONNECTION_STATE_OPENSENT :: "><span class="description">BGP_PEER_CONNECTION_STATE_OPENSENT</span><pre>BGP_PEER_CONNECTION_STATE_OPENSENT</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_IDENTIFIER" title="OID_BGP_IDENTIFIER :: "><span class="description">OID_BGP_IDENTIFIER</span><pre>OID_BGP_IDENTIFIER</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_LOCAL_ASN" title="OID_BGP_LOCAL_ASN :: "><span class="description">OID_BGP_LOCAL_ASN</span><pre>OID_BGP_LOCAL_ASN</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_ADDR_PREFIX" title="OID_BGP_PATH_ATTR_ADDR_PREFIX :: "><span class="description">OID_BGP_PATH_ATTR_ADDR_PREFIX</span><pre>OID_BGP_PATH_ATTR_ADDR_PREFIX</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_ADDR_PREFIX_LENGTH" title="OID_BGP_PATH_ATTR_ADDR_PREFIX_LENGTH :: "><span class="description">OID_BGP_PATH_ATTR_ADDR_PREFIX_LENGTH</span><pre>OID_BGP_PATH_ATTR_ADDR_PREFIX_LENGTH</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_AGGREGATOR_ADDR" title="OID_BGP_PATH_ATTR_AGGREGATOR_ADDR :: "><span class="description">OID_BGP_PATH_ATTR_AGGREGATOR_ADDR</span><pre>OID_BGP_PATH_ATTR_AGGREGATOR_ADDR</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_AGGREGATOR_AS" title="OID_BGP_PATH_ATTR_AGGREGATOR_AS :: "><span class="description">OID_BGP_PATH_ATTR_AGGREGATOR_AS</span><pre>OID_BGP_PATH_ATTR_AGGREGATOR_AS</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_AS_PATH_SEGMENT" title="OID_BGP_PATH_ATTR_AS_PATH_SEGMENT :: "><span class="description">OID_BGP_PATH_ATTR_AS_PATH_SEGMENT</span><pre>OID_BGP_PATH_ATTR_AS_PATH_SEGMENT</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_ATOMIC_AGGREGATE" title="OID_BGP_PATH_ATTR_ATOMIC_AGGREGATE :: "><span class="description">OID_BGP_PATH_ATTR_ATOMIC_AGGREGATE</span><pre>OID_BGP_PATH_ATTR_ATOMIC_AGGREGATE</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_BEST" title="OID_BGP_PATH_ATTR_BEST :: "><span class="description">OID_BGP_PATH_ATTR_BEST</span><pre>OID_BGP_PATH_ATTR_BEST</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_CALC_LOCAL_PREF" title="OID_BGP_PATH_ATTR_CALC_LOCAL_PREF :: "><span class="description">OID_BGP_PATH_ATTR_CALC_LOCAL_PREF</span><pre>OID_BGP_PATH_ATTR_CALC_LOCAL_PREF</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_LOCAL_PREF" title="OID_BGP_PATH_ATTR_LOCAL_PREF :: "><span class="description">OID_BGP_PATH_ATTR_LOCAL_PREF</span><pre>OID_BGP_PATH_ATTR_LOCAL_PREF</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_MED" title="OID_BGP_PATH_ATTR_MED :: "><span class="description">OID_BGP_PATH_ATTR_MED</span><pre>OID_BGP_PATH_ATTR_MED</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_NEXT_HOP" title="OID_BGP_PATH_ATTR_NEXT_HOP :: "><span class="description">OID_BGP_PATH_ATTR_NEXT_HOP</span><pre>OID_BGP_PATH_ATTR_NEXT_HOP</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_ORIGIN" title="OID_BGP_PATH_ATTR_ORIGIN :: "><span class="description">OID_BGP_PATH_ATTR_ORIGIN</span><pre>OID_BGP_PATH_ATTR_ORIGIN</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_PEER" title="OID_BGP_PATH_ATTR_PEER :: "><span class="description">OID_BGP_PATH_ATTR_PEER</span><pre>OID_BGP_PATH_ATTR_PEER</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PATH_ATTR_UNKNOWN" title="OID_BGP_PATH_ATTR_UNKNOWN :: "><span class="description">OID_BGP_PATH_ATTR_UNKNOWN</span><pre>OID_BGP_PATH_ATTR_UNKNOWN</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_ADMIN_STATE" title="OID_BGP_PEER_ADMIN_STATE :: "><span class="description">OID_BGP_PEER_ADMIN_STATE</span><pre>OID_BGP_PEER_ADMIN_STATE</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_CONNECTION_STATE" title="OID_BGP_PEER_CONNECTION_STATE :: "><span class="description">OID_BGP_PEER_CONNECTION_STATE</span><pre>OID_BGP_PEER_CONNECTION_STATE</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_CONNECT_RETRY_INTERVAL" title="OID_BGP_PEER_CONNECT_RETRY_INTERVAL :: "><span class="description">OID_BGP_PEER_CONNECT_RETRY_INTERVAL</span><pre>OID_BGP_PEER_CONNECT_RETRY_INTERVAL</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_FSM_ESTABLISHED_TIME" title="OID_BGP_PEER_FSM_ESTABLISHED_TIME :: "><span class="description">OID_BGP_PEER_FSM_ESTABLISHED_TIME</span><pre>OID_BGP_PEER_FSM_ESTABLISHED_TIME</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_FSM_ESTABLISHED_TRANSITIONS" title="OID_BGP_PEER_FSM_ESTABLISHED_TRANSITIONS :: "><span class="description">OID_BGP_PEER_FSM_ESTABLISHED_TRANSITIONS</span><pre>OID_BGP_PEER_FSM_ESTABLISHED_TRANSITIONS</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_HOLD_TIME" title="OID_BGP_PEER_HOLD_TIME :: "><span class="description">OID_BGP_PEER_HOLD_TIME</span><pre>OID_BGP_PEER_HOLD_TIME</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_HOLD_TIME_CONFIGURED" title="OID_BGP_PEER_HOLD_TIME_CONFIGURED :: "><span class="description">OID_BGP_PEER_HOLD_TIME_CONFIGURED</span><pre>OID_BGP_PEER_HOLD_TIME_CONFIGURED</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_IDENTIFIER" title="OID_BGP_PEER_IDENTIFIER :: "><span class="description">OID_BGP_PEER_IDENTIFIER</span><pre>OID_BGP_PEER_IDENTIFIER</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_IN_TOTAL_MESSAGES" title="OID_BGP_PEER_IN_TOTAL_MESSAGES :: "><span class="description">OID_BGP_PEER_IN_TOTAL_MESSAGES</span><pre>OID_BGP_PEER_IN_TOTAL_MESSAGES</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_IN_UPDATES" title="OID_BGP_PEER_IN_UPDATES :: "><span class="description">OID_BGP_PEER_IN_UPDATES</span><pre>OID_BGP_PEER_IN_UPDATES</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_IN_UPDATE_ELAPSED_TIME" title="OID_BGP_PEER_IN_UPDATE_ELAPSED_TIME :: "><span class="description">OID_BGP_PEER_IN_UPDATE_ELAPSED_TIME</span><pre>OID_BGP_PEER_IN_UPDATE_ELAPSED_TIME</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_KEEP_ALIVE" title="OID_BGP_PEER_KEEP_ALIVE :: "><span class="description">OID_BGP_PEER_KEEP_ALIVE</span><pre>OID_BGP_PEER_KEEP_ALIVE</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_KEEP_ALIVE_CONFIGURED" title="OID_BGP_PEER_KEEP_ALIVE_CONFIGURED :: "><span class="description">OID_BGP_PEER_KEEP_ALIVE_CONFIGURED</span><pre>OID_BGP_PEER_KEEP_ALIVE_CONFIGURED</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_LAST_ERROR" title="OID_BGP_PEER_LAST_ERROR :: "><span class="description">OID_BGP_PEER_LAST_ERROR</span><pre>OID_BGP_PEER_LAST_ERROR</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_LOCAL_ADDRESS" title="OID_BGP_PEER_LOCAL_ADDRESS :: "><span class="description">OID_BGP_PEER_LOCAL_ADDRESS</span><pre>OID_BGP_PEER_LOCAL_ADDRESS</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_LOCAL_PORT" title="OID_BGP_PEER_LOCAL_PORT :: "><span class="description">OID_BGP_PEER_LOCAL_PORT</span><pre>OID_BGP_PEER_LOCAL_PORT</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_MIN_AS_ORIGINATION_INTERVAL" title="OID_BGP_PEER_MIN_AS_ORIGINATION_INTERVAL :: "><span class="description">OID_BGP_PEER_MIN_AS_ORIGINATION_INTERVAL</span><pre>OID_BGP_PEER_MIN_AS_ORIGINATION_INTERVAL</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_MIN_ROUTE_ADVERTISEMENT_INTERVAL" title="OID_BGP_PEER_MIN_ROUTE_ADVERTISEMENT_INTERVAL :: "><span class="description">OID_BGP_PEER_MIN_ROUTE_ADVERTISEMENT_INTERVAL</span><pre>OID_BGP_PEER_MIN_ROUTE_ADVERTISEMENT_INTERVAL</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_NEGOTIATED_VERSION" title="OID_BGP_PEER_NEGOTIATED_VERSION :: "><span class="description">OID_BGP_PEER_NEGOTIATED_VERSION</span><pre>OID_BGP_PEER_NEGOTIATED_VERSION</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_OUT_TOTAL_MESSAGES" title="OID_BGP_PEER_OUT_TOTAL_MESSAGES :: "><span class="description">OID_BGP_PEER_OUT_TOTAL_MESSAGES</span><pre>OID_BGP_PEER_OUT_TOTAL_MESSAGES</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_OUT_UPDATES" title="OID_BGP_PEER_OUT_UPDATES :: "><span class="description">OID_BGP_PEER_OUT_UPDATES</span><pre>OID_BGP_PEER_OUT_UPDATES</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_REMOTE_ADDR" title="OID_BGP_PEER_REMOTE_ADDR :: "><span class="description">OID_BGP_PEER_REMOTE_ADDR</span><pre>OID_BGP_PEER_REMOTE_ADDR</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_REMOTE_ASN" title="OID_BGP_PEER_REMOTE_ASN :: "><span class="description">OID_BGP_PEER_REMOTE_ASN</span><pre>OID_BGP_PEER_REMOTE_ASN</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_PEER_REMOTE_PORT" title="OID_BGP_PEER_REMOTE_PORT :: "><span class="description">OID_BGP_PEER_REMOTE_PORT</span><pre>OID_BGP_PEER_REMOTE_PORT</pre></a></li>
+<li class="constant  "><a href="#OID_BGP_VERSION" title="OID_BGP_VERSION :: "><span class="description">OID_BGP_VERSION</span><pre>OID_BGP_VERSION</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5COSS_SNMP%5CMIBS%5CBGP" id="\OSS_SNMP\MIBS\BGP"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/OSS_SNMP.html">OSS_SNMP</a></li>
+<span class="divider">\</span><li><a href="../namespaces/OSS_SNMP.MIBS.html">MIBS</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/OSS_SNMP.MIBS.BGP.html">BGP</a>
+</li>
+</ul>
+<div href="../classes/OSS_SNMP.MIBS.BGP.html" class="element class">
+<p class="short_description">A class for performing SNMP V2 BGP queries</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td>\OSS_SNMP\MIBS\http://tools.cisco.com/Support/SNMP/do/BrowseOID.do?local=en&amp;translate=Translate&amp;objectInput=1.3.6.1.2.1.15</td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:barry@opensolutions.ie">Barry O'Donovan</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="identifier" id="identifier"></a><div class="element clickable method public identifier" data-toggle="collapse" data-target=".identifier .collapse">
+<h2>Returns the local BGP identifier</h2>
+<pre>identifier() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The BGP Identifier of local system."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The BGP Identifier of local system.</div>
+</div></div>
+</div>
+<a name="localASN" id="localASN"></a><div class="element clickable method public localASN" data-toggle="collapse" data-target=".localASN .collapse">
+<h2>Returns the local BGP AS number</h2>
+<pre>localASN() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The local autonomous system number."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The local autonomous system number.</div>
+</div></div>
+</div>
+<a name="peerAdminStates" id="peerAdminStates"></a><div class="element clickable method public peerAdminStates" data-toggle="collapse" data-target=".peerAdminStates .collapse">
+<h2>Returns the BGP peer admin states (see `self::$BGP_PEER_ADMIN_STATES`)</h2>
+<pre>peerAdminStates(bool $translate) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The desired state of the BGP connection. A transition from 'stop' to 'start' will
+  cause the BGP Start Event to be generated. A transition from 'start' to 'stop' will
+  cause the BGP Stop Event to be generated. This parameter can be used to restart BGP
+  peer connections. Care should be used in providing write access to this object
+  without adequate authentication."</p>
+</blockquote></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>bool</code><p>If true, use the <code>$BGP_PEER_ADMIN_STATES</code> array to return textual representation</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The BGP peer admin states (see `self::$BGP_PEER_ADMIN_STATES`)</div>
+</div></div>
+</div>
+<a name="peerConnectRetryIntervals" id="peerConnectRetryIntervals"></a><div class="element clickable method public peerConnectRetryIntervals" data-toggle="collapse" data-target=".peerConnectRetryIntervals .collapse">
+<h2>Returns Time interval in seconds for the ConnectRetry timer.</h2>
+<pre>peerConnectRetryIntervals() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"Time interval in seconds for the ConnectRetry timer. The suggested value
+  for this timer is 120 seconds."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Time interval in seconds for the ConnectRetry timer.</div>
+</div></div>
+</div>
+<a name="peerConnectionStates" id="peerConnectionStates"></a><div class="element clickable method public peerConnectionStates" data-toggle="collapse" data-target=".peerConnectionStates .collapse">
+<h2>Returns the BGP peer connection state (see `self::$BGP_PEER_CONNECTION_STATES`)</h2>
+<pre>peerConnectionStates(bool $translate) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The BGP peer connection state."</p>
+</blockquote></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>bool</code><p>If true, use the <code>$BGP_PEER_CONNECTION_STATES</code> array to return textual representation</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The BGP peer connection state (see `self::$BGP_PEER_CONNECTION_STATES`)</div>
+</div></div>
+</div>
+<a name="peerDetails" id="peerDetails"></a><div class="element clickable method public peerDetails" data-toggle="collapse" data-target=".peerDetails .collapse">
+<h2>Utility function to gather all peer information into a single array.</h2>
+<pre>peerDetails(bool $translate) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><p>For example, this would return something like:</p>
+
+<pre><code>Array
+(
+    ....
+    [192.0.2.126] =&gt; Array
+    (
+        [identity] =&gt; 192.0.2.45
+        [connectionState] =&gt; established
+        [adminState] =&gt; start
+        [negotiatedVersion] =&gt; 4
+        [localAddress] =&gt; 193.242.111.74
+        [localPort] =&gt; 26789
+        [remoteAddress] =&gt; 192.0.2.126
+        [remotePort] =&gt; 179
+        [remoteASN] =&gt; 65505
+        [inUpdates] =&gt; 4
+        [outUpdates] =&gt; 2
+        [inTotalMessages] =&gt; 180988
+        [outTotalMessages] =&gt; 181012
+        [lastError] =&gt; 0000
+        [establishedTransitions] =&gt; 1
+        [establishedTime] =&gt; 9867469
+        [connectRetryInterval] =&gt; 60
+        [holdTime] =&gt; 180
+        [keepAlive] =&gt; 60
+        [holdTimeConfigured] =&gt; 180
+        [keepAliveConfigured] =&gt; 60
+        [minASOriginationInterval] =&gt; 30
+        [minRouteAdvertisementInterval] =&gt; 30
+        [inUpdateElapsedTime] =&gt; 0
+    )
+    ....
+)
+</code></pre></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>bool</code><p>Where a called function supports translation, if true then translate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of peer details - see example above.</div>
+</div></div>
+</div>
+<a name="peerEstabledTransitions" id="peerEstabledTransitions"></a><div class="element clickable method public peerEstabledTransitions" data-toggle="collapse" data-target=".peerEstabledTransitions .collapse">
+<h2>Returns The total number of times the BGP FSM transitioned into the established state.</h2>
+<pre>peerEstabledTransitions() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The total number of times the BGP FSM transitioned into the established state."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The total number of times the BGP FSM transitioned into the established state.</div>
+</div></div>
+</div>
+<a name="peerEstablishedTimes" id="peerEstablishedTimes"></a><div class="element clickable method public peerEstablishedTimes" data-toggle="collapse" data-target=".peerEstablishedTimes .collapse">
+<h2>Returns how long (in seconds) this peer has been in the Established state or
+how long since this peer was last in the Established state</h2>
+<pre>peerEstablishedTimes() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"This timer indicates how long (in seconds) this peer has been in the
+  Established state or how long since this peer was last in the
+  Established state. It is set to zero when a new peer is configured or the router is
+  booted"</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>How long (secs) this peer has been in (or since it was last in) the Established state</div>
+</div></div>
+</div>
+<a name="peerHoldTimes" id="peerHoldTimes"></a><div class="element clickable method public peerHoldTimes" data-toggle="collapse" data-target=".peerHoldTimes .collapse">
+<h2>Returns Time interval in seconds for the Hold Timer established with the peer.</h2>
+<pre>peerHoldTimes() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"Time interval in seconds for the Hold Timer established with the peer. The
+  value of this object is calculated by this BGP speaker by using the smaller of the
+  value in bgpPeerHoldTimeConfigured and the Hold Time received in the OPEN message.
+  This value must be at lease three seconds if it is not zero (0) in which case the
+  Hold Timer has not been established with the peer, or, the value of
+  bgpPeerHoldTimeConfigured is zero (0)."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Time interval in seconds for the Hold Timer established with the peer.</div>
+</div></div>
+</div>
+<a name="peerHoleTimesConfigured" id="peerHoleTimesConfigured"></a><div class="element clickable method public peerHoleTimesConfigured" data-toggle="collapse" data-target=".peerHoleTimesConfigured .collapse">
+<h2>Returns Time interval in seconds for the Hold Time configured for this BGP speaker with this peer.</h2>
+<pre>peerHoleTimesConfigured() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"Time interval in seconds for the Hold Time configured for this BGP speaker with this
+  peer. This value is placed in an OPEN message sent to this peer by this BGP
+  speaker, and is compared with the Hold Time field in an OPEN message received
+  from the peer when determining the Hold Time (bgpPeerHoldTime) with the peer.
+  This value must not be less than three seconds if it is not zero (0) in which
+  case the Hold Time is NOT to be established with the peer. The suggested
+  value for this timer is 90 seconds."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Time interval in seconds for the Hold Time configured for this BGP speaker with this peer.</div>
+</div></div>
+</div>
+<a name="peerIdentifiers" id="peerIdentifiers"></a><div class="element clickable method public peerIdentifiers" data-toggle="collapse" data-target=".peerIdentifiers .collapse">
+<h2>Returns the BGP identifier of all peers indexed by neighbour IPv4 address</h2>
+<pre>peerIdentifiers() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The BGP Identifier of this entry's BGP peer."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Returns the BGP identifier of all peers indexed by neighbour IPv4 address</div>
+</div></div>
+</div>
+<a name="peerInTotalMessages" id="peerInTotalMessages"></a><div class="element clickable method public peerInTotalMessages" data-toggle="collapse" data-target=".peerInTotalMessages .collapse">
+<h2>Returns The total number of messages received from the remote peer on this connection.</h2>
+<pre>peerInTotalMessages() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The total number of messages received from the remote peer on this connection.
+  This object should be initialized to zero when the connection is established."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The total number of messages received from the remote peer on this connection.</div>
+</div></div>
+</div>
+<a name="peerInUpdateElapsedTimes" id="peerInUpdateElapsedTimes"></a><div class="element clickable method public peerInUpdateElapsedTimes" data-toggle="collapse" data-target=".peerInUpdateElapsedTimes .collapse">
+<h2>Returns Elapsed time in seconds since the last BGP UPDATE message was received from the peer.</h2>
+<pre>peerInUpdateElapsedTimes() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"Elapsed time in seconds since the last BGP UPDATE message was received from the peer.
+  Each time bgpPeerInUpdates is incremented, the value of this object is set to zero (0)."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Elapsed time in seconds since the last BGP UPDATE message was received from the peer.</div>
+</div></div>
+</div>
+<a name="peerInUpdates" id="peerInUpdates"></a><div class="element clickable method public peerInUpdates" data-toggle="collapse" data-target=".peerInUpdates .collapse">
+<h2>Returns The number of BGP UPDATE messages received on this connection.</h2>
+<pre>peerInUpdates() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The number of BGP UPDATE messages received on this connection. This object
+  should be initialized to zero (0) when the connection is established."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The number of BGP UPDATE messages received on this connection.</div>
+</div></div>
+</div>
+<a name="peerKeepAlives" id="peerKeepAlives"></a><div class="element clickable method public peerKeepAlives" data-toggle="collapse" data-target=".peerKeepAlives .collapse">
+<h2>Returns Time interval in seconds for the KeepAlive timer established with the peer.</h2>
+<pre>peerKeepAlives() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"Time interval in seconds for the KeepAlive timer established with the peer. The value
+  of this object is calculated by this BGP speaker such that, when compared with
+  bgpPeerHoldTime, it has the same proportion as what bgpPeerKeepAliveConfigured has when
+  compared with bgpPeerHoldTimeConfigured. If the value of this object is zero (0),
+  it indicates that the KeepAlive timer has not been established with the peer, or,
+  the value of bgpPeerKeepAliveConfigured is zero (0)."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Time interval in seconds for the KeepAlive timer established with the peer.</div>
+</div></div>
+</div>
+<a name="peerKeepAlivesConfigured" id="peerKeepAlivesConfigured"></a><div class="element clickable method public peerKeepAlivesConfigured" data-toggle="collapse" data-target=".peerKeepAlivesConfigured .collapse">
+<h2>Returns Time interval in seconds for the KeepAlive timer configured for this BGP speaker with this peer.</h2>
+<pre>peerKeepAlivesConfigured() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"Time interval in seconds for the KeepAlive timer configured for this BGP
+  speaker with this peer. The value of this object will only determine the
+  KEEPALIVE messages' frequency relative to the value specified in
+  bgpPeerHoldTimeConfigured; the actual time interval for the KEEPALIVE messages
+  is indicated by bgpPeerKeepAlive. A reasonable maximum value for this timer
+  would be configured to be one third of that of bgpPeerHoldTimeConfigured.
+  If the value of this object is zero (0), no periodical KEEPALIVE messages are sent
+  to the peer after the BGP connection has been established. The suggested value for
+  this timer is 30 seconds"</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Time interval in seconds for the KeepAlive timer configured for this BGP speaker with this peer.</div>
+</div></div>
+</div>
+<a name="peerLastErrors" id="peerLastErrors"></a><div class="element clickable method public peerLastErrors" data-toggle="collapse" data-target=".peerLastErrors .collapse">
+<h2>Returns The last error code and subcode seen by this peer on this connection.</h2>
+<pre>peerLastErrors() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The last error code and subcode seen by this peer on this connection. If no error has
+  occurred, this field is zero. Otherwise, the first byte of this two byte OCTET STRING
+  contains the error code, and the second byte contains the subcode."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The last error code and subcode seen by this peer on this connection.</div>
+</div></div>
+</div>
+<a name="peerLocalAddresses" id="peerLocalAddresses"></a><div class="element clickable method public peerLocalAddresses" data-toggle="collapse" data-target=".peerLocalAddresses .collapse">
+<h2>Returns the local IP address of this entry's BGP connection.</h2>
+<pre>peerLocalAddresses() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The local IP address of this entry's BGP connection."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The local IP address of this entry's BGP connection.</div>
+</div></div>
+</div>
+<a name="peerLocalPorts" id="peerLocalPorts"></a><div class="element clickable method public peerLocalPorts" data-toggle="collapse" data-target=".peerLocalPorts .collapse">
+<h2>Returns the local ports for the TCP connections between the BGP peers.</h2>
+<pre>peerLocalPorts() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The local port for the TCP connection between the BGP peers."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The local ports for the TCP connections between the BGP peers.</div>
+</div></div>
+</div>
+<a name="peerMinASOriginationIntervals" id="peerMinASOriginationIntervals"></a><div class="element clickable method public peerMinASOriginationIntervals" data-toggle="collapse" data-target=".peerMinASOriginationIntervals .collapse">
+<h2>Returns Time interval in seconds for the MinASOriginationInterval timer.</h2>
+<pre>peerMinASOriginationIntervals() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"Time interval in seconds for the MinASOriginationInterval timer.
+  The suggested value for this timer is 15 seconds."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Time interval in seconds for the MinASOriginationInterval timer.</div>
+</div></div>
+</div>
+<a name="peerMinRouteAdvertisementIntervals" id="peerMinRouteAdvertisementIntervals"></a><div class="element clickable method public peerMinRouteAdvertisementIntervals" data-toggle="collapse" data-target=".peerMinRouteAdvertisementIntervals .collapse">
+<h2>Returns Time interval in seconds for the MinRouteAdvertisementInterval timer.</h2>
+<pre>peerMinRouteAdvertisementIntervals() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"Time interval in seconds for the MinRouteAdvertisementInterval timer.
+  The suggested value for this timer is 30 seconds"</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Time interval in seconds for the MinRouteAdvertisementInterval timer.</div>
+</div></div>
+</div>
+<a name="peerNegotiatedVersions" id="peerNegotiatedVersions"></a><div class="element clickable method public peerNegotiatedVersions" data-toggle="collapse" data-target=".peerNegotiatedVersions .collapse">
+<h2>Returns the negotiated version of BGP running between the two peers</h2>
+<pre>peerNegotiatedVersions() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The negotiated version of BGP running between the two peers"</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The negotiated version of BGP running between the two peers</div>
+</div></div>
+</div>
+<a name="peerOutTotalMessages" id="peerOutTotalMessages"></a><div class="element clickable method public peerOutTotalMessages" data-toggle="collapse" data-target=".peerOutTotalMessages .collapse">
+<h2>Returns The total number of messages transmitted to the remote peer on this connection.</h2>
+<pre>peerOutTotalMessages() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The total number of messages transmitted to the remote peer on this connection. This
+  object should be initialized to zero when the connection is established."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The total number of messages transmitted to the remote peer on this connection.</div>
+</div></div>
+</div>
+<a name="peerOutUpdates" id="peerOutUpdates"></a><div class="element clickable method public peerOutUpdates" data-toggle="collapse" data-target=".peerOutUpdates .collapse">
+<h2>Returns The number of BGP UPDATE messages transmitted on this connection.</h2>
+<pre>peerOutUpdates() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The number of BGP UPDATE messages transmitted on this connection. This
+  object should be initialized to zero (0) when the connection is established."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The number of BGP UPDATE messages transmitted on this connection.</div>
+</div></div>
+</div>
+<a name="peerRemoteASNs" id="peerRemoteASNs"></a><div class="element clickable method public peerRemoteASNs" data-toggle="collapse" data-target=".peerRemoteASNs .collapse">
+<h2>Returns The remote autonomous system number.</h2>
+<pre>peerRemoteASNs() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The remote autonomous system number."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The remote autonomous system number.</div>
+</div></div>
+</div>
+<a name="peerRemoteAddresses" id="peerRemoteAddresses"></a><div class="element clickable method public peerRemoteAddresses" data-toggle="collapse" data-target=".peerRemoteAddresses .collapse">
+<h2>Returns the local IP address of this entry's BGP peer.</h2>
+<pre>peerRemoteAddresses() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The remote IP address of this entry's BGP peer."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The remote IP address of this entry's BGP peer.</div>
+</div></div>
+</div>
+<a name="peerRemotePorts" id="peerRemotePorts"></a><div class="element clickable method public peerRemotePorts" data-toggle="collapse" data-target=".peerRemotePorts .collapse">
+<h2>Returns the remote ports for the TCP connections between the BGP peers.</h2>
+<pre>peerRemotePorts() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The remote port for the TCP connection between the BGP peers."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The remote ports for the TCP connections between the BGP peers.</div>
+</div></div>
+</div>
+<a name="version" id="version"></a><div class="element clickable method public version" data-toggle="collapse" data-target=".version .collapse">
+<h2>Returns the BGP version</h2>
+<pre>version() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"Vector of supported BGP protocol version numbers. Each peer negotiates the version
+  from this vector. Versions are identified via the string of bits contained within this
+  object. The first octet contains bits 0 to 7, the second octet contains bits 8 to 15,
+  and so on, with the most significant bit referring to the lowest bit number in the
+  octet (e.g., the MSB of the first octet refers to bit 0). If a bit, i, is present
+  and set, then the version (i+1) of the BGP is supported."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Returns the BGP version</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24BGP_PEER_ADMIN_STATES" id="$BGP_PEER_ADMIN_STATES"> </a><div class="element clickable property public $BGP_PEER_ADMIN_STATES" data-toggle="collapse" data-target=".$BGP_PEER_ADMIN_STATES .collapse">
+<h2>$BGP_PEER_ADMIN_STATES</h2>
+<pre>$BGP_PEER_ADMIN_STATES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24BGP_PEER_CONNECTION_STATES" id="$BGP_PEER_CONNECTION_STATES"> </a><div class="element clickable property public $BGP_PEER_CONNECTION_STATES" data-toggle="collapse" data-target=".$BGP_PEER_CONNECTION_STATES .collapse">
+<h2>$BGP_PEER_CONNECTION_STATES</h2>
+<pre>$BGP_PEER_CONNECTION_STATES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="BGP_PEER_ADMIN_STATE_START" id="BGP_PEER_ADMIN_STATE_START"> </a><div class="element clickable constant  BGP_PEER_ADMIN_STATE_START" data-toggle="collapse" data-target=".BGP_PEER_ADMIN_STATE_START .collapse">
+<h2>BGP_PEER_ADMIN_STATE_START</h2>
+<pre>BGP_PEER_ADMIN_STATE_START </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="BGP_PEER_ADMIN_STATE_STOP" id="BGP_PEER_ADMIN_STATE_STOP"> </a><div class="element clickable constant  BGP_PEER_ADMIN_STATE_STOP" data-toggle="collapse" data-target=".BGP_PEER_ADMIN_STATE_STOP .collapse">
+<h2>BGP_PEER_ADMIN_STATE_STOP</h2>
+<pre>BGP_PEER_ADMIN_STATE_STOP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="BGP_PEER_CONNECTION_STATE_ACTIVE" id="BGP_PEER_CONNECTION_STATE_ACTIVE"> </a><div class="element clickable constant  BGP_PEER_CONNECTION_STATE_ACTIVE" data-toggle="collapse" data-target=".BGP_PEER_CONNECTION_STATE_ACTIVE .collapse">
+<h2>BGP_PEER_CONNECTION_STATE_ACTIVE</h2>
+<pre>BGP_PEER_CONNECTION_STATE_ACTIVE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="BGP_PEER_CONNECTION_STATE_CONNECT" id="BGP_PEER_CONNECTION_STATE_CONNECT"> </a><div class="element clickable constant  BGP_PEER_CONNECTION_STATE_CONNECT" data-toggle="collapse" data-target=".BGP_PEER_CONNECTION_STATE_CONNECT .collapse">
+<h2>BGP_PEER_CONNECTION_STATE_CONNECT</h2>
+<pre>BGP_PEER_CONNECTION_STATE_CONNECT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="BGP_PEER_CONNECTION_STATE_ESTABLISHED" id="BGP_PEER_CONNECTION_STATE_ESTABLISHED"> </a><div class="element clickable constant  BGP_PEER_CONNECTION_STATE_ESTABLISHED" data-toggle="collapse" data-target=".BGP_PEER_CONNECTION_STATE_ESTABLISHED .collapse">
+<h2>BGP_PEER_CONNECTION_STATE_ESTABLISHED</h2>
+<pre>BGP_PEER_CONNECTION_STATE_ESTABLISHED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="BGP_PEER_CONNECTION_STATE_IDLE" id="BGP_PEER_CONNECTION_STATE_IDLE"> </a><div class="element clickable constant  BGP_PEER_CONNECTION_STATE_IDLE" data-toggle="collapse" data-target=".BGP_PEER_CONNECTION_STATE_IDLE .collapse">
+<h2>BGP_PEER_CONNECTION_STATE_IDLE</h2>
+<pre>BGP_PEER_CONNECTION_STATE_IDLE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="BGP_PEER_CONNECTION_STATE_OPENCONFIRM" id="BGP_PEER_CONNECTION_STATE_OPENCONFIRM"> </a><div class="element clickable constant  BGP_PEER_CONNECTION_STATE_OPENCONFIRM" data-toggle="collapse" data-target=".BGP_PEER_CONNECTION_STATE_OPENCONFIRM .collapse">
+<h2>BGP_PEER_CONNECTION_STATE_OPENCONFIRM</h2>
+<pre>BGP_PEER_CONNECTION_STATE_OPENCONFIRM </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="BGP_PEER_CONNECTION_STATE_OPENSENT" id="BGP_PEER_CONNECTION_STATE_OPENSENT"> </a><div class="element clickable constant  BGP_PEER_CONNECTION_STATE_OPENSENT" data-toggle="collapse" data-target=".BGP_PEER_CONNECTION_STATE_OPENSENT .collapse">
+<h2>BGP_PEER_CONNECTION_STATE_OPENSENT</h2>
+<pre>BGP_PEER_CONNECTION_STATE_OPENSENT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_IDENTIFIER" id="OID_BGP_IDENTIFIER"> </a><div class="element clickable constant  OID_BGP_IDENTIFIER" data-toggle="collapse" data-target=".OID_BGP_IDENTIFIER .collapse">
+<h2>OID_BGP_IDENTIFIER</h2>
+<pre>OID_BGP_IDENTIFIER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_LOCAL_ASN" id="OID_BGP_LOCAL_ASN"> </a><div class="element clickable constant  OID_BGP_LOCAL_ASN" data-toggle="collapse" data-target=".OID_BGP_LOCAL_ASN .collapse">
+<h2>OID_BGP_LOCAL_ASN</h2>
+<pre>OID_BGP_LOCAL_ASN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_ADDR_PREFIX" id="OID_BGP_PATH_ATTR_ADDR_PREFIX"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_ADDR_PREFIX" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_ADDR_PREFIX .collapse">
+<h2>OID_BGP_PATH_ATTR_ADDR_PREFIX</h2>
+<pre>OID_BGP_PATH_ATTR_ADDR_PREFIX </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_ADDR_PREFIX_LENGTH" id="OID_BGP_PATH_ATTR_ADDR_PREFIX_LENGTH"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_ADDR_PREFIX_LENGTH" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_ADDR_PREFIX_LENGTH .collapse">
+<h2>OID_BGP_PATH_ATTR_ADDR_PREFIX_LENGTH</h2>
+<pre>OID_BGP_PATH_ATTR_ADDR_PREFIX_LENGTH </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_AGGREGATOR_ADDR" id="OID_BGP_PATH_ATTR_AGGREGATOR_ADDR"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_AGGREGATOR_ADDR" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_AGGREGATOR_ADDR .collapse">
+<h2>OID_BGP_PATH_ATTR_AGGREGATOR_ADDR</h2>
+<pre>OID_BGP_PATH_ATTR_AGGREGATOR_ADDR </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_AGGREGATOR_AS" id="OID_BGP_PATH_ATTR_AGGREGATOR_AS"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_AGGREGATOR_AS" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_AGGREGATOR_AS .collapse">
+<h2>OID_BGP_PATH_ATTR_AGGREGATOR_AS</h2>
+<pre>OID_BGP_PATH_ATTR_AGGREGATOR_AS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_AS_PATH_SEGMENT" id="OID_BGP_PATH_ATTR_AS_PATH_SEGMENT"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_AS_PATH_SEGMENT" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_AS_PATH_SEGMENT .collapse">
+<h2>OID_BGP_PATH_ATTR_AS_PATH_SEGMENT</h2>
+<pre>OID_BGP_PATH_ATTR_AS_PATH_SEGMENT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_ATOMIC_AGGREGATE" id="OID_BGP_PATH_ATTR_ATOMIC_AGGREGATE"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_ATOMIC_AGGREGATE" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_ATOMIC_AGGREGATE .collapse">
+<h2>OID_BGP_PATH_ATTR_ATOMIC_AGGREGATE</h2>
+<pre>OID_BGP_PATH_ATTR_ATOMIC_AGGREGATE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_BEST" id="OID_BGP_PATH_ATTR_BEST"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_BEST" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_BEST .collapse">
+<h2>OID_BGP_PATH_ATTR_BEST</h2>
+<pre>OID_BGP_PATH_ATTR_BEST </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_CALC_LOCAL_PREF" id="OID_BGP_PATH_ATTR_CALC_LOCAL_PREF"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_CALC_LOCAL_PREF" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_CALC_LOCAL_PREF .collapse">
+<h2>OID_BGP_PATH_ATTR_CALC_LOCAL_PREF</h2>
+<pre>OID_BGP_PATH_ATTR_CALC_LOCAL_PREF </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_LOCAL_PREF" id="OID_BGP_PATH_ATTR_LOCAL_PREF"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_LOCAL_PREF" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_LOCAL_PREF .collapse">
+<h2>OID_BGP_PATH_ATTR_LOCAL_PREF</h2>
+<pre>OID_BGP_PATH_ATTR_LOCAL_PREF </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_MED" id="OID_BGP_PATH_ATTR_MED"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_MED" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_MED .collapse">
+<h2>OID_BGP_PATH_ATTR_MED</h2>
+<pre>OID_BGP_PATH_ATTR_MED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_NEXT_HOP" id="OID_BGP_PATH_ATTR_NEXT_HOP"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_NEXT_HOP" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_NEXT_HOP .collapse">
+<h2>OID_BGP_PATH_ATTR_NEXT_HOP</h2>
+<pre>OID_BGP_PATH_ATTR_NEXT_HOP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_ORIGIN" id="OID_BGP_PATH_ATTR_ORIGIN"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_ORIGIN" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_ORIGIN .collapse">
+<h2>OID_BGP_PATH_ATTR_ORIGIN</h2>
+<pre>OID_BGP_PATH_ATTR_ORIGIN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_PEER" id="OID_BGP_PATH_ATTR_PEER"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_PEER" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_PEER .collapse">
+<h2>OID_BGP_PATH_ATTR_PEER</h2>
+<pre>OID_BGP_PATH_ATTR_PEER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PATH_ATTR_UNKNOWN" id="OID_BGP_PATH_ATTR_UNKNOWN"> </a><div class="element clickable constant  OID_BGP_PATH_ATTR_UNKNOWN" data-toggle="collapse" data-target=".OID_BGP_PATH_ATTR_UNKNOWN .collapse">
+<h2>OID_BGP_PATH_ATTR_UNKNOWN</h2>
+<pre>OID_BGP_PATH_ATTR_UNKNOWN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_ADMIN_STATE" id="OID_BGP_PEER_ADMIN_STATE"> </a><div class="element clickable constant  OID_BGP_PEER_ADMIN_STATE" data-toggle="collapse" data-target=".OID_BGP_PEER_ADMIN_STATE .collapse">
+<h2>OID_BGP_PEER_ADMIN_STATE</h2>
+<pre>OID_BGP_PEER_ADMIN_STATE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_CONNECTION_STATE" id="OID_BGP_PEER_CONNECTION_STATE"> </a><div class="element clickable constant  OID_BGP_PEER_CONNECTION_STATE" data-toggle="collapse" data-target=".OID_BGP_PEER_CONNECTION_STATE .collapse">
+<h2>OID_BGP_PEER_CONNECTION_STATE</h2>
+<pre>OID_BGP_PEER_CONNECTION_STATE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_CONNECT_RETRY_INTERVAL" id="OID_BGP_PEER_CONNECT_RETRY_INTERVAL"> </a><div class="element clickable constant  OID_BGP_PEER_CONNECT_RETRY_INTERVAL" data-toggle="collapse" data-target=".OID_BGP_PEER_CONNECT_RETRY_INTERVAL .collapse">
+<h2>OID_BGP_PEER_CONNECT_RETRY_INTERVAL</h2>
+<pre>OID_BGP_PEER_CONNECT_RETRY_INTERVAL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_FSM_ESTABLISHED_TIME" id="OID_BGP_PEER_FSM_ESTABLISHED_TIME"> </a><div class="element clickable constant  OID_BGP_PEER_FSM_ESTABLISHED_TIME" data-toggle="collapse" data-target=".OID_BGP_PEER_FSM_ESTABLISHED_TIME .collapse">
+<h2>OID_BGP_PEER_FSM_ESTABLISHED_TIME</h2>
+<pre>OID_BGP_PEER_FSM_ESTABLISHED_TIME </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_FSM_ESTABLISHED_TRANSITIONS" id="OID_BGP_PEER_FSM_ESTABLISHED_TRANSITIONS"> </a><div class="element clickable constant  OID_BGP_PEER_FSM_ESTABLISHED_TRANSITIONS" data-toggle="collapse" data-target=".OID_BGP_PEER_FSM_ESTABLISHED_TRANSITIONS .collapse">
+<h2>OID_BGP_PEER_FSM_ESTABLISHED_TRANSITIONS</h2>
+<pre>OID_BGP_PEER_FSM_ESTABLISHED_TRANSITIONS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_HOLD_TIME" id="OID_BGP_PEER_HOLD_TIME"> </a><div class="element clickable constant  OID_BGP_PEER_HOLD_TIME" data-toggle="collapse" data-target=".OID_BGP_PEER_HOLD_TIME .collapse">
+<h2>OID_BGP_PEER_HOLD_TIME</h2>
+<pre>OID_BGP_PEER_HOLD_TIME </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_HOLD_TIME_CONFIGURED" id="OID_BGP_PEER_HOLD_TIME_CONFIGURED"> </a><div class="element clickable constant  OID_BGP_PEER_HOLD_TIME_CONFIGURED" data-toggle="collapse" data-target=".OID_BGP_PEER_HOLD_TIME_CONFIGURED .collapse">
+<h2>OID_BGP_PEER_HOLD_TIME_CONFIGURED</h2>
+<pre>OID_BGP_PEER_HOLD_TIME_CONFIGURED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_IDENTIFIER" id="OID_BGP_PEER_IDENTIFIER"> </a><div class="element clickable constant  OID_BGP_PEER_IDENTIFIER" data-toggle="collapse" data-target=".OID_BGP_PEER_IDENTIFIER .collapse">
+<h2>OID_BGP_PEER_IDENTIFIER</h2>
+<pre>OID_BGP_PEER_IDENTIFIER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_IN_TOTAL_MESSAGES" id="OID_BGP_PEER_IN_TOTAL_MESSAGES"> </a><div class="element clickable constant  OID_BGP_PEER_IN_TOTAL_MESSAGES" data-toggle="collapse" data-target=".OID_BGP_PEER_IN_TOTAL_MESSAGES .collapse">
+<h2>OID_BGP_PEER_IN_TOTAL_MESSAGES</h2>
+<pre>OID_BGP_PEER_IN_TOTAL_MESSAGES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_IN_UPDATES" id="OID_BGP_PEER_IN_UPDATES"> </a><div class="element clickable constant  OID_BGP_PEER_IN_UPDATES" data-toggle="collapse" data-target=".OID_BGP_PEER_IN_UPDATES .collapse">
+<h2>OID_BGP_PEER_IN_UPDATES</h2>
+<pre>OID_BGP_PEER_IN_UPDATES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_IN_UPDATE_ELAPSED_TIME" id="OID_BGP_PEER_IN_UPDATE_ELAPSED_TIME"> </a><div class="element clickable constant  OID_BGP_PEER_IN_UPDATE_ELAPSED_TIME" data-toggle="collapse" data-target=".OID_BGP_PEER_IN_UPDATE_ELAPSED_TIME .collapse">
+<h2>OID_BGP_PEER_IN_UPDATE_ELAPSED_TIME</h2>
+<pre>OID_BGP_PEER_IN_UPDATE_ELAPSED_TIME </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_KEEP_ALIVE" id="OID_BGP_PEER_KEEP_ALIVE"> </a><div class="element clickable constant  OID_BGP_PEER_KEEP_ALIVE" data-toggle="collapse" data-target=".OID_BGP_PEER_KEEP_ALIVE .collapse">
+<h2>OID_BGP_PEER_KEEP_ALIVE</h2>
+<pre>OID_BGP_PEER_KEEP_ALIVE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_KEEP_ALIVE_CONFIGURED" id="OID_BGP_PEER_KEEP_ALIVE_CONFIGURED"> </a><div class="element clickable constant  OID_BGP_PEER_KEEP_ALIVE_CONFIGURED" data-toggle="collapse" data-target=".OID_BGP_PEER_KEEP_ALIVE_CONFIGURED .collapse">
+<h2>OID_BGP_PEER_KEEP_ALIVE_CONFIGURED</h2>
+<pre>OID_BGP_PEER_KEEP_ALIVE_CONFIGURED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_LAST_ERROR" id="OID_BGP_PEER_LAST_ERROR"> </a><div class="element clickable constant  OID_BGP_PEER_LAST_ERROR" data-toggle="collapse" data-target=".OID_BGP_PEER_LAST_ERROR .collapse">
+<h2>OID_BGP_PEER_LAST_ERROR</h2>
+<pre>OID_BGP_PEER_LAST_ERROR </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_LOCAL_ADDRESS" id="OID_BGP_PEER_LOCAL_ADDRESS"> </a><div class="element clickable constant  OID_BGP_PEER_LOCAL_ADDRESS" data-toggle="collapse" data-target=".OID_BGP_PEER_LOCAL_ADDRESS .collapse">
+<h2>OID_BGP_PEER_LOCAL_ADDRESS</h2>
+<pre>OID_BGP_PEER_LOCAL_ADDRESS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_LOCAL_PORT" id="OID_BGP_PEER_LOCAL_PORT"> </a><div class="element clickable constant  OID_BGP_PEER_LOCAL_PORT" data-toggle="collapse" data-target=".OID_BGP_PEER_LOCAL_PORT .collapse">
+<h2>OID_BGP_PEER_LOCAL_PORT</h2>
+<pre>OID_BGP_PEER_LOCAL_PORT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_MIN_AS_ORIGINATION_INTERVAL" id="OID_BGP_PEER_MIN_AS_ORIGINATION_INTERVAL"> </a><div class="element clickable constant  OID_BGP_PEER_MIN_AS_ORIGINATION_INTERVAL" data-toggle="collapse" data-target=".OID_BGP_PEER_MIN_AS_ORIGINATION_INTERVAL .collapse">
+<h2>OID_BGP_PEER_MIN_AS_ORIGINATION_INTERVAL</h2>
+<pre>OID_BGP_PEER_MIN_AS_ORIGINATION_INTERVAL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_MIN_ROUTE_ADVERTISEMENT_INTERVAL" id="OID_BGP_PEER_MIN_ROUTE_ADVERTISEMENT_INTERVAL"> </a><div class="element clickable constant  OID_BGP_PEER_MIN_ROUTE_ADVERTISEMENT_INTERVAL" data-toggle="collapse" data-target=".OID_BGP_PEER_MIN_ROUTE_ADVERTISEMENT_INTERVAL .collapse">
+<h2>OID_BGP_PEER_MIN_ROUTE_ADVERTISEMENT_INTERVAL</h2>
+<pre>OID_BGP_PEER_MIN_ROUTE_ADVERTISEMENT_INTERVAL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_NEGOTIATED_VERSION" id="OID_BGP_PEER_NEGOTIATED_VERSION"> </a><div class="element clickable constant  OID_BGP_PEER_NEGOTIATED_VERSION" data-toggle="collapse" data-target=".OID_BGP_PEER_NEGOTIATED_VERSION .collapse">
+<h2>OID_BGP_PEER_NEGOTIATED_VERSION</h2>
+<pre>OID_BGP_PEER_NEGOTIATED_VERSION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_OUT_TOTAL_MESSAGES" id="OID_BGP_PEER_OUT_TOTAL_MESSAGES"> </a><div class="element clickable constant  OID_BGP_PEER_OUT_TOTAL_MESSAGES" data-toggle="collapse" data-target=".OID_BGP_PEER_OUT_TOTAL_MESSAGES .collapse">
+<h2>OID_BGP_PEER_OUT_TOTAL_MESSAGES</h2>
+<pre>OID_BGP_PEER_OUT_TOTAL_MESSAGES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_OUT_UPDATES" id="OID_BGP_PEER_OUT_UPDATES"> </a><div class="element clickable constant  OID_BGP_PEER_OUT_UPDATES" data-toggle="collapse" data-target=".OID_BGP_PEER_OUT_UPDATES .collapse">
+<h2>OID_BGP_PEER_OUT_UPDATES</h2>
+<pre>OID_BGP_PEER_OUT_UPDATES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_REMOTE_ADDR" id="OID_BGP_PEER_REMOTE_ADDR"> </a><div class="element clickable constant  OID_BGP_PEER_REMOTE_ADDR" data-toggle="collapse" data-target=".OID_BGP_PEER_REMOTE_ADDR .collapse">
+<h2>OID_BGP_PEER_REMOTE_ADDR</h2>
+<pre>OID_BGP_PEER_REMOTE_ADDR </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_REMOTE_ASN" id="OID_BGP_PEER_REMOTE_ASN"> </a><div class="element clickable constant  OID_BGP_PEER_REMOTE_ASN" data-toggle="collapse" data-target=".OID_BGP_PEER_REMOTE_ASN .collapse">
+<h2>OID_BGP_PEER_REMOTE_ASN</h2>
+<pre>OID_BGP_PEER_REMOTE_ASN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_PEER_REMOTE_PORT" id="OID_BGP_PEER_REMOTE_PORT"> </a><div class="element clickable constant  OID_BGP_PEER_REMOTE_PORT" data-toggle="collapse" data-target=".OID_BGP_PEER_REMOTE_PORT .collapse">
+<h2>OID_BGP_PEER_REMOTE_PORT</h2>
+<pre>OID_BGP_PEER_REMOTE_PORT </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_BGP_VERSION" id="OID_BGP_VERSION"> </a><div class="element clickable constant  OID_BGP_VERSION" data-toggle="collapse" data-target=".OID_BGP_VERSION .collapse">
+<h2>OID_BGP_VERSION</h2>
+<pre>OID_BGP_VERSION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
+            generated on 2012-06-21T20:05:18+01:00.<br></footer></div>
+</div>
+</body>
+</html>
