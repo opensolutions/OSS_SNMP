@@ -103,13 +103,13 @@ class SNMP
      * $snmp->enableCache();
      */
     protected $_disableCache = false;
-    
+
     /**
      * SNMP output constants to mirror those of PHP
      * @var SNMP output constants to mirror those of PHP
      */
     const OID_OUTPUT_FULL    = SNMP_OID_OUTPUT_FULL;
-    
+
     /**
      * SNMP output constants to mirror those of PHP
      * @var SNMP output constants to mirror those of PHP
@@ -283,6 +283,53 @@ class SNMP
     }
 
 
+
+    /**
+     * Get indexed SNMP values where they are indexed by IPv4 addresses
+     *
+     * I.e. the following query with sample results:
+     *
+     * subOidWalk( '.1.3.6.1.2.1.15.3.1.1. )
+     *
+     *
+     *       .1.3.6.1.2.1.15.3.1.1.10.20.30.4 = IpAddress: 192.168.10.10
+     *       ...
+     *
+     * would yield an array:
+     *
+     *      [10.20.30.4] => "192.168.10.10"
+     *      ....
+     *
+     * @throws \OSS_SNMP\Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
+     * @param string $oid The OID to walk
+     * @return array The resultant values
+     */
+    public function walkIPv4( $oid )
+    {
+        if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
+            return $rtn;
+
+        $this->_lastResult = @snmp2_real_walk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
+
+        if( $this->_lastResult === false )
+            throw new Exception( 'Cound not perform walk for OID ' . $oid );
+
+        $result = array();
+
+        foreach( $this->_lastResult as $_oid => $value )
+        {
+            $oids = explode( '.', $_oid );
+
+            $len = count( $oids );
+
+            $result[ $oids[ $len - 4 ] . '.' . $oids[ $len - 3 ] . '.' . $oids[ $len - 2 ] . '.' . $oids[ $len - 1 ]  ] = $this->parseSnmpValue( $value );
+        }
+
+        return $this->getCache()->save( $oid, $result );
+    }
+
+
+
     /**
      * Parse the result of an SNMP query into a PHP type
      *
@@ -327,6 +374,10 @@ class SNMP
 
             case 'Hex-STRING':
                 $rtn = (string)implode( '', explode( ' ', $value ) );
+                break;
+
+            case 'IpAddress':
+                $rtn = (string)$value;
                 break;
 
             case 'Timeticks':
