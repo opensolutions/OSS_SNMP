@@ -1477,4 +1477,140 @@ class Channels extends \OSS_SNMP\MIB
             return null;
         }
     }
+    
+    /**
+     * Utility function to gather together all the details of individual channels into an array.
+     *
+     * Essentially, this function calls all `chanXXX()` functions to return the details for
+     * individual channels gathered together. E.g.
+     *
+     *     Array
+     *     (
+     *         ....
+     *         [SIP/foobar-654-00000372] => Array
+     *         (
+     *             [chanName] => SIP/foobar-654-00000372
+     *             [chanLanguage] => en
+     *             [chanType] => SIP
+     *             [chanMusicClass] => (null)
+     *             ...
+     *             [chanVariables] => Array
+     *             (
+     *                 [DIALEDPEERNUMBER] => foobar-654
+     *                 [SIPCALLID] => 1be189fa6281ffc1108db32935f05016@192.168.7.7:5060
+     *             )
+     *             [chanFlags] => 1020
+     *             [chanTransferCap] => speech
+     *         )
+     *         ....
+     *     )
+     *
+     * The function returns an array of all channels. Unknown parameters within the channel are
+     * set to null.
+     *
+     * An empty array is returned if there are no active channels.
+     *
+     * @param bool $translate Translate parameters when possible
+     * @param bool $useIndexes Rather than indexing the outer array with the unique channel name, index with the SNMP table position
+     * @return array  All the details of individual channels into an array.
+     */
+    public function channelDetails( $translate = false, $useIndexes = false )
+    {
+        try { $chanName = $this->chanName(); } catch( \OSS_SNMP\Exception $e ) { $chanName = null; }
+        
+        // if there's no channels, skip the rest
+        if( $chanName === null || !count( $chanName ) )
+            return [];
+        
+        try { $chanLanguage = $this->chanLanguage(); } catch( \OSS_SNMP\Exception $e ) { $chanLanguage = null; }
+        try { $chanType = $this->chanType(); } catch( \OSS_SNMP\Exception $e ) { $chanType = null; }
+        try { $chanMusicClass = $this->chanMusicClass(); } catch( \OSS_SNMP\Exception $e ) { $chanMusicClass = null; }
+        try { $chanBridge = $this->chanBridge(); } catch( \OSS_SNMP\Exception $e ) { $chanBridge = null; }
+        try { $chanMasq = $this->chanMasq(); } catch( \OSS_SNMP\Exception $e ) { $chanMasq = null; }
+        try { $chanMasqr = $this->chanMasqr(); } catch( \OSS_SNMP\Exception $e ) { $chanMasqr = null; }
+        try { $chanWhenHangup = $this->chanWhenHangup(); } catch( \OSS_SNMP\Exception $e ) { $chanWhenHangup = null; }
+        try { $chanApp = $this->chanApp(); } catch( \OSS_SNMP\Exception $e ) { $chanApp = null; }
+        try { $chanData = $this->chanData(); } catch( \OSS_SNMP\Exception $e ) { $chanData = null; }
+        try { $chanContext = $this->chanContext(); } catch( \OSS_SNMP\Exception $e ) { $chanContext = null; }
+        try { $chanMacroContext = $this->chanMacroContext(); } catch( \OSS_SNMP\Exception $e ) { $chanMacroContext = null; }
+        try { $chanMacroExten = $this->chanMacroExten(); } catch( \OSS_SNMP\Exception $e ) { $chanMacroExten = null; }
+        try { $chanMacroPri = $this->chanMacroPri(); } catch( \OSS_SNMP\Exception $e ) { $chanMacroPri = null; }
+        try { $chanExten = $this->chanExten(); } catch( \OSS_SNMP\Exception $e ) { $chanExten = null; }
+        try { $chanPri = $this->chanPri(); } catch( \OSS_SNMP\Exception $e ) { $chanPri = null; }
+        try { $chanAccountCode = $this->chanAccountCode(); } catch( \OSS_SNMP\Exception $e ) { $chanAccountCode = null; }
+        try { $chanForwardTo = $this->chanForwardTo(); } catch( \OSS_SNMP\Exception $e ) { $chanForwardTo = null; }
+        try { $chanUniqueId = $this->chanUniqueId(); } catch( \OSS_SNMP\Exception $e ) { $chanUniqueId = null; }
+        try { $chanCallGroup = $this->chanCallGroup(); } catch( \OSS_SNMP\Exception $e ) { $chanCallGroup = null; }
+        try { $chanPickupGroup = $this->chanPickupGroup(); } catch( \OSS_SNMP\Exception $e ) { $chanPickupGroup = null; }
+        try { $chanState = $this->chanState( $translate ); } catch( \OSS_SNMP\Exception $e ) { $chanState = null; }
+        try { $chanMuted = $this->chanMuted(); } catch( \OSS_SNMP\Exception $e ) { $chanMuted = null; }
+        try { $chanRings = $this->chanRings(); } catch( \OSS_SNMP\Exception $e ) { $chanRings = null; }
+        try { $chanCidDNID = $this->chanCidDNID(); } catch( \OSS_SNMP\Exception $e ) { $chanCidDNID = null; }
+        try { $chanCidNum = $this->chanCidNum(); } catch( \OSS_SNMP\Exception $e ) { $chanCidNum = null; }
+        try { $chanCidName = $this->chanCidName(); } catch( \OSS_SNMP\Exception $e ) { $chanCidName = null; }
+        try { $chanCidANI = $this->chanCidANI(); } catch( \OSS_SNMP\Exception $e ) { $chanCidANI = null; }
+        try { $chanCidRDNIS = $this->chanCidRDNIS(); } catch( \OSS_SNMP\Exception $e ) { $chanCidRDNIS = null; }
+        try { $chanCidPresentation = $this->chanCidPresentation(); } catch( \OSS_SNMP\Exception $e ) { $chanCidPresentation = null; }
+        try { $chanCidANI2 = $this->chanCidANI2(); } catch( \OSS_SNMP\Exception $e ) { $chanCidANI2 = null; }
+        try { $chanCidTON = $this->chanCidTON(); } catch( \OSS_SNMP\Exception $e ) { $chanCidTON = null; }
+        try { $chanCidTNS = $this->chanCidTNS(); } catch( \OSS_SNMP\Exception $e ) { $chanCidTNS = null; }
+        try { $chanAMAFlags = $this->chanAMAFlags( $translate ); } catch( \OSS_SNMP\Exception $e ) { $chanAMAFlags = null; }
+        try { $chanADSI = $this->chanADSI( $translate ); } catch( \OSS_SNMP\Exception $e ) { $chanADSI = null; }
+        try { $chanToneZone = $this->chanToneZone(); } catch( \OSS_SNMP\Exception $e ) { $chanToneZone = null; }
+        try { $chanHangupCause = $this->chanHangupCause( $translate ); } catch( \OSS_SNMP\Exception $e ) { $chanHangupCause = null; }
+        try { $chanVariables = $this->chanVariables(); } catch( \OSS_SNMP\Exception $e ) { $chanVariables = null; }
+        try { $chanFlags = $this->chanFlags(); } catch( \OSS_SNMP\Exception $e ) { $chanFlags = null; }
+        try { $chanTransferCap = $this->chanTransferCap( $translate ); } catch( \OSS_SNMP\Exception $e ) { $chanTransferCap = null; }
+    
+    
+        $details = [];
+        
+        foreach( $chanName as $idx => $name )
+        {
+            $index = $useIndexes ? $idx : ( ( $chanName !== null && isset( $chanName[ $idx ] ) ) ? $chanName[ $idx ] : $idx );
+            
+            $details[ $index ]['chanName'] = ( $chanName !== null && isset( $chanName[ $idx ] ) ) ? $chanName[ $idx ] : null;
+            $details[ $index ]['chanLanguage'] = ( $chanLanguage !== null && isset( $chanLanguage[ $idx ] ) ) ? $chanLanguage[ $idx ] : null;
+            $details[ $index ]['chanType'] = ( $chanType !== null && isset( $chanType[ $idx ] ) ) ? $chanType[ $idx ] : null;
+            $details[ $index ]['chanMusicClass'] = ( $chanMusicClass !== null && isset( $chanMusicClass[ $idx ] ) ) ? $chanMusicClass[ $idx ] : null;
+            $details[ $index ]['chanBridge'] = ( $chanBridge !== null && isset( $chanBridge[ $idx ] ) ) ? $chanBridge[ $idx ] : null;
+            $details[ $index ]['chanMasq'] = ( $chanMasq !== null && isset( $chanMasq[ $idx ] ) ) ? $chanMasq[ $idx ] : null;
+            $details[ $index ]['chanMasqr'] = ( $chanMasqr !== null && isset( $chanMasqr[ $idx ] ) ) ? $chanMasqr[ $idx ] : null;
+            $details[ $index ]['chanWhenHangup'] = ( $chanWhenHangup !== null && isset( $chanWhenHangup[ $idx ] ) ) ? $chanWhenHangup[ $idx ] : null;
+            $details[ $index ]['chanApp'] = ( $chanApp !== null && isset( $chanApp[ $idx ] ) ) ? $chanApp[ $idx ] : null;
+            $details[ $index ]['chanData'] = ( $chanData !== null && isset( $chanData[ $idx ] ) ) ? $chanData[ $idx ] : null;
+            $details[ $index ]['chanContext'] = ( $chanContext !== null && isset( $chanContext[ $idx ] ) ) ? $chanContext[ $idx ] : null;
+            $details[ $index ]['chanMacroContext'] = ( $chanMacroContext !== null && isset( $chanMacroContext[ $idx ] ) ) ? $chanMacroContext[ $idx ] : null;
+            $details[ $index ]['chanMacroExten'] = ( $chanMacroExten !== null && isset( $chanMacroExten[ $idx ] ) ) ? $chanMacroExten[ $idx ] : null;
+            $details[ $index ]['chanMacroPri'] = ( $chanMacroPri !== null && isset( $chanMacroPri[ $idx ] ) ) ? $chanMacroPri[ $idx ] : null;
+            $details[ $index ]['chanExten'] = ( $chanExten !== null && isset( $chanExten[ $idx ] ) ) ? $chanExten[ $idx ] : null;
+            $details[ $index ]['chanPri'] = ( $chanPri !== null && isset( $chanPri[ $idx ] ) ) ? $chanPri[ $idx ] : null;
+            $details[ $index ]['chanAccountCode'] = ( $chanAccountCode !== null && isset( $chanAccountCode[ $idx ] ) ) ? $chanAccountCode[ $idx ] : null;
+            $details[ $index ]['chanForwardTo'] = ( $chanForwardTo !== null && isset( $chanForwardTo[ $idx ] ) ) ? $chanForwardTo[ $idx ] : null;
+            $details[ $index ]['chanUniqueId'] = ( $chanUniqueId !== null && isset( $chanUniqueId[ $idx ] ) ) ? $chanUniqueId[ $idx ] : null;
+            $details[ $index ]['chanCallGroup'] = ( $chanCallGroup !== null && isset( $chanCallGroup[ $idx ] ) ) ? $chanCallGroup[ $idx ] : null;
+            $details[ $index ]['chanPickupGroup'] = ( $chanPickupGroup !== null && isset( $chanPickupGroup[ $idx ] ) ) ? $chanPickupGroup[ $idx ] : null;
+            $details[ $index ]['chanState'] = ( $chanState !== null && isset( $chanState[ $idx ] ) ) ? $chanState[ $idx ] : null;
+            $details[ $index ]['chanMuted'] = ( $chanMuted !== null && isset( $chanMuted[ $idx ] ) ) ? $chanMuted[ $idx ] : null;
+            $details[ $index ]['chanRings'] = ( $chanRings !== null && isset( $chanRings[ $idx ] ) ) ? $chanRings[ $idx ] : null;
+            $details[ $index ]['chanCidDNID'] = ( $chanCidDNID !== null && isset( $chanCidDNID[ $idx ] ) ) ? $chanCidDNID[ $idx ] : null;
+            $details[ $index ]['chanCidNum'] = ( $chanCidNum !== null && isset( $chanCidNum[ $idx ] ) ) ? $chanCidNum[ $idx ] : null;
+            $details[ $index ]['chanCidName'] = ( $chanCidName !== null && isset( $chanCidName[ $idx ] ) ) ? $chanCidName[ $idx ] : null;
+            $details[ $index ]['chanCidANI'] = ( $chanCidANI !== null && isset( $chanCidANI[ $idx ] ) ) ? $chanCidANI[ $idx ] : null;
+            $details[ $index ]['chanCidRDNIS'] = ( $chanCidRDNIS !== null && isset( $chanCidRDNIS[ $idx ] ) ) ? $chanCidRDNIS[ $idx ] : null;
+            $details[ $index ]['chanCidPresentation'] = ( $chanCidPresentation !== null && isset( $chanCidPresentation[ $idx ] ) ) ? $chanCidPresentation[ $idx ] : null;
+            $details[ $index ]['chanCidANI2'] = ( $chanCidANI2 !== null && isset( $chanCidANI2[ $idx ] ) ) ? $chanCidANI2[ $idx ] : null;
+            $details[ $index ]['chanCidTON'] = ( $chanCidTON !== null && isset( $chanCidTON[ $idx ] ) ) ? $chanCidTON[ $idx ] : null;
+            $details[ $index ]['chanCidTNS'] = ( $chanCidTNS !== null && isset( $chanCidTNS[ $idx ] ) ) ? $chanCidTNS[ $idx ] : null;
+            $details[ $index ]['chanAMAFlags'] = ( $chanAMAFlags !== null && isset( $chanAMAFlags[ $idx ] ) ) ? $chanAMAFlags[ $idx ] : null;
+            $details[ $index ]['chanADSI'] = ( $chanADSI !== null && isset( $chanADSI[ $idx ] ) ) ? $chanADSI[ $idx ] : null;
+            $details[ $index ]['chanToneZone'] = ( $chanToneZone !== null && isset( $chanToneZone[ $idx ] ) ) ? $chanToneZone[ $idx ] : null;
+            $details[ $index ]['chanHangupCause'] = ( $chanHangupCause !== null && isset( $chanHangupCause[ $idx ] ) ) ? $chanHangupCause[ $idx ] : null;
+            $details[ $index ]['chanVariables'] = ( $chanVariables !== null && isset( $chanVariables[ $idx ] ) ) ? $chanVariables[ $idx ] : null;
+            $details[ $index ]['chanFlags'] = ( $chanFlags !== null && isset( $chanFlags[ $idx ] ) ) ? $chanFlags[ $idx ] : null;
+            $details[ $index ]['chanTransferCap'] = ( $chanTransferCap !== null && isset( $chanTransferCap[ $idx ] ) ) ? $chanTransferCap[ $idx ] : null;
+        }
+        
+        return $details;
+    }
 }
