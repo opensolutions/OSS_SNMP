@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
+    Copyright (c) 2012 - 2013, Open Source Solutions Limited, Dublin, Ireland
     All rights reserved.
 
     Contact: Barry O'Donovan - barry (at) opensolutions (dot) ie
@@ -38,130 +38,84 @@ namespace OSS_SNMP\MIBS\Cisco;
 /**
  * A class for performing SNMP V2 queries on Cisco devices
  *
- * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
+ * @copyright Copyright (c) 2012 - 2013, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
-class RSTP extends \OSS_SNMP\MIBS\Cisco
+class MST extends \OSS_SNMP\MIBS\Cisco
 {
 
-
-    const OID_STP_X_RSTP_PORT_ROLE     = '.1.3.6.1.4.1.9.9.82.1.12.2.1.3'; // add '.$VID'; integer
-
-
+    const OID_STP_X_MST_MAX_INSTANCE_NUMBER = '.1.3.6.1.4.1.9.9.82.1.11.1.0'; 
+    const OID_STP_X_MST_REGION_NAME         = '.1.3.6.1.4.1.9.9.82.1.11.2.0'; 
+    const OID_STP_X_MST_REGION_REVISION     = '.1.3.6.1.4.1.9.9.82.1.11.3.0'; 
+    
+    
     /**
-     * Constant for possible value of STP extensions RSTP Port Role
-     * @see rstpPortRole()
-     */
-    const STP_X_RSTP_PORT_ROLE_DISABLED = 1;
-
-    /**
-     * Constant for possible value of STP extensions RSTP Port Role
-     * @see rstpPortRole()
-     */
-    const STP_X_RSTP_PORT_ROLE_ROOT = 2;
-
-    /**
-     * Constant for possible value of STP extensions RSTP Port Role
-     * @see rstpPortRole()
-     */
-    const STP_X_RSTP_PORT_ROLE_DESIGNATED = 3;
-
-    /**
-     * Constant for possible value of STP extensions RSTP Port Role
-     * @see rstpPortRole()
-     */
-    const STP_X_RSTP_PORT_ROLE_ALTERNATE = 4;
-
-    /**
-     * Constant for possible value of STP extensions RSTP Port Role
-     * @see rstpPortRole()
-     */
-    const STP_X_RSTP_PORT_ROLE_BACKUP = 5;
-
-    /**
-     * Constant for possible value of STP extensions RSTP Port Role
-     * @see rstpPortRole()
-     */
-    const STP_X_RSTP_PORT_ROLE_BOUNDARY = 6;
-
-    /**
-     * Constant for possible value of STP extensions RSTP Port Role
-     * @see rstpPortRole()
-     */
-    const STP_X_RSTP_PORT_ROLE_MASTER = 6;
-
-    /**
-     * Text representation of STP extensions RSTP Port Roles
+     * Returns the maximum MST instance number
      *
-     * @see rstpPortRole()
-     * @var array Text representations of STP extensions RSTP Port Role.
+     * > "The maximum MST (Multiple Spanning Tree) instance id, 
+     * > that can be supported by the device for Cisco proprietary
+     * > implementation of the MST Protocol.
+     * > 
+     * > This object is deprecated and replaced by stpxSMSTMaxInstanceID."
+     *
+     * @deprecated Use \OSS_SNMP\MIBS\Cisco\SMST::maxInstanceID()
+     * @return string The maximum MST instance number
      */
-    public static $STP_X_RSTP_PORT_ROLES = array(
-        self::STP_X_RSTP_PORT_ROLE_DISABLED    => 'disabled',
-        self::STP_X_RSTP_PORT_ROLE_ROOT        => 'root',
-        self::STP_X_RSTP_PORT_ROLE_DESIGNATED  => 'designated',
-        self::STP_X_RSTP_PORT_ROLE_ALTERNATE   => 'alternate',
-        self::STP_X_RSTP_PORT_ROLE_BACKUP      => 'backUp',
-        self::STP_X_RSTP_PORT_ROLE_BOUNDARY    => 'boundary',
-        self::STP_X_RSTP_PORT_ROLE_MASTER      => 'master'
-    );
-
-    /**
-     * Array of port states that indicate traffic is/can pass
-     * @var Array of port states that indicate traffic is/can pass
-     */
-    public static $STP_X_RSTP_PASSING_PORT_ROLES = array(
-        self::STP_X_RSTP_PORT_ROLE_ROOT        => 'root',
-        self::STP_X_RSTP_PORT_ROLE_DESIGNATED  => 'designated'
-    );
-
-    /**
-     * Get the device's RSTP port roles (by given vlan id)
-     *
-     * Only ports participating in RSTP for the given VLAN id are returned.
-     *
-     * This function will also convert STP port IDs to the device proper port IDs.
-     * E.g. sample output:
-     *
-     * Array
-     * (
-     *    [10101] => 3
-     *    [10103] => 3
-     *    [10105] => 3
-     *    [5048] => 2
-     * )
-     *
-     *
-     * @see $STP_X_RSTP_PORT_ROLES
-     * @see STP_X_RSTP_PORT_ROLE_ROOT and others
-     *
-     * @param int $vid The RSTP VLAN ID to query port roles for
-     * @param boolean $translate If true, return the string representation via self::$STP_X_RSTP_PORT_ROLES
-     * @return array The device's RSTP port roles (by given vlan id)
-     */
-    public function rstpPortRole( $vid, $translate = false )
+    public function maxInstanceNumber()
     {
-        $roles = $this->getSNMP()->walk1d( self::OID_STP_X_RSTP_PORT_ROLE . ".{$vid}" );
-
-        // convert STP port IDs to switch port IDs
-        $croles = array();
-        foreach( $roles as $k => $v )
-        {
-            $base = $this->getSNMP()->useBridge()->basePortIfIndexes()[$k];
-            if( $base )
-                $croles[ $base ] = $v;
-            else
-            {
-                // and and get port ID from MIBS\Entity
-                // TODO Find a better way to translate these?
-                $croles[ $this->getSNMP()->useEntity()->relPosToAlias()[$k] ] = $v;
-            }
-        }
-
-        if( !$translate )
-            return $croles;
-
-        return $this->getSNMP()->translate( $croles, self::$STP_X_RSTP_PORT_ROLES );
+        return $this->getSNMP()->get( self::OID_STP_X_MST_MAX_INSTANCE_NUMBER );
+    }
+    
+    /**
+     * Returns the operational MST region name.
+     *
+     * @return string The operational MST region name
+     */
+    public function regionName()
+    {
+        return $this->getSNMP()->get( self::OID_STP_X_MST_REGION_NAME );
+    }
+    
+    /**
+     * Returns the operational MST region revision.
+     *
+     * @deprecated Use \OSS_SNMP\MIBS\Cisco\SMST::regionRevision()
+     * @return string The operational MST region revision
+     */
+    public function regionRevision()
+    {
+        return $this->getSNMP()->get( self::OID_STP_X_MST_REGION_REVISION );
+    }
+    
+    
+    /**
+     * Get the device's MST port roles (by given instance id)
+     *
+     * Only ports participating in MST for the given instance id are returned.
+     *
+     * > "An entry containing the port role information for the RSTP
+     * > protocol on a port for a particular Spanning Tree instance."
+     *
+     * The original OIDs for this are deprecated:
+     *
+     * > stpxMSTPortRoleTable - 1.3.6.1.4.1.9.9.82.1.11.12
+     * > 
+     * > "A table containing a list of the bridge ports for a 
+     * > particular MST instance. This table is only instantiated 
+     * > when the stpxSpanningTreeType is mst(4). 
+     * > 
+     * > This table is deprecated and replaced with 
+     * > stpxRSTPPortRoleTable."
+     *
+     *
+     * @see RSTP::portRoles()
+     * @param int $iid The MST instance ID to query port roles for
+     * @param boolean $translate If true, return the string representation via RSTP::$STP_X_RSTP_PORT_ROLES
+     * @return array The device's MST port roles (by given instance id)
+     */
+    public function portRoles( $iid, $translate = false )
+    {
+        return $this->getSNMP()->useCisco_RSTP()->portRoles( $iid, $translate );
     }
 
 
