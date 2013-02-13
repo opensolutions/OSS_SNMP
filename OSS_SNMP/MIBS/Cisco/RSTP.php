@@ -139,7 +139,7 @@ class RSTP extends \OSS_SNMP\MIBS\Cisco
      * @param boolean $translate If true, return the string representation via self::$STP_X_RSTP_PORT_ROLES
      * @return array The device's RSTP port roles (by given vlan id)
      */
-    public function rstpPortRole( $vid, $translate = false )
+    public function portRoles( $vid, $translate = false )
     {
         $roles = $this->getSNMP()->walk1d( self::OID_STP_X_RSTP_PORT_ROLE . ".{$vid}" );
 
