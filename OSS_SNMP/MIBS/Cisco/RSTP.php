@@ -145,17 +145,20 @@ class RSTP extends \OSS_SNMP\MIBS\Cisco
 
         // convert STP port IDs to switch port IDs
         $croles = array();
+        $basePortIfIndexes = $this->getSNMP()->useBridge()->basePortIfIndexes();
+        $relPosToAliases   = $this->getSNMP()->useEntity()->relPosToAlias();
         foreach( $roles as $k => $v )
         {
-            $base = $this->getSNMP()->useBridge()->basePortIfIndexes()[$k];
-            if( $base )
-                $croles[ $base ] = $v;
-            else
+            if( isset( $basePortIfIndexes[ $k ] ) )
+                $croles[ $basePortIfIndexes[ $k ] ] = $v;
+            else if( isset( $relPosToAliases[ $k ] ) )
             {
                 // and and get port ID from MIBS\Entity
                 // TODO Find a better way to translate these?
-                $croles[ $this->getSNMP()->useEntity()->relPosToAlias()[$k] ] = $v;
+                $croles[ $relPosToAliases[ $k ] ] = $v;
             }
+            else
+                $croles[ 'UNKNOWN-' . $k ] = $v;
         }
 
         if( !$translate )
