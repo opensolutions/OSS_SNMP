@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
@@ -31,13 +31,13 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">39</span></a></li>
+                <span class="label label-info">36</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">2</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -56,28 +56,43 @@
 </div>
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
-<i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#basePortIfIndexes" title="basePortIfIndexes :: Returns an associate array of STP port IDs (key) to interface IDs (value)"><span class="description">Returns an associate array of STP port IDs (key) to interface IDs (value)</span><pre>basePortIfIndexes()</pre></a></li>
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_basePortIfIndexes" title="basePortIfIndexes :: Returns an associate array of STP port IDs (key) to interface IDs (value)"><span class="description">Returns an associate array of STP port IDs (key) to interface IDs (value)</span><pre>basePortIfIndexes()</pre></a></li>
+<li class="method public inherited"><a href="#method_getSNMP" title="getSNMP :: Get the SNMP instance"><span class="description">Get the SNMP instance</span><pre>getSNMP()</pre></a></li>
+<li class="method public inherited"><a href="#method_setSNMP" title="setSNMP :: Set the SNMP instance"><span class="description">Set the SNMP instance</span><pre>setSNMP()</pre></a></li>
+</ul>
+</li>
 <li class="nav-header">
-<i class="icon-custom icon-constant"></i> Constants</li>
-<li class="constant  "><a href="#OID_BRIDGE_BASE_PORT_IF_INDEX" title="OID_BRIDGE_BASE_PORT_IF_INDEX :: "><span class="description">OID_BRIDGE_BASE_PORT_IF_INDEX</span><pre>OID_BRIDGE_BASE_PORT_IF_INDEX</pre></a></li>
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private inherited"><a href="#property__snmp" title="$_snmp :: Instance for the SNMP object"><span class="description"></span><pre>$_snmp</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul><li class="constant  "><a href="#constant_OID_BRIDGE_BASE_PORT_IF_INDEX" title="OID_BRIDGE_BASE_PORT_IF_INDEX :: "><span class="description">OID_BRIDGE_BASE_PORT_IF_INDEX</span><pre>OID_BRIDGE_BASE_PORT_IF_INDEX</pre></a></li></ul>
+</li>
 </ul>
 </div>
 <div class="span8">
-<a name="%5COSS_SNMP%5CMIBS%5CBridge" id="\OSS_SNMP\MIBS\Bridge"></a><ul class="breadcrumb">
+<a id="\OSS_SNMP\MIBS\Bridge"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/OSS_SNMP.html">OSS_SNMP</a></li>
-<span class="divider">\</span><li><a href="../namespaces/OSS_SNMP.MIBS.html">MIBS</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/OSS_SNMP.MIBS.html">MIBS</a>
+</li>
 <li class="active">
 <span class="divider">\</span><a href="../classes/OSS_SNMP.MIBS.Bridge.html">Bridge</a>
 </li>
 </ul>
-<div href="../classes/OSS_SNMP.MIBS.Bridge.html" class="element class">
+<div class="element class">
 <p class="short_description">A class for performing SNMP V2 queries on generic devices</p>
 <div class="details">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -90,24 +105,72 @@
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a name="basePortIfIndexes" id="basePortIfIndexes"></a><div class="element clickable method public basePortIfIndexes" data-toggle="collapse" data-target=".basePortIfIndexes .collapse">
+<a id="method_basePortIfIndexes"></a><div class="element clickable method public method_basePortIfIndexes" data-toggle="collapse" data-target=".method_basePortIfIndexes .collapse">
 <h2>Returns an associate array of STP port IDs (key) to interface IDs (value)</h2>
 <pre>basePortIfIndexes() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>e.g.  [22] => 10122</p></p>
+<div class="long_description"><p>e.g.  [22] => 10122</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Associate array of STP port IDs (key) to interface IDs (value)</div>
 </div></div>
 </div>
+<a id="method_getSNMP"></a><div class="element clickable method public method_getSNMP" data-toggle="collapse" data-target=".method_getSNMP .collapse">
+<h2>Get the SNMP instance</h2>
+<pre>getSNMP() : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\OSS_SNMP\MIB::getSNMP()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>Instance of the SNMP object</div>
+</div></div>
+</div>
+<a id="method_setSNMP"></a><div class="element clickable method public method_setSNMP" data-toggle="collapse" data-target=".method_setSNMP .collapse">
+<h2>Set the SNMP instance</h2>
+<pre>setSNMP(<a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a> $snmp) : <a href="../classes/OSS_SNMP.MIB.html">\OSS_SNMP\MIB</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\OSS_SNMP\MIB::setSNMP()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$snmp</h4>
+<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code><p>the SNMP instance</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/OSS_SNMP.MIB.html">\OSS_SNMP\MIB</a></code>An instance of this class for fluent interfaces</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__snmp"> </a><div class="element clickable property private property__snmp" data-toggle="collapse" data-target=".property__snmp .collapse">
+<h2></h2>
+<pre>$_snmp </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\OSS_SNMP\MIB::$$_snmp</td>
+</tr></table>
+</div></div>
+</div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
-<a name="OID_BRIDGE_BASE_PORT_IF_INDEX" id="OID_BRIDGE_BASE_PORT_IF_INDEX"> </a><div class="element clickable constant  OID_BRIDGE_BASE_PORT_IF_INDEX" data-toggle="collapse" data-target=".OID_BRIDGE_BASE_PORT_IF_INDEX .collapse">
+<a id="constant_OID_BRIDGE_BASE_PORT_IF_INDEX"> </a><div class="element clickable constant  constant_OID_BRIDGE_BASE_PORT_IF_INDEX" data-toggle="collapse" data-target=".constant_OID_BRIDGE_BASE_PORT_IF_INDEX .collapse">
 <h2>OID_BRIDGE_BASE_PORT_IF_INDEX</h2>
 <pre>OID_BRIDGE_BASE_PORT_IF_INDEX </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 </div>
 </div>
@@ -115,8 +178,8 @@
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
-            generated on 2012-06-22T10:05:27+01:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-02-13T14:47:23Z.<br></footer></div>
 </div>
 </body>
 </html>
