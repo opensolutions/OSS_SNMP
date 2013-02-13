@@ -63,8 +63,8 @@ This software library is released under the *New BSD License* (also known as the
 for the full text.
 
 
-The Bad News... with some Good News
-------------------------------------
+MIBS - The Bad News... with some Good News
+------------------------------------------
 
 The, what I'm calling, *MIBs* are defined in `OSS_SNMP/MIBS` and these define the functionality as per the examples above.
 
@@ -78,11 +78,15 @@ functionality in the others. For example the Cisco/CDP MIB can discover your ent
 topology recursively. Another project we've released, [NOCtools](https://github.com/opensolutions/NOCtools/wiki), 
 give concreate examples of this with GraphViz.
 
-PHP 5.4 is a requirement. Yeah, I know. Not even the current Ubuntu ships this. But
-look, 5.4 is released, it's stable, it's available on FreeBSD and
-[from personal ports for Ubuntu](http://www.barryodonovan.com/index.php/2012/05/22/ubuntu-12-04-precise-pangolin-and-php-5-4-again).
+Right now it's SNMP v2. This can be easily updated for multiple version support. Also, it's read only
+as, at time of writing, I have no requirement to set SNMP values.
 
-The reason for 5.4, among other things, is that we can now dereference an array directly from a function call:
+
+Requirements
+------------
+
+PHP 5.4 is a requirement. The reason for 5.4 (besides the fact it's long been regarded as stable), 
+is that we can now dereference an array directly from a function call:
 
     $name = $ciscosw->useCisco_VTP()->vlanNames()[ $vlanid ];
 
@@ -93,8 +97,6 @@ rather than the old way:
 
 And as most of the defined MIBs *walk* a given tree, almost all defined functions return an array.
 
-Right now it's SNMP v2. This can be easily updated for multiple version support. Also, it's read only
-as, at time of writing, I have no requirement to set SNMP values.
 
 
 Code / phpDoc Documentation
