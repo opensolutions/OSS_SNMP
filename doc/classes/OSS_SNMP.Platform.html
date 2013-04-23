@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>OSS_SNMP » \OSS_SNMP\Platform</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">OSS_SNMP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/OSS_SNMP.html"><i class="icon-th"></i> OSS_SNMP</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">40</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">1</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">2</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: The constructor."><span class="description">The constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_getSNMPHost" title="getSNMPHost :: Get the SNMPHost object"><span class="description">Get the SNMPHost object</span><pre>getSNMPHost()</pre></a></li>
+<li class="method public "><a href="#method_parse" title="parse :: "><span class="description">parse()
+        </span><pre>parse()</pre></a></li>
+<li class="method public "><a href="#method_setModel" title="setModel :: Set model"><span class="description">Set model</span><pre>setModel()</pre></a></li>
+<li class="method public "><a href="#method_setOS" title="setOS :: Set operating system"><span class="description">Set operating system</span><pre>setOS()</pre></a></li>
+<li class="method public "><a href="#method_setOSDate" title="setOSDate :: Set OS date"><span class="description">Set OS date</span><pre>setOSDate()</pre></a></li>
+<li class="method public "><a href="#method_setOSVersion" title="setOSVersion :: Set OS version"><span class="description">Set OS version</span><pre>setOSVersion()</pre></a></li>
+<li class="method public "><a href="#method_setSNMPHost" title="setSNMPHost :: Set the SNMPT Host"><span class="description">Set the SNMPT Host</span><pre>setSNMPHost()</pre></a></li>
+<li class="method public "><a href="#method_setVendor" title="setVendor :: Set vendor"><span class="description">Set vendor</span><pre>setVendor()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property__model" title="$_model :: The platform model"><span class="description"></span><pre>$_model</pre></a></li>
+<li class="property protected "><a href="#property__os" title="$_os :: The platform operating system"><span class="description"></span><pre>$_os</pre></a></li>
+<li class="property protected "><a href="#property__osdate" title="$_osdate :: The platform operating system (compile) date"><span class="description"></span><pre>$_osdate</pre></a></li>
+<li class="property protected "><a href="#property__osver" title="$_osver :: The platform operating system version"><span class="description"></span><pre>$_osver</pre></a></li>
+<li class="property protected "><a href="#property__snmpHost" title="$_snmpHost :: The \OSS_SNMP\SNMP object"><span class="description"></span><pre>$_snmpHost</pre></a></li>
+<li class="property protected "><a href="#property__vendor" title="$_vendor :: The platform vendor"><span class="description"></span><pre>$_vendor</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\OSS_SNMP\Platform"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/OSS_SNMP.html">OSS_SNMP</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/OSS_SNMP.Platform.html">Platform</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">A class for parsing device / host / platform details</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012 - 2013, Open Source Solutions Limited, Dublin, Ireland</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:barry@opensolutions.ie">Barry O'Donovan</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>The constructor.</h2>
+<pre>__construct(<a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a> $snmpHost) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$snmpHost</h4>
+<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code><p>The SNMP Host object</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></code>An instance of $this (for fluent interfaces)</div>
+</div></div>
+</div>
+<a id="method_getSNMPHost"></a><div class="element clickable method public method_getSNMPHost" data-toggle="collapse" data-target=".method_getSNMPHost .collapse">
+<h2>Get the SNMPHost object</h2>
+<pre>getSNMPHost() : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>The SNMP object</div>
+</div></div>
+</div>
+<a id="method_parse"></a><div class="element clickable method public method_parse" data-toggle="collapse" data-target=".method_parse .collapse">
+<h2>parse()
+        </h2>
+<pre>parse() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_setModel"></a><div class="element clickable method public method_setModel" data-toggle="collapse" data-target=".method_setModel .collapse">
+<h2>Set model</h2>
+<pre>setModel(string $s) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$s</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></code>For fluent interfaces</div>
+</div></div>
+</div>
+<a id="method_setOS"></a><div class="element clickable method public method_setOS" data-toggle="collapse" data-target=".method_setOS .collapse">
+<h2>Set operating system</h2>
+<pre>setOS(string $s) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$s</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></code>For fluent interfaces</div>
+</div></div>
+</div>
+<a id="method_setOSDate"></a><div class="element clickable method public method_setOSDate" data-toggle="collapse" data-target=".method_setOSDate .collapse">
+<h2>Set OS date</h2>
+<pre>setOSDate(string $s) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$s</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></code>For fluent interfaces</div>
+</div></div>
+</div>
+<a id="method_setOSVersion"></a><div class="element clickable method public method_setOSVersion" data-toggle="collapse" data-target=".method_setOSVersion .collapse">
+<h2>Set OS version</h2>
+<pre>setOSVersion(string $s) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$s</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></code>For fluent interfaces</div>
+</div></div>
+</div>
+<a id="method_setSNMPHost"></a><div class="element clickable method public method_setSNMPHost" data-toggle="collapse" data-target=".method_setSNMPHost .collapse">
+<h2>Set the SNMPT Host</h2>
+<pre>setSNMPHost(<a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a> $s) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$s</h4>
+<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code><p>The SNMP Host object</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></code>For fluent interfaces</div>
+</div></div>
+</div>
+<a id="method_setVendor"></a><div class="element clickable method public method_setVendor" data-toggle="collapse" data-target=".method_setVendor .collapse">
+<h2>Set vendor</h2>
+<pre>setVendor(string $s) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$s</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></code>For fluent interfaces</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__model"> </a><div class="element clickable property protected property__model" data-toggle="collapse" data-target=".property__model .collapse">
+<h2></h2>
+<pre>$_model : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__os"> </a><div class="element clickable property protected property__os" data-toggle="collapse" data-target=".property__os .collapse">
+<h2></h2>
+<pre>$_os : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__osdate"> </a><div class="element clickable property protected property__osdate" data-toggle="collapse" data-target=".property__osdate .collapse">
+<h2></h2>
+<pre>$_osdate : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__osver"> </a><div class="element clickable property protected property__osver" data-toggle="collapse" data-target=".property__osver .collapse">
+<h2></h2>
+<pre>$_osver : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__snmpHost"> </a><div class="element clickable property protected property__snmpHost" data-toggle="collapse" data-target=".property__snmpHost .collapse">
+<h2></h2>
+<pre>$_snmpHost : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__vendor"> </a><div class="element clickable property protected property__vendor" data-toggle="collapse" data-target=".property__vendor .collapse">
+<h2></h2>
+<pre>$_vendor : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-04-23T15:19:54+01:00.<br></footer></div>
+</div>
+</body>
+</html>

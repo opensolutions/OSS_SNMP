@@ -31,7 +31,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">36</span></a></li>
+                <span class="label label-info">40</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -63,12 +63,14 @@
 <li class="method public "><a href="#method_bridgeBasePortIfIndexes" title="bridgeBasePortIfIndexes :: Returns an associate array of STP port IDs (key) to interface IDs (value)"><span class="description">Returns an associate array of STP port IDs (key) to interface IDs (value)</span><pre>bridgeBasePortIfIndexes()</pre></a></li>
 <li class="method public "><a href="#method_descriptions" title="descriptions :: Get an array of device interface descriptions"><span class="description">Get an array of device interface descriptions</span><pre>descriptions()</pre></a></li>
 <li class="method public inherited"><a href="#method_getSNMP" title="getSNMP :: Get the SNMP instance"><span class="description">Get the SNMP instance</span><pre>getSNMP()</pre></a></li>
+<li class="method public "><a href="#method_highSpeeds" title="highSpeeds :: Get an array of device interface (operating) speeds"><span class="description">Get an array of device interface (operating) speeds</span><pre>highSpeeds()</pre></a></li>
 <li class="method public "><a href="#method_inDiscards" title="inDiscards :: Get an array of device interface inbound discarded packets"><span class="description">Get an array of device interface inbound discarded packets</span><pre>inDiscards()</pre></a></li>
 <li class="method public "><a href="#method_inErrors" title="inErrors :: Get an array of device interface inbound error packets"><span class="description">Get an array of device interface inbound error packets</span><pre>inErrors()</pre></a></li>
 <li class="method public "><a href="#method_inNonUnicastPackets" title="inNonUnicastPackets :: Get an array of device interface non-unicast packets in"><span class="description">Get an array of device interface non-unicast packets in</span><pre>inNonUnicastPackets()</pre></a></li>
 <li class="method public "><a href="#method_inOctets" title="inOctets :: Get an array of device interface in octets"><span class="description">Get an array of device interface in octets</span><pre>inOctets()</pre></a></li>
 <li class="method public "><a href="#method_inUnicastPackets" title="inUnicastPackets :: Get an array of device interface unicast packets in"><span class="description">Get an array of device interface unicast packets in</span><pre>inUnicastPackets()</pre></a></li>
 <li class="method public "><a href="#method_inUnknownProtocols" title="inUnknownProtocols :: Get an array of packets received on an interface of unknown protocol"><span class="description">Get an array of packets received on an interface of unknown protocol</span><pre>inUnknownProtocols()</pre></a></li>
+<li class="method public "><a href="#method_indexes" title="indexes :: Get an array of device interface indexes"><span class="description">Get an array of device interface indexes</span><pre>indexes()</pre></a></li>
 <li class="method public "><a href="#method_lastChanges" title="lastChanges :: Get an array of device interface last change times"><span class="description">Get an array of device interface last change times</span><pre>lastChanges()</pre></a></li>
 <li class="method public "><a href="#method_mtus" title="mtus :: Get an array of device MTUs"><span class="description">Get an array of device MTUs</span><pre>mtus()</pre></a></li>
 <li class="method public "><a href="#method_names" title="names :: Get an array of device interface names"><span class="description">Get an array of device interface names</span><pre>names()</pre></a></li>
@@ -349,6 +351,8 @@ their current state) present on this system.</span><pre>numberOfInterfaces()</pr
 <li class="constant  "><a href="#constant_OID_IF_ADMIN_STATUS" title="OID_IF_ADMIN_STATUS :: "><span class="description">OID_IF_ADMIN_STATUS</span><pre>OID_IF_ADMIN_STATUS</pre></a></li>
 <li class="constant  "><a href="#constant_OID_IF_ALIAS" title="OID_IF_ALIAS :: "><span class="description">OID_IF_ALIAS</span><pre>OID_IF_ALIAS</pre></a></li>
 <li class="constant  "><a href="#constant_OID_IF_DESCRIPTION" title="OID_IF_DESCRIPTION :: "><span class="description">OID_IF_DESCRIPTION</span><pre>OID_IF_DESCRIPTION</pre></a></li>
+<li class="constant  "><a href="#constant_OID_IF_HIGH_SPEED" title="OID_IF_HIGH_SPEED :: "><span class="description">OID_IF_HIGH_SPEED</span><pre>OID_IF_HIGH_SPEED</pre></a></li>
+<li class="constant  "><a href="#constant_OID_IF_INDEX" title="OID_IF_INDEX :: "><span class="description">OID_IF_INDEX</span><pre>OID_IF_INDEX</pre></a></li>
 <li class="constant  "><a href="#constant_OID_IF_IN_DISCARDS" title="OID_IF_IN_DISCARDS :: "><span class="description">OID_IF_IN_DISCARDS</span><pre>OID_IF_IN_DISCARDS</pre></a></li>
 <li class="constant  "><a href="#constant_OID_IF_IN_ERRORS" title="OID_IF_IN_ERRORS :: "><span class="description">OID_IF_IN_ERRORS</span><pre>OID_IF_IN_ERRORS</pre></a></li>
 <li class="constant  "><a href="#constant_OID_IF_IN_NON_UNICAST_PACKETS" title="OID_IF_IN_NON_UNICAST_PACKETS :: "><span class="description">OID_IF_IN_NON_UNICAST_PACKETS</span><pre>OID_IF_IN_NON_UNICAST_PACKETS</pre></a></li>
@@ -495,6 +499,40 @@ their current state) present on this system.</span><pre>numberOfInterfaces()</pr
 <code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>Instance of the SNMP object</div>
 </div></div>
 </div>
+<a id="method_highSpeeds"></a><div class="element clickable method public method_highSpeeds" data-toggle="collapse" data-target=".method_highSpeeds .collapse">
+<h2>Get an array of device interface (operating) speeds</h2>
+<pre>highSpeeds() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>From Cisco:</p>
+
+<blockquote>
+  <p>"An estimate of the interface's current bandwidth in units
+  of 1,000,000 bits per second. If this object reports a
+  value of <code>n' then the speed of the interface is somewhere in
+  the range of</code>n-500,000' to `n+499,999'. For interfaces
+  which do not vary in bandwidth or for those where no
+  accurate estimation can be made, this object should contain
+  the nominal bandwidth. For a sub-layer which has no concept
+  of bandwidth, this object should be zero."</p>
+</blockquote>
+
+<p>E.g. the following SNMP output yields the shown array:</p>
+
+<p>.1.3.6.1.2.1.2.2.1.5.10127 = Gauge32: 10000
+.1.3.6.1.2.1.2.2.1.5.10128 = Gauge32: 1000
+.1.3.6.1.2.1.2.2.1.5.10129 = Gauge32: 100
+...</p>
+
+<pre><code> [10127] =&gt; 10000000000
+ [10128] =&gt; 1000000000
+ [10129] =&gt; 100000000
+</code></pre></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of interface operating speeds</div>
+</div></div>
+</div>
 <a id="method_inDiscards"></a><div class="element clickable method public method_inDiscards" data-toggle="collapse" data-target=".method_inDiscards .collapse">
 <h2>Get an array of device interface inbound discarded packets</h2>
 <pre>inDiscards() : \OSS_SNMP\MIBS\arrary</pre>
@@ -572,6 +610,25 @@ unsupported protocol."</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The number of packets received on an interface of unknown protocol</div>
+</div></div>
+</div>
+<a id="method_indexes"></a><div class="element clickable method public method_indexes" data-toggle="collapse" data-target=".method_indexes .collapse">
+<h2>Get an array of device interface indexes</h2>
+<pre>indexes() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>E.g. the following SNMP output yields the shown array:</p>
+
+<p>.1.3.6.1.2.1.2.2.1.1 = INTEGER: 1
+.1.3.6.1.2.1.2.2.1.2 = INTEGER: 2
+...</p>
+
+<pre><code> [1] =&gt; 1
+ [2] =&gt; 2
+</code></pre></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of interface indexes</div>
 </div></div>
 </div>
 <a id="method_lastChanges"></a><div class="element clickable method public method_lastChanges" data-toggle="collapse" data-target=".method_lastChanges .collapse">
@@ -793,7 +850,19 @@ should contain an octet string of zero length."</p></div>
  [10129] =&gt; 100000000
 </code></pre>
 
-<p>NB: operating speed as opposed to maximum speed</p></div>
+<p>NB: operating speed as opposed to maximum speed</p>
+
+<p><strong>WARNING:</strong> This is a 32 bit int so it cannot represent 10Gb
+links. These would show up as:</p>
+
+<pre><code> [10127] =&gt; 4294967295
+</code></pre>
+
+<p>Instead, use highSpeeds() which will represent the speed as Mbps</p></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\OSS_SNMP\MIBS\highSpeeds()</a></td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>An array of interface operating speeds</div>
@@ -3816,6 +3885,18 @@ should contain an octet string of zero length."</p></div>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="constant_OID_IF_HIGH_SPEED"> </a><div class="element clickable constant  constant_OID_IF_HIGH_SPEED" data-toggle="collapse" data-target=".constant_OID_IF_HIGH_SPEED .collapse">
+<h2>OID_IF_HIGH_SPEED</h2>
+<pre>OID_IF_HIGH_SPEED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_OID_IF_INDEX"> </a><div class="element clickable constant  constant_OID_IF_INDEX" data-toggle="collapse" data-target=".constant_OID_IF_INDEX .collapse">
+<h2>OID_IF_INDEX</h2>
+<pre>OID_IF_INDEX </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="constant_OID_IF_IN_DISCARDS"> </a><div class="element clickable constant  constant_OID_IF_IN_DISCARDS" data-toggle="collapse" data-target=".constant_OID_IF_IN_DISCARDS .collapse">
 <h2>OID_IF_IN_DISCARDS</h2>
 <pre>OID_IF_IN_DISCARDS </pre>
@@ -3943,7 +4024,7 @@ should contain an octet string of zero length."</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-13T14:47:23Z.<br></footer></div>
+            generated on 2013-04-23T15:19:54+01:00.<br></footer></div>
 </div>
 </body>
 </html>
