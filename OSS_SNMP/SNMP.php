@@ -86,6 +86,12 @@ class SNMP
     protected $_lastResult = null;
 
     /**
+     * A variable to hold the platform object
+     * @var mixed The platform object
+     */
+    protected $_platform = null;
+
+    /**
      * The cache object to use as the cache
      * @var \OSS_SNMP\Cache The cache object to use
      */
@@ -670,6 +676,15 @@ class SNMP
         $m = new $mib();
         $m->setSNMP( $this );
         return $m;
+    }
+    
+    
+    public function getPlatform()
+    {
+        if( $this->_platform === null )
+            $this->_platform = new Platform( $this );
+        
+        return $this->_platform;
     }
 
 }
