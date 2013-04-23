@@ -34,7 +34,10 @@
 */
 
 
-$sysDescr = 'Brocade Communications Systems, Inc. FESX624+2XG, IronWare Version 07.3.00cT3e1 Compiled on Apr 25 2012 at 17:01:00 labeled as SXS07300c';
+// Works with sysDescr such as:
+//
+// 'Brocade Communications Systems, Inc. FESX624+2XG, IronWare Version 07.3.00cT3e1 Compiled on Apr 25 2012 at 17:01:00 labeled as SXS07300c'
+
 if( substr( $sysDescr, 0, 30 ) == 'Brocade Communications Systems' )
 {
     preg_match( '/Brocade Communications Systems, Inc. (.+),\s([a-zA-Z]+)\sVersion\s(.+)\sCompiled\son\s(([a-zA-Z]+)\s(\d+)\s(\d+)\s)at\s((\d\d):(\d\d):(\d\d))\slabeled\sas\s(.+)/',
@@ -46,3 +49,4 @@ if( substr( $sysDescr, 0, 30 ) == 'Brocade Communications Systems' )
     $this->setOSVersion( $matches[3] );
     $this->setOSDate( new \DateTime( "{$matches[6]}/{$matches[5]}/{$matches[7]}:{$matches[8]} +0000" ) );
 }
+
