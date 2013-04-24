@@ -33,22 +33,19 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-
-// Works with sysDescr such as:
+// Following block works with sysDescr such as:
 //
-// 'Brocade Communications Systems, Inc. FESX624+2XG, IronWare Version 07.3.00cT3e1 Compiled on Apr 25 2012 at 17:01:00 labeled as SXS07300c'
-// 'Brocade Communication Systems, Inc. TurboIron-X24, IronWare Version 04.2.00b Compiled on Oct 22 2010 at 15:15:36 labeled as TIS04200b'
+// 'LX Console Manager, s/w version=5.3.2'
 
-if( substr( $sysDescr, 0, 21 ) == 'Brocade Communication' )
+if( substr( $sysDescr, 0, 18 ) == 'LX Console Manager' )
 {
-    preg_match( '/Brocade Communication[s]* Systems, Inc. (.+),\s([a-zA-Z]+)\sVersion\s(.+)\sCompiled\son\s(([a-zA-Z]+)\s(\d+)\s(\d+)\s)at\s((\d\d):(\d\d):(\d\d))\slabeled\sas\s(.+)/',
+    preg_match( '/LX Console Manager,\ss\/w\sversion=([0-9a-zA-Z\.]+)$/',
             $sysDescr, $matches );
 
-    $this->setVendor( 'Brocade' );
-    $this->setModel( $matches[1] );
-    $this->setOs( $matches[2] );
-    $this->setOsVersion( $matches[3] );
-    $this->setOsDate( new \DateTime( "{$matches[6]}/{$matches[5]}/{$matches[7]}:{$matches[8]} +0000" ) );
-    $this->getOsDate()->setTimezone( new \DateTimeZone( 'UTC' ) );
+    $this->setVendor( 'MRV' );
+    $this->setModel( $this->getSNMPHost()->useMRV_System()->model() );
+    $this->setOs( $this->getSNMPHost()->useMRV_System()->osImage() );
+    $this->setOsVersion( $matches[1] );
+    $this->setOsDate( null );
 }
 
