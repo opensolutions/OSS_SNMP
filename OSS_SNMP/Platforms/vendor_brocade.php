@@ -45,8 +45,8 @@ if( substr( $sysDescr, 0, 30 ) == 'Brocade Communications Systems' )
 
     $this->setVendor( 'Brocade' );
     $this->setModel( $matches[1] );
-    $this->setOS( $matches[2] );
-    $this->setOSVersion( $matches[3] );
-    $this->setOSDate( new \DateTime( "{$matches[6]}/{$matches[5]}/{$matches[7]}:{$matches[8]} +0000" ) );
+    $this->setOs( $matches[2] );
+    $this->setOsVersion( $matches[3] );
+    $this->setOsDate( new \DateTime( "{$matches[6]}/{$matches[5]}/{$matches[7]}:{$matches[8]} +0000" ) );
 }
 

@@ -49,28 +49,28 @@ class Platform
      *
      * @var string The platform vendor
      */
-    protected $_vendor = null;
+    protected $_vendor = 'Unknown';
 
     /**
      * The platform model
      *
      * @var string The platform model
      */
-    protected $_model = null;
+    protected $_model = 'Unknown';
     
     /**
      * The platform operating system
      *
      * @var string The platform operating system
      */
-    protected $_os = null;
+    protected $_os = 'Unknown';
 
     /**
      * The platform operating system version
      *
      * @var string The platform operating system version
      */
-    protected $_osver = null;
+    protected $_osver = 'Unknown';
 
     /**
      * The platform operating system (compile) date
@@ -167,7 +167,7 @@ class Platform
      * @param string $s
      * @return \OSS_SNMP\Platform For fluent interfaces
      */
-    public function setOS( $s )
+    public function setOs( $s )
     {
         $this->_os = $s;
         return $this;
@@ -179,7 +179,7 @@ class Platform
      * @param string $s
      * @return \OSS_SNMP\Platform For fluent interfaces
      */
-    public function setOSVersion( $s )
+    public function setOsVersion( $s )
     {
         $this->_osver = $s;
         return $this;
@@ -191,10 +191,61 @@ class Platform
      * @param string $s
      * @return \OSS_SNMP\Platform For fluent interfaces
      */
-    public function setOSDate( $s )
+    public function setOsDate( $s )
     {
         $this->_osdate = $s;
         return $this;
+    }
+
+
+    /**
+     * Get vendor
+     *
+     * @return string
+     */
+    public function getVendor()
+    {
+        return $this->_vendor;
+    }
+
+    /**
+     * Get model
+     *
+     * @return string
+     */
+    public function getModel()
+    {
+        return $this->_model;
+    }
+
+    /**
+     * Get operating system
+     *
+     * @return string
+     */
+    public function getOs()
+    {
+        return $this->_os;
+    }
+
+    /**
+     * Get OS version
+     *
+     * @return string
+     */
+    public function getOsVersion()
+    {
+        return $this->_osver;
+    }
+
+    /**
+     * Get OS date
+     *
+     * return \DateTime
+     */
+    public function getOsDate()
+    {
+        return $this->_osdate;
     }
 
 }
