@@ -5356,6 +5356,22 @@ etc.&lt;/p&gt;</long-description>
       <error line="0" code="50007">No page-level DocBlock was found in file MIBS/Entity.php</error>
     </parse_markers>
   </file>
+  <file path="MIBS/MRV.php" hash="ac8d899ff24e228b42b2b13dacb3b47e" package="Default">
+    <class final="false" abstract="false" namespace="OSS_SNMP\MIBS" line="44" package="Default">
+      <extends>\OSS_SNMP\MIB</extends>
+      <name>MRV</name>
+      <full_name>\OSS_SNMP\MIBS\MRV</full_name>
+      <docblock line="38">
+        <description>A class for performing SNMP V2 queries on MRV devices</description>
+        <long-description/>
+        <tag line="38" name="copyright" description="Copyright (c) 2013, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="38" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file MIBS/MRV.php</error>
+    </parse_markers>
+  </file>
   <file path="MIBS/System.php" hash="144c79a2b7af19401a19d8e92330fa9c" package="Default">
     <class final="false" abstract="false" namespace="OSS_SNMP\MIBS" line="44" package="Default">
       <extends>\OSS_SNMP\MIB</extends>
@@ -5504,6 +5520,56 @@ calculated accordingly:&lt;/p&gt;
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file MIBS/System.php</error>
+    </parse_markers>
+  </file>
+  <file path="MIBS/MRV/System.php" hash="3938ef92d7cd4406d673c87de8ddc48c" package="Default">
+    <class final="false" abstract="false" namespace="OSS_SNMP\MIBS\MRV" line="49" package="Default">
+      <extends>\OSS_SNMP\MIB</extends>
+      <name>System</name>
+      <full_name>\OSS_SNMP\MIBS\MRV\System</full_name>
+      <docblock line="38">
+        <description>A class for performing SNMP V2 queries on MRV devices</description>
+        <long-description>&lt;p&gt;Specifically written for the LX-40xx series console servers&lt;/p&gt;</long-description>
+        <tag line="38" name="see" description="\OSS_SNMP\MIBS\MRV\http://service.mrv.com/downloads/mibs5.3.2.zip" refers="\OSS_SNMP\MIBS\MRV\http://service.mrv.com/downloads/mibs5.3.2.zip"/>
+        <tag line="38" name="see" description="\OSS_SNMP\MIBS\MRV\http://service.mrv.com/support/tech_docs/36/974" refers="\OSS_SNMP\MIBS\MRV\http://service.mrv.com/support/tech_docs/36/974"/>
+        <tag line="38" name="copyright" description="Copyright (c) 2013, Open Source Solutions Limited, Dublin, Ireland"/>
+        <tag line="38" name="author" description="Barry O'Donovan &lt;barry@opensolutions.ie&gt;"/>
+      </docblock>
+      <constant namespace="OSS_SNMP\MIBS\MRV" line="52" package="Default">
+        <name>OID_MRV_OS_IMAGE</name>
+        <full_name>OID_MRV_OS_IMAGE</full_name>
+        <value>'.1.3.6.1.4.1.33.100.1.1.1.0'</value>
+      </constant>
+      <constant namespace="OSS_SNMP\MIBS\MRV" line="53" package="Default">
+        <name>OID_MRV_MODEL</name>
+        <full_name>OID_MRV_MODEL</full_name>
+        <value>'.1.3.6.1.4.1.33.100.1.1.12.0'</value>
+      </constant>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS_SNMP\MIBS\MRV" line="60" package="Default">
+        <name>osImage</name>
+        <full_name>osImage</full_name>
+        <docblock line="55">
+          <description>Returns the operating system image name</description>
+          <long-description/>
+          <tag line="55" name="return" description="The operating system image name" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS_SNMP\MIBS\MRV" line="70" package="Default">
+        <name>model</name>
+        <full_name>model</full_name>
+        <docblock line="65">
+          <description>Returns the hardware model</description>
+          <long-description/>
+          <tag line="65" name="return" description="The hardware model" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file MIBS/MRV/System.php</error>
     </parse_markers>
   </file>
   <file path="MIBS/BGP.php" hash="96b789075e3e4f5fc242ef52cc5f705b" package="Default">
@@ -8058,7 +8124,7 @@ is empty on my test box (.1.3.6.1.4.1.9.9.82.1.14.5.1.1)&lt;/p&gt;
       <error line="54" code="50010">No DocBlock was found for method clearAll()</error>
     </parse_markers>
   </file>
-  <file path="Platform.php" hash="a13eeb4258d2e93549d2db448570c6ae" package="Default">
+  <file path="Platform.php" hash="86481512ec32de37c3fa74e4a8651b7a" package="Default">
     <include line="115" type="Include" package="Default">
       <name/>
     </include>
@@ -8074,7 +8140,7 @@ is empty on my test box (.1.3.6.1.4.1.9.9.82.1.14.5.1.1)&lt;/p&gt;
       </docblock>
       <property final="false" static="false" visibility="protected" line="52" namespace="OSS_SNMP" package="Default">
         <name>$_vendor</name>
-        <default>null</default>
+        <default>'Unknown'</default>
         <docblock line="47">
           <description>The platform vendor</description>
           <long-description/>
@@ -8085,7 +8151,7 @@ is empty on my test box (.1.3.6.1.4.1.9.9.82.1.14.5.1.1)&lt;/p&gt;
       </property>
       <property final="false" static="false" visibility="protected" line="59" namespace="OSS_SNMP" package="Default">
         <name>$_model</name>
-        <default>null</default>
+        <default>'Unknown'</default>
         <docblock line="54">
           <description>The platform model</description>
           <long-description/>
@@ -8096,7 +8162,7 @@ is empty on my test box (.1.3.6.1.4.1.9.9.82.1.14.5.1.1)&lt;/p&gt;
       </property>
       <property final="false" static="false" visibility="protected" line="66" namespace="OSS_SNMP" package="Default">
         <name>$_os</name>
-        <default>null</default>
+        <default>'Unknown'</default>
         <docblock line="61">
           <description>The platform operating system</description>
           <long-description/>
@@ -8107,7 +8173,7 @@ is empty on my test box (.1.3.6.1.4.1.9.9.82.1.14.5.1.1)&lt;/p&gt;
       </property>
       <property final="false" static="false" visibility="protected" line="73" namespace="OSS_SNMP" package="Default">
         <name>$_osver</name>
-        <default>null</default>
+        <default>'Unknown'</default>
         <docblock line="68">
           <description>The platform operating system version</description>
           <long-description/>
@@ -8230,8 +8296,8 @@ is empty on my test box (.1.3.6.1.4.1.9.9.82.1.14.5.1.1)&lt;/p&gt;
         </argument>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="OSS_SNMP" line="170" package="Default">
-        <name>setOS</name>
-        <full_name>setOS</full_name>
+        <name>setOs</name>
+        <full_name>setOs</full_name>
         <docblock line="164">
           <description>Set operating system</description>
           <long-description/>
@@ -8249,8 +8315,8 @@ is empty on my test box (.1.3.6.1.4.1.9.9.82.1.14.5.1.1)&lt;/p&gt;
         </argument>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="OSS_SNMP" line="182" package="Default">
-        <name>setOSVersion</name>
-        <full_name>setOSVersion</full_name>
+        <name>setOsVersion</name>
+        <full_name>setOsVersion</full_name>
         <docblock line="176">
           <description>Set OS version</description>
           <long-description/>
@@ -8268,8 +8334,8 @@ is empty on my test box (.1.3.6.1.4.1.9.9.82.1.14.5.1.1)&lt;/p&gt;
         </argument>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="OSS_SNMP" line="194" package="Default">
-        <name>setOSDate</name>
-        <full_name>setOSDate</full_name>
+        <name>setOsDate</name>
+        <full_name>setOsDate</full_name>
         <docblock line="188">
           <description>Set OS date</description>
           <long-description/>
@@ -8285,6 +8351,58 @@ is empty on my test box (.1.3.6.1.4.1.9.9.82.1.14.5.1.1)&lt;/p&gt;
           <default/>
           <type/>
         </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS_SNMP" line="206" package="Default">
+        <name>getVendor</name>
+        <full_name>getVendor</full_name>
+        <docblock line="201">
+          <description>Get vendor</description>
+          <long-description/>
+          <tag line="201" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS_SNMP" line="216" package="Default">
+        <name>getModel</name>
+        <full_name>getModel</full_name>
+        <docblock line="211">
+          <description>Get model</description>
+          <long-description/>
+          <tag line="211" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS_SNMP" line="226" package="Default">
+        <name>getOs</name>
+        <full_name>getOs</full_name>
+        <docblock line="221">
+          <description>Get operating system</description>
+          <long-description/>
+          <tag line="221" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS_SNMP" line="236" package="Default">
+        <name>getOsVersion</name>
+        <full_name>getOsVersion</full_name>
+        <docblock line="231">
+          <description>Get OS version</description>
+          <long-description/>
+          <tag line="231" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="OSS_SNMP" line="246" package="Default">
+        <name>getOsDate</name>
+        <full_name>getOsDate</full_name>
+        <docblock line="241">
+          <description>Get OS date</description>
+          <long-description>&lt;p&gt;return \DateTime&lt;/p&gt;</long-description>
+        </docblock>
       </method>
     </class>
     <parse_markers>
@@ -9115,9 +9233,14 @@ instance and then call fn().&lt;/p&gt;
       <error line="0" code="50007">No page-level DocBlock was found in file MIB.php</error>
     </parse_markers>
   </file>
-  <file path="Platforms/vendor_brocade.php" hash="475f1e08103016797a61575f14e5a766" package="Default">
+  <file path="Platforms/vendor_brocade.php" hash="457397bcc04bb237e1cb918dcc84a462" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file Platforms/vendor_brocade.php</error>
+    </parse_markers>
+  </file>
+  <file path="Platforms/vendor_mrv.php" hash="b04e0d8ccba27e3557f7001a1c7d0098" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file Platforms/vendor_mrv.php</error>
     </parse_markers>
   </file>
   <file path="Exception.php" hash="3a04488c534e50e0581202fc64f04114" package="Default">
@@ -9140,6 +9263,7 @@ instance and then call fn().&lt;/p&gt;
     <namespace name="MIBS" full_name="OSS_SNMP\MIBS">
       <namespace name="Asterisk" full_name="OSS_SNMP\MIBS\Asterisk"/>
       <namespace name="Cisco" full_name="OSS_SNMP\MIBS\Cisco"/>
+      <namespace name="MRV" full_name="OSS_SNMP\MIBS\MRV"/>
     </namespace>
   </namespace>
   <marker count="1">todo</marker>

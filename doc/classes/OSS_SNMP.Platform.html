@@ -31,7 +31,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">40</span></a></li>
+                <span class="label label-info">43</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -59,13 +59,18 @@
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: The constructor."><span class="description">The constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_getModel" title="getModel :: Get model"><span class="description">Get model</span><pre>getModel()</pre></a></li>
+<li class="method public "><a href="#method_getOs" title="getOs :: Get operating system"><span class="description">Get operating system</span><pre>getOs()</pre></a></li>
+<li class="method public "><a href="#method_getOsDate" title="getOsDate :: Get OS date"><span class="description">Get OS date</span><pre>getOsDate()</pre></a></li>
+<li class="method public "><a href="#method_getOsVersion" title="getOsVersion :: Get OS version"><span class="description">Get OS version</span><pre>getOsVersion()</pre></a></li>
 <li class="method public "><a href="#method_getSNMPHost" title="getSNMPHost :: Get the SNMPHost object"><span class="description">Get the SNMPHost object</span><pre>getSNMPHost()</pre></a></li>
+<li class="method public "><a href="#method_getVendor" title="getVendor :: Get vendor"><span class="description">Get vendor</span><pre>getVendor()</pre></a></li>
 <li class="method public "><a href="#method_parse" title="parse :: "><span class="description">parse()
         </span><pre>parse()</pre></a></li>
 <li class="method public "><a href="#method_setModel" title="setModel :: Set model"><span class="description">Set model</span><pre>setModel()</pre></a></li>
-<li class="method public "><a href="#method_setOS" title="setOS :: Set operating system"><span class="description">Set operating system</span><pre>setOS()</pre></a></li>
-<li class="method public "><a href="#method_setOSDate" title="setOSDate :: Set OS date"><span class="description">Set OS date</span><pre>setOSDate()</pre></a></li>
-<li class="method public "><a href="#method_setOSVersion" title="setOSVersion :: Set OS version"><span class="description">Set OS version</span><pre>setOSVersion()</pre></a></li>
+<li class="method public "><a href="#method_setOs" title="setOs :: Set operating system"><span class="description">Set operating system</span><pre>setOs()</pre></a></li>
+<li class="method public "><a href="#method_setOsDate" title="setOsDate :: Set OS date"><span class="description">Set OS date</span><pre>setOsDate()</pre></a></li>
+<li class="method public "><a href="#method_setOsVersion" title="setOsVersion :: Set OS version"><span class="description">Set OS version</span><pre>setOsVersion()</pre></a></li>
 <li class="method public "><a href="#method_setSNMPHost" title="setSNMPHost :: Set the SNMPT Host"><span class="description">Set the SNMPT Host</span><pre>setSNMPHost()</pre></a></li>
 <li class="method public "><a href="#method_setVendor" title="setVendor :: Set vendor"><span class="description">Set vendor</span><pre>setVendor()</pre></a></li>
 </ul>
@@ -127,6 +132,42 @@
 <code><a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
+<a id="method_getModel"></a><div class="element clickable method public method_getModel" data-toggle="collapse" data-target=".method_getModel .collapse">
+<h2>Get model</h2>
+<pre>getModel() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getOs"></a><div class="element clickable method public method_getOs" data-toggle="collapse" data-target=".method_getOs .collapse">
+<h2>Get operating system</h2>
+<pre>getOs() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getOsDate"></a><div class="element clickable method public method_getOsDate" data-toggle="collapse" data-target=".method_getOsDate .collapse">
+<h2>Get OS date</h2>
+<pre>getOsDate() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>return \DateTime</p></div></div></div>
+</div>
+<a id="method_getOsVersion"></a><div class="element clickable method public method_getOsVersion" data-toggle="collapse" data-target=".method_getOsVersion .collapse">
+<h2>Get OS version</h2>
+<pre>getOsVersion() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
 <a id="method_getSNMPHost"></a><div class="element clickable method public method_getSNMPHost" data-toggle="collapse" data-target=".method_getSNMPHost .collapse">
 <h2>Get the SNMPHost object</h2>
 <pre>getSNMPHost() : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
@@ -136,6 +177,16 @@
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>The SNMP object</div>
+</div></div>
+</div>
+<a id="method_getVendor"></a><div class="element clickable method public method_getVendor" data-toggle="collapse" data-target=".method_getVendor .collapse">
+<h2>Get vendor</h2>
+<pre>getVendor() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
 <a id="method_parse"></a><div class="element clickable method public method_parse" data-toggle="collapse" data-target=".method_parse .collapse">
@@ -161,9 +212,9 @@
 <code><a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></code>For fluent interfaces</div>
 </div></div>
 </div>
-<a id="method_setOS"></a><div class="element clickable method public method_setOS" data-toggle="collapse" data-target=".method_setOS .collapse">
+<a id="method_setOs"></a><div class="element clickable method public method_setOs" data-toggle="collapse" data-target=".method_setOs .collapse">
 <h2>Set operating system</h2>
-<pre>setOS(string $s) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
+<pre>setOs(string $s) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -177,9 +228,9 @@
 <code><a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></code>For fluent interfaces</div>
 </div></div>
 </div>
-<a id="method_setOSDate"></a><div class="element clickable method public method_setOSDate" data-toggle="collapse" data-target=".method_setOSDate .collapse">
+<a id="method_setOsDate"></a><div class="element clickable method public method_setOsDate" data-toggle="collapse" data-target=".method_setOsDate .collapse">
 <h2>Set OS date</h2>
-<pre>setOSDate(string $s) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
+<pre>setOsDate(string $s) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -193,9 +244,9 @@
 <code><a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></code>For fluent interfaces</div>
 </div></div>
 </div>
-<a id="method_setOSVersion"></a><div class="element clickable method public method_setOSVersion" data-toggle="collapse" data-target=".method_setOSVersion .collapse">
+<a id="method_setOsVersion"></a><div class="element clickable method public method_setOsVersion" data-toggle="collapse" data-target=".method_setOsVersion .collapse">
 <h2>Set OS version</h2>
-<pre>setOSVersion(string $s) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
+<pre>setOsVersion(string $s) : <a href="../classes/OSS_SNMP.Platform.html">\OSS_SNMP\Platform</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -285,7 +336,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-04-23T15:19:54+01:00.<br></footer></div>
+            generated on 2013-04-24T19:34:21+01:00.<br></footer></div>
 </div>
 </body>
 </html>
