@@ -182,11 +182,22 @@ class Iface extends \OSS_SNMP\MIB
      * value."
      *
      * @see \OSS_SNMP\MIBS\System::uptime()
+     * @param bool $asUnixTimestamp Poll sysUpTime and use this to return a timestamp of the last change
      * @return array Timeticks (or zero) since last change of the interfaces
      */
-    public function lastChanges()
+    public function lastChanges( $asUnixTimestamp = false )
     {
-        return $this->getSNMP()->walk1d( self::OID_IF_LAST_CHANGE );
+        $lc = $this->getSNMP()->walk1d( self::OID_IF_LAST_CHANGE );
+        
+        if( $asUnixTimestamp )
+        {
+            $sysUptime = intval( round( $this->getSNMP()->useSystem()->uptime() / 100 ) );
+            
+            foreach( $lc as $i => $t )
+                $lc[$i] = intval( time() - $sysUptime + ( round( $t / 100 ) ) );
+        }
+        
+        return $lc;
     }
 
     /**
