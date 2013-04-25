@@ -108,7 +108,14 @@ class Iface extends \OSS_SNMP\MIB
      */
     public function physAddresses()
     {
-        return $this->getSNMP()->walk1d( self::OID_IF_PHYS_ADDRESS );
+        $pa = $this->getSNMP()->walk1d( self::OID_IF_PHYS_ADDRESS );
+        
+        // some switches return leading '00:' as '0:' - we correct this here:
+        foreach( $pa as $i => $a )
+            if( strpos( $a, ':' ) == 1 )
+                $pa[ $i ] = '0' . $a;
+        
+        return $pa;
     }
 
 
