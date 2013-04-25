@@ -198,10 +198,11 @@ class Iface extends \OSS_SNMP\MIB
         
         if( $asUnixTimestamp )
         {
-            $sysUptime = intval( round( $this->getSNMP()->useSystem()->uptime() / 100 ) );
+            $sysUptime = $this->getSNMP()->useSystem()->uptime() / 100;
             
             foreach( $lc as $i => $t )
-                $lc[$i] = intval( time() - $sysUptime + ( round( $t / 100 ) ) );
+                if( $t )
+                    $lc[$i] = intval( floor( time() - $sysUptime + ( $t / 100 ) ) );
         }
         
         return $lc;
