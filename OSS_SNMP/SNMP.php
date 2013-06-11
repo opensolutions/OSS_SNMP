@@ -379,7 +379,7 @@ class SNMP
                 break;
 
             case 'Hex-STRING':
-                $rtn = (string)implode( '', explode( ' ', $value ) );
+                $rtn = (string)implode( '', explode( ' ', preg_replace( '/[^A-Fa-f0-9]/', '', $value ) ) );
                 break;
 
             case 'IpAddress':
@@ -412,6 +412,64 @@ class SNMP
             $value = self::$SNMP_TRUTHVALUES[ $value ];
 
         return $value;
+    }
+
+
+    /**
+      * An array of arrays where each array element
+      * represents true / false values for a given
+      * hex digit.
+      *
+      * @see ppHexStringFlags()
+      */
+    public static $HEX_STRING_WORDS_AS_ARRAY = [
+        '0' => [ false, false, false, false ],
+        '1' => [ false, false, false, true  ],
+        '2' => [ false, false, true,  false ],
+        '3' => [ false, false, true,  true  ],
+        '4' => [ false, true,  false, false ],
+        '5' => [ false, true,  false, true  ],
+        '6' => [ false, true,  true,  false ],
+        '7' => [ false, true,  true,  true  ],
+        '8' => [ true,  false, false, false ],
+        '9' => [ true,  false, false, true  ],
+        'a' => [ true,  false, true,  false ],
+        'b' => [ true,  false, true,  true  ],
+        'c' => [ true,  true,  false, false ],
+        'd' => [ true,  true,  false, true  ],
+        'e' => [ true,  true,  true,  false ],
+        'f' => [ true,  true,  true,  true  ],
+    ];
+
+    /**
+     * Takes a HEX-String of true / false - on / off - set / unset flags
+     * and converts it to an indexed (from 1) array of true / false values.
+     *
+     * For example, passing it ``500040`` will result in an array:
+     *
+     *     [
+     *         [1]  => false, [2]  => true,  [3] => false, [4]  => true,
+     *         [5]  => false, [6]  => false, [7] => false, [8]  => false,
+     *         ...
+     *         [17] => false, [18] => true, [19] => false, [20] => false,
+     *         [21] => false, [22] => true, [23] => false, [24] => false
+     *     ]
+     *
+     * @param string $str The hex string to parse
+     * @return array The array of true / false flags indexed from 1
+     */
+    public static function ppHexStringFlags( $str )
+    {
+        $str = strtolower( $str );  // ensure all hex digits are lower case
+
+        $values = [ 0 => 'dummy' ];
+
+        for( $i = 0; $i < strlen( $str ); $i++ )
+            $values = array_merge( $values, self::$HEX_STRING_WORDS_AS_ARRAY[ $str[$i] ] );
+
+        unset( $values[ 0 ] );
+
+        return $values;
     }
 
     /**
@@ -677,13 +735,13 @@ class SNMP
         $m->setSNMP( $this );
         return $m;
     }
-    
-    
+
+
     public function getPlatform()
     {
         if( $this->_platform === null )
             $this->_platform = new Platform( $this );
-        
+
         return $this->_platform;
     }
 
