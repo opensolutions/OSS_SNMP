@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
+    Copyright (c) 2012 - 2013, Open Source Solutions Limited, Dublin, Ireland
     All rights reserved.
 
     Contact: Barry O'Donovan - barry (at) opensolutions (dot) ie
@@ -38,17 +38,56 @@ namespace OSS_SNMP\MIBS;
 /**
  * A class for performing SNMP V2 queries on generic devices
  *
- * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
+ * @copyright Copyright (c) 2012 - 2013, Open Source Solutions Limited, Dublin, Ireland
  * @author Barry O'Donovan <barry@opensolutions.ie>
  */
 class Entity extends \OSS_SNMP\MIB
 {
+    const OID_ENTITY_PHYSICAL_DESCRIPTION    = '.1.3.6.1.2.1.47.1.1.1.1.2';
     const OID_ENTITY_PHYSICAL_CLASS          = '.1.3.6.1.2.1.47.1.1.1.1.5';
     const OID_ENTITY_PHYSICAL_PARENT_REL_POS = '.1.3.6.1.2.1.47.1.1.1.1.6';
+    const OID_ENTITY_PHYSICAL_NAME           = '.1.3.6.1.2.1.47.1.1.1.1.7';
     const OID_ENTITY_PHYSICAL_ALIAS          = '.1.3.6.1.2.1.47.1.1.1.1.14';
 
 
 
+    /**
+     * Returns an associate array of entPhysicalDescr
+     *
+     * e.g.
+     *
+     *     [1] = STRING: "Cisco Systems Catalyst 6500 9-slot Chassis System"
+     *     [2] = STRING: "Cisco Systems Catalyst 6500 9-slot Physical Slot"
+     *     [3] = STRING: "Cisco Systems Catalyst 6500 9-slot Physical Slot"
+     *     [4] = STRING: "Cisco Systems Catalyst 6500 9-slot Physical Slot"
+     *
+     *
+     *
+     * @return array Associate array of entPhysicalDescr
+     */
+    public function physicalDescription()
+    {
+        return $this->getSNMP()->walk1d( self::OID_ENTITY_PHYSICAL_DESCRIPTION );
+    }
+
+    /**
+     * Returns an associate array of entPhysicalName
+     *
+     * e.g.
+     *
+     *     [1] = STRING: "WS-C6509-E"
+     *     [2] = STRING: "Physical Slot 1"
+     *     [3] = STRING: "Physical Slot 2"
+     *     [4] = STRING: "Physical Slot 3"
+     *
+     *
+     *
+     * @return array Associate array of entPhysicalName
+     */
+    public function physicalName()
+    {
+        return $this->getSNMP()->walk1d( self::OID_ENTITY_PHYSICAL_NAME );
+    }
 
     /**
      * Physical entitly class type
