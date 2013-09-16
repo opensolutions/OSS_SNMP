@@ -31,7 +31,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">43</span></a></li>
+                <span class="label label-info">47</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -74,6 +74,9 @@
 <li class="method public "><a href="#method_getRetry" title="getRetry :: Returns the SNMP query retry count"><span class="description">Returns the SNMP query retry count</span><pre>getRetry()</pre></a></li>
 <li class="method public "><a href="#method_getTimeout" title="getTimeout :: Returns the SNMP query timeout (microseconds)."><span class="description">Returns the SNMP query timeout (microseconds).</span><pre>getTimeout()</pre></a></li>
 <li class="method public "><a href="#method_parseSnmpValue" title="parseSnmpValue :: Parse the result of an SNMP query into a PHP type"><span class="description">Parse the result of an SNMP query into a PHP type</span><pre>parseSnmpValue()</pre></a></li>
+<li class="method public "><a href="#method_ppHexStringFlags" title="ppHexStringFlags :: Takes a HEX-String of true / false - on / off - set / unset flags
+and converts it to an indexed (from 1) array of true / false values."><span class="description">Takes a HEX-String of true / false - on / off - set / unset flags
+and converts it to an indexed (from 1) array of true / false values.</span><pre>ppHexStringFlags()</pre></a></li>
 <li class="method public "><a href="#method_ppTruthValue" title="ppTruthValue :: Utility function to convert TruthValue SNMP responses to true / false"><span class="description">Utility function to convert TruthValue SNMP responses to true / false</span><pre>ppTruthValue()</pre></a></li>
 <li class="method public "><a href="#method_realWalk" title="realWalk :: Proxy to the snmp2_real_walk command"><span class="description">Proxy to the snmp2_real_walk command</span><pre>realWalk()</pre></a></li>
 <li class="method public "><a href="#method_setCache" title="setCache :: Set the cache to use"><span class="description">Set the cache to use</span><pre>setCache()</pre></a></li>
@@ -91,18 +94,25 @@
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
-                    <ul><li class="property public "><a href="#property_SNMP_TRUTHVALUES" title="$SNMP_TRUTHVALUES :: PHP equivalents of SNMP return type TruthValue"><span class="description"></span><pre>$SNMP_TRUTHVALUES</pre></a></li></ul>
+                    <ul>
+<li class="property public "><a href="#property_HEX_STRING_WORDS_AS_ARRAY" title="$HEX_STRING_WORDS_AS_ARRAY :: An array of arrays where each array element
+represents true / false values for a given
+hex digit."><span class="description">An array of arrays where each array element
+represents true / false values for a given
+hex digit.</span><pre>$HEX_STRING_WORDS_AS_ARRAY</pre></a></li>
+<li class="property public "><a href="#property_SNMP_TRUTHVALUES" title="$SNMP_TRUTHVALUES :: PHP equivalents of SNMP return type TruthValue"><span class="description">PHP equivalents of SNMP return type TruthValue</span><pre>$SNMP_TRUTHVALUES</pre></a></li>
+</ul>
 </li>
 <li class="nav-header protected">» Protected
                     <ul>
-<li class="property protected "><a href="#property__cache" title="$_cache :: The cache object to use as the cache"><span class="description"></span><pre>$_cache</pre></a></li>
-<li class="property protected "><a href="#property__community" title="$_community :: The SNMP community to use when polling SNMP services."><span class="description"></span><pre>$_community</pre></a></li>
-<li class="property protected "><a href="#property__disableCache" title="$_disableCache :: Set to true to disable local cache lookup and force SNMP queries"><span class="description"></span><pre>$_disableCache</pre></a></li>
-<li class="property protected "><a href="#property__host" title="$_host :: The SNMP host to query."><span class="description"></span><pre>$_host</pre></a></li>
-<li class="property protected "><a href="#property__lastResult" title="$_lastResult :: A variable to hold the last unaltered result of an SNMP query"><span class="description"></span><pre>$_lastResult</pre></a></li>
-<li class="property protected "><a href="#property__platform" title="$_platform :: A variable to hold the platform object"><span class="description"></span><pre>$_platform</pre></a></li>
-<li class="property protected "><a href="#property__retry" title="$_retry :: The SNMP query retry count."><span class="description"></span><pre>$_retry</pre></a></li>
-<li class="property protected "><a href="#property__timeout" title="$_timeout :: The SNMP query timeout value (microseconds)."><span class="description"></span><pre>$_timeout</pre></a></li>
+<li class="property protected "><a href="#property__cache" title="$_cache :: The cache object to use as the cache"><span class="description">The cache object to use as the cache</span><pre>$_cache</pre></a></li>
+<li class="property protected "><a href="#property__community" title="$_community :: The SNMP community to use when polling SNMP services."><span class="description">The SNMP community to use when polling SNMP services.</span><pre>$_community</pre></a></li>
+<li class="property protected "><a href="#property__disableCache" title="$_disableCache :: Set to true to disable local cache lookup and force SNMP queries"><span class="description">Set to true to disable local cache lookup and force SNMP queries</span><pre>$_disableCache</pre></a></li>
+<li class="property protected "><a href="#property__host" title="$_host :: The SNMP host to query."><span class="description">The SNMP host to query.</span><pre>$_host</pre></a></li>
+<li class="property protected "><a href="#property__lastResult" title="$_lastResult :: A variable to hold the last unaltered result of an SNMP query"><span class="description">A variable to hold the last unaltered result of an SNMP query</span><pre>$_lastResult</pre></a></li>
+<li class="property protected "><a href="#property__platform" title="$_platform :: A variable to hold the platform object"><span class="description">A variable to hold the platform object</span><pre>$_platform</pre></a></li>
+<li class="property protected "><a href="#property__retry" title="$_retry :: The SNMP query retry count."><span class="description">The SNMP query retry count.</span><pre>$_retry</pre></a></li>
+<li class="property protected "><a href="#property__timeout" title="$_timeout :: The SNMP query timeout value (microseconds)."><span class="description">The SNMP query timeout value (microseconds).</span><pre>$_timeout</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -340,6 +350,31 @@ You are free to disable it via disableCache() but your machines may be hammered!
 <h3>Returns</h3>
 <div class="subelement response">
 <code>mixed</code>The parsed value</div>
+</div></div>
+</div>
+<a id="method_ppHexStringFlags"></a><div class="element clickable method public method_ppHexStringFlags" data-toggle="collapse" data-target=".method_ppHexStringFlags .collapse">
+<h2>Takes a HEX-String of true / false - on / off - set / unset flags
+and converts it to an indexed (from 1) array of true / false values.</h2>
+<pre>ppHexStringFlags(string $str) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>For example, passing it <code>500040</code> will result in an array:</p>
+
+<pre><code>[
+    [1]  =&gt; false, [2]  =&gt; true,  [3] =&gt; false, [4]  =&gt; true,
+    [5]  =&gt; false, [6]  =&gt; false, [7] =&gt; false, [8]  =&gt; false,
+    ...
+    [17] =&gt; false, [18] =&gt; true, [19] =&gt; false, [20] =&gt; false,
+    [21] =&gt; false, [22] =&gt; true, [23] =&gt; false, [24] =&gt; false
+]
+</code></pre></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code><p>The hex string to parse</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The array of true / false flags indexed from 1</div>
 </div></div>
 </div>
 <a id="method_ppTruthValue"></a><div class="element clickable method public method_ppTruthValue" data-toggle="collapse" data-target=".method_ppTruthValue .collapse">
@@ -616,26 +651,40 @@ instance and then call fn().</p>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_HEX_STRING_WORDS_AS_ARRAY"> </a><div class="element clickable property public property_HEX_STRING_WORDS_AS_ARRAY" data-toggle="collapse" data-target=".property_HEX_STRING_WORDS_AS_ARRAY .collapse">
+<h2>An array of arrays where each array element
+represents true / false values for a given
+hex digit.</h2>
+<pre>$HEX_STRING_WORDS_AS_ARRAY </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\OSS_SNMP\ppHexStringFlags()</a></td>
+</tr></table>
+</div></div>
+</div>
 <a id="property_SNMP_TRUTHVALUES"> </a><div class="element clickable property public property_SNMP_TRUTHVALUES" data-toggle="collapse" data-target=".property_SNMP_TRUTHVALUES .collapse">
-<h2></h2>
+<h2>PHP equivalents of SNMP return type TruthValue</h2>
 <pre>$SNMP_TRUTHVALUES : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property__cache"> </a><div class="element clickable property protected property__cache" data-toggle="collapse" data-target=".property__cache .collapse">
-<h2></h2>
+<h2>The cache object to use as the cache</h2>
 <pre>$_cache : <a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property__community"> </a><div class="element clickable property protected property__community" data-toggle="collapse" data-target=".property__community .collapse">
-<h2></h2>
+<h2>The SNMP community to use when polling SNMP services.</h2>
 <pre>$_community : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"><p>Defaults to 'public' by the constructor.</p></div></div></div>
 </div>
 <a id="property__disableCache"> </a><div class="element clickable property protected property__disableCache" data-toggle="collapse" data-target=".property__disableCache .collapse">
-<h2></h2>
+<h2>Set to true to disable local cache lookup and force SNMP queries</h2>
 <pre>$_disableCache </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"><p>Results are still stored. If you need to force a SNMP query, you can:</p>
@@ -647,31 +696,31 @@ $snmp->get( ... );
 $snmp->enableCache();</p></div></div></div>
 </div>
 <a id="property__host"> </a><div class="element clickable property protected property__host" data-toggle="collapse" data-target=".property__host .collapse">
-<h2></h2>
+<h2>The SNMP host to query.</h2>
 <pre>$_host : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"><p>Defaults to '127.0.0.1'</p></div></div></div>
 </div>
 <a id="property__lastResult"> </a><div class="element clickable property protected property__lastResult" data-toggle="collapse" data-target=".property__lastResult .collapse">
-<h2></h2>
+<h2>A variable to hold the last unaltered result of an SNMP query</h2>
 <pre>$_lastResult : mixed</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property__platform"> </a><div class="element clickable property protected property__platform" data-toggle="collapse" data-target=".property__platform .collapse">
-<h2></h2>
+<h2>A variable to hold the platform object</h2>
 <pre>$_platform : mixed</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="property__retry"> </a><div class="element clickable property protected property__retry" data-toggle="collapse" data-target=".property__retry .collapse">
-<h2></h2>
+<h2>The SNMP query retry count.</h2>
 <pre>$_retry : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"><p>Default: 5</p></div></div></div>
 </div>
 <a id="property__timeout"> </a><div class="element clickable property protected property__timeout" data-toggle="collapse" data-target=".property__timeout .collapse">
-<h2></h2>
+<h2>The SNMP query timeout value (microseconds).</h2>
 <pre>$_timeout : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"><p>Default: 1000000</p></div></div></div>
@@ -708,8 +757,8 @@ $snmp->enableCache();</p></div></div></div>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-04-24T19:34:21+01:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2013-06-11T21:02:29+01:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -36,33 +36,17 @@
 
 // Works with sysDescr such as:
 //
-// 'Brocade Communications Systems, Inc. FESX624+2XG, IronWare Version 07.3.00cT3e1 Compiled on Apr 25 2012 at 17:01:00 labeled as SXS07300c'
-// 'Brocade Communication Systems, Inc. TurboIron-X24, IronWare Version 04.2.00b Compiled on Oct 22 2010 at 15:15:36 labeled as TIS04200b'
-// 'Brocade NetIron CES, IronWare Version V5.2.0cT183 Compiled on Oct 28 2011 at 02:58:44 labeled as V5.2.00c'
+// 'Cisco IOS Software, s72033_rp Software (s72033_rp-ADVENTERPRISE_WAN-VM), Version 12.2(33)SXI5, RELEASE SOFTWARE (fc2)'
 
-if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
+if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
 {
-    if( preg_match( '/Brocade Communication[s]* Systems, Inc. (.+),\s([a-zA-Z]+)\sVersion\s(.+)\sCompiled\son\s(([a-zA-Z]+)\s(\d+)\s(\d+)\s)at\s((\d\d):(\d\d):(\d\d))\slabeled\sas\s(.+)/',
-            $sysDescr, $matches ) )
-    {
-        $this->setVendor( 'Brocade' );
-        $this->setModel( $matches[1] );
-        $this->setOs( $matches[2] );
-        $this->setOsVersion( $matches[3] );
-        $this->setOsDate( new \DateTime( "{$matches[6]}/{$matches[5]}/{$matches[7]}:{$matches[8]} +0000" ) );
-        $this->getOsDate()->setTimezone( new \DateTimeZone( 'UTC' ) );
-    }
+    preg_match( '/Cisco IOS Software, (.+) Software \((.+)\), Version\s([0-9A-Za-z\(\)\.]+), RELEASE SOFTWARE\s\((.+)\)/',
+            $sysDescr, $matches );
 
-    if( preg_match( '/Brocade NetIron CES, IronWare\sVersion\s(.+)\sCompiled\son\s(([a-zA-Z]+)\s(\d+)\s(\d+)\s)at\s((\d\d):(\d\d):(\d\d))\slabeled\sas\s(.+)/',
-            $sysDescr, $matches ) )
-    {
-        $this->setVendor( 'Brocade' );
-        $this->setModel( 'NetIron CES' );
-        $this->setOs( 'IronWare' );
-        $this->setOsVersion( $matches[1] );
-        $this->setOsDate( new \DateTime( "{$matches[4]}/{$matches[3]}/{$matches[5]}:{$matches[6]} +0000" ) );
-        $this->getOsDate()->setTimezone( new \DateTimeZone( 'UTC' ) );
-    }
-
+    $this->setVendor( 'Cisco Systems' );
+    $this->setModel( $this->getSNMPHost()->useEntity()->physicalName()[1] );
+    $this->setOs( 'IOS' );
+    $this->setOsVersion( $matches[3] );
+    $this->setOsDate( null );
 }
 

@@ -31,7 +31,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">43</span></a></li>
+                <span class="label label-info">47</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -94,13 +94,13 @@ indexed by the CDP device id.</span><pre>crawl()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
                     <ul>
-<li class="property public "><a href="#property_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES" title="$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES :: Text representation of CDP neighbour address type"><span class="description"></span><pre>$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES</pre></a></li>
-<li class="property public "><a href="#property_CDP_CACHE_NEIGHBOUR_CAPABILITIES" title="$CDP_CACHE_NEIGHBOUR_CAPABILITIES :: Text representation of CDP capabilities"><span class="description"></span><pre>$CDP_CACHE_NEIGHBOUR_CAPABILITIES</pre></a></li>
-<li class="property public "><a href="#property_CDP_CACHE_NEIGHBOUR_DUPLEXES" title="$CDP_CACHE_NEIGHBOUR_DUPLEXES :: Text representation of CDP capabilities"><span class="description"></span><pre>$CDP_CACHE_NEIGHBOUR_DUPLEXES</pre></a></li>
+<li class="property public "><a href="#property_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES" title="$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES :: Text representation of CDP neighbour address type"><span class="description">Text representation of CDP neighbour address type</span><pre>$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES</pre></a></li>
+<li class="property public "><a href="#property_CDP_CACHE_NEIGHBOUR_CAPABILITIES" title="$CDP_CACHE_NEIGHBOUR_CAPABILITIES :: Text representation of CDP capabilities"><span class="description">Text representation of CDP capabilities</span><pre>$CDP_CACHE_NEIGHBOUR_CAPABILITIES</pre></a></li>
+<li class="property public "><a href="#property_CDP_CACHE_NEIGHBOUR_DUPLEXES" title="$CDP_CACHE_NEIGHBOUR_DUPLEXES :: Text representation of CDP capabilities"><span class="description">Text representation of CDP capabilities</span><pre>$CDP_CACHE_NEIGHBOUR_DUPLEXES</pre></a></li>
 </ul>
 </li>
 <li class="nav-header private">» Private
-                    <ul><li class="property private inherited"><a href="#property__snmp" title="$_snmp :: Instance for the SNMP object"><span class="description"></span><pre>$_snmp</pre></a></li></ul>
+                    <ul><li class="property private inherited"><a href="#property__snmp" title="$_snmp :: Instance for the SNMP object"><span class="description">Instance for the SNMP object</span><pre>$_snmp</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants
@@ -547,7 +547,7 @@ print_r( $host-&gt;useCisco_CDP()-&gt;neighbourCapabilities( 10111, true ) )
 <table class="table table-bordered">
 <tr>
 <th>see</th>
-<td><a href="">"Cisco Discovery Protocol Specification, 10/19/94."</a></td>
+<td><a href="">\OSS_SNMP\MIBS\Cisco\REFERENCE</a></td>
 </tr>
 <tr>
 <th>see</th>
@@ -718,7 +718,7 @@ connected to that local port. You can discover the neighbour ID via <code>neighb
 </blockquote></div>
 <table class="table table-bordered"><tr>
 <th>see</th>
-<td><a href="">"managementDomainName in CISCO-VTP-MIB"</a></td>
+<td><a href="">\OSS_SNMP\MIBS\Cisco\REFERENCE</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -847,7 +847,7 @@ is connected with a LAG / PortChannel and <code>$inverse</code> was set to true.
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a id="property_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES"> </a><div class="element clickable property public property_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES" data-toggle="collapse" data-target=".property_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES .collapse">
-<h2></h2>
+<h2>Text representation of CDP neighbour address type</h2>
 <pre>$CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -859,7 +859,7 @@ is connected with a LAG / PortChannel and <code>$inverse</code> was set to true.
 </div></div>
 </div>
 <a id="property_CDP_CACHE_NEIGHBOUR_CAPABILITIES"> </a><div class="element clickable property public property_CDP_CACHE_NEIGHBOUR_CAPABILITIES" data-toggle="collapse" data-target=".property_CDP_CACHE_NEIGHBOUR_CAPABILITIES .collapse">
-<h2></h2>
+<h2>Text representation of CDP capabilities</h2>
 <pre>$CDP_CACHE_NEIGHBOUR_CAPABILITIES : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -871,7 +871,7 @@ is connected with a LAG / PortChannel and <code>$inverse</code> was set to true.
 </div></div>
 </div>
 <a id="property_CDP_CACHE_NEIGHBOUR_DUPLEXES"> </a><div class="element clickable property public property_CDP_CACHE_NEIGHBOUR_DUPLEXES" data-toggle="collapse" data-target=".property_CDP_CACHE_NEIGHBOUR_DUPLEXES .collapse">
-<h2></h2>
+<h2>Text representation of CDP capabilities</h2>
 <pre>$CDP_CACHE_NEIGHBOUR_DUPLEXES : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
@@ -883,7 +883,7 @@ is connected with a LAG / PortChannel and <code>$inverse</code> was set to true.
 </div></div>
 </div>
 <a id="property__snmp"> </a><div class="element clickable property private property__snmp" data-toggle="collapse" data-target=".property__snmp .collapse">
-<h2></h2>
+<h2>Instance for the SNMP object</h2>
 <pre>$_snmp </pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
@@ -1148,8 +1148,8 @@ is connected with a LAG / PortChannel and <code>$inverse</code> was set to true.
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-04-24T19:34:21+01:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2013-06-11T21:02:28+01:00.<br></footer></div>
 </div>
 </body>
 </html>

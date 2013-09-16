@@ -43,7 +43,7 @@
 
 if( substr( $sysDescr, 0, 11 ) == 'ExtremeXOS ' )
 {
-    $this->setVendor( 'Extreme' );
+    $this->setVendor( 'Extreme Networks' );
     $this->setOs( 'ExtremeXOS' );
     
     if( substr( $sysDescr, 0, 18 ) == 'ExtremeXOS version' )
