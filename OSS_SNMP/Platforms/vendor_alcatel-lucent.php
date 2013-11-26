@@ -41,9 +41,7 @@
 // 'Alcatel-Lucent OS9600/OS9700-CFM 6.4.3.520.R01 GA, April 08, 2010.'
 // 'Alcatel-Lucent OS6850-P24 6.4.3.520.R01 GA, April 08, 2010.'
 
-// FIXME: Figure out how to detect OS6850-U24's which does not populate the model in the sysDescr
-
-if( substr( $sysDescr, 0, 17 ) == 'Alcatel-Lucent OS' )
+if( substr( $sysDescr, 0, 14 ) == 'Alcatel-Lucent' )
 {
     $this->setVendor( 'Alcatel-Lucent' );
     $this->setOs( 'AOS' );
@@ -67,8 +65,21 @@ if( substr( $sysDescr, 0, 17 ) == 'Alcatel-Lucent OS' )
         $this->setOsDate( new \DateTime( "{$matches[5]}-{$matches[3]}-{$matches[4]}" ) );
         $this->getOsDate()->setTimezone( new \DateTimeZone( 'UTC' ) );
     } else {
-        $this->setModel( 'Unknown' );
-        $this->setOsVersion( 'Unknown' );
-        $this->setOsDate( null );
+        $model = $this->getSNMPHost()->get( '.1.3.6.1.2.1.47.1.1.1.1.13.1' );
+
+        if ( !empty ( $model ) ) {
+            $this->setModel( $model );
+
+            preg_match( '/Alcatel-Lucent ([0-9A-Za-z\(\)\.]+) GA,\s([a-zA-Z]+)\s(\d+),\s(\d+)\./',
+                $sysDescr, $matches );
+
+            $this->setOsVersion( $matches[1] );
+            $this->setOsDate( new \DateTime( "{$matches[4]}-{$matches[2]}-{$matches[3]}" ) );
+            $this->getOsDate()->setTimezone( new \DateTimeZone( 'UTC' ) );
+        } else {
+            $this->setModel( 'Unknown' );
+            $this->setOsVersion( 'Unknown' );
+            $this->setOsDate( null );
+        }
     }
 }
