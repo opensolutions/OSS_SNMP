@@ -47,8 +47,13 @@ class SMST extends \OSS_SNMP\MIBS\Cisco
     const OID_STP_X_SMST_MAX_INSTANCES         = '.1.3.6.1.4.1.9.9.82.1.14.1.0'; 
     const OID_STP_X_SMST_MAX_INSTANCE_ID       = '.1.3.6.1.4.1.9.9.82.1.14.2.0'; 
     const OID_STP_X_SMST_REGION_REVISION       = '.1.3.6.1.4.1.9.9.82.1.14.3.0'; 
-    
-    const OID_STP_X_SMST_REMAINING_HOP_COUNT   = '.1.3.6.1.4.1.9.9.82.1.14.5.1.4'; 
+
+    // OIDs for identifying which VLANs are part of which MST instance
+    const OID_STP_X_SMST_INSTANCE_TABLE_VLANS_MAPPED_1K2K  = ".1.3.6.1.4.1.9.9.82.1.14.5.1.2";
+    const OID_STP_X_SMST_INSTANCE_TABLE_VLANS_MAPPED_3K4K  = ".1.3.6.1.4.1.9.9.82.1.14.5.1.3";
+
+    const OID_STP_X_SMST_REMAINING_HOP_COUNT         = '.1.3.6.1.4.1.9.9.82.1.14.5.1.4'; 
+    const OID_STP_X_SMST_INSTANCE_CIST_REGIONAL_ROOT = '.1.3.6.1.4.1.9.9.82.1.14.5.1.5.0';
 
     
     /**
@@ -87,6 +92,183 @@ class SMST extends \OSS_SNMP\MIBS\Cisco
         return $this->getSNMP()->get( self::OID_STP_X_SMST_REGION_REVISION );
     }
     
+
+    /**
+     * Return array of MST instances containing an array of mapped VLANs
+     *
+     * The form of the returned array is:
+     *
+     *     [
+     *         $mstInstanceId => [
+     *             $vlanTag => true / false,
+     *             $vlanTag => true / false,
+     *             ...
+     *         ],
+     *         ...
+     *     ]
+     *
+     * If a VLAN tag is not present in the array of VLANs, then it is not a member of that MST instance. 
+     *
+     * @see vlansMappedAsRanges()
+     * @param int $instanceId Limit results to a single instance ID (returned array is just vlans)
+     * @return Array as described above.
+     *
+     */
+    public function vlansMapped( $instanceID = false )
+    {
+        $vlansMapped = [];
+
+        $instances1k2k = $this->getSNMP()->walk1d( self::OID_STP_X_SMST_INSTANCE_TABLE_VLANS_MAPPED_1K2K );
+        $instances3k4k = $this->getSNMP()->walk1d( self::OID_STP_X_SMST_INSTANCE_TABLE_VLANS_MAPPED_3K4K );
+
+        if( $instanceID )
+        {
+            foreach( $instances1k2k as $id => $instances )
+                if( $id != $instanceID )
+                    unset( $instances1k2k[ $id ] );
+
+            foreach( $instances3k4k as $id => $instances )
+                if( $id != $instanceID )
+                    unset( $instances3k4k[ $id ] );
+        }
+
+        foreach( [ -1 => $instances1k2k, 2047 => $instances3k4k ] as $offset => $instances )
+        {
+            foreach( $instances as $instanceId => $mapped )
+            {
+                $mapped = $this->getSNMP()->ppHexStringFlags( $mapped );
+                foreach( $mapped as $vlanid => $flag )
+                {
+                    // Cisco seems to be returning some crud. Strip it out:
+                    if( $vlanid + $offset <= 0 || $vlanid + $offset > 4094 )
+                        continue;
+
+                    $vlansMapped[ $instanceId ][ $vlanid + $offset ] = $flag;
+                }
+            }
+        }
+
+        if( $instanceID )
+            $vlansMapped = $vlansMapped[ $instanceID ];
+
+        return $vlansMapped;
+    }
+
+    /**
+     * Return array of MST instances containing an array of mapped VLAN ranges
+     *
+     * The form of the returned array is:
+     *
+     *     [
+     *         $mstInstanceId => [
+     *             500-599,
+     *             3000-4094,
+     *             ...
+     *         ],
+     *         ...
+     *     ]
+     *
+     * Example usage:
+     *
+     *     foreach( $ports as $id => $portConf )
+     *     {
+     *         echo sprintf( "%-16s - %-8s:\t", $portConf['host'], $portConf['port'] );
+     *         echo $hosts[ $portConf['host'] ]->useIface()->operationStates( true )[ $portNameToIndex[ $portConf['host'] ][ $portConf['port'] ] ] . "\n"; 
+     *     }
+     *
+     * Which results in (for example):
+     *
+     *     MST0       vlans mapped: 1-299,400-499,600-799,900-999,1800-4094
+     *     MST1       vlans mapped: 300-399
+     *     MST2       vlans mapped: 500-599,800-899,1000-1099,1300-1499
+     *     MST3       vlans mapped: 1500-1599
+     *     MST4       vlans mapped: 1100-1199
+     *     MST5       vlans mapped: 1200-1299
+     *     MST6       vlans mapped: 1600-1799
+     * 
+     *
+     * @see vlansMapped()
+     * @param int $instanceId Limit results to a single instance ID (returned array is one dimensional)
+     * @return Array as described above.
+     *
+     */
+    public function vlansMappedAsRanges( $instanceID = false )
+    {
+        $vlansMapped = $this->vlansMapped( $instanceID );
+
+        if ( $instanceID )
+            $vlansMapped[ $instanceID ] = $vlansMapped;
+
+        $ranges = [];
+
+        // big loop to turn sequential VLANs into ranges
+        // FIXME extract as utility function?
+        foreach( $vlansMapped as $id => $mapped )
+        {
+            $start = false;
+            $inc = false;
+
+            foreach( $mapped as $vid => $flag )
+            {
+                if( $flag )
+                {
+                    if( !$start )
+                    {
+                        $start = $vid;
+                        $inc   = $vid;
+                        continue;
+                    }
+
+                    if( $vid - $inc == 1 )
+                    {
+                        $inc++;
+                        continue;
+                    }
+
+                    if( $vid - $inc != 1 )
+                    {
+                        if( $start == $inc )
+                            $ranges[ $id ][] = $start;
+                        else
+                            $ranges[ $id ][] = "{$start}-{$inc}";
+
+                        $start = false;
+                        continue;
+                    }
+                }
+                else
+                {
+                    if( !$start )
+                        continue;
+                    else
+                    {
+                        if( $start == $inc )
+                            $ranges[ $id ][] = $start;
+                        else
+                            $ranges[ $id ][] = "{$start}-{$inc}";
+
+                        $start = false;
+                        continue;
+                    }
+
+                }
+
+            }
+
+            if( $start )
+            {
+                if( $start == $inc )
+                    $ranges[ $id ][] = $start;
+                else
+                    $ranges[ $id ][] = "{$start}-{$inc}";
+            }
+        }
+
+        if( $instanceID )
+            return $ranges[ $instanceID ];
+
+        return $ranges;
+    }
 
     /**
      * Returns the remaining hop count for all MST instances
@@ -131,6 +313,23 @@ class SMST extends \OSS_SNMP\MIBS\Cisco
         return $instances;
     }
     
+    /**
+     * Returns the maximum number of MST instances
+     *
+     * > "Indicates the Bridge Identifier (refer to BridgeId 
+     * > defined in BRIDGE-MIB) of CIST (Common and Internal 
+     * > Spanning Tree) Regional Root for the MST region.
+     * > 
+     * > This object is only instantiated when the object value of
+     * > stpxSpanningTreeType is mst(4) and stpxSMSTInstanceIndex
+     * > is 0."
+     *
+     * @return string The bridge identifier of the CIST regional root for the MST region
+     */
+    public function cistRegionalRoot()
+    {
+        return $this->getSNMP()->get( self::OID_STP_X_SMST_INSTANCE_CIST_REGIONAL_ROOT );
+    }
 
 
 }
