@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
@@ -31,11 +31,16 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">47</span></a></li>
+                <span class="label label-info">58</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul><li>todo 
+                <ul>
+<li>todo 
                 <span class="label label-info">1</span>
-</li></ul></a></li>
+</li>
+<li>fixme 
+                <span class="label label-info">1</span>
+</li>
+</ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">2</span></a></li>
 </ul>
@@ -56,78 +61,62 @@
 </div>
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
-<i class="icon-custom icon-method"></i> Methods
-                    <ul>
-<li class="method public "><a href="#method___call" title="__call :: Magic method for generic function calls"><span class="description">Magic method for generic function calls</span><pre>__call()</pre></a></li>
-<li class="method public "><a href="#method___construct" title="__construct :: The constructor."><span class="description">The constructor.</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_cache" title="cache :: Query whether we are using the cache or not"><span class="description">Query whether we are using the cache or not</span><pre>cache()</pre></a></li>
-<li class="method public "><a href="#method_disableCache" title="disableCache :: Disable lookups of the local cache"><span class="description">Disable lookups of the local cache</span><pre>disableCache()</pre></a></li>
-<li class="method public "><a href="#method_enableCache" title="enableCache :: Enable lookups of the local cache"><span class="description">Enable lookups of the local cache</span><pre>enableCache()</pre></a></li>
-<li class="method public "><a href="#method_get" title="get :: Get a single SNMP value"><span class="description">Get a single SNMP value</span><pre>get()</pre></a></li>
-<li class="method public "><a href="#method_getCache" title="getCache :: Get the cache in use (or create a Cache\Basic instance"><span class="description">Get the cache in use (or create a Cache\Basic instance</span><pre>getCache()</pre></a></li>
-<li class="method public "><a href="#method_getCommunity" title="getCommunity :: Returns the community string currently in use."><span class="description">Returns the community string currently in use.</span><pre>getCommunity()</pre></a></li>
-<li class="method public "><a href="#method_getHost" title="getHost :: Returns the target host as currently configured for SNMP queries"><span class="description">Returns the target host as currently configured for SNMP queries</span><pre>getHost()</pre></a></li>
-<li class="method public "><a href="#method_getLastResult" title="getLastResult :: Returns the unaltered original last SNMP result"><span class="description">Returns the unaltered original last SNMP result</span><pre>getLastResult()</pre></a></li>
-<li class="method public "><a href="#method_getPlatform" title="getPlatform :: "><span class="description">getPlatform()
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__call" title="__call :: Magic method for generic function calls"><span class="description">Magic method for generic function calls</span><pre>__call()</pre></a></li>
+<li class="method public "><a href="#__construct" title="__construct :: The constructor."><span class="description">The constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#cache" title="cache :: Query whether we are using the cache or not"><span class="description">Query whether we are using the cache or not</span><pre>cache()</pre></a></li>
+<li class="method public "><a href="#disableCache" title="disableCache :: Disable lookups of the local cache"><span class="description">Disable lookups of the local cache</span><pre>disableCache()</pre></a></li>
+<li class="method public "><a href="#enableCache" title="enableCache :: Enable lookups of the local cache"><span class="description">Enable lookups of the local cache</span><pre>enableCache()</pre></a></li>
+<li class="method public "><a href="#get" title="get :: Get a single SNMP value"><span class="description">Get a single SNMP value</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#getCache" title="getCache :: Get the cache in use (or create a Cache\Basic instance"><span class="description">Get the cache in use (or create a Cache\Basic instance</span><pre>getCache()</pre></a></li>
+<li class="method public "><a href="#getCommunity" title="getCommunity :: Returns the community string currently in use."><span class="description">Returns the community string currently in use.</span><pre>getCommunity()</pre></a></li>
+<li class="method public "><a href="#getHost" title="getHost :: Returns the target host as currently configured for SNMP queries"><span class="description">Returns the target host as currently configured for SNMP queries</span><pre>getHost()</pre></a></li>
+<li class="method public "><a href="#getLastResult" title="getLastResult :: Returns the unaltered original last SNMP result"><span class="description">Returns the unaltered original last SNMP result</span><pre>getLastResult()</pre></a></li>
+<li class="method public "><a href="#getPlatform" title="getPlatform :: "><span class="description">getPlatform()
         </span><pre>getPlatform()</pre></a></li>
-<li class="method public "><a href="#method_getResultCache" title="getResultCache :: Returns the internal result cache"><span class="description">Returns the internal result cache</span><pre>getResultCache()</pre></a></li>
-<li class="method public "><a href="#method_getRetry" title="getRetry :: Returns the SNMP query retry count"><span class="description">Returns the SNMP query retry count</span><pre>getRetry()</pre></a></li>
-<li class="method public "><a href="#method_getTimeout" title="getTimeout :: Returns the SNMP query timeout (microseconds)."><span class="description">Returns the SNMP query timeout (microseconds).</span><pre>getTimeout()</pre></a></li>
-<li class="method public "><a href="#method_parseSnmpValue" title="parseSnmpValue :: Parse the result of an SNMP query into a PHP type"><span class="description">Parse the result of an SNMP query into a PHP type</span><pre>parseSnmpValue()</pre></a></li>
-<li class="method public "><a href="#method_ppHexStringFlags" title="ppHexStringFlags :: Takes a HEX-String of true / false - on / off - set / unset flags
+<li class="method public "><a href="#getResultCache" title="getResultCache :: Returns the internal result cache"><span class="description">Returns the internal result cache</span><pre>getResultCache()</pre></a></li>
+<li class="method public "><a href="#getRetry" title="getRetry :: Returns the SNMP query retry count"><span class="description">Returns the SNMP query retry count</span><pre>getRetry()</pre></a></li>
+<li class="method public "><a href="#getTimeout" title="getTimeout :: Returns the SNMP query timeout (microseconds)."><span class="description">Returns the SNMP query timeout (microseconds).</span><pre>getTimeout()</pre></a></li>
+<li class="method public "><a href="#parseSnmpValue" title="parseSnmpValue :: Parse the result of an SNMP query into a PHP type"><span class="description">Parse the result of an SNMP query into a PHP type</span><pre>parseSnmpValue()</pre></a></li>
+<li class="method public "><a href="#ppHexStringFlags" title="ppHexStringFlags :: Takes a HEX-String of true / false - on / off - set / unset flags
 and converts it to an indexed (from 1) array of true / false values."><span class="description">Takes a HEX-String of true / false - on / off - set / unset flags
 and converts it to an indexed (from 1) array of true / false values.</span><pre>ppHexStringFlags()</pre></a></li>
-<li class="method public "><a href="#method_ppTruthValue" title="ppTruthValue :: Utility function to convert TruthValue SNMP responses to true / false"><span class="description">Utility function to convert TruthValue SNMP responses to true / false</span><pre>ppTruthValue()</pre></a></li>
-<li class="method public "><a href="#method_realWalk" title="realWalk :: Proxy to the snmp2_real_walk command"><span class="description">Proxy to the snmp2_real_walk command</span><pre>realWalk()</pre></a></li>
-<li class="method public "><a href="#method_setCache" title="setCache :: Set the cache to use"><span class="description">Set the cache to use</span><pre>setCache()</pre></a></li>
-<li class="method public "><a href="#method_setCommunity" title="setCommunity :: Sets the community string to use for SNMP queries."><span class="description">Sets the community string to use for SNMP queries.</span><pre>setCommunity()</pre></a></li>
-<li class="method public "><a href="#method_setHost" title="setHost :: Sets the target host for SNMP queries."><span class="description">Sets the target host for SNMP queries.</span><pre>setHost()</pre></a></li>
-<li class="method public "><a href="#method_setOidOutputFormat" title="setOidOutputFormat :: Sets the output format for SNMP queries."><span class="description">Sets the output format for SNMP queries.</span><pre>setOidOutputFormat()</pre></a></li>
-<li class="method public "><a href="#method_setRetry" title="setRetry :: Sets the SNMP query retry count."><span class="description">Sets the SNMP query retry count.</span><pre>setRetry()</pre></a></li>
-<li class="method public "><a href="#method_setTimeout" title="setTimeout :: Sets the timeout to use for SNMP queries (microseconds)."><span class="description">Sets the timeout to use for SNMP queries (microseconds).</span><pre>setTimeout()</pre></a></li>
-<li class="method public "><a href="#method_subOidWalk" title="subOidWalk :: Get indexed SNMP values where the array key is the given position of the OID"><span class="description">Get indexed SNMP values where the array key is the given position of the OID</span><pre>subOidWalk()</pre></a></li>
-<li class="method public "><a href="#method_translate" title="translate :: Utility function to translate one value(s) to another via an associated array"><span class="description">Utility function to translate one value(s) to another via an associated array</span><pre>translate()</pre></a></li>
-<li class="method public "><a href="#method_useExtension" title="useExtension :: This is the MIB Extension magic"><span class="description">This is the MIB Extension magic</span><pre>useExtension()</pre></a></li>
-<li class="method public "><a href="#method_walk1d" title="walk1d :: Get indexed SNMP values (first degree)"><span class="description">Get indexed SNMP values (first degree)</span><pre>walk1d()</pre></a></li>
-<li class="method public "><a href="#method_walkIPv4" title="walkIPv4 :: Get indexed SNMP values where they are indexed by IPv4 addresses"><span class="description">Get indexed SNMP values where they are indexed by IPv4 addresses</span><pre>walkIPv4()</pre></a></li>
-</ul>
-</li>
+<li class="method public "><a href="#ppTruthValue" title="ppTruthValue :: Utility function to convert TruthValue SNMP responses to true / false"><span class="description">Utility function to convert TruthValue SNMP responses to true / false</span><pre>ppTruthValue()</pre></a></li>
+<li class="method public "><a href="#realWalk" title="realWalk :: Proxy to the snmp2_real_walk command"><span class="description">Proxy to the snmp2_real_walk command</span><pre>realWalk()</pre></a></li>
+<li class="method public "><a href="#setCache" title="setCache :: Set the cache to use"><span class="description">Set the cache to use</span><pre>setCache()</pre></a></li>
+<li class="method public "><a href="#setCommunity" title="setCommunity :: Sets the community string to use for SNMP queries."><span class="description">Sets the community string to use for SNMP queries.</span><pre>setCommunity()</pre></a></li>
+<li class="method public "><a href="#setHost" title="setHost :: Sets the target host for SNMP queries."><span class="description">Sets the target host for SNMP queries.</span><pre>setHost()</pre></a></li>
+<li class="method public "><a href="#setOidOutputFormat" title="setOidOutputFormat :: Sets the output format for SNMP queries."><span class="description">Sets the output format for SNMP queries.</span><pre>setOidOutputFormat()</pre></a></li>
+<li class="method public "><a href="#setRetry" title="setRetry :: Sets the SNMP query retry count."><span class="description">Sets the SNMP query retry count.</span><pre>setRetry()</pre></a></li>
+<li class="method public "><a href="#setTimeout" title="setTimeout :: Sets the timeout to use for SNMP queries (microseconds)."><span class="description">Sets the timeout to use for SNMP queries (microseconds).</span><pre>setTimeout()</pre></a></li>
+<li class="method public "><a href="#subOidWalk" title="subOidWalk :: Get indexed SNMP values where the array key is the given position of the OID"><span class="description">Get indexed SNMP values where the array key is the given position of the OID</span><pre>subOidWalk()</pre></a></li>
+<li class="method public "><a href="#translate" title="translate :: Utility function to translate one value(s) to another via an associated array"><span class="description">Utility function to translate one value(s) to another via an associated array</span><pre>translate()</pre></a></li>
+<li class="method public "><a href="#useExtension" title="useExtension :: This is the MIB Extension magic"><span class="description">This is the MIB Extension magic</span><pre>useExtension()</pre></a></li>
+<li class="method public "><a href="#walk1d" title="walk1d :: Get indexed SNMP values (first degree)"><span class="description">Get indexed SNMP values (first degree)</span><pre>walk1d()</pre></a></li>
+<li class="method public "><a href="#walkIPv4" title="walkIPv4 :: Get indexed SNMP values where they are indexed by IPv4 addresses"><span class="description">Get indexed SNMP values where they are indexed by IPv4 addresses</span><pre>walkIPv4()</pre></a></li>
 <li class="nav-header">
-<i class="icon-custom icon-property"></i> Properties
-                    <ul>
-<li class="property public "><a href="#property_HEX_STRING_WORDS_AS_ARRAY" title="$HEX_STRING_WORDS_AS_ARRAY :: An array of arrays where each array element
-represents true / false values for a given
-hex digit."><span class="description">An array of arrays where each array element
-represents true / false values for a given
-hex digit.</span><pre>$HEX_STRING_WORDS_AS_ARRAY</pre></a></li>
-<li class="property public "><a href="#property_SNMP_TRUTHVALUES" title="$SNMP_TRUTHVALUES :: PHP equivalents of SNMP return type TruthValue"><span class="description">PHP equivalents of SNMP return type TruthValue</span><pre>$SNMP_TRUTHVALUES</pre></a></li>
-</ul>
-</li>
-<li class="nav-header protected">» Protected
-                    <ul>
-<li class="property protected "><a href="#property__cache" title="$_cache :: The cache object to use as the cache"><span class="description">The cache object to use as the cache</span><pre>$_cache</pre></a></li>
-<li class="property protected "><a href="#property__community" title="$_community :: The SNMP community to use when polling SNMP services."><span class="description">The SNMP community to use when polling SNMP services.</span><pre>$_community</pre></a></li>
-<li class="property protected "><a href="#property__disableCache" title="$_disableCache :: Set to true to disable local cache lookup and force SNMP queries"><span class="description">Set to true to disable local cache lookup and force SNMP queries</span><pre>$_disableCache</pre></a></li>
-<li class="property protected "><a href="#property__host" title="$_host :: The SNMP host to query."><span class="description">The SNMP host to query.</span><pre>$_host</pre></a></li>
-<li class="property protected "><a href="#property__lastResult" title="$_lastResult :: A variable to hold the last unaltered result of an SNMP query"><span class="description">A variable to hold the last unaltered result of an SNMP query</span><pre>$_lastResult</pre></a></li>
-<li class="property protected "><a href="#property__platform" title="$_platform :: A variable to hold the platform object"><span class="description">A variable to hold the platform object</span><pre>$_platform</pre></a></li>
-<li class="property protected "><a href="#property__retry" title="$_retry :: The SNMP query retry count."><span class="description">The SNMP query retry count.</span><pre>$_retry</pre></a></li>
-<li class="property protected "><a href="#property__timeout" title="$_timeout :: The SNMP query timeout value (microseconds)."><span class="description">The SNMP query timeout value (microseconds).</span><pre>$_timeout</pre></a></li>
-</ul>
-</li>
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24HEX_STRING_WORDS_AS_ARRAY" title="$HEX_STRING_WORDS_AS_ARRAY :: "><span class="description">$HEX_STRING_WORDS_AS_ARRAY</span><pre>$HEX_STRING_WORDS_AS_ARRAY</pre></a></li>
+<li class="property public "><a href="#%24SNMP_TRUTHVALUES" title="$SNMP_TRUTHVALUES :: "><span class="description">$SNMP_TRUTHVALUES</span><pre>$SNMP_TRUTHVALUES</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24_cache" title="$_cache :: "><span class="description">$_cache</span><pre>$_cache</pre></a></li>
+<li class="property protected "><a href="#%24_community" title="$_community :: "><span class="description">$_community</span><pre>$_community</pre></a></li>
+<li class="property protected "><a href="#%24_disableCache" title="$_disableCache :: "><span class="description">$_disableCache</span><pre>$_disableCache</pre></a></li>
+<li class="property protected "><a href="#%24_host" title="$_host :: "><span class="description">$_host</span><pre>$_host</pre></a></li>
+<li class="property protected "><a href="#%24_lastResult" title="$_lastResult :: "><span class="description">$_lastResult</span><pre>$_lastResult</pre></a></li>
+<li class="property protected "><a href="#%24_platform" title="$_platform :: "><span class="description">$_platform</span><pre>$_platform</pre></a></li>
+<li class="property protected "><a href="#%24_retry" title="$_retry :: "><span class="description">$_retry</span><pre>$_retry</pre></a></li>
+<li class="property protected "><a href="#%24_timeout" title="$_timeout :: "><span class="description">$_timeout</span><pre>$_timeout</pre></a></li>
 <li class="nav-header">
-<i class="icon-custom icon-constant"></i> Constants
-                    <ul>
-<li class="constant  "><a href="#constant_OID_OUTPUT_FULL" title="OID_OUTPUT_FULL :: SNMP output constants to mirror those of PHP"><span class="description">SNMP output constants to mirror those of PHP</span><pre>OID_OUTPUT_FULL</pre></a></li>
-<li class="constant  "><a href="#constant_OID_OUTPUT_NUMERIC" title="OID_OUTPUT_NUMERIC :: SNMP output constants to mirror those of PHP"><span class="description">SNMP output constants to mirror those of PHP</span><pre>OID_OUTPUT_NUMERIC</pre></a></li>
-<li class="constant  "><a href="#constant_SNMP_TRUTHVALUE_FALSE" title="SNMP_TRUTHVALUE_FALSE :: Definition of an SNMP return type 'TruthValue'"><span class="description">Definition of an SNMP return type 'TruthValue'</span><pre>SNMP_TRUTHVALUE_FALSE</pre></a></li>
-<li class="constant  "><a href="#constant_SNMP_TRUTHVALUE_TRUE" title="SNMP_TRUTHVALUE_TRUE :: Definition of an SNMP return type 'TruthValue'"><span class="description">Definition of an SNMP return type 'TruthValue'</span><pre>SNMP_TRUTHVALUE_TRUE</pre></a></li>
-</ul>
-</li>
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#OID_OUTPUT_FULL" title="OID_OUTPUT_FULL :: "><span class="description">OID_OUTPUT_FULL</span><pre>OID_OUTPUT_FULL</pre></a></li>
+<li class="constant  "><a href="#OID_OUTPUT_NUMERIC" title="OID_OUTPUT_NUMERIC :: "><span class="description">OID_OUTPUT_NUMERIC</span><pre>OID_OUTPUT_NUMERIC</pre></a></li>
+<li class="constant  "><a href="#SNMP_TRUTHVALUE_FALSE" title="SNMP_TRUTHVALUE_FALSE :: "><span class="description">SNMP_TRUTHVALUE_FALSE</span><pre>SNMP_TRUTHVALUE_FALSE</pre></a></li>
+<li class="constant  "><a href="#SNMP_TRUTHVALUE_TRUE" title="SNMP_TRUTHVALUE_TRUE :: "><span class="description">SNMP_TRUTHVALUE_TRUE</span><pre>SNMP_TRUTHVALUE_TRUE</pre></a></li>
 </ul>
 </div>
 <div class="span8">
-<a id="\OSS_SNMP\SNMP"></a><ul class="breadcrumb">
+<a name="%5COSS_SNMP%5CSNMP" id="\OSS_SNMP\SNMP"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -136,10 +125,10 @@ hex digit.</span><pre>$HEX_STRING_WORDS_AS_ARRAY</pre></a></li>
 <span class="divider">\</span><a href="../classes/OSS_SNMP.SNMP.html">SNMP</a>
 </li>
 </ul>
-<div class="element class">
+<div href="../classes/OSS_SNMP.SNMP.html" class="element class">
 <p class="short_description">A class for performing SNMP V2 queries and processing the results.</p>
 <div class="details">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -152,12 +141,12 @@ hex digit.</span><pre>$HEX_STRING_WORDS_AS_ARRAY</pre></a></li>
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method___call"></a><div class="element clickable method public method___call" data-toggle="collapse" data-target=".method___call .collapse">
+<a name="__call" id="__call"></a><div class="element clickable method public __call" data-toggle="collapse" data-target=".__call .collapse">
 <h2>Magic method for generic function calls</h2>
 <pre>__call(string $method, array $args) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$method</h4>
@@ -169,17 +158,17 @@ hex digit.</span><pre>$HEX_STRING_WORDS_AS_ARRAY</pre></a></li>
 </div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/OSS_SNMP.Exception.html">\OSS_SNMP\Exception</a></code></th>
+<th><code><a href="http://php.net/manual/en/class.exception.php">\Exception</a></code></th>
 <td></td>
 </tr></table>
 </div></div>
 </div>
-<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>The constructor.</h2>
-<pre>__construct(string $host, string $community) : \OSS_SNMP\OSS_SNMP</pre>
+<pre>__construct(string $host, string $community) : \OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$host</h4>
@@ -189,48 +178,48 @@ hex digit.</span><pre>$HEX_STRING_WORDS_AS_ARRAY</pre></a></li>
 <code>string</code><p>The community to use for SNMP queries.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>\OSS_SNMP\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
+<code>\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
-<a id="method_cache"></a><div class="element clickable method public method_cache" data-toggle="collapse" data-target=".method_cache .collapse">
+<a name="cache" id="cache"></a><div class="element clickable method public cache" data-toggle="collapse" data-target=".cache .collapse">
 <h2>Query whether we are using the cache or not</h2>
 <pre>cache() : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>True of the local lookup cache is enabled. Otherwise false.</div>
 </div></div>
 </div>
-<a id="method_disableCache"></a><div class="element clickable method public method_disableCache" data-toggle="collapse" data-target=".method_disableCache .collapse">
+<a name="disableCache" id="disableCache"></a><div class="element clickable method public disableCache" data-toggle="collapse" data-target=".disableCache .collapse">
 <h2>Disable lookups of the local cache</h2>
-<pre>disableCache() : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
+<pre>disableCache() : <a href="http://php.net/manual/en/class.snmp.php">\SNMP</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>An instance of this for fluent interfaces</div>
+<code><a href="http://php.net/manual/en/class.snmp.php">\SNMP</a></code>An instance of this for fluent interfaces</div>
 </div></div>
 </div>
-<a id="method_enableCache"></a><div class="element clickable method public method_enableCache" data-toggle="collapse" data-target=".method_enableCache .collapse">
+<a name="enableCache" id="enableCache"></a><div class="element clickable method public enableCache" data-toggle="collapse" data-target=".enableCache .collapse">
 <h2>Enable lookups of the local cache</h2>
-<pre>enableCache() : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
+<pre>enableCache() : <a href="http://php.net/manual/en/class.snmp.php">\SNMP</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>An instance of this for fluent interfaces</div>
+<code><a href="http://php.net/manual/en/class.snmp.php">\SNMP</a></code>An instance of this for fluent interfaces</div>
 </div></div>
 </div>
-<a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
+<a name="get" id="get"></a><div class="element clickable method public get" data-toggle="collapse" data-target=".get .collapse">
 <h2>Get a single SNMP value</h2>
 <pre>get(string $oid) : mixed</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$oid</h4>
@@ -245,106 +234,106 @@ hex digit.</span><pre>$HEX_STRING_WORDS_AS_ARRAY</pre></a></li>
 <code>mixed</code>The resultant value</div>
 </div></div>
 </div>
-<a id="method_getCache"></a><div class="element clickable method public method_getCache" data-toggle="collapse" data-target=".method_getCache .collapse">
+<a name="getCache" id="getCache"></a><div class="element clickable method public getCache" data-toggle="collapse" data-target=".getCache .collapse">
 <h2>Get the cache in use (or create a Cache\Basic instance</h2>
 <pre>getCache() : <a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>We kind of mandate the use of a cache as the code is written with a cache in mind.
+<p class="long_description"><p>We kind of mandate the use of a cache as the code is written with a cache in mind.
 You are free to disable it via disableCache() but your machines may be hammered!</p>
 
-<p>We would suggest disableCache() / enableCache() used in pairs only when really needed.</p></div>
+<p>We would suggest disableCache() / enableCache() used in pairs only when really needed.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a></code>The cache object</div>
 </div></div>
 </div>
-<a id="method_getCommunity"></a><div class="element clickable method public method_getCommunity" data-toggle="collapse" data-target=".method_getCommunity .collapse">
+<a name="getCommunity" id="getCommunity"></a><div class="element clickable method public getCommunity" data-toggle="collapse" data-target=".getCommunity .collapse">
 <h2>Returns the community string currently in use.</h2>
 <pre>getCommunity() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>The community string currently in use.</div>
 </div></div>
 </div>
-<a id="method_getHost"></a><div class="element clickable method public method_getHost" data-toggle="collapse" data-target=".method_getHost .collapse">
+<a name="getHost" id="getHost"></a><div class="element clickable method public getHost" data-toggle="collapse" data-target=".getHost .collapse">
 <h2>Returns the target host as currently configured for SNMP queries</h2>
 <pre>getHost() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>The target host as currently configured for SNMP queries</div>
 </div></div>
 </div>
-<a id="method_getLastResult"></a><div class="element clickable method public method_getLastResult" data-toggle="collapse" data-target=".method_getLastResult .collapse">
+<a name="getLastResult" id="getLastResult"></a><div class="element clickable method public getLastResult" data-toggle="collapse" data-target=".getLastResult .collapse">
 <h2>Returns the unaltered original last SNMP result</h2>
 <pre>getLastResult() : mixed</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>mixed</code>The unaltered original last SNMP result</div>
 </div></div>
 </div>
-<a id="method_getPlatform"></a><div class="element clickable method public method_getPlatform" data-toggle="collapse" data-target=".method_getPlatform .collapse">
+<a name="getPlatform" id="getPlatform"></a><div class="element clickable method public getPlatform" data-toggle="collapse" data-target=".getPlatform .collapse">
 <h2>getPlatform()
         </h2>
 <pre>getPlatform() </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="method_getResultCache"></a><div class="element clickable method public method_getResultCache" data-toggle="collapse" data-target=".method_getResultCache .collapse">
+<a name="getResultCache" id="getResultCache"></a><div class="element clickable method public getResultCache" data-toggle="collapse" data-target=".getResultCache .collapse">
 <h2>Returns the internal result cache</h2>
 <pre>getResultCache() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The internal result cache</div>
 </div></div>
 </div>
-<a id="method_getRetry"></a><div class="element clickable method public method_getRetry" data-toggle="collapse" data-target=".method_getRetry .collapse">
+<a name="getRetry" id="getRetry"></a><div class="element clickable method public getRetry" data-toggle="collapse" data-target=".getRetry .collapse">
 <h2>Returns the SNMP query retry count</h2>
 <pre>getRetry() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>The SNMP query retry count</div>
 </div></div>
 </div>
-<a id="method_getTimeout"></a><div class="element clickable method public method_getTimeout" data-toggle="collapse" data-target=".method_getTimeout .collapse">
+<a name="getTimeout" id="getTimeout"></a><div class="element clickable method public getTimeout" data-toggle="collapse" data-target=".getTimeout .collapse">
 <h2>Returns the SNMP query timeout (microseconds).</h2>
 <pre>getTimeout() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>int</code>The the SNMP query timeout (microseconds)</div>
 </div></div>
 </div>
-<a id="method_parseSnmpValue"></a><div class="element clickable method public method_parseSnmpValue" data-toggle="collapse" data-target=".method_parseSnmpValue .collapse">
+<a name="parseSnmpValue" id="parseSnmpValue"></a><div class="element clickable method public parseSnmpValue" data-toggle="collapse" data-target=".parseSnmpValue .collapse">
 <h2>Parse the result of an SNMP query into a PHP type</h2>
 <pre>parseSnmpValue(string $v) : mixed</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>For example, [STRING: "blah"] is parsed to a PHP string containing: blah</p></div>
+<p class="long_description"><p>For example, [STRING: "blah"] is parsed to a PHP string containing: blah</p></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$v</h4>
 <code>string</code><p>The value to parse</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/OSS_SNMP.Exception.html">\OSS_SNMP\Exception</a></code></th>
+<th><code><a href="http://php.net/manual/en/class.exception.php">\Exception</a></code></th>
 <td></td>
 </tr></table>
 <h3>Returns</h3>
@@ -352,13 +341,13 @@ You are free to disable it via disableCache() but your machines may be hammered!
 <code>mixed</code>The parsed value</div>
 </div></div>
 </div>
-<a id="method_ppHexStringFlags"></a><div class="element clickable method public method_ppHexStringFlags" data-toggle="collapse" data-target=".method_ppHexStringFlags .collapse">
+<a name="ppHexStringFlags" id="ppHexStringFlags"></a><div class="element clickable method public ppHexStringFlags" data-toggle="collapse" data-target=".ppHexStringFlags .collapse">
 <h2>Takes a HEX-String of true / false - on / off - set / unset flags
 and converts it to an indexed (from 1) array of true / false values.</h2>
 <pre>ppHexStringFlags(string $str) : array</pre>
-<div class="labels"><span class="label">Static</span></div>
+<div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>For example, passing it <code>500040</code> will result in an array:</p>
+<p class="long_description"><p>For example, passing it <code>500040</code> will result in an array:</p>
 
 <pre><code>[
     [1]  =&gt; false, [2]  =&gt; true,  [3] =&gt; false, [4]  =&gt; true,
@@ -367,7 +356,7 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
     [17] =&gt; false, [18] =&gt; true, [19] =&gt; false, [20] =&gt; false,
     [21] =&gt; false, [22] =&gt; true, [23] =&gt; false, [24] =&gt; false
 ]
-</code></pre></div>
+</code></pre></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$str</h4>
@@ -377,12 +366,12 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 <code>array</code>The array of true / false flags indexed from 1</div>
 </div></div>
 </div>
-<a id="method_ppTruthValue"></a><div class="element clickable method public method_ppTruthValue" data-toggle="collapse" data-target=".method_ppTruthValue .collapse">
+<a name="ppTruthValue" id="ppTruthValue"></a><div class="element clickable method public ppTruthValue" data-toggle="collapse" data-target=".ppTruthValue .collapse">
 <h2>Utility function to convert TruthValue SNMP responses to true / false</h2>
 <pre>ppTruthValue(integer $value) : boolean</pre>
-<div class="labels"><span class="label">Static</span></div>
+<div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$value</h4>
@@ -392,12 +381,12 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 <div class="subelement response"><code>boolean</code></div>
 </div></div>
 </div>
-<a id="method_realWalk"></a><div class="element clickable method public method_realWalk" data-toggle="collapse" data-target=".method_realWalk .collapse">
+<a name="realWalk" id="realWalk"></a><div class="element clickable method public realWalk" data-toggle="collapse" data-target=".realWalk .collapse">
 <h2>Proxy to the snmp2_real_walk command</h2>
 <pre>realWalk(string $oid) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$oid</h4>
@@ -407,12 +396,12 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 <code>array</code>The results of the walk</div>
 </div></div>
 </div>
-<a id="method_setCache"></a><div class="element clickable method public method_setCache" data-toggle="collapse" data-target=".method_setCache .collapse">
+<a name="setCache" id="setCache"></a><div class="element clickable method public setCache" data-toggle="collapse" data-target=".setCache .collapse">
 <h2>Set the cache to use</h2>
 <pre>setCache(<a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a> $c) : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$c</h4>
@@ -422,27 +411,27 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 <code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>For fluent interfaces</div>
 </div></div>
 </div>
-<a id="method_setCommunity"></a><div class="element clickable method public method_setCommunity" data-toggle="collapse" data-target=".method_setCommunity .collapse">
+<a name="setCommunity" id="setCommunity"></a><div class="element clickable method public setCommunity" data-toggle="collapse" data-target=".setCommunity .collapse">
 <h2>Sets the community string to use for SNMP queries.</h2>
-<pre>setCommunity(string $c) : \OSS_SNMP\OSS_SNMP</pre>
+<pre>setCommunity(string $c) : \OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$c</h4>
 <code>string</code><p>The community to use for SNMP queries.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>\OSS_SNMP\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
+<code>\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
-<a id="method_setHost"></a><div class="element clickable method public method_setHost" data-toggle="collapse" data-target=".method_setHost .collapse">
+<a name="setHost" id="setHost"></a><div class="element clickable method public setHost" data-toggle="collapse" data-target=".setHost .collapse">
 <h2>Sets the target host for SNMP queries.</h2>
 <pre>setHost(string $h) : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$h</h4>
@@ -452,42 +441,42 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 <code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
-<a id="method_setOidOutputFormat"></a><div class="element clickable method public method_setOidOutputFormat" data-toggle="collapse" data-target=".method_setOidOutputFormat .collapse">
+<a name="setOidOutputFormat" id="setOidOutputFormat"></a><div class="element clickable method public setOidOutputFormat" data-toggle="collapse" data-target=".setOidOutputFormat .collapse">
 <h2>Sets the output format for SNMP queries.</h2>
-<pre>setOidOutputFormat(int $f) : \OSS_SNMP\OSS_SNMP\SNMP</pre>
+<pre>setOidOutputFormat(int $f) : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Should be one of the class OID_OUTPUT_* constants</p></div>
+<p class="long_description"><p>Should be one of the class OID_OUTPUT_* constants</p></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$f</h4>
 <code>int</code><p>The fomat to use</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>\OSS_SNMP\OSS_SNMP\SNMP</code>An instance of $this (for fluent interfaces)</div>
+<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
-<a id="method_setRetry"></a><div class="element clickable method public method_setRetry" data-toggle="collapse" data-target=".method_setRetry .collapse">
+<a name="setRetry" id="setRetry"></a><div class="element clickable method public setRetry" data-toggle="collapse" data-target=".setRetry .collapse">
 <h2>Sets the SNMP query retry count.</h2>
-<pre>setRetry(int $r) : \OSS_SNMP\OSS_SNMP</pre>
+<pre>setRetry(int $r) : \OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$r</h4>
 <code>int</code><p>The SNMP query retry count</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>\OSS_SNMP\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
+<code>\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
-<a id="method_setTimeout"></a><div class="element clickable method public method_setTimeout" data-toggle="collapse" data-target=".method_setTimeout .collapse">
+<a name="setTimeout" id="setTimeout"></a><div class="element clickable method public setTimeout" data-toggle="collapse" data-target=".setTimeout .collapse">
 <h2>Sets the timeout to use for SNMP queries (microseconds).</h2>
-<pre>setTimeout(int $t) : \OSS_SNMP\OSS_SNMP</pre>
+<pre>setTimeout(int $t) : \OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$t</h4>
@@ -495,15 +484,15 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 </div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>\OSS_SNMP\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
+<code>\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
-<a id="method_subOidWalk"></a><div class="element clickable method public method_subOidWalk" data-toggle="collapse" data-target=".method_subOidWalk .collapse">
+<a name="subOidWalk" id="subOidWalk"></a><div class="element clickable method public subOidWalk" data-toggle="collapse" data-target=".subOidWalk .collapse">
 <h2>Get indexed SNMP values where the array key is the given position of the OID</h2>
 <pre>subOidWalk(string $oid, int $position) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>I.e. the following query with sample results:</p>
+<p class="long_description"><p>I.e. the following query with sample results:</p>
 
 <p>subOidWalk( '.1.3.6.1.4.1.9.9.23.1.2.1.1.9', 15 )</p>
 
@@ -517,7 +506,7 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 <pre><code> 10101 =&gt; Hex-STRING: 00 00 00 01
  10105 =&gt; Hex-STRING: 00 00 00 01
  10108 =&gt; Hex-STRING: 00 00 00 01
-</code></pre></div>
+</code></pre></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$oid</h4>
@@ -535,15 +524,15 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 <code>array</code>The resultant values</div>
 </div></div>
 </div>
-<a id="method_translate"></a><div class="element clickable method public method_translate" data-toggle="collapse" data-target=".method_translate .collapse">
+<a name="translate" id="translate"></a><div class="element clickable method public translate" data-toggle="collapse" data-target=".translate .collapse">
 <h2>Utility function to translate one value(s) to another via an associated array</h2>
 <pre>translate(mixed $values, array $translator) : mixed</pre>
-<div class="labels"><span class="label">Static</span></div>
+<div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>I.e. all elements '$value' will be replaced with $translator( $value ) where
+<p class="long_description"><p>I.e. all elements '$value' will be replaced with $translator( $value ) where
 $translator is an associated array.</p>
 
-<p>Huh? Just read the code below!</p></div>
+<p>Huh? Just read the code below!</p></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$values</h4>
@@ -556,16 +545,16 @@ $translator is an associated array.</p>
 <code>mixed</code>The translated scalar or array</div>
 </div></div>
 </div>
-<a id="method_useExtension"></a><div class="element clickable method public method_useExtension" data-toggle="collapse" data-target=".method_useExtension .collapse">
+<a name="useExtension" id="useExtension"></a><div class="element clickable method public useExtension" data-toggle="collapse" data-target=".useExtension .collapse">
 <h2>This is the MIB Extension magic</h2>
 <pre>useExtension(string $mib, array $args) : \OSS_SNMP\MIBS</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Calling $this->useXXX_YYY_ZZZ()->fn() will instantiate
+<p class="long_description"><p>Calling $this->useXXX_YYY_ZZZ()->fn() will instantiate
 an extension MIB class is the given name and this $this SNMP
 instance and then call fn().</p>
 
-<p>See the examples for more information.</p></div>
+<p>See the examples for more information.</p></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$mib</h4>
@@ -578,12 +567,12 @@ instance and then call fn().</p>
 <div class="subelement response"><code>\OSS_SNMP\MIBS</code></div>
 </div></div>
 </div>
-<a id="method_walk1d"></a><div class="element clickable method public method_walk1d" data-toggle="collapse" data-target=".method_walk1d .collapse">
+<a name="walk1d" id="walk1d"></a><div class="element clickable method public walk1d" data-toggle="collapse" data-target=".walk1d .collapse">
 <h2>Get indexed SNMP values (first degree)</h2>
 <pre>walk1d(string $oid) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Walks the SNMP tree returning an array of key => value pairs.</p>
+<p class="long_description"><p>Walks the SNMP tree returning an array of key => value pairs.</p>
 
 <p>This is a first degree walk and it will throw an exception if there is more that one degree of values.</p>
 
@@ -602,7 +591,7 @@ instance and then call fn().</p>
 <pre><code> 1 =&gt; GigabitEthernet1/0/1
  2 =&gt; GigabitEthernet1/0/2
  3 =&gt; GigabitEthernet1/0/3
-</code></pre></div>
+</code></pre></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$oid</h4>
@@ -617,12 +606,12 @@ instance and then call fn().</p>
 <code>array</code>The resultant values</div>
 </div></div>
 </div>
-<a id="method_walkIPv4"></a><div class="element clickable method public method_walkIPv4" data-toggle="collapse" data-target=".method_walkIPv4 .collapse">
+<a name="walkIPv4" id="walkIPv4"></a><div class="element clickable method public walkIPv4" data-toggle="collapse" data-target=".walkIPv4 .collapse">
 <h2>Get indexed SNMP values where they are indexed by IPv4 addresses</h2>
 <pre>walkIPv4(string $oid) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>I.e. the following query with sample results:</p>
+<p class="long_description"><p>I.e. the following query with sample results:</p>
 
 <p>subOidWalk( '.1.3.6.1.2.1.15.3.1.1. )</p>
 
@@ -634,7 +623,7 @@ instance and then call fn().</p>
 
 <pre><code> [10.20.30.4] =&gt; "192.168.10.10"
  ....
-</code></pre></div>
+</code></pre></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$oid</h4>
@@ -651,105 +640,91 @@ instance and then call fn().</p>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_HEX_STRING_WORDS_AS_ARRAY"> </a><div class="element clickable property public property_HEX_STRING_WORDS_AS_ARRAY" data-toggle="collapse" data-target=".property_HEX_STRING_WORDS_AS_ARRAY .collapse">
-<h2>An array of arrays where each array element
-represents true / false values for a given
-hex digit.</h2>
+<a name="%24HEX_STRING_WORDS_AS_ARRAY" id="$HEX_STRING_WORDS_AS_ARRAY"> </a><div class="element clickable property public $HEX_STRING_WORDS_AS_ARRAY" data-toggle="collapse" data-target=".$HEX_STRING_WORDS_AS_ARRAY .collapse">
+<h2>$HEX_STRING_WORDS_AS_ARRAY</h2>
 <pre>$HEX_STRING_WORDS_AS_ARRAY </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>see</th>
-<td><a href="">\OSS_SNMP\ppHexStringFlags()</a></td>
-</tr></table>
-</div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property_SNMP_TRUTHVALUES"> </a><div class="element clickable property public property_SNMP_TRUTHVALUES" data-toggle="collapse" data-target=".property_SNMP_TRUTHVALUES .collapse">
-<h2>PHP equivalents of SNMP return type TruthValue</h2>
-<pre>$SNMP_TRUTHVALUES : array</pre>
+<a name="%24SNMP_TRUTHVALUES" id="$SNMP_TRUTHVALUES"> </a><div class="element clickable property public $SNMP_TRUTHVALUES" data-toggle="collapse" data-target=".$SNMP_TRUTHVALUES .collapse">
+<h2>$SNMP_TRUTHVALUES</h2>
+<pre>$SNMP_TRUTHVALUES </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property__cache"> </a><div class="element clickable property protected property__cache" data-toggle="collapse" data-target=".property__cache .collapse">
-<h2>The cache object to use as the cache</h2>
-<pre>$_cache : <a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a></pre>
+<a name="%24_cache" id="$_cache"> </a><div class="element clickable property protected $_cache" data-toggle="collapse" data-target=".$_cache .collapse">
+<h2>$_cache</h2>
+<pre>$_cache </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property__community"> </a><div class="element clickable property protected property__community" data-toggle="collapse" data-target=".property__community .collapse">
-<h2>The SNMP community to use when polling SNMP services.</h2>
-<pre>$_community : string</pre>
+<a name="%24_community" id="$_community"> </a><div class="element clickable property protected $_community" data-toggle="collapse" data-target=".$_community .collapse">
+<h2>$_community</h2>
+<pre>$_community </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Defaults to 'public' by the constructor.</p></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property__disableCache"> </a><div class="element clickable property protected property__disableCache" data-toggle="collapse" data-target=".property__disableCache .collapse">
-<h2>Set to true to disable local cache lookup and force SNMP queries</h2>
+<a name="%24_disableCache" id="$_disableCache"> </a><div class="element clickable property protected $_disableCache" data-toggle="collapse" data-target=".$_disableCache .collapse">
+<h2>$_disableCache</h2>
 <pre>$_disableCache </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Results are still stored. If you need to force a SNMP query, you can:</p>
-
-<p>$snmp = new OSS_SNMP( ... )'
-...
-$snmp->disableCache();
-$snmp->get( ... );
-$snmp->enableCache();</p></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property__host"> </a><div class="element clickable property protected property__host" data-toggle="collapse" data-target=".property__host .collapse">
-<h2>The SNMP host to query.</h2>
-<pre>$_host : string</pre>
+<a name="%24_host" id="$_host"> </a><div class="element clickable property protected $_host" data-toggle="collapse" data-target=".$_host .collapse">
+<h2>$_host</h2>
+<pre>$_host </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Defaults to '127.0.0.1'</p></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property__lastResult"> </a><div class="element clickable property protected property__lastResult" data-toggle="collapse" data-target=".property__lastResult .collapse">
-<h2>A variable to hold the last unaltered result of an SNMP query</h2>
-<pre>$_lastResult : mixed</pre>
+<a name="%24_lastResult" id="$_lastResult"> </a><div class="element clickable property protected $_lastResult" data-toggle="collapse" data-target=".$_lastResult .collapse">
+<h2>$_lastResult</h2>
+<pre>$_lastResult </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property__platform"> </a><div class="element clickable property protected property__platform" data-toggle="collapse" data-target=".property__platform .collapse">
-<h2>A variable to hold the platform object</h2>
-<pre>$_platform : mixed</pre>
+<a name="%24_platform" id="$_platform"> </a><div class="element clickable property protected $_platform" data-toggle="collapse" data-target=".$_platform .collapse">
+<h2>$_platform</h2>
+<pre>$_platform </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property__retry"> </a><div class="element clickable property protected property__retry" data-toggle="collapse" data-target=".property__retry .collapse">
-<h2>The SNMP query retry count.</h2>
-<pre>$_retry : int</pre>
+<a name="%24_retry" id="$_retry"> </a><div class="element clickable property protected $_retry" data-toggle="collapse" data-target=".$_retry .collapse">
+<h2>$_retry</h2>
+<pre>$_retry </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Default: 5</p></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property__timeout"> </a><div class="element clickable property protected property__timeout" data-toggle="collapse" data-target=".property__timeout .collapse">
-<h2>The SNMP query timeout value (microseconds).</h2>
-<pre>$_timeout : int</pre>
+<a name="%24_timeout" id="$_timeout"> </a><div class="element clickable property protected $_timeout" data-toggle="collapse" data-target=".$_timeout .collapse">
+<h2>$_timeout</h2>
+<pre>$_timeout </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Default: 1000000</p></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
-<a id="constant_OID_OUTPUT_FULL"> </a><div class="element clickable constant  constant_OID_OUTPUT_FULL" data-toggle="collapse" data-target=".constant_OID_OUTPUT_FULL .collapse">
-<h2>SNMP output constants to mirror those of PHP</h2>
-<pre>OID_OUTPUT_FULL : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
+<a name="OID_OUTPUT_FULL" id="OID_OUTPUT_FULL"> </a><div class="element clickable constant  OID_OUTPUT_FULL" data-toggle="collapse" data-target=".OID_OUTPUT_FULL .collapse">
+<h2>OID_OUTPUT_FULL</h2>
+<pre>OID_OUTPUT_FULL </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_OUTPUT_NUMERIC"> </a><div class="element clickable constant  constant_OID_OUTPUT_NUMERIC" data-toggle="collapse" data-target=".constant_OID_OUTPUT_NUMERIC .collapse">
-<h2>SNMP output constants to mirror those of PHP</h2>
-<pre>OID_OUTPUT_NUMERIC : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
+<a name="OID_OUTPUT_NUMERIC" id="OID_OUTPUT_NUMERIC"> </a><div class="element clickable constant  OID_OUTPUT_NUMERIC" data-toggle="collapse" data-target=".OID_OUTPUT_NUMERIC .collapse">
+<h2>OID_OUTPUT_NUMERIC</h2>
+<pre>OID_OUTPUT_NUMERIC </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_SNMP_TRUTHVALUE_FALSE"> </a><div class="element clickable constant  constant_SNMP_TRUTHVALUE_FALSE" data-toggle="collapse" data-target=".constant_SNMP_TRUTHVALUE_FALSE .collapse">
-<h2>Definition of an SNMP return type 'TruthValue'</h2>
-<pre>SNMP_TRUTHVALUE_FALSE : \OSS_SNMP\Definition</pre>
+<a name="SNMP_TRUTHVALUE_FALSE" id="SNMP_TRUTHVALUE_FALSE"> </a><div class="element clickable constant  SNMP_TRUTHVALUE_FALSE" data-toggle="collapse" data-target=".SNMP_TRUTHVALUE_FALSE .collapse">
+<h2>SNMP_TRUTHVALUE_FALSE</h2>
+<pre>SNMP_TRUTHVALUE_FALSE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_SNMP_TRUTHVALUE_TRUE"> </a><div class="element clickable constant  constant_SNMP_TRUTHVALUE_TRUE" data-toggle="collapse" data-target=".constant_SNMP_TRUTHVALUE_TRUE .collapse">
-<h2>Definition of an SNMP return type 'TruthValue'</h2>
-<pre>SNMP_TRUTHVALUE_TRUE : \OSS_SNMP\Definition</pre>
+<a name="SNMP_TRUTHVALUE_TRUE" id="SNMP_TRUTHVALUE_TRUE"> </a><div class="element clickable constant  SNMP_TRUTHVALUE_TRUE" data-toggle="collapse" data-target=".SNMP_TRUTHVALUE_TRUE .collapse">
+<h2>SNMP_TRUTHVALUE_TRUE</h2>
+<pre>SNMP_TRUTHVALUE_TRUE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -757,8 +732,8 @@ $snmp->enableCache();</p></div></div></div>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2013-06-11T21:02:29+01:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
+            generated on 2013-12-06T16:29:11Z.<br></footer></div>
 </div>
 </body>
 </html>

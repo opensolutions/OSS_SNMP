@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
@@ -31,11 +31,16 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">47</span></a></li>
+                <span class="label label-info">58</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul><li>todo 
+                <ul>
+<li>todo 
                 <span class="label label-info">1</span>
-</li></ul></a></li>
+</li>
+<li>fixme 
+                <span class="label label-info">1</span>
+</li>
+</ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">2</span></a></li>
 </ul>
@@ -56,193 +61,174 @@
 </div>
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
-<i class="icon-custom icon-method"></i> Methods
-                    <ul>
-<li class="method public "><a href="#method_active" title="active :: Returns the current number of active channels."><span class="description">Returns the current number of active channels.</span><pre>active()</pre></a></li>
-<li class="method public "><a href="#method_activeCalls" title="activeCalls :: Array of active calls on supported channels"><span class="description">Array of active calls on supported channels</span><pre>activeCalls()</pre></a></li>
-<li class="method public "><a href="#method_bridged" title="bridged :: Number of channels currently in a bridged state."><span class="description">Number of channels currently in a bridged state.</span><pre>bridged()</pre></a></li>
-<li class="method public "><a href="#method_chanADSI" title="chanADSI :: Active Channel Information: Whether or not ADSI is detected on CPE."><span class="description">Active Channel Information: Whether or not ADSI is detected on CPE.</span><pre>chanADSI()</pre></a></li>
-<li class="method public "><a href="#method_chanAMAFlags" title="chanAMAFlags :: Active Channel Information: AMA Flags."><span class="description">Active Channel Information: AMA Flags.</span><pre>chanAMAFlags()</pre></a></li>
-<li class="method public "><a href="#method_chanAccountCode" title="chanAccountCode :: Active Channel Information: Account Code for billing."><span class="description">Active Channel Information: Account Code for billing.</span><pre>chanAccountCode()</pre></a></li>
-<li class="method public "><a href="#method_chanApp" title="chanApp :: Active Channel Information: Current application for the channel."><span class="description">Active Channel Information: Current application for the channel.</span><pre>chanApp()</pre></a></li>
-<li class="method public "><a href="#method_chanBridge" title="chanBridge :: Active Channel Information: Which channel this channel is currently bridged (in a conversation) with."><span class="description">Active Channel Information: Which channel this channel is currently bridged (in a conversation) with.</span><pre>chanBridge()</pre></a></li>
-<li class="method public "><a href="#method_chanCallGroup" title="chanCallGroup :: Active Channel Information: Call Group."><span class="description">Active Channel Information: Call Group.</span><pre>chanCallGroup()</pre></a></li>
-<li class="method public "><a href="#method_chanCidANI" title="chanCidANI :: Active Channel Information: ANI"><span class="description">Active Channel Information: ANI</span><pre>chanCidANI()</pre></a></li>
-<li class="method public "><a href="#method_chanCidANI2" title="chanCidANI2 :: Active Channel Information: ANI 2 (info digit)."><span class="description">Active Channel Information: ANI 2 (info digit).</span><pre>chanCidANI2()</pre></a></li>
-<li class="method public "><a href="#method_chanCidDNID" title="chanCidDNID :: Active Channel Information: Dialled Number ID."><span class="description">Active Channel Information: Dialled Number ID.</span><pre>chanCidDNID()</pre></a></li>
-<li class="method public "><a href="#method_chanCidName" title="chanCidName :: Active Channel Information: Caller Name."><span class="description">Active Channel Information: Caller Name.</span><pre>chanCidName()</pre></a></li>
-<li class="method public "><a href="#method_chanCidNum" title="chanCidNum :: Active Channel Information: Caller Number."><span class="description">Active Channel Information: Caller Number.</span><pre>chanCidNum()</pre></a></li>
-<li class="method public "><a href="#method_chanCidPresentation" title="chanCidPresentation :: Active Channel Information: Number Presentation/Screening."><span class="description">Active Channel Information: Number Presentation/Screening.</span><pre>chanCidPresentation()</pre></a></li>
-<li class="method public "><a href="#method_chanCidRDNIS" title="chanCidRDNIS :: Active Channel Information: Redirected Dialled Number Service."><span class="description">Active Channel Information: Redirected Dialled Number Service.</span><pre>chanCidRDNIS()</pre></a></li>
-<li class="method public "><a href="#method_chanCidTNS" title="chanCidTNS :: Active Channel Information: Transit Network Select."><span class="description">Active Channel Information: Transit Network Select.</span><pre>chanCidTNS()</pre></a></li>
-<li class="method public "><a href="#method_chanCidTON" title="chanCidTON :: Active Channel Information: Type of Number."><span class="description">Active Channel Information: Type of Number.</span><pre>chanCidTON()</pre></a></li>
-<li class="method public "><a href="#method_chanContext" title="chanContext :: Active Channel Information: Current extension context."><span class="description">Active Channel Information: Current extension context.</span><pre>chanContext()</pre></a></li>
-<li class="method public "><a href="#method_chanData" title="chanData :: Active Channel Information: Arguments passed to the current application."><span class="description">Active Channel Information: Arguments passed to the current application.</span><pre>chanData()</pre></a></li>
-<li class="method public "><a href="#method_chanExten" title="chanExten :: Active Channel Information: Current extension."><span class="description">Active Channel Information: Current extension.</span><pre>chanExten()</pre></a></li>
-<li class="method public "><a href="#method_chanFlags" title="chanFlags :: Active Channel Information: Flags set on this channel."><span class="description">Active Channel Information: Flags set on this channel.</span><pre>chanFlags()</pre></a></li>
-<li class="method public "><a href="#method_chanForwardTo" title="chanForwardTo :: Active Channel Information: Where to forward to if asked to dial on this interface."><span class="description">Active Channel Information: Where to forward to if asked to dial on this interface.</span><pre>chanForwardTo()</pre></a></li>
-<li class="method public "><a href="#method_chanHangupCause" title="chanHangupCause :: Active Channel Information: Why is the channel hung up."><span class="description">Active Channel Information: Why is the channel hung up.</span><pre>chanHangupCause()</pre></a></li>
-<li class="method public "><a href="#method_chanLanguage" title="chanLanguage :: Active Channel Information: Which language the current channel is configured to use -- used mainly for prompts."><span class="description">Active Channel Information: Which language the current channel is configured to use -- used mainly for prompts.</span><pre>chanLanguage()</pre></a></li>
-<li class="method public "><a href="#method_chanMacroContext" title="chanMacroContext :: Active Channel Information: Current macro context."><span class="description">Active Channel Information: Current macro context.</span><pre>chanMacroContext()</pre></a></li>
-<li class="method public "><a href="#method_chanMacroExten" title="chanMacroExten :: Active Channel Information: Current macro extension."><span class="description">Active Channel Information: Current macro extension.</span><pre>chanMacroExten()</pre></a></li>
-<li class="method public "><a href="#method_chanMacroPri" title="chanMacroPri :: Active Channel Information: Current macro priority."><span class="description">Active Channel Information: Current macro priority.</span><pre>chanMacroPri()</pre></a></li>
-<li class="method public "><a href="#method_chanMasq" title="chanMasq :: Active Channel Information: Channel masquerading for us."><span class="description">Active Channel Information: Channel masquerading for us.</span><pre>chanMasq()</pre></a></li>
-<li class="method public "><a href="#method_chanMasqr" title="chanMasqr :: Active Channel Information: Channel we are masquerading for."><span class="description">Active Channel Information: Channel we are masquerading for.</span><pre>chanMasqr()</pre></a></li>
-<li class="method public "><a href="#method_chanMusicClass" title="chanMusicClass :: Active Channel Information: Music class to be used for Music on Hold for this channel."><span class="description">Active Channel Information: Music class to be used for Music on Hold for this channel.</span><pre>chanMusicClass()</pre></a></li>
-<li class="method public "><a href="#method_chanMuted" title="chanMuted :: Active Channel Information: Transmission of voice data has been muted."><span class="description">Active Channel Information: Transmission of voice data has been muted.</span><pre>chanMuted()</pre></a></li>
-<li class="method public "><a href="#method_chanName" title="chanName :: Active Channel Information: Name of the current channel."><span class="description">Active Channel Information: Name of the current channel.</span><pre>chanName()</pre></a></li>
-<li class="method public "><a href="#method_chanPickupGroup" title="chanPickupGroup :: Active Channel Information: Pickup Group."><span class="description">Active Channel Information: Pickup Group.</span><pre>chanPickupGroup()</pre></a></li>
-<li class="method public "><a href="#method_chanPri" title="chanPri :: Active Channel Information: Current priority."><span class="description">Active Channel Information: Current priority.</span><pre>chanPri()</pre></a></li>
-<li class="method public "><a href="#method_chanRings" title="chanRings :: Active Channel Information: Number of rings so far."><span class="description">Active Channel Information: Number of rings so far.</span><pre>chanRings()</pre></a></li>
-<li class="method public "><a href="#method_chanState" title="chanState :: Active Channel Information: Channel state (see channel state constants)."><span class="description">Active Channel Information: Channel state (see channel state constants).</span><pre>chanState()</pre></a></li>
-<li class="method public "><a href="#method_chanToneZone" title="chanToneZone :: Active Channel Information: Indication zone to use for channel."><span class="description">Active Channel Information: Indication zone to use for channel.</span><pre>chanToneZone()</pre></a></li>
-<li class="method public "><a href="#method_chanTransferCap" title="chanTransferCap :: Active Channel Information: Transfer Capabilities for this channel."><span class="description">Active Channel Information: Transfer Capabilities for this channel.</span><pre>chanTransferCap()</pre></a></li>
-<li class="method public "><a href="#method_chanType" title="chanType :: Active Channel Information: Underlying technology for the current channel."><span class="description">Active Channel Information: Underlying technology for the current channel.</span><pre>chanType()</pre></a></li>
-<li class="method public "><a href="#method_chanUniqueId" title="chanUniqueId :: Active Channel Information: Unique Channel Identifier."><span class="description">Active Channel Information: Unique Channel Identifier.</span><pre>chanUniqueId()</pre></a></li>
-<li class="method public "><a href="#method_chanVariables" title="chanVariables :: Active Channel Information: Channel Variables defined for this channel."><span class="description">Active Channel Information: Channel Variables defined for this channel.</span><pre>chanVariables()</pre></a></li>
-<li class="method public "><a href="#method_chanWhenHangup" title="chanWhenHangup :: Active Channel Information: How long until this channel will be hung up."><span class="description">Active Channel Information: How long until this channel will be hung up.</span><pre>chanWhenHangup()</pre></a></li>
-<li class="method public "><a href="#method_channelDetails" title="channelDetails :: Utility function to gather together all the details of individual channels into an array."><span class="description">Utility function to gather together all the details of individual channels into an array.</span><pre>channelDetails()</pre></a></li>
-<li class="method public "><a href="#method_descriptions" title="descriptions :: Array of supported channel type descriptions"><span class="description">Array of supported channel type descriptions</span><pre>descriptions()</pre></a></li>
-<li class="method public "><a href="#method_details" title="details :: Utility function to gather channel details together in an associative array."><span class="description">Utility function to gather channel details together in an associative array.</span><pre>details()</pre></a></li>
-<li class="method public "><a href="#method_deviceStates" title="deviceStates :: Array of supported channel type device state capability"><span class="description">Array of supported channel type device state capability</span><pre>deviceStates()</pre></a></li>
-<li class="method public inherited"><a href="#method_getSNMP" title="getSNMP :: Get the SNMP instance"><span class="description">Get the SNMP instance</span><pre>getSNMP()</pre></a></li>
-<li class="method public "><a href="#method_names" title="names :: Array of supported channel type names"><span class="description">Array of supported channel type names</span><pre>names()</pre></a></li>
-<li class="method public "><a href="#method_progressIndications" title="progressIndications :: Array of supported channel type progress indication capability"><span class="description">Array of supported channel type progress indication capability</span><pre>progressIndications()</pre></a></li>
-<li class="method public inherited"><a href="#method_setSNMP" title="setSNMP :: Set the SNMP instance"><span class="description">Set the SNMP instance</span><pre>setSNMP()</pre></a></li>
-<li class="method public "><a href="#method_supported" title="supported :: Returns the number of channel types (technologies) supported."><span class="description">Returns the number of channel types (technologies) supported.</span><pre>supported()</pre></a></li>
-<li class="method public "><a href="#method_transfers" title="transfers :: Array of supported channel type transfer capability"><span class="description">Array of supported channel type transfer capability</span><pre>transfers()</pre></a></li>
-</ul>
-</li>
-<li class="nav-header protected">» Protected
-                    <ul><li class="method protected "><a href="#method__chanVarsToArray" title="_chanVarsToArray :: Utility function for `chanVariables()` to break the string returned by
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#active" title="active :: Returns the current number of active channels."><span class="description">Returns the current number of active channels.</span><pre>active()</pre></a></li>
+<li class="method public "><a href="#activeCalls" title="activeCalls :: Array of active calls on supported channels"><span class="description">Array of active calls on supported channels</span><pre>activeCalls()</pre></a></li>
+<li class="method public "><a href="#bridged" title="bridged :: Number of channels currently in a bridged state."><span class="description">Number of channels currently in a bridged state.</span><pre>bridged()</pre></a></li>
+<li class="method public "><a href="#chanADSI" title="chanADSI :: Active Channel Information: Whether or not ADSI is detected on CPE. (see constants)"><span class="description">Active Channel Information: Whether or not ADSI is detected on CPE. (see constants)</span><pre>chanADSI()</pre></a></li>
+<li class="method public "><a href="#chanAMAFlags" title="chanAMAFlags :: Active Channel Information: AMA Flags. (See constants)"><span class="description">Active Channel Information: AMA Flags. (See constants)</span><pre>chanAMAFlags()</pre></a></li>
+<li class="method public "><a href="#chanAccountCode" title="chanAccountCode :: Active Channel Information: Account Code for billing."><span class="description">Active Channel Information: Account Code for billing.</span><pre>chanAccountCode()</pre></a></li>
+<li class="method public "><a href="#chanApp" title="chanApp :: Active Channel Information: Current application for the channel."><span class="description">Active Channel Information: Current application for the channel.</span><pre>chanApp()</pre></a></li>
+<li class="method public "><a href="#chanBridge" title="chanBridge :: Active Channel Information: Which channel this channel is currently bridged (in a conversation) with."><span class="description">Active Channel Information: Which channel this channel is currently bridged (in a conversation) with.</span><pre>chanBridge()</pre></a></li>
+<li class="method public "><a href="#chanCallGroup" title="chanCallGroup :: Active Channel Information: Call Group."><span class="description">Active Channel Information: Call Group.</span><pre>chanCallGroup()</pre></a></li>
+<li class="method public "><a href="#chanCidANI" title="chanCidANI :: Active Channel Information: ANI"><span class="description">Active Channel Information: ANI</span><pre>chanCidANI()</pre></a></li>
+<li class="method public "><a href="#chanCidANI2" title="chanCidANI2 :: Active Channel Information: ANI 2 (info digit)."><span class="description">Active Channel Information: ANI 2 (info digit).</span><pre>chanCidANI2()</pre></a></li>
+<li class="method public "><a href="#chanCidDNID" title="chanCidDNID :: Active Channel Information: Dialled Number ID."><span class="description">Active Channel Information: Dialled Number ID.</span><pre>chanCidDNID()</pre></a></li>
+<li class="method public "><a href="#chanCidName" title="chanCidName :: Active Channel Information: Caller Name."><span class="description">Active Channel Information: Caller Name.</span><pre>chanCidName()</pre></a></li>
+<li class="method public "><a href="#chanCidNum" title="chanCidNum :: Active Channel Information: Caller Number."><span class="description">Active Channel Information: Caller Number.</span><pre>chanCidNum()</pre></a></li>
+<li class="method public "><a href="#chanCidPresentation" title="chanCidPresentation :: Active Channel Information: Number Presentation/Screening."><span class="description">Active Channel Information: Number Presentation/Screening.</span><pre>chanCidPresentation()</pre></a></li>
+<li class="method public "><a href="#chanCidRDNIS" title="chanCidRDNIS :: Active Channel Information: Redirected Dialled Number Service."><span class="description">Active Channel Information: Redirected Dialled Number Service.</span><pre>chanCidRDNIS()</pre></a></li>
+<li class="method public "><a href="#chanCidTNS" title="chanCidTNS :: Active Channel Information: Transit Network Select."><span class="description">Active Channel Information: Transit Network Select.</span><pre>chanCidTNS()</pre></a></li>
+<li class="method public "><a href="#chanCidTON" title="chanCidTON :: Active Channel Information: Type of Number."><span class="description">Active Channel Information: Type of Number.</span><pre>chanCidTON()</pre></a></li>
+<li class="method public "><a href="#chanContext" title="chanContext :: Active Channel Information: Current extension context."><span class="description">Active Channel Information: Current extension context.</span><pre>chanContext()</pre></a></li>
+<li class="method public "><a href="#chanData" title="chanData :: Active Channel Information: Arguments passed to the current application."><span class="description">Active Channel Information: Arguments passed to the current application.</span><pre>chanData()</pre></a></li>
+<li class="method public "><a href="#chanExten" title="chanExten :: Active Channel Information: Current extension."><span class="description">Active Channel Information: Current extension.</span><pre>chanExten()</pre></a></li>
+<li class="method public "><a href="#chanFlags" title="chanFlags :: Active Channel Information: Flags set on this channel."><span class="description">Active Channel Information: Flags set on this channel.</span><pre>chanFlags()</pre></a></li>
+<li class="method public "><a href="#chanForwardTo" title="chanForwardTo :: Active Channel Information: Where to forward to if asked to dial on this interface."><span class="description">Active Channel Information: Where to forward to if asked to dial on this interface.</span><pre>chanForwardTo()</pre></a></li>
+<li class="method public "><a href="#chanHangupCause" title="chanHangupCause :: Active Channel Information: Why is the channel hung up. (see constants)"><span class="description">Active Channel Information: Why is the channel hung up. (see constants)</span><pre>chanHangupCause()</pre></a></li>
+<li class="method public "><a href="#chanLanguage" title="chanLanguage :: Active Channel Information: Which language the current channel is configured to use -- used mainly for prompts."><span class="description">Active Channel Information: Which language the current channel is configured to use -- used mainly for prompts.</span><pre>chanLanguage()</pre></a></li>
+<li class="method public "><a href="#chanMacroContext" title="chanMacroContext :: Active Channel Information: Current macro context."><span class="description">Active Channel Information: Current macro context.</span><pre>chanMacroContext()</pre></a></li>
+<li class="method public "><a href="#chanMacroExten" title="chanMacroExten :: Active Channel Information: Current macro extension."><span class="description">Active Channel Information: Current macro extension.</span><pre>chanMacroExten()</pre></a></li>
+<li class="method public "><a href="#chanMacroPri" title="chanMacroPri :: Active Channel Information: Current macro priority."><span class="description">Active Channel Information: Current macro priority.</span><pre>chanMacroPri()</pre></a></li>
+<li class="method public "><a href="#chanMasq" title="chanMasq :: Active Channel Information: Channel masquerading for us."><span class="description">Active Channel Information: Channel masquerading for us.</span><pre>chanMasq()</pre></a></li>
+<li class="method public "><a href="#chanMasqr" title="chanMasqr :: Active Channel Information: Channel we are masquerading for."><span class="description">Active Channel Information: Channel we are masquerading for.</span><pre>chanMasqr()</pre></a></li>
+<li class="method public "><a href="#chanMusicClass" title="chanMusicClass :: Active Channel Information: Music class to be used for Music on Hold for this channel."><span class="description">Active Channel Information: Music class to be used for Music on Hold for this channel.</span><pre>chanMusicClass()</pre></a></li>
+<li class="method public "><a href="#chanMuted" title="chanMuted :: Active Channel Information: Transmission of voice data has been muted."><span class="description">Active Channel Information: Transmission of voice data has been muted.</span><pre>chanMuted()</pre></a></li>
+<li class="method public "><a href="#chanName" title="chanName :: Active Channel Information: Name of the current channel."><span class="description">Active Channel Information: Name of the current channel.</span><pre>chanName()</pre></a></li>
+<li class="method public "><a href="#chanPickupGroup" title="chanPickupGroup :: Active Channel Information: Pickup Group."><span class="description">Active Channel Information: Pickup Group.</span><pre>chanPickupGroup()</pre></a></li>
+<li class="method public "><a href="#chanPri" title="chanPri :: Active Channel Information: Current priority."><span class="description">Active Channel Information: Current priority.</span><pre>chanPri()</pre></a></li>
+<li class="method public "><a href="#chanRings" title="chanRings :: Active Channel Information: Number of rings so far."><span class="description">Active Channel Information: Number of rings so far.</span><pre>chanRings()</pre></a></li>
+<li class="method public "><a href="#chanState" title="chanState :: Active Channel Information: Channel state (see channel state constants)."><span class="description">Active Channel Information: Channel state (see channel state constants).</span><pre>chanState()</pre></a></li>
+<li class="method public "><a href="#chanToneZone" title="chanToneZone :: Active Channel Information: Indication zone to use for channel."><span class="description">Active Channel Information: Indication zone to use for channel.</span><pre>chanToneZone()</pre></a></li>
+<li class="method public "><a href="#chanTransferCap" title="chanTransferCap :: Active Channel Information: Transfer Capabilities for this channel. (see constants)"><span class="description">Active Channel Information: Transfer Capabilities for this channel. (see constants)</span><pre>chanTransferCap()</pre></a></li>
+<li class="method public "><a href="#chanType" title="chanType :: Active Channel Information: Underlying technology for the current channel."><span class="description">Active Channel Information: Underlying technology for the current channel.</span><pre>chanType()</pre></a></li>
+<li class="method public "><a href="#chanUniqueId" title="chanUniqueId :: Active Channel Information: Unique Channel Identifier."><span class="description">Active Channel Information: Unique Channel Identifier.</span><pre>chanUniqueId()</pre></a></li>
+<li class="method public "><a href="#chanVariables" title="chanVariables :: Active Channel Information: Channel Variables defined for this channel."><span class="description">Active Channel Information: Channel Variables defined for this channel.</span><pre>chanVariables()</pre></a></li>
+<li class="method public "><a href="#chanWhenHangup" title="chanWhenHangup :: Active Channel Information: How long until this channel will be hung up."><span class="description">Active Channel Information: How long until this channel will be hung up.</span><pre>chanWhenHangup()</pre></a></li>
+<li class="method public "><a href="#channelDetails" title="channelDetails :: Utility function to gather together all the details of individual channels into an array."><span class="description">Utility function to gather together all the details of individual channels into an array.</span><pre>channelDetails()</pre></a></li>
+<li class="method public "><a href="#descriptions" title="descriptions :: Array of supported channel type descriptions"><span class="description">Array of supported channel type descriptions</span><pre>descriptions()</pre></a></li>
+<li class="method public "><a href="#details" title="details :: Utility function to gather channel details together in an associative array."><span class="description">Utility function to gather channel details together in an associative array.</span><pre>details()</pre></a></li>
+<li class="method public "><a href="#deviceStates" title="deviceStates :: Array of supported channel type device state capability"><span class="description">Array of supported channel type device state capability</span><pre>deviceStates()</pre></a></li>
+<li class="method public "><a href="#names" title="names :: Array of supported channel type names"><span class="description">Array of supported channel type names</span><pre>names()</pre></a></li>
+<li class="method public "><a href="#progressIndications" title="progressIndications :: Array of supported channel type progress indication capability"><span class="description">Array of supported channel type progress indication capability</span><pre>progressIndications()</pre></a></li>
+<li class="method public "><a href="#supported" title="supported :: Returns the number of channel types (technologies) supported."><span class="description">Returns the number of channel types (technologies) supported.</span><pre>supported()</pre></a></li>
+<li class="method public "><a href="#transfers" title="transfers :: Array of supported channel type transfer capability"><span class="description">Array of supported channel type transfer capability</span><pre>transfers()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected "><a href="#_chanVarsToArray" title="_chanVarsToArray :: Utility function for `chanVariables()` to break the string returned by
 OID_ASTERISK_CHANNEL_VARIABLES into an array of key / value pairs"><span class="description">Utility function for `chanVariables()` to break the string returned by
-OID_ASTERISK_CHANNEL_VARIABLES into an array of key / value pairs</span><pre>_chanVarsToArray()</pre></a></li></ul>
-</li>
+OID_ASTERISK_CHANNEL_VARIABLES into an array of key / value pairs</span><pre>_chanVarsToArray()</pre></a></li>
 <li class="nav-header">
-<i class="icon-custom icon-property"></i> Properties
-                    <ul>
-<li class="property public "><a href="#property_CHANNEL_ADSIs" title="$CHANNEL_ADSIs :: "><span class="description">$CHANNEL_ADSIs</span><pre>$CHANNEL_ADSIs</pre></a></li>
-<li class="property public "><a href="#property_CHANNEL_AMA_FLAGS" title="$CHANNEL_AMA_FLAGS :: "><span class="description">$CHANNEL_AMA_FLAGS</span><pre>$CHANNEL_AMA_FLAGS</pre></a></li>
-<li class="property public "><a href="#property_CHANNEL_HANGUP_CAUSES" title="$CHANNEL_HANGUP_CAUSES :: "><span class="description">$CHANNEL_HANGUP_CAUSES</span><pre>$CHANNEL_HANGUP_CAUSES</pre></a></li>
-<li class="property public "><a href="#property_CHANNEL_STATES" title="$CHANNEL_STATES :: "><span class="description">$CHANNEL_STATES</span><pre>$CHANNEL_STATES</pre></a></li>
-<li class="property public "><a href="#property_CHANNEL_TRANSFER_CAPABILITIES" title="$CHANNEL_TRANSFER_CAPABILITIES :: "><span class="description">$CHANNEL_TRANSFER_CAPABILITIES</span><pre>$CHANNEL_TRANSFER_CAPABILITIES</pre></a></li>
-</ul>
-</li>
-<li class="nav-header private">» Private
-                    <ul><li class="property private inherited"><a href="#property__snmp" title="$_snmp :: Instance for the SNMP object"><span class="description">Instance for the SNMP object</span><pre>$_snmp</pre></a></li></ul>
-</li>
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24CHANNEL_ADSIs" title="$CHANNEL_ADSIs :: "><span class="description">$CHANNEL_ADSIs</span><pre>$CHANNEL_ADSIs</pre></a></li>
+<li class="property public "><a href="#%24CHANNEL_AMA_FLAGS" title="$CHANNEL_AMA_FLAGS :: "><span class="description">$CHANNEL_AMA_FLAGS</span><pre>$CHANNEL_AMA_FLAGS</pre></a></li>
+<li class="property public "><a href="#%24CHANNEL_HANGUP_CAUSES" title="$CHANNEL_HANGUP_CAUSES :: "><span class="description">$CHANNEL_HANGUP_CAUSES</span><pre>$CHANNEL_HANGUP_CAUSES</pre></a></li>
+<li class="property public "><a href="#%24CHANNEL_STATES" title="$CHANNEL_STATES :: "><span class="description">$CHANNEL_STATES</span><pre>$CHANNEL_STATES</pre></a></li>
+<li class="property public "><a href="#%24CHANNEL_TRANSFER_CAPABILITIES" title="$CHANNEL_TRANSFER_CAPABILITIES :: "><span class="description">$CHANNEL_TRANSFER_CAPABILITIES</span><pre>$CHANNEL_TRANSFER_CAPABILITIES</pre></a></li>
 <li class="nav-header">
-<i class="icon-custom icon-constant"></i> Constants
-                    <ul>
-<li class="constant  "><a href="#constant_CHANNEL_ADSI_AVAILABLE" title="CHANNEL_ADSI_AVAILABLE :: Possible ADSI of an Asterisk channel as returned by `chanADSI()`"><span class="description">Possible ADSI of an Asterisk channel as returned by `chanADSI()`</span><pre>CHANNEL_ADSI_AVAILABLE</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_ADSI_OFF_HOOK_ONLY" title="CHANNEL_ADSI_OFF_HOOK_ONLY :: Possible ADSI of an Asterisk channel as returned by `chanADSI()`"><span class="description">Possible ADSI of an Asterisk channel as returned by `chanADSI()`</span><pre>CHANNEL_ADSI_OFF_HOOK_ONLY</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_ADSI_UNAVAILABLE" title="CHANNEL_ADSI_UNAVAILABLE :: Possible ADSI of an Asterisk channel as returned by `chanADSI()`"><span class="description">Possible ADSI of an Asterisk channel as returned by `chanADSI()`</span><pre>CHANNEL_ADSI_UNAVAILABLE</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_ADSI_UNKNOWN" title="CHANNEL_ADSI_UNKNOWN :: Possible ADSI of an Asterisk channel as returned by `chanADSI()`"><span class="description">Possible ADSI of an Asterisk channel as returned by `chanADSI()`</span><pre>CHANNEL_ADSI_UNKNOWN</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_AMA_FLAG_BILLING" title="CHANNEL_AMA_FLAG_BILLING :: Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`"><span class="description">Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`</span><pre>CHANNEL_AMA_FLAG_BILLING</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_AMA_FLAG_DEFAULT" title="CHANNEL_AMA_FLAG_DEFAULT :: Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`"><span class="description">Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`</span><pre>CHANNEL_AMA_FLAG_DEFAULT</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_AMA_FLAG_DOCUMENTATION" title="CHANNEL_AMA_FLAG_DOCUMENTATION :: Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`"><span class="description">Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`</span><pre>CHANNEL_AMA_FLAG_DOCUMENTATION</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_AMA_FLAG_OMIT" title="CHANNEL_AMA_FLAG_OMIT :: Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`"><span class="description">Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`</span><pre>CHANNEL_AMA_FLAG_OMIT</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_HANGUP_CAUSE_BUSY" title="CHANNEL_HANGUP_CAUSE_BUSY :: Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`"><span class="description">Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</span><pre>CHANNEL_HANGUP_CAUSE_BUSY</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_HANGUP_CAUSE_CONGESTION" title="CHANNEL_HANGUP_CAUSE_CONGESTION :: Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`"><span class="description">Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</span><pre>CHANNEL_HANGUP_CAUSE_CONGESTION</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_HANGUP_CAUSE_FAILURE" title="CHANNEL_HANGUP_CAUSE_FAILURE :: Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`"><span class="description">Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</span><pre>CHANNEL_HANGUP_CAUSE_FAILURE</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_HANGUP_CAUSE_NORMAL" title="CHANNEL_HANGUP_CAUSE_NORMAL :: Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`"><span class="description">Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</span><pre>CHANNEL_HANGUP_CAUSE_NORMAL</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_HANGUP_CAUSE_NOT_DEFINED" title="CHANNEL_HANGUP_CAUSE_NOT_DEFINED :: Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`"><span class="description">Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</span><pre>CHANNEL_HANGUP_CAUSE_NOT_DEFINED</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_HANGUP_CAUSE_NO_ANSWER" title="CHANNEL_HANGUP_CAUSE_NO_ANSWER :: Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`"><span class="description">Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</span><pre>CHANNEL_HANGUP_CAUSE_NO_ANSWER</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER" title="CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER :: Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`"><span class="description">Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</span><pre>CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_HANGUP_CAUSE_UNREGISTERED" title="CHANNEL_HANGUP_CAUSE_UNREGISTERED :: Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`"><span class="description">Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</span><pre>CHANNEL_HANGUP_CAUSE_UNREGISTERED</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_STATE_BUSY" title="CHANNEL_STATE_BUSY :: Possible state of an Asterisk channel as returned by `chanState()`"><span class="description">Possible state of an Asterisk channel as returned by `chanState()`</span><pre>CHANNEL_STATE_BUSY</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_STATE_DIALING" title="CHANNEL_STATE_DIALING :: Possible state of an Asterisk channel as returned by `chanState()`"><span class="description">Possible state of an Asterisk channel as returned by `chanState()`</span><pre>CHANNEL_STATE_DIALING</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_STATE_DIALING_OFF_HOOK" title="CHANNEL_STATE_DIALING_OFF_HOOK :: Possible state of an Asterisk channel as returned by `chanState()`"><span class="description">Possible state of an Asterisk channel as returned by `chanState()`</span><pre>CHANNEL_STATE_DIALING_OFF_HOOK</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_STATE_DOWN" title="CHANNEL_STATE_DOWN :: Possible state of an Asterisk channel as returned by `chanState()`"><span class="description">Possible state of an Asterisk channel as returned by `chanState()`</span><pre>CHANNEL_STATE_DOWN</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_STATE_OFF_HOOK" title="CHANNEL_STATE_OFF_HOOK :: Possible state of an Asterisk channel as returned by `chanState()`"><span class="description">Possible state of an Asterisk channel as returned by `chanState()`</span><pre>CHANNEL_STATE_OFF_HOOK</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_STATE_PRE_RING" title="CHANNEL_STATE_PRE_RING :: Possible state of an Asterisk channel as returned by `chanState()`"><span class="description">Possible state of an Asterisk channel as returned by `chanState()`</span><pre>CHANNEL_STATE_PRE_RING</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_STATE_RESERVED" title="CHANNEL_STATE_RESERVED :: Possible state of an Asterisk channel as returned by `chanState()`"><span class="description">Possible state of an Asterisk channel as returned by `chanState()`</span><pre>CHANNEL_STATE_RESERVED</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_STATE_RING" title="CHANNEL_STATE_RING :: Possible state of an Asterisk channel as returned by `chanState()`"><span class="description">Possible state of an Asterisk channel as returned by `chanState()`</span><pre>CHANNEL_STATE_RING</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_STATE_RINGING" title="CHANNEL_STATE_RINGING :: Possible state of an Asterisk channel as returned by `chanState()`"><span class="description">Possible state of an Asterisk channel as returned by `chanState()`</span><pre>CHANNEL_STATE_RINGING</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_STATE_UP" title="CHANNEL_STATE_UP :: Possible state of an Asterisk channel as returned by `chanState()`"><span class="description">Possible state of an Asterisk channel as returned by `chanState()`</span><pre>CHANNEL_STATE_UP</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K" title="CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K :: Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`"><span class="description">Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`</span><pre>CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_TRANSFER_CAPABILITY_DIGITAL" title="CHANNEL_TRANSFER_CAPABILITY_DIGITAL :: Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`"><span class="description">Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`</span><pre>CHANNEL_TRANSFER_CAPABILITY_DIGITAL</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES" title="CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES :: Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`"><span class="description">Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`</span><pre>CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL" title="CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL :: Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`"><span class="description">Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`</span><pre>CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_TRANSFER_CAPABILITY_SPEECH" title="CHANNEL_TRANSFER_CAPABILITY_SPEECH :: Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`"><span class="description">Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`</span><pre>CHANNEL_TRANSFER_CAPABILITY_SPEECH</pre></a></li>
-<li class="constant  "><a href="#constant_CHANNEL_TRANSFER_CAPABILITY_VIDEO" title="CHANNEL_TRANSFER_CAPABILITY_VIDEO :: Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`"><span class="description">Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`</span><pre>CHANNEL_TRANSFER_CAPABILITY_VIDEO</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNELS_ACTIVE" title="OID_ASTERISK_CHANNELS_ACTIVE :: "><span class="description">OID_ASTERISK_CHANNELS_ACTIVE</span><pre>OID_ASTERISK_CHANNELS_ACTIVE</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNELS_BRIDGED" title="OID_ASTERISK_CHANNELS_BRIDGED :: "><span class="description">OID_ASTERISK_CHANNELS_BRIDGED</span><pre>OID_ASTERISK_CHANNELS_BRIDGED</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNELS_SUPPORTED" title="OID_ASTERISK_CHANNELS_SUPPORTED :: "><span class="description">OID_ASTERISK_CHANNELS_SUPPORTED</span><pre>OID_ASTERISK_CHANNELS_SUPPORTED</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_ACCOUNT_CODE" title="OID_ASTERISK_CHANNEL_ACCOUNT_CODE :: "><span class="description">OID_ASTERISK_CHANNEL_ACCOUNT_CODE</span><pre>OID_ASTERISK_CHANNEL_ACCOUNT_CODE</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_ADSI" title="OID_ASTERISK_CHANNEL_ADSI :: "><span class="description">OID_ASTERISK_CHANNEL_ADSI</span><pre>OID_ASTERISK_CHANNEL_ADSI</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_AMA_FLAGS" title="OID_ASTERISK_CHANNEL_AMA_FLAGS :: "><span class="description">OID_ASTERISK_CHANNEL_AMA_FLAGS</span><pre>OID_ASTERISK_CHANNEL_AMA_FLAGS</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_APP" title="OID_ASTERISK_CHANNEL_APP :: "><span class="description">OID_ASTERISK_CHANNEL_APP</span><pre>OID_ASTERISK_CHANNEL_APP</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_BRIDGE" title="OID_ASTERISK_CHANNEL_BRIDGE :: "><span class="description">OID_ASTERISK_CHANNEL_BRIDGE</span><pre>OID_ASTERISK_CHANNEL_BRIDGE</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_CALL_GROUP" title="OID_ASTERISK_CHANNEL_CALL_GROUP :: "><span class="description">OID_ASTERISK_CHANNEL_CALL_GROUP</span><pre>OID_ASTERISK_CHANNEL_CALL_GROUP</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_CID_ANI" title="OID_ASTERISK_CHANNEL_CID_ANI :: "><span class="description">OID_ASTERISK_CHANNEL_CID_ANI</span><pre>OID_ASTERISK_CHANNEL_CID_ANI</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_CID_ANI2" title="OID_ASTERISK_CHANNEL_CID_ANI2 :: "><span class="description">OID_ASTERISK_CHANNEL_CID_ANI2</span><pre>OID_ASTERISK_CHANNEL_CID_ANI2</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_CID_DNID" title="OID_ASTERISK_CHANNEL_CID_DNID :: "><span class="description">OID_ASTERISK_CHANNEL_CID_DNID</span><pre>OID_ASTERISK_CHANNEL_CID_DNID</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_CID_NAME" title="OID_ASTERISK_CHANNEL_CID_NAME :: "><span class="description">OID_ASTERISK_CHANNEL_CID_NAME</span><pre>OID_ASTERISK_CHANNEL_CID_NAME</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_CID_NUM" title="OID_ASTERISK_CHANNEL_CID_NUM :: "><span class="description">OID_ASTERISK_CHANNEL_CID_NUM</span><pre>OID_ASTERISK_CHANNEL_CID_NUM</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_CID_PRESENTATION" title="OID_ASTERISK_CHANNEL_CID_PRESENTATION :: "><span class="description">OID_ASTERISK_CHANNEL_CID_PRESENTATION</span><pre>OID_ASTERISK_CHANNEL_CID_PRESENTATION</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_CID_RDNIS" title="OID_ASTERISK_CHANNEL_CID_RDNIS :: "><span class="description">OID_ASTERISK_CHANNEL_CID_RDNIS</span><pre>OID_ASTERISK_CHANNEL_CID_RDNIS</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_CID_TNS" title="OID_ASTERISK_CHANNEL_CID_TNS :: "><span class="description">OID_ASTERISK_CHANNEL_CID_TNS</span><pre>OID_ASTERISK_CHANNEL_CID_TNS</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_CID_TON" title="OID_ASTERISK_CHANNEL_CID_TON :: "><span class="description">OID_ASTERISK_CHANNEL_CID_TON</span><pre>OID_ASTERISK_CHANNEL_CID_TON</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_CONTEXT" title="OID_ASTERISK_CHANNEL_CONTEXT :: "><span class="description">OID_ASTERISK_CHANNEL_CONTEXT</span><pre>OID_ASTERISK_CHANNEL_CONTEXT</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_DATA" title="OID_ASTERISK_CHANNEL_DATA :: "><span class="description">OID_ASTERISK_CHANNEL_DATA</span><pre>OID_ASTERISK_CHANNEL_DATA</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_EXTEN" title="OID_ASTERISK_CHANNEL_EXTEN :: "><span class="description">OID_ASTERISK_CHANNEL_EXTEN</span><pre>OID_ASTERISK_CHANNEL_EXTEN</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_FLAGS" title="OID_ASTERISK_CHANNEL_FLAGS :: "><span class="description">OID_ASTERISK_CHANNEL_FLAGS</span><pre>OID_ASTERISK_CHANNEL_FLAGS</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_FORWARD_TO" title="OID_ASTERISK_CHANNEL_FORWARD_TO :: "><span class="description">OID_ASTERISK_CHANNEL_FORWARD_TO</span><pre>OID_ASTERISK_CHANNEL_FORWARD_TO</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_HANGUP_CAUSE" title="OID_ASTERISK_CHANNEL_HANGUP_CAUSE :: "><span class="description">OID_ASTERISK_CHANNEL_HANGUP_CAUSE</span><pre>OID_ASTERISK_CHANNEL_HANGUP_CAUSE</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_LANGUAGE" title="OID_ASTERISK_CHANNEL_LANGUAGE :: "><span class="description">OID_ASTERISK_CHANNEL_LANGUAGE</span><pre>OID_ASTERISK_CHANNEL_LANGUAGE</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_MACRO_CONTEXT" title="OID_ASTERISK_CHANNEL_MACRO_CONTEXT :: "><span class="description">OID_ASTERISK_CHANNEL_MACRO_CONTEXT</span><pre>OID_ASTERISK_CHANNEL_MACRO_CONTEXT</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_MACRO_EXTEN" title="OID_ASTERISK_CHANNEL_MACRO_EXTEN :: "><span class="description">OID_ASTERISK_CHANNEL_MACRO_EXTEN</span><pre>OID_ASTERISK_CHANNEL_MACRO_EXTEN</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_MACRO_PRI" title="OID_ASTERISK_CHANNEL_MACRO_PRI :: "><span class="description">OID_ASTERISK_CHANNEL_MACRO_PRI</span><pre>OID_ASTERISK_CHANNEL_MACRO_PRI</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_MASQ" title="OID_ASTERISK_CHANNEL_MASQ :: "><span class="description">OID_ASTERISK_CHANNEL_MASQ</span><pre>OID_ASTERISK_CHANNEL_MASQ</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_MASQR" title="OID_ASTERISK_CHANNEL_MASQR :: "><span class="description">OID_ASTERISK_CHANNEL_MASQR</span><pre>OID_ASTERISK_CHANNEL_MASQR</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_MUSIC_CLASS" title="OID_ASTERISK_CHANNEL_MUSIC_CLASS :: "><span class="description">OID_ASTERISK_CHANNEL_MUSIC_CLASS</span><pre>OID_ASTERISK_CHANNEL_MUSIC_CLASS</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_MUTED" title="OID_ASTERISK_CHANNEL_MUTED :: "><span class="description">OID_ASTERISK_CHANNEL_MUTED</span><pre>OID_ASTERISK_CHANNEL_MUTED</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_NAME" title="OID_ASTERISK_CHANNEL_NAME :: "><span class="description">OID_ASTERISK_CHANNEL_NAME</span><pre>OID_ASTERISK_CHANNEL_NAME</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_PICKUP_GROUP" title="OID_ASTERISK_CHANNEL_PICKUP_GROUP :: "><span class="description">OID_ASTERISK_CHANNEL_PICKUP_GROUP</span><pre>OID_ASTERISK_CHANNEL_PICKUP_GROUP</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_PRI" title="OID_ASTERISK_CHANNEL_PRI :: "><span class="description">OID_ASTERISK_CHANNEL_PRI</span><pre>OID_ASTERISK_CHANNEL_PRI</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_RINGS" title="OID_ASTERISK_CHANNEL_RINGS :: "><span class="description">OID_ASTERISK_CHANNEL_RINGS</span><pre>OID_ASTERISK_CHANNEL_RINGS</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_STATE" title="OID_ASTERISK_CHANNEL_STATE :: "><span class="description">OID_ASTERISK_CHANNEL_STATE</span><pre>OID_ASTERISK_CHANNEL_STATE</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_TONE_ZONE" title="OID_ASTERISK_CHANNEL_TONE_ZONE :: "><span class="description">OID_ASTERISK_CHANNEL_TONE_ZONE</span><pre>OID_ASTERISK_CHANNEL_TONE_ZONE</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_TRANSFER_CAP" title="OID_ASTERISK_CHANNEL_TRANSFER_CAP :: "><span class="description">OID_ASTERISK_CHANNEL_TRANSFER_CAP</span><pre>OID_ASTERISK_CHANNEL_TRANSFER_CAP</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_TYPE" title="OID_ASTERISK_CHANNEL_TYPE :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE</span><pre>OID_ASTERISK_CHANNEL_TYPE</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_TYPE_CHANNELS" title="OID_ASTERISK_CHANNEL_TYPE_CHANNELS :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE_CHANNELS</span><pre>OID_ASTERISK_CHANNEL_TYPE_CHANNELS</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION" title="OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION</span><pre>OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_TYPE_INDICATION" title="OID_ASTERISK_CHANNEL_TYPE_INDICATION :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE_INDICATION</span><pre>OID_ASTERISK_CHANNEL_TYPE_INDICATION</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_TYPE_NAME" title="OID_ASTERISK_CHANNEL_TYPE_NAME :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE_NAME</span><pre>OID_ASTERISK_CHANNEL_TYPE_NAME</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_TYPE_STATE" title="OID_ASTERISK_CHANNEL_TYPE_STATE :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE_STATE</span><pre>OID_ASTERISK_CHANNEL_TYPE_STATE</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_TYPE_TRANSFER" title="OID_ASTERISK_CHANNEL_TYPE_TRANSFER :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE_TRANSFER</span><pre>OID_ASTERISK_CHANNEL_TYPE_TRANSFER</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_UNQIUEID" title="OID_ASTERISK_CHANNEL_UNQIUEID :: "><span class="description">OID_ASTERISK_CHANNEL_UNQIUEID</span><pre>OID_ASTERISK_CHANNEL_UNQIUEID</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_VARIABLES" title="OID_ASTERISK_CHANNEL_VARIABLES :: "><span class="description">OID_ASTERISK_CHANNEL_VARIABLES</span><pre>OID_ASTERISK_CHANNEL_VARIABLES</pre></a></li>
-<li class="constant  "><a href="#constant_OID_ASTERISK_CHANNEL_WHEN_HANGUP" title="OID_ASTERISK_CHANNEL_WHEN_HANGUP :: "><span class="description">OID_ASTERISK_CHANNEL_WHEN_HANGUP</span><pre>OID_ASTERISK_CHANNEL_WHEN_HANGUP</pre></a></li>
-</ul>
-</li>
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#CHANNEL_ADSI_AVAILABLE" title="CHANNEL_ADSI_AVAILABLE :: "><span class="description">CHANNEL_ADSI_AVAILABLE</span><pre>CHANNEL_ADSI_AVAILABLE</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_ADSI_OFF_HOOK_ONLY" title="CHANNEL_ADSI_OFF_HOOK_ONLY :: "><span class="description">CHANNEL_ADSI_OFF_HOOK_ONLY</span><pre>CHANNEL_ADSI_OFF_HOOK_ONLY</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_ADSI_UNAVAILABLE" title="CHANNEL_ADSI_UNAVAILABLE :: "><span class="description">CHANNEL_ADSI_UNAVAILABLE</span><pre>CHANNEL_ADSI_UNAVAILABLE</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_ADSI_UNKNOWN" title="CHANNEL_ADSI_UNKNOWN :: "><span class="description">CHANNEL_ADSI_UNKNOWN</span><pre>CHANNEL_ADSI_UNKNOWN</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_AMA_FLAG_BILLING" title="CHANNEL_AMA_FLAG_BILLING :: "><span class="description">CHANNEL_AMA_FLAG_BILLING</span><pre>CHANNEL_AMA_FLAG_BILLING</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_AMA_FLAG_DEFAULT" title="CHANNEL_AMA_FLAG_DEFAULT :: "><span class="description">CHANNEL_AMA_FLAG_DEFAULT</span><pre>CHANNEL_AMA_FLAG_DEFAULT</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_AMA_FLAG_DOCUMENTATION" title="CHANNEL_AMA_FLAG_DOCUMENTATION :: "><span class="description">CHANNEL_AMA_FLAG_DOCUMENTATION</span><pre>CHANNEL_AMA_FLAG_DOCUMENTATION</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_AMA_FLAG_OMIT" title="CHANNEL_AMA_FLAG_OMIT :: "><span class="description">CHANNEL_AMA_FLAG_OMIT</span><pre>CHANNEL_AMA_FLAG_OMIT</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_HANGUP_CAUSE_BUSY" title="CHANNEL_HANGUP_CAUSE_BUSY :: "><span class="description">CHANNEL_HANGUP_CAUSE_BUSY</span><pre>CHANNEL_HANGUP_CAUSE_BUSY</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_HANGUP_CAUSE_CONGESTION" title="CHANNEL_HANGUP_CAUSE_CONGESTION :: "><span class="description">CHANNEL_HANGUP_CAUSE_CONGESTION</span><pre>CHANNEL_HANGUP_CAUSE_CONGESTION</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_HANGUP_CAUSE_FAILURE" title="CHANNEL_HANGUP_CAUSE_FAILURE :: "><span class="description">CHANNEL_HANGUP_CAUSE_FAILURE</span><pre>CHANNEL_HANGUP_CAUSE_FAILURE</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_HANGUP_CAUSE_NORMAL" title="CHANNEL_HANGUP_CAUSE_NORMAL :: "><span class="description">CHANNEL_HANGUP_CAUSE_NORMAL</span><pre>CHANNEL_HANGUP_CAUSE_NORMAL</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_HANGUP_CAUSE_NOT_DEFINED" title="CHANNEL_HANGUP_CAUSE_NOT_DEFINED :: "><span class="description">CHANNEL_HANGUP_CAUSE_NOT_DEFINED</span><pre>CHANNEL_HANGUP_CAUSE_NOT_DEFINED</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_HANGUP_CAUSE_NO_ANSWER" title="CHANNEL_HANGUP_CAUSE_NO_ANSWER :: "><span class="description">CHANNEL_HANGUP_CAUSE_NO_ANSWER</span><pre>CHANNEL_HANGUP_CAUSE_NO_ANSWER</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER" title="CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER :: "><span class="description">CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER</span><pre>CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_HANGUP_CAUSE_UNREGISTERED" title="CHANNEL_HANGUP_CAUSE_UNREGISTERED :: "><span class="description">CHANNEL_HANGUP_CAUSE_UNREGISTERED</span><pre>CHANNEL_HANGUP_CAUSE_UNREGISTERED</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_STATE_BUSY" title="CHANNEL_STATE_BUSY :: "><span class="description">CHANNEL_STATE_BUSY</span><pre>CHANNEL_STATE_BUSY</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_STATE_DIALING" title="CHANNEL_STATE_DIALING :: "><span class="description">CHANNEL_STATE_DIALING</span><pre>CHANNEL_STATE_DIALING</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_STATE_DIALING_OFF_HOOK" title="CHANNEL_STATE_DIALING_OFF_HOOK :: "><span class="description">CHANNEL_STATE_DIALING_OFF_HOOK</span><pre>CHANNEL_STATE_DIALING_OFF_HOOK</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_STATE_DOWN" title="CHANNEL_STATE_DOWN :: "><span class="description">CHANNEL_STATE_DOWN</span><pre>CHANNEL_STATE_DOWN</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_STATE_OFF_HOOK" title="CHANNEL_STATE_OFF_HOOK :: "><span class="description">CHANNEL_STATE_OFF_HOOK</span><pre>CHANNEL_STATE_OFF_HOOK</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_STATE_PRE_RING" title="CHANNEL_STATE_PRE_RING :: "><span class="description">CHANNEL_STATE_PRE_RING</span><pre>CHANNEL_STATE_PRE_RING</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_STATE_RESERVED" title="CHANNEL_STATE_RESERVED :: "><span class="description">CHANNEL_STATE_RESERVED</span><pre>CHANNEL_STATE_RESERVED</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_STATE_RING" title="CHANNEL_STATE_RING :: "><span class="description">CHANNEL_STATE_RING</span><pre>CHANNEL_STATE_RING</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_STATE_RINGING" title="CHANNEL_STATE_RINGING :: "><span class="description">CHANNEL_STATE_RINGING</span><pre>CHANNEL_STATE_RINGING</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_STATE_UP" title="CHANNEL_STATE_UP :: "><span class="description">CHANNEL_STATE_UP</span><pre>CHANNEL_STATE_UP</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K" title="CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K :: "><span class="description">CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K</span><pre>CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_TRANSFER_CAPABILITY_DIGITAL" title="CHANNEL_TRANSFER_CAPABILITY_DIGITAL :: "><span class="description">CHANNEL_TRANSFER_CAPABILITY_DIGITAL</span><pre>CHANNEL_TRANSFER_CAPABILITY_DIGITAL</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES" title="CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES :: "><span class="description">CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES</span><pre>CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL" title="CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL :: "><span class="description">CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL</span><pre>CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_TRANSFER_CAPABILITY_SPEECH" title="CHANNEL_TRANSFER_CAPABILITY_SPEECH :: "><span class="description">CHANNEL_TRANSFER_CAPABILITY_SPEECH</span><pre>CHANNEL_TRANSFER_CAPABILITY_SPEECH</pre></a></li>
+<li class="constant  "><a href="#CHANNEL_TRANSFER_CAPABILITY_VIDEO" title="CHANNEL_TRANSFER_CAPABILITY_VIDEO :: "><span class="description">CHANNEL_TRANSFER_CAPABILITY_VIDEO</span><pre>CHANNEL_TRANSFER_CAPABILITY_VIDEO</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNELS_ACTIVE" title="OID_ASTERISK_CHANNELS_ACTIVE :: "><span class="description">OID_ASTERISK_CHANNELS_ACTIVE</span><pre>OID_ASTERISK_CHANNELS_ACTIVE</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNELS_BRIDGED" title="OID_ASTERISK_CHANNELS_BRIDGED :: "><span class="description">OID_ASTERISK_CHANNELS_BRIDGED</span><pre>OID_ASTERISK_CHANNELS_BRIDGED</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNELS_SUPPORTED" title="OID_ASTERISK_CHANNELS_SUPPORTED :: "><span class="description">OID_ASTERISK_CHANNELS_SUPPORTED</span><pre>OID_ASTERISK_CHANNELS_SUPPORTED</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_ACCOUNT_CODE" title="OID_ASTERISK_CHANNEL_ACCOUNT_CODE :: "><span class="description">OID_ASTERISK_CHANNEL_ACCOUNT_CODE</span><pre>OID_ASTERISK_CHANNEL_ACCOUNT_CODE</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_ADSI" title="OID_ASTERISK_CHANNEL_ADSI :: "><span class="description">OID_ASTERISK_CHANNEL_ADSI</span><pre>OID_ASTERISK_CHANNEL_ADSI</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_AMA_FLAGS" title="OID_ASTERISK_CHANNEL_AMA_FLAGS :: "><span class="description">OID_ASTERISK_CHANNEL_AMA_FLAGS</span><pre>OID_ASTERISK_CHANNEL_AMA_FLAGS</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_APP" title="OID_ASTERISK_CHANNEL_APP :: "><span class="description">OID_ASTERISK_CHANNEL_APP</span><pre>OID_ASTERISK_CHANNEL_APP</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_BRIDGE" title="OID_ASTERISK_CHANNEL_BRIDGE :: "><span class="description">OID_ASTERISK_CHANNEL_BRIDGE</span><pre>OID_ASTERISK_CHANNEL_BRIDGE</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_CALL_GROUP" title="OID_ASTERISK_CHANNEL_CALL_GROUP :: "><span class="description">OID_ASTERISK_CHANNEL_CALL_GROUP</span><pre>OID_ASTERISK_CHANNEL_CALL_GROUP</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_CID_ANI" title="OID_ASTERISK_CHANNEL_CID_ANI :: "><span class="description">OID_ASTERISK_CHANNEL_CID_ANI</span><pre>OID_ASTERISK_CHANNEL_CID_ANI</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_CID_ANI2" title="OID_ASTERISK_CHANNEL_CID_ANI2 :: "><span class="description">OID_ASTERISK_CHANNEL_CID_ANI2</span><pre>OID_ASTERISK_CHANNEL_CID_ANI2</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_CID_DNID" title="OID_ASTERISK_CHANNEL_CID_DNID :: "><span class="description">OID_ASTERISK_CHANNEL_CID_DNID</span><pre>OID_ASTERISK_CHANNEL_CID_DNID</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_CID_NAME" title="OID_ASTERISK_CHANNEL_CID_NAME :: "><span class="description">OID_ASTERISK_CHANNEL_CID_NAME</span><pre>OID_ASTERISK_CHANNEL_CID_NAME</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_CID_NUM" title="OID_ASTERISK_CHANNEL_CID_NUM :: "><span class="description">OID_ASTERISK_CHANNEL_CID_NUM</span><pre>OID_ASTERISK_CHANNEL_CID_NUM</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_CID_PRESENTATION" title="OID_ASTERISK_CHANNEL_CID_PRESENTATION :: "><span class="description">OID_ASTERISK_CHANNEL_CID_PRESENTATION</span><pre>OID_ASTERISK_CHANNEL_CID_PRESENTATION</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_CID_RDNIS" title="OID_ASTERISK_CHANNEL_CID_RDNIS :: "><span class="description">OID_ASTERISK_CHANNEL_CID_RDNIS</span><pre>OID_ASTERISK_CHANNEL_CID_RDNIS</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_CID_TNS" title="OID_ASTERISK_CHANNEL_CID_TNS :: "><span class="description">OID_ASTERISK_CHANNEL_CID_TNS</span><pre>OID_ASTERISK_CHANNEL_CID_TNS</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_CID_TON" title="OID_ASTERISK_CHANNEL_CID_TON :: "><span class="description">OID_ASTERISK_CHANNEL_CID_TON</span><pre>OID_ASTERISK_CHANNEL_CID_TON</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_CONTEXT" title="OID_ASTERISK_CHANNEL_CONTEXT :: "><span class="description">OID_ASTERISK_CHANNEL_CONTEXT</span><pre>OID_ASTERISK_CHANNEL_CONTEXT</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_DATA" title="OID_ASTERISK_CHANNEL_DATA :: "><span class="description">OID_ASTERISK_CHANNEL_DATA</span><pre>OID_ASTERISK_CHANNEL_DATA</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_EXTEN" title="OID_ASTERISK_CHANNEL_EXTEN :: "><span class="description">OID_ASTERISK_CHANNEL_EXTEN</span><pre>OID_ASTERISK_CHANNEL_EXTEN</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_FLAGS" title="OID_ASTERISK_CHANNEL_FLAGS :: "><span class="description">OID_ASTERISK_CHANNEL_FLAGS</span><pre>OID_ASTERISK_CHANNEL_FLAGS</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_FORWARD_TO" title="OID_ASTERISK_CHANNEL_FORWARD_TO :: "><span class="description">OID_ASTERISK_CHANNEL_FORWARD_TO</span><pre>OID_ASTERISK_CHANNEL_FORWARD_TO</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_HANGUP_CAUSE" title="OID_ASTERISK_CHANNEL_HANGUP_CAUSE :: "><span class="description">OID_ASTERISK_CHANNEL_HANGUP_CAUSE</span><pre>OID_ASTERISK_CHANNEL_HANGUP_CAUSE</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_LANGUAGE" title="OID_ASTERISK_CHANNEL_LANGUAGE :: "><span class="description">OID_ASTERISK_CHANNEL_LANGUAGE</span><pre>OID_ASTERISK_CHANNEL_LANGUAGE</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_MACRO_CONTEXT" title="OID_ASTERISK_CHANNEL_MACRO_CONTEXT :: "><span class="description">OID_ASTERISK_CHANNEL_MACRO_CONTEXT</span><pre>OID_ASTERISK_CHANNEL_MACRO_CONTEXT</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_MACRO_EXTEN" title="OID_ASTERISK_CHANNEL_MACRO_EXTEN :: "><span class="description">OID_ASTERISK_CHANNEL_MACRO_EXTEN</span><pre>OID_ASTERISK_CHANNEL_MACRO_EXTEN</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_MACRO_PRI" title="OID_ASTERISK_CHANNEL_MACRO_PRI :: "><span class="description">OID_ASTERISK_CHANNEL_MACRO_PRI</span><pre>OID_ASTERISK_CHANNEL_MACRO_PRI</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_MASQ" title="OID_ASTERISK_CHANNEL_MASQ :: "><span class="description">OID_ASTERISK_CHANNEL_MASQ</span><pre>OID_ASTERISK_CHANNEL_MASQ</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_MASQR" title="OID_ASTERISK_CHANNEL_MASQR :: "><span class="description">OID_ASTERISK_CHANNEL_MASQR</span><pre>OID_ASTERISK_CHANNEL_MASQR</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_MUSIC_CLASS" title="OID_ASTERISK_CHANNEL_MUSIC_CLASS :: "><span class="description">OID_ASTERISK_CHANNEL_MUSIC_CLASS</span><pre>OID_ASTERISK_CHANNEL_MUSIC_CLASS</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_MUTED" title="OID_ASTERISK_CHANNEL_MUTED :: "><span class="description">OID_ASTERISK_CHANNEL_MUTED</span><pre>OID_ASTERISK_CHANNEL_MUTED</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_NAME" title="OID_ASTERISK_CHANNEL_NAME :: "><span class="description">OID_ASTERISK_CHANNEL_NAME</span><pre>OID_ASTERISK_CHANNEL_NAME</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_PICKUP_GROUP" title="OID_ASTERISK_CHANNEL_PICKUP_GROUP :: "><span class="description">OID_ASTERISK_CHANNEL_PICKUP_GROUP</span><pre>OID_ASTERISK_CHANNEL_PICKUP_GROUP</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_PRI" title="OID_ASTERISK_CHANNEL_PRI :: "><span class="description">OID_ASTERISK_CHANNEL_PRI</span><pre>OID_ASTERISK_CHANNEL_PRI</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_RINGS" title="OID_ASTERISK_CHANNEL_RINGS :: "><span class="description">OID_ASTERISK_CHANNEL_RINGS</span><pre>OID_ASTERISK_CHANNEL_RINGS</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_STATE" title="OID_ASTERISK_CHANNEL_STATE :: "><span class="description">OID_ASTERISK_CHANNEL_STATE</span><pre>OID_ASTERISK_CHANNEL_STATE</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_TONE_ZONE" title="OID_ASTERISK_CHANNEL_TONE_ZONE :: "><span class="description">OID_ASTERISK_CHANNEL_TONE_ZONE</span><pre>OID_ASTERISK_CHANNEL_TONE_ZONE</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_TRANSFER_CAP" title="OID_ASTERISK_CHANNEL_TRANSFER_CAP :: "><span class="description">OID_ASTERISK_CHANNEL_TRANSFER_CAP</span><pre>OID_ASTERISK_CHANNEL_TRANSFER_CAP</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_TYPE" title="OID_ASTERISK_CHANNEL_TYPE :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE</span><pre>OID_ASTERISK_CHANNEL_TYPE</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_TYPE_CHANNELS" title="OID_ASTERISK_CHANNEL_TYPE_CHANNELS :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE_CHANNELS</span><pre>OID_ASTERISK_CHANNEL_TYPE_CHANNELS</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION" title="OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION</span><pre>OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_TYPE_INDICATION" title="OID_ASTERISK_CHANNEL_TYPE_INDICATION :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE_INDICATION</span><pre>OID_ASTERISK_CHANNEL_TYPE_INDICATION</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_TYPE_NAME" title="OID_ASTERISK_CHANNEL_TYPE_NAME :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE_NAME</span><pre>OID_ASTERISK_CHANNEL_TYPE_NAME</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_TYPE_STATE" title="OID_ASTERISK_CHANNEL_TYPE_STATE :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE_STATE</span><pre>OID_ASTERISK_CHANNEL_TYPE_STATE</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_TYPE_TRANSFER" title="OID_ASTERISK_CHANNEL_TYPE_TRANSFER :: "><span class="description">OID_ASTERISK_CHANNEL_TYPE_TRANSFER</span><pre>OID_ASTERISK_CHANNEL_TYPE_TRANSFER</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_UNQIUEID" title="OID_ASTERISK_CHANNEL_UNQIUEID :: "><span class="description">OID_ASTERISK_CHANNEL_UNQIUEID</span><pre>OID_ASTERISK_CHANNEL_UNQIUEID</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_VARIABLES" title="OID_ASTERISK_CHANNEL_VARIABLES :: "><span class="description">OID_ASTERISK_CHANNEL_VARIABLES</span><pre>OID_ASTERISK_CHANNEL_VARIABLES</pre></a></li>
+<li class="constant  "><a href="#OID_ASTERISK_CHANNEL_WHEN_HANGUP" title="OID_ASTERISK_CHANNEL_WHEN_HANGUP :: "><span class="description">OID_ASTERISK_CHANNEL_WHEN_HANGUP</span><pre>OID_ASTERISK_CHANNEL_WHEN_HANGUP</pre></a></li>
 </ul>
 </div>
 <div class="span8">
-<a id="\OSS_SNMP\MIBS\Asterisk\Channels"></a><ul class="breadcrumb">
+<a name="%5COSS_SNMP%5CMIBS%5CAsterisk%5CChannels" id="\OSS_SNMP\MIBS\Asterisk\Channels"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/OSS_SNMP.html">OSS_SNMP</a></li>
-<li>
-<span class="divider">\</span><a href="../namespaces/OSS_SNMP.MIBS.html">MIBS</a>
-</li>
-<li>
-<span class="divider">\</span><a href="../namespaces/OSS_SNMP.MIBS.Asterisk.html">Asterisk</a>
-</li>
+<span class="divider">\</span><li><a href="../namespaces/OSS_SNMP.MIBS.html">MIBS</a></li>
+<span class="divider">\</span><li><a href="../namespaces/OSS_SNMP.MIBS.Asterisk.html">Asterisk</a></li>
 <li class="active">
 <span class="divider">\</span><a href="../classes/OSS_SNMP.MIBS.Asterisk.Channels.html">Channels</a>
 </li>
 </ul>
-<div class="element class">
+<div href="../classes/OSS_SNMP.MIBS.Asterisk.Channels.html" class="element class">
 <p class="short_description">A class for performing SNMP V2 queries on Asterisk</p>
 <div class="details">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
 <th>see</th>
-<td><a href="">\OSS_SNMP\MIBS\Asterisk\https://wiki.asterisk.org/wiki/display/AST/Asterisk+MIB+Definitions</a></td>
+<td>\OSS_SNMP\MIBS\Asterisk\https://wiki.asterisk.org/wiki/display/AST/Asterisk+MIB+Definitions</td>
 </tr>
 <tr>
 <th>copyright</th>
@@ -255,58 +241,56 @@ OID_ASTERISK_CHANNEL_VARIABLES into an array of key / value pairs</span><pre>_ch
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a id="method_active"></a><div class="element clickable method public method_active" data-toggle="collapse" data-target=".method_active .collapse">
+<a name="active" id="active"></a><div class="element clickable method public active" data-toggle="collapse" data-target=".active .collapse">
 <h2>Returns the current number of active channels.</h2>
 <pre>active() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><blockquote>
+<p class="long_description"><blockquote>
   <p>Current number of active channels.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>int</code>The current number of active channels.</div>
 </div></div>
 </div>
-<a id="method_activeCalls"></a><div class="element clickable method public method_activeCalls" data-toggle="collapse" data-target=".method_activeCalls .collapse">
+<a name="activeCalls" id="activeCalls"></a><div class="element clickable method public activeCalls" data-toggle="collapse" data-target=".activeCalls .collapse">
 <h2>Array of active calls on supported channels</h2>
 <pre>activeCalls() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><blockquote>
+<p class="long_description"><blockquote>
   <p>Number of active channels using the current technology.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Active calls on supported channels</div>
 </div></div>
 </div>
-<a id="method_bridged"></a><div class="element clickable method public method_bridged" data-toggle="collapse" data-target=".method_bridged .collapse">
+<a name="bridged" id="bridged"></a><div class="element clickable method public bridged" data-toggle="collapse" data-target=".bridged .collapse">
 <h2>Number of channels currently in a bridged state.</h2>
 <pre>bridged() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><blockquote>
+<p class="long_description"><blockquote>
   <p>Number of channels currently in a bridged state.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>int</code>Array of active calls on supported channels</div>
 </div></div>
 </div>
-<a id="method_chanADSI"></a><div class="element clickable method public method_chanADSI" data-toggle="collapse" data-target=".method_chanADSI .collapse">
-<h2>Active Channel Information: Whether or not ADSI is detected on CPE.</h2>
+<a name="chanADSI" id="chanADSI"></a><div class="element clickable method public chanADSI" data-toggle="collapse" data-target=".chanADSI .collapse">
+<h2>Active Channel Information: Whether or not ADSI is detected on CPE. (see constants)</h2>
 <pre>chanADSI(bool $translate) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>(see constants)</p>
-
-<p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Whether or not ADSI is detected on CPE. (see constants)</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$translate</h4>
@@ -317,19 +301,17 @@ as not all channels have all properties.</p>
 <code>array</code>Whether or not ADSI is detected on CPE. (see constants)</div>
 </div></div>
 </div>
-<a id="method_chanAMAFlags"></a><div class="element clickable method public method_chanAMAFlags" data-toggle="collapse" data-target=".method_chanAMAFlags .collapse">
-<h2>Active Channel Information: AMA Flags.</h2>
+<a name="chanAMAFlags" id="chanAMAFlags"></a><div class="element clickable method public chanAMAFlags" data-toggle="collapse" data-target=".chanAMAFlags .collapse">
+<h2>Active Channel Information: AMA Flags. (See constants)</h2>
 <pre>chanAMAFlags(bool $translate) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>(See constants)</p>
-
-<p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>AMA Flags. (See constants)</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$translate</h4>
@@ -340,268 +322,268 @@ as not all channels have all properties.</p>
 <code>array</code>AMA Flags. (See constants)</div>
 </div></div>
 </div>
-<a id="method_chanAccountCode"></a><div class="element clickable method public method_chanAccountCode" data-toggle="collapse" data-target=".method_chanAccountCode .collapse">
+<a name="chanAccountCode" id="chanAccountCode"></a><div class="element clickable method public chanAccountCode" data-toggle="collapse" data-target=".chanAccountCode .collapse">
 <h2>Active Channel Information: Account Code for billing.</h2>
 <pre>chanAccountCode() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Account Code for billing.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Account Code for billing.</div>
 </div></div>
 </div>
-<a id="method_chanApp"></a><div class="element clickable method public method_chanApp" data-toggle="collapse" data-target=".method_chanApp .collapse">
+<a name="chanApp" id="chanApp"></a><div class="element clickable method public chanApp" data-toggle="collapse" data-target=".chanApp .collapse">
 <h2>Active Channel Information: Current application for the channel.</h2>
 <pre>chanApp() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Current application for the channel.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Current application for the channel.</div>
 </div></div>
 </div>
-<a id="method_chanBridge"></a><div class="element clickable method public method_chanBridge" data-toggle="collapse" data-target=".method_chanBridge .collapse">
+<a name="chanBridge" id="chanBridge"></a><div class="element clickable method public chanBridge" data-toggle="collapse" data-target=".chanBridge .collapse">
 <h2>Active Channel Information: Which channel this channel is currently bridged (in a conversation) with.</h2>
 <pre>chanBridge() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Which channel this channel is currently bridged (in a conversation) with.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Which channel this channel is currently bridged (in a conversation) with.</div>
 </div></div>
 </div>
-<a id="method_chanCallGroup"></a><div class="element clickable method public method_chanCallGroup" data-toggle="collapse" data-target=".method_chanCallGroup .collapse">
+<a name="chanCallGroup" id="chanCallGroup"></a><div class="element clickable method public chanCallGroup" data-toggle="collapse" data-target=".chanCallGroup .collapse">
 <h2>Active Channel Information: Call Group.</h2>
 <pre>chanCallGroup() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Call Group.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Call Group.</div>
 </div></div>
 </div>
-<a id="method_chanCidANI"></a><div class="element clickable method public method_chanCidANI" data-toggle="collapse" data-target=".method_chanCidANI .collapse">
+<a name="chanCidANI" id="chanCidANI"></a><div class="element clickable method public chanCidANI" data-toggle="collapse" data-target=".chanCidANI .collapse">
 <h2>Active Channel Information: ANI</h2>
 <pre>chanCidANI() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>ANI</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>ANI</div>
 </div></div>
 </div>
-<a id="method_chanCidANI2"></a><div class="element clickable method public method_chanCidANI2" data-toggle="collapse" data-target=".method_chanCidANI2 .collapse">
+<a name="chanCidANI2" id="chanCidANI2"></a><div class="element clickable method public chanCidANI2" data-toggle="collapse" data-target=".chanCidANI2 .collapse">
 <h2>Active Channel Information: ANI 2 (info digit).</h2>
 <pre>chanCidANI2() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>ANI 2 (info digit).</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>ANI 2 (info digit).</div>
 </div></div>
 </div>
-<a id="method_chanCidDNID"></a><div class="element clickable method public method_chanCidDNID" data-toggle="collapse" data-target=".method_chanCidDNID .collapse">
+<a name="chanCidDNID" id="chanCidDNID"></a><div class="element clickable method public chanCidDNID" data-toggle="collapse" data-target=".chanCidDNID .collapse">
 <h2>Active Channel Information: Dialled Number ID.</h2>
 <pre>chanCidDNID() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Dialled Number ID.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Dialled Number ID.</div>
 </div></div>
 </div>
-<a id="method_chanCidName"></a><div class="element clickable method public method_chanCidName" data-toggle="collapse" data-target=".method_chanCidName .collapse">
+<a name="chanCidName" id="chanCidName"></a><div class="element clickable method public chanCidName" data-toggle="collapse" data-target=".chanCidName .collapse">
 <h2>Active Channel Information: Caller Name.</h2>
 <pre>chanCidName() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Caller Name.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Caller Name.</div>
 </div></div>
 </div>
-<a id="method_chanCidNum"></a><div class="element clickable method public method_chanCidNum" data-toggle="collapse" data-target=".method_chanCidNum .collapse">
+<a name="chanCidNum" id="chanCidNum"></a><div class="element clickable method public chanCidNum" data-toggle="collapse" data-target=".chanCidNum .collapse">
 <h2>Active Channel Information: Caller Number.</h2>
 <pre>chanCidNum() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Caller Number.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Caller Number.</div>
 </div></div>
 </div>
-<a id="method_chanCidPresentation"></a><div class="element clickable method public method_chanCidPresentation" data-toggle="collapse" data-target=".method_chanCidPresentation .collapse">
+<a name="chanCidPresentation" id="chanCidPresentation"></a><div class="element clickable method public chanCidPresentation" data-toggle="collapse" data-target=".chanCidPresentation .collapse">
 <h2>Active Channel Information: Number Presentation/Screening.</h2>
 <pre>chanCidPresentation() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Number Presentation/Screening.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Number Presentation/Screening.</div>
 </div></div>
 </div>
-<a id="method_chanCidRDNIS"></a><div class="element clickable method public method_chanCidRDNIS" data-toggle="collapse" data-target=".method_chanCidRDNIS .collapse">
+<a name="chanCidRDNIS" id="chanCidRDNIS"></a><div class="element clickable method public chanCidRDNIS" data-toggle="collapse" data-target=".chanCidRDNIS .collapse">
 <h2>Active Channel Information: Redirected Dialled Number Service.</h2>
 <pre>chanCidRDNIS() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Redirected Dialled Number Service.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Redirected Dialled Number Service.</div>
 </div></div>
 </div>
-<a id="method_chanCidTNS"></a><div class="element clickable method public method_chanCidTNS" data-toggle="collapse" data-target=".method_chanCidTNS .collapse">
+<a name="chanCidTNS" id="chanCidTNS"></a><div class="element clickable method public chanCidTNS" data-toggle="collapse" data-target=".chanCidTNS .collapse">
 <h2>Active Channel Information: Transit Network Select.</h2>
 <pre>chanCidTNS() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Transit Network Select.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Transit Network Select.</div>
 </div></div>
 </div>
-<a id="method_chanCidTON"></a><div class="element clickable method public method_chanCidTON" data-toggle="collapse" data-target=".method_chanCidTON .collapse">
+<a name="chanCidTON" id="chanCidTON"></a><div class="element clickable method public chanCidTON" data-toggle="collapse" data-target=".chanCidTON .collapse">
 <h2>Active Channel Information: Type of Number.</h2>
 <pre>chanCidTON() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Type of Number.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Type of Number.</div>
 </div></div>
 </div>
-<a id="method_chanContext"></a><div class="element clickable method public method_chanContext" data-toggle="collapse" data-target=".method_chanContext .collapse">
+<a name="chanContext" id="chanContext"></a><div class="element clickable method public chanContext" data-toggle="collapse" data-target=".chanContext .collapse">
 <h2>Active Channel Information: Current extension context.</h2>
 <pre>chanContext() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Current extension context.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Current extension context.</div>
 </div></div>
 </div>
-<a id="method_chanData"></a><div class="element clickable method public method_chanData" data-toggle="collapse" data-target=".method_chanData .collapse">
+<a name="chanData" id="chanData"></a><div class="element clickable method public chanData" data-toggle="collapse" data-target=".chanData .collapse">
 <h2>Active Channel Information: Arguments passed to the current application.</h2>
 <pre>chanData() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Arguments passed to the current application.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Arguments passed to the current application.</div>
 </div></div>
 </div>
-<a id="method_chanExten"></a><div class="element clickable method public method_chanExten" data-toggle="collapse" data-target=".method_chanExten .collapse">
+<a name="chanExten" id="chanExten"></a><div class="element clickable method public chanExten" data-toggle="collapse" data-target=".chanExten .collapse">
 <h2>Active Channel Information: Current extension.</h2>
 <pre>chanExten() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Current extension.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Current extension.</div>
 </div></div>
 </div>
-<a id="method_chanFlags"></a><div class="element clickable method public method_chanFlags" data-toggle="collapse" data-target=".method_chanFlags .collapse">
+<a name="chanFlags" id="chanFlags"></a><div class="element clickable method public chanFlags" data-toggle="collapse" data-target=".chanFlags .collapse">
 <h2>Active Channel Information: Flags set on this channel.</h2>
 <pre>chanFlags() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Returns a HEX number - but I could not map it to the following from Asterisk docs:</p>
+<p class="long_description"><p>Returns a HEX number - but I could not map it to the following from Asterisk docs:</p>
 
 <blockquote>
   <p>BITS {
@@ -623,41 +605,39 @@ as not all channels have all properties.</p>
 
 <blockquote>
   <p>Flags set on this channel. (see constants)</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Flags set on this channel. (see constants)</div>
 </div></div>
 </div>
-<a id="method_chanForwardTo"></a><div class="element clickable method public method_chanForwardTo" data-toggle="collapse" data-target=".method_chanForwardTo .collapse">
+<a name="chanForwardTo" id="chanForwardTo"></a><div class="element clickable method public chanForwardTo" data-toggle="collapse" data-target=".chanForwardTo .collapse">
 <h2>Active Channel Information: Where to forward to if asked to dial on this interface.</h2>
 <pre>chanForwardTo() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Where to forward to if asked to dial on this interface.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Where to forward to if asked to dial on this interface.</div>
 </div></div>
 </div>
-<a id="method_chanHangupCause"></a><div class="element clickable method public method_chanHangupCause" data-toggle="collapse" data-target=".method_chanHangupCause .collapse">
-<h2>Active Channel Information: Why is the channel hung up.</h2>
+<a name="chanHangupCause" id="chanHangupCause"></a><div class="element clickable method public chanHangupCause" data-toggle="collapse" data-target=".chanHangupCause .collapse">
+<h2>Active Channel Information: Why is the channel hung up. (see constants)</h2>
 <pre>chanHangupCause(bool $translate) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>(see constants)</p>
-
-<p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Why is the channel hung up. (see constants)</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$translate</h4>
@@ -668,209 +648,209 @@ as not all channels have all properties.</p>
 <code>array</code>Why is the channel hung up. (see constants)</div>
 </div></div>
 </div>
-<a id="method_chanLanguage"></a><div class="element clickable method public method_chanLanguage" data-toggle="collapse" data-target=".method_chanLanguage .collapse">
+<a name="chanLanguage" id="chanLanguage"></a><div class="element clickable method public chanLanguage" data-toggle="collapse" data-target=".chanLanguage .collapse">
 <h2>Active Channel Information: Which language the current channel is configured to use -- used mainly for prompts.</h2>
 <pre>chanLanguage() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Which language the current channel is configured to use -- used mainly for prompts.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Which language the current channel is configured to use -- used mainly for prompts.</div>
 </div></div>
 </div>
-<a id="method_chanMacroContext"></a><div class="element clickable method public method_chanMacroContext" data-toggle="collapse" data-target=".method_chanMacroContext .collapse">
+<a name="chanMacroContext" id="chanMacroContext"></a><div class="element clickable method public chanMacroContext" data-toggle="collapse" data-target=".chanMacroContext .collapse">
 <h2>Active Channel Information: Current macro context.</h2>
 <pre>chanMacroContext() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Current macro context.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Current macro context.</div>
 </div></div>
 </div>
-<a id="method_chanMacroExten"></a><div class="element clickable method public method_chanMacroExten" data-toggle="collapse" data-target=".method_chanMacroExten .collapse">
+<a name="chanMacroExten" id="chanMacroExten"></a><div class="element clickable method public chanMacroExten" data-toggle="collapse" data-target=".chanMacroExten .collapse">
 <h2>Active Channel Information: Current macro extension.</h2>
 <pre>chanMacroExten() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Current macro extension.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Current macro extension.</div>
 </div></div>
 </div>
-<a id="method_chanMacroPri"></a><div class="element clickable method public method_chanMacroPri" data-toggle="collapse" data-target=".method_chanMacroPri .collapse">
+<a name="chanMacroPri" id="chanMacroPri"></a><div class="element clickable method public chanMacroPri" data-toggle="collapse" data-target=".chanMacroPri .collapse">
 <h2>Active Channel Information: Current macro priority.</h2>
 <pre>chanMacroPri() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Current macro priority.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Current macro priority.</div>
 </div></div>
 </div>
-<a id="method_chanMasq"></a><div class="element clickable method public method_chanMasq" data-toggle="collapse" data-target=".method_chanMasq .collapse">
+<a name="chanMasq" id="chanMasq"></a><div class="element clickable method public chanMasq" data-toggle="collapse" data-target=".chanMasq .collapse">
 <h2>Active Channel Information: Channel masquerading for us.</h2>
 <pre>chanMasq() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Channel masquerading for us.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Channel masquerading for us.</div>
 </div></div>
 </div>
-<a id="method_chanMasqr"></a><div class="element clickable method public method_chanMasqr" data-toggle="collapse" data-target=".method_chanMasqr .collapse">
+<a name="chanMasqr" id="chanMasqr"></a><div class="element clickable method public chanMasqr" data-toggle="collapse" data-target=".chanMasqr .collapse">
 <h2>Active Channel Information: Channel we are masquerading for.</h2>
 <pre>chanMasqr() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Channel we are masquerading for.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Channel we are masquerading for.</div>
 </div></div>
 </div>
-<a id="method_chanMusicClass"></a><div class="element clickable method public method_chanMusicClass" data-toggle="collapse" data-target=".method_chanMusicClass .collapse">
+<a name="chanMusicClass" id="chanMusicClass"></a><div class="element clickable method public chanMusicClass" data-toggle="collapse" data-target=".chanMusicClass .collapse">
 <h2>Active Channel Information: Music class to be used for Music on Hold for this channel.</h2>
 <pre>chanMusicClass() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Music class to be used for Music on Hold for this channel.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Music class to be used for Music on Hold for this channel.</div>
 </div></div>
 </div>
-<a id="method_chanMuted"></a><div class="element clickable method public method_chanMuted" data-toggle="collapse" data-target=".method_chanMuted .collapse">
+<a name="chanMuted" id="chanMuted"></a><div class="element clickable method public chanMuted" data-toggle="collapse" data-target=".chanMuted .collapse">
 <h2>Active Channel Information: Transmission of voice data has been muted.</h2>
 <pre>chanMuted() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Transmission of voice data has been muted.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Transmission of voice data has been muted.</div>
 </div></div>
 </div>
-<a id="method_chanName"></a><div class="element clickable method public method_chanName" data-toggle="collapse" data-target=".method_chanName .collapse">
+<a name="chanName" id="chanName"></a><div class="element clickable method public chanName" data-toggle="collapse" data-target=".chanName .collapse">
 <h2>Active Channel Information: Name of the current channel.</h2>
 <pre>chanName() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Name of the current channel.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Name of the current channel.</div>
 </div></div>
 </div>
-<a id="method_chanPickupGroup"></a><div class="element clickable method public method_chanPickupGroup" data-toggle="collapse" data-target=".method_chanPickupGroup .collapse">
+<a name="chanPickupGroup" id="chanPickupGroup"></a><div class="element clickable method public chanPickupGroup" data-toggle="collapse" data-target=".chanPickupGroup .collapse">
 <h2>Active Channel Information: Pickup Group.</h2>
 <pre>chanPickupGroup() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Pickup Group.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Pickup Group.</div>
 </div></div>
 </div>
-<a id="method_chanPri"></a><div class="element clickable method public method_chanPri" data-toggle="collapse" data-target=".method_chanPri .collapse">
+<a name="chanPri" id="chanPri"></a><div class="element clickable method public chanPri" data-toggle="collapse" data-target=".chanPri .collapse">
 <h2>Active Channel Information: Current priority.</h2>
 <pre>chanPri() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Current priority.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Current priority.</div>
 </div></div>
 </div>
-<a id="method_chanRings"></a><div class="element clickable method public method_chanRings" data-toggle="collapse" data-target=".method_chanRings .collapse">
+<a name="chanRings" id="chanRings"></a><div class="element clickable method public chanRings" data-toggle="collapse" data-target=".chanRings .collapse">
 <h2>Active Channel Information: Number of rings so far.</h2>
 <pre>chanRings() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Number of rings so far.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Number of rings so far.</div>
 </div></div>
 </div>
-<a id="method_chanState"></a><div class="element clickable method public method_chanState" data-toggle="collapse" data-target=".method_chanState .collapse">
+<a name="chanState" id="chanState"></a><div class="element clickable method public chanState" data-toggle="collapse" data-target=".chanState .collapse">
 <h2>Active Channel Information: Channel state (see channel state constants).</h2>
 <pre>chanState(bool $translate) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Channel state (see channel state constants).</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$translate</h4>
@@ -881,35 +861,33 @@ as not all channels have all properties.</p>
 <code>array</code>Channel state (see channel state constants).</div>
 </div></div>
 </div>
-<a id="method_chanToneZone"></a><div class="element clickable method public method_chanToneZone" data-toggle="collapse" data-target=".method_chanToneZone .collapse">
+<a name="chanToneZone" id="chanToneZone"></a><div class="element clickable method public chanToneZone" data-toggle="collapse" data-target=".chanToneZone .collapse">
 <h2>Active Channel Information: Indication zone to use for channel.</h2>
 <pre>chanToneZone() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Indication zone to use for channel.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Indication zone to use for channel.</div>
 </div></div>
 </div>
-<a id="method_chanTransferCap"></a><div class="element clickable method public method_chanTransferCap" data-toggle="collapse" data-target=".method_chanTransferCap .collapse">
-<h2>Active Channel Information: Transfer Capabilities for this channel.</h2>
+<a name="chanTransferCap" id="chanTransferCap"></a><div class="element clickable method public chanTransferCap" data-toggle="collapse" data-target=".chanTransferCap .collapse">
+<h2>Active Channel Information: Transfer Capabilities for this channel. (see constants)</h2>
 <pre>chanTransferCap(bool $translate) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>(see constants)</p>
-
-<p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Transfer Capabilities for this channel. (see constants)</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$translate</h4>
@@ -920,44 +898,44 @@ as not all channels have all properties.</p>
 <code>array</code>Transfer Capabilities for this channel. (see constants)</div>
 </div></div>
 </div>
-<a id="method_chanType"></a><div class="element clickable method public method_chanType" data-toggle="collapse" data-target=".method_chanType .collapse">
+<a name="chanType" id="chanType"></a><div class="element clickable method public chanType" data-toggle="collapse" data-target=".chanType .collapse">
 <h2>Active Channel Information: Underlying technology for the current channel.</h2>
 <pre>chanType() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Underlying technology for the current channel.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Underlying technology for the current channel.</div>
 </div></div>
 </div>
-<a id="method_chanUniqueId"></a><div class="element clickable method public method_chanUniqueId" data-toggle="collapse" data-target=".method_chanUniqueId .collapse">
+<a name="chanUniqueId" id="chanUniqueId"></a><div class="element clickable method public chanUniqueId" data-toggle="collapse" data-target=".chanUniqueId .collapse">
 <h2>Active Channel Information: Unique Channel Identifier.</h2>
 <pre>chanUniqueId() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>Unique Channel Identifier.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Unique Channel Identifier.</div>
 </div></div>
 </div>
-<a id="method_chanVariables"></a><div class="element clickable method public method_chanVariables" data-toggle="collapse" data-target=".method_chanVariables .collapse">
+<a name="chanVariables" id="chanVariables"></a><div class="element clickable method public chanVariables" data-toggle="collapse" data-target=".chanVariables .collapse">
 <h2>Active Channel Information: Channel Variables defined for this channel.</h2>
 <pre>chanVariables() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Returns an array of arrays where the inner array is key/value pairs
+<p class="long_description"><p>Returns an array of arrays where the inner array is key/value pairs
 of channel variables for that channel: <code>[varName] =&gt; [varValue]</code></p>
 
 <p>NB: SNMP exceptions are caught and in such cases null is returned
@@ -965,34 +943,34 @@ as not all channels have all properties.</p>
 
 <blockquote>
   <p>Channel Variables defined for this channel.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Channel Variables defined for this channel.</div>
 </div></div>
 </div>
-<a id="method_chanWhenHangup"></a><div class="element clickable method public method_chanWhenHangup" data-toggle="collapse" data-target=".method_chanWhenHangup .collapse">
+<a name="chanWhenHangup" id="chanWhenHangup"></a><div class="element clickable method public chanWhenHangup" data-toggle="collapse" data-target=".chanWhenHangup .collapse">
 <h2>Active Channel Information: How long until this channel will be hung up.</h2>
 <pre>chanWhenHangup() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
+<p class="long_description"><p>NB: SNMP exceptions are caught and in such cases null is returned
 as not all channels have all properties.</p>
 
 <blockquote>
   <p>How long until this channel will be hung up.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>How long until this channel will be hung up.</div>
 </div></div>
 </div>
-<a id="method_channelDetails"></a><div class="element clickable method public method_channelDetails" data-toggle="collapse" data-target=".method_channelDetails .collapse">
+<a name="channelDetails" id="channelDetails"></a><div class="element clickable method public channelDetails" data-toggle="collapse" data-target=".channelDetails .collapse">
 <h2>Utility function to gather together all the details of individual channels into an array.</h2>
 <pre>channelDetails(bool $translate, bool $useIndexes) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Essentially, this function calls all <code>chanXXX()</code> functions to return the details for
+<p class="long_description"><p>Essentially, this function calls all <code>chanXXX()</code> functions to return the details for
 individual channels gathered together. E.g.</p>
 
 <pre><code>Array
@@ -1020,7 +998,7 @@ individual channels gathered together. E.g.</p>
 <p>The function returns an array of all channels. Unknown parameters within the channel are
 set to null.</p>
 
-<p>An empty array is returned if there are no active channels.</p></div>
+<p>An empty array is returned if there are no active channels.</p></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$translate</h4>
@@ -1033,25 +1011,25 @@ set to null.</p>
 <code>array</code>All the details of individual channels into an array.</div>
 </div></div>
 </div>
-<a id="method_descriptions"></a><div class="element clickable method public method_descriptions" data-toggle="collapse" data-target=".method_descriptions .collapse">
+<a name="descriptions" id="descriptions"></a><div class="element clickable method public descriptions" data-toggle="collapse" data-target=".descriptions .collapse">
 <h2>Array of supported channel type descriptions</h2>
 <pre>descriptions() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><blockquote>
+<p class="long_description"><blockquote>
   <p>Description of the channel type (technology).</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Supported channel type descriptions</div>
 </div></div>
 </div>
-<a id="method_details"></a><div class="element clickable method public method_details" data-toggle="collapse" data-target=".method_details .collapse">
+<a name="details" id="details"></a><div class="element clickable method public details" data-toggle="collapse" data-target=".details .collapse">
 <h2>Utility function to gather channel details together in an associative array.</h2>
 <pre>details(bool $useIndex) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Returns an array of support channel types. For example:</p>
+<p class="long_description"><p>Returns an array of support channel types. For example:</p>
 
 <pre><code>Array
 (
@@ -1070,7 +1048,7 @@ set to null.</p>
 )
 </code></pre>
 
-<p>If you chose to index by SNMP table entries, the above element would be indexed with <code>5</code> rather than <code>SIP</code>.</p></div>
+<p>If you chose to index by SNMP table entries, the above element would be indexed with <code>5</code> rather than <code>SIP</code>.</p></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$useIndex</h4>
@@ -1080,113 +1058,79 @@ set to null.</p>
 <code>array</code>Channel details as an associative array</div>
 </div></div>
 </div>
-<a id="method_deviceStates"></a><div class="element clickable method public method_deviceStates" data-toggle="collapse" data-target=".method_deviceStates .collapse">
+<a name="deviceStates" id="deviceStates"></a><div class="element clickable method public deviceStates" data-toggle="collapse" data-target=".deviceStates .collapse">
 <h2>Array of supported channel type device state capability</h2>
 <pre>deviceStates() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><blockquote>
+<p class="long_description"><blockquote>
   <p>Whether the current technology can hold device states.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Whether the current technology can hold device states.</div>
 </div></div>
 </div>
-<a id="method_getSNMP"></a><div class="element clickable method public method_getSNMP" data-toggle="collapse" data-target=".method_getSNMP .collapse">
-<h2>Get the SNMP instance</h2>
-<pre>getSNMP() : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\OSS_SNMP\MIB::getSNMP()</td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>Instance of the SNMP object</div>
-</div></div>
-</div>
-<a id="method_names"></a><div class="element clickable method public method_names" data-toggle="collapse" data-target=".method_names .collapse">
+<a name="names" id="names"></a><div class="element clickable method public names" data-toggle="collapse" data-target=".names .collapse">
 <h2>Array of supported channel type names</h2>
 <pre>names() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><blockquote>
+<p class="long_description"><blockquote>
   <p>Unique name of the technology we are describing.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Supported channel type names</div>
 </div></div>
 </div>
-<a id="method_progressIndications"></a><div class="element clickable method public method_progressIndications" data-toggle="collapse" data-target=".method_progressIndications .collapse">
+<a name="progressIndications" id="progressIndications"></a><div class="element clickable method public progressIndications" data-toggle="collapse" data-target=".progressIndications .collapse">
 <h2>Array of supported channel type progress indication capability</h2>
 <pre>progressIndications() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><blockquote>
+<p class="long_description"><blockquote>
   <p>Whether the current technology supports progress indication.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Whether the current technology supports progress indication.</div>
 </div></div>
 </div>
-<a id="method_setSNMP"></a><div class="element clickable method public method_setSNMP" data-toggle="collapse" data-target=".method_setSNMP .collapse">
-<h2>Set the SNMP instance</h2>
-<pre>setSNMP(<a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a> $snmp) : <a href="../classes/OSS_SNMP.MIB.html">\OSS_SNMP\MIB</a></pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\OSS_SNMP\MIB::setSNMP()</td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$snmp</h4>
-<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code><p>the SNMP instance</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/OSS_SNMP.MIB.html">\OSS_SNMP\MIB</a></code>An instance of this class for fluent interfaces</div>
-</div></div>
-</div>
-<a id="method_supported"></a><div class="element clickable method public method_supported" data-toggle="collapse" data-target=".method_supported .collapse">
+<a name="supported" id="supported"></a><div class="element clickable method public supported" data-toggle="collapse" data-target=".supported .collapse">
 <h2>Returns the number of channel types (technologies) supported.</h2>
 <pre>supported() : int</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><blockquote>
+<p class="long_description"><blockquote>
   <p>Number of channel types (technologies) supported.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>int</code>The number of channel types (technologies) supported.</div>
 </div></div>
 </div>
-<a id="method_transfers"></a><div class="element clickable method public method_transfers" data-toggle="collapse" data-target=".method_transfers .collapse">
+<a name="transfers" id="transfers"></a><div class="element clickable method public transfers" data-toggle="collapse" data-target=".transfers .collapse">
 <h2>Array of supported channel type transfer capability</h2>
 <pre>transfers() : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><blockquote>
+<p class="long_description"><blockquote>
   <p>Whether the current technology supports transfers, where
   Asterisk can get out from inbetween two bridged channels.</p>
-</blockquote></div>
+</blockquote></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Whether the current technology transfers</div>
 </div></div>
 </div>
-<a id="method__chanVarsToArray"></a><div class="element clickable method protected method__chanVarsToArray" data-toggle="collapse" data-target=".method__chanVarsToArray .collapse">
+<a name="_chanVarsToArray" id="_chanVarsToArray"></a><div class="element clickable method protected _chanVarsToArray" data-toggle="collapse" data-target="._chanVarsToArray .collapse">
 <h2>Utility function for `chanVariables()` to break the string returned by
 OID_ASTERISK_CHANNEL_VARIABLES into an array of key / value pairs</h2>
 <pre>_chanVarsToArray(string $str) : Array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
+<p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$str</h4>
@@ -1199,535 +1143,523 @@ OID_ASTERISK_CHANNEL_VARIABLES into an array of key / value pairs</h2>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_CHANNEL_ADSIs"> </a><div class="element clickable property public property_CHANNEL_ADSIs" data-toggle="collapse" data-target=".property_CHANNEL_ADSIs .collapse">
+<a name="%24CHANNEL_ADSIs" id="$CHANNEL_ADSIs"> </a><div class="element clickable property public $CHANNEL_ADSIs" data-toggle="collapse" data-target=".$CHANNEL_ADSIs .collapse">
 <h2>$CHANNEL_ADSIs</h2>
 <pre>$CHANNEL_ADSIs </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property_CHANNEL_AMA_FLAGS"> </a><div class="element clickable property public property_CHANNEL_AMA_FLAGS" data-toggle="collapse" data-target=".property_CHANNEL_AMA_FLAGS .collapse">
+<a name="%24CHANNEL_AMA_FLAGS" id="$CHANNEL_AMA_FLAGS"> </a><div class="element clickable property public $CHANNEL_AMA_FLAGS" data-toggle="collapse" data-target=".$CHANNEL_AMA_FLAGS .collapse">
 <h2>$CHANNEL_AMA_FLAGS</h2>
 <pre>$CHANNEL_AMA_FLAGS </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property_CHANNEL_HANGUP_CAUSES"> </a><div class="element clickable property public property_CHANNEL_HANGUP_CAUSES" data-toggle="collapse" data-target=".property_CHANNEL_HANGUP_CAUSES .collapse">
+<a name="%24CHANNEL_HANGUP_CAUSES" id="$CHANNEL_HANGUP_CAUSES"> </a><div class="element clickable property public $CHANNEL_HANGUP_CAUSES" data-toggle="collapse" data-target=".$CHANNEL_HANGUP_CAUSES .collapse">
 <h2>$CHANNEL_HANGUP_CAUSES</h2>
 <pre>$CHANNEL_HANGUP_CAUSES </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property_CHANNEL_STATES"> </a><div class="element clickable property public property_CHANNEL_STATES" data-toggle="collapse" data-target=".property_CHANNEL_STATES .collapse">
+<a name="%24CHANNEL_STATES" id="$CHANNEL_STATES"> </a><div class="element clickable property public $CHANNEL_STATES" data-toggle="collapse" data-target=".$CHANNEL_STATES .collapse">
 <h2>$CHANNEL_STATES</h2>
 <pre>$CHANNEL_STATES </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="property_CHANNEL_TRANSFER_CAPABILITIES"> </a><div class="element clickable property public property_CHANNEL_TRANSFER_CAPABILITIES" data-toggle="collapse" data-target=".property_CHANNEL_TRANSFER_CAPABILITIES .collapse">
+<a name="%24CHANNEL_TRANSFER_CAPABILITIES" id="$CHANNEL_TRANSFER_CAPABILITIES"> </a><div class="element clickable property public $CHANNEL_TRANSFER_CAPABILITIES" data-toggle="collapse" data-target=".$CHANNEL_TRANSFER_CAPABILITIES .collapse">
 <h2>$CHANNEL_TRANSFER_CAPABILITIES</h2>
 <pre>$CHANNEL_TRANSFER_CAPABILITIES </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property__snmp"> </a><div class="element clickable property private property__snmp" data-toggle="collapse" data-target=".property__snmp .collapse">
-<h2>Instance for the SNMP object</h2>
-<pre>$_snmp </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\OSS_SNMP\MIB::$$_snmp</td>
-</tr></table>
-</div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
-<a id="constant_CHANNEL_ADSI_AVAILABLE"> </a><div class="element clickable constant  constant_CHANNEL_ADSI_AVAILABLE" data-toggle="collapse" data-target=".constant_CHANNEL_ADSI_AVAILABLE .collapse">
-<h2>Possible ADSI of an Asterisk channel as returned by `chanADSI()`</h2>
-<pre>CHANNEL_ADSI_AVAILABLE : int</pre>
+<a name="CHANNEL_ADSI_AVAILABLE" id="CHANNEL_ADSI_AVAILABLE"> </a><div class="element clickable constant  CHANNEL_ADSI_AVAILABLE" data-toggle="collapse" data-target=".CHANNEL_ADSI_AVAILABLE .collapse">
+<h2>CHANNEL_ADSI_AVAILABLE</h2>
+<pre>CHANNEL_ADSI_AVAILABLE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_ADSI_OFF_HOOK_ONLY"> </a><div class="element clickable constant  constant_CHANNEL_ADSI_OFF_HOOK_ONLY" data-toggle="collapse" data-target=".constant_CHANNEL_ADSI_OFF_HOOK_ONLY .collapse">
-<h2>Possible ADSI of an Asterisk channel as returned by `chanADSI()`</h2>
-<pre>CHANNEL_ADSI_OFF_HOOK_ONLY : int</pre>
+<a name="CHANNEL_ADSI_OFF_HOOK_ONLY" id="CHANNEL_ADSI_OFF_HOOK_ONLY"> </a><div class="element clickable constant  CHANNEL_ADSI_OFF_HOOK_ONLY" data-toggle="collapse" data-target=".CHANNEL_ADSI_OFF_HOOK_ONLY .collapse">
+<h2>CHANNEL_ADSI_OFF_HOOK_ONLY</h2>
+<pre>CHANNEL_ADSI_OFF_HOOK_ONLY </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_ADSI_UNAVAILABLE"> </a><div class="element clickable constant  constant_CHANNEL_ADSI_UNAVAILABLE" data-toggle="collapse" data-target=".constant_CHANNEL_ADSI_UNAVAILABLE .collapse">
-<h2>Possible ADSI of an Asterisk channel as returned by `chanADSI()`</h2>
-<pre>CHANNEL_ADSI_UNAVAILABLE : int</pre>
+<a name="CHANNEL_ADSI_UNAVAILABLE" id="CHANNEL_ADSI_UNAVAILABLE"> </a><div class="element clickable constant  CHANNEL_ADSI_UNAVAILABLE" data-toggle="collapse" data-target=".CHANNEL_ADSI_UNAVAILABLE .collapse">
+<h2>CHANNEL_ADSI_UNAVAILABLE</h2>
+<pre>CHANNEL_ADSI_UNAVAILABLE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_ADSI_UNKNOWN"> </a><div class="element clickable constant  constant_CHANNEL_ADSI_UNKNOWN" data-toggle="collapse" data-target=".constant_CHANNEL_ADSI_UNKNOWN .collapse">
-<h2>Possible ADSI of an Asterisk channel as returned by `chanADSI()`</h2>
-<pre>CHANNEL_ADSI_UNKNOWN : int</pre>
+<a name="CHANNEL_ADSI_UNKNOWN" id="CHANNEL_ADSI_UNKNOWN"> </a><div class="element clickable constant  CHANNEL_ADSI_UNKNOWN" data-toggle="collapse" data-target=".CHANNEL_ADSI_UNKNOWN .collapse">
+<h2>CHANNEL_ADSI_UNKNOWN</h2>
+<pre>CHANNEL_ADSI_UNKNOWN </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_AMA_FLAG_BILLING"> </a><div class="element clickable constant  constant_CHANNEL_AMA_FLAG_BILLING" data-toggle="collapse" data-target=".constant_CHANNEL_AMA_FLAG_BILLING .collapse">
-<h2>Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`</h2>
-<pre>CHANNEL_AMA_FLAG_BILLING : int</pre>
+<a name="CHANNEL_AMA_FLAG_BILLING" id="CHANNEL_AMA_FLAG_BILLING"> </a><div class="element clickable constant  CHANNEL_AMA_FLAG_BILLING" data-toggle="collapse" data-target=".CHANNEL_AMA_FLAG_BILLING .collapse">
+<h2>CHANNEL_AMA_FLAG_BILLING</h2>
+<pre>CHANNEL_AMA_FLAG_BILLING </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_AMA_FLAG_DEFAULT"> </a><div class="element clickable constant  constant_CHANNEL_AMA_FLAG_DEFAULT" data-toggle="collapse" data-target=".constant_CHANNEL_AMA_FLAG_DEFAULT .collapse">
-<h2>Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`</h2>
-<pre>CHANNEL_AMA_FLAG_DEFAULT : int</pre>
+<a name="CHANNEL_AMA_FLAG_DEFAULT" id="CHANNEL_AMA_FLAG_DEFAULT"> </a><div class="element clickable constant  CHANNEL_AMA_FLAG_DEFAULT" data-toggle="collapse" data-target=".CHANNEL_AMA_FLAG_DEFAULT .collapse">
+<h2>CHANNEL_AMA_FLAG_DEFAULT</h2>
+<pre>CHANNEL_AMA_FLAG_DEFAULT </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_AMA_FLAG_DOCUMENTATION"> </a><div class="element clickable constant  constant_CHANNEL_AMA_FLAG_DOCUMENTATION" data-toggle="collapse" data-target=".constant_CHANNEL_AMA_FLAG_DOCUMENTATION .collapse">
-<h2>Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`</h2>
-<pre>CHANNEL_AMA_FLAG_DOCUMENTATION : int</pre>
+<a name="CHANNEL_AMA_FLAG_DOCUMENTATION" id="CHANNEL_AMA_FLAG_DOCUMENTATION"> </a><div class="element clickable constant  CHANNEL_AMA_FLAG_DOCUMENTATION" data-toggle="collapse" data-target=".CHANNEL_AMA_FLAG_DOCUMENTATION .collapse">
+<h2>CHANNEL_AMA_FLAG_DOCUMENTATION</h2>
+<pre>CHANNEL_AMA_FLAG_DOCUMENTATION </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_AMA_FLAG_OMIT"> </a><div class="element clickable constant  constant_CHANNEL_AMA_FLAG_OMIT" data-toggle="collapse" data-target=".constant_CHANNEL_AMA_FLAG_OMIT .collapse">
-<h2>Possible AMA flag of an Asterisk channel as returned by `chanAMAFlags()`</h2>
-<pre>CHANNEL_AMA_FLAG_OMIT : int</pre>
+<a name="CHANNEL_AMA_FLAG_OMIT" id="CHANNEL_AMA_FLAG_OMIT"> </a><div class="element clickable constant  CHANNEL_AMA_FLAG_OMIT" data-toggle="collapse" data-target=".CHANNEL_AMA_FLAG_OMIT .collapse">
+<h2>CHANNEL_AMA_FLAG_OMIT</h2>
+<pre>CHANNEL_AMA_FLAG_OMIT </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_HANGUP_CAUSE_BUSY"> </a><div class="element clickable constant  constant_CHANNEL_HANGUP_CAUSE_BUSY" data-toggle="collapse" data-target=".constant_CHANNEL_HANGUP_CAUSE_BUSY .collapse">
-<h2>Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</h2>
-<pre>CHANNEL_HANGUP_CAUSE_BUSY : int</pre>
+<a name="CHANNEL_HANGUP_CAUSE_BUSY" id="CHANNEL_HANGUP_CAUSE_BUSY"> </a><div class="element clickable constant  CHANNEL_HANGUP_CAUSE_BUSY" data-toggle="collapse" data-target=".CHANNEL_HANGUP_CAUSE_BUSY .collapse">
+<h2>CHANNEL_HANGUP_CAUSE_BUSY</h2>
+<pre>CHANNEL_HANGUP_CAUSE_BUSY </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_HANGUP_CAUSE_CONGESTION"> </a><div class="element clickable constant  constant_CHANNEL_HANGUP_CAUSE_CONGESTION" data-toggle="collapse" data-target=".constant_CHANNEL_HANGUP_CAUSE_CONGESTION .collapse">
-<h2>Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</h2>
-<pre>CHANNEL_HANGUP_CAUSE_CONGESTION : int</pre>
+<a name="CHANNEL_HANGUP_CAUSE_CONGESTION" id="CHANNEL_HANGUP_CAUSE_CONGESTION"> </a><div class="element clickable constant  CHANNEL_HANGUP_CAUSE_CONGESTION" data-toggle="collapse" data-target=".CHANNEL_HANGUP_CAUSE_CONGESTION .collapse">
+<h2>CHANNEL_HANGUP_CAUSE_CONGESTION</h2>
+<pre>CHANNEL_HANGUP_CAUSE_CONGESTION </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_HANGUP_CAUSE_FAILURE"> </a><div class="element clickable constant  constant_CHANNEL_HANGUP_CAUSE_FAILURE" data-toggle="collapse" data-target=".constant_CHANNEL_HANGUP_CAUSE_FAILURE .collapse">
-<h2>Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</h2>
-<pre>CHANNEL_HANGUP_CAUSE_FAILURE : int</pre>
+<a name="CHANNEL_HANGUP_CAUSE_FAILURE" id="CHANNEL_HANGUP_CAUSE_FAILURE"> </a><div class="element clickable constant  CHANNEL_HANGUP_CAUSE_FAILURE" data-toggle="collapse" data-target=".CHANNEL_HANGUP_CAUSE_FAILURE .collapse">
+<h2>CHANNEL_HANGUP_CAUSE_FAILURE</h2>
+<pre>CHANNEL_HANGUP_CAUSE_FAILURE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_HANGUP_CAUSE_NORMAL"> </a><div class="element clickable constant  constant_CHANNEL_HANGUP_CAUSE_NORMAL" data-toggle="collapse" data-target=".constant_CHANNEL_HANGUP_CAUSE_NORMAL .collapse">
-<h2>Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</h2>
-<pre>CHANNEL_HANGUP_CAUSE_NORMAL : int</pre>
+<a name="CHANNEL_HANGUP_CAUSE_NORMAL" id="CHANNEL_HANGUP_CAUSE_NORMAL"> </a><div class="element clickable constant  CHANNEL_HANGUP_CAUSE_NORMAL" data-toggle="collapse" data-target=".CHANNEL_HANGUP_CAUSE_NORMAL .collapse">
+<h2>CHANNEL_HANGUP_CAUSE_NORMAL</h2>
+<pre>CHANNEL_HANGUP_CAUSE_NORMAL </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_HANGUP_CAUSE_NOT_DEFINED"> </a><div class="element clickable constant  constant_CHANNEL_HANGUP_CAUSE_NOT_DEFINED" data-toggle="collapse" data-target=".constant_CHANNEL_HANGUP_CAUSE_NOT_DEFINED .collapse">
-<h2>Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</h2>
-<pre>CHANNEL_HANGUP_CAUSE_NOT_DEFINED : int</pre>
+<a name="CHANNEL_HANGUP_CAUSE_NOT_DEFINED" id="CHANNEL_HANGUP_CAUSE_NOT_DEFINED"> </a><div class="element clickable constant  CHANNEL_HANGUP_CAUSE_NOT_DEFINED" data-toggle="collapse" data-target=".CHANNEL_HANGUP_CAUSE_NOT_DEFINED .collapse">
+<h2>CHANNEL_HANGUP_CAUSE_NOT_DEFINED</h2>
+<pre>CHANNEL_HANGUP_CAUSE_NOT_DEFINED </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_HANGUP_CAUSE_NO_ANSWER"> </a><div class="element clickable constant  constant_CHANNEL_HANGUP_CAUSE_NO_ANSWER" data-toggle="collapse" data-target=".constant_CHANNEL_HANGUP_CAUSE_NO_ANSWER .collapse">
-<h2>Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</h2>
-<pre>CHANNEL_HANGUP_CAUSE_NO_ANSWER : int</pre>
+<a name="CHANNEL_HANGUP_CAUSE_NO_ANSWER" id="CHANNEL_HANGUP_CAUSE_NO_ANSWER"> </a><div class="element clickable constant  CHANNEL_HANGUP_CAUSE_NO_ANSWER" data-toggle="collapse" data-target=".CHANNEL_HANGUP_CAUSE_NO_ANSWER .collapse">
+<h2>CHANNEL_HANGUP_CAUSE_NO_ANSWER</h2>
+<pre>CHANNEL_HANGUP_CAUSE_NO_ANSWER </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER"> </a><div class="element clickable constant  constant_CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER" data-toggle="collapse" data-target=".constant_CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER .collapse">
-<h2>Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</h2>
-<pre>CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER : int</pre>
+<a name="CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER" id="CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER"> </a><div class="element clickable constant  CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER" data-toggle="collapse" data-target=".CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER .collapse">
+<h2>CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER</h2>
+<pre>CHANNEL_HANGUP_CAUSE_NO_SUCH_DRIVER </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_HANGUP_CAUSE_UNREGISTERED"> </a><div class="element clickable constant  constant_CHANNEL_HANGUP_CAUSE_UNREGISTERED" data-toggle="collapse" data-target=".constant_CHANNEL_HANGUP_CAUSE_UNREGISTERED .collapse">
-<h2>Possible hangup cause of an Asterisk channel as returned by `chanHangupCause()`</h2>
-<pre>CHANNEL_HANGUP_CAUSE_UNREGISTERED : int</pre>
+<a name="CHANNEL_HANGUP_CAUSE_UNREGISTERED" id="CHANNEL_HANGUP_CAUSE_UNREGISTERED"> </a><div class="element clickable constant  CHANNEL_HANGUP_CAUSE_UNREGISTERED" data-toggle="collapse" data-target=".CHANNEL_HANGUP_CAUSE_UNREGISTERED .collapse">
+<h2>CHANNEL_HANGUP_CAUSE_UNREGISTERED</h2>
+<pre>CHANNEL_HANGUP_CAUSE_UNREGISTERED </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_STATE_BUSY"> </a><div class="element clickable constant  constant_CHANNEL_STATE_BUSY" data-toggle="collapse" data-target=".constant_CHANNEL_STATE_BUSY .collapse">
-<h2>Possible state of an Asterisk channel as returned by `chanState()`</h2>
-<pre>CHANNEL_STATE_BUSY : int</pre>
+<a name="CHANNEL_STATE_BUSY" id="CHANNEL_STATE_BUSY"> </a><div class="element clickable constant  CHANNEL_STATE_BUSY" data-toggle="collapse" data-target=".CHANNEL_STATE_BUSY .collapse">
+<h2>CHANNEL_STATE_BUSY</h2>
+<pre>CHANNEL_STATE_BUSY </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_STATE_DIALING"> </a><div class="element clickable constant  constant_CHANNEL_STATE_DIALING" data-toggle="collapse" data-target=".constant_CHANNEL_STATE_DIALING .collapse">
-<h2>Possible state of an Asterisk channel as returned by `chanState()`</h2>
-<pre>CHANNEL_STATE_DIALING : int</pre>
+<a name="CHANNEL_STATE_DIALING" id="CHANNEL_STATE_DIALING"> </a><div class="element clickable constant  CHANNEL_STATE_DIALING" data-toggle="collapse" data-target=".CHANNEL_STATE_DIALING .collapse">
+<h2>CHANNEL_STATE_DIALING</h2>
+<pre>CHANNEL_STATE_DIALING </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_STATE_DIALING_OFF_HOOK"> </a><div class="element clickable constant  constant_CHANNEL_STATE_DIALING_OFF_HOOK" data-toggle="collapse" data-target=".constant_CHANNEL_STATE_DIALING_OFF_HOOK .collapse">
-<h2>Possible state of an Asterisk channel as returned by `chanState()`</h2>
-<pre>CHANNEL_STATE_DIALING_OFF_HOOK : int</pre>
+<a name="CHANNEL_STATE_DIALING_OFF_HOOK" id="CHANNEL_STATE_DIALING_OFF_HOOK"> </a><div class="element clickable constant  CHANNEL_STATE_DIALING_OFF_HOOK" data-toggle="collapse" data-target=".CHANNEL_STATE_DIALING_OFF_HOOK .collapse">
+<h2>CHANNEL_STATE_DIALING_OFF_HOOK</h2>
+<pre>CHANNEL_STATE_DIALING_OFF_HOOK </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_STATE_DOWN"> </a><div class="element clickable constant  constant_CHANNEL_STATE_DOWN" data-toggle="collapse" data-target=".constant_CHANNEL_STATE_DOWN .collapse">
-<h2>Possible state of an Asterisk channel as returned by `chanState()`</h2>
-<pre>CHANNEL_STATE_DOWN : int</pre>
+<a name="CHANNEL_STATE_DOWN" id="CHANNEL_STATE_DOWN"> </a><div class="element clickable constant  CHANNEL_STATE_DOWN" data-toggle="collapse" data-target=".CHANNEL_STATE_DOWN .collapse">
+<h2>CHANNEL_STATE_DOWN</h2>
+<pre>CHANNEL_STATE_DOWN </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_STATE_OFF_HOOK"> </a><div class="element clickable constant  constant_CHANNEL_STATE_OFF_HOOK" data-toggle="collapse" data-target=".constant_CHANNEL_STATE_OFF_HOOK .collapse">
-<h2>Possible state of an Asterisk channel as returned by `chanState()`</h2>
-<pre>CHANNEL_STATE_OFF_HOOK : int</pre>
+<a name="CHANNEL_STATE_OFF_HOOK" id="CHANNEL_STATE_OFF_HOOK"> </a><div class="element clickable constant  CHANNEL_STATE_OFF_HOOK" data-toggle="collapse" data-target=".CHANNEL_STATE_OFF_HOOK .collapse">
+<h2>CHANNEL_STATE_OFF_HOOK</h2>
+<pre>CHANNEL_STATE_OFF_HOOK </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_STATE_PRE_RING"> </a><div class="element clickable constant  constant_CHANNEL_STATE_PRE_RING" data-toggle="collapse" data-target=".constant_CHANNEL_STATE_PRE_RING .collapse">
-<h2>Possible state of an Asterisk channel as returned by `chanState()`</h2>
-<pre>CHANNEL_STATE_PRE_RING : int</pre>
+<a name="CHANNEL_STATE_PRE_RING" id="CHANNEL_STATE_PRE_RING"> </a><div class="element clickable constant  CHANNEL_STATE_PRE_RING" data-toggle="collapse" data-target=".CHANNEL_STATE_PRE_RING .collapse">
+<h2>CHANNEL_STATE_PRE_RING</h2>
+<pre>CHANNEL_STATE_PRE_RING </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_STATE_RESERVED"> </a><div class="element clickable constant  constant_CHANNEL_STATE_RESERVED" data-toggle="collapse" data-target=".constant_CHANNEL_STATE_RESERVED .collapse">
-<h2>Possible state of an Asterisk channel as returned by `chanState()`</h2>
-<pre>CHANNEL_STATE_RESERVED : int</pre>
+<a name="CHANNEL_STATE_RESERVED" id="CHANNEL_STATE_RESERVED"> </a><div class="element clickable constant  CHANNEL_STATE_RESERVED" data-toggle="collapse" data-target=".CHANNEL_STATE_RESERVED .collapse">
+<h2>CHANNEL_STATE_RESERVED</h2>
+<pre>CHANNEL_STATE_RESERVED </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_STATE_RING"> </a><div class="element clickable constant  constant_CHANNEL_STATE_RING" data-toggle="collapse" data-target=".constant_CHANNEL_STATE_RING .collapse">
-<h2>Possible state of an Asterisk channel as returned by `chanState()`</h2>
-<pre>CHANNEL_STATE_RING : int</pre>
+<a name="CHANNEL_STATE_RING" id="CHANNEL_STATE_RING"> </a><div class="element clickable constant  CHANNEL_STATE_RING" data-toggle="collapse" data-target=".CHANNEL_STATE_RING .collapse">
+<h2>CHANNEL_STATE_RING</h2>
+<pre>CHANNEL_STATE_RING </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_STATE_RINGING"> </a><div class="element clickable constant  constant_CHANNEL_STATE_RINGING" data-toggle="collapse" data-target=".constant_CHANNEL_STATE_RINGING .collapse">
-<h2>Possible state of an Asterisk channel as returned by `chanState()`</h2>
-<pre>CHANNEL_STATE_RINGING : int</pre>
+<a name="CHANNEL_STATE_RINGING" id="CHANNEL_STATE_RINGING"> </a><div class="element clickable constant  CHANNEL_STATE_RINGING" data-toggle="collapse" data-target=".CHANNEL_STATE_RINGING .collapse">
+<h2>CHANNEL_STATE_RINGING</h2>
+<pre>CHANNEL_STATE_RINGING </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_STATE_UP"> </a><div class="element clickable constant  constant_CHANNEL_STATE_UP" data-toggle="collapse" data-target=".constant_CHANNEL_STATE_UP .collapse">
-<h2>Possible state of an Asterisk channel as returned by `chanState()`</h2>
-<pre>CHANNEL_STATE_UP : int</pre>
+<a name="CHANNEL_STATE_UP" id="CHANNEL_STATE_UP"> </a><div class="element clickable constant  CHANNEL_STATE_UP" data-toggle="collapse" data-target=".CHANNEL_STATE_UP .collapse">
+<h2>CHANNEL_STATE_UP</h2>
+<pre>CHANNEL_STATE_UP </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K"> </a><div class="element clickable constant  constant_CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K" data-toggle="collapse" data-target=".constant_CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K .collapse">
-<h2>Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`</h2>
-<pre>CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K : int</pre>
+<a name="CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K" id="CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K"> </a><div class="element clickable constant  CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K" data-toggle="collapse" data-target=".CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K .collapse">
+<h2>CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K</h2>
+<pre>CHANNEL_TRANSFER_CAPABILITY_AUDIO_3K </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_TRANSFER_CAPABILITY_DIGITAL"> </a><div class="element clickable constant  constant_CHANNEL_TRANSFER_CAPABILITY_DIGITAL" data-toggle="collapse" data-target=".constant_CHANNEL_TRANSFER_CAPABILITY_DIGITAL .collapse">
-<h2>Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`</h2>
-<pre>CHANNEL_TRANSFER_CAPABILITY_DIGITAL : int</pre>
+<a name="CHANNEL_TRANSFER_CAPABILITY_DIGITAL" id="CHANNEL_TRANSFER_CAPABILITY_DIGITAL"> </a><div class="element clickable constant  CHANNEL_TRANSFER_CAPABILITY_DIGITAL" data-toggle="collapse" data-target=".CHANNEL_TRANSFER_CAPABILITY_DIGITAL .collapse">
+<h2>CHANNEL_TRANSFER_CAPABILITY_DIGITAL</h2>
+<pre>CHANNEL_TRANSFER_CAPABILITY_DIGITAL </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES"> </a><div class="element clickable constant  constant_CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES" data-toggle="collapse" data-target=".constant_CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES .collapse">
-<h2>Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`</h2>
-<pre>CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES : int</pre>
+<a name="CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES" id="CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES"> </a><div class="element clickable constant  CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES" data-toggle="collapse" data-target=".CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES .collapse">
+<h2>CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES</h2>
+<pre>CHANNEL_TRANSFER_CAPABILITY_DIGITAL_WITH_TONES </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL"> </a><div class="element clickable constant  constant_CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL" data-toggle="collapse" data-target=".constant_CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL .collapse">
-<h2>Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`</h2>
-<pre>CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL : int</pre>
+<a name="CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL" id="CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL"> </a><div class="element clickable constant  CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL" data-toggle="collapse" data-target=".CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL .collapse">
+<h2>CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL</h2>
+<pre>CHANNEL_TRANSFER_CAPABILITY_RESTRICTED_DIGITAL </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_TRANSFER_CAPABILITY_SPEECH"> </a><div class="element clickable constant  constant_CHANNEL_TRANSFER_CAPABILITY_SPEECH" data-toggle="collapse" data-target=".constant_CHANNEL_TRANSFER_CAPABILITY_SPEECH .collapse">
-<h2>Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`</h2>
-<pre>CHANNEL_TRANSFER_CAPABILITY_SPEECH : int</pre>
+<a name="CHANNEL_TRANSFER_CAPABILITY_SPEECH" id="CHANNEL_TRANSFER_CAPABILITY_SPEECH"> </a><div class="element clickable constant  CHANNEL_TRANSFER_CAPABILITY_SPEECH" data-toggle="collapse" data-target=".CHANNEL_TRANSFER_CAPABILITY_SPEECH .collapse">
+<h2>CHANNEL_TRANSFER_CAPABILITY_SPEECH</h2>
+<pre>CHANNEL_TRANSFER_CAPABILITY_SPEECH </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_CHANNEL_TRANSFER_CAPABILITY_VIDEO"> </a><div class="element clickable constant  constant_CHANNEL_TRANSFER_CAPABILITY_VIDEO" data-toggle="collapse" data-target=".constant_CHANNEL_TRANSFER_CAPABILITY_VIDEO .collapse">
-<h2>Possible channel transfer capabilities of an Asterisk channel as returned by `chanTransferCap()`</h2>
-<pre>CHANNEL_TRANSFER_CAPABILITY_VIDEO : int</pre>
+<a name="CHANNEL_TRANSFER_CAPABILITY_VIDEO" id="CHANNEL_TRANSFER_CAPABILITY_VIDEO"> </a><div class="element clickable constant  CHANNEL_TRANSFER_CAPABILITY_VIDEO" data-toggle="collapse" data-target=".CHANNEL_TRANSFER_CAPABILITY_VIDEO .collapse">
+<h2>CHANNEL_TRANSFER_CAPABILITY_VIDEO</h2>
+<pre>CHANNEL_TRANSFER_CAPABILITY_VIDEO </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNELS_ACTIVE"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNELS_ACTIVE" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNELS_ACTIVE .collapse">
+<a name="OID_ASTERISK_CHANNELS_ACTIVE" id="OID_ASTERISK_CHANNELS_ACTIVE"> </a><div class="element clickable constant  OID_ASTERISK_CHANNELS_ACTIVE" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNELS_ACTIVE .collapse">
 <h2>OID_ASTERISK_CHANNELS_ACTIVE</h2>
 <pre>OID_ASTERISK_CHANNELS_ACTIVE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNELS_BRIDGED"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNELS_BRIDGED" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNELS_BRIDGED .collapse">
+<a name="OID_ASTERISK_CHANNELS_BRIDGED" id="OID_ASTERISK_CHANNELS_BRIDGED"> </a><div class="element clickable constant  OID_ASTERISK_CHANNELS_BRIDGED" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNELS_BRIDGED .collapse">
 <h2>OID_ASTERISK_CHANNELS_BRIDGED</h2>
 <pre>OID_ASTERISK_CHANNELS_BRIDGED </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNELS_SUPPORTED"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNELS_SUPPORTED" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNELS_SUPPORTED .collapse">
+<a name="OID_ASTERISK_CHANNELS_SUPPORTED" id="OID_ASTERISK_CHANNELS_SUPPORTED"> </a><div class="element clickable constant  OID_ASTERISK_CHANNELS_SUPPORTED" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNELS_SUPPORTED .collapse">
 <h2>OID_ASTERISK_CHANNELS_SUPPORTED</h2>
 <pre>OID_ASTERISK_CHANNELS_SUPPORTED </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_ACCOUNT_CODE"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_ACCOUNT_CODE" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_ACCOUNT_CODE .collapse">
+<a name="OID_ASTERISK_CHANNEL_ACCOUNT_CODE" id="OID_ASTERISK_CHANNEL_ACCOUNT_CODE"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_ACCOUNT_CODE" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_ACCOUNT_CODE .collapse">
 <h2>OID_ASTERISK_CHANNEL_ACCOUNT_CODE</h2>
 <pre>OID_ASTERISK_CHANNEL_ACCOUNT_CODE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_ADSI"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_ADSI" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_ADSI .collapse">
+<a name="OID_ASTERISK_CHANNEL_ADSI" id="OID_ASTERISK_CHANNEL_ADSI"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_ADSI" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_ADSI .collapse">
 <h2>OID_ASTERISK_CHANNEL_ADSI</h2>
 <pre>OID_ASTERISK_CHANNEL_ADSI </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_AMA_FLAGS"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_AMA_FLAGS" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_AMA_FLAGS .collapse">
+<a name="OID_ASTERISK_CHANNEL_AMA_FLAGS" id="OID_ASTERISK_CHANNEL_AMA_FLAGS"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_AMA_FLAGS" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_AMA_FLAGS .collapse">
 <h2>OID_ASTERISK_CHANNEL_AMA_FLAGS</h2>
 <pre>OID_ASTERISK_CHANNEL_AMA_FLAGS </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_APP"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_APP" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_APP .collapse">
+<a name="OID_ASTERISK_CHANNEL_APP" id="OID_ASTERISK_CHANNEL_APP"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_APP" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_APP .collapse">
 <h2>OID_ASTERISK_CHANNEL_APP</h2>
 <pre>OID_ASTERISK_CHANNEL_APP </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_BRIDGE"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_BRIDGE" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_BRIDGE .collapse">
+<a name="OID_ASTERISK_CHANNEL_BRIDGE" id="OID_ASTERISK_CHANNEL_BRIDGE"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_BRIDGE" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_BRIDGE .collapse">
 <h2>OID_ASTERISK_CHANNEL_BRIDGE</h2>
 <pre>OID_ASTERISK_CHANNEL_BRIDGE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_CALL_GROUP"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_CALL_GROUP" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_CALL_GROUP .collapse">
+<a name="OID_ASTERISK_CHANNEL_CALL_GROUP" id="OID_ASTERISK_CHANNEL_CALL_GROUP"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_CALL_GROUP" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_CALL_GROUP .collapse">
 <h2>OID_ASTERISK_CHANNEL_CALL_GROUP</h2>
 <pre>OID_ASTERISK_CHANNEL_CALL_GROUP </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_CID_ANI"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_CID_ANI" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_CID_ANI .collapse">
+<a name="OID_ASTERISK_CHANNEL_CID_ANI" id="OID_ASTERISK_CHANNEL_CID_ANI"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_CID_ANI" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_CID_ANI .collapse">
 <h2>OID_ASTERISK_CHANNEL_CID_ANI</h2>
 <pre>OID_ASTERISK_CHANNEL_CID_ANI </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_CID_ANI2"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_CID_ANI2" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_CID_ANI2 .collapse">
+<a name="OID_ASTERISK_CHANNEL_CID_ANI2" id="OID_ASTERISK_CHANNEL_CID_ANI2"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_CID_ANI2" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_CID_ANI2 .collapse">
 <h2>OID_ASTERISK_CHANNEL_CID_ANI2</h2>
 <pre>OID_ASTERISK_CHANNEL_CID_ANI2 </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_CID_DNID"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_CID_DNID" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_CID_DNID .collapse">
+<a name="OID_ASTERISK_CHANNEL_CID_DNID" id="OID_ASTERISK_CHANNEL_CID_DNID"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_CID_DNID" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_CID_DNID .collapse">
 <h2>OID_ASTERISK_CHANNEL_CID_DNID</h2>
 <pre>OID_ASTERISK_CHANNEL_CID_DNID </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_CID_NAME"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_CID_NAME" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_CID_NAME .collapse">
+<a name="OID_ASTERISK_CHANNEL_CID_NAME" id="OID_ASTERISK_CHANNEL_CID_NAME"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_CID_NAME" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_CID_NAME .collapse">
 <h2>OID_ASTERISK_CHANNEL_CID_NAME</h2>
 <pre>OID_ASTERISK_CHANNEL_CID_NAME </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_CID_NUM"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_CID_NUM" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_CID_NUM .collapse">
+<a name="OID_ASTERISK_CHANNEL_CID_NUM" id="OID_ASTERISK_CHANNEL_CID_NUM"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_CID_NUM" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_CID_NUM .collapse">
 <h2>OID_ASTERISK_CHANNEL_CID_NUM</h2>
 <pre>OID_ASTERISK_CHANNEL_CID_NUM </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_CID_PRESENTATION"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_CID_PRESENTATION" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_CID_PRESENTATION .collapse">
+<a name="OID_ASTERISK_CHANNEL_CID_PRESENTATION" id="OID_ASTERISK_CHANNEL_CID_PRESENTATION"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_CID_PRESENTATION" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_CID_PRESENTATION .collapse">
 <h2>OID_ASTERISK_CHANNEL_CID_PRESENTATION</h2>
 <pre>OID_ASTERISK_CHANNEL_CID_PRESENTATION </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_CID_RDNIS"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_CID_RDNIS" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_CID_RDNIS .collapse">
+<a name="OID_ASTERISK_CHANNEL_CID_RDNIS" id="OID_ASTERISK_CHANNEL_CID_RDNIS"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_CID_RDNIS" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_CID_RDNIS .collapse">
 <h2>OID_ASTERISK_CHANNEL_CID_RDNIS</h2>
 <pre>OID_ASTERISK_CHANNEL_CID_RDNIS </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_CID_TNS"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_CID_TNS" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_CID_TNS .collapse">
+<a name="OID_ASTERISK_CHANNEL_CID_TNS" id="OID_ASTERISK_CHANNEL_CID_TNS"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_CID_TNS" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_CID_TNS .collapse">
 <h2>OID_ASTERISK_CHANNEL_CID_TNS</h2>
 <pre>OID_ASTERISK_CHANNEL_CID_TNS </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_CID_TON"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_CID_TON" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_CID_TON .collapse">
+<a name="OID_ASTERISK_CHANNEL_CID_TON" id="OID_ASTERISK_CHANNEL_CID_TON"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_CID_TON" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_CID_TON .collapse">
 <h2>OID_ASTERISK_CHANNEL_CID_TON</h2>
 <pre>OID_ASTERISK_CHANNEL_CID_TON </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_CONTEXT"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_CONTEXT" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_CONTEXT .collapse">
+<a name="OID_ASTERISK_CHANNEL_CONTEXT" id="OID_ASTERISK_CHANNEL_CONTEXT"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_CONTEXT" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_CONTEXT .collapse">
 <h2>OID_ASTERISK_CHANNEL_CONTEXT</h2>
 <pre>OID_ASTERISK_CHANNEL_CONTEXT </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_DATA"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_DATA" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_DATA .collapse">
+<a name="OID_ASTERISK_CHANNEL_DATA" id="OID_ASTERISK_CHANNEL_DATA"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_DATA" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_DATA .collapse">
 <h2>OID_ASTERISK_CHANNEL_DATA</h2>
 <pre>OID_ASTERISK_CHANNEL_DATA </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_EXTEN"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_EXTEN" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_EXTEN .collapse">
+<a name="OID_ASTERISK_CHANNEL_EXTEN" id="OID_ASTERISK_CHANNEL_EXTEN"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_EXTEN" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_EXTEN .collapse">
 <h2>OID_ASTERISK_CHANNEL_EXTEN</h2>
 <pre>OID_ASTERISK_CHANNEL_EXTEN </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_FLAGS"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_FLAGS" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_FLAGS .collapse">
+<a name="OID_ASTERISK_CHANNEL_FLAGS" id="OID_ASTERISK_CHANNEL_FLAGS"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_FLAGS" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_FLAGS .collapse">
 <h2>OID_ASTERISK_CHANNEL_FLAGS</h2>
 <pre>OID_ASTERISK_CHANNEL_FLAGS </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_FORWARD_TO"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_FORWARD_TO" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_FORWARD_TO .collapse">
+<a name="OID_ASTERISK_CHANNEL_FORWARD_TO" id="OID_ASTERISK_CHANNEL_FORWARD_TO"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_FORWARD_TO" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_FORWARD_TO .collapse">
 <h2>OID_ASTERISK_CHANNEL_FORWARD_TO</h2>
 <pre>OID_ASTERISK_CHANNEL_FORWARD_TO </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_HANGUP_CAUSE"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_HANGUP_CAUSE" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_HANGUP_CAUSE .collapse">
+<a name="OID_ASTERISK_CHANNEL_HANGUP_CAUSE" id="OID_ASTERISK_CHANNEL_HANGUP_CAUSE"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_HANGUP_CAUSE" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_HANGUP_CAUSE .collapse">
 <h2>OID_ASTERISK_CHANNEL_HANGUP_CAUSE</h2>
 <pre>OID_ASTERISK_CHANNEL_HANGUP_CAUSE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_LANGUAGE"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_LANGUAGE" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_LANGUAGE .collapse">
+<a name="OID_ASTERISK_CHANNEL_LANGUAGE" id="OID_ASTERISK_CHANNEL_LANGUAGE"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_LANGUAGE" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_LANGUAGE .collapse">
 <h2>OID_ASTERISK_CHANNEL_LANGUAGE</h2>
 <pre>OID_ASTERISK_CHANNEL_LANGUAGE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_MACRO_CONTEXT"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_MACRO_CONTEXT" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_MACRO_CONTEXT .collapse">
+<a name="OID_ASTERISK_CHANNEL_MACRO_CONTEXT" id="OID_ASTERISK_CHANNEL_MACRO_CONTEXT"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_MACRO_CONTEXT" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_MACRO_CONTEXT .collapse">
 <h2>OID_ASTERISK_CHANNEL_MACRO_CONTEXT</h2>
 <pre>OID_ASTERISK_CHANNEL_MACRO_CONTEXT </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_MACRO_EXTEN"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_MACRO_EXTEN" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_MACRO_EXTEN .collapse">
+<a name="OID_ASTERISK_CHANNEL_MACRO_EXTEN" id="OID_ASTERISK_CHANNEL_MACRO_EXTEN"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_MACRO_EXTEN" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_MACRO_EXTEN .collapse">
 <h2>OID_ASTERISK_CHANNEL_MACRO_EXTEN</h2>
 <pre>OID_ASTERISK_CHANNEL_MACRO_EXTEN </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_MACRO_PRI"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_MACRO_PRI" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_MACRO_PRI .collapse">
+<a name="OID_ASTERISK_CHANNEL_MACRO_PRI" id="OID_ASTERISK_CHANNEL_MACRO_PRI"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_MACRO_PRI" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_MACRO_PRI .collapse">
 <h2>OID_ASTERISK_CHANNEL_MACRO_PRI</h2>
 <pre>OID_ASTERISK_CHANNEL_MACRO_PRI </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_MASQ"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_MASQ" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_MASQ .collapse">
+<a name="OID_ASTERISK_CHANNEL_MASQ" id="OID_ASTERISK_CHANNEL_MASQ"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_MASQ" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_MASQ .collapse">
 <h2>OID_ASTERISK_CHANNEL_MASQ</h2>
 <pre>OID_ASTERISK_CHANNEL_MASQ </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_MASQR"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_MASQR" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_MASQR .collapse">
+<a name="OID_ASTERISK_CHANNEL_MASQR" id="OID_ASTERISK_CHANNEL_MASQR"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_MASQR" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_MASQR .collapse">
 <h2>OID_ASTERISK_CHANNEL_MASQR</h2>
 <pre>OID_ASTERISK_CHANNEL_MASQR </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_MUSIC_CLASS"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_MUSIC_CLASS" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_MUSIC_CLASS .collapse">
+<a name="OID_ASTERISK_CHANNEL_MUSIC_CLASS" id="OID_ASTERISK_CHANNEL_MUSIC_CLASS"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_MUSIC_CLASS" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_MUSIC_CLASS .collapse">
 <h2>OID_ASTERISK_CHANNEL_MUSIC_CLASS</h2>
 <pre>OID_ASTERISK_CHANNEL_MUSIC_CLASS </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_MUTED"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_MUTED" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_MUTED .collapse">
+<a name="OID_ASTERISK_CHANNEL_MUTED" id="OID_ASTERISK_CHANNEL_MUTED"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_MUTED" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_MUTED .collapse">
 <h2>OID_ASTERISK_CHANNEL_MUTED</h2>
 <pre>OID_ASTERISK_CHANNEL_MUTED </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_NAME"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_NAME" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_NAME .collapse">
+<a name="OID_ASTERISK_CHANNEL_NAME" id="OID_ASTERISK_CHANNEL_NAME"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_NAME" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_NAME .collapse">
 <h2>OID_ASTERISK_CHANNEL_NAME</h2>
 <pre>OID_ASTERISK_CHANNEL_NAME </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_PICKUP_GROUP"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_PICKUP_GROUP" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_PICKUP_GROUP .collapse">
+<a name="OID_ASTERISK_CHANNEL_PICKUP_GROUP" id="OID_ASTERISK_CHANNEL_PICKUP_GROUP"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_PICKUP_GROUP" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_PICKUP_GROUP .collapse">
 <h2>OID_ASTERISK_CHANNEL_PICKUP_GROUP</h2>
 <pre>OID_ASTERISK_CHANNEL_PICKUP_GROUP </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_PRI"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_PRI" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_PRI .collapse">
+<a name="OID_ASTERISK_CHANNEL_PRI" id="OID_ASTERISK_CHANNEL_PRI"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_PRI" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_PRI .collapse">
 <h2>OID_ASTERISK_CHANNEL_PRI</h2>
 <pre>OID_ASTERISK_CHANNEL_PRI </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_RINGS"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_RINGS" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_RINGS .collapse">
+<a name="OID_ASTERISK_CHANNEL_RINGS" id="OID_ASTERISK_CHANNEL_RINGS"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_RINGS" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_RINGS .collapse">
 <h2>OID_ASTERISK_CHANNEL_RINGS</h2>
 <pre>OID_ASTERISK_CHANNEL_RINGS </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_STATE"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_STATE" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_STATE .collapse">
+<a name="OID_ASTERISK_CHANNEL_STATE" id="OID_ASTERISK_CHANNEL_STATE"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_STATE" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_STATE .collapse">
 <h2>OID_ASTERISK_CHANNEL_STATE</h2>
 <pre>OID_ASTERISK_CHANNEL_STATE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_TONE_ZONE"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_TONE_ZONE" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_TONE_ZONE .collapse">
+<a name="OID_ASTERISK_CHANNEL_TONE_ZONE" id="OID_ASTERISK_CHANNEL_TONE_ZONE"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_TONE_ZONE" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_TONE_ZONE .collapse">
 <h2>OID_ASTERISK_CHANNEL_TONE_ZONE</h2>
 <pre>OID_ASTERISK_CHANNEL_TONE_ZONE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_TRANSFER_CAP"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_TRANSFER_CAP" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_TRANSFER_CAP .collapse">
+<a name="OID_ASTERISK_CHANNEL_TRANSFER_CAP" id="OID_ASTERISK_CHANNEL_TRANSFER_CAP"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_TRANSFER_CAP" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_TRANSFER_CAP .collapse">
 <h2>OID_ASTERISK_CHANNEL_TRANSFER_CAP</h2>
 <pre>OID_ASTERISK_CHANNEL_TRANSFER_CAP </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_TYPE"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_TYPE" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_TYPE .collapse">
+<a name="OID_ASTERISK_CHANNEL_TYPE" id="OID_ASTERISK_CHANNEL_TYPE"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_TYPE" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_TYPE .collapse">
 <h2>OID_ASTERISK_CHANNEL_TYPE</h2>
 <pre>OID_ASTERISK_CHANNEL_TYPE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_TYPE_CHANNELS"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_TYPE_CHANNELS" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_TYPE_CHANNELS .collapse">
+<a name="OID_ASTERISK_CHANNEL_TYPE_CHANNELS" id="OID_ASTERISK_CHANNEL_TYPE_CHANNELS"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_TYPE_CHANNELS" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_TYPE_CHANNELS .collapse">
 <h2>OID_ASTERISK_CHANNEL_TYPE_CHANNELS</h2>
 <pre>OID_ASTERISK_CHANNEL_TYPE_CHANNELS </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION .collapse">
+<a name="OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION" id="OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION .collapse">
 <h2>OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION</h2>
 <pre>OID_ASTERISK_CHANNEL_TYPE_DESCRIPTION </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_TYPE_INDICATION"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_TYPE_INDICATION" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_TYPE_INDICATION .collapse">
+<a name="OID_ASTERISK_CHANNEL_TYPE_INDICATION" id="OID_ASTERISK_CHANNEL_TYPE_INDICATION"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_TYPE_INDICATION" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_TYPE_INDICATION .collapse">
 <h2>OID_ASTERISK_CHANNEL_TYPE_INDICATION</h2>
 <pre>OID_ASTERISK_CHANNEL_TYPE_INDICATION </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_TYPE_NAME"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_TYPE_NAME" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_TYPE_NAME .collapse">
+<a name="OID_ASTERISK_CHANNEL_TYPE_NAME" id="OID_ASTERISK_CHANNEL_TYPE_NAME"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_TYPE_NAME" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_TYPE_NAME .collapse">
 <h2>OID_ASTERISK_CHANNEL_TYPE_NAME</h2>
 <pre>OID_ASTERISK_CHANNEL_TYPE_NAME </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_TYPE_STATE"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_TYPE_STATE" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_TYPE_STATE .collapse">
+<a name="OID_ASTERISK_CHANNEL_TYPE_STATE" id="OID_ASTERISK_CHANNEL_TYPE_STATE"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_TYPE_STATE" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_TYPE_STATE .collapse">
 <h2>OID_ASTERISK_CHANNEL_TYPE_STATE</h2>
 <pre>OID_ASTERISK_CHANNEL_TYPE_STATE </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_TYPE_TRANSFER"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_TYPE_TRANSFER" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_TYPE_TRANSFER .collapse">
+<a name="OID_ASTERISK_CHANNEL_TYPE_TRANSFER" id="OID_ASTERISK_CHANNEL_TYPE_TRANSFER"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_TYPE_TRANSFER" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_TYPE_TRANSFER .collapse">
 <h2>OID_ASTERISK_CHANNEL_TYPE_TRANSFER</h2>
 <pre>OID_ASTERISK_CHANNEL_TYPE_TRANSFER </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_UNQIUEID"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_UNQIUEID" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_UNQIUEID .collapse">
+<a name="OID_ASTERISK_CHANNEL_UNQIUEID" id="OID_ASTERISK_CHANNEL_UNQIUEID"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_UNQIUEID" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_UNQIUEID .collapse">
 <h2>OID_ASTERISK_CHANNEL_UNQIUEID</h2>
 <pre>OID_ASTERISK_CHANNEL_UNQIUEID </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_VARIABLES"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_VARIABLES" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_VARIABLES .collapse">
+<a name="OID_ASTERISK_CHANNEL_VARIABLES" id="OID_ASTERISK_CHANNEL_VARIABLES"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_VARIABLES" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_VARIABLES .collapse">
 <h2>OID_ASTERISK_CHANNEL_VARIABLES</h2>
 <pre>OID_ASTERISK_CHANNEL_VARIABLES </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
-<a id="constant_OID_ASTERISK_CHANNEL_WHEN_HANGUP"> </a><div class="element clickable constant  constant_OID_ASTERISK_CHANNEL_WHEN_HANGUP" data-toggle="collapse" data-target=".constant_OID_ASTERISK_CHANNEL_WHEN_HANGUP .collapse">
+<a name="OID_ASTERISK_CHANNEL_WHEN_HANGUP" id="OID_ASTERISK_CHANNEL_WHEN_HANGUP"> </a><div class="element clickable constant  OID_ASTERISK_CHANNEL_WHEN_HANGUP" data-toggle="collapse" data-target=".OID_ASTERISK_CHANNEL_WHEN_HANGUP .collapse">
 <h2>OID_ASTERISK_CHANNEL_WHEN_HANGUP</h2>
 <pre>OID_ASTERISK_CHANNEL_WHEN_HANGUP </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -1735,8 +1667,8 @@ OID_ASTERISK_CHANNEL_VARIABLES into an array of key / value pairs</h2>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2013-06-11T21:02:28+01:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
+            generated on 2013-12-06T16:29:11Z.<br></footer></div>
 </div>
 </body>
 </html>

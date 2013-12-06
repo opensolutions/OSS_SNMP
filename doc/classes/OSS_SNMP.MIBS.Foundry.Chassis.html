@@ -1,0 +1,548 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>OSS_SNMP » \OSS_SNMP\MIBS\Foundry\Chassis</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">OSS_SNMP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/OSS_SNMP.html"><i class="icon-th"></i> OSS_SNMP</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">58</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul>
+<li>todo 
+                <span class="label label-info">1</span>
+</li>
+<li>fixme 
+                <span class="label label-info">1</span>
+</li>
+</ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">2</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#actualTemperature" title="actualTemperature :: Get the device's chassis temperature"><span class="description">Get the device's chassis temperature</span><pre>actualTemperature()</pre></a></li>
+<li class="method public "><a href="#cpu1minUtilisation" title="cpu1minUtilisation :: Get the device's CPU utilisation - 1 min average"><span class="description">Get the device's CPU utilisation - 1 min average</span><pre>cpu1minUtilisation()</pre></a></li>
+<li class="method public "><a href="#cpu1secUtilisation" title="cpu1secUtilisation :: Get the device's CPU utilisation - 1 sec average"><span class="description">Get the device's CPU utilisation - 1 sec average</span><pre>cpu1secUtilisation()</pre></a></li>
+<li class="method public "><a href="#cpu5secUtilisation" title="cpu5secUtilisation :: Get the device's CPU utilisation - 5 sec average"><span class="description">Get the device's CPU utilisation - 5 sec average</span><pre>cpu5secUtilisation()</pre></a></li>
+<li class="method public "><a href="#fanDescriptions" title="fanDescriptions :: Get the descriptions of the chassis' fans"><span class="description">Get the descriptions of the chassis' fans</span><pre>fanDescriptions()</pre></a></li>
+<li class="method public "><a href="#fanStates" title="fanStates :: Get the device's fan states"><span class="description">Get the device's fan states</span><pre>fanStates()</pre></a></li>
+<li class="method public "><a href="#isBufferShortage" title="isBufferShortage :: Is the device buffers adequate"><span class="description">Is the device buffers adequate</span><pre>isBufferShortage()</pre></a></li>
+<li class="method public "><a href="#isDMAFailure" title="isDMAFailure :: Are the device's DMAs in good condition?"><span class="description">Are the device's DMAs in good condition?</span><pre>isDMAFailure()</pre></a></li>
+<li class="method public "><a href="#isExcessiveError" title="isExcessiveError :: Does the device have any excessive collision, FCS errors, alignment warning etc."><span class="description">Does the device have any excessive collision, FCS errors, alignment warning etc.</span><pre>isExcessiveError()</pre></a></li>
+<li class="method public "><a href="#isQueueOverflow" title="isQueueOverflow :: Are the device queues in overflow?"><span class="description">Are the device queues in overflow?</span><pre>isQueueOverflow()</pre></a></li>
+<li class="method public "><a href="#isResourceLow" title="isResourceLow :: Does the device have a resource low warning?"><span class="description">Does the device have a resource low warning?</span><pre>isResourceLow()</pre></a></li>
+<li class="method public "><a href="#memoryFree" title="memoryFree :: Get the device's dynamic memory available / free (bytes)"><span class="description">Get the device's dynamic memory available / free (bytes)</span><pre>memoryFree()</pre></a></li>
+<li class="method public "><a href="#memoryTotal" title="memoryTotal :: Get the device's total memory capacity (bytes)"><span class="description">Get the device's total memory capacity (bytes)</span><pre>memoryTotal()</pre></a></li>
+<li class="method public "><a href="#memoryUtilisation" title="memoryUtilisation :: Get the device's dynamic memory utilisation (percentage)"><span class="description">Get the device's dynamic memory utilisation (percentage)</span><pre>memoryUtilisation()</pre></a></li>
+<li class="method public "><a href="#psuDescriptions" title="psuDescriptions :: Get the descriptions of the chassis' PSUs"><span class="description">Get the descriptions of the chassis' PSUs</span><pre>psuDescriptions()</pre></a></li>
+<li class="method public "><a href="#psuStates" title="psuStates :: Get the device's PSU states"><span class="description">Get the device's PSU states</span><pre>psuStates()</pre></a></li>
+<li class="method public "><a href="#shutdownTemperature" title="shutdownTemperature :: Get the device's chassis shutdown temperature"><span class="description">Get the device's chassis shutdown temperature</span><pre>shutdownTemperature()</pre></a></li>
+<li class="method public "><a href="#warningTemperature" title="warningTemperature :: Get the device's chassis temperature warning threshold"><span class="description">Get the device's chassis temperature warning threshold</span><pre>warningTemperature()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24FAN_STATES" title="$FAN_STATES :: "><span class="description">$FAN_STATES</span><pre>$FAN_STATES</pre></a></li>
+<li class="property public "><a href="#%24PSU_STATES" title="$PSU_STATES :: "><span class="description">$PSU_STATES</span><pre>$PSU_STATES</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#FAN_STATE_FAILURE" title="FAN_STATE_FAILURE :: "><span class="description">FAN_STATE_FAILURE</span><pre>FAN_STATE_FAILURE</pre></a></li>
+<li class="constant  "><a href="#FAN_STATE_NORMAL" title="FAN_STATE_NORMAL :: "><span class="description">FAN_STATE_NORMAL</span><pre>FAN_STATE_NORMAL</pre></a></li>
+<li class="constant  "><a href="#FAN_STATE_OTHER" title="FAN_STATE_OTHER :: "><span class="description">FAN_STATE_OTHER</span><pre>FAN_STATE_OTHER</pre></a></li>
+<li class="constant  "><a href="#OID_ACTUAL_TEMPERATURE" title="OID_ACTUAL_TEMPERATURE :: "><span class="description">OID_ACTUAL_TEMPERATURE</span><pre>OID_ACTUAL_TEMPERATURE</pre></a></li>
+<li class="constant  "><a href="#OID_CPU_1MIN_UTILISATION" title="OID_CPU_1MIN_UTILISATION :: "><span class="description">OID_CPU_1MIN_UTILISATION</span><pre>OID_CPU_1MIN_UTILISATION</pre></a></li>
+<li class="constant  "><a href="#OID_CPU_1SEC_UTILISATION" title="OID_CPU_1SEC_UTILISATION :: "><span class="description">OID_CPU_1SEC_UTILISATION</span><pre>OID_CPU_1SEC_UTILISATION</pre></a></li>
+<li class="constant  "><a href="#OID_CPU_5SEC_UTILISATION" title="OID_CPU_5SEC_UTILISATION :: "><span class="description">OID_CPU_5SEC_UTILISATION</span><pre>OID_CPU_5SEC_UTILISATION</pre></a></li>
+<li class="constant  "><a href="#OID_FAN_DESCRIPTION" title="OID_FAN_DESCRIPTION :: "><span class="description">OID_FAN_DESCRIPTION</span><pre>OID_FAN_DESCRIPTION</pre></a></li>
+<li class="constant  "><a href="#OID_FAN_STATE" title="OID_FAN_STATE :: "><span class="description">OID_FAN_STATE</span><pre>OID_FAN_STATE</pre></a></li>
+<li class="constant  "><a href="#OID_GLOBAL_BUFFER_SHORTAGE" title="OID_GLOBAL_BUFFER_SHORTAGE :: "><span class="description">OID_GLOBAL_BUFFER_SHORTAGE</span><pre>OID_GLOBAL_BUFFER_SHORTAGE</pre></a></li>
+<li class="constant  "><a href="#OID_GLOBAL_DMA_FAILURE" title="OID_GLOBAL_DMA_FAILURE :: "><span class="description">OID_GLOBAL_DMA_FAILURE</span><pre>OID_GLOBAL_DMA_FAILURE</pre></a></li>
+<li class="constant  "><a href="#OID_GLOBAL_EXCESSIVE_ERROR" title="OID_GLOBAL_EXCESSIVE_ERROR :: "><span class="description">OID_GLOBAL_EXCESSIVE_ERROR</span><pre>OID_GLOBAL_EXCESSIVE_ERROR</pre></a></li>
+<li class="constant  "><a href="#OID_GLOBAL_QUEUE_OVERFLOW" title="OID_GLOBAL_QUEUE_OVERFLOW :: "><span class="description">OID_GLOBAL_QUEUE_OVERFLOW</span><pre>OID_GLOBAL_QUEUE_OVERFLOW</pre></a></li>
+<li class="constant  "><a href="#OID_GLOBAL_RESOURCE_LOW" title="OID_GLOBAL_RESOURCE_LOW :: "><span class="description">OID_GLOBAL_RESOURCE_LOW</span><pre>OID_GLOBAL_RESOURCE_LOW</pre></a></li>
+<li class="constant  "><a href="#OID_MEMORY_FREE" title="OID_MEMORY_FREE :: "><span class="description">OID_MEMORY_FREE</span><pre>OID_MEMORY_FREE</pre></a></li>
+<li class="constant  "><a href="#OID_MEMORY_TOTAL" title="OID_MEMORY_TOTAL :: "><span class="description">OID_MEMORY_TOTAL</span><pre>OID_MEMORY_TOTAL</pre></a></li>
+<li class="constant  "><a href="#OID_MEMORY_UTILISATION" title="OID_MEMORY_UTILISATION :: "><span class="description">OID_MEMORY_UTILISATION</span><pre>OID_MEMORY_UTILISATION</pre></a></li>
+<li class="constant  "><a href="#OID_PSU_DESCRIPTION" title="OID_PSU_DESCRIPTION :: "><span class="description">OID_PSU_DESCRIPTION</span><pre>OID_PSU_DESCRIPTION</pre></a></li>
+<li class="constant  "><a href="#OID_PSU_STATE" title="OID_PSU_STATE :: "><span class="description">OID_PSU_STATE</span><pre>OID_PSU_STATE</pre></a></li>
+<li class="constant  "><a href="#OID_SHUTDOWN_TEMPERATURE" title="OID_SHUTDOWN_TEMPERATURE :: "><span class="description">OID_SHUTDOWN_TEMPERATURE</span><pre>OID_SHUTDOWN_TEMPERATURE</pre></a></li>
+<li class="constant  "><a href="#OID_WARNING_TEMPERATURE" title="OID_WARNING_TEMPERATURE :: "><span class="description">OID_WARNING_TEMPERATURE</span><pre>OID_WARNING_TEMPERATURE</pre></a></li>
+<li class="constant  "><a href="#PSU_STATE_FAILURE" title="PSU_STATE_FAILURE :: "><span class="description">PSU_STATE_FAILURE</span><pre>PSU_STATE_FAILURE</pre></a></li>
+<li class="constant  "><a href="#PSU_STATE_NORMAL" title="PSU_STATE_NORMAL :: "><span class="description">PSU_STATE_NORMAL</span><pre>PSU_STATE_NORMAL</pre></a></li>
+<li class="constant  "><a href="#PSU_STATE_OTHER" title="PSU_STATE_OTHER :: "><span class="description">PSU_STATE_OTHER</span><pre>PSU_STATE_OTHER</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5COSS_SNMP%5CMIBS%5CFoundry%5CChassis" id="\OSS_SNMP\MIBS\Foundry\Chassis"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/OSS_SNMP.html">OSS_SNMP</a></li>
+<span class="divider">\</span><li><a href="../namespaces/OSS_SNMP.MIBS.html">MIBS</a></li>
+<span class="divider">\</span><li><a href="../namespaces/OSS_SNMP.MIBS.Foundry.html">Foundry</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/OSS_SNMP.MIBS.Foundry.Chassis.html">Chassis</a>
+</li>
+</ul>
+<div href="../classes/OSS_SNMP.MIBS.Foundry.Chassis.html" class="element class">
+<p class="short_description">A class for performing SNMP V2 queries on Foundry devices</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2013, Open Source Solutions Limited, Dublin, Ireland</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:barry@opensolutions.ie">Barry O'Donovan</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="actualTemperature" id="actualTemperature"></a><div class="element clickable method public actualTemperature" data-toggle="collapse" data-target=".actualTemperature .collapse">
+<h2>Get the device's chassis temperature</h2>
+<pre>actualTemperature() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"Temperature of the chassis. Each unit is 0.5 degrees Celcius.
+  Only management module built with temperature sensor hardware
+  is applicable. For those non-applicable management module, it
+  returns no-such-name."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The device's chassis temperature</div>
+</div></div>
+</div>
+<a name="cpu1minUtilisation" id="cpu1minUtilisation"></a><div class="element clickable method public cpu1minUtilisation" data-toggle="collapse" data-target=".cpu1minUtilisation .collapse">
+<h2>Get the device's CPU utilisation - 1 min average</h2>
+<pre>cpu1minUtilisation() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The device's CPU utilisation - 1 min average</div>
+</div></div>
+</div>
+<a name="cpu1secUtilisation" id="cpu1secUtilisation"></a><div class="element clickable method public cpu1secUtilisation" data-toggle="collapse" data-target=".cpu1secUtilisation .collapse">
+<h2>Get the device's CPU utilisation - 1 sec average</h2>
+<pre>cpu1secUtilisation() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The device's CPU utilisation - 1 sec average</div>
+</div></div>
+</div>
+<a name="cpu5secUtilisation" id="cpu5secUtilisation"></a><div class="element clickable method public cpu5secUtilisation" data-toggle="collapse" data-target=".cpu5secUtilisation .collapse">
+<h2>Get the device's CPU utilisation - 5 sec average</h2>
+<pre>cpu5secUtilisation() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The device's CPU utilisation - 5 sec average</div>
+</div></div>
+</div>
+<a name="fanDescriptions" id="fanDescriptions"></a><div class="element clickable method public fanDescriptions" data-toggle="collapse" data-target=".fanDescriptions .collapse">
+<h2>Get the descriptions of the chassis' fans</h2>
+<pre>fanDescriptions() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Descriptions of the chassis' fans</div>
+</div></div>
+</div>
+<a name="fanStates" id="fanStates"></a><div class="element clickable method public fanStates" data-toggle="collapse" data-target=".fanStates .collapse">
+<h2>Get the device's fan states</h2>
+<pre>fanStates(boolean $translate) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\$FAN_STATES</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>boolean</code><p>If true, return the string representation via self::$FAN_STATES</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's fan states</div>
+</div></div>
+</div>
+<a name="isBufferShortage" id="isBufferShortage"></a><div class="element clickable method public isBufferShortage" data-toggle="collapse" data-target=".isBufferShortage .collapse">
+<h2>Is the device buffers adequate</h2>
+<pre>isBufferShortage() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>Buffers adequate</div>
+</div></div>
+</div>
+<a name="isDMAFailure" id="isDMAFailure"></a><div class="element clickable method public isDMAFailure" data-toggle="collapse" data-target=".isDMAFailure .collapse">
+<h2>Are the device's DMAs in good condition?</h2>
+<pre>isDMAFailure() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>DMAs in failure condition?</div>
+</div></div>
+</div>
+<a name="isExcessiveError" id="isExcessiveError"></a><div class="element clickable method public isExcessiveError" data-toggle="collapse" data-target=".isExcessiveError .collapse">
+<h2>Does the device have any excessive collision, FCS errors, alignment warning etc.</h2>
+<pre>isExcessiveError() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>Does the device have any excessive collision, FCS errors, alignment warning etc.</div>
+</div></div>
+</div>
+<a name="isQueueOverflow" id="isQueueOverflow"></a><div class="element clickable method public isQueueOverflow" data-toggle="collapse" data-target=".isQueueOverflow .collapse">
+<h2>Are the device queues in overflow?</h2>
+<pre>isQueueOverflow() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>Queues in overflow</div>
+</div></div>
+</div>
+<a name="isResourceLow" id="isResourceLow"></a><div class="element clickable method public isResourceLow" data-toggle="collapse" data-target=".isResourceLow .collapse">
+<h2>Does the device have a resource low warning?</h2>
+<pre>isResourceLow() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>Does the device have a resource low warning?</div>
+</div></div>
+</div>
+<a name="memoryFree" id="memoryFree"></a><div class="element clickable method public memoryFree" data-toggle="collapse" data-target=".memoryFree .collapse">
+<h2>Get the device's dynamic memory available / free (bytes)</h2>
+<pre>memoryFree() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The device's dynamic memory available / free (bytes)</div>
+</div></div>
+</div>
+<a name="memoryTotal" id="memoryTotal"></a><div class="element clickable method public memoryTotal" data-toggle="collapse" data-target=".memoryTotal .collapse">
+<h2>Get the device's total memory capacity (bytes)</h2>
+<pre>memoryTotal() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The device's total memory capacity (bytes)</div>
+</div></div>
+</div>
+<a name="memoryUtilisation" id="memoryUtilisation"></a><div class="element clickable method public memoryUtilisation" data-toggle="collapse" data-target=".memoryUtilisation .collapse">
+<h2>Get the device's dynamic memory utilisation (percentage)</h2>
+<pre>memoryUtilisation() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"The system dynamic memory utilization, in unit of percentage"</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The device's dynamic memory usage utilisation</div>
+</div></div>
+</div>
+<a name="psuDescriptions" id="psuDescriptions"></a><div class="element clickable method public psuDescriptions" data-toggle="collapse" data-target=".psuDescriptions .collapse">
+<h2>Get the descriptions of the chassis' PSUs</h2>
+<pre>psuDescriptions() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Descriptions of the chassis' PSUs</div>
+</div></div>
+</div>
+<a name="psuStates" id="psuStates"></a><div class="element clickable method public psuStates" data-toggle="collapse" data-target=".psuStates .collapse">
+<h2>Get the device's PSU states</h2>
+<pre>psuStates(boolean $translate) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\$PSU_STATES</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>boolean</code><p>If true, return the string representation via self::$PSU_STATES</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The device's PSU states</div>
+</div></div>
+</div>
+<a name="shutdownTemperature" id="shutdownTemperature"></a><div class="element clickable method public shutdownTemperature" data-toggle="collapse" data-target=".shutdownTemperature .collapse">
+<h2>Get the device's chassis shutdown temperature</h2>
+<pre>shutdownTemperature() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"Actual temperature higher than this threshold value will shutdown
+  a partial of the switch hardware to cool down the system. Each unit
+  is 0.5 degrees Celcius. Only management module built with temperature
+  sensor hardware is applicable. For those non-applicable management
+  module, it returns no-such-name"</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The device's chassis shutdown temperature</div>
+</div></div>
+</div>
+<a name="warningTemperature" id="warningTemperature"></a><div class="element clickable method public warningTemperature" data-toggle="collapse" data-target=".warningTemperature .collapse">
+<h2>Get the device's chassis temperature warning threshold</h2>
+<pre>warningTemperature() : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description"><blockquote>
+  <p>"Actual temperature higher than this threshold value will trigger
+  the switch to send a temperature warning trap. Each unit is 0.5
+  degrees Celcius. Only management module built with temperature
+  sensor hardware is applicable. For those non-applicable management
+  module, it returns no-such-name."</p>
+</blockquote></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>The device's chassis temperature warning threshold</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24FAN_STATES" id="$FAN_STATES"> </a><div class="element clickable property public $FAN_STATES" data-toggle="collapse" data-target=".$FAN_STATES .collapse">
+<h2>$FAN_STATES</h2>
+<pre>$FAN_STATES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24PSU_STATES" id="$PSU_STATES"> </a><div class="element clickable property public $PSU_STATES" data-toggle="collapse" data-target=".$PSU_STATES .collapse">
+<h2>$PSU_STATES</h2>
+<pre>$PSU_STATES </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="FAN_STATE_FAILURE" id="FAN_STATE_FAILURE"> </a><div class="element clickable constant  FAN_STATE_FAILURE" data-toggle="collapse" data-target=".FAN_STATE_FAILURE .collapse">
+<h2>FAN_STATE_FAILURE</h2>
+<pre>FAN_STATE_FAILURE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="FAN_STATE_NORMAL" id="FAN_STATE_NORMAL"> </a><div class="element clickable constant  FAN_STATE_NORMAL" data-toggle="collapse" data-target=".FAN_STATE_NORMAL .collapse">
+<h2>FAN_STATE_NORMAL</h2>
+<pre>FAN_STATE_NORMAL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="FAN_STATE_OTHER" id="FAN_STATE_OTHER"> </a><div class="element clickable constant  FAN_STATE_OTHER" data-toggle="collapse" data-target=".FAN_STATE_OTHER .collapse">
+<h2>FAN_STATE_OTHER</h2>
+<pre>FAN_STATE_OTHER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_ACTUAL_TEMPERATURE" id="OID_ACTUAL_TEMPERATURE"> </a><div class="element clickable constant  OID_ACTUAL_TEMPERATURE" data-toggle="collapse" data-target=".OID_ACTUAL_TEMPERATURE .collapse">
+<h2>OID_ACTUAL_TEMPERATURE</h2>
+<pre>OID_ACTUAL_TEMPERATURE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CPU_1MIN_UTILISATION" id="OID_CPU_1MIN_UTILISATION"> </a><div class="element clickable constant  OID_CPU_1MIN_UTILISATION" data-toggle="collapse" data-target=".OID_CPU_1MIN_UTILISATION .collapse">
+<h2>OID_CPU_1MIN_UTILISATION</h2>
+<pre>OID_CPU_1MIN_UTILISATION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CPU_1SEC_UTILISATION" id="OID_CPU_1SEC_UTILISATION"> </a><div class="element clickable constant  OID_CPU_1SEC_UTILISATION" data-toggle="collapse" data-target=".OID_CPU_1SEC_UTILISATION .collapse">
+<h2>OID_CPU_1SEC_UTILISATION</h2>
+<pre>OID_CPU_1SEC_UTILISATION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_CPU_5SEC_UTILISATION" id="OID_CPU_5SEC_UTILISATION"> </a><div class="element clickable constant  OID_CPU_5SEC_UTILISATION" data-toggle="collapse" data-target=".OID_CPU_5SEC_UTILISATION .collapse">
+<h2>OID_CPU_5SEC_UTILISATION</h2>
+<pre>OID_CPU_5SEC_UTILISATION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_FAN_DESCRIPTION" id="OID_FAN_DESCRIPTION"> </a><div class="element clickable constant  OID_FAN_DESCRIPTION" data-toggle="collapse" data-target=".OID_FAN_DESCRIPTION .collapse">
+<h2>OID_FAN_DESCRIPTION</h2>
+<pre>OID_FAN_DESCRIPTION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_FAN_STATE" id="OID_FAN_STATE"> </a><div class="element clickable constant  OID_FAN_STATE" data-toggle="collapse" data-target=".OID_FAN_STATE .collapse">
+<h2>OID_FAN_STATE</h2>
+<pre>OID_FAN_STATE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_GLOBAL_BUFFER_SHORTAGE" id="OID_GLOBAL_BUFFER_SHORTAGE"> </a><div class="element clickable constant  OID_GLOBAL_BUFFER_SHORTAGE" data-toggle="collapse" data-target=".OID_GLOBAL_BUFFER_SHORTAGE .collapse">
+<h2>OID_GLOBAL_BUFFER_SHORTAGE</h2>
+<pre>OID_GLOBAL_BUFFER_SHORTAGE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_GLOBAL_DMA_FAILURE" id="OID_GLOBAL_DMA_FAILURE"> </a><div class="element clickable constant  OID_GLOBAL_DMA_FAILURE" data-toggle="collapse" data-target=".OID_GLOBAL_DMA_FAILURE .collapse">
+<h2>OID_GLOBAL_DMA_FAILURE</h2>
+<pre>OID_GLOBAL_DMA_FAILURE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_GLOBAL_EXCESSIVE_ERROR" id="OID_GLOBAL_EXCESSIVE_ERROR"> </a><div class="element clickable constant  OID_GLOBAL_EXCESSIVE_ERROR" data-toggle="collapse" data-target=".OID_GLOBAL_EXCESSIVE_ERROR .collapse">
+<h2>OID_GLOBAL_EXCESSIVE_ERROR</h2>
+<pre>OID_GLOBAL_EXCESSIVE_ERROR </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_GLOBAL_QUEUE_OVERFLOW" id="OID_GLOBAL_QUEUE_OVERFLOW"> </a><div class="element clickable constant  OID_GLOBAL_QUEUE_OVERFLOW" data-toggle="collapse" data-target=".OID_GLOBAL_QUEUE_OVERFLOW .collapse">
+<h2>OID_GLOBAL_QUEUE_OVERFLOW</h2>
+<pre>OID_GLOBAL_QUEUE_OVERFLOW </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_GLOBAL_RESOURCE_LOW" id="OID_GLOBAL_RESOURCE_LOW"> </a><div class="element clickable constant  OID_GLOBAL_RESOURCE_LOW" data-toggle="collapse" data-target=".OID_GLOBAL_RESOURCE_LOW .collapse">
+<h2>OID_GLOBAL_RESOURCE_LOW</h2>
+<pre>OID_GLOBAL_RESOURCE_LOW </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_MEMORY_FREE" id="OID_MEMORY_FREE"> </a><div class="element clickable constant  OID_MEMORY_FREE" data-toggle="collapse" data-target=".OID_MEMORY_FREE .collapse">
+<h2>OID_MEMORY_FREE</h2>
+<pre>OID_MEMORY_FREE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_MEMORY_TOTAL" id="OID_MEMORY_TOTAL"> </a><div class="element clickable constant  OID_MEMORY_TOTAL" data-toggle="collapse" data-target=".OID_MEMORY_TOTAL .collapse">
+<h2>OID_MEMORY_TOTAL</h2>
+<pre>OID_MEMORY_TOTAL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_MEMORY_UTILISATION" id="OID_MEMORY_UTILISATION"> </a><div class="element clickable constant  OID_MEMORY_UTILISATION" data-toggle="collapse" data-target=".OID_MEMORY_UTILISATION .collapse">
+<h2>OID_MEMORY_UTILISATION</h2>
+<pre>OID_MEMORY_UTILISATION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_PSU_DESCRIPTION" id="OID_PSU_DESCRIPTION"> </a><div class="element clickable constant  OID_PSU_DESCRIPTION" data-toggle="collapse" data-target=".OID_PSU_DESCRIPTION .collapse">
+<h2>OID_PSU_DESCRIPTION</h2>
+<pre>OID_PSU_DESCRIPTION </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_PSU_STATE" id="OID_PSU_STATE"> </a><div class="element clickable constant  OID_PSU_STATE" data-toggle="collapse" data-target=".OID_PSU_STATE .collapse">
+<h2>OID_PSU_STATE</h2>
+<pre>OID_PSU_STATE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_SHUTDOWN_TEMPERATURE" id="OID_SHUTDOWN_TEMPERATURE"> </a><div class="element clickable constant  OID_SHUTDOWN_TEMPERATURE" data-toggle="collapse" data-target=".OID_SHUTDOWN_TEMPERATURE .collapse">
+<h2>OID_SHUTDOWN_TEMPERATURE</h2>
+<pre>OID_SHUTDOWN_TEMPERATURE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="OID_WARNING_TEMPERATURE" id="OID_WARNING_TEMPERATURE"> </a><div class="element clickable constant  OID_WARNING_TEMPERATURE" data-toggle="collapse" data-target=".OID_WARNING_TEMPERATURE .collapse">
+<h2>OID_WARNING_TEMPERATURE</h2>
+<pre>OID_WARNING_TEMPERATURE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="PSU_STATE_FAILURE" id="PSU_STATE_FAILURE"> </a><div class="element clickable constant  PSU_STATE_FAILURE" data-toggle="collapse" data-target=".PSU_STATE_FAILURE .collapse">
+<h2>PSU_STATE_FAILURE</h2>
+<pre>PSU_STATE_FAILURE </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="PSU_STATE_NORMAL" id="PSU_STATE_NORMAL"> </a><div class="element clickable constant  PSU_STATE_NORMAL" data-toggle="collapse" data-target=".PSU_STATE_NORMAL .collapse">
+<h2>PSU_STATE_NORMAL</h2>
+<pre>PSU_STATE_NORMAL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="PSU_STATE_OTHER" id="PSU_STATE_OTHER"> </a><div class="element clickable constant  PSU_STATE_OTHER" data-toggle="collapse" data-target=".PSU_STATE_OTHER .collapse">
+<h2>PSU_STATE_OTHER</h2>
+<pre>PSU_STATE_OTHER </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a5</a> and<br>
+            generated on 2013-12-06T16:29:11Z.<br></footer></div>
+</div>
+</body>
+</html>
