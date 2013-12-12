@@ -31,7 +31,7 @@
 
 if( substr( $sysDescr, 0, 22 ) == 'Juniper Networks, Inc.' )
 {
-	preg_match( '/(Juniper Networks, Inc.) ([^\s]+) .* kernel ([^\s]+) ([^\s,]+)/', $sysDescr, $sys );
+	preg_match( '/(Juniper Networks, Inc.) ([^\s]+) .* kernel ([^\s]+) ([^\s,]+)/', $sysDescr, $matches );
 	$this->setVendor( $matches[1] );
 	$this->setModel( $matches[2] );
 	$this->setOs( $matches[3] );
