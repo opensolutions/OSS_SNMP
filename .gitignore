@@ -2,3 +2,4 @@
 .project
 .settings/
 *~
+doc/phpdoc-cache-*
