@@ -80,6 +80,13 @@ class Platform
     protected $_osdate = null;
 
     /**
+     * The platform serial number
+     *
+     * @var string The platform serial number
+     */
+    protected $_serial = '(not implemented)';
+
+    /**
      * The \OSS_SNMP\SNMP object
      *
      * @var string The \OSS_SNMP\SNMP object
@@ -197,6 +204,17 @@ class Platform
         return $this;
     }
 
+    /**
+     * Set the serial number
+     *
+     * @param string $s
+     * @return \OSS_SNMP\Platform For fluent interfaces
+     */
+    public function setSerialNumber( $s )
+    {
+        $this->_serial = $s; 
+        return $this;
+    }
 
     /**
      * Get vendor
@@ -246,6 +264,16 @@ class Platform
     public function getOsDate()
     {
         return $this->_osdate;
+    }
+
+    /**
+     * Get the serial number
+     *
+     * return string
+     */
+    public function getSerialNumber()
+    {
+        return $this->_serial;
     }
 
 }

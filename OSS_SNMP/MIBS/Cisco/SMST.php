@@ -54,6 +54,7 @@ class SMST extends \OSS_SNMP\MIBS\Cisco
 
     const OID_STP_X_SMST_REMAINING_HOP_COUNT         = '.1.3.6.1.4.1.9.9.82.1.14.5.1.4'; 
     const OID_STP_X_SMST_INSTANCE_CIST_REGIONAL_ROOT = '.1.3.6.1.4.1.9.9.82.1.14.5.1.5.0';
+    const OID_STP_X_SMST_INSTANCE_CIST_INT_ROOT_COST = '.1.3.6.1.4.1.9.9.82.1.14.5.1.6.0';
 
     
     /**
@@ -329,6 +330,25 @@ class SMST extends \OSS_SNMP\MIBS\Cisco
     public function cistRegionalRoot()
     {
         return $this->getSNMP()->get( self::OID_STP_X_SMST_INSTANCE_CIST_REGIONAL_ROOT );
+    }
+
+    /**
+     * Returns the CIST Internal Root Path Cost
+     *
+     * > "Indicates the CIST Internal Root Path Cost, i.e., the
+     * > path cost to the CIST Regional Root as specified by the
+     * > corresponding stpxSMSTInstanceCISTRegionalRoot for the 
+     * > MST region.
+     * > 
+     * > This object is only instantiated when the object value of
+     * > stpxSpanningTreeType is mst(4) and stpxSMSTInstanceIndex
+     * > is 0."
+     *
+     * @return string The bridge identifier of the CIST regional root for the MST region
+     */
+    public function cistIntRootCost()
+    {
+        return $this->getSNMP()->get( self::OID_STP_X_SMST_INSTANCE_CIST_INT_ROOT_COST );
     }
 
 

@@ -77,5 +77,12 @@ if( substr( $sysDescr, 0, 11 ) == 'ExtremeXOS ' )
         $this->setOsDate( null );
     }
 
+    try {
+        $this->setSerialNumber( $this->getSNMPHost()->useExtreme_Chassis()->systemID() );
+    } catch( Exception $e ) {
+        $this->setSerialNumber( '(error)' );
+    }
+
+
 }
 
