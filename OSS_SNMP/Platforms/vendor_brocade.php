@@ -64,5 +64,10 @@ if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
         $this->getOsDate()->setTimezone( new \DateTimeZone( 'UTC' ) );
     }
 
+    try {
+        $this->setSerialNumber( $this->getSNMPHost()->useFoundry_Chassis()->serialNumber() );
+    } catch( Exception $e ) {
+        $this->setSerialNumber( '(error)' );
+    }
 }
 

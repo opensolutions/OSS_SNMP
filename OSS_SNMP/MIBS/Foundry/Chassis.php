@@ -69,6 +69,8 @@ class Chassis extends \OSS_SNMP\MIBS\Foundry
     const OID_GLOBAL_RESOURCE_LOW    = '.1.3.6.1.4.1.1991.1.1.2.1.33.0';
     const OID_GLOBAL_EXCESSIVE_ERROR = '.1.3.6.1.4.1.1991.1.1.2.1.34.0';
 
+    const OID_SERIAL_NUMBER          = '.1.3.6.1.4.1.1991.1.1.1.1.2.0';
+
     /**
      * Get the device's chassis temperature
      *
@@ -272,6 +274,23 @@ class Chassis extends \OSS_SNMP\MIBS\Foundry
         return $this->getSNMP()->get( self::OID_CPU_1MIN_UTILISATION );
     }
 
+
+
+    /**
+     * Get the device's serial number
+     *
+     * > The serial number of the chassis. If the
+     * > serial number is unknown or unavailable then
+     * > the value should be a zero length string.
+     * 
+     * @see http://www.mibdepot.com/cgi-bin/getmib3.cgi?win=mib_a&i=1&n=FOUNDRY-SN-AGENT-MIB&r=foundry&f=sn_agent.mib&v=v1&t=sca&o=snChasSerNum
+     *
+     * @return string The chassis serial number
+     */
+    public function serialNumber()
+    {
+        return $this->getSNMP()->get( self::OID_SERIAL_NUMBER );
+    }
 
 
 
