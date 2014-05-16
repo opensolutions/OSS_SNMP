@@ -39,6 +39,7 @@
 // 'Brocade Communications Systems, Inc. FESX624+2XG, IronWare Version 07.3.00cT3e1 Compiled on Apr 25 2012 at 17:01:00 labeled as SXS07300c'
 // 'Brocade Communication Systems, Inc. TurboIron-X24, IronWare Version 04.2.00b Compiled on Oct 22 2010 at 15:15:36 labeled as TIS04200b'
 // 'Brocade NetIron CES, IronWare Version V5.2.0cT183 Compiled on Oct 28 2011 at 02:58:44 labeled as V5.2.00c'
+// 'Brocade NetIron MLX (System Mode: MLX), IronWare Version V5.4.0cT163 Compiled on Mar 25 2013 at 17:08:16 labeled as V5.4.00c'
 
 if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
 {
@@ -53,14 +54,14 @@ if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
         $this->getOsDate()->setTimezone( new \DateTimeZone( 'UTC' ) );
     }
 
-    if( preg_match( '/Brocade NetIron CES, IronWare\sVersion\s(.+)\sCompiled\son\s(([a-zA-Z]+)\s(\d+)\s(\d+)\s)at\s((\d\d):(\d\d):(\d\d))\slabeled\sas\s(.+)/',
+    if( preg_match( '/Brocade (NetIron [a-zA-Z0-9]+).*IronWare\sVersion\s(.+)\sCompiled\son\s(([a-zA-Z]+)\s(\d+)\s(\d+)\s)at\s((\d\d):(\d\d):(\d\d))\slabeled\sas\s(.+)/',
             $sysDescr, $matches ) )
     {
         $this->setVendor( 'Brocade' );
-        $this->setModel( 'NetIron CES' );
+        $this->setModel( $matches[1] );
         $this->setOs( 'IronWare' );
-        $this->setOsVersion( $matches[1] );
-        $this->setOsDate( new \DateTime( "{$matches[4]}/{$matches[3]}/{$matches[5]}:{$matches[6]} +0000" ) );
+        $this->setOsVersion( $matches[2] );
+        $this->setOsDate( new \DateTime( "{$matches[5]}/{$matches[4]}/{$matches[6]}:{$matches[7]} +0000" ) );
         $this->getOsDate()->setTimezone( new \DateTimeZone( 'UTC' ) );
     }
 
@@ -70,4 +71,3 @@ if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
         $this->setSerialNumber( '(error)' );
     }
 }
-
