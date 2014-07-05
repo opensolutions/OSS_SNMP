@@ -46,7 +46,7 @@ if( substr( $sysDescr, 0, 6 ) == 'Linux ' )
     if( preg_match( '/Linux ([^ ]+) ([^ ]+)\+([^ ]+) #([^ ]+) SMP ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+)/',
             $sysDescr, $matches ) )
     {
-        $this->setVendor( 'Cumulus' );
+        $this->setVendor( 'Cumulus Networks' );
         $this->setModel( 'Generic' );
         $this->setOs( 'Linux' );
         $this->setOsVersion( $matches[2] );
