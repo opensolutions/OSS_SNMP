@@ -65,6 +65,7 @@
 <li class="method public "><a href="#method_aliases" title="aliases() :: Get an array of device interface aliases (e.g. as set by the interface description / port-name parameter)"><span class="description">Get an array of device interface aliases (e.g. as set by the interface description / port-name parameter)</span><pre>aliases()</pre></a></li>
 <li class="method public "><a href="#method_bridgeBasePortIfIndexes" title="bridgeBasePortIfIndexes() :: Returns an associate array of STP port IDs (key) to interface IDs (value)"><span class="description">Returns an associate array of STP port IDs (key) to interface IDs (value)</span><pre>bridgeBasePortIfIndexes()</pre></a></li>
 <li class="method public "><a href="#method_descriptions" title="descriptions() :: Get an array of device interface descriptions"><span class="description">Get an array of device interface descriptions</span><pre>descriptions()</pre></a></li>
+<li class="method public "><a href="#method_getSNMP" title="getSNMP() :: Get the SNMP instance"><span class="description">Get the SNMP instance</span><pre>getSNMP()</pre></a></li>
 <li class="method public "><a href="#method_highSpeeds" title="highSpeeds() :: Get an array of device interface (operating) speeds"><span class="description">Get an array of device interface (operating) speeds</span><pre>highSpeeds()</pre></a></li>
 <li class="method public "><a href="#method_inDiscards" title="inDiscards() :: Get an array of device interface inbound discarded packets"><span class="description">Get an array of device interface inbound discarded packets</span><pre>inDiscards()</pre></a></li>
 <li class="method public "><a href="#method_inErrors" title="inErrors() :: Get an array of device interface inbound error packets"><span class="description">Get an array of device interface inbound error packets</span><pre>inErrors()</pre></a></li>
@@ -87,6 +88,7 @@ their current state) present on this system.</span><pre>numberOfInterfaces()</pr
 <li class="method public "><a href="#method_outQueueLength" title="outQueueLength() :: Get an array of interface outbound queue lengths"><span class="description">Get an array of interface outbound queue lengths</span><pre>outQueueLength()</pre></a></li>
 <li class="method public "><a href="#method_outUnicastPackets" title="outUnicastPackets() :: Get an array of device interface unicast packets out"><span class="description">Get an array of device interface unicast packets out</span><pre>outUnicastPackets()</pre></a></li>
 <li class="method public "><a href="#method_physAddresses" title="physAddresses() :: Get an array of the interfaces' physical addresses"><span class="description">Get an array of the interfaces' physical addresses</span><pre>physAddresses()</pre></a></li>
+<li class="method public "><a href="#method_setSNMP" title="setSNMP() :: Set the SNMP instance"><span class="description">Set the SNMP instance</span><pre>setSNMP()</pre></a></li>
 <li class="method public "><a href="#method_speeds" title="speeds() :: Get an array of device interface (operating) speeds"><span class="description">Get an array of device interface (operating) speeds</span><pre>speeds()</pre></a></li>
 <li class="method public "><a href="#method_types" title="types() :: Get an array of device interface types"><span class="description">Get an array of device interface types</span><pre>types()</pre></a></li>
 </ul>
@@ -98,6 +100,9 @@ their current state) present on this system.</span><pre>numberOfInterfaces()</pr
 <li class="property public "><a href="#property_IF_OPER_STATES" title="$IF_OPER_STATES() :: Text representation of interface operating status."><span class="description"></span><pre>$IF_OPER_STATES</pre></a></li>
 <li class="property public "><a href="#property_IF_TYPES" title="$IF_TYPES() :: Text representation of interface types."><span class="description"></span><pre>$IF_TYPES</pre></a></li>
 </ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private "><a href="#property__snmp" title="$_snmp() :: Instance for the SNMP object"><span class="description"></span><pre>$_snmp</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i title="Constants" class="icon-custom icon-constant"></i> Constants
@@ -477,6 +482,17 @@ their current state) present on this system.</span><pre>numberOfInterfaces()</pr
 <code>array</code>An array of interface descriptions</div>
 </div></div>
 </div>
+<a id="method_getSNMP"></a><div class="element clickable method public method_getSNMP" data-toggle="collapse" data-target=".method_getSNMP .collapse" title="public">
+<h2>Get the SNMP instance</h2>
+<pre>getSNMP() : \OSS_SNMP\SNMP</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\OSS_SNMP\SNMP</code>Instance of the SNMP object</div>
+</div></div>
+</div>
 <a id="method_highSpeeds"></a><div class="element clickable method public method_highSpeeds" data-toggle="collapse" data-target=".method_highSpeeds .collapse" title="public">
 <h2>Get an array of device interface (operating) speeds</h2>
 <pre>highSpeeds() : array</pre>
@@ -510,7 +526,7 @@ E.g. the following SNMP output yields the shown array:
 </div>
 <a id="method_inDiscards"></a><div class="element clickable method public method_inDiscards" data-toggle="collapse" data-target=".method_inDiscards .collapse" title="public">
 <h2>Get an array of device interface inbound discarded packets</h2>
-<pre>inDiscards() : <a href="arrary.html">\OSS_SNMP\MIBS\arrary</a></pre>
+<pre>inDiscards() : \OSS_SNMP\MIBS\arrary</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description">"The number of inbound packets which were chosen
@@ -521,7 +537,7 @@ discarding such a packet could be to free up
 buffer space."</div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="arrary.html">\OSS_SNMP\MIBS\arrary</a></code>The total number of discarded inbound packets received on interfaces</div>
+<code>\OSS_SNMP\MIBS\arrary</code>The total number of discarded inbound packets received on interfaces</div>
 </div></div>
 </div>
 <a id="method_inErrors"></a><div class="element clickable method public method_inErrors" data-toggle="collapse" data-target=".method_inErrors .collapse" title="public">
@@ -700,7 +716,7 @@ their current state) present on this system.</h2>
 </div>
 <a id="method_outDiscards"></a><div class="element clickable method public method_outDiscards" data-toggle="collapse" data-target=".method_outDiscards .collapse" title="public">
 <h2>Get an array of device interface outbound discarded packets</h2>
-<pre>outDiscards() : <a href="arrary.html">\OSS_SNMP\MIBS\arrary</a></pre>
+<pre>outDiscards() : \OSS_SNMP\MIBS\arrary</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description">"The number of outbound packets which were chosen
@@ -710,7 +726,7 @@ possible reason for discarding such a packet could
 be to free up buffer space."</div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="arrary.html">\OSS_SNMP\MIBS\arrary</a></code>The total number of discarded outbound packets</div>
+<code>\OSS_SNMP\MIBS\arrary</code>The total number of discarded outbound packets</div>
 </div></div>
 </div>
 <a id="method_outErrors"></a><div class="element clickable method public method_outErrors" data-toggle="collapse" data-target=".method_outErrors .collapse" title="public">
@@ -790,6 +806,21 @@ should contain an octet string of zero length."</div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>An array of device physical addresses</div>
+</div></div>
+</div>
+<a id="method_setSNMP"></a><div class="element clickable method public method_setSNMP" data-toggle="collapse" data-target=".method_setSNMP .collapse" title="public">
+<h2>Set the SNMP instance</h2>
+<pre>setSNMP(\OSS_SNMP\SNMP $snmp) : \OSS_SNMP\MIB</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$snmp</h4>
+<code>\OSS_SNMP\SNMP</code><p>the SNMP instance</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\OSS_SNMP\MIB</code>An instance of this class for fluent interfaces</div>
 </div></div>
 </div>
 <a id="method_speeds"></a><div class="element clickable method public method_speeds" data-toggle="collapse" data-target=".method_speeds .collapse" title="public">
@@ -891,6 +922,16 @@ Instead, use highSpeeds() which will represent the speed as Mbps</div>
 <td><a href="%5COSS_SNMP%5CMIBS%5Ctypes()"></a></td>
 </tr></table>
 </div></div>
+</div>
+<a id="property__snmp"> </a><div class="element clickable property private property__snmp" data-toggle="collapse" data-target=".property__snmp .collapse" title="private">
+<h2>Instance for the SNMP object</h2>
+<pre>$_snmp </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <h3>
 <i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
@@ -3978,9 +4019,9 @@ Instead, use highSpeeds() which will represent the speed as Mbps</div>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.2.0
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.4.0
 </a> and<br>
-            generated on 2014-02-03T12:23:41Z.<br></footer></div>
+            generated on 2014-07-08T08:56:26+01:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -170,14 +170,14 @@ hex digit."><span class="description"></span><pre>$HEX_STRING_WORDS_AS_ARRAY</pr
 </div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/OSS_SNMP.Exception.html">\OSS_SNMP\Exception</a></code></th>
+<th><code>\OSS_SNMP\Exception</code></th>
 <td></td>
 </tr></table>
 </div></div>
 </div>
 <a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse" title="public">
 <h2>The constructor.</h2>
-<pre>__construct(string $host<code> = '127.0.0.1'</code>, string $community<code> = 'public'</code>) : <a href="OSS_SNMP.html">\OSS_SNMP\OSS_SNMP</a></pre>
+<pre>__construct(string $host<code> = '127.0.0.1'</code>, string $community<code> = 'public'</code>) : \OSS_SNMP\OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -190,7 +190,7 @@ hex digit."><span class="description"></span><pre>$HEX_STRING_WORDS_AS_ARRAY</pr
 <code>string</code><p>The community to use for SNMP queries.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="OSS_SNMP.html">\OSS_SNMP\OSS_SNMP</a></code>An instance of $this (for fluent interfaces)</div>
+<code>\OSS_SNMP\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
 <a id="method_cache"></a><div class="element clickable method public method_cache" data-toggle="collapse" data-target=".method_cache .collapse" title="public">
@@ -206,24 +206,24 @@ hex digit."><span class="description"></span><pre>$HEX_STRING_WORDS_AS_ARRAY</pr
 </div>
 <a id="method_disableCache"></a><div class="element clickable method public method_disableCache" data-toggle="collapse" data-target=".method_disableCache .collapse" title="public">
 <h2>Disable lookups of the local cache</h2>
-<pre>disableCache() : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
+<pre>disableCache() : \OSS_SNMP\SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>An instance of this for fluent interfaces</div>
+<code>\OSS_SNMP\SNMP</code>An instance of this for fluent interfaces</div>
 </div></div>
 </div>
 <a id="method_enableCache"></a><div class="element clickable method public method_enableCache" data-toggle="collapse" data-target=".method_enableCache .collapse" title="public">
 <h2>Enable lookups of the local cache</h2>
-<pre>enableCache() : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
+<pre>enableCache() : \OSS_SNMP\SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>An instance of this for fluent interfaces</div>
+<code>\OSS_SNMP\SNMP</code>An instance of this for fluent interfaces</div>
 </div></div>
 </div>
 <a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse" title="public">
@@ -238,7 +238,7 @@ hex digit."><span class="description"></span><pre>$HEX_STRING_WORDS_AS_ARRAY</pr
 <code>string</code><p>The OID to get</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/OSS_SNMP.Exception.html">\OSS_SNMP\Exception</a></code></th>
+<th><code>\OSS_SNMP\Exception</code></th>
 <td>On *any* SNMP error, warnings are supressed and a generic exception is thrown</td>
 </tr></table>
 <h3>Returns</h3>
@@ -248,7 +248,7 @@ hex digit."><span class="description"></span><pre>$HEX_STRING_WORDS_AS_ARRAY</pr
 </div>
 <a id="method_getCache"></a><div class="element clickable method public method_getCache" data-toggle="collapse" data-target=".method_getCache .collapse" title="public">
 <h2>Get the cache in use (or create a Cache\Basic instance</h2>
-<pre>getCache() : <a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a></pre>
+<pre>getCache() : \OSS_SNMP\Cache</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description">We kind of mandate the use of a cache as the code is written with a cache in mind.
@@ -257,7 +257,7 @@ You are free to disable it via disableCache() but your machines may be hammered!
 We would suggest disableCache() / enableCache() used in pairs only when really needed.</div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a></code>The cache object</div>
+<code>\OSS_SNMP\Cache</code>The cache object</div>
 </div></div>
 </div>
 <a id="method_getCommunity"></a><div class="element clickable method public method_getCommunity" data-toggle="collapse" data-target=".method_getCommunity .collapse" title="public">
@@ -345,7 +345,7 @@ We would suggest disableCache() / enableCache() used in pairs only when really n
 <code>string</code><p>The value to parse</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/OSS_SNMP.Exception.html">\OSS_SNMP\Exception</a></code></th>
+<th><code>\OSS_SNMP\Exception</code></th>
 <td></td>
 </tr></table>
 <h3>Returns</h3>
@@ -408,22 +408,22 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 </div>
 <a id="method_setCache"></a><div class="element clickable method public method_setCache" data-toggle="collapse" data-target=".method_setCache .collapse" title="public">
 <h2>Set the cache to use</h2>
-<pre>setCache(\OSS_SNMP\Cache $c) : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
+<pre>setCache(\OSS_SNMP\Cache $c) : \OSS_SNMP\SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$c</h4>
-<code><a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a></code><p>The cache to use</p></div>
+<code>\OSS_SNMP\Cache</code><p>The cache to use</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>For fluent interfaces</div>
+<code>\OSS_SNMP\SNMP</code>For fluent interfaces</div>
 </div></div>
 </div>
 <a id="method_setCommunity"></a><div class="element clickable method public method_setCommunity" data-toggle="collapse" data-target=".method_setCommunity .collapse" title="public">
 <h2>Sets the community string to use for SNMP queries.</h2>
-<pre>setCommunity(string $c) : <a href="OSS_SNMP.html">\OSS_SNMP\OSS_SNMP</a></pre>
+<pre>setCommunity(string $c) : \OSS_SNMP\OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -433,12 +433,12 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 <code>string</code><p>The community to use for SNMP queries.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="OSS_SNMP.html">\OSS_SNMP\OSS_SNMP</a></code>An instance of $this (for fluent interfaces)</div>
+<code>\OSS_SNMP\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
 <a id="method_setHost"></a><div class="element clickable method public method_setHost" data-toggle="collapse" data-target=".method_setHost .collapse" title="public">
 <h2>Sets the target host for SNMP queries.</h2>
-<pre>setHost(string $h) : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
+<pre>setHost(string $h) : \OSS_SNMP\SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -448,12 +448,12 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 <code>string</code><p>The target host for SNMP queries.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></code>An instance of $this (for fluent interfaces)</div>
+<code>\OSS_SNMP\SNMP</code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
 <a id="method_setOidOutputFormat"></a><div class="element clickable method public method_setOidOutputFormat" data-toggle="collapse" data-target=".method_setOidOutputFormat .collapse" title="public">
 <h2>Sets the output format for SNMP queries.</h2>
-<pre>setOidOutputFormat(int $f) : <a href="SNMP.html">\OSS_SNMP\OSS_SNMP\SNMP</a></pre>
+<pre>setOidOutputFormat(int $f) : \OSS_SNMP\OSS_SNMP\SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description">Should be one of the class OID_OUTPUT_* constants</div>
@@ -463,12 +463,12 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 <code>int</code><p>The fomat to use</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="SNMP.html">\OSS_SNMP\OSS_SNMP\SNMP</a></code>An instance of $this (for fluent interfaces)</div>
+<code>\OSS_SNMP\OSS_SNMP\SNMP</code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
 <a id="method_setRetry"></a><div class="element clickable method public method_setRetry" data-toggle="collapse" data-target=".method_setRetry .collapse" title="public">
 <h2>Sets the SNMP query retry count.</h2>
-<pre>setRetry(int $r) : <a href="OSS_SNMP.html">\OSS_SNMP\OSS_SNMP</a></pre>
+<pre>setRetry(int $r) : \OSS_SNMP\OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -478,12 +478,12 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 <code>int</code><p>The SNMP query retry count</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="OSS_SNMP.html">\OSS_SNMP\OSS_SNMP</a></code>An instance of $this (for fluent interfaces)</div>
+<code>\OSS_SNMP\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
 <a id="method_setTimeout"></a><div class="element clickable method public method_setTimeout" data-toggle="collapse" data-target=".method_setTimeout .collapse" title="public">
 <h2>Sets the timeout to use for SNMP queries (microseconds).</h2>
-<pre>setTimeout(int $t) : <a href="OSS_SNMP.html">\OSS_SNMP\OSS_SNMP</a></pre>
+<pre>setTimeout(int $t) : \OSS_SNMP\OSS_SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -493,7 +493,7 @@ and converts it to an indexed (from 1) array of true / false values.</h2>
 <code>int</code><p>The timeout to use for SNMP queries (microseconds).</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="OSS_SNMP.html">\OSS_SNMP\OSS_SNMP</a></code>An instance of $this (for fluent interfaces)</div>
+<code>\OSS_SNMP\OSS_SNMP</code>An instance of $this (for fluent interfaces)</div>
 </div></div>
 </div>
 <a id="method_subOidWalk"></a><div class="element clickable method public method_subOidWalk" data-toggle="collapse" data-target=".method_subOidWalk .collapse" title="public">
@@ -524,7 +524,7 @@ would yield an array:
 <code>int</code><p>The position of the OID to use as the key</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/OSS_SNMP.Exception.html">\OSS_SNMP\Exception</a></code></th>
+<th><code>\OSS_SNMP\Exception</code></th>
 <td>On *any* SNMP error, warnings are supressed and a generic exception is thrown</td>
 </tr></table>
 <h3>Returns</h3>
@@ -555,7 +555,7 @@ Huh? Just read the code below!</div>
 </div>
 <a id="method_useExtension"></a><div class="element clickable method public method_useExtension" data-toggle="collapse" data-target=".method_useExtension .collapse" title="public">
 <h2>This is the MIB Extension magic</h2>
-<pre>useExtension(string $mib, array $args) : <a href="MIBS.html">\OSS_SNMP\MIBS</a></pre>
+<pre>useExtension(string $mib, array $args) : \OSS_SNMP\MIBS</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description">Calling $this->useXXX_YYY_ZZZ()->fn() will instantiate
@@ -572,7 +572,7 @@ See the examples for more information.</div>
 <code>array</code>
 </div>
 <h3>Returns</h3>
-<div class="subelement response"><code><a href="MIBS.html">\OSS_SNMP\MIBS</a></code></div>
+<div class="subelement response"><code>\OSS_SNMP\MIBS</code></div>
 </div></div>
 </div>
 <a id="method_walk1d"></a><div class="element clickable method public method_walk1d" data-toggle="collapse" data-target=".method_walk1d .collapse" title="public">
@@ -604,7 +604,7 @@ would yield an array:
 <code>string</code><p>The OID to walk</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="OSS_SNMPException.html">\OSS_SNMPException</a></code></th>
+<th><code>\OSS_SNMPException</code></th>
 <td>On *any* SNMP error, warnings are supressed and a generic exception is thrown</td>
 </tr></table>
 <h3>Returns</h3>
@@ -635,7 +635,7 @@ would yield an array:
 <code>string</code><p>The OID to walk</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/OSS_SNMP.Exception.html">\OSS_SNMP\Exception</a></code></th>
+<th><code>\OSS_SNMP\Exception</code></th>
 <td>On *any* SNMP error, warnings are supressed and a generic exception is thrown</td>
 </tr></table>
 <h3>Returns</h3>
@@ -675,7 +675,7 @@ hex digit.</h2>
 </div>
 <a id="property__cache"> </a><div class="element clickable property protected property__cache" data-toggle="collapse" data-target=".property__cache .collapse" title="protected">
 <h2>The cache object to use as the cache</h2>
-<pre>$_cache : <a href="../classes/OSS_SNMP.Cache.html">\OSS_SNMP\Cache</a></pre>
+<pre>$_cache : \OSS_SNMP\Cache</pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
 <div class="subelement argument"><code>null</code></div>
@@ -763,25 +763,25 @@ $snmp->enableCache();</div></div></div>
 <i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
 <a id="constant_OID_OUTPUT_FULL"> </a><div class="element clickable constant  constant_OID_OUTPUT_FULL" data-toggle="collapse" data-target=".constant_OID_OUTPUT_FULL .collapse" title="">
 <h2>SNMP output constants to mirror those of PHP</h2>
-<pre>OID_OUTPUT_FULL = SNMP_OID_OUTPUT_FULL : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
+<pre>OID_OUTPUT_FULL = SNMP_OID_OUTPUT_FULL : \OSS_SNMP\SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="constant_OID_OUTPUT_NUMERIC"> </a><div class="element clickable constant  constant_OID_OUTPUT_NUMERIC" data-toggle="collapse" data-target=".constant_OID_OUTPUT_NUMERIC .collapse" title="">
 <h2>SNMP output constants to mirror those of PHP</h2>
-<pre>OID_OUTPUT_NUMERIC = SNMP_OID_OUTPUT_NUMERIC : <a href="../classes/OSS_SNMP.SNMP.html">\OSS_SNMP\SNMP</a></pre>
+<pre>OID_OUTPUT_NUMERIC = SNMP_OID_OUTPUT_NUMERIC : \OSS_SNMP\SNMP</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="constant_SNMP_TRUTHVALUE_FALSE"> </a><div class="element clickable constant  constant_SNMP_TRUTHVALUE_FALSE" data-toggle="collapse" data-target=".constant_SNMP_TRUTHVALUE_FALSE .collapse" title="">
 <h2>Definition of an SNMP return type 'TruthValue'</h2>
-<pre>SNMP_TRUTHVALUE_FALSE = 2 : <a href="Definition.html">\OSS_SNMP\Definition</a></pre>
+<pre>SNMP_TRUTHVALUE_FALSE = 2 : \OSS_SNMP\Definition</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <a id="constant_SNMP_TRUTHVALUE_TRUE"> </a><div class="element clickable constant  constant_SNMP_TRUTHVALUE_TRUE" data-toggle="collapse" data-target=".constant_SNMP_TRUTHVALUE_TRUE .collapse" title="">
 <h2>Definition of an SNMP return type 'TruthValue'</h2>
-<pre>SNMP_TRUTHVALUE_TRUE = 1 : <a href="Definition.html">\OSS_SNMP\Definition</a></pre>
+<pre>SNMP_TRUTHVALUE_TRUE = 1 : \OSS_SNMP\Definition</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -791,9 +791,9 @@ $snmp->enableCache();</div></div></div>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.2.0
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.4.0
 </a> and<br>
-            generated on 2014-02-03T12:23:41Z.<br></footer></div>
+            generated on 2014-07-08T08:56:26+01:00.<br></footer></div>
 </div>
 </body>
 </html>

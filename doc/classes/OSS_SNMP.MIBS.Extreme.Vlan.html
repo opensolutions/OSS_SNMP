@@ -66,6 +66,7 @@ of ports indicating whether the port is a member (tagged or untagged)
 of the VLAN."><span class="description">For a given VLAN vlanIfIndex, this function returns an array
 of ports indicating whether the port is a member (tagged or untagged)
 of the VLAN.</span><pre>getPortsForVlan()</pre></a></li>
+<li class="method public "><a href="#method_getSNMP" title="getSNMP() :: Get the SNMP instance"><span class="description">Get the SNMP instance</span><pre>getSNMP()</pre></a></li>
 <li class="method public "><a href="#method_getTaggedPortsForVlan" title="getTaggedPortsForVlan() :: For a given VLAN vlanIfIndex, this function returns an array
 of ports indicating whether the port is a tagged member of the VLAN."><span class="description">For a given VLAN vlanIfIndex, this function returns an array
 of ports indicating whether the port is a tagged member of the VLAN.</span><pre>getTaggedPortsForVlan()</pre></a></li>
@@ -83,6 +84,7 @@ of ports indicating whether the port is a untagged member of the VLAN.</span><pr
 <li class="method public "><a href="#method_ifVlanIdsToIfIndexes" title="ifVlanIdsToIfIndexes() :: Get the device's VLAN IDs / tags mapped to vlanIfIndex (indexed by tag)"><span class="description">Get the device's VLAN IDs / tags mapped to vlanIfIndex (indexed by tag)</span><pre>ifVlanIdsToIfIndexes()</pre></a></li>
 <li class="method public "><a href="#method_opaqueTaggedPorts" title="opaqueTaggedPorts() :: Get tagged ports by VLAN  (indexed by vlanIfIndex)"><span class="description">Get tagged ports by VLAN  (indexed by vlanIfIndex)</span><pre>opaqueTaggedPorts()</pre></a></li>
 <li class="method public "><a href="#method_opaqueUntaggedPorts" title="opaqueUntaggedPorts() :: Get untagged ports by VLAN  (indexed by vlanIfIndex)"><span class="description">Get untagged ports by VLAN  (indexed by vlanIfIndex)</span><pre>opaqueUntaggedPorts()</pre></a></li>
+<li class="method public "><a href="#method_setSNMP" title="setSNMP() :: Set the SNMP instance"><span class="description">Set the SNMP instance</span><pre>setSNMP()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -92,6 +94,9 @@ of ports indicating whether the port is a untagged member of the VLAN.</span><pr
 <li class="property public "><a href="#property_IF_VLAN_STATES" title="$IF_VLAN_STATES() :: Text representation of VLAN states"><span class="description"></span><pre>$IF_VLAN_STATES</pre></a></li>
 <li class="property public "><a href="#property_IF_VLAN_TYPES" title="$IF_VLAN_TYPES() :: Text representation of VLAN types"><span class="description"></span><pre>$IF_VLAN_TYPES</pre></a></li>
 </ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private "><a href="#property__snmp" title="$_snmp() :: Instance for the SNMP object"><span class="description"></span><pre>$_snmp</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i title="Constants" class="icon-custom icon-constant"></i> Constants
@@ -177,6 +182,17 @@ member of a given VLAN while the others aren't is:
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>Array indexed by ifIndex indicating whether the port is a member of the given vlan</div>
+</div></div>
+</div>
+<a id="method_getSNMP"></a><div class="element clickable method public method_getSNMP" data-toggle="collapse" data-target=".method_getSNMP .collapse" title="public">
+<h2>Get the SNMP instance</h2>
+<pre>getSNMP() : \OSS_SNMP\SNMP</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\OSS_SNMP\SNMP</code>Instance of the SNMP object</div>
 </div></div>
 </div>
 <a id="method_getTaggedPortsForVlan"></a><div class="element clickable method public method_getTaggedPortsForVlan" data-toggle="collapse" data-target=".method_getTaggedPortsForVlan .collapse" title="public">
@@ -438,6 +454,21 @@ see that of the first eight ports, only the 2nd and 4th (50 = 01010000) are unta
 <code>array</code>The device's VLAN IDs / tags (indexed by vlanIfIndex)</div>
 </div></div>
 </div>
+<a id="method_setSNMP"></a><div class="element clickable method public method_setSNMP" data-toggle="collapse" data-target=".method_setSNMP .collapse" title="public">
+<h2>Set the SNMP instance</h2>
+<pre>setSNMP(\OSS_SNMP\SNMP $snmp) : \OSS_SNMP\MIB</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$snmp</h4>
+<code>\OSS_SNMP\SNMP</code><p>the SNMP instance</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\OSS_SNMP\MIB</code>An instance of this class for fluent interfaces</div>
+</div></div>
+</div>
 <h3>
 <i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
 <a id="property_IF_VLAN_LOOPBACK_MODE_FLAGS"> </a><div class="element clickable property public property_IF_VLAN_LOOPBACK_MODE_FLAGS" data-toggle="collapse" data-target=".property_IF_VLAN_LOOPBACK_MODE_FLAGS .collapse" title="public">
@@ -487,6 +518,16 @@ see that of the first eight ports, only the 2nd and 4th (50 = 01010000) are unta
 <td><a href="%5COSS_SNMP%5CMIBS%5CExtreme%5CifTypes()"></a></td>
 </tr></table>
 </div></div>
+</div>
+<a id="property__snmp"> </a><div class="element clickable property private property__snmp" data-toggle="collapse" data-target=".property__snmp .collapse" title="private">
+<h2>Instance for the SNMP object</h2>
+<pre>$_snmp </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <h3>
 <i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
@@ -622,9 +663,9 @@ see that of the first eight ports, only the 2nd and 4th (50 = 01010000) are unta
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.2.0
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.4.0
 </a> and<br>
-            generated on 2014-02-03T12:23:41Z.<br></footer></div>
+            generated on 2014-07-08T08:56:26+01:00.<br></footer></div>
 </div>
 </body>
 </html>

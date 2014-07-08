@@ -63,14 +63,23 @@
                     <ul>
 <li class="method public "><a href="#method_cistIntRootCost" title="cistIntRootCost() :: Returns the CIST Internal Root Path Cost"><span class="description">Returns the CIST Internal Root Path Cost</span><pre>cistIntRootCost()</pre></a></li>
 <li class="method public "><a href="#method_cistRegionalRoot" title="cistRegionalRoot() :: Returns the maximum number of MST instances"><span class="description">Returns the maximum number of MST instances</span><pre>cistRegionalRoot()</pre></a></li>
+<li class="method public "><a href="#method_getSNMP" title="getSNMP() :: Get the SNMP instance"><span class="description">Get the SNMP instance</span><pre>getSNMP()</pre></a></li>
 <li class="method public "><a href="#method_instances" title="instances() :: Returns an array of running MST instances."><span class="description">Returns an array of running MST instances.</span><pre>instances()</pre></a></li>
 <li class="method public "><a href="#method_maxInstanceId" title="maxInstanceId() :: Returns the maximum MST instance ID"><span class="description">Returns the maximum MST instance ID</span><pre>maxInstanceId()</pre></a></li>
 <li class="method public "><a href="#method_maxInstances" title="maxInstances() :: Returns the maximum number of MST instances"><span class="description">Returns the maximum number of MST instances</span><pre>maxInstances()</pre></a></li>
 <li class="method public "><a href="#method_regionRevision" title="regionRevision() :: Returns the operational SMST region revision."><span class="description">Returns the operational SMST region revision.</span><pre>regionRevision()</pre></a></li>
 <li class="method public "><a href="#method_remainingHopCount" title="remainingHopCount() :: Returns the remaining hop count for all MST instances"><span class="description">Returns the remaining hop count for all MST instances</span><pre>remainingHopCount()</pre></a></li>
+<li class="method public "><a href="#method_setSNMP" title="setSNMP() :: Set the SNMP instance"><span class="description">Set the SNMP instance</span><pre>setSNMP()</pre></a></li>
 <li class="method public "><a href="#method_vlansMapped" title="vlansMapped() :: Return array of MST instances containing an array of mapped VLANs"><span class="description">Return array of MST instances containing an array of mapped VLANs</span><pre>vlansMapped()</pre></a></li>
 <li class="method public "><a href="#method_vlansMappedAsRanges" title="vlansMappedAsRanges() :: Return array of MST instances containing an array of mapped VLAN ranges"><span class="description">Return array of MST instances containing an array of mapped VLAN ranges</span><pre>vlansMappedAsRanges()</pre></a></li>
 </ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private "><a href="#property__snmp" title="$_snmp() :: Instance for the SNMP object"><span class="description"></span><pre>$_snmp</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i title="Constants" class="icon-custom icon-constant"></i> Constants
@@ -154,6 +163,17 @@
 <code>string</code>The bridge identifier of the CIST regional root for the MST region</div>
 </div></div>
 </div>
+<a id="method_getSNMP"></a><div class="element clickable method public method_getSNMP" data-toggle="collapse" data-target=".method_getSNMP .collapse" title="public">
+<h2>Get the SNMP instance</h2>
+<pre>getSNMP() : \OSS_SNMP\SNMP</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\OSS_SNMP\SNMP</code>Instance of the SNMP object</div>
+</div></div>
+</div>
 <a id="method_instances"></a><div class="element clickable method public method_instances" data-toggle="collapse" data-target=".method_instances .collapse" title="public">
 <h2>Returns an array of running MST instances.</h2>
 <pre>instances(string $name<code> = null</code>) : array</pre>
@@ -221,6 +241,21 @@ We name the instances as well based on the region name / use specified string.</
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The remaining hop count for all MST instances</div>
+</div></div>
+</div>
+<a id="method_setSNMP"></a><div class="element clickable method public method_setSNMP" data-toggle="collapse" data-target=".method_setSNMP .collapse" title="public">
+<h2>Set the SNMP instance</h2>
+<pre>setSNMP(\OSS_SNMP\SNMP $snmp) : \OSS_SNMP\MIB</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$snmp</h4>
+<code>\OSS_SNMP\SNMP</code><p>the SNMP instance</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\OSS_SNMP\MIB</code>An instance of this class for fluent interfaces</div>
 </div></div>
 </div>
 <a id="method_vlansMapped"></a><div class="element clickable method public method_vlansMapped" data-toggle="collapse" data-target=".method_vlansMapped .collapse" title="public">
@@ -296,6 +331,18 @@ Which results in (for example):
 </div></div>
 </div>
 <h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__snmp"> </a><div class="element clickable property private property__snmp" data-toggle="collapse" data-target=".property__snmp .collapse" title="private">
+<h2>Instance for the SNMP object</h2>
+<pre>$_snmp </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
 <i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
 <a id="constant_OID_STP_X_SMST_INSTANCE_CIST_INT_ROOT_COST"> </a><div class="element clickable constant  constant_OID_STP_X_SMST_INSTANCE_CIST_INT_ROOT_COST" data-toggle="collapse" data-target=".constant_OID_STP_X_SMST_INSTANCE_CIST_INT_ROOT_COST .collapse" title="">
 <h2>OID_STP_X_SMST_INSTANCE_CIST_INT_ROOT_COST</h2>
@@ -351,9 +398,9 @@ Which results in (for example):
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.2.0
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.4.0
 </a> and<br>
-            generated on 2014-02-03T12:23:41Z.<br></footer></div>
+            generated on 2014-07-08T08:56:26+01:00.<br></footer></div>
 </div>
 </body>
 </html>

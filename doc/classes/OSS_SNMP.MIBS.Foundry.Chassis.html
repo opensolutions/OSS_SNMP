@@ -67,6 +67,7 @@
 <li class="method public "><a href="#method_cpu5secUtilisation" title="cpu5secUtilisation() :: Get the device's CPU utilisation - 5 sec average"><span class="description">Get the device's CPU utilisation - 5 sec average</span><pre>cpu5secUtilisation()</pre></a></li>
 <li class="method public "><a href="#method_fanDescriptions" title="fanDescriptions() :: Get the descriptions of the chassis' fans"><span class="description">Get the descriptions of the chassis' fans</span><pre>fanDescriptions()</pre></a></li>
 <li class="method public "><a href="#method_fanStates" title="fanStates() :: Get the device's fan states"><span class="description">Get the device's fan states</span><pre>fanStates()</pre></a></li>
+<li class="method public "><a href="#method_getSNMP" title="getSNMP() :: Get the SNMP instance"><span class="description">Get the SNMP instance</span><pre>getSNMP()</pre></a></li>
 <li class="method public "><a href="#method_isBufferShortage" title="isBufferShortage() :: Is the device buffers adequate"><span class="description">Is the device buffers adequate</span><pre>isBufferShortage()</pre></a></li>
 <li class="method public "><a href="#method_isDMAFailure" title="isDMAFailure() :: Are the device's DMAs in good condition?"><span class="description">Are the device's DMAs in good condition?</span><pre>isDMAFailure()</pre></a></li>
 <li class="method public "><a href="#method_isExcessiveError" title="isExcessiveError() :: Does the device have any excessive collision, FCS errors, alignment warning etc."><span class="description">Does the device have any excessive collision, FCS errors, alignment warning etc.</span><pre>isExcessiveError()</pre></a></li>
@@ -78,6 +79,7 @@
 <li class="method public "><a href="#method_psuDescriptions" title="psuDescriptions() :: Get the descriptions of the chassis' PSUs"><span class="description">Get the descriptions of the chassis' PSUs</span><pre>psuDescriptions()</pre></a></li>
 <li class="method public "><a href="#method_psuStates" title="psuStates() :: Get the device's PSU states"><span class="description">Get the device's PSU states</span><pre>psuStates()</pre></a></li>
 <li class="method public "><a href="#method_serialNumber" title="serialNumber() :: Get the device's serial number"><span class="description">Get the device's serial number</span><pre>serialNumber()</pre></a></li>
+<li class="method public "><a href="#method_setSNMP" title="setSNMP() :: Set the SNMP instance"><span class="description">Set the SNMP instance</span><pre>setSNMP()</pre></a></li>
 <li class="method public "><a href="#method_shutdownTemperature" title="shutdownTemperature() :: Get the device's chassis shutdown temperature"><span class="description">Get the device's chassis shutdown temperature</span><pre>shutdownTemperature()</pre></a></li>
 <li class="method public "><a href="#method_warningTemperature" title="warningTemperature() :: Get the device's chassis temperature warning threshold"><span class="description">Get the device's chassis temperature warning threshold</span><pre>warningTemperature()</pre></a></li>
 </ul>
@@ -88,6 +90,9 @@
 <li class="property public "><a href="#property_FAN_STATES" title="$FAN_STATES() :: Text representation of fan states"><span class="description"></span><pre>$FAN_STATES</pre></a></li>
 <li class="property public "><a href="#property_PSU_STATES" title="$PSU_STATES() :: Text representation of PSU states"><span class="description"></span><pre>$PSU_STATES</pre></a></li>
 </ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private "><a href="#property__snmp" title="$_snmp() :: Instance for the SNMP object"><span class="description"></span><pre>$_snmp</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i title="Constants" class="icon-custom icon-constant"></i> Constants
@@ -230,6 +235,17 @@
 <code>array</code>The device's fan states</div>
 </div></div>
 </div>
+<a id="method_getSNMP"></a><div class="element clickable method public method_getSNMP" data-toggle="collapse" data-target=".method_getSNMP .collapse" title="public">
+<h2>Get the SNMP instance</h2>
+<pre>getSNMP() : \OSS_SNMP\SNMP</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\OSS_SNMP\SNMP</code>Instance of the SNMP object</div>
+</div></div>
+</div>
 <a id="method_isBufferShortage"></a><div class="element clickable method public method_isBufferShortage" data-toggle="collapse" data-target=".method_isBufferShortage .collapse" title="public">
 <h2>Is the device buffers adequate</h2>
 <pre>isBufferShortage() : bool</pre>
@@ -365,6 +381,21 @@
 <code>string</code>The chassis serial number</div>
 </div></div>
 </div>
+<a id="method_setSNMP"></a><div class="element clickable method public method_setSNMP" data-toggle="collapse" data-target=".method_setSNMP .collapse" title="public">
+<h2>Set the SNMP instance</h2>
+<pre>setSNMP(\OSS_SNMP\SNMP $snmp) : \OSS_SNMP\MIB</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$snmp</h4>
+<code>\OSS_SNMP\SNMP</code><p>the SNMP instance</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\OSS_SNMP\MIB</code>An instance of this class for fluent interfaces</div>
+</div></div>
+</div>
 <a id="method_shutdownTemperature"></a><div class="element clickable method public method_shutdownTemperature" data-toggle="collapse" data-target=".method_shutdownTemperature .collapse" title="public">
 <h2>Get the device's chassis shutdown temperature</h2>
 <pre>shutdownTemperature() : int</pre>
@@ -428,6 +459,16 @@
 <td><a href="%5COSS_SNMP%5CMIBS%5CFoundry%5CpsuStates()"></a></td>
 </tr></table>
 </div></div>
+</div>
+<a id="property__snmp"> </a><div class="element clickable property private property__snmp" data-toggle="collapse" data-target=".property__snmp .collapse" title="private">
+<h2>Instance for the SNMP object</h2>
+<pre>$_snmp </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <h3>
 <i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
@@ -623,9 +664,9 @@
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.2.0
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.4.0
 </a> and<br>
-            generated on 2014-02-03T12:23:41Z.<br></footer></div>
+            generated on 2014-07-08T08:56:26+01:00.<br></footer></div>
 </div>
 </body>
 </html>

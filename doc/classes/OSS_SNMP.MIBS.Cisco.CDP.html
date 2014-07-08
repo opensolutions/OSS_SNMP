@@ -68,6 +68,7 @@ single LAG links.</span><pre>collapseLAGs()</pre></a></li>
 <li class="method public "><a href="#method_crawl" title="crawl() :: Recursivily crawls all CDP neighbours to build up a flat array of all devices
 indexed by the CDP device id."><span class="description">Recursivily crawls all CDP neighbours to build up a flat array of all devices
 indexed by the CDP device id.</span><pre>crawl()</pre></a></li>
+<li class="method public "><a href="#method_getSNMP" title="getSNMP() :: Get the SNMP instance"><span class="description">Get the SNMP instance</span><pre>getSNMP()</pre></a></li>
 <li class="method public "><a href="#method_globalHoldTime" title="globalHoldTime() :: Get the time for the receiving device holds CDP message"><span class="description">Get the time for the receiving device holds CDP message</span><pre>globalHoldTime()</pre></a></li>
 <li class="method public "><a href="#method_globalLastChange" title="globalLastChange() :: The time when the cache table was last changed"><span class="description">The time when the cache table was last changed</span><pre>globalLastChange()</pre></a></li>
 <li class="method public "><a href="#method_globalMessageInterval" title="globalMessageInterval() :: Get the interval at which CDP messages are to be generated"><span class="description">Get the interval at which CDP messages are to be generated</span><pre>globalMessageInterval()</pre></a></li>
@@ -90,6 +91,7 @@ indexed by the CDP device id.</span><pre>crawl()</pre></a></li>
 <li class="method public "><a href="#method_neighbourVTPMgmtDomain" title="neighbourVTPMgmtDomain() :: Get the device's CDP neighbours' VTP management domain indexed by the current device's port ID"><span class="description">Get the device's CDP neighbours' VTP management domain indexed by the current device's port ID</span><pre>neighbourVTPMgmtDomain()</pre></a></li>
 <li class="method public "><a href="#method_neighbourVersions" title="neighbourVersions() :: Get the device's CDP neighbour version indexed by the current device's port ID"><span class="description">Get the device's CDP neighbour version indexed by the current device's port ID</span><pre>neighbourVersions()</pre></a></li>
 <li class="method public "><a href="#method_neighbours" title="neighbours() :: CDP utility function to get all CDP neighbours and their connected ports."><span class="description">CDP utility function to get all CDP neighbours and their connected ports.</span><pre>neighbours()</pre></a></li>
+<li class="method public "><a href="#method_setSNMP" title="setSNMP() :: Set the SNMP instance"><span class="description">Set the SNMP instance</span><pre>setSNMP()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -99,6 +101,9 @@ indexed by the CDP device id.</span><pre>crawl()</pre></a></li>
 <li class="property public "><a href="#property_CDP_CACHE_NEIGHBOUR_CAPABILITIES" title="$CDP_CACHE_NEIGHBOUR_CAPABILITIES() :: Text representation of CDP capabilities"><span class="description"></span><pre>$CDP_CACHE_NEIGHBOUR_CAPABILITIES</pre></a></li>
 <li class="property public "><a href="#property_CDP_CACHE_NEIGHBOUR_DUPLEXES" title="$CDP_CACHE_NEIGHBOUR_DUPLEXES() :: Text representation of CDP capabilities"><span class="description"></span><pre>$CDP_CACHE_NEIGHBOUR_DUPLEXES</pre></a></li>
 </ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private "><a href="#property__snmp" title="$_snmp() :: Instance for the SNMP object"><span class="description"></span><pre>$_snmp</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i title="Constants" class="icon-custom icon-constant"></i> Constants
@@ -286,6 +291,17 @@ indexed by the CDP device id.</h2>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code>The resultant array of all crawled devices (same as that passed in the @param $devices parameter)</div>
+</div></div>
+</div>
+<a id="method_getSNMP"></a><div class="element clickable method public method_getSNMP" data-toggle="collapse" data-target=".method_getSNMP .collapse" title="public">
+<h2>Get the SNMP instance</h2>
+<pre>getSNMP() : \OSS_SNMP\SNMP</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\OSS_SNMP\SNMP</code>Instance of the SNMP object</div>
 </div></div>
 </div>
 <a id="method_globalHoldTime"></a><div class="element clickable method public method_globalHoldTime" data-toggle="collapse" data-target=".method_globalHoldTime .collapse" title="public">
@@ -745,6 +761,21 @@ is connected with a LAG / PortChannel and `$inverse` was set to true.
 <code>array</code>CDP neighbours and their connected ports</div>
 </div></div>
 </div>
+<a id="method_setSNMP"></a><div class="element clickable method public method_setSNMP" data-toggle="collapse" data-target=".method_setSNMP .collapse" title="public">
+<h2>Set the SNMP instance</h2>
+<pre>setSNMP(\OSS_SNMP\SNMP $snmp) : \OSS_SNMP\MIB</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$snmp</h4>
+<code>\OSS_SNMP\SNMP</code><p>the SNMP instance</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\OSS_SNMP\MIB</code>An instance of this class for fluent interfaces</div>
+</div></div>
+</div>
 <h3>
 <i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
 <a id="property_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES"> </a><div class="element clickable property public property_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES" data-toggle="collapse" data-target=".property_CDP_CACHE_NEIGHBOUR_ADDRESS_TYPES .collapse" title="public">
@@ -794,6 +825,16 @@ is connected with a LAG / PortChannel and `$inverse` was set to true.
 <td><a href="%5COSS_SNMP%5CMIBS%5CCisco%5CneighbourDuplexMode()"></a></td>
 </tr></table>
 </div></div>
+</div>
+<a id="property__snmp"> </a><div class="element clickable property private property__snmp" data-toggle="collapse" data-target=".property__snmp .collapse" title="private">
+<h2>Instance for the SNMP object</h2>
+<pre>$_snmp </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <h3>
 <i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
@@ -1043,9 +1084,9 @@ is connected with a LAG / PortChannel and `$inverse` was set to true.
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.2.0
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.4.0
 </a> and<br>
-            generated on 2014-02-03T12:23:41Z.<br></footer></div>
+            generated on 2014-07-08T08:56:26+01:00.<br></footer></div>
 </div>
 </body>
 </html>
