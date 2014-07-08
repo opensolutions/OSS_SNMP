@@ -57,7 +57,7 @@ class Platform
      * @var string The platform model
      */
     protected $_model = 'Unknown';
-    
+
     /**
      * The platform operating system
      *
@@ -92,8 +92,8 @@ class Platform
      * @var string The \OSS_SNMP\SNMP object
      */
     protected $_snmpHost;
-    
-    
+
+
     /**
      * The constructor.
      *
@@ -103,25 +103,31 @@ class Platform
     public function __construct( $snmpHost )
     {
         $this->setSNMPHost( $snmpHost );
-        
+
         $this->parse();
-        
+
         return $this;
     }
 
 
-    
+
     public function parse()
     {
         // query the platform for it's description and parse it for details
-        
-        $sysDescr = $this->getSNMPHost()->useSystem()->description();
+
+        $sysDescr    = $this->getSNMPHost()->useSystem()->description();
+
+        try {
+            $sysObjectId =  $this->getSNMPHost()->useSystem()->systemObjectID();
+        } catch( Exception $e ){
+            $sysObjectId = null;
+        }
         
         // there's possibly a better way to do this...?
         foreach( glob(  __DIR__ . '/Platforms/vendor_*.php' ) as $f )
             include( $f );
     }
-    
+
     /**
      * Set the SNMPT Host
      *
@@ -212,7 +218,7 @@ class Platform
      */
     public function setSerialNumber( $s )
     {
-        $this->_serial = $s; 
+        $this->_serial = $s;
         return $this;
     }
 
@@ -277,5 +283,3 @@ class Platform
     }
 
 }
-
-

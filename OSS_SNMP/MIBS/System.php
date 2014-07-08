@@ -44,6 +44,7 @@ namespace OSS_SNMP\MIBS;
 class System extends \OSS_SNMP\MIB
 {
     const OID_SYSTEM_DESCRIPTION = '.1.3.6.1.2.1.1.1.0';
+    const OID_SYSTEM_OBJECT_ID   = '.1.3.6.1.2.1.1.2.0';
     const OID_SYSTEM_UPTIME      = '.1.3.6.1.2.1.1.3.0';
     const OID_SYSTEM_CONTACT     = '.1.3.6.1.2.1.1.4.0';
     const OID_SYSTEM_NAME        = '.1.3.6.1.2.1.1.5.0';
@@ -59,6 +60,29 @@ class System extends \OSS_SNMP\MIB
     {
         return $this->getSNMP()->get( self::OID_SYSTEM_DESCRIPTION );
     }
+
+    /**
+     * Returns the system object ID
+     *
+     * "The vendor's authoritative identification of the
+     * network management subsystem contained in the
+     * entity.  This value is allocated within the SMI
+     * enterprises subtree (1.3.6.1.4.1) and provides an
+     * easy and unambiguous means for determining `what
+     * kind of box' is being managed.  For example, if
+     * vendor `Flintstones, Inc.' was assigned the
+     * subtree 1.3.6.1.4.1.4242, it could assign the
+     * identifier 1.3.6.1.4.1.4242.1.1 to its `Fred
+     * Router'."
+     *
+     * @return string The system object ID
+     */
+    public function systemObjectID()
+    {
+        return $this->getSNMP()->get( self::OID_SYSTEM_OBJECT_ID );
+    }
+
+
 
     /**
      * Returns the system uptime of the device
@@ -162,5 +186,3 @@ class System extends \OSS_SNMP\MIB
         return $system;
     }
 }
-
-
