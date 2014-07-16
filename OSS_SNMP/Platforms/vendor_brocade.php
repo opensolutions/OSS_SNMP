@@ -53,7 +53,7 @@ if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
         $this->setOsDate( new \DateTime( "{$matches[6]}/{$matches[5]}/{$matches[7]}:{$matches[8]} +0000" ) );
         $this->getOsDate()->setTimezone( new \DateTimeZone( 'UTC' ) );
     }
-    else if( preg_match( '/Brocade (NetIron [a-zA-Z0-9]+).*IronWare\sVersion\s(.+)\sCompiled\son\s(([a-zA-Z]+)\s(\d+)\s(\d+)\s)at\s((\d\d):(\d\d):(\d\d))\slabeled\sas\s(.+)/',
+    else if( preg_match( '/Brocade (NetIron [a-zA-Z0-9]+).*IronWare\sVersion\s(.+)\s+Compiled\s+on\s+(([a-zA-Z]+)\s+(\d+)\s+(\d+)\s+)at\s+((\d\d):(\d\d):(\d\d))\s+labeled\s+as\s+(.+)/',
             $sysDescr, $matches ) )
     {
         $this->setVendor( 'Brocade' );
