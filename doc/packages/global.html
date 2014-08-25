@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>OSS_SNMP » global</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">OSS_SNMP</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/OSS_SNMP.html"><i class="icon-th"></i> OSS_SNMP</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">62</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">2</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Packages</li>
+<li>
+<a href="../packages/global.html" title="global"><i class="icon-folder-open"></i>global</a><ul class="nav nav-list nav-packages"></ul>
+</li>
+<li class="nav-header">
+<i title="Classes" class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#RSTP" title="A class for performing SNMP V2 queries on Cisco devices">RSTP</a></li>
+<li><a href="#CDP" title="A class for performing SNMP V2 queries on Cisco devices">CDP</a></li>
+<li><a href="#Asterisk" title="A class for performing SNMP V2 queries on Asterisk">Asterisk</a></li>
+<li><a href="#MIB" title='Parent class for all "MIB" extensions.'>MIB</a></li>
+<li><a href="#Extreme" title="A class for performing SNMP V2 queries on Extreme devices">Extreme</a></li>
+<li><a href="#Host" title="A class for performing SNMP V2 queries on generic devices">Host</a></li>
+<li><a href="#System" title="A class for performing SNMP V2 queries on generic devices">System</a></li>
+<li><a href="#Bridge" title="A class for performing SNMP V2 queries on generic devices">Bridge</a></li>
+<li><a href="#MST" title="A class for performing SNMP V2 queries on Cisco devices">MST</a></li>
+<li><a href="#Chassis" title="A class for performing SNMP V2 queries on Foundry devices">Chassis</a></li>
+<li><a href="#Cache" title="An abstract cache for storing results of SNMP queries .">Cache</a></li>
+<li><a href="#Cisco" title="A class for performing SNMP V2 queries on Cisco devices">Cisco</a></li>
+<li><a href="#Entity" title="A class for performing SNMP V2 queries on generic devices">Entity</a></li>
+<li><a href="#MRV" title="A class for performing SNMP V2 queries on MRV devices">MRV</a></li>
+<li><a href="#APC" title="APC cache implementation">APC</a></li>
+<li><a href="#Engine" title="A class for performing SNMP V2 queries">Engine</a></li>
+<li><a href="#Platform" title="A class for parsing device / host / platform details">Platform</a></li>
+<li><a href="#SNMP" title="A class for performing SNMP V2 queries">SNMP</a></li>
+<li><a href="#System" title="A class for performing SNMP V2 queries on MRV devices">System</a></li>
+<li><a href="#Exception" title="OSS_SNMP\Exception class">Exception</a></li>
+<li><a href="#Indications" title="A class for performing SNMP V2 queries on Asterisk">Indications</a></li>
+<li><a href="#Iface" title="A class for performing SNMP V2 queries on generic devices">Iface</a></li>
+<li><a href="#VTP" title="A class for performing SNMP V2 queries on Cisco devices">VTP</a></li>
+<li><a href="#Chassis" title="A class for performing SNMP V2 queries on Extreme devices">Chassis</a></li>
+<li><a href="#Channels" title="A class for performing SNMP V2 queries on Asterisk">Channels</a></li>
+<li><a href="#SMST" title="A class for performing SNMP V2 queries on Cisco devices">SMST</a></li>
+<li><a href="#Timer" title="A class for timing PHP scripts">Timer</a></li>
+<li><a href="#Vlan" title="A class for performing SNMP V2 VLAN queries on Extreme devices">Vlan</a></li>
+<li><a href="#Basic" title="basic (array) cache implementation">Basic</a></li>
+<li><a href="#LAG" title="A class for performing SNMP V2 queries on generic devices">LAG</a></li>
+<li><a href="#Foundry" title="A class for performing SNMP V2 queries on Foundry / Brocade devices">Foundry</a></li>
+<li><a href="#BGP" title="A class for performing SNMP V2 BGP queries">BGP</a></li>
+<li><a href="#SNMP" title="A class for performing SNMP V2 queries and processing the results.">SNMP</a></li>
+</ul>
+</div>
+<div class="span8 package-contents">
+<ul class="breadcrumb"><li>
+<a href="../index.html"><i class="icon-folder-open"></i></a><span class="divider">\</span><li class="active"><a href="../packages/global.html">global</a></li>
+</li></ul>
+<div class="package-indent">
+<h3>
+<i title="Classes" class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="Cache" class="element ajax clickable class">
+<h1>Cache<a href="../classes/OSS_SNMP.Cache.html">¶</a>
+</h1>
+<p class="short_description">An abstract cache for storing results of SNMP queries .</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.Cache.html" class="more">« More »</a>
+</div>
+<div id="APC" class="element ajax clickable class">
+<h1>APC<a href="../classes/OSS_SNMP.Cache.APC.html">¶</a>
+</h1>
+<p class="short_description">APC cache implementation</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.Cache.APC.html" class="more">« More »</a>
+</div>
+<div id="Basic" class="element ajax clickable class">
+<h1>Basic<a href="../classes/OSS_SNMP.Cache.Basic.html">¶</a>
+</h1>
+<p class="short_description">basic (array) cache implementation</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.Cache.Basic.html" class="more">« More »</a>
+</div>
+<div id="Exception" class="element ajax clickable class">
+<h1>Exception<a href="../classes/OSS_SNMP.Exception.html">¶</a>
+</h1>
+<p class="short_description">OSS_SNMP\Exception class</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.Exception.html" class="more">« More »</a>
+</div>
+<div id="MIB" class="element ajax clickable class">
+<h1>MIB<a href="../classes/OSS_SNMP.MIB.html">¶</a>
+</h1>
+<p class="short_description">Parent class for all "MIB" extensions.</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIB.html" class="more">« More »</a>
+</div>
+<div id="Asterisk" class="element ajax clickable class">
+<h1>Asterisk<a href="../classes/OSS_SNMP.MIBS.Asterisk.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Asterisk</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Asterisk.html" class="more">« More »</a>
+</div>
+<div id="Channels" class="element ajax clickable class">
+<h1>Channels<a href="../classes/OSS_SNMP.MIBS.Asterisk.Channels.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Asterisk</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Asterisk.Channels.html" class="more">« More »</a>
+</div>
+<div id="Indications" class="element ajax clickable class">
+<h1>Indications<a href="../classes/OSS_SNMP.MIBS.Asterisk.Indications.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Asterisk</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Asterisk.Indications.html" class="more">« More »</a>
+</div>
+<div id="BGP" class="element ajax clickable class">
+<h1>BGP<a href="../classes/OSS_SNMP.MIBS.BGP.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 BGP queries</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.BGP.html" class="more">« More »</a>
+</div>
+<div id="Bridge" class="element ajax clickable class">
+<h1>Bridge<a href="../classes/OSS_SNMP.MIBS.Bridge.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on generic devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Bridge.html" class="more">« More »</a>
+</div>
+<div id="Cisco" class="element ajax clickable class">
+<h1>Cisco<a href="../classes/OSS_SNMP.MIBS.Cisco.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Cisco devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Cisco.html" class="more">« More »</a>
+</div>
+<div id="CDP" class="element ajax clickable class">
+<h1>CDP<a href="../classes/OSS_SNMP.MIBS.Cisco.CDP.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Cisco devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Cisco.CDP.html" class="more">« More »</a>
+</div>
+<div id="MST" class="element ajax clickable class">
+<h1>MST<a href="../classes/OSS_SNMP.MIBS.Cisco.MST.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Cisco devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Cisco.MST.html" class="more">« More »</a>
+</div>
+<div id="RSTP" class="element ajax clickable class">
+<h1>RSTP<a href="../classes/OSS_SNMP.MIBS.Cisco.RSTP.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Cisco devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Cisco.RSTP.html" class="more">« More »</a>
+</div>
+<div id="SMST" class="element ajax clickable class">
+<h1>SMST<a href="../classes/OSS_SNMP.MIBS.Cisco.SMST.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Cisco devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Cisco.SMST.html" class="more">« More »</a>
+</div>
+<div id="VTP" class="element ajax clickable class">
+<h1>VTP<a href="../classes/OSS_SNMP.MIBS.Cisco.VTP.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Cisco devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Cisco.VTP.html" class="more">« More »</a>
+</div>
+<div id="Entity" class="element ajax clickable class">
+<h1>Entity<a href="../classes/OSS_SNMP.MIBS.Entity.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on generic devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Entity.html" class="more">« More »</a>
+</div>
+<div id="Extreme" class="element ajax clickable class">
+<h1>Extreme<a href="../classes/OSS_SNMP.MIBS.Extreme.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Extreme devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Extreme.html" class="more">« More »</a>
+</div>
+<div id="Chassis" class="element ajax clickable class">
+<h1>Chassis<a href="../classes/OSS_SNMP.MIBS.Extreme.Chassis.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Extreme devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Extreme.Chassis.html" class="more">« More »</a>
+</div>
+<div id="Vlan" class="element ajax clickable class">
+<h1>Vlan<a href="../classes/OSS_SNMP.MIBS.Extreme.Vlan.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 VLAN queries on Extreme devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Extreme.Vlan.html" class="more">« More »</a>
+</div>
+<div id="Foundry" class="element ajax clickable class">
+<h1>Foundry<a href="../classes/OSS_SNMP.MIBS.Foundry.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Foundry / Brocade devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Foundry.html" class="more">« More »</a>
+</div>
+<div id="Chassis" class="element ajax clickable class">
+<h1>Chassis<a href="../classes/OSS_SNMP.MIBS.Foundry.Chassis.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on Foundry devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Foundry.Chassis.html" class="more">« More »</a>
+</div>
+<div id="Host" class="element ajax clickable class">
+<h1>Host<a href="../classes/OSS_SNMP.MIBS.Host.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on generic devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Host.html" class="more">« More »</a>
+</div>
+<div id="Iface" class="element ajax clickable class">
+<h1>Iface<a href="../classes/OSS_SNMP.MIBS.Iface.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on generic devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.Iface.html" class="more">« More »</a>
+</div>
+<div id="LAG" class="element ajax clickable class">
+<h1>LAG<a href="../classes/OSS_SNMP.MIBS.LAG.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on generic devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.LAG.html" class="more">« More »</a>
+</div>
+<div id="MRV" class="element ajax clickable class">
+<h1>MRV<a href="../classes/OSS_SNMP.MIBS.MRV.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on MRV devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.MRV.html" class="more">« More »</a>
+</div>
+<div id="System" class="element ajax clickable class">
+<h1>System<a href="../classes/OSS_SNMP.MIBS.MRV.System.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on MRV devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.MRV.System.html" class="more">« More »</a>
+</div>
+<div id="SNMP" class="element ajax clickable class">
+<h1>SNMP<a href="../classes/OSS_SNMP.MIBS.SNMP.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.SNMP.html" class="more">« More »</a>
+</div>
+<div id="Engine" class="element ajax clickable class">
+<h1>Engine<a href="../classes/OSS_SNMP.MIBS.SNMP.Engine.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.SNMP.Engine.html" class="more">« More »</a>
+</div>
+<div id="System" class="element ajax clickable class">
+<h1>System<a href="../classes/OSS_SNMP.MIBS.System.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries on generic devices</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.MIBS.System.html" class="more">« More »</a>
+</div>
+<div id="Platform" class="element ajax clickable class">
+<h1>Platform<a href="../classes/OSS_SNMP.Platform.html">¶</a>
+</h1>
+<p class="short_description">A class for parsing device / host / platform details</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.Platform.html" class="more">« More »</a>
+</div>
+<div id="SNMP" class="element ajax clickable class">
+<h1>SNMP<a href="../classes/OSS_SNMP.SNMP.html">¶</a>
+</h1>
+<p class="short_description">A class for performing SNMP V2 queries and processing the results.</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.SNMP.html" class="more">« More »</a>
+</div>
+<div id="Timer" class="element ajax clickable class">
+<h1>Timer<a href="../classes/OSS_SNMP.Timer.html">¶</a>
+</h1>
+<p class="short_description">A class for timing PHP scripts</p>
+<div class="details collapse"></div>
+<a href="../classes/OSS_SNMP.Timer.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.4.0
+</a> and<br>
+            generated on 2014-07-08T08:56:26+01:00.<br></footer></div>
+</div>
+</body>
+</html>
