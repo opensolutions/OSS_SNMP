@@ -43,7 +43,7 @@ if( substr( $sysDescr, 0, 9 ) == 'ProCurve ' )
     if( preg_match( '/ProCurve (\w+) Switch ([0-9]+), revision ([A-Z0-9\.]+), ROM [A-Z0-9\.]+ .*/',
             $sysDescr, $matches ) )
     {
-        $this->setVendor( 'HP' );
+        $this->setVendor( 'Hewlett-Packard' );
         $this->setModel( "Procurve Switch {$matches[2]} ({$matches[1]})" );
         $this->setOs( 'ProCurve' );
         $this->setOsVersion( $matches[3] );
