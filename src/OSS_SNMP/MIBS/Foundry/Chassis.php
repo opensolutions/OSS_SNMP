@@ -282,7 +282,7 @@ class Chassis extends \OSS_SNMP\MIBS\Foundry
      * > The serial number of the chassis. If the
      * > serial number is unknown or unavailable then
      * > the value should be a zero length string.
-     * 
+     *
      * @see http://www.mibdepot.com/cgi-bin/getmib3.cgi?win=mib_a&i=1&n=FOUNDRY-SN-AGENT-MIB&r=foundry&f=sn_agent.mib&v=v1&t=sca&o=snChasSerNum
      *
      * @return string The chassis serial number
@@ -378,7 +378,3 @@ class Chassis extends \OSS_SNMP\MIBS\Foundry
     }
 
 }
-
-
-
-
