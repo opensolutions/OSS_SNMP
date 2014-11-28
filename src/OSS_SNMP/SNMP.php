@@ -186,7 +186,7 @@ class SNMP
         $this->_lastResult = @snmp2_get( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
 
         if( $this->_lastResult === false )
-            throw new Exception( 'Cound not perform walk for OID ' . $oid );
+            throw new Exception( 'Could not perform walk for OID ' . $oid );
 
         return $this->getCache()->save( $oid, $this->parseSnmpValue( $this->_lastResult ) );
     }
@@ -225,7 +225,7 @@ class SNMP
         $this->_lastResult = @snmp2_real_walk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
 
         if( $this->_lastResult === false )
-            throw new Exception( 'Cound not perform walk for OID ' . $oid );
+            throw new Exception( 'Could not perform walk for OID ' . $oid );
 
         $result = array();
 
@@ -274,7 +274,7 @@ class SNMP
         $this->_lastResult = @snmp2_real_walk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
 
         if( $this->_lastResult === false )
-            throw new Exception( 'Cound not perform walk for OID ' . $oid );
+            throw new Exception( 'Could not perform walk for OID ' . $oid );
 
         $result = array();
 
@@ -318,7 +318,7 @@ class SNMP
         $this->_lastResult = @snmp2_real_walk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
 
         if( $this->_lastResult === false )
-            throw new Exception( 'Cound not perform walk for OID ' . $oid );
+            throw new Exception( 'Could not perform walk for OID ' . $oid );
 
         $result = array();
 
