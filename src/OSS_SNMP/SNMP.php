@@ -374,7 +374,11 @@ class SNMP
                 $rtn = (int)$value;
                 break;
 
-            case 'Gauge32':
+            case 'Counter64':
+                $rtn = (int)$value;
+                break;
+
+                case 'Gauge32':
                 $rtn = (int)$value;
                 break;
 
@@ -746,5 +750,3 @@ class SNMP
     }
 
 }
-
-

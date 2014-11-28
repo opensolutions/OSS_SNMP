@@ -68,12 +68,25 @@ $host = new \OSS_SNMP\SNMP( $argv[1], $argv[2] );
 
 echo "\nSystem information for {$argv[1]}:\n\n";
 
-//print_r( $host->useSystem()->getAll() );
+print_r( $host->useSystem()->getAll() );
 
+echo "\n\n";
+
+echo "\n\nPlatform details for {$argv[1]}:\n"
+    . "\nVendor:     " . $host->getPlatform()->getVendor()
+    . "\nModel:      " . $host->getPlatform()->getModel()
+    . "\nOS:         " . $host->getPlatform()->getOs()
+    . "\nOS Version: " . $host->getPlatform()->getOsVersion();
 echo "\n\n";
 
 
 echo "Temperature alarm: " . ( $host->useExtreme_System_Common()->overTemperatureAlarm() ? 'YES' : 'NO' ) . "\n";
+echo "Temperature      : " . $host->useExtreme_System_Common()->currentTemperature() . "C\n";
+
+echo "\n\n";
+
+print_r( $host->useExtreme_SwMonitor_Memory()->percentUsage() );
+
 
 echo "\n\n";
 
