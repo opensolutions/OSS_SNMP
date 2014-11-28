@@ -98,28 +98,26 @@ class Common extends \OSS_SNMP\MIBS\Extreme\System
     {
         return $this->getSNMP()->walk1d( self::OID_FAN_OPERATIONAL );
     }
-/*
+
     /**
-    * Get the identifiers of the cooling fans.
-    *
-    * Identifier of cooling fan, numbered from the front and/or
-    * left side of device.
-    *
-    * @return array Identifiers of the cooling fans.
-    *
-    public function fanNumbers()
+     * The entity index for this fan entity in the entityPhysicalTable table of the
+     * entity MIB.
+     *
+     * @return array The entity index for this fan entity in the entityPhysicalTable table of the entity MIB
+     */
+    public function fanEntPhysicalIndex()
     {
-        return $this->getSNMP()->walk1d( self::OID_FAN_NUMBER );
+        return $this->getSNMP()->walk1d( self::OID_FAN_ENT_PHYSICAL_INDEX );
     }
 
     /**
-    * Get the identifiers of the cooling fans.
-    *
-    * Identifier of cooling fan, numbered from the front and/or
-    * left side of device.
-    *
-    * @return array Identifiers of the cooling fans.
-    *
+     * Get the identifiers of the cooling fans.
+     *
+     * Identifier of cooling fan, numbered from the front and/or
+     * left side of device.
+     *
+     * @return array Identifiers of the cooling fans.
+     */
     public function fanNumbers()
     {
         return $this->getSNMP()->walk1d( self::OID_FAN_NUMBER );
