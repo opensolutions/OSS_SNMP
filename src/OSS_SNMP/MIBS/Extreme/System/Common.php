@@ -416,7 +416,7 @@ class Common extends \OSS_SNMP\MIBS\Extreme\System
      * Constant for possible value of system power state
      * @see systemPowerState()
      */
-    const SYSTEM_POWER_STATE_REDUNADANT_POWER_AVAILABLE = 3;
+    const SYSTEM_POWER_STATE_REDUNDANT_POWER_AVAILABLE = 3;
 
     /**
      * Constant for possible value of system power state
@@ -433,7 +433,7 @@ class Common extends \OSS_SNMP\MIBS\Extreme\System
     public static $POWER_STATES = [
         self::SYSTEM_POWER_STATE_COMPUTING                          => 'computing',
         self::SYSTEM_POWER_STATE_SUFFICIENT_BUT_NOT_REDUNDANT_POWER => 'sufficientButNotRedundantPower',
-        self::SYSTEM_POWER_STATE_REDUNADANT_POWER_AVAILABLE         => 'redundantPowerAvailable',
+        self::SYSTEM_POWER_STATE_REDUNDANT_POWER_AVAILABLE          => 'redundantPowerAvailable',
         self::SYSTEM_POWER_STATE_INSUFFICIENT_POWER                 => 'insufficientPower'
     ];
 
