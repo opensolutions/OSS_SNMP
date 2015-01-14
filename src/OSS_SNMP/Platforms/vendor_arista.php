@@ -37,7 +37,7 @@
 //
 // "Arista Networks EOS version 4.14.2F running on an Arista Networks DCS-7504"
 
-if( substr( $sysDescr, 0, 6 ) == 'Arista ' )
+if( substr( $sysDescr, 0, 7 ) == 'Arista ' )
 {
     preg_match( '/Arista Networks EOS version (.+) running on Arista Networks (.+)$/',
             $sysDescr, $matches );
