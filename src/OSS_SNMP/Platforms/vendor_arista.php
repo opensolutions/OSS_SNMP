@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Copyright (c) 2012 - 2013, Open Source Solutions Limited, Dublin, Ireland
+    Copyright (c) 2012 - 2015, Open Source Solutions Limited, Dublin, Ireland
     All rights reserved.
 
     Contact: Barry O'Donovan - barry (at) opensolutions (dot) ie
@@ -32,6 +32,8 @@
     (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+
+// Author: Elisa Jasinska https://github.com/fooelisa
 
 // Following block works with sysDescr such as:
 //
