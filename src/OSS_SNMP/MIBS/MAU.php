@@ -46,474 +46,473 @@ class MAU extends \OSS_SNMP\MIB
     const OID_TYPE                  = '.1.3.6.1.2.1.26.2.1.1.3';
 
 
-
     /**
-    * Constant for MAU type: AUI
-    * @see types()
-    */
-    const TYPE_AUI = 1;
+     * Constant for MAU type: AUI
+     * @see types()
+     */
+    const TYPE_AUI = '.1.3.6.1.2.1.26.4.1';
 
     /**
-    * Constant for MAU type: 10Base5
-    * @see types()
-    */
-    const TYPE_10BASE5 = 2;
+     * Constant for MAU type: 10Base5
+     * @see types()
+     */
+    const TYPE_10BASE5 = '.1.3.6.1.2.1.26.4.2';
 
     /**
-    * Constant for MAU type: Foirl
-    * @see types()
-    */
-    const TYPE_FOIRL = 3;
+     * Constant for MAU type: Foirl
+     * @see types()
+     */
+    const TYPE_FOIRL = '.1.3.6.1.2.1.26.4.3';
 
     /**
-    * Constant for MAU type: 10Base2
-    * @see types()
-    */
-    const TYPE_10BASE2 = 4;
+     * Constant for MAU type: 10Base2
+     * @see types()
+     */
+    const TYPE_10BASE2 = '.1.3.6.1.2.1.26.4.4';
 
     /**
-    * Constant for MAU type: 10BaseT
-    * @see types()
-    */
-    const TYPE_10BASET = 5;
+     * Constant for MAU type: 10BaseT
+     * @see types()
+     */
+    const TYPE_10BASET = '.1.3.6.1.2.1.26.4.5';
 
     /**
-    * Constant for MAU type: 10BaseFP
-    * @see types()
-    */
-    const TYPE_10BASEFP = 6;
+     * Constant for MAU type: 10BaseFP
+     * @see types()
+     */
+    const TYPE_10BASEFP = '.1.3.6.1.2.1.26.4.6';
 
     /**
-    * Constant for MAU type: 10BaseFB
-    * @see types()
-    */
-    const TYPE_10BASEFB = 7;
+     * Constant for MAU type: 10BaseFB
+     * @see types()
+     */
+    const TYPE_10BASEFB = '.1.3.6.1.2.1.26.4.7';
 
     /**
-    * Constant for MAU type: 10BaseFL
-    * @see types()
-    */
-    const TYPE_10BASEFL = 8;
+     * Constant for MAU type: 10BaseFL
+     * @see types()
+     */
+    const TYPE_10BASEFL = '.1.3.6.1.2.1.26.4.8';
 
     /**
-    * Constant for MAU type: 10Broad36
-    * @see types()
-    */
-    const TYPE_10BROAD36 = 9;
+     * Constant for MAU type: 10Broad36
+     * @see types()
+     */
+    const TYPE_10BROAD36 = '.1.3.6.1.2.1.26.4.9';
 
     /**
-    * Constant for MAU type: 10BaseTHD
-    * @see types()
-    */
-    const TYPE_10BASETHD = 10;
+     * Constant for MAU type: 10BaseTHD
+     * @see types()
+     */
+    const TYPE_10BASETHD = '.1.3.6.1.2.1.26.4.10';
 
     /**
-    * Constant for MAU type: 10BaseTFD
-    * @see types()
-    */
-    const TYPE_10BASETFD = 11;
+     * Constant for MAU type: 10BaseTFD
+     * @see types()
+     */
+    const TYPE_10BASETFD = '.1.3.6.1.2.1.26.4.11';
 
     /**
-    * Constant for MAU type: 10BaseFLHD
-    * @see types()
-    */
-    const TYPE_10BASEFLHD = 12;
+     * Constant for MAU type: 10BaseFLHD
+     * @see types()
+     */
+    const TYPE_10BASEFLHD = '.1.3.6.1.2.1.26.4.12';
 
     /**
-    * Constant for MAU type: 10BaseFLFD
-    * @see types()
-    */
-    const TYPE_10BASEFLFD = 13;
+     * Constant for MAU type: 10BaseFLFD
+     * @see types()
+     */
+    const TYPE_10BASEFLFD = '.1.3.6.1.2.1.26.4.13';
 
     /**
-    * Constant for MAU type: 100BaseT4
-    * @see types()
-    */
-    const TYPE_100BASET4 = 14;
+     * Constant for MAU type: 100BaseT4
+     * @see types()
+     */
+    const TYPE_100BASET4 = '.1.3.6.1.2.1.26.4.14';
 
     /**
-    * Constant for MAU type: 100BaseTXHD
-    * @see types()
-    */
-    const TYPE_100BASETXHD = 15;
+     * Constant for MAU type: 100BaseTXHD
+     * @see types()
+     */
+    const TYPE_100BASETXHD = '.1.3.6.1.2.1.26.4.15';
 
     /**
-    * Constant for MAU type: 100BaseTXFD
-    * @see types()
-    */
-    const TYPE_100BASETXFD = 16;
+     * Constant for MAU type: 100BaseTXFD
+     * @see types()
+     */
+    const TYPE_100BASETXFD = '.1.3.6.1.2.1.26.4.16';
 
     /**
-    * Constant for MAU type: 100BaseFXHD
-    * @see types()
-    */
-    const TYPE_100BASEFXHD = 17;
+     * Constant for MAU type: 100BaseFXHD
+     * @see types()
+     */
+    const TYPE_100BASEFXHD = '.1.3.6.1.2.1.26.4.17';
 
     /**
-    * Constant for MAU type: 100BaseFXFD
-    * @see types()
-    */
-    const TYPE_100BASEFXFD = 18;
+     * Constant for MAU type: 100BaseFXFD
+     * @see types()
+     */
+    const TYPE_100BASEFXFD = '.1.3.6.1.2.1.26.4.18';
 
     /**
-    * Constant for MAU type: 100BaseT2HD
-    * @see types()
-    */
-    const TYPE_100BASET2HD = 19;
+     * Constant for MAU type: 100BaseT2HD
+     * @see types()
+     */
+    const TYPE_100BASET2HD = '.1.3.6.1.2.1.26.4.19';
 
     /**
-    * Constant for MAU type: 100BaseT2FD
-    * @see types()
-    */
-    const TYPE_100BASET2FD = 20;
+     * Constant for MAU type: 100BaseT2FD
+     * @see types()
+     */
+    const TYPE_100BASET2FD = '.1.3.6.1.2.1.26.4.20';
 
     /**
-    * Constant for MAU type: 1000BaseXHD
-    * @see types()
-    */
-    const TYPE_1000BASEXHD = 21;
+     * Constant for MAU type: 1000BaseXHD
+     * @see types()
+     */
+    const TYPE_1000BASEXHD = '.1.3.6.1.2.1.26.4.21';
 
     /**
-    * Constant for MAU type: 1000BaseXFD
-    * @see types()
-    */
-    const TYPE_1000BASEXFD = 22;
+     * Constant for MAU type: 1000BaseXFD
+     * @see types()
+     */
+    const TYPE_1000BASEXFD = '.1.3.6.1.2.1.26.4.22';
 
     /**
-    * Constant for MAU type: 1000BaseLXHD
-    * @see types()
-    */
-    const TYPE_1000BASELXHD = 23;
+     * Constant for MAU type: 1000BaseLXHD
+     * @see types()
+     */
+    const TYPE_1000BASELXHD = '.1.3.6.1.2.1.26.4.23';
 
     /**
-    * Constant for MAU type: 1000BaseLXFD
-    * @see types()
-    */
-    const TYPE_1000BASELXFD = 24;
+     * Constant for MAU type: 1000BaseLXFD
+     * @see types()
+     */
+    const TYPE_1000BASELXFD = '.1.3.6.1.2.1.26.4.24';
 
     /**
-    * Constant for MAU type: 1000BaseSXHD
-    * @see types()
-    */
-    const TYPE_1000BASESXHD = 25;
+     * Constant for MAU type: 1000BaseSXHD
+     * @see types()
+     */
+    const TYPE_1000BASESXHD = '.1.3.6.1.2.1.26.4.25';
 
     /**
-    * Constant for MAU type: 1000BaseSXFD
-    * @see types()
-    */
-    const TYPE_1000BASESXFD = 26;
+     * Constant for MAU type: 1000BaseSXFD
+     * @see types()
+     */
+    const TYPE_1000BASESXFD = '.1.3.6.1.2.1.26.4.26';
 
     /**
-    * Constant for MAU type: 1000BaseCXHD
-    * @see types()
-    */
-    const TYPE_1000BASECXHD = 27;
+     * Constant for MAU type: 1000BaseCXHD
+     * @see types()
+     */
+    const TYPE_1000BASECXHD = '.1.3.6.1.2.1.26.4.27';
 
     /**
-    * Constant for MAU type: 1000BaseCXFD
-    * @see types()
-    */
-    const TYPE_1000BASECXFD = 28;
+     * Constant for MAU type: 1000BaseCXFD
+     * @see types()
+     */
+    const TYPE_1000BASECXFD = '.1.3.6.1.2.1.26.4.28';
 
     /**
-    * Constant for MAU type: 1000BaseTHD
-    * @see types()
-    */
-    const TYPE_1000BASETHD = 29;
+     * Constant for MAU type: 1000BaseTHD
+     * @see types()
+     */
+    const TYPE_1000BASETHD = '.1.3.6.1.2.1.26.4.29';
 
     /**
-    * Constant for MAU type: 1000BaseTFD
-    * @see types()
-    */
-    const TYPE_1000BASETFD = 30;
+     * Constant for MAU type: 1000BaseTFD
+     * @see types()
+     */
+    const TYPE_1000BASETFD = '.1.3.6.1.2.1.26.4.30';
 
     /**
-    * Constant for MAU type: 10GigBaseX
-    * @see types()
-    */
-    const TYPE_10GIGBASEX = 31;
+     * Constant for MAU type: 10GigBaseX
+     * @see types()
+     */
+    const TYPE_10GIGBASEX = '.1.3.6.1.2.1.26.4.31';
 
     /**
-    * Constant for MAU type: 10GigBaseLX4
-    * @see types()
-    */
-    const TYPE_10GIGBASELX4 = 32;
+     * Constant for MAU type: 10GigBaseLX4
+     * @see types()
+     */
+    const TYPE_10GIGBASELX4 = '.1.3.6.1.2.1.26.4.32';
 
     /**
-    * Constant for MAU type: 10GigBaseR
-    * @see types()
-    */
-    const TYPE_10GIGBASER = 33;
+     * Constant for MAU type: 10GigBaseR
+     * @see types()
+     */
+    const TYPE_10GIGBASER = '.1.3.6.1.2.1.26.4.33';
 
     /**
-    * Constant for MAU type: 10GigBaseER
-    * @see types()
-    */
-    const TYPE_10GIGBASEER = 34;
+     * Constant for MAU type: 10GigBaseER
+     * @see types()
+     */
+    const TYPE_10GIGBASEER = '.1.3.6.1.2.1.26.4.34';
 
     /**
-    * Constant for MAU type: 10GigBaseLR
-    * @see types()
-    */
-    const TYPE_10GIGBASELR = 35;
+     * Constant for MAU type: 10GigBaseLR
+     * @see types()
+     */
+    const TYPE_10GIGBASELR = '.1.3.6.1.2.1.26.4.35';
 
     /**
-    * Constant for MAU type: 10GigBaseSR
-    * @see types()
-    */
-    const TYPE_10GIGBASESR = 36;
+     * Constant for MAU type: 10GigBaseSR
+     * @see types()
+     */
+    const TYPE_10GIGBASESR = '.1.3.6.1.2.1.26.4.36';
 
     /**
-    * Constant for MAU type: 10GigBaseW
-    * @see types()
-    */
-    const TYPE_10GIGBASEW = 37;
+     * Constant for MAU type: 10GigBaseW
+     * @see types()
+     */
+    const TYPE_10GIGBASEW = '.1.3.6.1.2.1.26.4.37';
 
     /**
-    * Constant for MAU type: 10GigBaseEW
-    * @see types()
-    */
-    const TYPE_10GIGBASEEW = 38;
+     * Constant for MAU type: 10GigBaseEW
+     * @see types()
+     */
+    const TYPE_10GIGBASEEW = '.1.3.6.1.2.1.26.4.38';
 
     /**
-    * Constant for MAU type: 10GigBaseLW
-    * @see types()
-    */
-    const TYPE_10GIGBASELW = 39;
+     * Constant for MAU type: 10GigBaseLW
+     * @see types()
+     */
+    const TYPE_10GIGBASELW = '.1.3.6.1.2.1.26.4.39';
 
     /**
-    * Constant for MAU type: 10GigBaseSW
-    * @see types()
-    */
-    const TYPE_10GIGBASESW = 40;
+     * Constant for MAU type: 10GigBaseSW
+     * @see types()
+     */
+    const TYPE_10GIGBASESW = '.1.3.6.1.2.1.26.4.40';
 
     /**
-    * Constant for MAU type: 10GigBaseCX4
-    * @see types()
-    */
-    const TYPE_10GIGBASECX4 = 41;
+     * Constant for MAU type: 10GigBaseCX4
+     * @see types()
+     */
+    const TYPE_10GIGBASECX4 = '.1.3.6.1.2.1.26.4.41';
 
     /**
-    * Constant for MAU type: 2BaseTL
-    * @see types()
-    */
-    const TYPE_2BASETL = 42;
+     * Constant for MAU type: 2BaseTL
+     * @see types()
+     */
+    const TYPE_2BASETL = '.1.3.6.1.2.1.26.4.42';
 
     /**
-    * Constant for MAU type: 10PassTS
-    * @see types()
-    */
-    const TYPE_10PASSTS = 43;
+     * Constant for MAU type: 10PassTS
+     * @see types()
+     */
+    const TYPE_10PASSTS = '.1.3.6.1.2.1.26.4.43';
 
     /**
-    * Constant for MAU type: 100BaseBX10D
-    * @see types()
-    */
-    const TYPE_100BASEBX10D = 44;
+     * Constant for MAU type: 100BaseBX10D
+     * @see types()
+     */
+    const TYPE_100BASEBX10D = '.1.3.6.1.2.1.26.4.44';
 
     /**
-    * Constant for MAU type: 100BaseBX10U
-    * @see types()
-    */
-    const TYPE_100BASEBX10U = 45;
+     * Constant for MAU type: 100BaseBX10U
+     * @see types()
+     */
+    const TYPE_100BASEBX10U = '.1.3.6.1.2.1.26.4.45';
 
     /**
-    * Constant for MAU type: 100BaseLX10
-    * @see types()
-    */
-    const TYPE_100BASELX10 = 46;
+     * Constant for MAU type: 100BaseLX10
+     * @see types()
+     */
+    const TYPE_100BASELX10 = '.1.3.6.1.2.1.26.4.46';
 
     /**
-    * Constant for MAU type: 1000BaseBX10D
-    * @see types()
-    */
-    const TYPE_1000BASEBX10D = 47;
+     * Constant for MAU type: 1000BaseBX10D
+     * @see types()
+     */
+    const TYPE_1000BASEBX10D = '.1.3.6.1.2.1.26.4.47';
 
     /**
-    * Constant for MAU type: 1000BaseBX10U
-    * @see types()
-    */
-    const TYPE_1000BASEBX10U = 48;
+     * Constant for MAU type: 1000BaseBX10U
+     * @see types()
+     */
+    const TYPE_1000BASEBX10U = '.1.3.6.1.2.1.26.4.48';
 
     /**
-    * Constant for MAU type: 1000BaseLX10
-    * @see types()
-    */
-    const TYPE_1000BASELX10 = 49;
+     * Constant for MAU type: 1000BaseLX10
+     * @see types()
+     */
+    const TYPE_1000BASELX10 = '.1.3.6.1.2.1.26.4.49';
 
     /**
-    * Constant for MAU type: 1000BasePX10D
-    * @see types()
-    */
-    const TYPE_1000BASEPX10D = 50;
+     * Constant for MAU type: 1000BasePX10D
+     * @see types()
+     */
+    const TYPE_1000BASEPX10D = '.1.3.6.1.2.1.26.4.50';
 
     /**
-    * Constant for MAU type: 1000BasePX10U
-    * @see types()
-    */
-    const TYPE_1000BASEPX10U = 51;
+     * Constant for MAU type: 1000BasePX10U
+     * @see types()
+     */
+    const TYPE_1000BASEPX10U = '.1.3.6.1.2.1.26.4.51';
 
     /**
-    * Constant for MAU type: 1000BasePX20D
-    * @see types()
-    */
-    const TYPE_1000BASEPX20D = 52;
+     * Constant for MAU type: 1000BasePX20D
+     * @see types()
+     */
+    const TYPE_1000BASEPX20D = '.1.3.6.1.2.1.26.4.52';
 
     /**
-    * Constant for MAU type: 1000BasePX20U
-    * @see types()
-    */
-    const TYPE_1000BASEPX20U = 53;
+     * Constant for MAU type: 1000BasePX20U
+     * @see types()
+     */
+    const TYPE_1000BASEPX20U = '.1.3.6.1.2.1.26.4.53';
 
     /**
-    * Constant for MAU type: 10GbaseT
-    * @see types()
-    */
-    const TYPE_10GBASET = 54;
+     * Constant for MAU type: 10GbaseT
+     * @see types()
+     */
+    const TYPE_10GBASET = '.1.3.6.1.2.1.26.4.54';
 
     /**
-    * Constant for MAU type: 10GbaseLRM
-    * @see types()
-    */
-    const TYPE_10GBASELRM = 55;
+     * Constant for MAU type: 10GbaseLRM
+     * @see types()
+     */
+    const TYPE_10GBASELRM = '.1.3.6.1.2.1.26.4.55';
 
     /**
-    * Constant for MAU type: 1000baseKX
-    * @see types()
-    */
-    const TYPE_1000BASEKX = 56;
+     * Constant for MAU type: 1000baseKX
+     * @see types()
+     */
+    const TYPE_1000BASEKX = '.1.3.6.1.2.1.26.4.56';
 
     /**
-    * Constant for MAU type: 10GbaseKX4
-    * @see types()
-    */
-    const TYPE_10GBASEKX4 = 57;
+     * Constant for MAU type: 10GbaseKX4
+     * @see types()
+     */
+    const TYPE_10GBASEKX4 = '.1.3.6.1.2.1.26.4.57';
 
     /**
-    * Constant for MAU type: 10GbaseKR
-    * @see types()
-    */
-    const TYPE_10GBASEKR = 58;
+     * Constant for MAU type: 10GbaseKR
+     * @see types()
+     */
+    const TYPE_10GBASEKR = '.1.3.6.1.2.1.26.4.58';
 
     /**
-    * Constant for MAU type: 10G1GbasePRXD1
-    * @see types()
-    */
-    const TYPE_10G1GBASEPRXD1 = 59;
+     * Constant for MAU type: 10G1GbasePRXD1
+     * @see types()
+     */
+    const TYPE_10G1GBASEPRXD1 = '.1.3.6.1.2.1.26.4.59';
 
     /**
-    * Constant for MAU type: 10G1GbasePRXD2
-    * @see types()
-    */
-    const TYPE_10G1GBASEPRXD2 = 60;
+     * Constant for MAU type: 10G1GbasePRXD2
+     * @see types()
+     */
+    const TYPE_10G1GBASEPRXD2 = '.1.3.6.1.2.1.26.4.60';
 
     /**
-    * Constant for MAU type: 10G1GbasePRXD3
-    * @see types()
-    */
-    const TYPE_10G1GBASEPRXD3 = 61;
+     * Constant for MAU type: 10G1GbasePRXD3
+     * @see types()
+     */
+    const TYPE_10G1GBASEPRXD3 = '.1.3.6.1.2.1.26.4.61';
 
     /**
-    * Constant for MAU type: 10G1GbasePRXU1
-    * @see types()
-    */
-    const TYPE_10G1GBASEPRXU1 = 62;
+     * Constant for MAU type: 10G1GbasePRXU1
+     * @see types()
+     */
+    const TYPE_10G1GBASEPRXU1 = '.1.3.6.1.2.1.26.4.62';
 
     /**
-    * Constant for MAU type: 10G1GbasePRXU2
-    * @see types()
-    */
-    const TYPE_10G1GBASEPRXU2 = 63;
+     * Constant for MAU type: 10G1GbasePRXU2
+     * @see types()
+     */
+    const TYPE_10G1GBASEPRXU2 = '.1.3.6.1.2.1.26.4.63';
 
     /**
-    * Constant for MAU type: 10G1GbasePRXU3
-    * @see types()
-    */
-    const TYPE_10G1GBASEPRXU3 = 64;
+     * Constant for MAU type: 10G1GbasePRXU3
+     * @see types()
+     */
+    const TYPE_10G1GBASEPRXU3 = '.1.3.6.1.2.1.26.4.64';
 
     /**
-    * Constant for MAU type: 10GbasePRD1
-    * @see types()
-    */
-    const TYPE_10GBASEPRD1 = 65;
+     * Constant for MAU type: 10GbasePRD1
+     * @see types()
+     */
+    const TYPE_10GBASEPRD1 = '.1.3.6.1.2.1.26.4.65';
 
     /**
-    * Constant for MAU type: 10GbasePRD2
-    * @see types()
-    */
-    const TYPE_10GBASEPRD2 = 66;
+     * Constant for MAU type: 10GbasePRD2
+     * @see types()
+     */
+    const TYPE_10GBASEPRD2 = '.1.3.6.1.2.1.26.4.66';
 
     /**
-    * Constant for MAU type: 10GbasePRD3
-    * @see types()
-    */
-    const TYPE_10GBASEPRD3 = 67;
+     * Constant for MAU type: 10GbasePRD3
+     * @see types()
+     */
+    const TYPE_10GBASEPRD3 = '.1.3.6.1.2.1.26.4.67';
 
     /**
-    * Constant for MAU type: 10GbasePRU1
-    * @see types()
-    */
-    const TYPE_10GBASEPRU1 = 68;
+     * Constant for MAU type: 10GbasePRU1
+     * @see types()
+     */
+    const TYPE_10GBASEPRU1 = '.1.3.6.1.2.1.26.4.68';
 
     /**
-    * Constant for MAU type: 10GbasePRU3
-    * @see types()
-    */
-    const TYPE_10GBASEPRU3 = 69;
+     * Constant for MAU type: 10GbasePRU3
+     * @see types()
+     */
+    const TYPE_10GBASEPRU3 = '.1.3.6.1.2.1.26.4.69';
 
     /**
-    * Constant for MAU type: 40GbaseKR4
-    * @see types()
-    */
-    const TYPE_40GBASEKR4 = 70;
+     * Constant for MAU type: 40GbaseKR4
+     * @see types()
+     */
+    const TYPE_40GBASEKR4 = '.1.3.6.1.2.1.26.4.70';
 
     /**
-    * Constant for MAU type: 40GbaseCR4
-    * @see types()
-    */
-    const TYPE_40GBASECR4 = 71;
+     * Constant for MAU type: 40GbaseCR4
+     * @see types()
+     */
+    const TYPE_40GBASECR4 = '.1.3.6.1.2.1.26.4.71';
 
     /**
-    * Constant for MAU type: 40GbaseSR4
-    * @see types()
-    */
-    const TYPE_40GBASESR4 = 72;
+     * Constant for MAU type: 40GbaseSR4
+     * @see types()
+     */
+    const TYPE_40GBASESR4 = '.1.3.6.1.2.1.26.4.72';
 
     /**
-    * Constant for MAU type: 40GbaseFR
-    * @see types()
-    */
-    const TYPE_40GBASEFR = 73;
+     * Constant for MAU type: 40GbaseFR
+     * @see types()
+     */
+    const TYPE_40GBASEFR = '.1.3.6.1.2.1.26.4.73';
 
     /**
-    * Constant for MAU type: 40GbaseLR4
-    * @see types()
-    */
-    const TYPE_40GBASELR4 = 74;
+     * Constant for MAU type: 40GbaseLR4
+     * @see types()
+     */
+    const TYPE_40GBASELR4 = '.1.3.6.1.2.1.26.4.74';
 
     /**
-    * Constant for MAU type: 100GbaseCR10
-    * @see types()
-    */
-    const TYPE_100GBASECR10 = 75;
+     * Constant for MAU type: 100GbaseCR10
+     * @see types()
+     */
+    const TYPE_100GBASECR10 = '.1.3.6.1.2.1.26.4.75';
 
     /**
-    * Constant for MAU type: 100GbaseSR10
-    * @see types()
-    */
-    const TYPE_100GBASESR10 = 76;
+     * Constant for MAU type: 100GbaseSR10
+     * @see types()
+     */
+    const TYPE_100GBASESR10 = '.1.3.6.1.2.1.26.4.76';
 
     /**
-    * Constant for MAU type: 100GbaseLR4
-    * @see types()
-    */
-    const TYPE_100GBASELR4 = 77;
+     * Constant for MAU type: 100GbaseLR4
+     * @see types()
+     */
+    const TYPE_100GBASELR4 = '.1.3.6.1.2.1.26.4.77';
 
     /**
-    * Constant for MAU type: 100GbaseER4
-    * @see types()
-    */
-    const TYPE_100GBASEER4 = 78;
+     * Constant for MAU type: 100GbaseER4
+     * @see types()
+     */
+    const TYPE_100GBASEER4 = '.1.3.6.1.2.1.26.4.78';
 
 
     /**
@@ -602,7 +601,8 @@ class MAU extends \OSS_SNMP\MIB
         self::TYPE_100GBASELR4      => '100GbaseLR4',
         self::TYPE_100GBASEER4      => '100GbaseER4'
     );
-
+    
+    
     /**
      * Get an array of device interface types
      *
@@ -610,9 +610,9 @@ class MAU extends \OSS_SNMP\MIB
      * @param boolean $translate If true, return the string representation
      * @return array An array of interface admin types
      */
-    public function adminStates( $translate = false )
+    public function types( $translate = false )
     {
-        $types = $this->getSNMP()->walk1d( self::OID_TYPE );
+        $types = $this->getSNMP()->subOidWalk( self::OID_TYPE, 12 );
 
         if( !$translate )
             return $types;

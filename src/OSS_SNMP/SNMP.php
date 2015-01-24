@@ -389,6 +389,10 @@ class SNMP
             case 'IpAddress':
                 $rtn = (string)$value;
                 break;
+                
+            case 'OID':
+                $rtn = (string)$value;
+                break;
 
             case 'Timeticks':
                 $rtn = (int)substr( $value, 1, strrpos( $value, ')' ) - 1 );
