@@ -999,7 +999,7 @@ class MAU extends \OSS_SNMP\MIB
      */
     public function autonegSupported()
     {
-        return self::ppTruthValue( $this->getSNMP()->subOidWalk( self::OID_AUTONEG_SUPPORTED, 12 ) );
+        return $this->getSNMP()->ppTruthValue( $this->getSNMP()->subOidWalk( self::OID_AUTONEG_SUPPORTED, 12 ) );
     }
 
 
@@ -1152,7 +1152,7 @@ class MAU extends \OSS_SNMP\MIB
      */
     public function autonegAdminState()
     {
-        return self::ppTruthValue( $this->getSNMP()->subOidWalk( self::OID_AUTONEG_ADMIN_STATUS, 12 ) );
+        return $this->getSNMP()->ppTruthValue( $this->getSNMP()->subOidWalk( self::OID_AUTONEG_ADMIN_STATUS, 12 ) );
     }
 
 
