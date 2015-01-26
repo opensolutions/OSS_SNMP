@@ -84,7 +84,7 @@ if( count( $argv ) == 3 )
             . " - {$host->useMAU()->jackTypes( true )[$id]}"
             . " - {$host->useMAU()->mediaAvailableStateExits()[$id]}"
             . " - {$host->useMAU()->jabberStates( true )[$id]}"
-            . " - " . $host->useMAU()->autonegSupported() ? 'Y' : 'N' . "\n";
+            . " - " . $host->useMAU()->autonegSupported()[$id] ? 'Y' : 'N' . "\n";
         }
 
     echo "\n";
