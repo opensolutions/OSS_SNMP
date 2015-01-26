@@ -45,6 +45,7 @@ class MAU extends \OSS_SNMP\MIB
 {
     const OID_TYPE                  = '.1.3.6.1.2.1.26.2.1.1.3';
     const OID_MEDIA_AVAILABLE       = '.1.3.6.1.2.1.26.2.1.1.5';
+    const OID_JACK_TYPE             = '.1.3.6.1.2.1.26.2.2.1.2';
 
 
     /**
@@ -743,11 +744,11 @@ class MAU extends \OSS_SNMP\MIB
     const AVAILABILITY_READY = '20';
 
     /**
-    * Text representation of MAU media availability
-    *
-    * @see mediaAvailable()
-    * @var array Text representations of interface media availability
-    */
+     * Text representation of MAU media availability
+     *
+     * @see mediaAvailable()
+     * @var array Text representations of interface media availability
+     */
     public static $AVAILABILITY = array(
         self::AVAILABILITY_OTHER                => 'other',
         self::AVAILABILITY_UNKNOWN              => 'unknown',
@@ -786,6 +787,147 @@ class MAU extends \OSS_SNMP\MIB
             return $avail;
 
         return $this->getSNMP()->translate( $avail, self::$AVAILABILITY );
+    }
+
+
+    /**
+     * Constant for MAU media availability: other
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_OTHER = '1';
+
+    /**
+     * Constant for MAU media availability: rj45
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_RJ45 = '2';
+
+    /**
+     * Constant for MAU media availability: rj45S
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_RJ45S = '3';
+
+    /**
+     * Constant for MAU media availability: db9
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_DB9 = '4';
+
+    /**
+     * Constant for MAU media availability: bnc
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_BNC = '5';
+
+    /**
+     * Constant for MAU media availability: fAUI
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_FAUI = '6';
+
+    /**
+     * Constant for MAU media availability: mAUI
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_MAUI = '7';
+
+    /**
+     * Constant for MAU media availability: fiberSC
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_FIBERSC = '8';
+
+    /**
+     * Constant for MAU media availability: fiberMIC
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_FIBERMIC = '9';
+
+    /**
+     * Constant for MAU media availability: fiberST
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_FIBERST = '1';
+
+    /**
+     * Constant for MAU media availability: telco
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_TELCO = '11';
+
+    /**
+     * Constant for MAU media availability: mtrj
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_MTRJ = '12';
+
+    /**
+     * Constant for MAU media availability: hssdc
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_HSSDC = '13';
+
+    /**
+     * Constant for MAU media availability: fiberLC
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_FIBERLC = '14';
+
+    /**
+     * Constant for MAU media availability: cx4
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_CX4 = '15';
+
+    /**
+     * Constant for MAU media availability: sfpPlusDA
+     * @see mediaAvailable()
+     */
+    const JACK_TYPE_SFPPLUSDA = '16';
+
+
+    /**
+     * Text representation of MAU jack types
+     *
+     * @see jackTypes()
+     * @var array Text representations of interface jack type
+     */
+    public static $JACK_TYPES = array(
+        self::JACK_TYPE_OTHER                => 'other',
+        self::JACK_TYPE_RJ45                 => 'rj45',
+        self::JACK_TYPE_RJ45S                => 'rj45S',
+        self::JACK_TYPE_DB9                  => 'db9',
+        self::JACK_TYPE_BNC                  => 'bnc',
+        self::JACK_TYPE_FAUI                 => 'fAUI',
+        self::JACK_TYPE_MAUI                 => 'mAUI',
+        self::JACK_TYPE_FIBERSC              => 'fiberSC',
+        self::JACK_TYPE_FIBERMIC             => 'fiberMIC',
+        self::JACK_TYPE_FIBERST              => 'fiberST',
+        self::JACK_TYPE_TELCO                => 'telco',
+        self::JACK_TYPE_MTRJ                 => 'mtrj',
+        self::JACK_TYPE_HSSDC                => 'hssdc',
+        self::JACK_TYPE_FIBERLC              => 'fiberLC',
+        self::JACK_TYPE_CX4                  => 'cx4',
+        self::JACK_TYPE_SFPPLUSDA            => 'sfpPlusDA',
+    );
+
+
+    /**
+    * Get an array of device jack types
+    *
+    * @see $JACK_TYPES
+    * @param boolean $translate If true, return the string representation
+    * @return array An array of interface jack types
+    */
+    public function jackTypes( $translate = false )
+    {
+        $types = $this->getSNMP()->subOidWalk( self::OID_JACK_TYPE, 12 );
+
+        if( !$translate )
+            return $types;
+
+        return $this->getSNMP()->translate( $types, self::$JACK_TYPES );
     }
 
 }
