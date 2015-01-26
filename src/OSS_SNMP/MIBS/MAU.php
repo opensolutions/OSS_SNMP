@@ -57,6 +57,8 @@ class MAU extends \OSS_SNMP\MIB
 
     const OID_JACK_TYPE                   = '.1.3.6.1.2.1.26.2.2.1.2';
 
+    const OID_AUTONEG_ADMIN_STATUS        = '.1.3.6.1.2.1.26.5.1.1.1';
+    const OID_AUTONEG_REMOTE_SIGNALLING   = '.1.3.6.1.2.1.26.5.1.1.2';
 
     /**
      * Get an array of MAU interface indexes
@@ -997,7 +999,7 @@ class MAU extends \OSS_SNMP\MIB
      */
     public function autonegSupported()
     {
-        return $this->getSNMP()->subOidWalk( self::OID_AUTONEG_SUPPORTED, 12 );
+        return self::ppTruthValue( $this->getSNMP()->subOidWalk( self::OID_AUTONEG_SUPPORTED, 12 ) );
     }
 
 
@@ -1141,5 +1143,17 @@ class MAU extends \OSS_SNMP\MIB
 
         return $this->getSNMP()->translate( $types, self::$JACK_TYPES );
     }
+
+
+    /**
+     * Whether autoneg is enabled or not on an interface
+     *
+     * @return array Whether autoneg is enabled or not on an interface
+     */
+    public function autonegAdminState()
+    {
+        return self::ppTruthValue( $this->getSNMP()->subOidWalk( self::OID_AUTONEG_ADMIN_STATUS, 12 ) );
+    }
+
 
 }
