@@ -75,7 +75,7 @@ if( count( $argv ) == 3 )
 
     foreach( $host->useIface()->names() as $id => $name )
     {
-        echo "{$id}: {$name} - {$host->useMAU()->types( true )}[$id]} - {$host->useMAU()->mediaAvailable( true )[$id]}\n";
+        echo "{$id}: {$name} - {$host->useMAU()->types( true )[$id]} - {$host->useMAU()->mediaAvailable( true )[$id]}\n";
     }
 
     echo "\n";
