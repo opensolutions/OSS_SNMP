@@ -44,6 +44,7 @@ namespace OSS_SNMP\MIBS;
 class MAU extends \OSS_SNMP\MIB
 {
     const OID_TYPE                  = '.1.3.6.1.2.1.26.2.1.1.3';
+    const OID_MEDIA_AVAILABLE       = '.1.3.6.1.2.1.26.2.1.1.5';
 
 
     /**
@@ -601,8 +602,8 @@ class MAU extends \OSS_SNMP\MIB
         self::TYPE_100GBASELR4      => '100GbaseLR4',
         self::TYPE_100GBASEER4      => '100GbaseER4'
     );
-    
-    
+
+
     /**
      * Get an array of device interface types
      *
@@ -621,5 +622,170 @@ class MAU extends \OSS_SNMP\MIB
     }
 
 
+    /**
+     * Constant for MAU media availability: other
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_OTHER = '1';
+
+    /**
+     * Constant for MAU media availability: unknown
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_UNKNOWN = '2';
+
+    /**
+     * Constant for MAU media availability: available
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_AVAILABLE = '3';
+
+    /**
+     * Constant for MAU media availability: notAvailable
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_NOTAVAILABLE = '4';
+
+    /**
+     * Constant for MAU media availability: remoteFault
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_REMOTEFAULT = '5';
+
+    /**
+     * Constant for MAU media availability: invalidSignal
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_INVALIDSIGNAL = '6';
+
+    /**
+     * Constant for MAU media availability: remoteJabber
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_REMOTEJABBER = '7';
+
+    /**
+     * Constant for MAU media availability: remoteLinkLoss
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_REMOTELINKLOSS = '8';
+
+    /**
+     * Constant for MAU media availability: remoteTest
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_REMOTETEST = '9';
+
+    /**
+     * Constant for MAU media availability: offline
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_OFFLINE = '1';
+
+    /**
+     * Constant for MAU media availability: autoNegError
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_AUTONEGERROR = '11';
+
+    /**
+     * Constant for MAU media availability: pmdLinkFault
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_PMDLINKFAULT = '12';
+
+    /**
+     * Constant for MAU media availability: wisFrameLoss
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_WISFRAMELOSS = '13';
+
+    /**
+     * Constant for MAU media availability: wisSignalLoss
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_WISSIGNALLOSS = '14';
+
+    /**
+     * Constant for MAU media availability: pcsLinkFault
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_PCSLINKFAULT = '15';
+
+    /**
+     * Constant for MAU media availability: excessiveBER
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_EXCESSIVEBER = '16';
+
+    /**
+     * Constant for MAU media availability: dxsLinkFault
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_DXSLINKFAULT = '17';
+
+    /**
+     * Constant for MAU media availability: pxsLinkFault
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_PXSLINKFAULT = '18';
+
+    /**
+     * Constant for MAU media availability: availableReduced
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_AVAILABLEREDUCED = '19';
+
+    /**
+     * Constant for MAU media availability: ready
+     * @see mediaAvailable()
+     */
+    const AVAILABILITY_READY = '20';
+
+    /**
+    * Text representation of MAU media availability
+    *
+    * @see mediaAvailable()
+    * @var array Text representations of interface media availability
+    */
+    public static $AVAILABILITY = array(
+        self::AVAILABILITY_OTHER                => 'other',
+        self::AVAILABILITY_UNKNOWN              => 'unknown',
+        self::AVAILABILITY_AVAILABLE            => 'available',
+        self::AVAILABILITY_NOTAVAILABLE         => 'notAvailable',
+        self::AVAILABILITY_REMOTEFAULT          => 'remoteFault',
+        self::AVAILABILITY_INVALIDSIGNAL        => 'invalidSignal',
+        self::AVAILABILITY_REMOTEJABBER         => 'remoteJabber',
+        self::AVAILABILITY_REMOTELINKLOSS       => 'remoteLinkLoss',
+        self::AVAILABILITY_REMOTETEST           => 'remoteTest',
+        self::AVAILABILITY_OFFLINE              => 'offline',
+        self::AVAILABILITY_AUTONEGERROR         => 'autoNegError',
+        self::AVAILABILITY_PMDLINKFAULT         => 'pmdLinkFault',
+        self::AVAILABILITY_WISFRAMELOSS         => 'wisFrameLoss',
+        self::AVAILABILITY_WISSIGNALLOSS        => 'wisSignalLoss',
+        self::AVAILABILITY_PCSLINKFAULT         => 'pcsLinkFault',
+        self::AVAILABILITY_EXCESSIVEBER         => 'excessiveBER',
+        self::AVAILABILITY_DXSLINKFAULT         => 'dxsLinkFault',
+        self::AVAILABILITY_PXSLINKFAULT         => 'pxsLinkFault',
+        self::AVAILABILITY_AVAILABLEREDUCED     => 'availableReduced',
+        self::AVAILABILITY_READY                => 'ready'
+    );
+
+    /**
+     * Get an array of device interface types
+     *
+     * @see $TYPES
+     * @param boolean $translate If true, return the string representation
+     * @return array An array of interface admin types
+     */
+    public function mediaAvailable( $translate = false )
+    {
+        $avail = $this->getSNMP()->subOidWalk( self::OID_MEDIA_AVAILABLE, 12 );
+
+        if( !$translate )
+            return $avail;
+
+        return $this->getSNMP()->translate( $avail, self::$AVAILABILITY );
+    }
 
 }

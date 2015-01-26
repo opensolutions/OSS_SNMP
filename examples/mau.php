@@ -73,9 +73,9 @@ if( count( $argv ) == 3 )
 
     echo "ID:  Name  - Descrition - Type - Admin/Operational State\n\n";
 
-    foreach( $host->useMAU()->types( true ) as $id => $type )
+    foreach( $host->useIface()->names() as $id => $name )
     {
-        echo "{$id}: {$type}\n";
+        echo "{$id}: {$name} - {$host->useMAU()->types( true )}[$id]} - {$host->useMAU()->mediaAvailable( true )[$id]}\n";
     }
 
     echo "\n";
