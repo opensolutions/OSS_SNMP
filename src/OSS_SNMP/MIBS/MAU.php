@@ -50,6 +50,10 @@ class MAU extends \OSS_SNMP\MIB
     const OID_MEDIA_AVAILABLE             = '.1.3.6.1.2.1.26.2.1.1.5';
     const OID_MEDIA_AVAILABLE_STATE_EXITS = '.1.3.6.1.2.1.26.2.1.1.6';
     const OID_JABBER_STATE                = '.1.3.6.1.2.1.26.2.1.1.7';
+    const OID_JABBERING_STATE_ENTERS      = '.1.3.6.1.2.1.26.2.1.1.8';
+    const OID_FALSE_CARRIERS              = '.1.3.6.1.2.1.26.2.1.1.9';
+    const OID_DEFAULT_TYPES               = '.1.3.6.1.2.1.26.2.1.1.11';
+    const OID_AUTONEG_SUPPORTED           = '.1.3.6.1.2.1.26.2.1.1.12';
 
     const OID_JACK_TYPE                   = '.1.3.6.1.2.1.26.2.2.1.2';
 
@@ -951,6 +955,49 @@ class MAU extends \OSS_SNMP\MIB
             return $states;
 
         return $this->getSNMP()->translate( $states, self::$JABBER_STATES );
+    }
+
+
+    /**
+     * Get an array of the number of times a media interface entered the jabbering state
+     *
+     * @return array An array of the number of times a media interface entered the jabbering state
+     */
+    public function jabberingStateEnters()
+    {
+        return $this->getSNMP()->subOidWalk( self::OID_JABBERING_STATE_ENTERS, 12 );
+    }
+
+
+    /**
+     * A count of the number of false carrier events during IDLE in 100BASE-X and 1000BASE-X links.
+     *
+     * @return array A count of the number of false carrier events during IDLE in 100BASE-X and 1000BASE-X links.
+     */
+    public function falseCarriers()
+    {
+        return $this->getSNMP()->subOidWalk( self::OID_FALSE_CARRIERS, 12 );
+    }
+
+    /**
+     * This object identifies the default administrative baseband MAU type,
+     * to be used in conjunction with the operational MAU type denoted by ifMauType.
+     *
+     * @return array The default administrative baseband MAU type
+     */
+    public function defaultTypes()
+    {
+        return $this->getSNMP()->subOidWalk( self::OID_DEFAULT_TYPES, 12 );
+    }
+
+    /**
+     * Whether or not auto-negotiation is supported on this MAU
+     *
+     * @return array Is auto-negotiation is supported on this MAU
+     */
+    public function autonegSupported()
+    {
+        return $this->getSNMP()->subOidWalk( self::OID_AUTONEG_SUPPORTED, 12 );
     }
 
 

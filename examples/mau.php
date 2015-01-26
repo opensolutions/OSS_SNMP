@@ -71,7 +71,7 @@ if( count( $argv ) == 3 )
 {
     echo "\nNumber of interfaces on {$argv[1]}: " . $host->useIface()->numberofInterfaces() . "\n\n";
 
-    echo "ID:  Name  - Index - Type - State - Media Available - Jack Type - State Exits - Jabber State\n\n";
+    echo "ID:  Name  - Index - Type - State - Media Available - Jack Type - State Exits - Jabber State - Autoneg\n\n";
 
     foreach( $host->useIface()->names() as $id => $name )
     {
@@ -83,7 +83,8 @@ if( count( $argv ) == 3 )
             . " - {$host->useMAU()->mediaAvailable( true )[$id]}"
             . " - {$host->useMAU()->jackTypes( true )[$id]}"
             . " - {$host->useMAU()->mediaAvailableStateExits()[$id]}"
-            . " - {$host->useMAU()->jabberStates( true )[$id]}\n";
+            . " - {$host->useMAU()->jabberStates( true )[$id]}"
+            . " - " . $host->useMAU()->autonegSupported() ? 'Y' : 'N' . "\n";
         }
 
     echo "\n";
