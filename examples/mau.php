@@ -75,9 +75,12 @@ if( count( $argv ) == 3 )
 
     foreach( $host->useIface()->names() as $id => $name )
     {
-        if( $id > 1100 ) continue;
+        if( $id >1100 ) continue;
         
-        echo "{$id}: {$name} - {$host->useMAU()->types( true )[$id]} - {$host->useMAU()->mediaAvailable( true )[$id]}"
+        echo "{$id}: {$name} - {$host->useMAU()->index()[$id]}"
+            . " - {$host->useMAU()->types( true )[$id]}"
+            . " - {$host->useMAU()->states( true )[$id]}"
+            . " - {$host->useMAU()->mediaAvailable( true )[$id]}"
             . " - {$host->useMAU()->jackTypes( true )[$id]}\n";
     }
 
