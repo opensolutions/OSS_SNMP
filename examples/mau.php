@@ -71,18 +71,20 @@ if( count( $argv ) == 3 )
 {
     echo "\nNumber of interfaces on {$argv[1]}: " . $host->useIface()->numberofInterfaces() . "\n\n";
 
-    echo "ID:  Name  - Descrition - Type - Admin/Operational State\n\n";
+    echo "ID:  Name  - Index - Type - State - Media Available - Jack Type - State Exits - Jabber State\n\n";
 
     foreach( $host->useIface()->names() as $id => $name )
     {
         if( $id >1100 ) continue;
-        
+
         echo "{$id}: {$name} - {$host->useMAU()->index()[$id]}"
             . " - {$host->useMAU()->types( true )[$id]}"
             . " - {$host->useMAU()->states( true )[$id]}"
             . " - {$host->useMAU()->mediaAvailable( true )[$id]}"
-            . " - {$host->useMAU()->jackTypes( true )[$id]}\n";
-    }
+            . " - {$host->useMAU()->jackTypes( true )[$id]}"
+            . " - {$host->useMAU()->mediaAvailableStateExits()[$id]}\n";
+            . " - {$host->useMAU()->jabberStates( true )[$id]}\n";
+        }
 
     echo "\n";
     exit( 0 );

@@ -44,12 +44,14 @@ namespace OSS_SNMP\MIBS;
 class MAU extends \OSS_SNMP\MIB
 {
 
-    const OID_IF_INDEX              = '.1.3.6.1.2.1.26.2.1.1.1';
-    const OID_TYPE                  = '.1.3.6.1.2.1.26.2.1.1.3';
-    const OID_STATUS                = '.1.3.6.1.2.1.26.2.1.1.4';
-    const OID_MEDIA_AVAILABLE       = '.1.3.6.1.2.1.26.2.1.1.5';
+    const OID_IF_INDEX                    = '.1.3.6.1.2.1.26.2.1.1.1';
+    const OID_TYPE                        = '.1.3.6.1.2.1.26.2.1.1.3';
+    const OID_STATUS                      = '.1.3.6.1.2.1.26.2.1.1.4';
+    const OID_MEDIA_AVAILABLE             = '.1.3.6.1.2.1.26.2.1.1.5';
+    const OID_MEDIA_AVAILABLE_STATE_EXITS = '.1.3.6.1.2.1.26.2.1.1.7';
+    const OID_JABBER_STATE                = '.1.3.6.1.2.1.26.2.1.1.8';
 
-    const OID_JACK_TYPE             = '.1.3.6.1.2.1.26.2.2.1.2';
+    const OID_JACK_TYPE                   = '.1.3.6.1.2.1.26.2.2.1.2';
 
 
     /**
@@ -878,6 +880,79 @@ class MAU extends \OSS_SNMP\MIB
 
         return $this->getSNMP()->translate( $avail, self::$AVAILABILITY );
     }
+
+
+
+    /**
+     * Get an array of device interface types
+     *
+     * @see $TYPES
+     * @param boolean $translate If true, return the string representation
+     * @return array An array of interface admin types
+     */
+    public function mediaAvailableStateExits()
+    {
+        return $this->getSNMP()->subOidWalk( self::OID_MEDIA_AVAILABLE_STATE_EXITS, 12 );
+    }
+
+
+
+    /**
+     * Constant for MAU media jabber state: other
+     * @see jabberStates()
+     */
+    const JABBER_STATE_OTHER = '1';
+
+    /**
+     * Constant for MAU media jabber state: unknown
+     * @see jabberStates()
+     */
+    const JABBER_STATE_UNKNOWN = '2';
+
+    /**
+     * Constant for MAU media jabber state: nojabber
+     * @see jabberStates()
+     */
+    const JABBER_STATE_NOJABBER = '3';
+
+    /**
+     * Constant for MAU media jabber state: jabbering
+     * @see jabberStates()
+     */
+    const JABBER_STATE_JABBERING = '4';
+
+
+    /**
+     * Text representation of jabber states
+     *
+     * @see jabberStates()
+     * @var array Text representations of interface jabber states
+     */
+    public static $JABBER_STATES = array(
+        self::JABBER_STATE_OTHER     = 'other',
+        self::JABBER_STATE_UNKNOWN   = 'unknown',
+        self::JABBER_STATE_NOJABBER  = 'nojabber',
+        self::JABBER_STATE_JABBERING = 'jabbering'
+    );
+
+
+    /**
+     * Get an array of device interface jabber states
+     *
+     * @see $JABBER_STATES
+     * @param boolean $translate If true, return the string representation
+     * @return array An array of interface jabber states
+     */
+    public function jabberStates( $translate = false )
+    {
+        $states = $this->getSNMP()->subOidWalk( self::OID_J, 12 );
+
+        if( !$translate )
+            return $states;
+
+        return $this->getSNMP()->translate( $states, self::$JABBER_STATES );
+    }
+
 
 
     /**
