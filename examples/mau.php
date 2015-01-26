@@ -71,7 +71,7 @@ if( count( $argv ) == 3 )
 {
     echo "\nNumber of interfaces on {$argv[1]}: " . $host->useIface()->numberofInterfaces() . "\n\n";
 
-    echo "ID:  Name  - Descrition - Type - Admin/Operational State\n\n";
+    echo "ID:  Name  - Index - Type - State - Media Available - Jack Type\n\n";
 
     foreach( $host->useIface()->names() as $id => $name )
     {

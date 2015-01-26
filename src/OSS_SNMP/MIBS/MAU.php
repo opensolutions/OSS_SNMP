@@ -59,7 +59,7 @@ class MAU extends \OSS_SNMP\MIB
      */
     public function index()
     {
-        $types = $this->getSNMP()->subOidWalk( self::OID_IF_INDEX, 12 );
+        return $this->getSNMP()->subOidWalk( self::OID_IF_INDEX, 12 );
     }
 
 
