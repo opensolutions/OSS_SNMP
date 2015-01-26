@@ -48,8 +48,8 @@ class MAU extends \OSS_SNMP\MIB
     const OID_TYPE                        = '.1.3.6.1.2.1.26.2.1.1.3';
     const OID_STATUS                      = '.1.3.6.1.2.1.26.2.1.1.4';
     const OID_MEDIA_AVAILABLE             = '.1.3.6.1.2.1.26.2.1.1.5';
-    const OID_MEDIA_AVAILABLE_STATE_EXITS = '.1.3.6.1.2.1.26.2.1.1.7';
-    const OID_JABBER_STATE                = '.1.3.6.1.2.1.26.2.1.1.8';
+    const OID_MEDIA_AVAILABLE_STATE_EXITS = '.1.3.6.1.2.1.26.2.1.1.6';
+    const OID_JABBER_STATE                = '.1.3.6.1.2.1.26.2.1.1.7';
 
     const OID_JACK_TYPE                   = '.1.3.6.1.2.1.26.2.2.1.2';
 
@@ -929,10 +929,10 @@ class MAU extends \OSS_SNMP\MIB
      * @var array Text representations of interface jabber states
      */
     public static $JABBER_STATES = array(
-        self::JABBER_STATE_OTHER     = 'other',
-        self::JABBER_STATE_UNKNOWN   = 'unknown',
-        self::JABBER_STATE_NOJABBER  = 'nojabber',
-        self::JABBER_STATE_JABBERING = 'jabbering'
+        self::JABBER_STATE_OTHER     => 'other',
+        self::JABBER_STATE_UNKNOWN   => 'unknown',
+        self::JABBER_STATE_NOJABBER  => 'nojabber',
+        self::JABBER_STATE_JABBERING => 'jabbering'
     );
 
 
@@ -945,7 +945,7 @@ class MAU extends \OSS_SNMP\MIB
      */
     public function jabberStates( $translate = false )
     {
-        $states = $this->getSNMP()->subOidWalk( self::OID_J, 12 );
+        $states = $this->getSNMP()->subOidWalk( self::OID_JABBER_STATE, 12 );
 
         if( !$translate )
             return $states;

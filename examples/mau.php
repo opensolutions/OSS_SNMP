@@ -82,7 +82,7 @@ if( count( $argv ) == 3 )
             . " - {$host->useMAU()->states( true )[$id]}"
             . " - {$host->useMAU()->mediaAvailable( true )[$id]}"
             . " - {$host->useMAU()->jackTypes( true )[$id]}"
-            . " - {$host->useMAU()->mediaAvailableStateExits()[$id]}\n";
+            . " - {$host->useMAU()->mediaAvailableStateExits()[$id]}"
             . " - {$host->useMAU()->jabberStates( true )[$id]}\n";
         }
 
