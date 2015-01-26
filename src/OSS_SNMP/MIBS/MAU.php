@@ -43,9 +43,26 @@ namespace OSS_SNMP\MIBS;
  */
 class MAU extends \OSS_SNMP\MIB
 {
+
+    IANA-MAU-MIB::snmpDot3MauMgt.2.1.1.1.1001.1 = INTEGER: 1001
+    const OID_IF_INDEX              = '.1.3.6.1.2.1.26.2.1.1.1';
     const OID_TYPE                  = '.1.3.6.1.2.1.26.2.1.1.3';
+    const OID_STATUS                = '.1.3.6.1.2.1.26.2.1.1.4';
     const OID_MEDIA_AVAILABLE       = '.1.3.6.1.2.1.26.2.1.1.5';
+
     const OID_JACK_TYPE             = '.1.3.6.1.2.1.26.2.2.1.2';
+
+
+    /**
+     * Get an array of MAU interface indexes
+     *
+     * @return array An array of MAU interface indexes
+     */
+    public function index()
+    {
+        $types = $this->getSNMP()->subOidWalk( self::OID_IF_INDEX, 12 );
+    }
+
 
 
     /**
@@ -624,6 +641,80 @@ class MAU extends \OSS_SNMP\MIB
 
 
     /**
+     * Constant for MAU interface status: other
+     * @see status()
+     */
+    const STATUS_OTHER = '1';
+
+    /**
+     * Constant for MAU interface status: unknown
+     * @see status()
+     */
+    const STATUS_UNKNOWN = '2';
+
+    /**
+     * Constant for MAU interface status: operational
+     * @see status()
+     */
+    const STATUS_OPERATIONAL = '3';
+
+    /**
+     * Constant for MAU interface status: standby
+     * @see status()
+     */
+    const STATUS_STANDBY = '4';
+
+    /**
+     * Constant for MAU interface status: shutdown
+     * @see status()
+     */
+    const STATUS_SHUTDOWN = '5';
+
+    /**
+     * Constant for MAU interface status: reset
+     * @see status()
+     */
+    const STATUS_RESET = '6';
+
+
+
+    /**
+    * Text representation of MAU states
+    *
+    * @see states()
+    * @var array Text representations of interface states
+    */
+    public static $STATES = array(
+        self::STATE_OTHER        => 'other',
+        self::STATE_UNKNOWN      => 'unknown',
+        self::STATE_OPERATIONAL  => 'operational',
+        self::STATE_STANDBY      => 'standby',
+        self::STATE_SHUTDOWN     => 'shutdown',
+        self::STATE_RESET        => 'reset'
+    );
+
+
+
+    /**
+    * Get an array of device interface states
+    *
+    * @see $STATES
+    * @param boolean $translate If true, return the string representation
+    * @return array An array of interface states
+    */
+    public function states( $translate = false )
+    {
+        $states = $this->getSNMP()->subOidWalk( self::OID_STATUS, 12 );
+
+        if( !$translate )
+            return $states;
+
+        return $this->getSNMP()->translate( $states, self::$STATES );
+    }
+
+
+
+    /**
      * Constant for MAU media availability: other
      * @see mediaAvailable()
      */
@@ -681,7 +772,7 @@ class MAU extends \OSS_SNMP\MIB
      * Constant for MAU media availability: offline
      * @see mediaAvailable()
      */
-    const AVAILABILITY_OFFLINE = '1';
+    const AVAILABILITY_OFFLINE = '10';
 
     /**
      * Constant for MAU media availability: autoNegError
