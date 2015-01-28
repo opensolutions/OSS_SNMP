@@ -45,8 +45,8 @@ if( substr( $sysDescr, 0, 7 ) == 'Arista ' )
             $sysDescr, $matches );
 
     $this->setVendor( 'Arista' );
-    $this->setModel( $matches[2] );
+    $this->setModel( isset( $matches[2] ) ? $matches[2] : 'Uknown' );
     $this->setOs( 'EOS' );
-    $this->setOsVersion( $matches[1] );
+    $this->setOsVersion( isset( $matches[1] ) ? $matches[1] : 'Unknown' );
     $this->setOsDate( null );
 }
