@@ -41,7 +41,7 @@
 
 if( substr( $sysDescr, 0, 7 ) == 'Arista ' )
 {
-    preg_match( '/Arista Networks EOS version (.+) running on Arista Networks (.+)$/',
+    preg_match( '/Arista Networks EOS version (.+) running on an Arista Networks (.+)$/',
             $sysDescr, $matches );
 
     $this->setVendor( 'Arista' );
