@@ -753,4 +753,42 @@ class SNMP
         return $this->_platform;
     }
 
+
+    /**
+     * Get indexed SNMP values where the array key is spread over a number of OID positions
+     *
+     * @throws \OSS_SNMP\Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
+     * @param string $oid The OID to walk
+     * @param int $positionS The start position of the OID to use as the key
+	 * @param int $positionE The end position of the OID to use as the key
+     * @return array The resultant values
+     */
+    public function subOidWalkLong( $oid, $positionS, $positionE )
+    {
+        if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
+            return $rtn;
+		
+        $this->_lastResult = @snmp2_real_walk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
+
+        if( $this->_lastResult === false )
+            throw new Exception( 'Could not perform walk for OID ' . $oid );
+
+        $result = array();
+
+        foreach( $this->_lastResult as $_oid => $value )
+        {
+            $oids = explode( '.', $_oid );
+
+			$oidKey = '';
+			for($i = $positionS; $i <= $positionE; $i++)
+			{
+				$oidKey .= $oids[$i] .'.';
+			}
+
+            $result[ $oidKey ] = $this->parseSnmpValue( $value );
+        }
+
+        return $this->getCache()->save( $oid, $result );
+    }
+
 }
