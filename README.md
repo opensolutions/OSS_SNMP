@@ -79,8 +79,7 @@ functionality in the others. For example the Cisco/CDP MIB can discover your ent
 topology recursively. Another project we've released, [NOCtools](https://github.com/opensolutions/NOCtools/wiki), 
 give concreate examples of this with GraphViz.
 
-Right now it's SNMP v2. This can be easily updated for multiple version support. Also, it's read only
-as, at time of writing, I have no current requirement to set SNMP values via PHP.
+Supports SNMP v1, v2c and v3. It's read only as, at time of writing, I have no current requirement to set SNMP values via PHP.
 
 
 Requirements
