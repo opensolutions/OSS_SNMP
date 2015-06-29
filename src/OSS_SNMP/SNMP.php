@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
+    Copyright (c) 2012 - 2015, Open Source Solutions Limited, Dublin, Ireland
     All rights reserved.
 
     Contact: Barry O'Donovan - barry (at) opensolutions (dot) ie
@@ -73,7 +73,7 @@ class SNMP
     protected $_version;
 
     /**
-     * Essentially the same thing as the community for v1 and v2 
+     * Essentially the same thing as the community for v1 and v2
      */
     protected $_secName;
 
@@ -84,26 +84,26 @@ class SNMP
     protected $_secLevel;
 
     /**
-     * The authentication encryption picked on the device. 
+     * The authentication encryption picked on the device.
      * Defaults to MD5 by the constructor.
      * valid strings: (MD5|SHA)
      */
     protected $_authProtocol;
 
     /**
-     * The password for the secName. Defaults to None by the constructor. 
+     * The password for the secName. Defaults to None by the constructor.
      */
     protected $_authPassphrase;
 
     /**
-     * The communication encryption picked on the device. 
+     * The communication encryption picked on the device.
      * Defaults to DES by the constructor.
      * valid strings: (DES|AES)
      */
     protected $_privProtocol;
 
     /**
-     * The password for the secName. Defaults to None by the constructor. 
+     * The password for the secName. Defaults to None by the constructor.
      */
     protected $_privPassphrase;
 
@@ -215,12 +215,22 @@ class SNMP
      */
     public function realWalk( $oid )
     {
-        $v1='snmprealwalk';
-        $v2c='snmp2_real_walk';
-        $v3='snmp3_real_walk';
-        $community=($this->getVersion()==3)?'$this->getSecName(), $this->getSecLevel(), $this->getAuthProtocol(), $this->getAuthPassphrase(), $this->getPrivProtocol(), $this->getPrivPassphrase()':'$this->getCommunity()';
-        eval(' $this->_lastResult = @${"v".$this->getVersion()}( $this->getHost(), '.$community.', $oid, $this->getTimeout(), $this->getRetry() );');
-        return $this->_lastResult;
+        switch( $this->getVersion() ) {
+            case 1:
+                return $this->_lastResult = @snmprealwalk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
+                break;
+            case '2c':
+                return $this->_lastResult = @snmp2_real_walk( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
+                break;
+            case '3':
+                return $this->_lastResult = @snmp3_real_walk( $this->getHost(), $this->getSecName(), $this->getSecLevel(),
+                        $this->getAuthProtocol(), $this->getAuthPassphrase(), $this->getPrivProtocol(), $this->getPrivPassphrase(),
+                        $oid, $this->getTimeout(), $this->getRetry()
+                    );
+                break;
+            default:
+                throw new Exception( 'Invalid SNMP version: ' . $this->getVersion() );
+        }
     }
 
 
@@ -236,11 +246,22 @@ class SNMP
         if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
             return $rtn;
 
-        $v1='snmpget';
-        $v2c='snmp2_get';
-        $v3='snmp3_get';
-        $community=($this->getVersion()==3)?'$this->getSecName(), $this->getSecLevel(), $this->getAuthProtocol(), $this->getAuthPassphrase(), $this->getPrivProtocol(), $this->getPrivPassphrase()':'$this->getCommunity()';
-        eval('$this->_lastResult = @${"v".$this->getVersion()}( $this->getHost(), '.$community.', $oid, $this->getTimeout(), $this->getRetry() );');
+        switch( $this->getVersion() ) {
+            case 1:
+                $this->_lastResult = @snmpget( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
+                break;
+            case '2c':
+                $this->_lastResult = @snmp2_get( $this->getHost(), $this->getCommunity(), $oid, $this->getTimeout(), $this->getRetry() );
+                break;
+            case '3':
+                $this->_lastResult = @snmp3_get( $this->getHost(), $this->getSecName(), $this->getSecLevel(),
+                        $this->getAuthProtocol(), $this->getAuthPassphrase(), $this->getPrivProtocol(), $this->getPrivPassphrase(),
+                        $oid, $this->getTimeout(), $this->getRetry()
+                    );
+                break;
+            default:
+                throw new Exception( 'Invalid SNMP version: ' . $this->getVersion() );
+        }
 
         if( $this->_lastResult === false )
             throw new Exception( 'Could not perform walk for OID ' . $oid );
@@ -279,11 +300,7 @@ class SNMP
         if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
             return $rtn;
 
-        $v1='snmprealwalk';
-        $v2c='snmp2_real_walk';
-        $v3='snmp3_real_walk';
-        $community=($this->getVersion()==3)?'$this->getSecName(), $this->getSecLevel(), $this->getAuthProtocol(), $this->getAuthPassphrase(), $this->getPrivProtocol(), $this->getPrivPassphrase()':'$this->getCommunity()';
-        eval('$this->_lastResult = @${"v".$this->getVersion()}( $this->getHost(), '.$community.', $oid, $this->getTimeout(), $this->getRetry() );');
+        $this->_lastResult = $this->realWalk( $oid );
 
         if( $this->_lastResult === false )
             throw new Exception( 'Could not perform walk for OID ' . $oid );
@@ -332,11 +349,7 @@ class SNMP
         if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
             return $rtn;
 
-        $v1='snmprealwalk';
-        $v2c='snmp2_real_walk';
-        $v3='snmp3_real_walk';
-        $community=($this->getVersion()==3)?'$this->getSecName(), $this->getSecLevel(), $this->getAuthProtocol(), $this->getAuthPassphrase(), $this->getPrivProtocol(), $this->getPrivPassphrase()':'$this->getCommunity()';
-        eval('$this->_lastResult = @${"v".$this->getVersion()}( $this->getHost(), '.$community.', $oid, $this->getTimeout(), $this->getRetry() );');
+        $this->_lastResult = $this->realWalk( $oid );
 
         if( $this->_lastResult === false )
             throw new Exception( 'Could not perform walk for OID ' . $oid );
@@ -380,11 +393,7 @@ class SNMP
         if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
             return $rtn;
 
-        $v1='snmprealwalk';
-        $v2c='snmp2_real_walk';
-        $v3='snmp3_real_walk';
-        $community=($this->getVersion()==3)?'$this->getSecName(), $this->getSecLevel(), $this->getAuthProtocol(), $this->getAuthPassphrase(), $this->getPrivProtocol(), $this->getPrivPassphrase()':'$this->getCommunity()';
-        eval('$this->_lastResult = @${"v".$this->getVersion()}( $this->getHost(), '.$community.', $oid, $this->getTimeout(), $this->getRetry() );');
+        $this->_lastResult = $this->realWalk( $oid );
 
         if( $this->_lastResult === false )
             throw new Exception( 'Could not perform walk for OID ' . $oid );
@@ -458,7 +467,7 @@ class SNMP
             case 'IpAddress':
                 $rtn = (string)$value;
                 break;
-                
+
             case 'OID':
                 $rtn = (string)$value;
                 break;
@@ -916,19 +925,15 @@ class SNMP
      * @throws \OSS_SNMP\Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
      * @param string $oid The OID to walk
      * @param int $positionS The start position of the OID to use as the key
-	 * @param int $positionE The end position of the OID to use as the key
+     * @param int $positionE The end position of the OID to use as the key
      * @return array The resultant values
      */
     public function subOidWalkLong( $oid, $positionS, $positionE )
     {
         if( $this->cache() && ( $rtn = $this->getCache()->load( $oid ) ) !== null )
             return $rtn;
-		
-        $v1='snmprealwalk';
-        $v2c='snmp2_real_walk';
-        $v3='snmp3_real_walk';
-        $community=($this->getVersion()==3)?'$this->getSecName(), $this->getSecLevel(), $this->getAuthProtocol(), $this->getAuthPassphrase(), $this->getPrivProtocol(), $this->getPrivPassphrase()':'$this->getCommunity()';
-        eval('$this->_lastResult = @${"v".$this->getVersion()}( $this->getHost(), '.$community.', $oid, $this->getTimeout(), $this->getRetry() );');
+
+        $this->_lastResult = $this->realWalk( $oid );
 
         if( $this->_lastResult === false )
             throw new Exception( 'Could not perform walk for OID ' . $oid );
@@ -939,11 +944,11 @@ class SNMP
         {
             $oids = explode( '.', $_oid );
 
-			$oidKey = '';
-			for($i = $positionS; $i <= $positionE; $i++)
-			{
-				$oidKey .= $oids[$i] .'.';
-			}
+            $oidKey = '';
+            for($i = $positionS; $i <= $positionE; $i++)
+            {
+                $oidKey .= $oids[$i] .'.';
+            }
 
             $result[ $oidKey ] = $this->parseSnmpValue( $value );
         }
