@@ -35,7 +35,7 @@
 
 // From: https://github.com/inex/IXP-Manager/issues/210 - very limited information
 
-if( substr( $sysDescr, 0, 9 ) == 'FASTPATH Switching' )
+if( strtolower( substr( $sysDescr, 0, 18 ) ) == 'fastpath switching' )
 {
     $this->setVendor( 'Quanta' );
     $this->setModel( "Quanta" );
