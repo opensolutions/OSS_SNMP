@@ -37,6 +37,8 @@
 // Works with sysDescr such as:
 //
 // 'Cisco IOS Software, s72033_rp Software (s72033_rp-ADVENTERPRISE_WAN-VM), Version 12.2(33)SXI5, RELEASE SOFTWARE (fc2)'
+//
+// 'Cisco Internetwork Operating System Software IOS (tm) C2950 Software (C2950-I6Q4L2-M), Version 12.1(13)EA1, RELEASE SOFTWARE.*'
 
 if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
 {
@@ -44,9 +46,24 @@ if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
             $sysDescr, $matches );
 
     $this->setVendor( 'Cisco Systems' );
-    $this->setModel( $this->getSNMPHost()->useEntity()->physicalName()[1] );
+    try {
+        $this->setModel( $this->getSNMPHost()->useEntity()->physicalName()[1] );
+    } catch( \OSS_SNMP\Exception $e ) {
+        $this->setModel( 'Unknown' );
+    }
     $this->setOs( 'IOS' );
     $this->setOsVersion( $matches[3] );
     $this->setOsDate( null );
 }
+else if( substr( $sysDescr, 0, 48 ) == 'Cisco Internetwork Operating System Software IOS' )
+{
+    $sysDescr = trim( preg_replace( '/\s+/', ' ', $sysDescr ) );
+    preg_match( '/Cisco(.+)C2950 Software(.+)Version\s([0-9A-Za-z\(\)\.]+),\sRELEASE SOFTWARE.*/',
+            $sysDescr, $matches );
 
+    $this->setVendor( 'Cisco Systems' );
+    $this->setModel( 'C2950' );
+    $this->setOs( 'IOS' );
+    $this->setOsVersion( $matches[3] );
+    $this->setOsDate( null );
+}
