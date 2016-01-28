@@ -66,4 +66,17 @@ else if( substr( $sysDescr, 0, 48 ) == 'Cisco Internetwork Operating System Soft
     $this->setOs( 'IOS' );
     $this->setOsVersion( $matches[3] );
     $this->setOsDate( null );
+} 
+else if( substr( $sysDescr, 0, 21 ) == 'Cisco IOS XR Software' )
+{
+    // 'Cisco IOS XR Software (Cisco ASR9K Series),  Version 4.3.2[Default]\r\nCopyright (c) 2013 by Cisco Systems, Inc., referer: http://10.0.35.20/ixp/switch/add-by-snmp'
+
+    preg_match( '/Cisco IOS XR Software \((.+ Series)\),\s+Version\s([0-9A-Za-z\(\)\.\[\]]+)\s+Copyright \(c\) [0-9]+ by Cisco Systems, Inc.*/',
+            $sysDescr, $matches );
+    $this->setVendor( 'Cisco Systems' );
+    $this->setModel( $matches[1] );
+    $this->setOs( 'IOS XR' );
+    $this->setOsVersion( $matches[2] );
+    $this->setOsDate( null );
 }
+
