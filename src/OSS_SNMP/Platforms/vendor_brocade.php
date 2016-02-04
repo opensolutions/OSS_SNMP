@@ -38,14 +38,14 @@
 //
 // 'Brocade Communications Systems, Inc. FESX624+2XG, IronWare Version 07.3.00cT3e1 Compiled on Apr 25 2012 at 17:01:00 labeled as SXS07300c'
 // 'Brocade Communication Systems, Inc. TurboIron-X24, IronWare Version 04.2.00b Compiled on Oct 22 2010 at 15:15:36 labeled as TIS04200b'
-// 'Brocade Communications Systems, Inc. Stacking System ICX7450-48, IronWare Version 08.0.30dT213 Compiled on Nov 3 2015 at 22:16:04 labeled as SPR08030d'
+// 'Brocade Communications Systems, Inc. Stacking System ICX7450-48, IronWare Version 08.0.30dT213 Compiled on Nov  3 2015 at 22:16:04 labeled as SPR08030d'
 // 'Brocade NetIron CES, IronWare Version V5.2.0cT183 Compiled on Oct 28 2011 at 02:58:44 labeled as V5.2.00c'
 // 'Brocade NetIron MLX (System Mode: MLX), IronWare Version V5.4.0cT163 Compiled on Mar 25 2013 at 17:08:16 labeled as V5.4.00c'
 // 'Brocade MLXe (System Mode: MLX), IronWare Version V5.7.0dT163 Compiled on Sep 23 2015 at 09:35:50 labeled as V5.7.00db'
 
 if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
 {
-    if( preg_match( '/Brocade Communication[s]* Systems, Inc. [(Stacking System)]*(.+),\s([a-zA-Z]+)\sVersion\s(.+)\sCompiled\son\s(([a-zA-Z]+)\s(\d+)\s(\d+)\s)at\s((\d\d):(\d\d):(\d\d))\slabeled\sas\s(.+)/',
+    if( preg_match( '/Brocade Communication[s]* Systems, Inc. [(Stacking System)]*(.+),\s([a-zA-Z]+)\sVersion\s(.+)\sCompiled\son\s(([a-zA-Z]+)\s+(\d+)\s(\d+)\s)at\s((\d\d):(\d\d):(\d\d))\slabeled\sas\s(.+)/',
             $sysDescr, $matches ) )
     {
         $this->setVendor( 'Brocade' );
