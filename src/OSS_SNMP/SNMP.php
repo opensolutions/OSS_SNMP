@@ -44,7 +44,6 @@ spl_autoload_register( function( $class ) {
     }
 });
 
-
 /**
  * A class for performing SNMP V2 queries and processing the results.
  *
@@ -59,6 +58,14 @@ class SNMP
      * @var string The SNMP community to use when polling SNMP services. Defaults to 'public' by the constructor.
      */
     protected $_community;
+
+    /**
+     * The SNMP community to use when pushing something into the SNMP service.
+     *
+     * @var string Applicable only for "1" and "2c" versions
+     */
+
+    protected $_privateCommunity;
 
     /**
      * The SNMP host to query. Defaults to '127.0.0.1'
@@ -206,6 +213,17 @@ class SNMP
                     ->setOidOutputFormat( self::OID_OUTPUT_NUMERIC );
     }
 
+    /**
+     * Proxy to the snmp_read_mib command
+     *
+     * @param string $mibPath
+     * @return bool
+     */
+
+    public function registerMib($mibPath = '')
+    {
+        return @snmp_read_mib($mibPath);
+    }
 
     /**
      * Proxy to the snmp2_real_walk command
@@ -267,6 +285,37 @@ class SNMP
             throw new Exception( 'Could not perform walk for OID ' . $oid );
 
         return $this->getCache()->save( $oid, $this->parseSnmpValue( $this->_lastResult ) );
+    }
+
+    /**
+     * Get a single SNMP value
+     *
+     * @throws Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
+     * @param string $oid The OID to get
+     * @param string $value A new value for OID
+     * @param string $type Type of value
+     * @param boolean $exception
+     * @throws \Components\Core\Snmp\Exceptions\GeneralException
+     * @return mixed The resultant value
+     */
+
+    public function set($oid, $value, $type = 'i')
+    {
+        if ($this->getVersion() == '1') {
+            $this->_lastResult = @snmpset($this->getHost(), $this->getPrivateCommunity(), $oid, $type, $value, $this->getTimeout(), $this->getRetry());
+        } elseif ($this->getVersion() == '2c') {
+            $this->_lastResult = @snmp2_set($this->getHost(), $this->getPrivateCommunity(), $oid, $type, $value, $this->getTimeout(), $this->getRetry());
+        } elseif ($this->getVersion() == '3') {
+            $this->_lastResult = @snmp3_set($this->getHost(), $this->getSecName(), $this->getSecLevel(), $this->getAuthProtocol(), $this->getAuthPassphrase(), $this->getPrivProtocol(), $this->getPrivPassphrase(), $oid, $type, $value, $this->getTimeout(), $this->getRetry());
+        }
+
+        if ($this->_lastResult === false) {
+            $message = vsprintf('%s - Could not set a value %s - type %s', [$oid, $value, $type]);
+
+            throw new Exception($message);
+        }
+
+        return true;
     }
 
     /**
@@ -737,6 +786,18 @@ class SNMP
         return $this;
     }
 
+    public function setPrivateCommunity($c)
+    {
+        $this->privateCommunity = $c;
+
+        return $this;
+    }
+
+    public function getPrivateCommunity()
+    {
+        return $this->privateCommunity;
+    }
+
     /**
      * Returns the community string currently in use.
      *
@@ -913,6 +974,17 @@ class SNMP
         return $m;
     }
 
+    /**
+     * Checks if the specified extension exists
+     *
+     * @param $mib
+     * @return bool
+     */
+
+    public function hasExtenstion($mib)
+    {
+        return file_exists(__DIR__.'/MIBS/'.$mib.'.php');
+    }
 
     public function getPlatform()
     {
@@ -960,4 +1032,61 @@ class SNMP
         return $this->getCache()->save( $oid, $result );
     }
 
+    /**
+     * @param $oid
+     * @param string $defaultValue
+     * @param array $array
+     * @param array $omittedOids
+     * @param bool $haltOnAnyProblem
+     * @return array|string
+     * @throws Exception
+     */
+
+    public function realMultiWalk($oid, $defaultValue = '', $array = [], $omittedOids = [], $haltOnAnyProblem = false)
+    {
+        $result = $this->realWalk($oid, $defaultValue);
+
+        if( $result === false && $haltOnAnyProblem === true ) {
+            throw new Exception('Could not perform walk for OID ' . $oid);
+        }
+
+        if (!empty($result)) {
+            foreach ($result as $oid => $entry) {
+                list($oid2, $index) = explode('.', $oid);
+
+                if (in_array($oid2, $omittedOids)) {
+                    $value = $this->parseSnmpString($entry);
+                } else {
+                    $value = $this->parseSnmpValue($entry);
+                }
+
+                if (!strstr($value, 'at this OID') && isset($oid2) && isset($index)) {
+                    $array[$index][$oid2] = $value;
+                }
+            }
+
+            return $array;
+        }
+
+        return $defaultValue;
+    }
+
+    public function realWalkParse($oid, $defaultValue = '', $asString = 0)
+    {
+        $result = $this->realWalk($oid);
+
+        if (!is_array($result)) {
+            return $defaultValue;
+        }
+
+        if ($asString == 1) {
+            return @array_map(function ($value) {
+                return $this->parseSnmpString($value);
+            }, $result);
+        }
+
+        return @array_map(function ($value) {
+            return $this->parseSnmpValue($value);
+        }, $result);
+    }
 }
