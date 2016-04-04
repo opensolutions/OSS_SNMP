@@ -48,7 +48,7 @@ class Entity extends \OSS_SNMP\MIB
     const OID_ENTITY_PHYSICAL_PARENT_REL_POS = '.1.3.6.1.2.1.47.1.1.1.1.6';
     const OID_ENTITY_PHYSICAL_NAME           = '.1.3.6.1.2.1.47.1.1.1.1.7';
     const OID_ENTITY_PHYSICAL_ALIAS          = '.1.3.6.1.2.1.47.1.1.1.1.14';
-
+	const OID_ENTITY_PHYSICAL_SERIALNUM      = '.1.3.6.1.2.1.47.1.1.1.1.11';
 
 
     /**
@@ -215,6 +215,23 @@ class Entity extends \OSS_SNMP\MIB
         }
 
         return $rtn;
+    }
+    
+    /**
+     * Returns an associate array of entPhysicalSerialNum
+     *
+     * e.g.
+     *
+     *     [1001] = STRING: "FOC16829FD54"
+     *     [1002] = STRING: ""
+     *     [1003] = STRING: ""
+     *     [1004] = STRING: ""
+     *
+     * @return array Associate array of entPhysicalSerialNum
+     */
+    public function physicalSerialNum()
+    {
+        return $this->getSNMP()->walk1d( self::OID_ENTITY_PHYSICAL_SERIALNUM );
     }
 
 

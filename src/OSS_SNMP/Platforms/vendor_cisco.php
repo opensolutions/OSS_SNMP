@@ -47,7 +47,8 @@ if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
 
     $this->setVendor( 'Cisco Systems' );
     try {
-        $this->setModel( $this->getSNMPHost()->useEntity()->physicalName()[1] );
+        # $this->setModel( $this->getSNMPHost()->useEntity()->physicalName()[1] );
+        $this->setModel( array_slice( $this->getSNMPHost()->useEntity()->physicalName(), 1, 1, true) );
     } catch( \OSS_SNMP\Exception $e ) {
         $this->setModel( 'Unknown' );
     }
