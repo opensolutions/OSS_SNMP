@@ -340,24 +340,24 @@ class SNMP
      *      10108 => Hex-STRING: 00 00 00 01
      *
      * subOidWalk( '.1.3.6.1.2.1.17.4.3.1.1', 15, -1 )
-     * 
+     *
      * 		.1.3.6.1.2.1.17.4.3.1.1.0.0.136.54.152.12 = Hex-STRING: 00 00 75 33 4E 92
      * 		.1.3.6.1.2.1.17.4.3.1.1.8.3.134.58.182.16 = Hex-STRING: 00 00 75 33 4E 93
      * 		.1.3.6.1.2.1.17.4.3.1.1.0.4.121.22.55.8 = Hex-STRING: 00 00 75 33 4E 94
-     * 
+     *
      * would yield an array:
-     *		[0.0.136.54.152.12] => Hex-STRING: 00 00 75 33 4E 92
-     * 		[8.3.134.58.182.16] => Hex-STRING: 00 00 75 33 4E 93
-     * 		[0.4.121.22.55.8] => Hex-STRING: 00 00 75 33 4E 94
-     * 
+     *		[54.152.12] => Hex-STRING: 00 00 75 33 4E 92
+     * 		[58.182.16] => Hex-STRING: 00 00 75 33 4E 93
+     * 		[22.55.8]   => Hex-STRING: 00 00 75 33 4E 94
+     *
      * @throws \OSS_SNMP\Exception On *any* SNMP error, warnings are supressed and a generic exception is thrown
      * @param string $oid The OID to walk
      * @param int $position The position of the OID to use as the key
-     * 
-     * @param int $elements Number of elements to retrieve after position
-     *   with -1, retrieves ALL to the end. If there is less elements
-     *   than $elements, return all availables (no error). 
-     * 
+     * @param int $elements Number of additional elements to include in the returned array keys after $position.
+     *                      This defaults to 1 meaning just the requested OID element (see examples above).
+     *                      With -1, retrieves ALL to the end.
+     *                      If there is less elements than $elements, return all availables (no error).
+     *
      * @return array The resultant values
      */
     public function subOidWalk( $oid, $position, $elements = 1)
@@ -377,12 +377,7 @@ class SNMP
             $oids = explode( '.', $_oid );
 
 			$index = $oids[ $position];
-			for ($pos = $position+1 
-					; $pos < sizeof($oids) 
-					&& ( $elements == -1
-						|| $pos < $position+$elements)
-					; $pos++) 
-			{
+			for( $pos = $position + 1; $pos < sizeof($oids) && ( $elements == -1 || $pos < $position+$elements ); $pos++ ) {
 				$index .= '.' . $oids[ $pos ];
 			}
 

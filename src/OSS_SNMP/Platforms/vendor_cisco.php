@@ -47,8 +47,7 @@ if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
 
     $this->setVendor( 'Cisco Systems' );
     try {
-        # $this->setModel( $this->getSNMPHost()->useEntity()->physicalName()[1] );
-        $this->setModel( array_slice( $this->getSNMPHost()->useEntity()->physicalName(), 1, 1, true) );
+        $this->setModel( $this->getSNMPHost()->useEntity()->physicalName()[1] );
     } catch( \OSS_SNMP\Exception $e ) {
         $this->setModel( 'Unknown' );
     }
@@ -67,7 +66,7 @@ else if( substr( $sysDescr, 0, 48 ) == 'Cisco Internetwork Operating System Soft
     $this->setOs( 'IOS' );
     $this->setOsVersion( $matches[3] );
     $this->setOsDate( null );
-} 
+}
 else if( substr( $sysDescr, 0, 21 ) == 'Cisco IOS XR Software' )
 {
     // 'Cisco IOS XR Software (Cisco ASR9K Series),  Version 4.3.2[Default]\r\nCopyright (c) 2013 by Cisco Systems, Inc., referer: http://10.0.35.20/ixp/switch/add-by-snmp'
@@ -80,4 +79,3 @@ else if( substr( $sysDescr, 0, 21 ) == 'Cisco IOS XR Software' )
     $this->setOsVersion( $matches[2] );
     $this->setOsDate( null );
 }
-

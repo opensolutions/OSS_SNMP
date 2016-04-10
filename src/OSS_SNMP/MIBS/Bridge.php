@@ -43,10 +43,10 @@ namespace OSS_SNMP\MIBS;
  */
 class Bridge extends \OSS_SNMP\MIB
 {
-    const OID_BRIDGE_BASE_PORT_IF_INDEX = '.1.3.6.1.2.1.17.1.4.1.2';
+    const OID_BRIDGE_BASE_PORT_IF_INDEX    = '.1.3.6.1.2.1.17.1.4.1.2';
 
-	const OID_BRIDGE_MAC_ADDRESS = '.1.3.6.1.2.1.17.4.3.1.1';
-	const OID_BRIDGE_MAC_ADDRESS_BASE_PORT = '.1.3.6.1.2.1.17.4.3.1.2';	
+	const OID_BRIDGE_MAC_ADDRESS           = '.1.3.6.1.2.1.17.4.3.1.1';
+	const OID_BRIDGE_MAC_ADDRESS_BASE_PORT = '.1.3.6.1.2.1.17.4.3.1.2';
 
     /**
      * Returns an associate array of STP port IDs (key) to interface IDs (value)
@@ -61,35 +61,31 @@ class Bridge extends \OSS_SNMP\MIB
         return $this->getSNMP()->walk1d( self::OID_BRIDGE_BASE_PORT_IF_INDEX );
     }
     
-    /** 
-     * Returns array Associative of MAC ADDRESSES (value) to unique index (key)
-     * 
-     * e.g.	[0.0.136.54.152.12] => 000075334E92 
-     * 
-     * @return array Associative of MAC ADDRESSES (value) to unique index (key)
+    /**
+     * Returns array Associative MAC ADDRESSES (value) to unique index (key)
+     *
+     * e.g.	[0.0.136.54.152.12] => 000075334E92
+     *
+     * @return array Associative MAC ADDRESSES (value) to unique index (key)
      */
     public function macAddressList() {
-		return $this->getSNMP()->subOidWalk( 
-				self::OID_BRIDGE_MAC_ADDRESS, 12, -1 );
+		return $this->getSNMP()->subOidWalk( self::OID_BRIDGE_MAC_ADDRESS, 12, -1 );
 	}
 	
-	/** 
+	/**
 	 * Returns array Associative of BasePort (value) to unique index (key)
 	 * for mac address listed in self::macAddressList()
      *  Use basePortIfIndexes to obtain interface
-     * 
-     * e.g.	[0.0.136.54.152.12] => 2 
-     *   
-     * 
+     *
+     * e.g.	[0.0.136.54.152.12] => 2
+     *
+     *
      * @return array Associative of BasePort (value) to unique index (key)
      *   for mac address listed in self::macAddressList()
      */
     public function macAddressBasePort() {
-		return $this->getSNMP()->subOidWalk( 
-				self::OID_BRIDGE_MAC_ADDRESS_BASE_PORT, 12, -1 );
+		return $this->getSNMP()->subOidWalk( self::OID_BRIDGE_MAC_ADDRESS_BASE_PORT, 12, -1 );
 	}
 	
 
 }
-
-
