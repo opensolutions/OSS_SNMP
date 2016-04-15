@@ -39,7 +39,7 @@ namespace OSS_SNMP\MIBS;
  * A class for performing SNMP V2 queries on generic devices
  *
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
- * @author Barry O'Donovan <barry@opensolutions.ie>
+ * @author Luis Alberto Herrero <laherre@unizar.es>
  */
 class RFC1213 extends \OSS_SNMP\MIB
 {

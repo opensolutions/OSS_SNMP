@@ -39,7 +39,7 @@ namespace OSS_SNMP\MIBS\Cisco;
  * A class for performing SNMP V2 queries on Cisco devices
  *
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
- * @author Barry O'Donovan <barry@opensolutions.ie>
+ * @author Luis Alberto Herrero <laherre@unizar.es>
  */
 class PAGP extends \OSS_SNMP\MIBS\Cisco
 {

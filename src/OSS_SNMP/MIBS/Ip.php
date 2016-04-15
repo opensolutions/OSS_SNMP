@@ -39,13 +39,12 @@ namespace OSS_SNMP\MIBS;
  * A class for performing SNMP V2 queries on generic devices
  *
  * @copyright Copyright (c) 2012 - 2013, Open Source Solutions Limited, Dublin, Ireland
- * @author Barry O'Donovan <barry@opensolutions.ie>
+ * @author Luis Alberto Herrero <laherre@unizar.es>
  */
 class Ip extends \OSS_SNMP\MIB
 {
-	const OID_IP_NET_TO_MEDIA_PHY_ADDRESS = '.1.3.6.1.2.1.4.22.1.2';
-	
-	const OID_IP_ADDRESS    = '.1.3.6.1.2.1.4.20.1.1';
+    const OID_IP_NET_TO_MEDIA_PHY_ADDRESS                = '.1.3.6.1.2.1.4.22.1.2';
+    const OID_IP_ADDRESS                                 = '.1.3.6.1.2.1.4.20.1.1';
     
     /** Returns an associative array of IpAddresses of device
      * 
@@ -54,8 +53,7 @@ class Ip extends \OSS_SNMP\MIB
      * @return array Associative of IP ADDRESS (value) to ip address (key)
      */
     public function ipAddressList() {
-	return $this->getSNMP()->subOidWalk( 
-				self::OID_IP_ADDRESS, 11, -1 );
+        return $this->getSNMP()->subOidWalk(self::OID_IP_ADDRESS, 11, -1 );
     }
     
     /**
@@ -65,7 +63,6 @@ class Ip extends \OSS_SNMP\MIB
      * @return array [ 'if.ip' => 'mac' ]
       */
     public function ipMacIf() {
-		return $this->getSNMP()->subOidWalk( 
-				self::OID_IP_NET_TO_MEDIA_PHY_ADDRESS, 11, -1 );
-	}
+        return $this->getSNMP()->subOidWalk(self::OID_IP_NET_TO_MEDIA_PHY_ADDRESS, 11, -1 );
+    }
 }
