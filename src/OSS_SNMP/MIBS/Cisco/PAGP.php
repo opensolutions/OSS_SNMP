@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
+    Copyright (c) 2012-2016, Open Source Solutions Limited, Dublin, Ireland
     All rights reserved.
 
     Contact: Barry O'Donovan - barry (at) opensolutions (dot) ie
@@ -38,7 +38,7 @@ namespace OSS_SNMP\MIBS\Cisco;
 /**
  * A class for performing SNMP V2 queries on Cisco devices
  *
- * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
+ * @copyright Copyright (c) 2012-2016, Open Source Solutions Limited, Dublin, Ireland
  * @author Luis Alberto Herrero <laherre@unizar.es>
  */
 class PAGP extends \OSS_SNMP\MIBS\Cisco
@@ -47,7 +47,7 @@ class PAGP extends \OSS_SNMP\MIBS\Cisco
     const OID_PAGP_GROUPIFINDEX                 = '1.3.6.1.4.1.9.9.98.1.1.1.1.8';
     
     /**
-     *      
+     *
      * @return associative array with the physic interface index (key) and the agregation port ifindex (value)
      *   if key == value OR value == 0 not agregation
      */
@@ -76,10 +76,6 @@ class PAGP extends \OSS_SNMP\MIBS\Cisco
                 $ports[ $aggPortId ][$portId] = $this->getSNMP()->useIface()->names()[$portId];
 
         return $ports;
-    }   
+    }
 
 }
-
-
-
-

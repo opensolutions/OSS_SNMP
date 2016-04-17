@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Copyright (c) 2012 - 2013, Open Source Solutions Limited, Dublin, Ireland
+    Copyright (c) 2012 - 2016, Open Source Solutions Limited, Dublin, Ireland
     All rights reserved.
 
     Contact: Barry O'Donovan - barry (at) opensolutions (dot) ie
@@ -38,7 +38,7 @@ namespace OSS_SNMP\MIBS;
 /**
  * A class for performing SNMP V2 queries on generic devices
  *
- * @copyright Copyright (c) 2012 - 2013, Open Source Solutions Limited, Dublin, Ireland
+ * @copyright Copyright (c) 2012 - 2016, Open Source Solutions Limited, Dublin, Ireland
  * @author Luis Alberto Herrero <laherre@unizar.es>
  */
 class Ip extends \OSS_SNMP\MIB
@@ -47,9 +47,9 @@ class Ip extends \OSS_SNMP\MIB
     const OID_IP_ADDRESS                                 = '.1.3.6.1.2.1.4.20.1.1';
     
     /** Returns an associative array of IpAddresses of device
-     * 
-     * e.g.	[10.0.0.1] => 10.0.0.1 
-     * 
+     *
+     * e.g.	[10.0.0.1] => 10.0.0.1
+     *
      * @return array Associative of IP ADDRESS (value) to ip address (key)
      */
     public function ipAddressList() {

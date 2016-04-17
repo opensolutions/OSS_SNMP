@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
+    Copyright (c) 2012-2016, Open Source Solutions Limited, Dublin, Ireland
     All rights reserved.
 
     Contact: Barry O'Donovan - barry (at) opensolutions (dot) ie
@@ -38,7 +38,7 @@ namespace OSS_SNMP\MIBS;
 /**
  * A class for performing SNMP V2 queries on generic devices
  *
- * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
+ * @copyright Copyright (c) 2012-2016, Open Source Solutions Limited, Dublin, Ireland
  * @author Luis Alberto Herrero <laherre@unizar.es>
  */
 class RFC1213 extends \OSS_SNMP\MIB
@@ -46,9 +46,9 @@ class RFC1213 extends \OSS_SNMP\MIB
     const OID_RFC1213_PHYSADDRESS                  = '.1.3.6.1.2.1.3.1.1.2';
     
     /**
-     * 
+     *
      * NOTE- must use "community@vlan" as  community
-     * 
+     *
      * @param $ifindex
      * @return associative array for macaddress in this device
      *      [
@@ -56,7 +56,7 @@ class RFC1213 extends \OSS_SNMP\MIB
      *      ]
      * (instance usually "1", ifindex the vlan_ifindex if vlan )
      * ex.
-     *      [ 
+     *      [
      *          "53.1.10.0.1.5" => "0008E4F1F322",
      *      ]
      *  if $ifindex only search for this ifindex, if $ifindex and $ip search for both
@@ -69,9 +69,9 @@ class RFC1213 extends \OSS_SNMP\MIB
             $oid .= "." . $ifindex;
             if ($ip) {
                 $oid .= ".1." . $ip;
-            }            
+            }
         }
-        return $this->getSNMP()->subOidWalk($oid, 11, -1);       
+        return $this->getSNMP()->subOidWalk($oid, 11, -1);
     }
 
 }

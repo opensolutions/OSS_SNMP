@@ -43,8 +43,8 @@ namespace OSS_SNMP\MIBS;
  */
 class Bridge extends \OSS_SNMP\MIB {
 
-    const OID_BRIDGE_BASE_PORT_IF_INDEX = '.1.3.6.1.2.1.17.1.4.1.2';
-    const OID_BRIDGE_MAC_ADDRESS = '.1.3.6.1.2.1.17.4.3.1.1';
+    const OID_BRIDGE_BASE_PORT_IF_INDEX    = '.1.3.6.1.2.1.17.1.4.1.2';
+    const OID_BRIDGE_MAC_ADDRESS           = '.1.3.6.1.2.1.17.4.3.1.1';
     const OID_BRIDGE_MAC_ADDRESS_BASE_PORT = '.1.3.6.1.2.1.17.4.3.1.2';
 
     /**
@@ -52,10 +52,10 @@ class Bridge extends \OSS_SNMP\MIB {
      *
      * e.g.  [22] => 10122
      *
-     * @param $baseport, base port to ask for
+     * @param $baseport int base port to ask for
      * @return array Associate array of STP port IDs (key) to interface IDs (value) or only for $baseport if supplied
      */
-    public function basePortIfIndexes($baseport = null) 
+    public function basePortIfIndexes($baseport = null)
     {
         $oid = self::OID_BRIDGE_BASE_PORT_IF_INDEX;
         if ($baseport) {
@@ -66,7 +66,7 @@ class Bridge extends \OSS_SNMP\MIB {
 
     /**
      * Returns array Associative MAC ADDRESSES (value) to unique index (key)
-     * NOTE: unique index (key) is the decimal macaddress 
+     * NOTE: unique index (key) is the decimal macaddress
      *   (ex. 0.0.136.54.152.12 is 00:00:88:36:98:0C
      *
      * e.g.	[0.0.136.54.152.12] => 00008836980C
@@ -81,13 +81,13 @@ class Bridge extends \OSS_SNMP\MIB {
      * Returns array Associative of BasePort (value) to unique index (key)
      * for mac address listed in self::macAddressList()
      *  Use basePortIfIndexes to obtain interface
-     * NOTE: unique index (key) is the decimal macaddress 
+     * NOTE: unique index (key) is the decimal macaddress
      *   (ex. 0.0.136.54.152.12 is 00:00:88:36:98:0C
-     * 
+     *
      * e.g.	[0.0.136.54.152.12] => 2
      *
      *
-     * @param $decimalmac => macaddress in decimal format (see NOTE) to search for
+     * @param $decimalmac string macaddress in decimal format (see NOTE) to search for
      * @return array Associative of BasePort (value) to unique index (key)
      *   for mac address listed in self::macAddressList() or only for $decimalmac if supplied
      */
