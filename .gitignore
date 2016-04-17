@@ -4,3 +4,6 @@
 *~
 *.DS_Store
 doc/phpdoc-cache-*
+*~
+composer.lock
+vendor/
