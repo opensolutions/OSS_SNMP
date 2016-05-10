@@ -41,32 +41,32 @@ namespace OSS_SNMP\MIBS\Cisco;
  * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
  * @author Sergio Gómez Bachiller <sergio@uco.es>
  */
-class VM extends \OSS_SNMP\MIBS\Cisco
+class VlanMembership extends \OSS_SNMP\MIBS\Cisco
 {
-    const OID_VM_VLAN_TYPE = '.1.3.6.1.4.1.9.9.68.1.2.2.1.1';
-    const OID_VM_VLAN = '.1.3.6.1.4.1.9.9.68.1.2.2.1.2';
-    const OID_VM_PORT_STATUS = '.1.3.6.1.4.1.9.9.68.1.2.2.1.3';
+    const OID_VLAN_MEMBERSHIP_VLAN_TYPE = '.1.3.6.1.4.1.9.9.68.1.2.2.1.1';
+    const OID_VLAN_MEMBERSHIP_VLAN = '.1.3.6.1.4.1.9.9.68.1.2.2.1.2';
+    const OID_VLAN_MEMBERSHIP_PORT_STATUS = '.1.3.6.1.4.1.9.9.68.1.2.2.1.3';
 
     /**
      * Constant for possible value of interface vlan type.
      *
      * @see vlanTypes()
      */
-    const VM_VLAN_TYPE_STATIC = 1;
+    const VLAN_MEMBERSHIP_VLAN_TYPE_STATIC = 1;
 
     /**
      * Constant for possible value of interface vlan type.
      *
      * @see vlanTypes()
      */
-    const VM_VLAN_TYPE_DYNAMIC = 2;
+    const VLAN_MEMBERSHIP_VLAN_TYPE_DYNAMIC = 2;
 
     /**
      * Constant for possible value of interface vlan type.
      *
      * @see vlanTypes()
      */
-    const VM_VLAN_TYPE_MULTI_VLAN = 3;
+    const VLAN_MEMBERSHIP_VLAN_TYPE_MULTI_VLAN = 3;
 
     /**
      * Text representation of interface vlan type.
@@ -75,10 +75,10 @@ class VM extends \OSS_SNMP\MIBS\Cisco
      *
      * @var array Text representations of interface vlan type.
      */
-    public static $VM_VLAN_TYPES = [
-        self::VM_VLAN_TYPE_STATIC => 'static',
-        self::VM_VLAN_TYPE_DYNAMIC => 'dynamic',
-        self::VM_VLAN_TYPE_MULTI_VLAN => 'multiVlan',
+    public static $VLAN_MEMBERSHIP_VLAN_TYPES = [
+        self::VLAN_MEMBERSHIP_VLAN_TYPE_STATIC => 'static',
+        self::VLAN_MEMBERSHIP_VLAN_TYPE_DYNAMIC => 'dynamic',
+        self::VLAN_MEMBERSHIP_VLAN_TYPE_MULTI_VLAN => 'multiVlan',
     ];
 
     /**
@@ -97,13 +97,13 @@ class VM extends \OSS_SNMP\MIBS\Cisco
      */
     public function vlanTypes($translate = false)
     {
-        $states = $this->getSNMP()->walk1d(self::OID_VM_VLAN_TYPE);
+        $states = $this->getSNMP()->walk1d(self::OID_VLAN_MEMBERSHIP_VLAN_TYPE);
 
         if (!$translate) {
             return $states;
         }
 
-        return $this->getSNMP()->translate($states, self::$VM_VLAN_TYPES);
+        return $this->getSNMP()->translate($states, self::$VLAN_MEMBERSHIP_VLAN_TYPES);
     }
 
     /**
@@ -120,7 +120,7 @@ class VM extends \OSS_SNMP\MIBS\Cisco
      */
     public function vlans()
     {
-        return $this->getSNMP()->walk1d(self::OID_VM_VLAN);
+        return $this->getSNMP()->walk1d(self::OID_VLAN_MEMBERSHIP_VLAN);
     }
 
     /**
@@ -128,21 +128,21 @@ class VM extends \OSS_SNMP\MIBS\Cisco
      *
      * @see portStatus()
      */
-    const VM_PORT_STATUS_INACTIVE = 1;
+    const VLAN_MEMBERSHIP_PORT_STATUS_INACTIVE = 1;
 
     /**
      * Constant for possible value of the current VLAN status of the port.
      *
      * @see portStatus()
      */
-    const VM_PORT_STATUS_ACTIVE = 2;
+    const VLAN_MEMBERSHIP_PORT_STATUS_ACTIVE = 2;
 
     /**
      * Constant for possible value of the current VLAN status of the port.
      *
      * @see portStatus()
      */
-    const VM_PORT_STATUS_SHUTDOWN = 3;
+    const VLAN_MEMBERSHIP_PORT_STATUS_SHUTDOWN = 3;
 
     /**
      * Text representation of VLAN status of the port.
@@ -151,10 +151,10 @@ class VM extends \OSS_SNMP\MIBS\Cisco
      *
      * @var array Text representations of interface vlan type.
      */
-    public static $VM_PORT_STATUS = [
-        self::VM_PORT_STATUS_INACTIVE => 'inactive',
-        self::VM_PORT_STATUS_ACTIVE => 'active',
-        self::VM_PORT_STATUS_SHUTDOWN => 'shutdown',
+    public static $VLAN_MEMBERSHIP_PORT_STATUS = [
+        self::VLAN_MEMBERSHIP_PORT_STATUS_INACTIVE => 'inactive',
+        self::VLAN_MEMBERSHIP_PORT_STATUS_ACTIVE => 'active',
+        self::VLAN_MEMBERSHIP_PORT_STATUS_SHUTDOWN => 'shutdown',
     ];
 
     /**
@@ -173,12 +173,12 @@ class VM extends \OSS_SNMP\MIBS\Cisco
      */
     public function portStatus($translate = false)
     {
-        $states = $this->getSNMP()->walk1d(self::OID_VM_PORT_STATUS);
+        $states = $this->getSNMP()->walk1d(self::OID_VLAN_MEMBERSHIP_PORT_STATUS);
 
         if (!$translate) {
             return $states;
         }
 
-        return $this->getSNMP()->translate($states, self::$VM_PORT_STATUS);
+        return $this->getSNMP()->translate($states, self::$VLAN_MEMBERSHIP_PORT_STATUS);
     }
 }
