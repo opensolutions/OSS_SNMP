@@ -42,6 +42,7 @@
 // 'Brocade NetIron CES, IronWare Version V5.2.0cT183 Compiled on Oct 28 2011 at 02:58:44 labeled as V5.2.00c'
 // 'Brocade NetIron MLX (System Mode: MLX), IronWare Version V5.4.0cT163 Compiled on Mar 25 2013 at 17:08:16 labeled as V5.4.00c'
 // 'Brocade MLXe (System Mode: MLX), IronWare Version V5.7.0dT163 Compiled on Sep 23 2015 at 09:35:50 labeled as V5.7.00db'
+// 'Brocade VDX Switch, BR-VDX6720-24, Network Operating System Software Version 4.1.3b.'
 
 if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
 {
@@ -68,13 +69,21 @@ if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
     else if( preg_match( '/Foundry Networks, Inc. (.+),\sIronWare\sVersion\s(.+)\sCompiled\son\s(([a-zA-Z]+)\s(\d+)\s(\d+)\s)at\s((\d\d):(\d\d):(\d\d))\slabeled\sas\s(.+)/',
             $sysDescr, $matches ) )
     {
-        echo "Vendor:   " . 'Foundry Networks' . "\n";
-        echo "Model:    " . $matches[1] . "\n";
-        echo "OS:       " . 'IronWare' . "\n";
-        echo "OS Ver:   " . $matches[2] . "\n";
+        $this->setVendor( 'Foundry Networks' );
+        $this->setModel( $matches[1] );
+        $this->setOs( 'IronWare' );
+        $this->setOsVersion( $matches[2] );
         $d = new \DateTime( "{$matches[5]}/{$matches[4]}/{$matches[6]}:{$matches[7]} +0000" );
         $d->setTimezone( new \DateTimeZone( 'UTC' ) );
         echo "OS Date:  " . $d->format( 'Y-m-d H:i:s' ) . "\n\n";
+    }
+    else if( preg_match( '/Brocade VDX Switch,\s(.+), Network Operating System Software Version\s(.+)\./',
+            $sysDescr, $matches ) )
+    {
+        $this->setVendor( 'Brocade' );
+        $this->setModel( $matches[1] );
+        $this->setOs( 'Network Operating System Software' );
+        $this->setOsVersion( $matches[2] );
     }
 
     try {
