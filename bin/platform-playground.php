@@ -13,13 +13,24 @@ date_default_timezone_set( 'Europe/Dublin' );
 // id( 'Cisco Internetwork Operating System Software IOS (tm) C2950 Software (C2950-I6Q4L2-M), Version 12.1(13)EA1, RELEASE SOFTWARE (fc1)
 // Copyright (c) 1986-2003 by cisco Systems, Inc.
 // Compiled Tue 04-Mar-03 02:14 by yenanh' );
+// id('Brocade VDX Switch, BR-VDX6720-24, Network Operating System Software Version 4.1.3b.');
 
-id('Brocade VDX Switch, BR-VDX6720-24, Network Operating System Software Version 4.1.3b.');
-
+id( 'Cisco NX-OS(tm) n9000, Software (n9000-dk9), Version 6.1(2)I2(2b), RELEASE SOFTWARE Copyright (c) 2002-2013 by Cisco Systems, Inc. Compiled 8/7/2014 15:00:00');
 
 function id( $sysDescr )
 {
-    if( preg_match( '/^Dell Force10 OS Operating System Version: ([\d\.]+) Application Software Version:\s([0-9\(\)\.]+)\sSeries:\s([A-Z0-9]+)\sCopyright \(c\) \d+-\d+ by Dell Inc. All Rights Reserved. Build Time:\s[A-Za-z0-9]+\s(([a-zA-Z]+)\s(\d+)\s((\d\d):(\d\d):(\d\d))\s(\d+))$/',
+    if( preg_match( '/^Cisco NX\-OS\(tm\) n9000, Software \(n9000\-dk9\), Version ([a-zA-Z0-9\.\(\)]+), RELEASE SOFTWARE Copyright \(c\) (?:\d+)-(?:\d+) by Cisco Systems, Inc\. Compiled (\d+)\/(\d+)\/(\d+) (\d+):(\d+):(\d+)$/',
+        $sysDescr, $matches ) )
+    {
+        echo "Vendor:   " . 'Cisco' . "\n";
+        echo "Model:    n9000\n";
+        echo "OS:       NX-OS\n";
+        echo "OS Ver:   " . $matches[1] . "\n";
+        $d = new \DateTime( sprintf( "{$matches[4]}/%02d/%02d {$matches[5]}:{$matches[6]}:{$matches[7]} +0000", $matches[2], $matches[3] ) );
+        $d->setTimezone( new \DateTimeZone( 'UTC' ) );
+        echo "OS Date:  " . $d->format( 'Y-m-d H:i:s' ) . "\n\n";
+    }
+    else if( preg_match( '/^Dell Force10 OS Operating System Version: ([\d\.]+) Application Software Version:\s([0-9\(\)\.]+)\sSeries:\s([A-Z0-9]+)\sCopyright \(c\) \d+-\d+ by Dell Inc. All Rights Reserved. Build Time:\s[A-Za-z0-9]+\s(([a-zA-Z]+)\s(\d+)\s((\d\d):(\d\d):(\d\d))\s(\d+))$/',
             $sysDescr, $matches ) )
     {
         echo "Vendor:   " . 'Dell Force10' . "\n";
