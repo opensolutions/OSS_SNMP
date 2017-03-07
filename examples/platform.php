@@ -63,7 +63,7 @@ HELPTEXT;
     exit( 1 );
 }
 
-require dirname( __FILE__ ) . '/../vendor/autoload.php';
+require_once( dirname( __FILE__ ) . '/../OSS_SNMP/SNMP.php' );
 
 $host = new \OSS_SNMP\SNMP( $argv[1], $argv[2] );
 
