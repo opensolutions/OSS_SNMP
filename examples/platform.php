@@ -68,11 +68,11 @@ require_once( dirname( __FILE__ ) . '/../OSS_SNMP/SNMP.php' );
 $host = new \OSS_SNMP\SNMP( $argv[1], $argv[2] );
 
 echo "\n\nPlatform details for {$argv[1]}:\n"
-    . "\nVendor:     " . $host->getPlatform()->getVendor() 
-    . "\nModel:      " . $host->getPlatform()->getModel() 
-    . "\nOS:         " . $host->getPlatform()->getOs() 
+    . "\nVendor:     " . $host->getPlatform()->getVendor()
+    . "\nModel:      " . $host->getPlatform()->getModel()
+    . "\nOS:         " . $host->getPlatform()->getOs()
     . "\nOS Version: " . $host->getPlatform()->getOsVersion();
-            
+
 echo "\n\n";
 
 exit( 0 );
