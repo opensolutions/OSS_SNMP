@@ -981,4 +981,39 @@ class SNMP
         return $this->getCache()->save( $oid, $result );
     }
 
+    /**
+     * Set the value of an SNMP object
+     *
+     * @param string $oid The OID to set
+     * @param string $type The MIB defines the type of each object id
+     * @param mixed $value The new value
+     * @return boolean
+     */
+    public function set($oid, $type, $value)
+    {
+        switch( $this->getVersion() ) {
+            case 1:
+                $this->_lastResult = @snmpset( $this->getHost(), $this->getCommunity(), $oid, $type, $value, $this->getTimeout(), $this->getRetry() );
+                break;
+            case '2c':
+                $this->_lastResult = @snmp2_set( $this->getHost(), $this->getCommunity(), $oid, $type, $value, $this->getTimeout(), $this->getRetry() );
+                break;
+            case '3':
+                $this->_lastResult = @snmp3_set( $this->getHost(), $this->getSecName(), $this->getSecLevel(),
+                        $this->getAuthProtocol(), $this->getAuthPassphrase(), $this->getPrivProtocol(), $this->getPrivPassphrase(),
+                        $oid, $type, $value, $this->getTimeout(), $this->getRetry()
+                    );
+                break;
+            default:
+                throw new Exception( 'Invalid SNMP version: ' . $this->getVersion() );
+        }
+
+        if( $this->_lastResult === false )
+            throw new Exception( 'Could not add variable ' . $value . ' for OID ' . $oid );
+
+       $this->getCache()->clear( $oid );
+
+       return $this->_lastResult;
+    }
+
 }
