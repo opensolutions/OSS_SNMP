@@ -44,7 +44,7 @@
 // 'Brocade MLXe (System Mode: MLX), IronWare Version V5.7.0dT163 Compiled on Sep 23 2015 at 09:35:50 labeled as V5.7.00db'
 // 'Brocade VDX Switch, BR-VDX6720-24, Network Operating System Software Version 4.1.3b.'
 
-if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
+if( substr( $sysDescr, 0, 8 ) == 'Brocade ' || substr( $sysDescr, 0, 23 ) == 'Foundry Networks, Inc. ' )
 {
     if( preg_match( '/Brocade Communication[s]* Systems, Inc. [(Stacking System)]*(.+),\s([a-zA-Z]+)\sVersion\s(.+)\sCompiled\son\s(([a-zA-Z]+)\s+(\d+)\s(\d+)\s)at\s((\d\d):(\d\d):(\d\d))\slabeled\sas\s(.+)/',
             $sysDescr, $matches ) )
@@ -66,7 +66,9 @@ if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
         $this->setOsDate( new \DateTime( "{$matches[6]}/{$matches[5]}/{$matches[7]}:{$matches[8]} +0000" ) );
         $this->getOsDate()->setTimezone( new \DateTimeZone( 'UTC' ) );
     }
-    else if( preg_match( '/Foundry Networks, Inc. (.+),\sIronWare\sVersion\s(.+)\sCompiled\son\s(([a-zA-Z]+)\s(\d+)\s(\d+)\s)at\s((\d\d):(\d\d):(\d\d))\slabeled\sas\s(.+)/',
+    // Foundry Networks, Inc. FES12GCF, IronWare Version 04.1.01eTc1 Compiled on Mar 06 2011 at 17:05:36 labeled as FES04101e
+    // Foundry Networks, Inc. BigIron RX, IronWare Version V2.7.2aT143 Compiled on Sep 29 2009 at 17:15:24 labeled as V2.7.02a
+    else if( preg_match( '/^Foundry Networks, Inc\. ([A-Za-z0-9\s]+), IronWare Version ([0-9a-zA-Z\.]+) Compiled on (([a-zA-Z]+) (\d+) (\d+) )at ((\d\d):(\d\d):(\d\d)) labeled as ([A-Za-z0-9\.]+)$/',
             $sysDescr, $matches ) )
     {
         $this->setVendor( 'Foundry Networks' );
@@ -75,7 +77,7 @@ if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
         $this->setOsVersion( $matches[2] );
         $d = new \DateTime( "{$matches[5]}/{$matches[4]}/{$matches[6]}:{$matches[7]} +0000" );
         $d->setTimezone( new \DateTimeZone( 'UTC' ) );
-        echo "OS Date:  " . $d->format( 'Y-m-d H:i:s' ) . "\n\n";
+        $this->setOsDate( $d );
     }
     else if( preg_match( '/Brocade VDX Switch,\s(.+), Network Operating System Software Version\s(.+)\./',
             $sysDescr, $matches ) )
@@ -92,3 +94,4 @@ if( substr( $sysDescr, 0, 8 ) == 'Brocade ' )
         $this->setSerialNumber( '(error)' );
     }
 }
+
