@@ -33,8 +33,21 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+if( substr( $sysDescr, 0, 26 ) == 'Cisco IOS Software, IOS-XE' )
+{
+    // 'Cisco IOS Software, IOS-XE Software, Catalyst 4500 L3 Switch  Software (cat4500es8-UNIVERSAL-M), Version 03.08.02.E RELEASE SOFTWARE (fc2)'
 
-if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
+    preg_match( '/Cisco IOS Software, IOS-XE Software,\s([a-zA-Z0-9\s]+)\s\sSoftware\s\(([0-9A-Za-z\(\)\.\-]+)\),\sVersion\s([0-9A-Za-z\.]+)\sRELEASE SOFTWARE.*/',
+        $sysDescr, $matches );
+
+    $this->setVendor( 'Cisco Systems' );
+    $this->setModel( $matches[1]);
+    $this->setOs( 'IOS-XE' );
+    $this->setOsVersion( $matches[3] );
+    $this->setOsDate( null );
+
+}
+else if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
 {
     // 'Cisco IOS Software, s72033_rp Software (s72033_rp-ADVENTERPRISE_WAN-VM), Version 12.2(33)SXI5, RELEASE SOFTWARE (fc2)'
 

@@ -32,4 +32,18 @@ class CiscoTest extends Platform
 
 
 
+    const CISCO_B = 'Cisco IOS Software, IOS-XE Software, Catalyst 4500 L3 Switch  Software (cat4500es8-UNIVERSAL-M), Version 03.08.02.E RELEASE SOFTWARE (fc2)';
+
+    public function testCiscoB() {
+
+        $p = new TestOSSPlatform( self::CISCO_B, '' );
+
+        $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
+        $this->assertEquals( $p->getOs(),        'IOS-XE' );
+        $this->assertEquals( $p->getOsVersion(), '03.08.02.E' );
+        $this->assertEquals( $p->getModel(),     'Catalyst 4500 L3 Switch' );
+        $this->assertNull( $p->getOsDate() );
+    }
+
+
 }
