@@ -95,15 +95,18 @@ else if( substr( $sysDescr, 0, 21 ) == 'Cisco IOS XR Software' )
     $this->setOsDate( null );
 }
 else if( substr( $sysDescr, 0, 11 ) == 'Cisco NX-OS' ) {
+
     // Cisco NX-OS(tm) n9000, Software (n9000-dk9), Version 6.1(2)I2(2b), RELEASE SOFTWARE Copyright (c) 2002-2013 by Cisco Systems, Inc. Compiled 8/7/2014 15:00:00
-    if( preg_match( '/^Cisco NX\-OS\(tm\) n9000, Software \(n9000\-dk9\), Version ([a-zA-Z0-9\.\(\)]+), RELEASE SOFTWARE Copyright \(c\) (?:\d+)-(?:\d+) by Cisco Systems, Inc\. Compiled (\d+)\/(\d+)\/(\d+) (\d+):(\d+):(\d+)$/',
+    // Cisco NX-OS(tm) n3500, Software (n3500-uk9), Version 6.0(2)A1(1d), RELEASE SOFTWARE Copyright (c) 2002-2012 by Cisco Systems, Inc. Device Manager Version nms.sro not found, Compiled 1/30/2014 9:00:00
+
+    if( preg_match( '/^Cisco NX\-OS\(tm\) ([a-zA-Z0-9]+), Software \([a-zA-Z0-9\-]+\), Version ([a-zA-Z0-9\.\(\)]+), RELEASE SOFTWARE Copyright \(c\) (?:\d+)-(?:\d+) by Cisco Systems, Inc\.(?: Device Manager Version nms\.sro not found,)? Compiled (\d+)\/(\d+)\/(\d+) (\d+):(\d+):(\d+)$/',
         $sysDescr, $matches ) )
     {
         $this->setVendor( 'Cisco Systems' );
-        $this->setModel( 'n9000' );
+        $this->setModel( $matches[1] );
         $this->setOs( 'NX-OS' );
-        $this->setOsVersion( $matches[1] );
-        $d = new \DateTime( sprintf( "{$matches[4]}/%02d/%02d {$matches[5]}:{$matches[6]}:{$matches[7]} +0000", $matches[2], $matches[3] ) );
+        $this->setOsVersion( $matches[2] );
+        $d = new \DateTime( sprintf( "{$matches[5]}/%02d/%02d {$matches[6]}:{$matches[7]}:{$matches[8]} +0000", $matches[3], $matches[4] ) );
         $d->setTimezone( new \DateTimeZone( 'UTC' ) );
         $this->setOsDate( $d );
     }

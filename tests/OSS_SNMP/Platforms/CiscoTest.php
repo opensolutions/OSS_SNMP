@@ -46,4 +46,40 @@ class CiscoTest extends Platform
     }
 
 
+    const CISCO_C = 'Cisco NX-OS(tm) n9000, Software (n9000-dk9), Version 6.1(2)I2(2b), RELEASE SOFTWARE Copyright (c) 2002-2013 by Cisco Systems, Inc. Compiled 8/7/2014 15:00:00';
+
+    public function testCiscoC() {
+
+        $p = new TestOSSPlatform( self::CISCO_C, '' );
+
+        $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
+        $this->assertEquals( $p->getOs(),        'NX-OS' );
+        $this->assertEquals( $p->getOsVersion(), '6.1(2)I2(2b)' );
+        $this->assertEquals( $p->getModel(),     'n9000' );
+
+        $dt = new \DateTime( "2014/08/07 15:00:00 +0000" );
+        $dt->setTimezone( new \DateTimeZone( 'UTC' ) );
+
+        $this->assertEquals( $dt, $p->getOsDate() );
+    }
+
+    const CISCO_D = 'Cisco NX-OS(tm) n3500, Software (n3500-uk9), Version 6.0(2)A1(1d), RELEASE SOFTWARE Copyright (c) 2002-2012 by Cisco Systems, Inc. Device Manager Version nms.sro not found, Compiled 1/30/2014 9:00:00';
+
+    public function testCiscoD() {
+
+        $p = new TestOSSPlatform( self::CISCO_D, '' );
+
+        $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
+        $this->assertEquals( $p->getOs(),        'NX-OS' );
+        $this->assertEquals( $p->getOsVersion(), '6.0(2)A1(1d)' );
+        $this->assertEquals( $p->getModel(),     'n3500' );
+
+        $dt = new \DateTime( "2014/01/30 09:00:00 +0000" );
+        $dt->setTimezone( new \DateTimeZone( 'UTC' ) );
+
+        $this->assertEquals( $dt, $p->getOsDate() );
+    }
+
+
+
 }
