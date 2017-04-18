@@ -28,7 +28,24 @@ if( substr( strtolower($sysDescr), 0, 6 ) == 'huawei' )
     }
 
     $this->setOs( null );
-    $this->setOsVersion( $this->getSNMPHost()->useHuawei_System()->softwareVersion() );
+    if( $this instanceof \OSS_SNMP\TestPlatform ) {
+        $this->setOsVersion('PHPUnit');
+    } else {
+        $this->setOsVersion($this->getSNMPHost()->useHuawei_System()->softwareVersion());
+    }
     $this->setOsDate( null );
 
 }
+
+// 'S6720-30C-EI-24S-AC Huawei Versatile Routing Platform Software VRP (R) software,Version 5.160 (S6720 V200R009C00SPC500) Copyright (C) 2007 Huawei Technologies Co., Ltd.'
+// https://github.com/opensolutions/OSS_SNMP/issues/41
+else if( preg_match( '/^S\d+\-[A-Z0-9\-]+ Huawei Versatile Routing Platform Software VRP \(R\) software,Version ([0-9\.]+) \((S[0-9]+) [A-Z0-9]+\) Copyright \(C\) 2007 Huawei Technologies.*$/',
+                $sysDescr, $matches ) ) {
+
+    $this->setVendor( 'Huawei' );
+    $this->setModel( $matches[2] );
+    $this->setOs( 'Huawei Versatile Routing Platform Software VRP' );
+    $this->setOsVersion( $matches[1] );
+    $this->setOsDate( null );
+}
+
