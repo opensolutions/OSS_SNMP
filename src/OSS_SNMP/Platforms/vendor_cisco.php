@@ -34,20 +34,20 @@
 */
 
 
-// Works with sysDescr such as:
-//
-// 'Cisco IOS Software, s72033_rp Software (s72033_rp-ADVENTERPRISE_WAN-VM), Version 12.2(33)SXI5, RELEASE SOFTWARE (fc2)'
-//
-// 'Cisco Internetwork Operating System Software IOS (tm) C2950 Software (C2950-I6Q4L2-M), Version 12.1(13)EA1, RELEASE SOFTWARE.*'
-
 if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
 {
+    // 'Cisco IOS Software, s72033_rp Software (s72033_rp-ADVENTERPRISE_WAN-VM), Version 12.2(33)SXI5, RELEASE SOFTWARE (fc2)'
+
     preg_match( '/Cisco IOS Software, (.+) Software \((.+)\), Version\s([0-9A-Za-z\(\)\.]+), RELEASE SOFTWARE\s\((.+)\)/',
             $sysDescr, $matches );
 
     $this->setVendor( 'Cisco Systems' );
     try {
-        $this->setModel( $this->getSNMPHost()->useEntity()->physicalName()[1] );
+        if( $this instanceof \OSS_SNMP\TestPlatform ) {
+            $this->setModel('PHPUnit');
+        } else {
+            $this->setModel( $this->getSNMPHost()->useEntity()->physicalName()[1] );
+        }
     } catch( \OSS_SNMP\Exception $e ) {
         $this->setModel( 'Unknown' );
     }
@@ -57,6 +57,8 @@ if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
 }
 else if( substr( $sysDescr, 0, 48 ) == 'Cisco Internetwork Operating System Software IOS' )
 {
+    // 'Cisco Internetwork Operating System Software IOS (tm) C2950 Software (C2950-I6Q4L2-M), Version 12.1(13)EA1, RELEASE SOFTWARE.*'
+
     $sysDescr = trim( preg_replace( '/\s+/', ' ', $sysDescr ) );
     preg_match( '/Cisco(.+)C2950 Software(.+)Version\s([0-9A-Za-z\(\)\.]+),\sRELEASE SOFTWARE.*/',
             $sysDescr, $matches );
