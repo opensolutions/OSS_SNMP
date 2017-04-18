@@ -8,8 +8,6 @@
 
 namespace Tests\OSS_SNMP\Platforms;
 
-require __DIR__.'/../../../vendor/autoload.php';
-
 use PHPUnit\Framework\TestCase;
 
 class Platform extends TestCase

@@ -10,9 +10,6 @@ namespace Tests\OSS_SNMP\Platforms;
 
 use OSS_SNMP\TestPlatform as TestOSSPlatform;
 
-include 'Platform.php';
-
-
 
 class CiscoTest extends Platform
 {

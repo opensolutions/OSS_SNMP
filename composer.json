@@ -11,7 +11,8 @@
 	},
 	"autoload": {
 		"psr-0": {
-			"OSS_SNMP": "src/"
+			"OSS_SNMP": "src/",
+			"Tests": "tests/"
 		}
 	},
 	"minimum-stability": "dev"
