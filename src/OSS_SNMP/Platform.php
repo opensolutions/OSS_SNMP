@@ -128,6 +128,18 @@ class Platform
             include( $f );
     }
 
+     /**
+      * Set the SNMPT Host
+      *
+      * @param \OSS_SNMP\SNMP $s The SNMP Host object
+      * @return \OSS_SNMP\Platform For fluent interfaces
+      */
+     public function setSNMPHost( $s )
+     {
+         $this->_snmpHost = $s;
+         return $this;
+     }
+
     /**
      * Get the SNMPHost object
      *
