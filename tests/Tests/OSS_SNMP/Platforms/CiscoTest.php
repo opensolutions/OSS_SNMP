@@ -52,7 +52,7 @@ class CiscoTest extends Platform
         $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
         $this->assertEquals( $p->getOs(),        'NX-OS' );
         $this->assertEquals( $p->getOsVersion(), '6.1(2)I2(2b)' );
-        $this->assertEquals( $p->getModel(),     'n9000' );
+        $this->assertEquals( $p->getModel(),     'nXXXX' );
 
         $dt = new \DateTime( "2014/08/07 15:00:00 +0000" );
         $dt->setTimezone( new \DateTimeZone( 'UTC' ) );
@@ -69,7 +69,7 @@ class CiscoTest extends Platform
         $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
         $this->assertEquals( $p->getOs(),        'NX-OS' );
         $this->assertEquals( $p->getOsVersion(), '6.0(2)A1(1d)' );
-        $this->assertEquals( $p->getModel(),     'n3500' );
+        $this->assertEquals( $p->getModel(),     'nXXXX' );
 
         $dt = new \DateTime( "2014/01/30 09:00:00 +0000" );
         $dt->setTimezone( new \DateTimeZone( 'UTC' ) );
@@ -77,6 +77,38 @@ class CiscoTest extends Platform
         $this->assertEquals( $dt, $p->getOsDate() );
     }
 
+    const CISCO_E = 'Cisco NX-OS(tm) nxos.7.0.3.I2.3.bin, Software (nxos), Version 7.0(3)I2(3), RELEASE SOFTWARE Copyright (c) 2002-2013 by Cisco Systems, Inc. Compiled 3/19/2016 22:00:00';
 
+    public function testCiscoE() {
+
+        $p = new TestOSSPlatform( self::CISCO_E, '' );
+
+        $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
+        $this->assertEquals( $p->getOs(),        'NX-OS' );
+        $this->assertEquals( $p->getOsVersion(), '7.0(3)I2(3)' );
+        $this->assertEquals( $p->getModel(),     'nXXXX' );
+
+        $dt = new \DateTime( "2016/03/19 22:00:00 +0000" );
+        $dt->setTimezone( new \DateTimeZone( 'UTC' ) );
+
+        $this->assertEquals( $dt, $p->getOsDate() );
+    }
+
+    const CISCO_F = 'Cisco NX-OS(tm) n3500, Software (n3500-uk9), Version 6.0(2)A6(3), RELEASE SOFTWARE Copyright (c) 2002-2012 by Cisco Systems, Inc. Compiled 7/1/2015 10:00:00';
+
+    public function testCiscoF() {
+
+        $p = new TestOSSPlatform( self::CISCO_F, '' );
+
+        $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
+        $this->assertEquals( $p->getOs(),        'NX-OS' );
+        $this->assertEquals( $p->getOsVersion(), '6.0(2)A6(3)' );
+        $this->assertEquals( $p->getModel(),     'nXXXX' );
+
+        $dt = new \DateTime( "2015/07/01 10:00:00 +0000" );
+        $dt->setTimezone( new \DateTimeZone( 'UTC' ) );
+
+        $this->assertEquals( $dt, $p->getOsDate() );
+    }
 
 }
