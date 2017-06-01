@@ -94,7 +94,7 @@ class CiscoTest extends Platform
         $this->assertEquals( $dt, $p->getOsDate() );
     }
 
-    const CISCO_F = 'Cisco NX-OS(tm) n3500, Software (n3500-uk9), Version 6.0(2)A6(3), RELEASE SOFTWARE Copyright (c) 2002-2012 by Cisco Systems, Inc. Compiled 7/1/2015 10:00:00';
+    const CISCO_F = 'Cisco NX-OS(tm) n3500, Software (n3500-uk9), Version 6.0(2)A6(3), RELEASE SOFTWARE Copyright (c) 2002-2012 by Cisco Systems, Inc.   Compiled 7/1/2015 10:00:00';
 
     public function testCiscoF() {
 

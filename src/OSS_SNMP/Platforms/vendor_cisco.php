@@ -101,7 +101,7 @@ else if( substr( $sysDescr, 0, 11 ) == 'Cisco NX-OS' ) {
     // Cisco NX-OS(tm) nxos.7.0.3.I2.3.bin, Software (nxos), Version 7.0(3)I2(3), RELEASE SOFTWARE Copyright (c) 2002-2013 by Cisco Systems, Inc. Compiled 3/19/2016 22:00:00
     // Cisco NX-OS(tm) n3500, Software (n3500-uk9), Version 6.0(2)A6(3), RELEASE SOFTWARE Copyright (c) 2002-2012 by Cisco Systems, Inc. Compiled 7/1/2015 10:00:00
 
-    if( preg_match( '/^Cisco NX\-OS\(tm\) ([a-zA-Z0-9\.]+), Software \([a-zA-Z0-9\-]+\), Version ([a-zA-Z0-9\.\(\)]+), RELEASE SOFTWARE Copyright \(c\) (?:\d+)-(?:\d+) by Cisco Systems, Inc\.(?: Device Manager Version nms\.sro not found,)? Compiled (\d+)\/(\d+)\/(\d+) (\d+):(\d+):(\d+)$/',
+    if( preg_match( '/^Cisco NX\-OS\(tm\) ([a-zA-Z0-9\.]+), Software \([a-zA-Z0-9\-]+\), Version ([a-zA-Z0-9\.\(\)]+), RELEASE SOFTWARE Copyright \(c\) (?:\d+)-(?:\d+) by Cisco Systems, Inc\.(?: Device Manager Version nms\.sro not found,)?\s*Compiled (\d+)\/(\d+)\/(\d+) (\d+):(\d+):(\d+)$/',
         $sysDescr, $matches ) )
     {
         $this->setVendor( 'Cisco Systems' );
