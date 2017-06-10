@@ -94,11 +94,29 @@ class CiscoTest extends Platform
         $this->assertEquals( $dt, $p->getOsDate() );
     }
 
-    const CISCO_F = 'Cisco NX-OS(tm) n3500, Software (n3500-uk9), Version 6.0(2)A6(3), RELEASE SOFTWARE Copyright (c) 2002-2012 by Cisco Systems, Inc.   Compiled 7/1/2015 10:00:00';
+    const CISCO_F = 'Cisco NX-OS(tm) n3500, Software (n3500-uk9), Version 6.0(2)A6(3), RELEASE SOFTWARE Copyright (c) 2002-2012 by Cisco Systems, Inc. Compiled 7/1/2015 10:00:00';
 
     public function testCiscoF() {
 
         $p = new TestOSSPlatform( self::CISCO_F, '' );
+
+        $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
+        $this->assertEquals( $p->getOs(),        'NX-OS' );
+        $this->assertEquals( $p->getOsVersion(), '6.0(2)A6(3)' );
+        $this->assertEquals( $p->getModel(),     'nXXXX' );
+
+        $dt = new \DateTime( "2015/07/01 10:00:00 +0000" );
+        $dt->setTimezone( new \DateTimeZone( 'UTC' ) );
+
+        $this->assertEquals( $dt, $p->getOsDate() );
+    }
+
+    // test case for: https://github.com/opensolutions/OSS_SNMP/issues/34#issuecomment-305630798
+    const CISCO_G = 'Cisco NX-OS(tm) n3500, Software (n3500-uk9), Version 6.0(2)A6(3), RELEASE SOFTWARE Copyright (c) 2002-2012 by Cisco Systems, Inc.   Compiled 7/1/2015 10:00:00';
+
+    public function testCiscoG() {
+
+        $p = new TestOSSPlatform( self::CISCO_G, '' );
 
         $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
         $this->assertEquals( $p->getOs(),        'NX-OS' );
