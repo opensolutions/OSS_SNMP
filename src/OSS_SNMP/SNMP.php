@@ -1,5 +1,4 @@
 <?php
-
 /*
     Copyright (c) 2012 - 2015, Open Source Solutions Limited, Dublin, Ireland
     All rights reserved.
@@ -194,6 +193,12 @@ class SNMP
      */
     public function __construct( $host = '127.0.0.1', $community = 'public' , $version = '2c' , $seclevel = 'noAuthNoPriv' , $authprotocol = 'MD5' , $authpassphrase = 'None' , $privprotocol = 'DES' , $privpassphrase = 'None' )
     {
+        // make sure SNMP is installed!
+        if( !function_exists( 'snmp2_get' ) ) {
+            die( "It looks like the PHP SNMP package is not installed. This is required!\n" );
+        }
+
+
         return $this->setHost( $host )
                     ->setCommunity( $community )
                     ->setVersion( $version)
@@ -516,11 +521,13 @@ class SNMP
      */
     public static function ppTruthValue( $value )
     {
-        if( is_array( $value ) )
-            foreach( $value as $k => $v )
-                $value[$k] = self::$SNMP_TRUTHVALUES[ $v ];
-        else
-            $value = self::$SNMP_TRUTHVALUES[ $value ];
+        if( is_array( $value ) ) {
+            foreach( $value as $k => $v ) {
+                $value[$k] = isset(self::$SNMP_TRUTHVALUES[$v]) ? self::$SNMP_TRUTHVALUES[$v] : false;
+            }
+        } else {
+            $value = isset(self::$SNMP_TRUTHVALUES[$value]) ? self::$SNMP_TRUTHVALUES[$value] : false;
+        }
 
         return $value;
     }
