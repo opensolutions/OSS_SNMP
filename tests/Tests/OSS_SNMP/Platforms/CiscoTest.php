@@ -52,7 +52,7 @@ class CiscoTest extends Platform
         $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
         $this->assertEquals( $p->getOs(),        'NX-OS' );
         $this->assertEquals( $p->getOsVersion(), '6.1(2)I2(2b)' );
-        $this->assertEquals( $p->getModel(),     'nXXXX' );
+        $this->assertEquals( $p->getModel(),     'n9000' );
 
         $dt = new \DateTime( "2014/08/07 15:00:00 +0000" );
         $dt->setTimezone( new \DateTimeZone( 'UTC' ) );
@@ -69,7 +69,7 @@ class CiscoTest extends Platform
         $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
         $this->assertEquals( $p->getOs(),        'NX-OS' );
         $this->assertEquals( $p->getOsVersion(), '6.0(2)A1(1d)' );
-        $this->assertEquals( $p->getModel(),     'nXXXX' );
+        $this->assertEquals( $p->getModel(),     'n3500' );
 
         $dt = new \DateTime( "2014/01/30 09:00:00 +0000" );
         $dt->setTimezone( new \DateTimeZone( 'UTC' ) );
@@ -103,7 +103,7 @@ class CiscoTest extends Platform
         $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
         $this->assertEquals( $p->getOs(),        'NX-OS' );
         $this->assertEquals( $p->getOsVersion(), '6.0(2)A6(3)' );
-        $this->assertEquals( $p->getModel(),     'nXXXX' );
+        $this->assertEquals( $p->getModel(),     'n3500' );
 
         $dt = new \DateTime( "2015/07/01 10:00:00 +0000" );
         $dt->setTimezone( new \DateTimeZone( 'UTC' ) );
@@ -121,7 +121,7 @@ class CiscoTest extends Platform
         $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
         $this->assertEquals( $p->getOs(),        'NX-OS' );
         $this->assertEquals( $p->getOsVersion(), '6.0(2)A6(3)' );
-        $this->assertEquals( $p->getModel(),     'nXXXX' );
+        $this->assertEquals( $p->getModel(),     'n3500' );
 
         $dt = new \DateTime( "2015/07/01 10:00:00 +0000" );
         $dt->setTimezone( new \DateTimeZone( 'UTC' ) );
