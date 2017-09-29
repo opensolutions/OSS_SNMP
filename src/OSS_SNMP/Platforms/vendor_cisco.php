@@ -51,7 +51,7 @@ else if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
 {
     // 'Cisco IOS Software, s72033_rp Software (s72033_rp-ADVENTERPRISE_WAN-VM), Version 12.2(33)SXI5, RELEASE SOFTWARE (fc2)'
 
-    preg_match( '/Cisco IOS Software, (.+) Software \((.+)\), Version\s([0-9A-Za-z\(\)\.]+), RELEASE SOFTWARE\s\((.+)\)/',
+    preg_match( '/Cisco IOS Software(?: \[Denali\])?, (.+) Software \((.+)\), Version\s([0-9A-Za-z\(\)\.]+), RELEASE SOFTWARE\s\((.+)\)/',
             $sysDescr, $matches );
 
     $this->setVendor( 'Cisco Systems' );
