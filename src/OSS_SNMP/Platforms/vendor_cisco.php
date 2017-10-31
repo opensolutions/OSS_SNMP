@@ -36,8 +36,9 @@
 if( substr( $sysDescr, 0, 26 ) == 'Cisco IOS Software, IOS-XE' )
 {
     // 'Cisco IOS Software, IOS-XE Software, Catalyst 4500 L3 Switch  Software (cat4500es8-UNIVERSAL-M), Version 03.08.02.E RELEASE SOFTWARE (fc2)'
+    // 'Cisco IOS Software, IOS-XE Software, Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version 03.06.06E RELEASE SOFTWARE (fc1)'
 
-    preg_match( '/Cisco IOS Software, IOS-XE Software,\s([a-zA-Z0-9\s]+)\s\sSoftware\s\(([0-9A-Za-z\(\)\.\-]+)\),\sVersion\s([0-9A-Za-z\.]+)\sRELEASE SOFTWARE.*/',
+    preg_match( '/Cisco IOS Software, IOS-XE Software,\s([a-zA-Z0-9\s]+[a-zA-Z0-9])\s+Software\s\(([0-9A-Za-z\(\)_\.\-]+)\),\sVersion\s([0-9A-Za-z\.]+)\sRELEASE SOFTWARE.*/',
         $sysDescr, $matches );
 
     $this->setVendor( 'Cisco Systems' );

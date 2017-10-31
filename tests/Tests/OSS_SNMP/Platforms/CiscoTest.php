@@ -42,6 +42,18 @@ class CiscoTest extends Platform
         $this->assertNull( $p->getOsDate() );
     }
 
+    const CISCO_B2 = 'Cisco IOS Software, IOS-XE Software, Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version 03.06.06E RELEASE SOFTWARE (fc1)';
+
+    public function testCiscoB2() {
+
+        $p = new TestOSSPlatform( self::CISCO_B2, '' );
+
+        $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
+        $this->assertEquals( $p->getOs(),        'IOS-XE' );
+        $this->assertEquals( $p->getOsVersion(), '03.06.06E' );
+        $this->assertEquals( $p->getModel(),     'Catalyst L3 Switch' );
+        $this->assertNull( $p->getOsDate() );
+    }
 
     const CISCO_C = 'Cisco NX-OS(tm) n9000, Software (n9000-dk9), Version 6.1(2)I2(2b), RELEASE SOFTWARE Copyright (c) 2002-2013 by Cisco Systems, Inc. Compiled 8/7/2014 15:00:00';
 
