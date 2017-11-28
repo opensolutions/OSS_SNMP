@@ -60,9 +60,14 @@ else if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
         if( $this instanceof \OSS_SNMP\TestPlatform ) {
             $this->setModel('PHPUnit');
         } else {
-            $this->setModel( $this->getSNMPHost()->useEntity()->physicalName()[1] );
+            $model = $this->getSNMPHost()->useEntity()->physicalName();
+            if( isset( $model[1] ) ) {
+                $this->setModel( $model[ 1 ] );
+            } else {
+                $this->setModel( 'Unknown' );
+            }
         }
-    } catch( \OSS_SNMP\Exception $e ) {
+    } catch( \Exception $e ) {
         $this->setModel( 'Unknown' );
     }
     $this->setOs( 'IOS' );
