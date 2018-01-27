@@ -37,6 +37,8 @@ namespace OSS_SNMP\MIBS;
 /**
  * A class to performing SNMP LLDP queries.
  *
+ * @copyright Copyright (c) 2012, Open Source Solutions Limited, Dublin, Ireland
+ * @author Sergio Gómez Bachiller <sergio@uco.es>
  * @see http://oidref.com/1.0.8802.1.1.2
  */
 class LLDP extends \OSS_SNMP\MIB
