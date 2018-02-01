@@ -44,7 +44,7 @@ if( substr( $sysDescr, 0, 26 ) == 'Cisco IOS Software, IOS-XE' )
     $this->setVendor( 'Cisco Systems' );
     $this->setModel( $matches[1]);
     $this->setOs( 'IOS-XE' );
-    $this->setOsVersion( $matches[3] );
+    $this->setOsVersion( isset( $matches[3] ) ? $matches[3] : '' );
     $this->setOsDate( null );
 
 }
@@ -71,7 +71,7 @@ else if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
         $this->setModel( 'Unknown' );
     }
     $this->setOs( 'IOS' );
-    $this->setOsVersion( $matches[3] );
+    $this->setOsVersion( isset( $matches[3] ) ? $matches[3] : '' );
     $this->setOsDate( null );
 }
 else if( substr( $sysDescr, 0, 48 ) == 'Cisco Internetwork Operating System Software IOS' )
@@ -85,7 +85,7 @@ else if( substr( $sysDescr, 0, 48 ) == 'Cisco Internetwork Operating System Soft
     $this->setVendor( 'Cisco Systems' );
     $this->setModel( 'C2950' );
     $this->setOs( 'IOS' );
-    $this->setOsVersion( $matches[3] );
+    $this->setOsVersion( isset( $matches[3] ) ? $matches[3] : '' );
     $this->setOsDate( null );
 }
 else if( substr( $sysDescr, 0, 21 ) == 'Cisco IOS XR Software' )
@@ -97,7 +97,7 @@ else if( substr( $sysDescr, 0, 21 ) == 'Cisco IOS XR Software' )
     $this->setVendor( 'Cisco Systems' );
     $this->setModel( $matches[1] );
     $this->setOs( 'IOS XR' );
-    $this->setOsVersion( $matches[2] );
+    $this->setOsVersion( isset( $matches[2] ) ? $matches[2] : '' );
     $this->setOsDate( null );
 }
 else if( substr( $sysDescr, 0, 11 ) == 'Cisco NX-OS' ) {
@@ -113,7 +113,7 @@ else if( substr( $sysDescr, 0, 11 ) == 'Cisco NX-OS' ) {
         $this->setVendor( 'Cisco Systems' );
         $this->setModel( $matches[1] );
         $this->setOs( 'NX-OS' );
-        $this->setOsVersion( $matches[2] );
+        $this->setOsVersion( isset( $matches[2] ) ? $matches[2] : '' );
         $d = new \DateTime( sprintf( "{$matches[5]}/%02d/%02d {$matches[6]}:{$matches[7]}:{$matches[8]} +0000", $matches[3], $matches[4] ) );
         $d->setTimezone( new \DateTimeZone( 'UTC' ) );
         $this->setOsDate( $d );
@@ -126,7 +126,7 @@ else if( substr( $sysDescr, 0, 11 ) == 'Cisco NX-OS' ) {
         $this->setVendor( 'Cisco Systems' );
         $this->setModel( 'nXXXX' );
         $this->setOs( 'NX-OS' );
-        $this->setOsVersion( $matches[2] );
+        $this->setOsVersion( isset( $matches[2] ) ? $matches[2] : '' );
         $d = new \DateTime( sprintf( "{$matches[5]}/%02d/%02d {$matches[6]}:{$matches[7]}:{$matches[8]} +0000", $matches[3], $matches[4] ) );
         $d->setTimezone( new \DateTimeZone( 'UTC' ) );
         $this->setOsDate( $d );
