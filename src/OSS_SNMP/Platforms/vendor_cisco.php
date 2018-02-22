@@ -51,8 +51,9 @@ if( substr( $sysDescr, 0, 26 ) == 'Cisco IOS Software, IOS-XE' )
 else if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
 {
     // 'Cisco IOS Software, s72033_rp Software (s72033_rp-ADVENTERPRISE_WAN-VM), Version 12.2(33)SXI5, RELEASE SOFTWARE (fc2)'
+    // 'Cisco IOS Software [Everest], Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version 16.6.2, RELEASE SOFTWARE (fc2)'
 
-    preg_match( '/Cisco IOS Software(?: \[Denali\])?, (.+) Software \((.+)\), Version\s([0-9A-Za-z\(\)\.]+), RELEASE SOFTWARE\s\((.+)\)/',
+    preg_match( '/Cisco IOS Software(?: \[\w+\])?,\s([\w\s]+)\sSoftware \((.+)\), Version\s([0-9A-Za-z\(\)\.]+), RELEASE SOFTWARE\s\((.+)\)/',
             $sysDescr, $matches );
 
     $this->setVendor( 'Cisco Systems' );
@@ -70,6 +71,7 @@ else if( substr( $sysDescr, 0, 18 ) == 'Cisco IOS Software' )
     } catch( \Exception $e ) {
         $this->setModel( 'Unknown' );
     }
+
     $this->setOs( 'IOS' );
     $this->setOsVersion( isset( $matches[3] ) ? $matches[3] : '' );
     $this->setOsDate( null );

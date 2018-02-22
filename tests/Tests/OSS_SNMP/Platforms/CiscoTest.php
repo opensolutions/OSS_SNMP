@@ -27,7 +27,18 @@ class CiscoTest extends Platform
         $this->assertNull( $p->getOsDate() );
     }
 
+    const CISCO_A2 = 'Cisco IOS Software [Everest], Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version 16.6.2, RELEASE SOFTWARE (fc2)';
 
+    public function testCiscoA2() {
+
+        $p = new TestOSSPlatform( self::CISCO_A2, '' );
+
+        $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
+        $this->assertEquals( $p->getOs(),        'IOS' );
+        $this->assertEquals( $p->getOsVersion(), '16.6.2' );
+        $this->assertEquals( $p->getModel(),     'PHPUnit' );
+        $this->assertNull( $p->getOsDate() );
+    }
 
     const CISCO_B = 'Cisco IOS Software, IOS-XE Software, Catalyst 4500 L3 Switch  Software (cat4500es8-UNIVERSAL-M), Version 03.08.02.E RELEASE SOFTWARE (fc2)';
 
@@ -140,6 +151,6 @@ class CiscoTest extends Platform
 
         $this->assertEquals( $dt, $p->getOsDate() );
     }
-    
+
 
 }
