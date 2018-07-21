@@ -847,7 +847,7 @@ class MAU extends \OSS_SNMP\MIB
      * Constant for MAU type (Arista specific):
      * @see types()
      */
-    const TYPE_ARISTA_100BASEGDWDMZT = '.1.3.6.1.4.1.30065.3.4.1.28';
+    const TYPE_ARISTA_10GBASEDWDMZT = '.1.3.6.1.4.1.30065.3.4.1.28';
 
     /**
      * Constant for MAU type (Arista specific):
@@ -1039,7 +1039,7 @@ class MAU extends \OSS_SNMP\MIB
         self::TYPE_ARISTA_40GBASESR4D    => '40GbaseSR4D',
         self::TYPE_ARISTA_100GBASEPSM4   => '100GbasePSM4',
         self::TYPE_ARISTA_100GBASECLR4   => '100GbaseCLR4',
-        self::TYPE_ARISTA_100DWDMCOHERENTE => '100GDwdmCoherentE',
+        self::TYPE_ARISTA_100GDWDMCOHERENTE => '100GDwdmCoherentE',
         self::TYPE_ARISTA_100GBASECWDM4  => '100GbaseCWDM4',
         self::TYPE_ARISTA_100GEDWDM2     => '100GEDwdm2',
 
