@@ -947,7 +947,7 @@ class MAU extends \OSS_SNMP\MIB
         self::TYPE_ARISTA_40GBASEAR4     => '40GbaseAR4',
         self::TYPE_ARISTA_40GBASEPLR4    => '40GbasePLR4',
         self::TYPE_ARISTA_40GBASEPLRL4   => '40GbasePLRL4',
-        self::TYPE_ARISTA_40BASEPSM4     => '40GbasePSM4',
+        self::TYPE_ARISTA_40GBASEPSM4    => '40GbasePSM4',
         self::TYPE_ARISTA_40GBASELRL4    => '40GbaseLRL4',
         self::TYPE_ARISTA_100GBASESR4    => '100GbaseSR4',
         self::TYPE_ARISTA_40GBASEUNIV    => '40GbaseUniv',
