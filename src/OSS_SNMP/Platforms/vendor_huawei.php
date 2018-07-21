@@ -39,13 +39,15 @@ if( substr( strtolower($sysDescr), 0, 6 ) == 'huawei' )
 
 // 'S6720-30C-EI-24S-AC Huawei Versatile Routing Platform Software VRP (R) software,Version 5.160 (S6720 V200R009C00SPC500) Copyright (C) 2007 Huawei Technologies Co., Ltd.'
 // https://github.com/opensolutions/OSS_SNMP/issues/41
-else if( preg_match( '/^S\d+\-[A-Z0-9\-]+ Huawei Versatile Routing Platform Software VRP \(R\) software,Version ([0-9\.]+) \((S[0-9]+) [A-Z0-9]+\) Copyright \(C\) 2007 Huawei Technologies.*$/',
+//
+// 'S6720-54C-EI-48S-AC Huawei Versatile Routing Platform Software VRP (R) software,Version 5.170 (S6720 V200R010C00SPC600) Copyright (C) 2007 Huawei Technologies Co., Ltd.'
+// https://github.com/opensolutions/OSS_SNMP/issues/59
+else if( preg_match( '/^(S\d+\-[A-Z0-9\-]+) Huawei Versatile Routing Platform Software VRP \(R\) software,Version ([0-9\.]+) \((S[0-9]+) [A-Z0-9]+\) Copyright \(C\) 2007 Huawei Technologies.*$/',
                 $sysDescr, $matches ) ) {
 
     $this->setVendor( 'Huawei' );
-    $this->setModel( $matches[2] );
+    $this->setModel( $matches[1] );
     $this->setOs( 'Huawei Versatile Routing Platform Software VRP' );
-    $this->setOsVersion( $matches[1] );
+    $this->setOsVersion( $matches[2] );
     $this->setOsDate( null );
 }
-
