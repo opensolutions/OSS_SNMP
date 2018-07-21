@@ -541,6 +541,156 @@ class MAU extends \OSS_SNMP\MIB
     const TYPE_100GBASEER4 = '.1.3.6.1.2.1.26.4.78';
 
 
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///// START: Arista specific OIDs: http://www.circitor.fr/Mibs/Html/A/ARISTA-MAU-MIB.php#aristaDot3MauType
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_10GBASECR = '.1.3.6.1.4.1.30065.3.4.1.1';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_10GBASEDWDMER = '.1.3.6.1.4.1.30065.3.4.1.2';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_40GBASESR4 = '.1.3.6.1.4.1.30065.3.4.1.3';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_40GBASELR4 = '.1.3.6.1.4.1.30065.3.4.1.4';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_40GBASECR4 = '.1.3.6.1.4.1.30065.3.4.1.5';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_10GBASEDWDMZR = '.1.3.6.1.4.1.30065.3.4.1.6';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_10GBASECRA = '.1.3.6.1.4.1.30065.3.4.1.7';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_10GBASEZR = '.1.3.6.1.4.1.30065.3.4.1.8';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_10GBASELRL = '.1.3.6.1.4.1.30065.3.4.1.9';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_100GBASESR10 = '.1.3.6.1.4.1.30065.3.4.1.10';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_100GBASELR4 = '.1.3.6.1.4.1.30065.3.4.1.11';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_100GBASEER4 = '.1.3.6.1.4.1.30065.3.4.1.12';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_40GBASEXSR4 = '.1.3.6.1.4.1.30065.3.4.1.13';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_40GBASEAR4 = '.1.3.6.1.4.1.30065.3.4.1.14';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_40GBASEPLR4 = '.1.3.6.1.4.1.30065.3.4.1.15';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_40GBASEPLRL4 = '.1.3.6.1.4.1.30065.3.4.1.16';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_40GBASEPSM4 = '.1.3.6.1.4.1.30065.3.4.1.17';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_40GBASELRL4 = '.1.3.6.1.4.1.30065.3.4.1.18';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_100GBASESR4 = '.1.3.6.1.4.1.30065.3.4.1.19';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_40GBASEUNIV = '.1.3.6.1.4.1.30065.3.4.1.20';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_40GBASEER4 = '.1.3.6.1.4.1.30065.3.4.1.21';
+
+    /**
+     * Constant for MAU type (Arista specific):
+     * @see types()
+     */
+    const TYPE_ARISTA_100GBASEXSR10 = '.1.3.6.1.4.1.30065.3.4.1.22';
+
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///// END: Arista specific OIDs: http://www.circitor.fr/Mibs/Html/A/ARISTA-MAU-MIB.php#aristaDot3MauType
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
     /**
      * Text representation of MAU types
      *
@@ -625,7 +775,31 @@ class MAU extends \OSS_SNMP\MIB
         self::TYPE_100GBASECR10     => '100GbaseCR10',
         self::TYPE_100GBASESR10     => '100GbaseSR10',
         self::TYPE_100GBASELR4      => '100GbaseLR4',
-        self::TYPE_100GBASEER4      => '100GbaseER4'
+        self::TYPE_100GBASEER4      => '100GbaseER4',
+
+        self::TYPE_ARISTA_10GBASECR      => '10GbaseCR',
+        self::TYPE_ARISTA_10GBASEDWDMER  => '10GbaseDwdmER',
+        self::TYPE_ARISTA_40GBASESR4     => '40GbaseSR4',
+        self::TYPE_ARISTA_40GBASELR4     => '40GbaseLR4',
+        self::TYPE_ARISTA_40GBASECR4     => '40GbaseCR4',
+        self::TYPE_ARISTA_10GBASEDWDMZR  => '10GbaseDwdmZR',
+        self::TYPE_ARISTA_10GBASECRA     => '10GbaseCRA',
+        self::TYPE_ARISTA_10GBASEZR      => '10GbaseZR',
+        self::TYPE_ARISTA_10GBASELRL     => '10GbaseLRL',
+        self::TYPE_ARISTA_100GBASESR10   => '100GbaseSR10',
+        self::TYPE_ARISTA_100GBASELR4    => '100GbaseLR4',
+        self::TYPE_ARISTA_100GBASEER4    => '100GbaseER4',
+        self::TYPE_ARISTA_40GBASEXSR4    => '40GbaseXSR4',
+        self::TYPE_ARISTA_40GBASEAR4     => '40GbaseAR4',
+        self::TYPE_ARISTA_40GBASEPLR4    => '40GbasePLR4',
+        self::TYPE_ARISTA_40GBASEPLRL4   => '40GbasePLRL4',
+        self::TYPE_ARISTA_40BASEPSM4     => '40GbasePSM4',
+        self::TYPE_ARISTA_40GBASELRL4    => '40GbaseLRL4',
+        self::TYPE_ARISTA_100GBASESR4    => '100GbaseSR4',
+        self::TYPE_ARISTA_40GBASEUNIV    => '40GbaseUniv',
+        self::TYPE_ARISTA_40GBASEER4     => '40GbaseER4',
+        self::TYPE_ARISTA_100GBASEXSR10  => '100GbaseXSR10',
+
     );
 
 
