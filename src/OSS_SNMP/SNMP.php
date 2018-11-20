@@ -137,6 +137,16 @@ class SNMP
      */
     protected $_cache = null;
 
+
+    /**
+     * Test / dummy mode to help phpunit testing (yeah, hacky)
+     *
+     * Initiate this by using host and community: phpunit.test.example.com  /  mXPOSpC52cSFg1qN
+     *
+     * @var bool
+     */
+    protected $_dummy = false;
+
     /**
      * Set to true to disable local cache lookup and force SNMP queries
      *
@@ -154,13 +164,13 @@ class SNMP
      * SNMP output constants to mirror those of PHP
      * @var SNMP output constants to mirror those of PHP
      */
-    const OID_OUTPUT_FULL    = SNMP_OID_OUTPUT_FULL;
+    const OID_OUTPUT_FULL    = 3; //SNMP_OID_OUTPUT_FULL;
 
     /**
      * SNMP output constants to mirror those of PHP
      * @var SNMP output constants to mirror those of PHP
      */
-    const OID_OUTPUT_NUMERIC = SNMP_OID_OUTPUT_NUMERIC;
+    const OID_OUTPUT_NUMERIC = 4; //SNMP_OID_OUTPUT_NUMERIC;
 
 
     /**
@@ -193,11 +203,18 @@ class SNMP
      */
     public function __construct( $host = '127.0.0.1', $community = 'public' , $version = '2c' , $seclevel = 'noAuthNoPriv' , $authprotocol = 'MD5' , $authpassphrase = 'None' , $privprotocol = 'DES' , $privpassphrase = 'None' )
     {
-        // make sure SNMP is installed!
-        if( !function_exists( 'snmp2_get' ) ) {
-            die( "It looks like the PHP SNMP package is not installed. This is required!\n" );
-        }
+        if( $host === 'phpunit.test.example.com' && $community === 'mXPOSpC52cSFg1qN' ) {
+            $this->_dummy = true;
+        } else {
 
+            // make sure SNMP is installed!
+            if( !function_exists( 'snmp2_get' ) ) {
+                die( "It looks like the PHP SNMP package is not installed. This is required!\n" );
+            }
+
+            $this->setOidOutputFormat( self::OID_OUTPUT_NUMERIC );
+
+        }
 
         return $this->setHost( $host )
                     ->setCommunity( $community )
@@ -207,8 +224,7 @@ class SNMP
                     ->setAuthProtocol( $authprotocol )
                     ->setAuthPassphrase( $authpassphrase )
                     ->setPrivProtocol( $privprotocol )
-                    ->setPrivPassphrase( $privpassphrase )
-                    ->setOidOutputFormat( self::OID_OUTPUT_NUMERIC );
+                    ->setPrivPassphrase( $privpassphrase );
     }
 
 
@@ -381,10 +397,10 @@ class SNMP
         {
             $oids = explode( '.', $_oid );
 
-			$index = $oids[ $position];
-			for( $pos = $position + 1; $pos < sizeof($oids) && ( $elements == -1 || $pos < $position+$elements ); $pos++ ) {
-				$index .= '.' . $oids[ $pos ];
-			}
+            $index = $oids[ $position];
+            for( $pos = $position + 1; $pos < sizeof($oids) && ( $elements == -1 || $pos < $position+$elements ); $pos++ ) {
+                $index .= '.' . $oids[ $pos ];
+            }
 
             $result[ $index ] = $this->parseSnmpValue( $value );
         }
@@ -1021,6 +1037,16 @@ class SNMP
        $this->getCache()->clear( $oid );
 
        return $this->_lastResult;
+    }
+
+
+    /**
+     * Indicate if we are in dummy mode or not
+     * @return bool
+     */
+    public function iAmADummy()
+    {
+        return $this->_dummy === true;
     }
 
 }

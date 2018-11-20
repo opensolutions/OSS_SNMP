@@ -115,17 +115,24 @@ class Platform
     {
         // query the platform for it's description and parse it for details
 
-        $sysDescr    = $this->getSNMPHost()->useSystem()->description();
+        if( $this->getSNMPHost()->iAmADummy() ) {
 
-        try {
-            $sysObjectId =  $this->getSNMPHost()->useSystem()->systemObjectID();
-        } catch( Exception $e ){
-            $sysObjectId = null;
+            include( __DIR__ . '/Platforms/dummy.php' );
+
+        } else {
+            $sysDescr    = $this->getSNMPHost()->useSystem()->description();
+
+            try {
+                $sysObjectId =  $this->getSNMPHost()->useSystem()->systemObjectID();
+            } catch( Exception $e ){
+                $sysObjectId = null;
+            }
+
+            // there's possibly a better way to do this...?
+            foreach( glob(  __DIR__ . '/Platforms/vendor_*.php' ) as $f ) {
+                include( $f );
+            }
         }
-        
-        // there's possibly a better way to do this...?
-        foreach( glob(  __DIR__ . '/Platforms/vendor_*.php' ) as $f )
-            include( $f );
     }
 
      /**
