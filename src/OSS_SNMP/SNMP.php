@@ -478,7 +478,7 @@ class SNMP
         {
             case 'STRING':
                 if( substr( $value, 0, 1 ) == '"' )
-                    $rtn = (string)trim( substr( substr( $value, 1 ), 0, -1 ) );
+                    $rtn = (string)substr( substr( $value, 1 ), 0, -1 );
                 else
                     $rtn = (string)$value;
                 break;
