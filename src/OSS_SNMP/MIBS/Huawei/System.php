@@ -26,6 +26,9 @@ class System extends \OSS_SNMP\MIB
     const OID_SYSTEM_ADMIN_STATE_MODE           = '.1.3.6.1.4.1.2011.6.3.1.21.0'; // no fn() implemented
     const OID_SYSTEM_ADMIN_STATUS               = '.1.3.6.1.4.1.2011.6.3.1.22.0'; // no fn() implemented
     const OID_SYSTEM_VERSION_VRCB               = '.1.3.6.1.4.1.2011.6.3.1.999.0'; // no fn() implemented
+    const OID_COMPATIBLE_PRODUCT_NAME           = '1.3.6.1.4.1.2011.6.3.11.4.0';  // no fn() implemented
+    const OID_COMPATIBLE_VERSION                = '1.3.6.1.4.1.2011.6.3.11.2.0';
+    const OID_COMPATIBLE_VRCB                   = '1.3.6.1.4.1.2011.6.3.11.3.0';  // no fn() implemented
 
     /**
      * Returns the operating system software version
@@ -34,7 +37,11 @@ class System extends \OSS_SNMP\MIB
      */
     public function softwareVersion()
     {
+      try {
         return $this->getSNMP()->get( self::OID_SYSTEM_SOFTWARE_VERSION );
+      } catch ( \OSS_SNMP\Exception $e ) {
+        return $this->getSNMP()->get( self::OID_COMPATIBLE_VERSION );
+      }
     }
 
     /**
