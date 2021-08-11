@@ -29,6 +29,9 @@ if( substr( strtolower($sysDescr), 0, 6 ) == 'huawei' )
         case '.1.3.6.1.4.1.2011.2.239.66':
             $this->setModel( "CE6881-48S6CQ" );
             break;
+        case '.1.3.6.1.4.1.2011.2.239.50':
+            $this->setModel(" CE8850-64CQ-EI " );
+            break;
         case '.1.3.6.1.4.1.2011.2.220.35':
             $this->setModel( "ATN 910C-D" );
             break;
