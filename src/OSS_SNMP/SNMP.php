@@ -66,6 +66,13 @@ class SNMP
     protected $_host;
 
     /**
+     * Wraps the host in [] which forces IPv6
+     * @var bool Wraps the host in [] which forces IPv6
+     */
+    protected $_forceIPv6 = false;
+
+
+    /**
      * The SNMP host to query. Defaults to v2
      * @var string The SNMP host to query. Defaults to v2 by the constructor.
      */
@@ -749,7 +756,12 @@ class SNMP
      */
     public function setHost( $h )
     {
-        $this->_host = $h;
+        // need to be careful with IPv6 addresses
+        if( strpos( $h, ':' ) !== false || $this->getForceIPv6 ) {
+            $this->_host = '[' . $h . ']';
+        } else {
+            $this->_host = $h;
+        }
 
         // clear the temporary result cache and last result
         $this->_lastResult = null;
@@ -767,6 +779,28 @@ class SNMP
     public function getHost()
     {
         return $this->_host;
+    }
+
+    /**
+     * Forces use of IPv6
+     *
+     * @param bool $b Set to true to force IPv4, false for default behavior
+     * @return \OSS_SNMP\SNMP An instance of $this (for fluent interfaces)
+     */
+    public function setForceIPv6( $b )
+    {
+        $this->_forceIPv6 = $b;
+        return $this;
+    }
+
+    /**
+     * Is IPv6 forced?
+     *
+     * @return bool True to force IPv4, false for default behavior
+     */
+    public function getForceIPv6()
+    {
+        return $this->_forceIPv6;
     }
 
     /**
