@@ -757,7 +757,7 @@ class SNMP
     public function setHost( $h )
     {
         // need to be careful with IPv6 addresses
-        if( strpos( $h, ':' ) !== false || $this->getForceIPv6 ) {
+        if( strpos( $h, ':' ) !== false || $this->getForceIPv6() ) {
             $this->_host = '[' . $h . ']';
         } else {
             $this->_host = $h;
