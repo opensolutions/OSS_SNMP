@@ -26,5 +26,18 @@ class AristaTest extends Platform
         $this->assertNull( $p->getOsDate() );
     }
 
+    const ARISTA_B = 'Arista Networks EOS version 4.17.3F running on an Arista Networks DCS-7050SX-96-SSD';
+
+    public function testAristaB() {
+
+        $p = new TestOSSPlatform( self::ARISTA_B );
+
+        $this->assertEquals( 'Arista', $p->getVendor() );
+        $this->assertEquals( 'DCS-7050SX-96-SSD', $p->getModel() );
+        $this->assertEquals( 'EOS', $p->getOs() );
+        $this->assertEquals( '4.17.3F', $p->getOsVersion() );
+        $this->assertNull( $p->getOsDate() );
+    }
+
 
 }
