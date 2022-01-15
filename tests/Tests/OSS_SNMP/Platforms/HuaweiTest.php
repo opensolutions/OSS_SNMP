@@ -98,6 +98,21 @@ Copyright (C) 2007 Huawei Technologies Co., Ltd.';
         $this->assertEquals( $p->getModel(),     'S6720-54C-EI-48S-AC' );
     }
 
+    // https://github.com/opensolutions/OSS_SNMP/issues/67
+    const HUAWEI_G = 'Huawei Versatile Routing Platform Software
+VRP (R) software, Version 8.100 (CE6810LI V100R005C10SPC200)
+Copyright (C) 2012-2015 Huawei Technologies Co., Ltd.
+HUAWEI CE6810-48S4Q-LI uptime is 1497 days, 5 hours, 7 minutes';
 
+    public function testHuaweiG() {
+
+        $p = new TestOSSPlatform( self::HUAWEI_G, '' );
+
+        $this->assertEquals( 'Huawei', $p->getVendor() );
+        $this->assertEquals( 'Huawei Versatile Routing Platform Software', $p->getOs() );
+        $this->assertEquals( '8.100', $p->getOsVersion()  );
+        $this->assertNull( $p->getOsDate() );
+        $this->assertEquals( 'CE6810-48S4Q-LI', $p->getModel(),      );
+    }
 
 }

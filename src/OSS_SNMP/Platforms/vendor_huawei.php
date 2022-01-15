@@ -38,19 +38,26 @@ if( substr( strtolower($sysDescr), 0, 6 ) == 'huawei' )
         $this->setOs( 'Huawei Versatile Routing Platform Software' );
     }
 
-    $matches = [];
-    preg_match_all( '/^Huawei\s+.*\s+[Vv]ersion\s+([\w\.]+)\s+.*\s+([\w\-]+)\s*$/ims', $sysDescr, $matches );
+    // lose uptime
+    if( $pos = strpos( $sysDescr, 'uptime is') ) {
+        $sysDescr = substr( $sysDescr, 0, $pos );
+    }
 
-    if( isset( $matches[1][0] ) ) {
-        $this->setOsVersion( $matches[1][0] );
+    $sysDescr = trim( $sysDescr );
+
+    $matches = [];
+    preg_match( '/^Huawei\s+.*[Vv]ersion\s+([\w.\d]+)\s+.*\s+([\w\-]+)$/is', $sysDescr, $matches );
+
+    if( isset( $matches[1] ) ) {
+        $this->setOsVersion( $matches[1] );
     } else if( $this instanceof \OSS_SNMP\TestPlatform ) {
         $this->setOsVersion('PHPUnit');
     } else {
         $this->setOsVersion($this->getSNMPHost()->useHuawei_System()->softwareVersion());
     }
 
-    if( isset( $matches[2][0] ) ) {
-        $this->setModel($matches[2][0]);
+    if( isset( $matches[2] ) ) {
+        $this->setModel($matches[2]);
     }
 
     $this->setOsDate( null );
