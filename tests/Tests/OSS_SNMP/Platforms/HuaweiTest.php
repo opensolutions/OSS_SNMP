@@ -65,5 +65,54 @@ class HuaweiTest extends Platform
         $this->assertEquals( $p->getModel(),     'S6720-54C-EI-48S-AC' );
     }
 
+    const HUAWEI_E = 'Huawei Versatile Routing Platform Software
+VRP (R) software, Version 8.150 (CE6870EI V200R002C50SPC800)
+Copyright (C) 2012-2017 Huawei Technologies Co., Ltd.
+HUAWEICE6870-24S6CQ-EI';
+
+    public function testHuaweiE() {
+
+        $p = new TestOSSPlatform( self::HUAWEI_E, '' );
+
+        $this->assertEquals( $p->getVendor(),    'Huawei' );
+        $this->assertEquals( $p->getOs(), 'Huawei Versatile Routing Platform Software' );
+        $this->assertEquals( $p->getOsVersion(), '8.150' );
+        $this->assertNull( $p->getOsDate() );
+        $this->assertEquals( $p->getModel(),     'HUAWEICE6870-24S6CQ-EI' );
+    }
+
+    // https://github.com/opensolutions/OSS_SNMP/issues/72
+    const HUAWEI_F = 'S6720-54C-EI-48S-AC
+Huawei Versatile Routing Platform Software
+VRP (R) software,Version 5.170 (S6720 V200R010C00SPC600)
+Copyright (C) 2007 Huawei Technologies Co., Ltd.';
+
+    public function testHuaweiF() {
+
+        $p = new TestOSSPlatform( self::HUAWEI_F, '' );
+
+        $this->assertEquals( $p->getVendor(),    'Huawei' );
+        $this->assertEquals( $p->getOs(), 'Huawei Versatile Routing Platform Software VRP' );
+        $this->assertEquals( $p->getOsVersion(), '5.170' );
+        $this->assertNull( $p->getOsDate() );
+        $this->assertEquals( $p->getModel(),     'S6720-54C-EI-48S-AC' );
+    }
+
+    // https://github.com/opensolutions/OSS_SNMP/issues/67
+    const HUAWEI_G = 'Huawei Versatile Routing Platform Software
+VRP (R) software, Version 8.100 (CE6810LI V100R005C10SPC200)
+Copyright (C) 2012-2015 Huawei Technologies Co., Ltd.
+HUAWEI CE6810-48S4Q-LI uptime is 1497 days, 5 hours, 7 minutes';
+
+    public function testHuaweiG() {
+
+        $p = new TestOSSPlatform( self::HUAWEI_G, '' );
+
+        $this->assertEquals( 'Huawei', $p->getVendor() );
+        $this->assertEquals( 'Huawei Versatile Routing Platform Software', $p->getOs() );
+        $this->assertEquals( '8.100', $p->getOsVersion()  );
+        $this->assertNull( $p->getOsDate() );
+        $this->assertEquals( 'CE6810-48S4Q-LI', $p->getModel(),      );
+    }
 
 }

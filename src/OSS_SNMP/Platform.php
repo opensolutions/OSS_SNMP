@@ -84,7 +84,7 @@ class Platform
      *
      * @var string The platform serial number
      */
-    protected $_serial = '(not implemented)';
+    protected $_serial = null;
 
     /**
      * The \OSS_SNMP\SNMP object

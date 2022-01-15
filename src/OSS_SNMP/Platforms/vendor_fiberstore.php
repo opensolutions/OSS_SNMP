@@ -1,6 +1,12 @@
 <?php
 
 /*
+    Copyright (c) 2012 - 2022, Open Source Solutions Limited, Dublin, Ireland
+    All rights reserved.
+
+    Contact: Barry O'Donovan - barry (at) opensolutions (dot) ie
+    http://www.opensolutions.ie/
+
     This file is part of the OSS_SNMP package.
 
     Redistribution and use in source and binary forms, with or without
@@ -27,34 +33,23 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-// Verified against SRX- and EX- series devices
+
+// Works with sysDescr such as:
 //
-// Sample sysDescr:
-// "Juniper Networks, Inc. ex4500-40f Ethernet Switch, kernel JUNOS 12.3R3.4, Build date: 2013-06-14 01:37:19 UTC Copyright (c) 1996-2013 Juniper Networks, Inc."
+// 'FSOS software, S5850 software (S5850 48S6Q), Version 7.2.2
+//Copyright (C) 2019 by FS.COM. All rights reserved.
+//Compiled Dec 10 09:12:14 2019
 
-if( substr( $sysDescr, 0, 16 ) == 'Juniper Networks' )
+if( substr( $sysDescr, 0, 5 ) == 'FSOS ' )
 {
-    if( preg_match( '/(Juniper Networks), Inc. ([^\s]+) .* kernel ([^\s]+) ([^\s,]+)/', $sysDescr, $matches ) ) {
-        $this->setVendor($matches[1]);
-        $this->setModel($matches[2]);
-        $this->setOs($matches[3]);
-        $this->setOsVersion($matches[4]);
+    $this->setVendor( 'FiberStore' );
+    $this->setOs( 'FSOS' );
 
-        if (preg_match('/Build date: (\d\d\d\d-\d\d-\d\d) (\d\d:\d\d:\d\d) ([A-Za-z]+)/', $sysDescr, $d)) {
-            $this->setOsDate(new \DateTime("{$d[1]} {$d[2]} +00:00"));
-            $this->getOsDate()->setTimezone(new \DateTimeZone($d[3]));
-        }
+    preg_match( '/FSOS\s+software,\s+[\w]+\s+software\s+\(([\w\s]+)\),\s+Version\s+([\w.]+).*/',
+        $sysDescr, $matches );
 
-    }
-
-    // 'Juniper Networks EX3400 Ethernet Switch , Junos OS Release 15.1X53-D5x EX series'
-    else if( preg_match( '/(Juniper Networks) (\w+) Ethernet Switch .* Release ([\w\-.]+) EX series/', $sysDescr, $matches ) ) {
-        $this->setVendor($matches[1]);
-        $this->setModel($matches[2]);
-        $this->setOs('JUNOS');
-        $this->setOsVersion($matches[3]);
-        $this->setOsDate(null);
-    }
-
+    $this->setModel( $matches[1] );
+    $this->setOsVersion( $matches[2] );
+    $this->setOsDate( null );
 }
 
