@@ -4,6 +4,12 @@
 //
 // 'Huawei Integrated Access Software'
 // 'HUAWEI TECH. INC. SNMP AGENT FOR MA5300'
+//
+// "Huawei Versatile Routing Platform Software
+//VRP (R) software, Version 8.150 (CE6870EI V200R002C50SPC800)
+//Copyright (C) 2012-2017 Huawei Technologies Co., Ltd.
+//HUAWEICE6870-24S6CQ-EI
+//"
 
 if( substr( strtolower($sysDescr), 0, 6 ) == 'huawei' )
 {
@@ -28,11 +34,25 @@ if( substr( strtolower($sysDescr), 0, 6 ) == 'huawei' )
     }
 
     $this->setOs( null );
-    if( $this instanceof \OSS_SNMP\TestPlatform ) {
+    if( stripos( $sysDescr, 'Huawei Versatile Routing Platform Software' ) !== false ) {
+        $this->setOs( 'Huawei Versatile Routing Platform Software' );
+    }
+
+    $matches = [];
+    preg_match_all( '/^Huawei\s+.*\s+[Vv]ersion\s+([\w\.]+)\s+.*\s+([\w\-]+)\s*$/ims', $sysDescr, $matches );
+
+    if( isset( $matches[1][0] ) ) {
+        $this->setOsVersion( $matches[1][0] );
+    } else if( $this instanceof \OSS_SNMP\TestPlatform ) {
         $this->setOsVersion('PHPUnit');
     } else {
         $this->setOsVersion($this->getSNMPHost()->useHuawei_System()->softwareVersion());
     }
+
+    if( isset( $matches[2][0] ) ) {
+        $this->setModel($matches[2][0]);
+    }
+
     $this->setOsDate( null );
 
 }

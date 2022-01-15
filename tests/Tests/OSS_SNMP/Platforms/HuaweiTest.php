@@ -65,5 +65,21 @@ class HuaweiTest extends Platform
         $this->assertEquals( $p->getModel(),     'S6720-54C-EI-48S-AC' );
     }
 
+    const HUAWEI_E = 'Huawei Versatile Routing Platform Software
+VRP (R) software, Version 8.150 (CE6870EI V200R002C50SPC800)
+Copyright (C) 2012-2017 Huawei Technologies Co., Ltd.
+HUAWEICE6870-24S6CQ-EI';
+
+    public function testHuaweiE() {
+
+        $p = new TestOSSPlatform( self::HUAWEI_E, '' );
+
+        $this->assertEquals( $p->getVendor(),    'Huawei' );
+        $this->assertEquals( $p->getOs(), 'Huawei Versatile Routing Platform Software' );
+        $this->assertEquals( $p->getOsVersion(), '8.150' );
+        $this->assertNull( $p->getOsDate() );
+        $this->assertEquals( $p->getModel(),     'HUAWEICE6870-24S6CQ-EI' );
+    }
+
 
 }
