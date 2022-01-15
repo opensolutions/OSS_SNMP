@@ -62,7 +62,7 @@ if( substr( strtolower($sysDescr), 0, 6 ) == 'huawei' )
 //
 // 'S6720-54C-EI-48S-AC Huawei Versatile Routing Platform Software VRP (R) software,Version 5.170 (S6720 V200R010C00SPC600) Copyright (C) 2007 Huawei Technologies Co., Ltd.'
 // https://github.com/opensolutions/OSS_SNMP/issues/59
-else if( preg_match( '/^(S\d+\-[A-Z0-9\-]+) Huawei Versatile Routing Platform Software VRP \(R\) software,Version ([0-9\.]+) \((S[0-9]+) [A-Z0-9]+\) Copyright \(C\) 2007 Huawei Technologies.*$/',
+else if( preg_match( '/^(S\d+\-[A-Z0-9\-]+)\s+Huawei Versatile Routing Platform Software\s+VRP \(R\) software,Version ([0-9\.]+) \((S[0-9]+) [A-Z0-9]+\)\s+Copyright \(C\) 2007 Huawei Technologies.*$/',
                 $sysDescr, $matches ) ) {
 
     $this->setVendor( 'Huawei' );
