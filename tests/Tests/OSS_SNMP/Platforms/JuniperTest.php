@@ -26,4 +26,18 @@ class JuniperTest extends Platform
         $this->assertEquals( '2013-06-14 01:37:19', $p->getOsDate()->format('Y-m-d H:i:s') );
     }
 
+    // https://github.com/opensolutions/OSS_SNMP/issues/62
+    const JUNIPER_B = 'Juniper Networks EX3400 Ethernet Switch , Junos OS Release 15.1X53-D5x EX series';
+
+    public function testJuniperB() {
+
+        $p = new TestOSSPlatform( self::JUNIPER_B );
+
+        $this->assertEquals( 'Juniper Networks', $p->getVendor() );
+        $this->assertEquals( 'EX3400', $p->getModel() );
+        $this->assertEquals( 'JUNOS', $p->getOs() );
+        $this->assertEquals( '15.1X53-D5x', $p->getOsVersion() );
+        $this->assertNull( $p->getOsDate() );
+    }
+
 }
