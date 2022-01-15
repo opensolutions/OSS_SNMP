@@ -86,7 +86,19 @@ if( substr( $sysDescr, 0, 11 ) == 'ExtremeXOS ' )
     } catch( Exception $e ) {
         $this->setSerialNumber( '(error)' );
     }
-
-
 }
 
+// 'Extreme BR-SLX9850-4 Router, SLX Operating System Version 18r.1.00a.'
+if( substr( $sysDescr, 0, 10 ) == 'Extreme BR' )
+{
+    $this->setVendor( 'Extreme Networks' );
+    $this->setOs( 'SLX' );
+
+    preg_match( '/^Extreme ([\w\-]+) Router, SLX Operating System Version ([\w.\-]+)\.$/',
+        $sysDescr, $matches );
+
+    $this->setModel( $matches[1] );
+    $this->setOsVersion( $matches[2] );
+    $this->setOsDate( null );
+
+}

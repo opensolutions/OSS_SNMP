@@ -65,5 +65,18 @@ class ExtremeTest extends Platform
         $this->assertEquals( '2011-04-26 20:36:04', $p->getOsDate()->setTimeZone( new \DateTimeZone('UTC') )->format('Y-m-d H:i:s') );
     }
 
+    // https://github.com/opensolutions/OSS_SNMP/issues/61
+    const EXTREME_E = 'Extreme BR-SLX9850-4 Router, SLX Operating System Version 18r.1.00a.';
+
+    public function testExtremeE() {
+
+        $p = new TestOSSPlatform( self::EXTREME_E );
+
+        $this->assertEquals( 'Extreme Networks', $p->getVendor() );
+        $this->assertEquals( 'BR-SLX9850-4', $p->getModel() );
+        $this->assertEquals( 'SLX', $p->getOs() );
+        $this->assertEquals( '18r.1.00a', $p->getOsVersion() );
+        $this->assertNull( $p->getOsDate() );
+    }
 
 }
