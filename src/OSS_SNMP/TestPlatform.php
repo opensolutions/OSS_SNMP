@@ -109,7 +109,7 @@ class TestPlatform
      * @param SNMP $snmpHost The SNMP Host object
      * @return Platform An instance of $this (for fluent interfaces)
      */
-    public function __construct( $sysDesc, $sysObjId )
+    public function __construct( $sysDesc, $sysObjId = '' )
     {
         $this->setSysDesc(  $sysDesc );
         $this->setSysObjId( $sysObjId );
