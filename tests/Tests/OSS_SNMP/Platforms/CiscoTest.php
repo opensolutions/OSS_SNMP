@@ -171,4 +171,18 @@ class CiscoTest extends Platform
         $this->assertEquals( $dt, $p->getOsDate() );
     }
 
+    // test case for: https://github.com/opensolutions/OSS_SNMP/issues/34#issuecomment-305630798
+    const CISCO_H = 'Cisco IOS XR Software (NCS-5500), Version 7.3.2 Copyright (c) 2013-2021 by Cisco Systems, Inc.';
+
+    public function testCiscoH() {
+
+        $p = new TestOSSPlatform( self::CISCO_H, '' );
+
+        $this->assertEquals( $p->getVendor(),    'Cisco Systems' );
+        $this->assertEquals( $p->getOs(),        'IOS XR' );
+        $this->assertEquals( $p->getOsVersion(), '7.3.2' );
+        $this->assertEquals( $p->getModel(),     'NCS-5500' );
+        $this->assertNull($p->getOsDate());
+    }
+
 }
