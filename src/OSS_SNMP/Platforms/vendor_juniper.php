@@ -42,7 +42,8 @@ if( substr( $sysDescr, 0, 16 ) == 'Juniper Networks' )
 
         if (preg_match('/Build date: (\d\d\d\d-\d\d-\d\d) (\d\d:\d\d:\d\d) ([A-Za-z]+)/', $sysDescr, $d)) {
             $this->setOsDate(new \DateTime("{$d[1]} {$d[2]} +00:00"));
-            $this->getOsDate()->setTimezone(new \DateTimeZone($d[3]));
+            $tz = in_array($d[3], \DateTimeZone::listIdentifiers()) ? $d[3] : 'UTC';
+            $this->getOsDate()->setTimezone(new \DateTimeZone($tz));
         }
 
     }
