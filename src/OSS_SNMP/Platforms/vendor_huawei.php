@@ -29,6 +29,21 @@ if( substr( strtolower($sysDescr), 0, 6 ) == 'huawei' )
         case '.1.3.6.1.4.1.2011.2.6.6.1':
             $this->setModel( "MA5300V1" );
             break;
+        case '.1.3.6.1.4.1.2011.2.239.51':
+            $this->setModel( "CE8861EI" );
+            break;
+        case '.1.3.6.1.4.1.2011.2.239.66':
+            $this->setModel( "CE6881-48S6CQ" );
+            break;
+        case '.1.3.6.1.4.1.2011.2.239.50':
+            $this->setModel(" CE8850-64CQ-EI " );
+            break;
+        case '.1.3.6.1.4.1.2011.2.223.2':
+            $this->setModel( "S7706" );
+            break;
+        case '.1.3.6.1.4.1.2011.2.220.35':
+            $this->setModel( "ATN 910C-D" );
+            break;
         default:
             $this->setModel( null );
     }
@@ -69,7 +84,7 @@ if( substr( strtolower($sysDescr), 0, 6 ) == 'huawei' )
 //
 // 'S6720-54C-EI-48S-AC Huawei Versatile Routing Platform Software VRP (R) software,Version 5.170 (S6720 V200R010C00SPC600) Copyright (C) 2007 Huawei Technologies Co., Ltd.'
 // https://github.com/opensolutions/OSS_SNMP/issues/59
-else if( preg_match( '/^(S\d+\-[A-Z0-9\-]+)\s+Huawei Versatile Routing Platform Software\s+VRP \(R\) software,Version ([0-9\.]+) \((S[0-9]+) [A-Z0-9]+\)\s+Copyright \(C\) 2007 Huawei Technologies.*$/',
+else if( preg_match('/^(S\d+\-[A-Z0-9\-]+)\s+Huawei Versatile Routing Platform Software\s+VRP \(R\) software,Version ([0-9\.]+) \((S[0-9]+) [A-Z0-9]+\)\s+Copyright \(C\) 2007 Huawei Technologies.*$/',
                 $sysDescr, $matches ) ) {
 
     $this->setVendor( 'Huawei' );
