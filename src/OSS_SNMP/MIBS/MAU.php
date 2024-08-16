@@ -898,6 +898,495 @@ class MAU extends \OSS_SNMP\MIB
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///// START: Huawei specific OIDs:
+    ///// https://support.huawei.com/hedex/hdx.do?docid=EDOC1100366031&id=EN-US_TOPIC_0000001633345736
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_OTHER = '0';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_AUI = '1';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10BASE5 = '2';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_FOIRL = '3';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10BASE2 = '4';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10BASET = '5';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10BASEFP = '6';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10BASEFB = '7';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10BASEFL = '8';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10BROAD36 = '9';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10BASETHD = '10';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10BASETFD = '11';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10BASEFLHD = '12';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10BASEFLFD = '13';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100BASET4 = '14';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100BASETXHD = '15';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100BASETXFD = '16';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100BASEFXHD = '17';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100BASEFXFD = '18';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100BASET2HD = '19';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100BASET2FD = '20';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASEXHD = '21';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASEXFD = '22';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASELXHD = '23';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASELXFD = '24';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASESXHD = '25';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASESXFD = '26';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASECXHD = '27';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASECXFD = '28';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASETHD = '29';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASETFD = '30';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASEX = '31';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASELX4 = '32';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASER = '33';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASEER = '34';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASELR = '35';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASESR = '36';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASEW = '37';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASEEW = '38';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASELW = '39';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASESW = '40';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASECX4 = '41';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_2BASETL = '42';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10PASSTS = '43';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100BASEBX10D = '44';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100BASEBX10U = '45';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100BASELX10 = '46';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASEBX10D = '47';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASEBX10U = '48';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASELX10 = '49';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASEPX10D = '50';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASEPX10U = '51';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASEPX20D = '52';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASEPX20U = '53';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASET = '54';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASELRM = '55';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_1000BASEKX = '56';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASEKX4 = '57';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASEKR = '58';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10G1GBASEPRXD1 = '59';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10G1GBASEPRXD2 = '60';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10G1GBASEPRXD3 = '61';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10G1GBASEPRXU1 = '62';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10G1GBASEPRXU2 = '63';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10G1GBASEPRXU3 = '64';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASEPRD1 = '65';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASEPRD2 = '66';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASEPRD3 = '67';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASEPRU1 = '68';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_10GBASEPRU3 = '69';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_40GBASEKR4 = '70';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_40GBASECR4 = '71';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_40GBASESR4 = '72';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_40GBASEFR = '73';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_40GBASELR4 = '74';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100GBASECR10 = '75';
+
+        /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100GBASESR10 = '76';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100GBASELR4 = '77';
+
+    /**
+     * Constant for MAU type (Huawei specific):
+     * @see types()
+     */
+    const TYPE_HUAWEI_100GBASEER4 = '78';
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///// END: Huawei specific OIDs: 
+    ///// https://support.huawei.com/hedex/hdx.do?docid=EDOC1100366031&id=EN-US_TOPIC_0000001633345736
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 
     /**
@@ -1042,6 +1531,86 @@ class MAU extends \OSS_SNMP\MIB
         self::TYPE_ARISTA_100GDWDMCOHERENTE => '100GDwdmCoherentE',
         self::TYPE_ARISTA_100GBASECWDM4  => '100GbaseCWDM4',
         self::TYPE_ARISTA_100GEDWDM2     => '100GEDwdm2',
+
+        self::TYPE_HUAWEI_OTHER          => 'Other',
+        self::TYPE_HUAWEI_AUI            => 'AUI',
+        self::TYPE_HUAWEI_10BASE5        => '10Base5',
+        self::TYPE_HUAWEI_FOIRL          => 'Foirl',
+        self::TYPE_HUAWEI_10BASE2        => '10Base2',
+        self::TYPE_HUAWEI_10BASET        => '10BaseT',
+        self::TYPE_HUAWEI_10BASEFP       => '10BaseFP',
+        self::TYPE_HUAWEI_10BASEFB       => '10BaseFB',
+        self::TYPE_HUAWEI_10BASEFL       => '10BaseFL',
+        self::TYPE_HUAWEI_10BROAD36      => '10broad36',
+        self::TYPE_HUAWEI_10BASETHD      => '10BaseTHD',
+        self::TYPE_HUAWEI_10BASETFD      => '10BaseTFD',
+        self::TYPE_HUAWEI_10BASEFLHD     => '10BaseFLHD',
+        self::TYPE_HUAWEI_10BASEFLFD     => '10BaseFLFD',
+        self::TYPE_HUAWEI_100BASET4      => '100BaseT4',
+        self::TYPE_HUAWEI_100BASETXHD    => '100BaseTXHD',
+        self::TYPE_HUAWEI_100BASETXFD    => '100BaseTXFD',
+        self::TYPE_HUAWEI_100BASEFXHD    => '100BaseFXHD',
+        self::TYPE_HUAWEI_100BASEFXFD    => '100BaseFXFD',
+        self::TYPE_HUAWEI_100BASET2HD    => '100BaseT2HD',
+        self::TYPE_HUAWEI_100BASET2FD    => '100BaseT2FD',
+        self::TYPE_HUAWEI_1000BASEXHD    => '1000BaseXHD',
+        self::TYPE_HUAWEI_1000BASEXFD    => '1000BaseXFD',
+        self::TYPE_HUAWEI_1000BASELXHD   => '1000BaseLXHD',
+        self::TYPE_HUAWEI_1000BASELXFD   => '1000BaseLXFD',
+        self::TYPE_HUAWEI_1000BASESXHD   => '1000BaseSXHD',
+        self::TYPE_HUAWEI_1000BASESXFD   => '1000BaseSXFD',
+        self::TYPE_HUAWEI_1000BASECXHD   => '1000BaseCXHD',
+        self::TYPE_HUAWEI_1000BASECXFD   => '1000BaseCXFD',
+        self::TYPE_HUAWEI_1000BASETHD    => '1000BaseTHD',
+        self::TYPE_HUAWEI_1000BASETFD    => '1000BaseTFD',
+        self::TYPE_HUAWEI_10GBASEX       => '10GBaseX',
+        self::TYPE_HUAWEI_10GBASELX4     => '10GBaseLX4',
+        self::TYPE_HUAWEI_10GBASER       => '10GBaseR',
+        self::TYPE_HUAWEI_10GBASEER      => '10GBaseER',
+        self::TYPE_HUAWEI_10GBASELR      => '10GBaseLR',
+        self::TYPE_HUAWEI_10GBASESR      => '10GBaseSR',
+        self::TYPE_HUAWEI_10GBASEW       => '10GBaseW',
+        self::TYPE_HUAWEI_10GBASEEW      => '10GBaseEW',
+        self::TYPE_HUAWEI_10GBASELW      => '10GBaseLW',
+        self::TYPE_HUAWEI_10GBASESW      => '10GBaseSW',
+        self::TYPE_HUAWEI_10GBASECX4     => '10GBaseCX4',
+        self::TYPE_HUAWEI_2BASETL        => '2BaseTL',
+        self::TYPE_HUAWEI_10PASSTS       => '10PassTS',
+        self::TYPE_HUAWEI_100BASEBX10D   => '100BaseBX10D',
+        self::TYPE_HUAWEI_100BASEBX10U   => '100BaseBX10U',
+        self::TYPE_HUAWEI_100BASELX10    => '100BaseLX10',
+        self::TYPE_HUAWEI_1000BASEBX10D  => '1000BaseBX10D',
+        self::TYPE_HUAWEI_1000BASEBX10U  => '1000BaseBX10U',
+        self::TYPE_HUAWEI_1000BASELX10   => '1000BaseLX10',
+        self::TYPE_HUAWEI_1000BASEPX10D  => '1000BasePX10D',
+        self::TYPE_HUAWEI_1000BASEPX10U  => '1000BasePX10U',
+        self::TYPE_HUAWEI_1000BASEPX20D  => '1000BasePX20D',
+        self::TYPE_HUAWEI_1000BASEPX20U  => '1000BasePX20U',
+        self::TYPE_HUAWEI_10GBASET       => '10GBaseT',
+        self::TYPE_HUAWEI_10GBASELRM     => '10GBaseLRM',
+        self::TYPE_HUAWEI_1000BASEKX     => '1000BaseKX',
+        self::TYPE_HUAWEI_10GBASEKX4     => '10GBaseKX4',
+        self::TYPE_HUAWEI_10GBASEKR      => '10GBaseKR',
+        self::TYPE_HUAWEI_10G1GBASEPRXD1 => '10G1GBasePRXD1',
+        self::TYPE_HUAWEI_10G1GBASEPRXD2 => '10G1GBasePRXD2',
+        self::TYPE_HUAWEI_10G1GBASEPRXD3 => '10G1GBasePRXD3',
+        self::TYPE_HUAWEI_10G1GBASEPRXU1 => '10G1GBasePRXU1',
+        self::TYPE_HUAWEI_10G1GBASEPRXU2 => '10G1GBasePRXU2',
+        self::TYPE_HUAWEI_10G1GBASEPRXU3 => '10G1GBasePRXU3',
+        self::TYPE_HUAWEI_10GBASEPRD1    => '10GBasePRD1',
+        self::TYPE_HUAWEI_10GBASEPRD2    => '10GBasePRD2',
+        self::TYPE_HUAWEI_10GBASEPRD3    => '10GBasePRD3',
+        self::TYPE_HUAWEI_10GBASEPRU1    => '10GBasePRU1',
+        self::TYPE_HUAWEI_10GBASEPRU3    => '10GBasePRU3',
+        self::TYPE_HUAWEI_40GBASEKR4     => '40GBaseKR4',
+        self::TYPE_HUAWEI_40GBASECR4     => '40GBaseCR4',
+        self::TYPE_HUAWEI_40GBASESR4     => '40GBaseSR4',
+        self::TYPE_HUAWEI_40GBASEFR      => '40GBaseFR',
+        self::TYPE_HUAWEI_40GBASELR4     => '40GBaseLR4',
+        self::TYPE_HUAWEI_100GBASECR10   => '100GBaseCR10',
+        self::TYPE_HUAWEI_100GBASESR10   => '100GBaseSR10',
+        self::TYPE_HUAWEI_100GBASELR4    => '100GBaseLR4',
+        self::TYPE_HUAWEI_100GBASEER4    => '100GBaseER4',
 
     );
 
