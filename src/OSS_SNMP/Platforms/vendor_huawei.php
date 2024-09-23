@@ -29,6 +29,9 @@ if( substr( strtolower($sysDescr), 0, 6 ) == 'huawei' )
         case '.1.3.6.1.4.1.2011.2.6.6.1':
             $this->setModel( "MA5300V1" );
             break;
+        case '.1.3.6.1.4.1.2011.2.239.32':
+            $this->setModel( "CE6870-48S6CQ-EI" );
+            break;
         case '.1.3.6.1.4.1.2011.2.239.51':
             $this->setModel( "CE8861EI" );
             break;
@@ -36,7 +39,7 @@ if( substr( strtolower($sysDescr), 0, 6 ) == 'huawei' )
             $this->setModel( "CE6881-48S6CQ" );
             break;
         case '.1.3.6.1.4.1.2011.2.239.50':
-            $this->setModel(" CE8850-64CQ-EI " );
+            $this->setModel("CE8850-64CQ-EI" );
             break;
         case '.1.3.6.1.4.1.2011.2.223.2':
             $this->setModel( "S7706" );
@@ -71,7 +74,7 @@ if( substr( strtolower($sysDescr), 0, 6 ) == 'huawei' )
         $this->setOsVersion($this->getSNMPHost()->useHuawei_System()->softwareVersion());
     }
 
-    if( isset( $matches[2] ) ) {
+    if( !$this->getModel() && isset( $matches[2] ) ) {
         $this->setModel($matches[2]);
     }
 

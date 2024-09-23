@@ -112,7 +112,24 @@ HUAWEI CE6810-48S4Q-LI uptime is 1497 days, 5 hours, 7 minutes';
         $this->assertEquals( 'Huawei Versatile Routing Platform Software', $p->getOs() );
         $this->assertEquals( '8.100', $p->getOsVersion()  );
         $this->assertNull( $p->getOsDate() );
-        $this->assertEquals( 'CE6810-48S4Q-LI', $p->getModel(),      );
+        $this->assertEquals( 'CE6810-48S4Q-LI', $p->getModel()    );
+    }
+
+    // https://github.com/opensolutions/OSS_SNMP/issues/79
+    const HUAWEI_H = 'Huawei Versatile Routing Platform Software 
+VRP (R) software, Version 8.191 (CE6870EI V200R019C10SPC800) 
+Copyright (C) 2012-2020 Huawei Technologies Co., Ltd. 
+HUAWEI CE6870-48S6CQ-EI';
+
+    public function testHuaweiH() {
+
+        $p = new TestOSSPlatform( self::HUAWEI_H, '' );
+
+        $this->assertEquals( 'Huawei', $p->getVendor() );
+        $this->assertEquals( 'Huawei Versatile Routing Platform Software', $p->getOs() );
+        $this->assertEquals( '8.191', $p->getOsVersion()  );
+        $this->assertNull( $p->getOsDate() );
+        $this->assertEquals( 'CE6870-48S6CQ-EI', $p->getModel() );
     }
 
 }
