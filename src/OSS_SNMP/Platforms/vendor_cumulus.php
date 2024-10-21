@@ -41,7 +41,8 @@ if( substr( $sysDescr, 0, 7 ) == 'Cumulus' )
 
     // 'Cumulus Linux 3.4.0 (Linux Kernel 4.1.33-1+cl3u9)'
     // 'Cumulus-Linux 4.2.0 (Linux Kernel 4.19.94-1+cl4u5)'
-    preg_match( '/Cumulus.Linux\s+([\d\.]+)\s+/', $sysDescr, $matches );
+    // 'Cumulus-linux 5.10.1 (Linux Kernel 6.1.90-4+cl5.10.1u5)'
+    preg_match( '/Cumulus.[lL]inux\s+([\d\.]+)\s+/', $sysDescr, $matches );
     $this->setOsVersion( $matches[1] );
     
     // 'Edgecore x86_64-accton_as5812_54x-r0 5812-54X-O-AC-F Chassis'
