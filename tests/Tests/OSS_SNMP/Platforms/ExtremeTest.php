@@ -79,4 +79,29 @@ class ExtremeTest extends Platform
         $this->assertNull( $p->getOsDate() );
     }
 
+    const EXTREME_F = 'ExtremeXOS (X670G2-48x-4q) version 31.7.2.28 31.7.2.28-patch1-75 by release-manager on Mon Jan 15 08:57:00 EST 2024';
+
+    public function testExtremeF() {
+
+        $p = new TestOSSPlatform( self::EXTREME_F );
+
+        $this->assertEquals( 'Extreme Networks', $p->getVendor() );
+        $this->assertEquals( 'X670G2-48x-4q', $p->getModel() );
+        $this->assertEquals( 'ExtremeXOS', $p->getOs() );
+        $this->assertEquals( '31.7.2.28 31.7.2.28-patch1-75', $p->getOsVersion() );
+        $this->assertNotNull( $p->getOsDate() );
+    }
+
+    const EXTREME_G = 'ExtremeXOS (X670G2-48x-4q) version 31.7.3.37 31.7.3.37 by release-manager on Fri 23 Feb 2024 08:17:22 AM UTC';
+
+    public function testExtremeG() {
+
+        $p = new TestOSSPlatform( self::EXTREME_G );
+
+        $this->assertEquals( 'Extreme Networks', $p->getVendor() );
+        $this->assertEquals( 'X670G2-48x-4q', $p->getModel() );
+        $this->assertEquals( 'ExtremeXOS', $p->getOs() );
+        $this->assertEquals( '31.7.3.37 31.7.3.37', $p->getOsVersion() );
+        $this->assertNotNull( $p->getOsDate() );
+    }
 }

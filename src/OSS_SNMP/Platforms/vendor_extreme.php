@@ -66,13 +66,29 @@ if( substr( $sysDescr, 0, 11 ) == 'ExtremeXOS ' )
     }
     else if( substr( $sysDescr, 0, 12 ) == 'ExtremeXOS (' )
     {
-        preg_match( '/ExtremeXOS\s\((.+)\)\sversion\s([a-zA-Z0-9\.\-]+\s[a-zA-Z0-9\.\-]+)\sby\srelease-manager\son\s([a-zA-Z]+)\s([a-zA-Z]+)\s(\d+)\s((\d\d):(\d\d):(\d\d))\s([a-zA-Z]+)\s(\d\d\d\d)/',
-            $sysDescr, $matches );
-        
+
+        if( preg_match( '/.*\d\d\d\d$/', $sysDescr ) ) {
+            // 'ExtremeXOS (X670G2-48x-4q) version 31.7.2.28 31.7.2.28-patch1-75 by release-manager on Mon Jan 15 08:57:00 EST 2024'
+            preg_match( '/ExtremeXOS\s\((.+)\)\sversion\s([a-zA-Z0-9\.\-]+\s[a-zA-Z0-9\.\-]+)\sby\srelease-manager\son\s([a-zA-Z]+)\s([a-zA-Z]+)\s(\d+)\s((\d\d):(\d\d):(\d\d))\s([a-zA-Z]+)\s(\d\d\d\d)/',
+                $sysDescr, $matches );
+
+            $this->setOsDate( new \DateTime( "{$matches[5]}/{$matches[4]}/{$matches[11]}:{$matches[6]} +0000" ) );
+            $this->getOsDate()->setTimezone( new \DateTimeZone( $matches[10] ) );
+
+        } else {
+            // 'ExtremeXOS (X670G2-48x-4q) version 31.7.3.37 31.7.3.37 by release-manager on Fri 23 Feb 2024 08:17:22 AM UTC'
+            //                                 1-model           2-version                                                      3dayname     4day   5month     6year    7-10time               11ampm      12tz
+            preg_match( '/ExtremeXOS\s\((.+)\)\sversion\s([a-zA-Z0-9\.\-]+\s[a-zA-Z0-9\.\-]+)\sby\srelease-manager\son\s([a-zA-Z]+)\s(\d+)\s([a-zA-Z]+)\s(\d+)\s((\d\d):(\d\d):(\d\d))\s([a-zA-Z]+)\s([a-zA-Z]+)/',
+                $sysDescr, $matches );
+
+            $this->setOsDate( new \DateTime( "{$matches[4]}/{$matches[5]}/{$matches[6]}:{$matches[7]} +0000" ) );
+            $this->getOsDate()->setTimezone( new \DateTimeZone( $matches[12] ) );
+
+        }
+
+
         $this->setModel( $matches[1] );
         $this->setOsVersion( $matches[2] );
-        $this->setOsDate( new \DateTime( "{$matches[5]}/{$matches[4]}/{$matches[11]}:{$matches[6]} +0000" ) );
-        $this->getOsDate()->setTimezone( new \DateTimeZone( $matches[10] ) );
     }
     else
     {
