@@ -53,7 +53,7 @@ if( substr( $sysDescr, 0, 6 ) == 'Linux ' )
         $this->setOsDate( new \DateTime( "{$matches[7]}/{$matches[6]}/{$matches[10]}:{$matches[8]} +0000" ) );
         $this->getOsDate()->setTimezone( new \DateTimeZone( $matches[9] ));
     }
-    else if( preg_match( '/Linux ([^ ]+) ([^ ]+)-([^ ]+) #[^ ]+-([^ ]+) SMP ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) (.*)/',
+    else if( preg_match( '/Linux ([^ ]+) ([^ ]+)-([^ ]+) #[^ ]+-([^ ]+) SMP(?: PREEMPT_DYNAMIC)? ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) (.*)/',
             $sysDescr, $matches ) )
     {
         $this->setVendor( $matches[4] );
