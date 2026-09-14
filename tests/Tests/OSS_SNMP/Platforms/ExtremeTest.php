@@ -104,4 +104,43 @@ class ExtremeTest extends Platform
         $this->assertEquals( '31.7.3.37 31.7.3.37', $p->getOsVersion() );
         $this->assertNotNull( $p->getOsDate() );
     }
+    const EXTREME_H = 'ExtremeXOS (X695-48Y-8C) version 31.7.1.4 31.7.1.4-patch1-98 by release-manager on Fri Jan 20 09:12:35 EST 2023';
+
+    public function testExtremeH() {
+
+        $p = new TestOSSPlatform( self::EXTREME_H );
+
+        $this->assertEquals( 'Extreme Networks', $p->getVendor() );
+        $this->assertEquals( 'X695-48Y-8C', $p->getModel() );
+        $this->assertEquals( 'ExtremeXOS', $p->getOs() );
+        $this->assertEquals( '31.7.1.4 31.7.1.4-patch1-98', $p->getOsVersion() );
+        $this->assertNotNull( $p->getOsDate() );
+    }
+
+    const EXTREME_I = 'ExtremeXOS (X870-32c) version 31.7.3.37 31.7.3.37 by release-manager on Fri 23 Feb 2024 08:19:37 AM UTC';
+
+    public function testExtremeI() {
+
+        $p = new TestOSSPlatform( self::EXTREME_I );
+
+        $this->assertEquals( 'Extreme Networks', $p->getVendor() );
+        $this->assertEquals( 'X870-32c', $p->getModel() );
+        $this->assertEquals( 'ExtremeXOS', $p->getOs() );
+        $this->assertEquals( '31.7.3.37 31.7.3.37', $p->getOsVersion() );
+        $this->assertEquals( '2024-02-23 08:19:37', $p->getOsDate()->setTimeZone( new \DateTimeZone('UTC') )->format('Y-m-d H:i:s') );
+    }
+
+    const EXTREME_J = 'ExtremeXOS (X695-48Y-8C) version 32.7.4.15 32.7.4.15 by release-manager on Tue Jun 2 05:03:57 PM EDT 2026';
+
+    public function testExtremeJ() {
+
+        $p = new TestOSSPlatform( self::EXTREME_J );
+
+        $this->assertEquals( 'Extreme Networks', $p->getVendor() );
+        $this->assertEquals( 'X695-48Y-8C', $p->getModel() );
+        $this->assertEquals( 'ExtremeXOS', $p->getOs() );
+        $this->assertEquals( '32.7.4.15 32.7.4.15', $p->getOsVersion() );
+        $this->assertEquals( '2026-06-02 17:03:57', $p->getOsDate()->setTimeZone( new \DateTimeZone('UTC') )->format('Y-m-d H:i:s') );
+    }
+
 }
