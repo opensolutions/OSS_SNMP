@@ -40,20 +40,28 @@
 // 'ExtremeXOS (X460-48x) version 15.2.2.7 v1522b7-patch1-6 by release-manager on Thu Jan 31 11:11:52 EST 2013'
 // 'ExtremeXOS (X670V-48x) version 15.2.2.7 v1522b7-patch1-6 by release-manager on Thu Jan 31 11:11:52 EST 2013'
 // 'ExtremeXOS version 12.5.3.9 v1253b9 by release-manager on Tue Apr 26 20:36:04 PDT 2011'
+// 'ExtremeXOS (X695-48Y-8C) version 31.7.1.4 31.7.1.4-patch1-98 by release-manager on Fri Jan 20 09:12:35 EST 2023'
+// 'ExtremeXOS (X870-32c) version 31.7.3.37 31.7.3.37 by release-manager on Fri 23 Feb 2024 08:19:37 AM UTC'
+// 'ExtremeXOS (X695-48Y-8C) version 32.7.4.15 32.7.4.15 by release-manager on Tue Jun 2 05:03:57 PM EDT 2026'
 
 if( substr( $sysDescr, 0, 11 ) == 'ExtremeXOS ' )
 {
     $this->setVendor( 'Extreme Networks' );
     $this->setOs( 'ExtremeXOS' );
-    
+
     if( substr( $sysDescr, 0, 18 ) == 'ExtremeXOS version' )
     {
         preg_match( '/ExtremeXOS\sversion\s([a-zA-Z0-9\.\-]+\s[a-zA-Z0-9\.\-]+)\sby\srelease-manager\son\s([a-zA-Z]+)\s([a-zA-Z]+)\s(\d+)\s((\d\d):(\d\d):(\d\d))\s([a-zA-Z]+)\s(\d\d\d\d)/',
             $sysDescr, $matches );
         
         $this->setOsVersion( $matches[1] );
-        $this->setOsDate( new \DateTime( "{$matches[4]}/{$matches[3]}/{$matches[10]}:{$matches[5]} +0000" ) );
-        $this->getOsDate()->setTimezone( new \DateTimeZone( $matches[9] ) );
+
+        try {
+            $this->setOsDate( new \DateTime( "{$matches[4]} {$matches[3]} {$matches[10]} {$matches[5]} +0000" ) );
+            $this->getOsDate()->setTimezone( new \DateTimeZone( $matches[9] ) );
+        } catch( \Exception $e ) {
+            $this->setOsDate( null );
+        }
         
         // the model is not included in the system description here so we need to pull it out of the entity MIB
         // this may need to be checked on a model by model basis.
@@ -66,29 +74,51 @@ if( substr( $sysDescr, 0, 11 ) == 'ExtremeXOS ' )
     }
     else if( substr( $sysDescr, 0, 12 ) == 'ExtremeXOS (' )
     {
+        $sysDescrTrimmed = trim( $sysDescr );
 
-        if( preg_match( '/.*\d\d\d\d$/', $sysDescr ) ) {
-            // 'ExtremeXOS (X670G2-48x-4q) version 31.7.2.28 31.7.2.28-patch1-75 by release-manager on Mon Jan 15 08:57:00 EST 2024'
-            preg_match( '/ExtremeXOS\s\((.+)\)\sversion\s([a-zA-Z0-9\.\-]+\s[a-zA-Z0-9\.\-]+)\sby\srelease-manager\son\s([a-zA-Z]+)\s([a-zA-Z]+)\s(\d+)\s((\d\d):(\d\d):(\d\d))\s([a-zA-Z]+)\s(\d\d\d\d)/',
-                $sysDescr, $matches );
-
-            $this->setOsDate( new \DateTime( "{$matches[5]}/{$matches[4]}/{$matches[11]}:{$matches[6]} +0000" ) );
-            $this->getOsDate()->setTimezone( new \DateTimeZone( $matches[10] ) );
-
-        } else {
-            // 'ExtremeXOS (X670G2-48x-4q) version 31.7.3.37 31.7.3.37 by release-manager on Fri 23 Feb 2024 08:17:22 AM UTC'
-            //                                 1-model           2-version                                                      3dayname     4day   5month     6year    7-10time               11ampm      12tz
-            preg_match( '/ExtremeXOS\s\((.+)\)\sversion\s([a-zA-Z0-9\.\-]+\s[a-zA-Z0-9\.\-]+)\sby\srelease-manager\son\s([a-zA-Z]+)\s(\d+)\s([a-zA-Z]+)\s(\d+)\s((\d\d):(\d\d):(\d\d))\s([a-zA-Z]+)\s([a-zA-Z]+)/',
-                $sysDescr, $matches );
-
-            $this->setOsDate( new \DateTime( "{$matches[4]}/{$matches[5]}/{$matches[6]}:{$matches[7]} +0000" ) );
-            $this->getOsDate()->setTimezone( new \DateTimeZone( $matches[12] ) );
-
+        // Format 1 (24-hour time, year at end): 'Fri Jan 20 09:12:35 EST 2023'
+        if( preg_match( '/ExtremeXOS\s\((.+)\)\sversion\s([a-zA-Z0-9\.\-]+\s[a-zA-Z0-9\.\-]+)\sby\srelease-manager\son\s([a-zA-Z]+)\s([a-zA-Z]+)\s(\d+)\s((\d\d?):(\d\d):(\d\d))\s([a-zA-Z]+)\s(\d{4})\s*$/', $sysDescrTrimmed, $matches ) )
+        {
+            $this->setModel( $matches[1] );
+            $this->setOsVersion( $matches[2] );
+            try {
+                $this->setOsDate( new \DateTime( "{$matches[5]} {$matches[4]} {$matches[11]} {$matches[6]} +0000" ) );
+                $this->getOsDate()->setTimezone( new \DateTimeZone( $matches[10] ) );
+            } catch( \Exception $e ) {
+                $this->setOsDate( null );
+            }
         }
-
-
-        $this->setModel( $matches[1] );
-        $this->setOsVersion( $matches[2] );
+        // Format 2 (12-hour AM/PM time, year at end): 'Tue Jun 2 05:03:57 PM EDT 2026'
+        else if( preg_match( '/ExtremeXOS\s\((.+)\)\sversion\s([a-zA-Z0-9\.\-]+\s[a-zA-Z0-9\.\-]+)\sby\srelease-manager\son\s([a-zA-Z]+)\s([a-zA-Z]+)\s(\d+)\s((\d\d?):(\d\d):(\d\d))\s(AM|PM)\s([a-zA-Z]+)\s(\d{4})\s*$/i', $sysDescrTrimmed, $matches ) )
+        {
+            $this->setModel( $matches[1] );
+            $this->setOsVersion( $matches[2] );
+            try {
+                $this->setOsDate( new \DateTime( "{$matches[5]} {$matches[4]} {$matches[12]} {$matches[6]} {$matches[10]} +0000" ) );
+                $this->getOsDate()->setTimezone( new \DateTimeZone( $matches[11] ) );
+            } catch( \Exception $e ) {
+                $this->setOsDate( null );
+            }
+        }
+        // Format 3 (12-hour AM/PM time, timezone at end): 'Fri 23 Feb 2024 08:19:37 AM UTC'
+        else if( preg_match( '/ExtremeXOS\s\((.+)\)\sversion\s([a-zA-Z0-9\.\-]+\s[a-zA-Z0-9\.\-]+)\sby\srelease-manager\son\s([a-zA-Z]+)\s(\d+)\s([a-zA-Z]+)\s(\d{4})\s((\d\d?):(\d\d):(\d\d))\s(AM|PM)\s([a-zA-Z]+)\s*$/i', $sysDescrTrimmed, $matches ) )
+        {
+            $this->setModel( $matches[1] );
+            $this->setOsVersion( $matches[2] );
+            try {
+                $this->setOsDate( new \DateTime( "{$matches[4]} {$matches[5]} {$matches[6]} {$matches[7]} {$matches[11]} +0000" ) );
+                $this->getOsDate()->setTimezone( new \DateTimeZone( $matches[12] ) );
+            } catch( \Exception $e ) {
+                $this->setOsDate( null );
+            }
+        }
+        // Fallback for unlisted date structures
+        else if( preg_match( '/ExtremeXOS\s\((.+)\)\sversion\s([a-zA-Z0-9\.\-]+\s[a-zA-Z0-9\.\-]+)/', $sysDescrTrimmed, $matches ) )
+        {
+            $this->setModel( $matches[1] );
+            $this->setOsVersion( $matches[2] );
+            $this->setOsDate( null );
+        }
     }
     else
     {
